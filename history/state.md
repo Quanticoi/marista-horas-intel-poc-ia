@@ -43,7 +43,7 @@ Pendente: inspeção visual MLflow (browser access host unavailable; SDK/HTTP PA
 instalação com volumes vazios e execução Bash/Linux não testadas nesta sessão.
 FonteREAL, regrasMER, homologação, produção e aprovação/publicação operacional
 permanecem fora do aceite DEMO. Nenhum modelo promovido por esta jornada.
-Sem commit/push; arquivos do projeto continuam não versionados no índice Git.
+Publicado em https://github.com/Quanticoi/marista-horas-intel-poc-ia. Branch padrão development; código no commit 3727d394303b48bee7470d6870a09eb9cd78eb54. staging e main reservadas na base vazia 779f827c3fd18e79e05e9e9cd4c12d8aeaa8a9f3, sem promoção. CI remoto deve ser consultado separadamente dos testes locais.
 
 ## Histórico anterior (não substitui os resultados atuais)
 
