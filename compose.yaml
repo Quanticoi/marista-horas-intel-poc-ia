@@ -1,0 +1,730 @@
+{
+  "name": "marista",
+  "services": {
+    "postgres": {
+      "image": "postgres:15.10-bookworm",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "environment": {
+        "POSTGRES_PASSWORD": "${POSTGRES_PASSWORD:?Configure .env}"
+      },
+      "volumes": [
+        "postgres:/var/lib/postgresql/data"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "pg_isready",
+          "-U",
+          "postgres"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      }
+    },
+    "rustfs": {
+      "image": "rustfs/rustfs:1.0.0",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "ports": [
+        "127.0.0.1:9000:9000",
+        "127.0.0.1:9001:9001"
+      ],
+      "command": [
+        "/data"
+      ],
+      "volumes": [
+        "rustfs:/data"
+      ],
+      "environment": {
+        "RUSTFS_ACCESS_KEY": "${AWS_ACCESS_KEY_ID:?Configure .env}",
+        "RUSTFS_SECRET_KEY": "${AWS_SECRET_ACCESS_KEY:?Configure .env}",
+        "RUSTFS_CONSOLE_ENABLE": "true",
+        "RUSTFS_ADDRESS": ":9000",
+        "RUSTFS_CONSOLE_ADDRESS": ":9001"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "curl",
+          "-fsS",
+          "http://127.0.0.1:9000/health"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      }
+    },
+    "rabbitmq": {
+      "image": "rabbitmq:4.0.5-management",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "ports": [
+        "127.0.0.1:15672:15672"
+      ],
+      "environment": {
+        "RABBITMQ_DEFAULT_USER": "poc",
+        "RABBITMQ_DEFAULT_PASS": "${RABBITMQ_PASSWORD:?Configure .env}"
+      },
+      "volumes": [
+        "rabbitmq:/var/lib/rabbitmq"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "rabbitmq-diagnostics",
+          "-q",
+          "ping"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      }
+    },
+    "mlflow": {
+      "image": "marista-app:compose",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "ports": [
+        "127.0.0.1:5000:5000"
+      ],
+      "build": {
+        "context": ".",
+        "dockerfile": "deployment/docker/api/Dockerfile"
+      },
+      "environment": {
+        "DB_HOST": "postgres",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RUNTIME": "compose",
+        "MLFLOW_TRACKING_URI": "http://mlflow:5000",
+        "MLFLOW_S3_ENDPOINT_URL": "http://rustfs:9000",
+        "S3_BUCKET": "pucpr-poc",
+        "API_URI": "http://api:8000",
+        "INFERENCE_URI": "http://inference:8001",
+        "MONITOR_URI": "http://monitoramento:8010",
+        "DASHBOARD_URI": "http://dashboard:8088",
+        "INGESTION_URI": "http://ingestion:8020",
+        "MLFLOW_PASSWORD": "${MLFLOW_PASSWORD:?Configure .env}",
+        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID:?Configure .env}",
+        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY:?Configure .env}",
+        "MLFLOW_WORKERS": "1"
+      },
+      "mem_limit": "2g",
+      "command": [
+        "python",
+        "-m",
+        "src.common.launch",
+        "mlflow"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-m",
+          "src.common.service_check",
+          "mlflow"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      },
+      "depends_on": {
+        "postgres": {
+          "condition": "service_healthy"
+        },
+        "rustfs": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "ingestion": {
+      "image": "marista-app:compose",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "ports": [
+        "127.0.0.1:8020:8020"
+      ],
+      "build": {
+        "context": ".",
+        "dockerfile": "deployment/docker/api/Dockerfile"
+      },
+      "environment": {
+        "DB_HOST": "postgres",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RUNTIME": "compose",
+        "MLFLOW_TRACKING_URI": "http://mlflow:5000",
+        "MLFLOW_S3_ENDPOINT_URL": "http://rustfs:9000",
+        "S3_BUCKET": "pucpr-poc",
+        "API_URI": "http://api:8000",
+        "INFERENCE_URI": "http://inference:8001",
+        "MONITOR_URI": "http://monitoramento:8010",
+        "DASHBOARD_URI": "http://dashboard:8088",
+        "INGESTION_URI": "http://ingestion:8020",
+        "APP_PASSWORD": "${APP_PASSWORD:?Configure .env}",
+        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID:?Configure .env}",
+        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY:?Configure .env}",
+        "INGESTION_TOKEN": "${INGESTION_TOKEN:?Configure .env}"
+      },
+      "mem_limit": "2g",
+      "command": [
+        "python",
+        "-m",
+        "uvicorn",
+        "src.ingestion.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8020"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-m",
+          "src.common.service_check",
+          "ingestion"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      },
+      "depends_on": {
+        "postgres": {
+          "condition": "service_healthy"
+        },
+        "rustfs": {
+          "condition": "service_healthy"
+        },
+        "mlflow": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "inference": {
+      "image": "marista-app:compose",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "ports": [
+        "127.0.0.1:8001:8001"
+      ],
+      "build": {
+        "context": ".",
+        "dockerfile": "deployment/docker/api/Dockerfile"
+      },
+      "environment": {
+        "DB_HOST": "postgres",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RUNTIME": "compose",
+        "MLFLOW_TRACKING_URI": "http://mlflow:5000",
+        "MLFLOW_S3_ENDPOINT_URL": "http://rustfs:9000",
+        "S3_BUCKET": "pucpr-poc",
+        "API_URI": "http://api:8000",
+        "INFERENCE_URI": "http://inference:8001",
+        "MONITOR_URI": "http://monitoramento:8010",
+        "DASHBOARD_URI": "http://dashboard:8088",
+        "INGESTION_URI": "http://ingestion:8020",
+        "READONLY_PASSWORD": "${READONLY_PASSWORD:?Configure .env}",
+        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID:?Configure .env}",
+        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY:?Configure .env}",
+        "INFERENCE_TOKEN": "${INFERENCE_TOKEN:?Configure .env}",
+        "EVENT_DIRECTORY": "/logs"
+      },
+      "mem_limit": "2g",
+      "command": [
+        "python",
+        "-m",
+        "uvicorn",
+        "src.inference.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8001"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-m",
+          "src.common.service_check",
+          "inference"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      },
+      "depends_on": {
+        "postgres": {
+          "condition": "service_healthy"
+        },
+        "rustfs": {
+          "condition": "service_healthy"
+        },
+        "mlflow": {
+          "condition": "service_healthy"
+        }
+      },
+      "volumes": [
+        "./data/compose-logs:/logs"
+      ]
+    },
+    "api": {
+      "image": "marista-app:compose",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "ports": [
+        "127.0.0.1:8000:8000"
+      ],
+      "build": {
+        "context": ".",
+        "dockerfile": "deployment/docker/api/Dockerfile"
+      },
+      "environment": {
+        "DB_HOST": "postgres",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RUNTIME": "compose",
+        "MLFLOW_TRACKING_URI": "http://mlflow:5000",
+        "MLFLOW_S3_ENDPOINT_URL": "http://rustfs:9000",
+        "S3_BUCKET": "pucpr-poc",
+        "API_URI": "http://api:8000",
+        "INFERENCE_URI": "http://inference:8001",
+        "MONITOR_URI": "http://monitoramento:8010",
+        "DASHBOARD_URI": "http://dashboard:8088",
+        "INGESTION_URI": "http://ingestion:8020",
+        "APP_PASSWORD": "${APP_PASSWORD:?Configure .env}",
+        "RABBITMQ_PASSWORD": "${RABBITMQ_PASSWORD:?Configure .env}",
+        "API_TOKEN": "${API_TOKEN:?Configure .env}",
+        "INFERENCE_TOKEN": "${INFERENCE_TOKEN:?Configure .env}",
+        "EVENT_DIRECTORY": "/logs"
+      },
+      "mem_limit": "2g",
+      "command": [
+        "python",
+        "-m",
+        "uvicorn",
+        "src.api.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-m",
+          "src.common.service_check",
+          "api"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      },
+      "depends_on": {
+        "inference": {
+          "condition": "service_healthy"
+        },
+        "rabbitmq": {
+          "condition": "service_healthy"
+        }
+      },
+      "volumes": [
+        "./data/compose-logs:/logs"
+      ]
+    },
+    "worker": {
+      "image": "marista-app:compose",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "build": {
+        "context": ".",
+        "dockerfile": "deployment/docker/api/Dockerfile"
+      },
+      "environment": {
+        "DB_HOST": "postgres",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RUNTIME": "compose",
+        "MLFLOW_TRACKING_URI": "http://mlflow:5000",
+        "MLFLOW_S3_ENDPOINT_URL": "http://rustfs:9000",
+        "S3_BUCKET": "pucpr-poc",
+        "API_URI": "http://api:8000",
+        "INFERENCE_URI": "http://inference:8001",
+        "MONITOR_URI": "http://monitoramento:8010",
+        "DASHBOARD_URI": "http://dashboard:8088",
+        "INGESTION_URI": "http://ingestion:8020",
+        "APP_PASSWORD": "${APP_PASSWORD:?Configure .env}",
+        "RABBITMQ_PASSWORD": "${RABBITMQ_PASSWORD:?Configure .env}",
+        "INFERENCE_TOKEN": "${INFERENCE_TOKEN:?Configure .env}"
+      },
+      "mem_limit": "2g",
+      "command": [
+        "celery",
+        "-A",
+        "src.workers.tasks:app",
+        "worker",
+        "--loglevel=INFO",
+        "--concurrency=2"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-m",
+          "src.common.service_check",
+          "worker"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      },
+      "depends_on": {
+        "inference": {
+          "condition": "service_healthy"
+        },
+        "rabbitmq": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "monitoramento": {
+      "image": "marista-app:compose",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "ports": [
+        "127.0.0.1:8010:8010"
+      ],
+      "build": {
+        "context": ".",
+        "dockerfile": "deployment/docker/api/Dockerfile"
+      },
+      "environment": {
+        "DB_HOST": "postgres",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RUNTIME": "compose",
+        "MLFLOW_TRACKING_URI": "http://mlflow:5000",
+        "MLFLOW_S3_ENDPOINT_URL": "http://rustfs:9000",
+        "S3_BUCKET": "pucpr-poc",
+        "API_URI": "http://api:8000",
+        "INFERENCE_URI": "http://inference:8001",
+        "MONITOR_URI": "http://monitoramento:8010",
+        "DASHBOARD_URI": "http://dashboard:8088",
+        "INGESTION_URI": "http://ingestion:8020",
+        "READONLY_PASSWORD": "${READONLY_PASSWORD:?Configure .env}",
+        "MONITOR_TOKEN": "${MONITOR_TOKEN:?Configure .env}"
+      },
+      "mem_limit": "2g",
+      "command": [
+        "python",
+        "-m",
+        "uvicorn",
+        "src.monitoring.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8010"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-m",
+          "src.common.service_check",
+          "monitoramento"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      },
+      "depends_on": {
+        "postgres": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "dashboard": {
+      "image": "marista-app:compose",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "ports": [
+        "127.0.0.1:8088:8088"
+      ],
+      "build": {
+        "context": ".",
+        "dockerfile": "deployment/docker/api/Dockerfile"
+      },
+      "environment": {
+        "DB_HOST": "postgres",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RUNTIME": "compose",
+        "MLFLOW_TRACKING_URI": "http://mlflow:5000",
+        "MLFLOW_S3_ENDPOINT_URL": "http://rustfs:9000",
+        "S3_BUCKET": "pucpr-poc",
+        "API_URI": "http://api:8000",
+        "INFERENCE_URI": "http://inference:8001",
+        "MONITOR_URI": "http://monitoramento:8010",
+        "DASHBOARD_URI": "http://dashboard:8088",
+        "INGESTION_URI": "http://ingestion:8020",
+        "READONLY_PASSWORD": "${READONLY_PASSWORD:?Configure .env}",
+        "DASHBOARD_TOKEN": "${DASHBOARD_TOKEN:?Configure .env}"
+      },
+      "mem_limit": "2g",
+      "volumes": [
+        "./data/compose-logs:/logs:ro"
+      ],
+      "command": [
+        "python",
+        "-m",
+        "uvicorn",
+        "src.dashboard.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8088"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-m",
+          "src.common.service_check",
+          "dashboard"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      },
+      "depends_on": {
+        "api": {
+          "condition": "service_healthy"
+        },
+        "monitoramento": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "jupyter": {
+      "image": "marista-jupyter:compose",
+      "restart": "unless-stopped",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "ports": [
+        "127.0.0.1:8888:8888"
+      ],
+      "build": {
+        "context": ".",
+        "dockerfile": "deployment/docker/jupyter/Dockerfile"
+      },
+      "environment": {
+        "DB_HOST": "postgres",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RUNTIME": "compose",
+        "MLFLOW_TRACKING_URI": "http://mlflow:5000",
+        "MLFLOW_S3_ENDPOINT_URL": "http://rustfs:9000",
+        "S3_BUCKET": "pucpr-poc",
+        "API_URI": "http://api:8000",
+        "INFERENCE_URI": "http://inference:8001",
+        "MONITOR_URI": "http://monitoramento:8010",
+        "DASHBOARD_URI": "http://dashboard:8088",
+        "INGESTION_URI": "http://ingestion:8020",
+        "API_TOKEN": "${API_TOKEN:?Configure .env}",
+        "JUPYTER_TOKEN": "${JUPYTER_TOKEN:?Configure .env}",
+        "INGESTION_TOKEN": "${INGESTION_TOKEN:?Configure .env}",
+        "SOURCE_DATABASE_URL": "postgresql+psycopg://planning_readonly:${READONLY_PASSWORD:?Configure .env}@postgres:5432/planejamento_db",
+        "APPLICATION_DATABASE_URL": "postgresql+psycopg://planning_app:${APP_PASSWORD:?Configure .env}@postgres:5432/planejamento_db",
+        "MLFLOW_UI_BASE_URL": "http://127.0.0.1:5000",
+        "MLFLOW_EXPERIMENT_NAME": "planilha-turmas-proxy-v1",
+        "MODEL_NAME": "planilha-turmas-demo",
+        "JOURNEY_MODE": "DEMO",
+        "JOURNEY_TIMEOUT": "15",
+        "JOURNEY_RETRIES": "2",
+        "MLFLOW_HTTP_REQUEST_TIMEOUT": "15",
+        "MLFLOW_HTTP_REQUEST_MAX_RETRIES": "2",
+        "INFERENCE_TOKEN": "${INFERENCE_TOKEN:?Configure .env}",
+        "EVENT_DIRECTORY": "/logs",
+        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID:?Configure .env}",
+        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY:?Configure .env}"
+      },
+      "mem_limit": "3g",
+      "volumes": [
+        "./workspace:/workspace",
+        "./notebooks:/workspace/templates:ro",
+        "./artifacts/reports:/reports",
+        "./data/compose-logs:/logs"
+      ],
+      "command": [
+        "/usr/local/bin/_entrypoint.sh",
+        "python",
+        "-m",
+        "src.common.launch",
+        "jupyter"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "/usr/local/bin/_entrypoint.sh",
+          "python",
+          "-m",
+          "src.common.service_check",
+          "jupyter"
+        ],
+        "interval": "30s",
+        "timeout": "60s",
+        "retries": 5,
+        "start_period": "90s"
+      },
+      "depends_on": {
+        "api": {
+          "condition": "service_healthy"
+        },
+        "mlflow": {
+          "condition": "service_healthy"
+        },
+        "ingestion": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "tools": {
+      "image": "marista-app:compose",
+      "profiles": [
+        "tools"
+      ],
+      "environment": {
+        "DB_HOST": "postgres",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RUNTIME": "compose",
+        "MLFLOW_TRACKING_URI": "http://mlflow:5000",
+        "MLFLOW_S3_ENDPOINT_URL": "http://rustfs:9000",
+        "S3_BUCKET": "pucpr-poc",
+        "API_URI": "http://api:8000",
+        "INFERENCE_URI": "http://inference:8001",
+        "MONITOR_URI": "http://monitoramento:8010",
+        "DASHBOARD_URI": "http://dashboard:8088",
+        "INGESTION_URI": "http://ingestion:8020",
+        "POSTGRES_PASSWORD": "${POSTGRES_PASSWORD:?Configure .env}",
+        "MIGRATION_PASSWORD": "${MIGRATION_PASSWORD:?Configure .env}",
+        "APP_PASSWORD": "${APP_PASSWORD:?Configure .env}",
+        "READONLY_PASSWORD": "${READONLY_PASSWORD:?Configure .env}",
+        "MLFLOW_PASSWORD": "${MLFLOW_PASSWORD:?Configure .env}",
+        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID:?Configure .env}",
+        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY:?Configure .env}",
+        "RABBITMQ_PASSWORD": "${RABBITMQ_PASSWORD:?Configure .env}",
+        "API_TOKEN": "${API_TOKEN:?Configure .env}",
+        "INFERENCE_TOKEN": "${INFERENCE_TOKEN:?Configure .env}",
+        "DASHBOARD_TOKEN": "${DASHBOARD_TOKEN:?Configure .env}",
+        "INGESTION_TOKEN": "${INGESTION_TOKEN:?Configure .env}",
+        "SOURCE_DATABASE_URL": "postgresql+psycopg://planning_readonly:${READONLY_PASSWORD:?Configure .env}@postgres:5432/planejamento_db",
+        "APPLICATION_DATABASE_URL": "postgresql+psycopg://planning_app:${APP_PASSWORD:?Configure .env}@postgres:5432/planejamento_db",
+        "MLFLOW_UI_BASE_URL": "http://127.0.0.1:5000",
+        "MLFLOW_EXPERIMENT_NAME": "planilha-turmas-proxy-v1",
+        "MODEL_NAME": "planilha-turmas-demo",
+        "JOURNEY_MODE": "DEMO",
+        "JOURNEY_TIMEOUT": "15",
+        "JOURNEY_RETRIES": "2",
+        "MLFLOW_HTTP_REQUEST_TIMEOUT": "15",
+        "MLFLOW_HTTP_REQUEST_MAX_RETRIES": "2"
+      },
+      "volumes": [
+        "./artifacts/reports:/reports"
+      ],
+      "entrypoint": [
+        "python",
+        "-m",
+        "src.common.cli"
+      ]
+    },
+    "volume-tools": {
+      "image": "postgres:15.10-bookworm",
+      "profiles": [
+        "tools"
+      ],
+      "user": "0:0",
+      "volumes": [
+        "rustfs:/restore/rustfs"
+      ],
+      "entrypoint": [
+        "sh"
+      ]
+    }
+  },
+  "volumes": {
+    "postgres": {},
+    "rustfs": {},
+    "rabbitmq": {}
+  }
+}

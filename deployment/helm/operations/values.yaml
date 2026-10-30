@@ -1,0 +1,229 @@
+{
+  "image": "pucpr-poc:0.1.0",
+  "jupyterImage": "pucpr-jupyter:0.1.0",
+  "storageClass": "local-path",
+  "enabledStages": [
+    "app"
+  ],
+  "resources": [
+    {
+      "stage": "app",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "metadata": {
+          "name": "logs",
+          "namespace": "operations",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          },
+          "annotations": {
+            "helm.sh/resource-policy": "keep"
+          }
+        },
+        "spec": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "{{ .Values.storageClass }}",
+          "resources": {
+            "requests": {
+              "storage": "2Gi"
+            }
+          }
+        }
+      }
+    },
+    {
+      "stage": "app",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "dashboard",
+          "namespace": "operations",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "selector": {
+            "app": "dashboard"
+          },
+          "ports": [
+            {
+              "name": "main",
+              "port": 8088,
+              "targetPort": 8088
+            }
+          ]
+        }
+      }
+    },
+    {
+      "stage": "app",
+      "resource": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "dashboard",
+          "namespace": "operations",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "replicas": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "dashboard"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "dashboard",
+                "app.kubernetes.io/part-of": "pucpr-poc"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "dashboard",
+                  "image": "{{ .Values.image }}",
+                  "imagePullPolicy": "IfNotPresent",
+                  "command": [
+                    "python",
+                    "-m",
+                    "uvicorn",
+                    "src.dashboard.main:app",
+                    "--host",
+                    "0.0.0.0",
+                    "--port",
+                    "8088",
+                    "--no-access-log"
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "100m",
+                      "memory": "128Mi"
+                    },
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "1Gi"
+                    }
+                  },
+                  "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                      "drop": [
+                        "ALL"
+                      ]
+                    }
+                  },
+                  "envFrom": [
+                    {
+                      "configMapRef": {
+                        "name": "poc-config"
+                      }
+                    },
+                    {
+                      "secretRef": {
+                        "name": "poc-runtime"
+                      }
+                    }
+                  ],
+                  "ports": [
+                    {
+                      "containerPort": 8088
+                    }
+                  ],
+                  "readinessProbe": {
+                    "httpGet": {
+                      "path": "/ready",
+                      "port": 8088
+                    },
+                    "periodSeconds": 10,
+                    "timeoutSeconds": 15
+                  },
+                  "livenessProbe": {
+                    "httpGet": {
+                      "path": "/health",
+                      "port": 8088
+                    },
+                    "periodSeconds": 20
+                  },
+                  "startupProbe": {
+                    "tcpSocket": {
+                      "port": 8088
+                    },
+                    "failureThreshold": 60,
+                    "periodSeconds": 5
+                  },
+                  "volumeMounts": [
+                    {
+                      "name": "storage",
+                      "mountPath": "/logs"
+                    }
+                  ]
+                },
+                {
+                  "name": "collector",
+                  "image": "{{ .Values.image }}",
+                  "imagePullPolicy": "IfNotPresent",
+                  "command": [
+                    "python",
+                    "-m",
+                    "src.monitoring.collector"
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "100m",
+                      "memory": "128Mi"
+                    },
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "512Mi"
+                    }
+                  },
+                  "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                      "drop": [
+                        "ALL"
+                      ]
+                    }
+                  },
+                  "volumeMounts": [
+                    {
+                      "name": "storage",
+                      "mountPath": "/logs"
+                    }
+                  ]
+                }
+              ],
+              "terminationGracePeriodSeconds": 60,
+              "automountServiceAccountToken": true,
+              "securityContext": {
+                "fsGroup": 1000
+              },
+              "serviceAccountName": "collector",
+              "volumes": [
+                {
+                  "name": "storage",
+                  "persistentVolumeClaim": {
+                    "claimName": "logs"
+                  }
+                }
+              ]
+            }
+          },
+          "strategy": {
+            "type": "Recreate"
+          }
+        }
+      }
+    }
+  ]
+}

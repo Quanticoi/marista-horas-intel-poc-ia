@@ -1,0 +1,77 @@
+{
+  "execution_id": "a741d0dd-d1ed-41eb-91d1-d5194c5fb692",
+  "mode": "DEMO",
+  "sql_rows": 1050,
+  "metrics": {
+    "mae": 3.758630658273197,
+    "rmse": 4.9142272796917865
+  },
+  "run_id": "ad2530361ab14f7d87017c21d11958a1",
+  "experiment_id": "4",
+  "run_url": "http://127.0.0.1:5000/#/experiments/4/runs/ad2530361ab14f7d87017c21d11958a1",
+  "model_name": "planilha-turmas-demo",
+  "model_version": "3",
+  "model_uri": "models:/planilha-turmas-demo/3",
+  "artifact_uri": "models:/m-1717e4e5a7d540de8ecd8aed5e40a049",
+  "proposal_id": "a741d0dd-d1ed-41eb-91d1-d5194c5fb692",
+  "persisted_rows": 90,
+  "api_rows": 90,
+  "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+  "dataset_sha256": "5fc39eeeead59aa48813182e6a93d2308a4a9243655501f17d09a981c6c66a56",
+  "stages": [
+    {
+      "stage": "dependencies",
+      "status": "PASS"
+    },
+    {
+      "stage": "SQL extraction",
+      "status": "PASS",
+      "seconds": 0.027
+    },
+    {
+      "stage": "prepare",
+      "status": "PASS",
+      "seconds": 0.005
+    },
+    {
+      "stage": "model and metrics",
+      "status": "PASS",
+      "seconds": 0.009
+    },
+    {
+      "stage": "tracking",
+      "status": "PASS",
+      "seconds": 0.169
+    },
+    {
+      "stage": "fit and evaluate",
+      "status": "PASS",
+      "seconds": 0.038
+    },
+    {
+      "stage": "register",
+      "status": "PASS",
+      "seconds": 0.723
+    },
+    {
+      "stage": "reload and inference",
+      "status": "PASS",
+      "seconds": 0.347
+    },
+    {
+      "stage": "compose proposal",
+      "status": "PASS",
+      "seconds": 0.008
+    },
+    {
+      "stage": "persist and idempotency",
+      "status": "PASS",
+      "seconds": 0.04
+    },
+    {
+      "stage": "API reconciliation",
+      "status": "PASS",
+      "seconds": 0.036
+    }
+  ]
+}

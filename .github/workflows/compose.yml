@@ -1,0 +1,71 @@
+name: Compose dependencies and integration
+on:
+  push:
+    branches: [development, staging]
+  pull_request:
+    branches: [development, staging, main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Static contracts
+        run: |
+          python dev/validate_static.py
+          python dev/generate_compose.py --check
+      - name: Generate disposable CI credentials
+        shell: bash
+        run: |
+          for key in POSTGRES_PASSWORD MIGRATION_PASSWORD APP_PASSWORD READONLY_PASSWORD MLFLOW_PASSWORD AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY RABBITMQ_PASSWORD API_TOKEN DASHBOARD_TOKEN JUPYTER_TOKEN INFERENCE_TOKEN MONITOR_TOKEN INGESTION_TOKEN; do
+            printf '%s=%s\n' "$key" "$(openssl rand -hex 32)" >> .env
+          done
+          mkdir -p workspace/notebooks data/compose-logs artifacts/reports
+          chmod 777 workspace workspace/notebooks artifacts/reports data/compose-logs
+      - name: Build and provision dependencies
+        run: |
+          docker compose config --quiet
+          docker compose build mlflow jupyter
+          docker compose run --rm --no-deps --entrypoint chown volume-tools 10001:10001 /restore/rustfs
+          docker compose up -d --wait --wait-timeout 180 postgres rustfs rabbitmq
+          docker compose run --rm --no-deps tools bootstrap
+          docker compose run --rm --no-deps tools migrate
+          docker compose run --rm --no-deps tools buckets
+          docker compose run --rm --no-deps tools seed
+          docker compose up -d --wait --wait-timeout 300
+      - name: Validate each instance and its dependencies
+        run: |
+          for svc in mlflow inference api worker monitoramento dashboard ingestion; do
+            docker compose exec -T "$svc" python -m pip check
+            docker compose exec -T "$svc" python -m src.common.service_check "$svc"
+          done
+          docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m pip check
+          docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.common.service_check jupyter
+          docker compose run --rm --no-deps tools validate
+          docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_journey
+          docker compose run --rm --no-deps --entrypoint python tools -m pytest tests/unit tests/integration -q -o cache_dir=/tmp/pytest-cache --junitxml=/reports/compose-junit.xml
+          python deployment/scripts/check_access.py
+      - name: C3 training, binary persistence and dedicated API (disposable CI only)
+        run: |
+          docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.acceptance train
+          docker compose run --rm --no-deps tools promote C1-CR1-P1 1 ci-validation "Disposable CI model only"
+          python deployment/scripts/publish_models.py --model C1-CR1-P1
+          docker compose -f compose.yaml -f .runtime/models.compose.json up -d --wait --wait-timeout 300
+          for svc in $(python -c "import json; print(' '.join(json.load(open('.runtime/models.compose.json'))['services']))"); do
+            docker compose -f compose.yaml -f .runtime/models.compose.json exec -T "$svc" python -m pip check
+          done
+          docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.acceptance predict | tee artifacts/reports/c3-ci-prediction.txt
+      - name: Test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compose-test-results
+          path: artifacts/reports/
+      - name: Dispose isolated CI stack
+        if: always()
+        run: |
+          if [ -f .runtime/models.compose.json ]; then
+            docker compose -f compose.yaml -f .runtime/models.compose.json down -v
+          else
+            docker compose down -v
+          fi

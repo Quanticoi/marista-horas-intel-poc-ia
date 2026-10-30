@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": [
+    "intake authentication, dataset validation, idempotent persisted snapshot",
+    "SDK remote training, metrics, PostgreSQL, binary roundtrip from RustFS, no implicit approval",
+    "dedicated API startup, token rejection, binary prediction and persisted full provenance",
+    "new version approval, old API fails closed, explicit republication",
+    "MLflow schema upgrade and recreated processes; PostgreSQL metadata and RustFS binaries survive"
+  ],
+  "test_suffix": "120b7b51b122",
+  "runs": 2,
+  "versions": 2,
+  "model_key": "C1-CR1-P1",
+  "code_version": "sha256:81a45b696137af16185e9770dca3f1d7176a361137b6fc5535a6df79409bf1e3",
+  "checked_at": "2026-10-28T14:23:02.031361+00:00",
+  "environment": "Existing Jupyter Python; isolated temporary API processes, PostgreSQL databases and RustFS bucket. No Docker provisioning.",
+  "pending": [
+    "Build updated Docker images",
+    "Apply migration 003 to application database",
+    "Provision ingestion and dedicated model containers; verify Docker DNS routing",
+    "Run GitHub CI after publishing repository"
+  ]
+}

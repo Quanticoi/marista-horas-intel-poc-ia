@@ -1,0 +1,7 @@
+seed: 42
+semesters: 12
+start_year: 2020
+as_of_date: '2025-12-31'
+target_year: 2026
+target_semester: 1
+max_concurrency: 2

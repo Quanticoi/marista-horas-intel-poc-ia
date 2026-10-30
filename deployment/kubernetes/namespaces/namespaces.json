@@ -1,0 +1,56 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "training",
+        "labels": {
+          "app.kubernetes.io/part-of": "pucpr-poc"
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "mlops",
+        "labels": {
+          "app.kubernetes.io/part-of": "pucpr-poc"
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "ai-service",
+        "labels": {
+          "app.kubernetes.io/part-of": "pucpr-poc"
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "data",
+        "labels": {
+          "app.kubernetes.io/part-of": "pucpr-poc"
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "operations",
+        "labels": {
+          "app.kubernetes.io/part-of": "pucpr-poc"
+        }
+      }
+    }
+  ]
+}

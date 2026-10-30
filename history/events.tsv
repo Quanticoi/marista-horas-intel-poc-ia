@@ -1,0 +1,60 @@
+data	acao	resultado
+2026-10-23	inspecao	pasta só dev/spec.md; contrato lido; cópia spec.md preservada
+2026-10-23	preflight	BLOCKED: K8s sem contexto; Helm ausente; Docker sem daemon
+2026-10-23	git	init development; origin BLOCKED por .git/config somente leitura; HTTPS bloqueado; conector indisponível
+2026-10-23	core	dados30/treino temporal/MLflow/API/Celery/registry/auditoria implementados; execução pendente
+2026-10-23	infra	5 charts;6 Dockerfiles;RBAC/NetworkPolicy/RWO;PS+Bash setup/deploy/run;8 notebooks
+2026-10-23	revisao	immutabilidade revision002+ADR/spec;backup/restore isolado;body64KiB;tags únicas por build
+2026-10-23	checks	AST Python/PS/Bash/JS PASS; preflight FAIL: rdctl/Helm ausentes, WSL/CIM negados, sem contexto
+2026-10-23	instalacao	usuário autorizou tentativa; winget Helm bloqueado antes de iniciar (acesso ao executável negado)
+2026-10-23	dependencias	corrigido conflito MLflow2.20.2/pyarrow19; candidato MLflow3.11.1; build/resolver pendentes
+2026-10-23	docs	README/runbooks/comandos/ADRs/aceite; testes unit/integration/e2e preparados para Jobs K8s
+2026-10-23	instalacao-usuario	Rancher1.24 baixado, MSI1602; log confirma cancelamento; orientado repetir --interactive; Helm aguardando confirmação
+2026-10-23	validacao-final	42 Python AST/imports;8 notebooks;5 charts/21 recursos;DDL16+adendo;links;PS/Bash/JS PASS; runtime não executado
+2026-10-23	rancher	usuário instalou; processo aberto; rdctl em AppData/Local/Programs bloqueado por acesso; contexto ainda ausente
+2026-10-23	helm	Helm embarcado4.2.3 acessível; lint+template dos5 charts PASS; deploy pendente
+2026-10-23	k3s	contexto rancher-desktop ativo; titan-qi Ready; local-path; runtime docker29.5.3; Docker pipe nega acesso ao sandbox
+2026-10-23	scripts-windows	PATH Rancher embarcado; contexto Docker default; valida daemon por containerID real do K3s antes do build
+2026-10-23	topologia	ADR006/spec: mlops MLflow+monitoramento Deployment; ai-service inference+API+worker; loader S3 isolado, token e readonly próprios
+2026-10-23	namespaces	mlops/ai-service criados; configure PS aplicou ConfigMaps/Secrets/NetworkPolicies; nenhuma credencial em histórico
+2026-10-23	deploy-por-ns	namespaces.ps1/.sh configure/render/deploy/status+guia; AST48/PS/Bash/lint/template/serverdryrun PASS; pods/build pendentes
+2026-10-23	build-real	usuário concluiu local-20261023183940 app+jupyter; IDs em artifacts/reports/build-images.txt; 5 charts lint PASS
+2026-10-23	deploy-inicio	deploy.ps1 install iniciado; 5 namespaces/config/RBAC/rede aplicados; PVC postgres Bound; pull em curso
+2026-10-23	git-fluxo	usuário reafirmou Quanticoi/marista-horas-intel-poc-ia: development→staging→main após homologação; push ainda bloqueado
+2026-10-23	runtime-checks	PostgreSQL Ready; bootstrap/migrate Complete; Job unitário 15 PASS,3 warnings; artifacts/reports/unit-tests.txt
+2026-10-23	deploy-verificado	5 namespaces operacionais; MLflow OOM corrigido workers1/2Gi/probes; deploy verify PASS
+2026-10-23	treino	seed snapshot fb931e1e-43d0-5ff8-938c-0d2ba4a68794; 30 COMPLETED; 0 champions
+2026-10-23	validacao	integração 3 PASS; notebook00 no Jupyter PASS; HTTP dashboard/Jupyter/MLflow/API 200
+2026-10-23	readme	guia diário subir/parar/reiniciar, Jupyter/token, MLflow, logs/status/diagnóstico; links validados
+2026-10-23	mlflow-auditoria	API confirmou 30 runs/30 modelos em pucpr-synthetic; Default vazio; README com links diretos
+2026-10-23	public-demo	UCI download indisponível; macrodata público FRED/BLS já instalado; notebook08 completo executado no Jupyter: 9 FINISHED/6 modelos; CSV/plots/SHA256 no MLflow e artifacts/reports/public-demo
+2026-10-23	public-validacao	9 notebooks/AST49/links PASS; sem promoção; statsmodels.api apresentou incompatibilidade scipy _lazywhere, loader datasets direto funciona; dependências gerais exigem revisão antes de uso amplo
+2026-10-26	compose-autorizado	ADR007; Compose local/Helm produção; RustFS mantido; notebooks intocados
+2026-10-26	backup	5arquivos hashPASS offlineRustFS+workspace+logs e2DBs;39runs/36modelos/36versões; K8s writers pausados/PVC intactos
+2026-10-26	compose-pipeline	10serviços+2tools; health/dependências/pipcheck; restore/validate/cleanup gates; CI preparada; scipy1.15.2; docs MLflow passoapasso
+2026-10-26	validacao	AST53/9notebooks/DDL/links/PSparser/composeconfig/hashPASS; docker migrate BLOCKED namedpipe; remoçãoK8s pendente apósrestauraçãoPASS
+2026-10-26	docker-desktop	4.66.1 panic startDockerAPIProxy services.go643 em3tentativas; Rancher simultâneo; hipótese conflito; sem reset/processkill; evidência artifacts/reports/docker-desktop-diagnosis.md
+2026-10-26	docker-online	usuário confirmou Docker Desktop Linux saudável; sessão ainda sem leitura contexto; compose.ps1 default desktop-linux e forward stop independe contexto K8s; parserPASS; migrate pendente usuário
+2026-10-26	fix-compose-restore	PowerShell fragmentava shell inline; substituído por restore-rustfs.sh montado; retomada verifica34arquivos workspace+2logs sem sobrescrita;2testesPASS/parserPS/Bash/ComposeconfigPASS; runtime Docker pendente usuário
+2026-10-26	mlflow-registry-fix	migrate restaurou/restored.ok; validação models:/ falhou integer=VARCHAR com psycopg3; servidorMLflow agora psycopg2-binary2.9.10, app mantémpsycopg3; regressão integração get_model_version(string); AST/linksPASS; rebuild+validate pendente Docker usuário
+2026-10-26	compose-PASS	usuário concluiu validate; arquivo compose-migration.json PASS:39runs/36modelos/36versões/124objetos/2876332bytes; validated.sha256 conferemanifest; Registry corrigido
+2026-10-26	cleanup-separado	script usa reciboPASS+backup na fase Rancher, sem DockerDesktop ativo; bloqueia deployments antigos reativados; remove imagens antigas só após confirmar daemon default corresponde K3s; parserPASS; APIK3s offline, remoção pendente usuário
+2026-10-26	cleanup-K8s-PASS	ServiceUnavailable era transitório startup; /readyz ok/nóReady; script adicionou espera3min; cleanup executado pelo agente exit0; removidos5namespaces e5PVs; só namespaces sistema/default restantes; imagens antigas mantidas por acessoDockernegado; backup/Compose preservados
+2026-10-26	revisao-legado	20arquivos removidos:10scriptsRancher,5Dockerfiles,4YAMLsemconsumidor,1guia namespace; migração isolada deployment/migration; Compose diário init/build/start/stop/validate/test independente backup
+2026-10-26	revisao-runtime	DNSfixo removido defaults/dashboard/E2E e aliasesCompose; dashboard Ambiente; tools DASHBOARD_TOKEN paraE2E; geradorHelm não altera notebooks; README/docs reescritos; Helm futuro mantido
+2026-10-26	revisao-checks	AST57/Composegrafo+health+secrets+mounts/DDL/notebooks9/links/PSparser/Bash/JS/composeconfig PASS;2testes archivePASS;2regressões dashboard adicionadas; testes containers pendentes acessoDockernegado
+2026-10-26	acessos-PASS	17checksHTTP localhost autenticados/negativos PASS; RustFS AWS_ACCESS_KEY_ID=usuario/AWS_SECRET_ACCESS_KEY=senha, S3signedPASS/consolebrowser200; .env anotado valoresinalterados; docsACESSOS+RUSTFS; check_access.py emvalidate/CI
+2026-10-26	limpeza-final	27arquivos obsoletos removidos(migração/helpers/relatórios/placeholders)+12logsforward; mountsbackup removidos ferramentasCompose; backups/dados/notebooks/Helm preservados; revisão automática bloqueou remoção pastasvazias(aprovação sandbox indisponível)
+2026-10-27	docs-auditoria	README+docs rechecados; ADR001/003/004/005 explicitamente históricas, ADR007 migração concluída; docs/README índice atual; links/AST/ComposePASS; referênciasK8s úteis preservadas; pastasvazias anteriormentebloqueadas permanecem
+
+2026-10-28	C3	SDK+ingestion+binariosSHA+APIporModelo+migracao003+notebook09+docsCI;26unitPASS;E2Eisolado2versoesPASS;Dockerdeploybloqueado;originaisintactos;limpezatemporariosrejeitada
+2026-10-28	deploy-verificado	30pytestPASS/19HTTPPASS;JupyterSDKsemPGsecret;schema003colunasOK;hashcodigoigualtestado;0runsbinarios/0aprovados/semmanifestmodelos;proximo:notebook09?aprovar?publish?prever
+2026-10-30	correcao-runtime	Usuario reafirma 100% Docker Compose, sem Rancher/Kubernetes; substitui requisito K8s do pedido de jornada; inspecao apenas, build/deploy/E2E ainda nao executados; history/state.md atualizado.
+2026-10-30	compose-rebuild-iniciado	DockerDesktop ativo:11containers healthy; rebuild inicialmente bloqueado JUPYTER_TOKEN vazio, recuperado do container sem exibir valor; build imagens concluido e bootstrap/migrations/bucket/seed executados; verificacao notebook em andamento.
+2026-10-30	jornada-real-primeira	Notebook kernel novo PASS:1050linhas SQL,90propostas/API,run10e217389382417cb0c6fa4ca83a79b8,modelo1,MAE3.75863/RMSE4.91423; integracao3PASS2FAIL:teste indisponibilidade contaminava env do SDK; fixture de restauracao implementada, revalidacao pendente.
+2026-10-30	journey-PASS	Rebuild exit0; notebook novo kernel PASS; versao2/run37e337f034214c3d86b935655c7a84c6;1050SQL/90propostas;7integracaoPASS(inclui bytesS3=proxy,logs correlacionados,idempotencia,rollback,falhaMLflow,auth); aceite reinicio/rebuild em andamento.
+2026-10-30	aceite-reinicio-PASS	Mesma execucao a741d0dd-d1ed-41eb-91d1-d5194c5fb692/modelo3/runad2530361ab14f7d87017c21d11958a1:7testesPASS apos restartMLflow; rebuild em andamento. UIvisual indisponivel:browser access host unavailable; SDK/metadados/artefatos conferidos.
+2026-10-30	aceite-rebuild-PASS	acceptance exit0:7PASS antes,7PASS apos restartMLflow,7PASS apos rebuild; MESMA runad2530361ab14f7d87017c21d11958a1/modelo3/propostaa741d0dd-d1ed-41eb-91d1-d5194c5fb692 preservadas; pipcheck e dependenciasPASS. GeradorCompose alinhado e check semanticoPASS.
+2026-10-30	validacao-final-PASS	37pytestPASS/19HTTPPASS;rebuild+acceptanceexit0;7integracoes em cada fase antes/restart/rebuild;relatoriojourney-acceptance-2026-10-30.md;semsegredos nas evidencias;UIvisual bloqueada browserhost,instalacaolimpa/Linux nao executados;history/state atualizado.
+2026-10-30	jupyter-editavel	Usuario abriu link templates somente leitura; README/guia corrigidos para notebooks. Copiaworkspace existente igual ao template(SHA256conferido),preservada;JupyterContentsAPI writable=true. AvisoGit explicado:executavel ausente no container impede SHAautomatico,hashcode_version continua registrado.
+2026-10-30	git-publicacao-autorizada	Usuario autoriza repo publico Quanticoi/marista-horas-intel-poc-ia;codigo emdevelopment,stagingemain reservadas basevazia sempromocao.214arquivos semvalores.env;AST81/notebooks11/Compose/linksPASS;CIcorrigido ordemnotebook e permissoeslogs. Publicacao em andamento.

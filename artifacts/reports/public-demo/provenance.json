@@ -1,0 +1,9 @@
+{
+  "dataset": "statsmodels.macrodata",
+  "version": "0.14.4",
+  "sha256": "ca842c7ff67ab3be58a9c8dd451b5eea6e0954f2c84112b39a40bd96e5deb6f1",
+  "source": "https://github.com/statsmodels/statsmodels/blob/v0.14.4/statsmodels/datasets/macrodata/data.py",
+  "license": "Public domain (dataset declaration)",
+  "rows": 203,
+  "frequency": "quarterly"
+}

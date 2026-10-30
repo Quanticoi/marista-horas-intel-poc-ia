@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.runtime/
+data/**/*.parquet
+data/**/*.json
+artifacts/exports/*
+*.egg-info/
+dist/
+build/
+workspace/
+data/compose-logs/

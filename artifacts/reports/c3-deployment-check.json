@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-10-28T18:33:39.951135+00:00",
+  "status": "BASE_SERVICES_VERIFIED",
+  "pytest": {
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0
+  },
+  "live_access_checks_passed": 19,
+  "jupyter_sdk": "PASS",
+  "jupyter_has_database_passwords": false,
+  "approved_binary_provenance_columns": 4,
+  "academic_runs": 30,
+  "binary_v2_runs": 0,
+  "registered_models": 36,
+  "approved_models": 0,
+  "model_compose_manifest_exists": false,
+  "pending": [
+    "Execute notebook 09 to train binary model",
+    "Review and approve candidate version",
+    "Publish dedicated model API",
+    "Validate prediction through Docker router"
+  ],
+  "docker_inventory": "Agent denied Docker daemon access; verified HTTP endpoints, Jupyter runtime and PostgreSQL schema instead"
+}

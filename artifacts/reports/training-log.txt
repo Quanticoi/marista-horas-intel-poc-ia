@@ -1,0 +1,108 @@
+﻿2026/10/23 19:17:46 INFO mlflow.tracking.fluent: Experiment with name 'pucpr-synthetic' does not exist. Creating a new experiment.
+2026/10/23 19:17:46 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+
+2026/10/23 19:17:46 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR1-P1, version 1
+🏃 View run wistful-chimp-500 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/09921087e028430b9d40e2c3a5f49237
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:46 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR1-P2, version 1
+🏃 View run abundant-bee-830 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/0cf0c390b9374fe7ade530cd7632b1c5
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:47 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR2-P1, version 1
+🏃 View run illustrious-sow-791 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/fcf1d76e7cf34d4f99446ee80d25f66d
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:47 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR2-P2, version 1
+🏃 View run fun-perch-181 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/38036a46aae64d08b92287cd50544f72
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:47 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR3-P1, version 1
+🏃 View run vaunted-auk-330 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/ec479fc18bc142178c9a3f745a3920b6
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:47 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR3-P2, version 1
+🏃 View run polite-toad-396 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/b7ebee316da64ef98e51d7863d00a2ec
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:47 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR4-P1, version 1
+🏃 View run powerful-shoat-688 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/1910520f90b840b5868b14dbfd778582
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:48 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR4-P2, version 1
+🏃 View run masked-lamb-633 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/e995bb317f4e4178b8f0dcd1b6950f0b
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:48 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR5-P1, version 1
+🏃 View run judicious-vole-339 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/43dac1aff87140c2ac69a47ef2b6d020
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:48 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C1-CR5-P2, version 1
+🏃 View run angry-hawk-971 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/2d6885eac1a64bba855a337d4a861aee
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:48 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR1-P1, version 1
+🏃 View run traveling-tern-971 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/1b810e67d8c8463e85f9f8aca2fa2ec2
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:48 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR1-P2, version 1
+🏃 View run orderly-flea-907 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/499f51d2b63640ddbf242ff862543d4b
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:49 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR2-P1, version 1
+🏃 View run puzzled-flea-833 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/3733f03816694ebc82d49e7110e143ec
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:49 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR2-P2, version 1
+🏃 View run peaceful-seal-918 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/b0f189407e8a4a35b3a96b06b39212fe
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:49 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR3-P1, version 1
+🏃 View run wise-mole-909 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/ea59a1cd74f845438231357cd3570472
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:49 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR3-P2, version 1
+🏃 View run overjoyed-shark-407 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/76ed9009db424f389b8eec7427f05297
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:49 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR4-P1, version 1
+🏃 View run invincible-mouse-947 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/a8ba19a22c934e8e9b2f891900fb347f
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:49 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR4-P2, version 1
+🏃 View run invincible-roo-471 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/a2f403ebeefd42c3b1e27f82b07389c5
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:50 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR5-P1, version 1
+🏃 View run upset-shad-384 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/bc0c26cda469432aa82fd107714b4fb9
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:50 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C2-CR5-P2, version 1
+🏃 View run kindly-snail-592 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/4dc897e7671e4f1cb3a6b9a214f54897
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:50 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR1-P1, version 1
+🏃 View run masked-ram-223 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/9b7d7ad0e40a41a69688ef44efd98c3e
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:50 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR1-P2, version 1
+🏃 View run auspicious-fox-576 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/708a8307caf84f779e3e8baf5a8e9433
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:50 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR2-P1, version 1
+🏃 View run selective-vole-801 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/cf0a3cdac70a4228a222cb26e30839d6
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:51 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR2-P2, version 1
+🏃 View run rumbling-sloth-869 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/6c42faf1f3624d4e8de457c6a6156300
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:51 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR3-P1, version 1
+🏃 View run fortunate-gull-399 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/0d929ce5f3d7477d984ffbedd35b85f7
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:51 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR3-P2, version 1
+🏃 View run upbeat-mouse-695 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/c76d1360957a461a80c1d92589ae229f
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:51 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR4-P1, version 1
+🏃 View run judicious-hen-893 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/9cb04d54e61a4d15b668b2fad88cc1aa
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:52 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR4-P2, version 1
+🏃 View run popular-boar-116 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/bb3ca98771cd4f2baefe67794518c517
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:52 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR5-P1, version 1
+🏃 View run honorable-panda-80 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/22539dadd24645fd92696c20d85fb13e
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1
+2026/10/23 19:17:52 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: C3-CR5-P2, version 1
+🏃 View run unleashed-croc-56 at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1/runs/39fe97e5a3d9415695205da187a56c19
+🧪 View experiment at: http://mlflow.mlops.svc.cluster.local:5000/#/experiments/1

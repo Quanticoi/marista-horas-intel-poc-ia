@@ -1,0 +1,391 @@
+{
+  "image": "pucpr-poc:0.1.0",
+  "jupyterImage": "pucpr-jupyter:0.1.0",
+  "storageClass": "local-path",
+  "enabledStages": [
+    "app"
+  ],
+  "resources": [
+    {
+      "stage": "app",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "inference",
+          "namespace": "ai-service",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "selector": {
+            "app": "inference"
+          },
+          "ports": [
+            {
+              "name": "main",
+              "port": 8001,
+              "targetPort": 8001
+            }
+          ]
+        }
+      }
+    },
+    {
+      "stage": "app",
+      "resource": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "inference",
+          "namespace": "ai-service",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "replicas": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "inference"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "inference",
+                "app.kubernetes.io/part-of": "pucpr-poc"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "inference",
+                  "image": "{{ .Values.image }}",
+                  "imagePullPolicy": "IfNotPresent",
+                  "command": [
+                    "python",
+                    "-m",
+                    "uvicorn",
+                    "src.inference.main:app",
+                    "--host",
+                    "0.0.0.0",
+                    "--port",
+                    "8001",
+                    "--no-access-log"
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "100m",
+                      "memory": "128Mi"
+                    },
+                    "limits": {
+                      "cpu": "2",
+                      "memory": "2Gi"
+                    }
+                  },
+                  "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                      "drop": [
+                        "ALL"
+                      ]
+                    }
+                  },
+                  "envFrom": [
+                    {
+                      "configMapRef": {
+                        "name": "poc-config"
+                      }
+                    },
+                    {
+                      "secretRef": {
+                        "name": "poc-inference"
+                      }
+                    }
+                  ],
+                  "ports": [
+                    {
+                      "containerPort": 8001
+                    }
+                  ],
+                  "readinessProbe": {
+                    "httpGet": {
+                      "path": "/ready",
+                      "port": 8001
+                    },
+                    "periodSeconds": 10,
+                    "timeoutSeconds": 15
+                  },
+                  "livenessProbe": {
+                    "httpGet": {
+                      "path": "/health",
+                      "port": 8001
+                    },
+                    "periodSeconds": 20
+                  },
+                  "startupProbe": {
+                    "tcpSocket": {
+                      "port": 8001
+                    },
+                    "failureThreshold": 60,
+                    "periodSeconds": 5
+                  }
+                }
+              ],
+              "terminationGracePeriodSeconds": 60,
+              "automountServiceAccountToken": false,
+              "securityContext": {
+                "fsGroup": 1000
+              }
+            }
+          },
+          "strategy": {
+            "type": "RollingUpdate"
+          }
+        }
+      }
+    },
+    {
+      "stage": "app",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "api",
+          "namespace": "ai-service",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "selector": {
+            "app": "api"
+          },
+          "ports": [
+            {
+              "name": "main",
+              "port": 8000,
+              "targetPort": 8000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "stage": "app",
+      "resource": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "api",
+          "namespace": "ai-service",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "replicas": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "api"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "api",
+                "app.kubernetes.io/part-of": "pucpr-poc"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "api",
+                  "image": "{{ .Values.image }}",
+                  "imagePullPolicy": "IfNotPresent",
+                  "command": [
+                    "python",
+                    "-m",
+                    "uvicorn",
+                    "src.api.main:app",
+                    "--host",
+                    "0.0.0.0",
+                    "--port",
+                    "8000",
+                    "--no-access-log"
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "100m",
+                      "memory": "128Mi"
+                    },
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "1Gi"
+                    }
+                  },
+                  "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                      "drop": [
+                        "ALL"
+                      ]
+                    }
+                  },
+                  "envFrom": [
+                    {
+                      "configMapRef": {
+                        "name": "poc-config"
+                      }
+                    },
+                    {
+                      "secretRef": {
+                        "name": "poc-runtime"
+                      }
+                    }
+                  ],
+                  "ports": [
+                    {
+                      "containerPort": 8000
+                    }
+                  ],
+                  "readinessProbe": {
+                    "httpGet": {
+                      "path": "/ready",
+                      "port": 8000
+                    },
+                    "periodSeconds": 10,
+                    "timeoutSeconds": 15
+                  },
+                  "livenessProbe": {
+                    "httpGet": {
+                      "path": "/health",
+                      "port": 8000
+                    },
+                    "periodSeconds": 20
+                  },
+                  "startupProbe": {
+                    "tcpSocket": {
+                      "port": 8000
+                    },
+                    "failureThreshold": 60,
+                    "periodSeconds": 5
+                  }
+                }
+              ],
+              "terminationGracePeriodSeconds": 60,
+              "automountServiceAccountToken": false,
+              "securityContext": {
+                "fsGroup": 1000
+              }
+            }
+          },
+          "strategy": {
+            "type": "RollingUpdate"
+          }
+        }
+      }
+    },
+    {
+      "stage": "app",
+      "resource": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "worker",
+          "namespace": "ai-service",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "replicas": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "worker"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "worker",
+                "app.kubernetes.io/part-of": "pucpr-poc"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "worker",
+                  "image": "{{ .Values.image }}",
+                  "imagePullPolicy": "IfNotPresent",
+                  "command": [
+                    "celery",
+                    "-A",
+                    "src.workers.tasks:app",
+                    "worker",
+                    "--loglevel=INFO",
+                    "--concurrency=2"
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "100m",
+                      "memory": "128Mi"
+                    },
+                    "limits": {
+                      "cpu": "2",
+                      "memory": "2Gi"
+                    }
+                  },
+                  "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                      "drop": [
+                        "ALL"
+                      ]
+                    }
+                  },
+                  "envFrom": [
+                    {
+                      "configMapRef": {
+                        "name": "poc-config"
+                      }
+                    },
+                    {
+                      "secretRef": {
+                        "name": "poc-runtime"
+                      }
+                    }
+                  ],
+                  "readinessProbe": {
+                    "exec": {
+                      "command": [
+                        "python",
+                        "-m",
+                        "src.common.cli",
+                        "worker-ready"
+                      ]
+                    },
+                    "periodSeconds": 30,
+                    "timeoutSeconds": 15
+                  }
+                }
+              ],
+              "terminationGracePeriodSeconds": 60,
+              "automountServiceAccountToken": false,
+              "securityContext": {
+                "fsGroup": 1000
+              }
+            }
+          },
+          "strategy": {
+            "type": "RollingUpdate"
+          }
+        }
+      }
+    }
+  ]
+}

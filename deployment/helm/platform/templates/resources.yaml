@@ -1,0 +1,6 @@
+{{- range .Values.resources }}
+{{- if has .stage $.Values.enabledStages }}
+---
+{{ tpl (toYaml .resource) $ }}
+{{- end }}
+{{- end }}

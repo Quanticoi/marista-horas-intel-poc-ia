@@ -1,0 +1,553 @@
+{
+  "image": "pucpr-poc:0.1.0",
+  "jupyterImage": "pucpr-jupyter:0.1.0",
+  "storageClass": "local-path",
+  "enabledStages": [
+    "postgres",
+    "rustfs",
+    "rabbitmq"
+  ],
+  "resources": [
+    {
+      "stage": "postgres",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "metadata": {
+          "name": "postgres",
+          "namespace": "data",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          },
+          "annotations": {
+            "helm.sh/resource-policy": "keep"
+          }
+        },
+        "spec": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "{{ .Values.storageClass }}",
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          }
+        }
+      }
+    },
+    {
+      "stage": "postgres",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "postgres",
+          "namespace": "data",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "selector": {
+            "app": "postgres"
+          },
+          "ports": [
+            {
+              "name": "main",
+              "port": 5432,
+              "targetPort": 5432
+            }
+          ]
+        }
+      }
+    },
+    {
+      "stage": "postgres",
+      "resource": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "metadata": {
+          "name": "postgres",
+          "namespace": "data",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "replicas": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "postgres"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "postgres",
+                "app.kubernetes.io/part-of": "pucpr-poc"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "postgres",
+                  "image": "postgres:15.10-bookworm",
+                  "imagePullPolicy": "IfNotPresent",
+                  "command": [
+                    "docker-entrypoint.sh",
+                    "postgres"
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "100m",
+                      "memory": "128Mi"
+                    },
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "1Gi"
+                    }
+                  },
+                  "ports": [
+                    {
+                      "containerPort": 5432
+                    }
+                  ],
+                  "readinessProbe": {
+                    "tcpSocket": {
+                      "port": 5432
+                    },
+                    "initialDelaySeconds": 5,
+                    "periodSeconds": 10
+                  },
+                  "livenessProbe": {
+                    "tcpSocket": {
+                      "port": 5432
+                    },
+                    "initialDelaySeconds": 30,
+                    "periodSeconds": 20
+                  },
+                  "startupProbe": {
+                    "tcpSocket": {
+                      "port": 5432
+                    },
+                    "failureThreshold": 60,
+                    "periodSeconds": 5
+                  },
+                  "env": [
+                    {
+                      "name": "POSTGRES_PASSWORD",
+                      "valueFrom": {
+                        "secretKeyRef": {
+                          "name": "poc-runtime",
+                          "key": "POSTGRES_PASSWORD"
+                        }
+                      }
+                    },
+                    {
+                      "name": "PGDATA",
+                      "value": "/var/lib/postgresql/data/pgdata"
+                    }
+                  ],
+                  "volumeMounts": [
+                    {
+                      "name": "storage",
+                      "mountPath": "/var/lib/postgresql/data"
+                    }
+                  ]
+                }
+              ],
+              "terminationGracePeriodSeconds": 60,
+              "automountServiceAccountToken": false,
+              "securityContext": {
+                "fsGroup": 1000
+              },
+              "volumes": [
+                {
+                  "name": "storage",
+                  "persistentVolumeClaim": {
+                    "claimName": "postgres"
+                  }
+                }
+              ]
+            }
+          },
+          "serviceName": "postgres"
+        }
+      }
+    },
+    {
+      "stage": "rustfs",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "metadata": {
+          "name": "rustfs",
+          "namespace": "data",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          },
+          "annotations": {
+            "helm.sh/resource-policy": "keep"
+          }
+        },
+        "spec": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "{{ .Values.storageClass }}",
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          }
+        }
+      }
+    },
+    {
+      "stage": "rustfs",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "rustfs",
+          "namespace": "data",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "selector": {
+            "app": "rustfs"
+          },
+          "ports": [
+            {
+              "name": "main",
+              "port": 9000,
+              "targetPort": 9000
+            },
+            {
+              "name": "console",
+              "port": 9001,
+              "targetPort": 9001
+            }
+          ]
+        }
+      }
+    },
+    {
+      "stage": "rustfs",
+      "resource": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "metadata": {
+          "name": "rustfs",
+          "namespace": "data",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "replicas": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "rustfs"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "rustfs",
+                "app.kubernetes.io/part-of": "pucpr-poc"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "rustfs",
+                  "image": "rustfs/rustfs:1.0.0",
+                  "imagePullPolicy": "IfNotPresent",
+                  "resources": {
+                    "requests": {
+                      "cpu": "100m",
+                      "memory": "128Mi"
+                    },
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "2Gi"
+                    }
+                  },
+                  "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                      "drop": [
+                        "ALL"
+                      ]
+                    }
+                  },
+                  "ports": [
+                    {
+                      "containerPort": 9000
+                    }
+                  ],
+                  "readinessProbe": {
+                    "tcpSocket": {
+                      "port": 9000
+                    },
+                    "initialDelaySeconds": 5,
+                    "periodSeconds": 10
+                  },
+                  "livenessProbe": {
+                    "tcpSocket": {
+                      "port": 9000
+                    },
+                    "initialDelaySeconds": 30,
+                    "periodSeconds": 20
+                  },
+                  "startupProbe": {
+                    "tcpSocket": {
+                      "port": 9000
+                    },
+                    "failureThreshold": 60,
+                    "periodSeconds": 5
+                  },
+                  "args": [
+                    "/data"
+                  ],
+                  "env": [
+                    {
+                      "name": "RUSTFS_ACCESS_KEY",
+                      "valueFrom": {
+                        "secretKeyRef": {
+                          "name": "poc-runtime",
+                          "key": "AWS_ACCESS_KEY_ID"
+                        }
+                      }
+                    },
+                    {
+                      "name": "RUSTFS_SECRET_KEY",
+                      "valueFrom": {
+                        "secretKeyRef": {
+                          "name": "poc-runtime",
+                          "key": "AWS_SECRET_ACCESS_KEY"
+                        }
+                      }
+                    },
+                    {
+                      "name": "RUSTFS_CONSOLE_ENABLE",
+                      "value": "true"
+                    },
+                    {
+                      "name": "RUSTFS_ADDRESS",
+                      "value": ":9000"
+                    },
+                    {
+                      "name": "RUSTFS_CONSOLE_ADDRESS",
+                      "value": ":9001"
+                    }
+                  ],
+                  "volumeMounts": [
+                    {
+                      "name": "storage",
+                      "mountPath": "/data"
+                    }
+                  ]
+                }
+              ],
+              "terminationGracePeriodSeconds": 60,
+              "automountServiceAccountToken": false,
+              "securityContext": {
+                "fsGroup": 1000
+              },
+              "volumes": [
+                {
+                  "name": "storage",
+                  "persistentVolumeClaim": {
+                    "claimName": "rustfs"
+                  }
+                }
+              ]
+            }
+          },
+          "serviceName": "rustfs"
+        }
+      }
+    },
+    {
+      "stage": "rabbitmq",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "metadata": {
+          "name": "rabbitmq",
+          "namespace": "data",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          },
+          "annotations": {
+            "helm.sh/resource-policy": "keep"
+          }
+        },
+        "spec": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "{{ .Values.storageClass }}",
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          }
+        }
+      }
+    },
+    {
+      "stage": "rabbitmq",
+      "resource": {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "rabbitmq",
+          "namespace": "data",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "selector": {
+            "app": "rabbitmq"
+          },
+          "ports": [
+            {
+              "name": "main",
+              "port": 5672,
+              "targetPort": 5672
+            },
+            {
+              "name": "console",
+              "port": 15672,
+              "targetPort": 15672
+            }
+          ]
+        }
+      }
+    },
+    {
+      "stage": "rabbitmq",
+      "resource": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "metadata": {
+          "name": "rabbitmq",
+          "namespace": "data",
+          "labels": {
+            "app.kubernetes.io/part-of": "pucpr-poc"
+          }
+        },
+        "spec": {
+          "replicas": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "rabbitmq"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "rabbitmq",
+                "app.kubernetes.io/part-of": "pucpr-poc"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "rabbitmq",
+                  "image": "rabbitmq:4.0.5-management",
+                  "imagePullPolicy": "IfNotPresent",
+                  "command": [
+                    "docker-entrypoint.sh",
+                    "rabbitmq-server"
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "100m",
+                      "memory": "128Mi"
+                    },
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "1Gi"
+                    }
+                  },
+                  "ports": [
+                    {
+                      "containerPort": 5672
+                    }
+                  ],
+                  "readinessProbe": {
+                    "tcpSocket": {
+                      "port": 5672
+                    },
+                    "initialDelaySeconds": 5,
+                    "periodSeconds": 10
+                  },
+                  "livenessProbe": {
+                    "tcpSocket": {
+                      "port": 5672
+                    },
+                    "initialDelaySeconds": 30,
+                    "periodSeconds": 20
+                  },
+                  "startupProbe": {
+                    "tcpSocket": {
+                      "port": 5672
+                    },
+                    "failureThreshold": 60,
+                    "periodSeconds": 5
+                  },
+                  "env": [
+                    {
+                      "name": "RABBITMQ_DEFAULT_USER",
+                      "value": "poc"
+                    },
+                    {
+                      "name": "RABBITMQ_DEFAULT_PASS",
+                      "valueFrom": {
+                        "secretKeyRef": {
+                          "name": "poc-runtime",
+                          "key": "RABBITMQ_PASSWORD"
+                        }
+                      }
+                    }
+                  ],
+                  "volumeMounts": [
+                    {
+                      "name": "storage",
+                      "mountPath": "/var/lib/rabbitmq"
+                    }
+                  ]
+                }
+              ],
+              "terminationGracePeriodSeconds": 60,
+              "automountServiceAccountToken": false,
+              "securityContext": {
+                "fsGroup": 1000
+              },
+              "volumes": [
+                {
+                  "name": "storage",
+                  "persistentVolumeClaim": {
+                    "claimName": "rabbitmq"
+                  }
+                }
+              ]
+            }
+          },
+          "serviceName": "rabbitmq"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+.git
+.env
+.env.*
+.venv
+.runtime
+**/__pycache__
+data
+artifacts
+history
+dev
+workspace
