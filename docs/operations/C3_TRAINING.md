@@ -18,7 +18,7 @@ $env:DOCKER_CONTEXT = "desktop-linux"
 ```
 
 O script acrescenta somente `INGESTION_TOKEN` se ausente, sem trocar senhas existentes.
-`migrate` aplica a migração acadêmica 003 (proveniência de binários aprovados) e o
+`migrate` aplica as migrations acadêmicas até a revisão atual e o
 upgrade do schema MLflow. Faça backup antes de upgrades de versão do MLflow.
 Instalação nova continua usando `compose.ps1 init`.
 
@@ -58,13 +58,13 @@ As disciplinas/modulações do cadastro permanecem regras sintéticas da POC.
 
 ## Treinamento e persistência
 
-O SDK no Jupyter chama somente HTTP e S3; não recebe senha de PostgreSQL.
+O SDK deste fluxo usa HTTP e S3. O container Jupyter também recebe conexões SQL para a jornada principal de Planilha Turmas.
 `MLFLOW_TRACKING_URI` e `INGESTION_URI` precisam ser URLs HTTP(S), sem fallback local.
 As credenciais S3 e de entrada vêm do ambiente, preenchidas pelo Compose a partir do `.env`.
 
 - MLflow grava experimentos/runs/parâmetros/métricas/versões no banco `mlflow_db`.
 - Entrada de dados grava snapshots e execução de treinamento em `planejamento_db`, schema `planning`.
-- Binários e descritores são enviados diretamente pelo SDK ao RustFS; o servidor usa `--no-serve-artifacts`.
+- O servidor atual usa `--serve-artifacts`. O SDK respeita o destino de artefatos do experimento: a jornada principal usa proxy; experimentos anteriores com URI S3 mantêm acesso direto ao RustFS. O pipeline de bundles deste notebook requer um experimento com URI S3, pois valida os arquivos com `load_bundle`; não reutilize o experimento proxy da Planilha Turmas nesse fluxo.
 - O modelo inclui estimador ajustado e lógica de previsão serializada. A inferência nunca chama `fit()`.
 - `bundle.json` relaciona SHA256/tamanho de todos os arquivos, run, código, dataset e configuração.
 - Antes de registrar uma versão, o treinamento baixa os arquivos, valida hashes e compara a previsão do modelo restaurado.

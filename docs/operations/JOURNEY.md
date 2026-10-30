@@ -1,8 +1,7 @@
 # Jornada Planilha Turmas — Docker Compose
 
-Decisão de 30/10/2026: esta jornada executa exclusivamente no Docker Desktop com
-Compose. Não iniciar Rancher. Os charts legados não fazem parte deste aceite.
-Leia `history/state.md` para o estado da execução mais recente.
+Esta jornada executa no Docker Compose e demonstra leitura SQL, treinamento,
+registro de modelo, inferência e persistência da proposta com rastreabilidade.
 
 ## Executar
 
@@ -58,7 +57,7 @@ DNS da rede Compose; `127.0.0.1` serve somente ao navegador no host.
 | Dados físicos | Volumes Compose `postgres`, `rustfs`, `rabbitmq`; workspace e reports em bind mounts preservados |
 | Eventos | `data/compose-logs/*.jsonl`, sanitizados, consultáveis no dashboard por `correlation_id` |
 
-Não há Secret/ConfigMap Kubernetes neste runtime. Credenciais são interpoladas do
+Credenciais são interpoladas do
 `.env` para os containers; este arquivo não é versionado. Não publique a saída de
 `docker compose config` nem `docker inspect` com configurações completas.
 

@@ -1,6 +1,6 @@
 # Linux
 
-Docker Engine e plugin Compose. Sem Rancher/kubectl/Helm no desenvolvimento.
+Docker Engine, plugin Compose, Git e Python 3.11+ para os utilitários de validação.
 Prepare .env com valores aleatórios para cada chave de .env.example; preserve
 as credenciais de volumes existentes. Crie workspace/notebooks, data/compose-logs
  e artifacts/reports com permissão para os usuários das imagens.
@@ -14,6 +14,7 @@ docker compose run --rm tools migrate
 docker compose run --rm tools buckets
 docker compose run --rm tools seed
 docker compose up -d --wait --wait-timeout 300
+docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_journey
 make test
 ```
 

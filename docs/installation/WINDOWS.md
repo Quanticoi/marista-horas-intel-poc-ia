@@ -1,7 +1,6 @@
 # Windows
 
-Docker Desktop com engine Linux/WSL2 e Compose. Não executar Rancher simultaneamente.
-Desativar integração Docker com rancher-desktop e rancher-desktop-data.
+Docker Desktop com engine Linux/WSL2, Docker Compose, Git e Python 3.11+ para os utilitários de validação.
 
 Na raiz do PowerShell:
 

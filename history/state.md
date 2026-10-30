@@ -45,6 +45,16 @@ FonteREAL, regrasMER, homologação, produção e aprovação/publicação opera
 permanecem fora do aceite DEMO. Nenhum modelo promovido por esta jornada.
 Publicado em https://github.com/Quanticoi/marista-horas-intel-poc-ia. Branch padrão development; código no commit 3727d394303b48bee7470d6870a09eb9cd78eb54. staging e main reservadas na base vazia 779f827c3fd18e79e05e9e9cd4c12d8aeaa8a9f3, sem promoção. CI remoto deve ser consultado separadamente dos testes locais.
 
+## Revisão da documentação — 30/10/2026
+
+README reescrito como entrada técnica: finalidade, arquitetura Mermaid, onze
+componentes, instalação Windows, atualização, Jupyter editável, etapas, dados/modelo,
+persistência, configuração, APIs, operação, validação e diagnóstico. Guias de
+arquitetura/dados/operação alinhados a SQL direto e MLflow proxy; fluxo complementar
+por série identificado separadamente. Documentação pública deve explicar o produto
+e sua operação; decisões históricas como exclusão de um runtime ficam no histórico,
+não como slogans na apresentação. Validação estática/links e git diff --check PASS.
+Alteração documental; nenhum serviço reiniciado nem teste funcional reexecutado.
 ## Histórico anterior (não substitui os resultados atuais)
 
 # Estado atual ? C3 28/10/2026
