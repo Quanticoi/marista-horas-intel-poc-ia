@@ -55,51 +55,14 @@ def main():
     assert (ROOT/'sql/ddl/002_immutability.sql').read_text(encoding='utf-8').strip() in contract
     print('PASS original DDL preserved (16 tables); additive triggers reconciled with spec')
     notebooks=list((ROOT/'notebooks').glob('*.ipynb'))
-    assert len(notebooks)==11
+    assert [path.name for path in notebooks] == ['01_jornada_completa_planilha_turmas.ipynb']
     for path in notebooks:
         notebook=json.loads(path.read_text(encoding='utf-8'))
         for cell in notebook['cells']:
             if cell['cell_type']=='code':
                 ast.parse(''.join(cell['source']),filename=str(path))
                 assert cell['outputs']==[]
-    print('PASS 11 notebooks JSON/code syntax; no fabricated execution outputs')
-    namespaces={'training','mlops','ai-service','data','operations'}
-    resources=[]
-    charts=list((ROOT/'deployment/helm').glob('*/values.yaml'))
-    assert len(charts)==5
-    for path in charts:
-        values=json.loads(path.read_text())
-        assert values['storageClass']=='local-path'
-        for entry in values['resources']:
-            resource=entry['resource']
-            resources.append(resource)
-            assert resource['metadata']['namespace'] in namespaces
-            assert 'hostPath' not in json.dumps(resource)
-            if resource['kind']=='PersistentVolumeClaim':
-                assert resource['spec']['accessModes']==['ReadWriteOnce']
-                assert resource['metadata']['annotations']['helm.sh/resource-policy']=='keep'
-            if resource['kind'] in ('Deployment','StatefulSet'):
-                for container in resource['spec']['template']['spec']['containers']:
-                    assert container['resources']['requests'] and container['resources']['limits']
-                    assert ':latest' not in container['image']
-            if resource['kind']=='CronJob':
-                assert resource['spec']['suspend'] is True
-    dashboard=next(r for r in resources if r['kind']=='Deployment' and r['metadata']['name']=='dashboard')
-    assert len(dashboard['spec']['template']['spec']['containers'])==2
-    assert dashboard['spec']['strategy']['type']=='Recreate'
-    deployed={(r['metadata']['namespace'],r['metadata']['name']) for r in resources if r['kind']=='Deployment'}
-    assert {('mlops','mlflow'),('mlops','monitoramento'),('ai-service','inference'),('ai-service','api'),('ai-service','worker')} <= deployed
-    inference=next(r for r in resources if r['kind']=='Deployment' and r['metadata']['name']=='inference')
-    assert inference['spec']['template']['spec']['containers'][0]['envFrom'][1]['secretRef']['name']=='poc-inference'
-    roles=json.loads((ROOT/'deployment/kubernetes/rbac/collector.json').read_text())['items']
-    assert all(r['kind'] not in ('ClusterRole','ClusterRoleBinding') for r in roles)
-    for role in roles:
-        for rule in role.get('rules',[]):
-            assert set(rule['verbs'])<={'get','list','watch'}
-            assert not set(rule['resources'])&{'secrets','pods/exec','*'}
-    print(f'PASS Helm input JSON ({len(charts)} charts/{len(resources)} resources), RWO/RBAC/namespace guards; Helm rendering not executed')
-    for path in (ROOT/'deployment/kubernetes').rglob('*.json'):
-        json.loads(path.read_text())
+    print('PASS principal notebook JSON/code syntax; no fabricated execution outputs')
     missing=[]
     for path in [ROOT/'README.md',*(ROOT/'docs').rglob('*.md')]:
         for link in re.findall(r'\]\(([^)]+)\)',path.read_text(encoding='utf-8')):

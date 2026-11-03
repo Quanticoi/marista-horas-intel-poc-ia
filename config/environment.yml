@@ -4,4 +4,4 @@ dependencies:
   - python=3.12.9
   - pip=25.0
 # Application package pins the scientific/Jupyter dependencies in pyproject.toml.
-# Build and notebook 00 must pass before these versions are considered validated.
+# Build and the principal journey notebook must pass before these versions are considered validated.

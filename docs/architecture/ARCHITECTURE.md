@@ -63,7 +63,7 @@ relatórios e eventos são bind mounts em diretórios do projeto.
 
 ## Entrada de dados e publicação por modelo
 
-O fluxo complementar do notebook 09 usa o SDK `src.workbench.sdk` para enviar
+O fluxo complementar usa o SDK `src.workbench.sdk` para enviar
 bases agregadas à API `ingestion`, acompanhar treinamento e registrar candidatos
 por série acadêmica. Nesse fluxo, os módulos de treino usam HTTP/S3; isso é
 independente das conexões SQL disponíveis para o notebook principal.

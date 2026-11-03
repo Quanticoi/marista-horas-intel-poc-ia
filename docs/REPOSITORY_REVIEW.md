@@ -1,46 +1,36 @@
-# Revisão do repositório — 26/10/2026
+# Revisão da estrutura — 03/11/2026
 
-Estratégia: Compose local; mesmos módulos/imagens em Kubernetes futuro.
+A organização acompanha a jornada SQL → treinamento → MLflow → inferência →
+Planilha Turmas → API, com os serviços Docker Compose e seus fluxos auxiliares.
 
-## Removido ou isolado
+## Removido
 
-- Dez scripts de instalação/operação específicos do Rancher local removidos.
-- Cinco Dockerfiles especializados sem uso removidos; ficam aplicação e Jupyter.
-- Quatro YAMLs de configuração sem consumidores removidos; ficam training, logging
-  e environment, efetivamente utilizados. Não eram configurações ativas.
-- Guia de deploy por namespace removido da documentação operacional.
-- Export/migração/cleanup removidos após conclusão; validação diária não
-  depende de restored.ok, hashes, backup original ou disponibilidade Kubernetes.
-- Removidos também helpers de restore inicial, testes desses helpers, relatórios
-  antigos redundantes, logs de port-forward e placeholders sem conteúdo.
-- DNS Kubernetes fixo removido de defaults, dashboard e E2E; Compose não precisa
-  simular aliases de namespaces.
-- Gerador Helm não reescreve mais os oito notebooks antigos.
-- README, instalação, comandos e operação atualizados para Compose.
+- Pastas locais vazias data/raw, bronze, silver, gold, samples, snapshots e public:
+  o runtime não as usa; histórico e snapshots ficam em PostgreSQL/RustFS.
+- Charts Helm, manifests Kubernetes, valores por ambiente e gerador desses arquivos.
+- Coletor Kubernetes e sua configuração/dependência; dashboard lê diretamente os
+  eventos JSONL do ambiente Compose.
+- Dockerfiles/directórios especializados vazios e diretórios SQL sem consumidores.
+- Gerador e saídas do laboratório público macroeconômico, fora da jornada acadêmica.
+- Ambiente virtual antigo, cópias temporárias de validação e scripts de inspeção
+  descartáveis, sem referência no runtime atual.
+- Dez notebooks antigos distribuídos. No workspace, suas cópias e um notebook
+  executado foram arquivados fora do Jupyter antes da remoção.
 
 ## Preservado
 
-Código de negócio, SQL/imutabilidade, testes, notebooks, workspace, .env, backups,
-artefatos e histórico. Charts/manifestos e collector são referência futura, não
-instalação de produção validada. ADRs e dev/spec.md preservam decisões anteriores;
-as instruções de runtime local foram substituídas pela ADR 007.
+- Notebook principal, módulos Python utilizados, consultas SQL e migrations.
+- Serviços Compose, imagens da aplicação/Jupyter, testes e scripts operacionais.
+- PostgreSQL, RustFS e RabbitMQ com seus volumes; nenhuma operação nos volumes.
+- .env, backups originais e arquivo local de recuperação dos notebooks removidos.
+- data/compose-logs, relatórios da jornada/C3 e dados de rastreabilidade.
+- Edições do notebook principal, arquivos pessoais Untitled e checkpoints.
+- Histórico Git, decisões arquiteturais e especificações de referência usadas
+  para conferir os contratos SQL.
 
-## Próximos passos
+O inventário de remoção, com caminhos e contagens, está em
+[cleanup-2026-11-03.json](../artifacts/reports/cleanup-2026-11-03.json).
 
-1. Aplicar o fluxo C3: compose.ps1 build, migrate, start e validate.
-   A execução dos containers novos ainda deve confirmar rede e provisionamento Docker.
-2. Usar o notebook 09 e o serviço ingestion para a base sintética; templates foram atualizados,
-   preservando cópias anteriores do workspace. Definir dataset institucional e critérios de qualidade.
-3. Revisar candidatos, aprovar explicitamente as versões justificadas e executar
-   publicar as APIs dedicadas e executar o E2E completo. Não há promoção automática.
-4. Validar persistência e recuperação externa de bancos, RustFS, workspace e .env.
-5. Publicar development no repo solicitado; ativar CI; staging após validação;
-   main somente após homologação. Publicação não foi feita nesta sessão.
-6. Antes de Kubernetes: registry, imagens imutáveis, secrets, storageClass,
-   TLS/identidade, observabilidade, backup e pipeline no cluster alvo.
-
-Limitações conhecidas: dashboard lê logs históricos; atuais via Compose. Dados
-acadêmicos sintéticos e laboratório FRED/BLS não validam desempenho institucional.
-Identificadores persistidos como pucpr-poc, pucpr-synthetic e nomes de modelos
-foram mantidos para não quebrar URIs, artefatos e rastreabilidade. Antes de staging,
-também definir tags imutáveis de imagem e CODE_VERSION vinculado ao commit Git.
+A inicialização do Jupyter passa a distribuir somente a Jornada Completa e abrir
+sua cópia editável. O volume templates foi removido da configuração; a recriação
+do container aplica essa mudança, preservando o workspace.

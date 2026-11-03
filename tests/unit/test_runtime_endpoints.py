@@ -27,9 +27,6 @@ def test_dashboard_uses_configured_dependencies(monkeypatch):
                     values['INFERENCE_URI']+'/ready',values['MONITOR_URI']+'/ready']
 
 
-def test_compose_dashboard_does_not_contact_kubernetes(monkeypatch):
-    monkeypatch.setenv('RUNTIME','compose')
-    def forbidden():
-        raise AssertionError('Compose must not query Kubernetes')
-    monkeypatch.setattr(main,'kube',forbidden)
+def test_dashboard_runtime_defaults_to_compose(monkeypatch):
+    monkeypatch.delenv('RUNTIME', raising=False)
     assert main.resources()[0]['kind'] == 'Compose'

@@ -24,9 +24,7 @@ Instalação nova continua usando `compose.ps1 init`.
 
 ## Base de teste e recebimento
 
-Abra `http://127.0.0.1:8888/lab`, token `JUPYTER_TOKEN`, e o notebook
-`notebooks/09_c3_training.ipynb` dentro do workspace. Ele também está versionado
-em `notebooks/09_c3_training.ipynb` na raiz do projeto.
+O fluxo complementar por série é acessível pelos módulos de `src.workbench.sdk`, conforme o exemplo abaixo. O notebook distribuído atualmente é a Jornada Completa — Planilha Turmas; os notebooks antigos foram retirados da interface.
 
 Base reproduzível: 350 observações, 30 séries acadêmicas semestrais de 2020 a 2025,
 com lacuna temporal e um curso com pouco histórico. Valores exclusivamente sintéticos.

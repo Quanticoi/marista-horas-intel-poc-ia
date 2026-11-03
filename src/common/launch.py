@@ -18,15 +18,17 @@ def main():
         upgrade()
         os.execvp("mlflow",["mlflow","server","--host","0.0.0.0","--port","5000",
                   "--serve-artifacts","--artifacts-destination",f"s3://{os.getenv('S3_BUCKET', 'pucpr-poc')}/mlflow",
-                  "--allowed-hosts","mlflow:5000,mlflow.mlops.svc.cluster.local:5000,127.0.0.1:*,localhost:*"])
+                  "--allowed-hosts","mlflow:5000,127.0.0.1:*,localhost:*"])
     elif sys.argv[1] == "jupyter":
         workspace=Path("/workspace/notebooks")
         workspace.mkdir(parents=True,exist_ok=True)
-        for path in Path("/app/notebooks").glob("*.ipynb"):
-            if not (workspace/path.name).exists():
-                shutil.copy2(path,workspace/path.name)
+        path = Path("/app/notebooks/01_jornada_completa_planilha_turmas.ipynb")
+        if not (workspace/path.name).exists():
+            shutil.copy2(path,workspace/path.name)
         os.environ["JUPYTER_TOKEN"]=required("JUPYTER_TOKEN")
-        os.execvp("jupyter",["jupyter","lab","--ip=0.0.0.0","--port=8888","--no-browser","--ServerApp.root_dir=/workspace"])
+        os.execvp("jupyter",["jupyter","lab","--ip=0.0.0.0","--port=8888","--no-browser",
+            "--ServerApp.root_dir=/workspace",
+            "--ServerApp.default_url=/lab/tree/notebooks/01_jornada_completa_planilha_turmas.ipynb"])
     else:
         raise ValueError("Unknown service")
 

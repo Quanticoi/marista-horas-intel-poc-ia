@@ -1,4 +1,0 @@
-retention_days: 7
-max_bytes: 1073741824
-rotate_bytes: 10485760
-poll_seconds: 5

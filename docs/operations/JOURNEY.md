@@ -26,8 +26,7 @@ Em Linux: `DOCKER_CONTEXT=default sh deployment/scripts/journey.sh rebuild`
 com `.env` previamente configurado; `journey` e `acceptance` também disponíveis.
 
 Abra [Jupyter](http://127.0.0.1:8888/lab/tree/notebooks/01_jornada_completa_planilha_turmas.ipynb)
-e execute **Restart Kernel and Run All**. `templates/` mostra o notebook versionado;
-para editar e salvar uma cópia, use `notebooks/` no workspace. Cópias de trabalho
+e execute **Restart Kernel and Run All**. A pasta `notebooks/` no Jupyter contém a cópia editável da Jornada Completa. Cópias de trabalho
 existentes não são sobrescritas durante rebuild. A execução automatizada usa
 `/app/notebooks/01_jornada_completa_planilha_turmas.ipynb`, salva o notebook executado
 em `artifacts/reports` e o resumo também no MLflow.
@@ -111,7 +110,7 @@ resultados retorna `[]`. A consulta não executa treinamento.
 | 11–12: consulta e evidências | API + dashboard HTML + correlação ponta a ponta |
 
 Não foram fornecidos IDs oficiais das US; não se atribui cobertura funcional
-inventada. O notebook 09 e o fluxo de aprovação/publicação operacional continuam
+inventada. Os módulos do fluxo de aprovação/publicação operacional continuam
 preservados, separados da geração DRAFT desta demonstração.
 
 ## Acessos e diagnóstico

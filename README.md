@@ -176,10 +176,9 @@ A implementação fica em módulos Python reutilizáveis de `src/`.
 |---|---|
 | `notebooks/` no repositório | Fontes versionadas distribuídas com o projeto |
 | `notebooks/` dentro do Jupyter | Cópias editáveis, salvas no host em `workspace/notebooks/` |
-| `templates/` dentro do Jupyter | Fontes versionadas montadas como referência somente leitura |
 
-A inicialização copia notebooks ausentes para o workspace e preserva arquivos
-já existentes. Para adotar uma versão atualizada de um template, salve suas
+A inicialização disponibiliza somente a Jornada Completa no workspace e preserva arquivos
+já existentes. Para adotar uma versão atualizada do notebook versionado, salve suas
 alterações e copie a versão desejada para o workspace. Para versionar alterações
 feitas no Jupyter, revise e copie o arquivo de volta para `notebooks/` do repositório.
 
@@ -341,7 +340,7 @@ uma instalação descartável no runner. Consulte o resultado atual em
 | Docker indisponível | Confirme Docker Desktop ativo e execute `docker --context desktop-linux info` |
 | Serviço `unhealthy` | Use `status` e `logs -Service NOME`; para MLflow confira também PostgreSQL e RustFS |
 | Variável obrigatória ausente | Confira a chave indicada no `.env`; preserve credenciais associadas aos volumes existentes |
-| Notebook somente leitura | Abra `notebooks/` no Jupyter; `templates/` é referência somente leitura |
+| Notebook somente leitura | Feche abas antigas em `templates/` e abra a cópia editável em `notebooks/` |
 | MLflow indisponível no notebook | Corrija o serviço indicado na tabela de dependências; o treino fica bloqueado |
 | Aviso de Git SHA indisponível | Falta o executável Git no container; `code_version` registra o hash do código independentemente dele |
 
@@ -351,7 +350,7 @@ API. Use esse valor no filtro do dashboard para acompanhar a execução.
 ## Organização do repositório
 
 ```text
-notebooks/             Jornada principal e notebooks de exploração/treinamento
+notebooks/             Jornada Completa — Planilha Turmas
 src/
   workbench/           Configuração, etapas, SDK e executor de notebook
   data/                Seed sintético, extração SQL e preparação
@@ -367,6 +366,7 @@ src/
 sql/                   DDL e consultas versionadas
 deployment/            Dockerfiles, scripts e configurações de implantação
 config/                Dependências, parâmetros de treinamento e exemplos
+data/compose-logs/     Eventos locais usados pelo dashboard
 tests/                 Testes unitários, integração e ponta a ponta
 docs/                  Arquitetura, instalação, operação e decisões
 artifacts/reports/     Evidências de execução
@@ -376,7 +376,7 @@ workspace/             Trabalho local do Jupyter, ignorado pelo Git
 
 ## Fluxos complementares e documentação
 
-O [notebook 09](notebooks/09_c3_training.ipynb) demonstra recebimento de datasets
+O SDK em `src/workbench/sdk.py` oferece recebimento de datasets
 pela API, treinamento por série acadêmica e preparação de candidatos para
 aprovação/publicação. Registro, aprovação e publicação são operações distintas;
 o [guia C3](docs/operations/C3_TRAINING.md) descreve seus contratos e comandos.

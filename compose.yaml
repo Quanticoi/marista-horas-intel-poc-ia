@@ -622,7 +622,6 @@
       "mem_limit": "3g",
       "volumes": [
         "./workspace:/workspace",
-        "./notebooks:/workspace/templates:ro",
         "./artifacts/reports:/reports",
         "./data/compose-logs:/logs"
       ],

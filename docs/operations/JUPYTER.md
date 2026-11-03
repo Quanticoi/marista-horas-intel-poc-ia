@@ -1,19 +1,32 @@
-> Jornada atual (30/10/2026): veja [JOURNEY.md](JOURNEY.md). Notebook principal 01_jornada_completa_planilha_turmas; Docker Compose; eventos atuais no dashboard. Resultados reais e pendencias em history/state.md; validacoes historicas abaixo nao substituem o aceite atual.
+# Jupyter: edição e execução
 
-# Jupyter local
+Abra a [Jornada Completa — Planilha Turmas](http://127.0.0.1:8888/lab/tree/notebooks/01_jornada_completa_planilha_turmas.ipynb).
+Use o token JUPYTER_TOKEN do .env local para entrar.
 
-http://127.0.0.1:8888/lab; token JUPYTER_TOKEN do .env.
-workspace/ no Windows é montado em /workspace. Edite workspace/notebooks no editor
-ou navegador. notebooks/ contém templates; launcher copia somente os ausentes.
+Apenas esse notebook é distribuído pelo projeto. A cópia editável está em
+`workspace/notebooks/` no Windows, montada como `/workspace/notebooks/` no container.
+As fontes versionadas estão em `notebooks/` na raiz do repositório. A inicialização
+preserva edições existentes e copia a Jornada Completa apenas quando ela está ausente.
 
-Para versionar trabalho novo, revise e copie explicitamente para notebooks/.
-Use **09_c3_training.ipynb** para receber a base sintética, treinar via SDK, persistir
-metadados PostgreSQL e binários RustFS, e consultar a API após aprovação/publicação.
-[Passo a passo C3](C3_TRAINING.md).
+## Editar e voltar à visualização
 
-O Jupyter recebe MLFLOW_TRACKING_URI, INGESTION_URI, INGESTION_TOKEN e chaves S3.
-Não recebe senhas PostgreSQL. Templates 00–07 foram adaptados para HTTP.
-Cópias antigas do workspace foram preservadas e podem conter SQL legado; revise-as
-antes de executar. O notebook 09 foi adicionado sem sobrescrever essas cópias.
-O laboratório 08 permanece independente; seus modelos públicos não entram no catálogo
-acadêmico nem no contrato de publicação sem uma adaptação explícita.
+- Dê duplo clique numa célula de texto para editar seu Markdown.
+- Pressione **Shift + Enter** para renderizar o texto e selecionar a próxima célula.
+- Use **Ctrl + Enter** para renderizar mantendo a seleção na mesma célula.
+- Pressione **Ctrl + S** para salvar as alterações no workspace.
+- Em uma célula de código, Shift + Enter executa Python. Para visualizar texto,
+  o tipo da célula deve ser Markdown, selecionável na barra de ferramentas.
+
+Para executar toda a jornada, use **Restart Kernel and Run All**. Para versionar
+edições, revise e copie o arquivo do workspace para `notebooks/` no repositório.
+O executor automatizado usa a fonte empacotada na imagem, atualizada por rebuild.
+
+Abas antigas apontando para `templates/` devem ser fechadas: esse caminho não faz
+parte da configuração atual. Abra o link editável acima.
+
+Os notebooks anteriores foram retirados em 03/11/2026. Cópias locais foram guardadas
+em `.runtime/notebooks-archive-20261103-101931/`, fora da área servida pelo Jupyter;
+as versões distribuídas também permanecem no histórico Git. Evidências de execuções
+anteriores continuam em `artifacts/reports/`.
+
+[Etapas da jornada](JOURNEY.md).

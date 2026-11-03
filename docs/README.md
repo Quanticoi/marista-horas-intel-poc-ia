@@ -26,7 +26,5 @@ O ambiente local é Docker Compose. Kubernetes não é requisito para desenvolve
 ## Referências preservadas
 
 - [Decisões arquiteturais](adr/README.md): histórico identificado; ADRs 007/008 definem o fluxo atual.
-- [Kubernetes futuro](../deployment/helm/README.md): base para evolução, ainda sem homologação.
 
-Guias e scripts de operação antiga do Rancher foram removidos. Notebooks e dados
-não fazem parte da limpeza documental e permanecem preservados.
+A estrutura atual distribui somente a Jornada Completa. Consulte a revisão do repositório para a lista de itens removidos e os dados preservados.

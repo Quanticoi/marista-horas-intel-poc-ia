@@ -98,7 +98,7 @@ journey = dict(
 for name in ('tools', 'jupyter'):
     services[name]['environment'].update(journey)
 services['jupyter']['environment'].update(secret('INFERENCE_TOKEN'))
-services['jupyter']['volumes'] += ['./notebooks:/workspace/templates:ro', './artifacts/reports:/reports']
+services['jupyter']['volumes'] += ['./artifacts/reports:/reports']
 for name in ('jupyter', 'api', 'inference'):
     services[name]['environment']['EVENT_DIRECTORY'] = '/logs'
     services[name].setdefault('volumes', []).append('./data/compose-logs:/logs')

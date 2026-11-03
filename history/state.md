@@ -1,3 +1,25 @@
+# Atualização — 03/11/2026: limpeza implementada e verificada
+
+Usuário solicitou retirar notebooks antigos e itens fora do escopo da jornada.
+Somente Jornada Completa permanece em notebooks/ e workspace/notebooks/; 21 cópias
+antigas arquivadas em .runtime/notebooks-archive-20261103-101931. Edições da Jornada
+e notebooks pessoais Untitled preservados. Atalhos Markdown:Shift+Enter renderiza;
+Ctrl+Enter renderiza sem mudar célula;Ctrl+S salva.
+
+Removidos 36 alvos sem uso (inventário artifacts/reports/cleanup-2026-11-03.json):
+pastas vazias de data; Helm/Kubernetes/gerador; collector/config logging;
+laboratório público; venv/helpers/cópias de validação antigas. Bancos, volumes, .env,
+backups e evidências acadêmicas preservados. Dashboard desacoplado Kubernetes;
+configuração Jupyter passa a abrir apenas notebook editável,sem mounttemplates.
+Validação estática de 78 fontes Python, SQL, notebook, links e Compose: PASS.
+Build das duas imagens: PASS. Suíte: 37 testes PASS; 19 verificações HTTP PASS.
+Imagem Jupyter nova: somente notebook principal e SDK Kubernetes ausente, PASS.
+Container atual: /app/notebooks contém somente notebook principal, conferido.
+Nenhum serviço reiniciado durante a edição do usuário; imagens novas ainda não
+aplicadas aos serviços em execução. Não repetido treinamento nesta limpeza.
+Aguardando usuário confirmar que salvou edições antes de recriar Jupyter.
+
+## Estado anterior
 # Estado atual — 30/10/2026
 
 ## Decisão vigente
@@ -78,3 +100,5 @@ ATUALIZAÇÃO ACESSOS26/10:17checksHTTP reais PASS (MLflow/API/dashboard/Jupyter
 Limpeza complementar: ferramentas migração/helpers+27arquivosobsoletos/12logsforward removidos; sem mounts .runtime/migration noCompose. Backups originais, .env, workspace/notebooks, relatórios atuais e Helm úteis preservados. Algumas pastasvazias permanecem: exclusão bloqueada revisãoautomática/sandboxaprovaçãoindisponível. check_access.py integrado validate/CI, requer Pythonstdlibhost. AST54/links/composeconfig/PSparserPASS; rebuild da revisão ainda depende terminalusuário.
 
 Atualização 30/10 — notebook editável: usar /lab/tree/notebooks/01_jornada_completa_planilha_turmas.ipynb (Contents API confirmou writable=true). /templates é referência somente leitura. Cópia workspace preservada, igual ao template na verificação. Aviso Git não impede treino; falta executável no container para SHA automático, code_version registra hash do código.
+
+Atualização 03/11 — Jupyter: API confirmou sessão ativa da Jornada Completa em templates/ (somente leitura); cópia em notebooks/ editável e sem bloqueios nas células. Abrir /lab/tree/notebooks/01_jornada_completa_planilha_turmas.ipynb. Demais notebooks preservados; nenhum arquivo excluído.

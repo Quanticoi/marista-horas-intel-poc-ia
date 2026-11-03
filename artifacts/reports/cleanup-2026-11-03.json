@@ -1,0 +1,218 @@
+﻿[
+    {
+        "path":  "data/raw",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "data/bronze",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "data/silver",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "data/gold",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "data/samples",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "data/snapshots",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "data/public",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "artifacts/exports",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  0
+    },
+    {
+        "path":  "deployment/helm",
+        "status":  "REMOVED",
+        "files":  16,
+        "bytes":  49575
+    },
+    {
+        "path":  "deployment/kubernetes",
+        "status":  "REMOVED",
+        "files":  5,
+        "bytes":  16339
+    },
+    {
+        "path":  "deployment/values",
+        "status":  "REMOVED",
+        "files":  6,
+        "bytes":  732
+    },
+    {
+        "path":  "deployment/migration",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "deployment/docker/dashboard",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "deployment/docker/inference",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "deployment/docker/mlflow",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "deployment/docker/monitor",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "deployment/docker/worker",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "sql/bootstrap",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "sql/seed",
+        "status":  "REMOVED",
+        "files":  0,
+        "bytes":  null
+    },
+    {
+        "path":  "dev/generate_assets.py",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  11215
+    },
+    {
+        "path":  "dev/generate_public_demo.py",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  12154
+    },
+    {
+        "path":  "src/monitoring/collector.py",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  4259
+    },
+    {
+        "path":  "config/logging.yaml",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  79
+    },
+    {
+        "path":  ".runtime/c3-venv",
+        "status":  "REMOVED",
+        "files":  1904,
+        "bytes":  24879371
+    },
+    {
+        "path":  "workspace/.c3-validation",
+        "status":  "REMOVED",
+        "files":  128,
+        "bytes":  375516
+    },
+    {
+        "path":  "workspace/public-demo",
+        "status":  "REMOVED",
+        "files":  14,
+        "bytes":  374340
+    },
+    {
+        "path":  "artifacts/reports/public-demo",
+        "status":  "REMOVED",
+        "files":  15,
+        "bytes":  374422
+    },
+    {
+        "path":  "artifacts/reports/08_public_timeseries_lab.executed.ipynb",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  362592
+    },
+    {
+        "path":  ".runtime/cleanup_interrupted.py",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  1032
+    },
+    {
+        "path":  ".runtime/images.json",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  151
+    },
+    {
+        "path":  ".runtime/inspect_c3.py",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  387
+    },
+    {
+        "path":  ".runtime/inspect_migration.py",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  102
+    },
+    {
+        "path":  ".runtime/jupyter_check.py",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  2236
+    },
+    {
+        "path":  ".runtime/model-template-check.json",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  1184
+    },
+    {
+        "path":  ".runtime/run_c3_system.py",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  422
+    },
+    {
+        "path":  ".runtime/run_final_validation.py",
+        "status":  "REMOVED",
+        "files":  1,
+        "bytes":  544
+    }
+]

@@ -7,8 +7,9 @@ from fastapi import FastAPI, Depends, Header, HTTPException, Query
 from fastapi.responses import FileResponse, StreamingResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from src.common.settings import required
-from src.monitoring.collector import DIRECTORY, NAMESPACES, kube
 from src.persistence.db import rows
+
+DIRECTORY = Path(os.getenv("LOG_DIRECTORY", "/logs"))
 
 app = FastAPI(title="Operação POC")
 STATIC = Path(__file__).parent/"static"
@@ -82,19 +83,7 @@ def stream_logs():
 
 @app.get("/api/runtime/resources",dependencies=[Depends(auth)])
 def resources():
-    if os.getenv("RUNTIME") == "compose":
-        return [dict(kind="Compose", name="Local", status="Consulte docker compose ps; logs via compose logs")]
-    api=kube()
-    result=[]
-    for namespace in NAMESPACES:
-        for pod in api.list_namespaced_pod(namespace,_request_timeout=5).items:
-            ready=all(c.ready for c in pod.status.container_statuses or []) and bool(pod.status.container_statuses)
-            result.append(dict(kind="Pod",namespace=namespace,name=pod.metadata.name,status=pod.status.phase,ready=ready))
-        for pvc in api.list_namespaced_persistent_volume_claim(namespace,_request_timeout=5).items:
-            result.append(dict(kind="PVC",namespace=namespace,name=pvc.metadata.name,status=pvc.status.phase))
-        for event in api.list_namespaced_event(namespace,limit=30,_request_timeout=5).items:
-            result.append(dict(kind="Event",namespace=namespace,name=event.metadata.name,status=event.reason))
-    return result
+    return [dict(kind="Compose", name="Local", status="Consulte docker compose ps; logs via compose logs")]
 
 
 @app.get("/api/jobs",dependencies=[Depends(auth)])
