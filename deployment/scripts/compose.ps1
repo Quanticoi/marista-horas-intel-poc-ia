@@ -45,6 +45,7 @@ function Rebuild {
 if($Action -eq 'init' -and !(Test-Path '.env')) {
     $keys=Get-Content '.env.example' | Where-Object {$_ -match '^[A-Z_]+='} | ForEach-Object {($_ -split '=',2)[0]}
     $lines=foreach($key in $keys) {
+        if($key -eq 'MLFLOW_EXPERIMENT_NAME') { 'MLFLOW_EXPERIMENT_NAME=planilha-turmas-proxy-v1'; continue }
         $bytes=New-Object byte[] 32
         $rng=[Security.Cryptography.RandomNumberGenerator]::Create()
         try {$rng.GetBytes($bytes)} finally {$rng.Dispose()}

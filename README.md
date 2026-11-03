@@ -329,6 +329,11 @@ persistiu 90 linhas de proposta, reconciliadas pela API. Passaram 37 testes e
 19 checks HTTP; a mesma run, versão e proposta foram recuperadas após reinício
 do MLflow e rebuild. As métricas desse ensaio avaliam somente o dataset sintético.
 
+No [aceite de Tracing de 03/11/2026](artifacts/reports/tracing-acceptance-2026-11-03.md),
+a jornada registrou 12 traces com 21 spans, incluindo API/inferência. Verificações
+adicionais compararam os arquivos no RustFS por SHA256 e todas as linhas da proposta
+em nova conexão SQL. Suíte geral: 44 testes; acessos: 19 checks HTTP aprovados.
+
 O [workflow do GitHub Actions](.github/workflows/compose.yml) constrói e valida
 uma instalação descartável no runner. Consulte o resultado atual em
 [Actions](https://github.com/Quanticoi/marista-horas-intel-poc-ia/actions).
@@ -386,6 +391,7 @@ o [guia C3](docs/operations/C3_TRAINING.md) descreve seus contratos e comandos.
 | [Arquitetura](docs/architecture/ARCHITECTURE.md) | Comunicação entre serviços, responsabilidades e persistência |
 | [Fluxo dos dados](docs/architecture/DATA_FLOW.md) | Dataset, transformação, modelo e semântica dos resultados |
 | [Jornada Planilha Turmas](docs/operations/JOURNEY.md) | Etapas, rastreabilidade e mapeamento C3 |
+| [Experimentos e Tracing](docs/operations/EXPERIMENTS_AND_TRACING.md) | Repetição de células, provas SQL/Storage e organização de centenas de modelos |
 | [Backup e restauração](docs/operations/BACKUP_RESTORE.md) | Backups lógicos e limites de recuperação |
 | [Fluxo de branches](docs/operations/GIT.md) | Development, validação em staging e eventual homologação em main |
 | [Índice da documentação](docs/README.md) | Guias operacionais e referências adicionais |

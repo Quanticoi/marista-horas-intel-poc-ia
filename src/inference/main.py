@@ -11,6 +11,8 @@ from src.inference.routing import route as infer
 
 app = FastAPI(title="Modelos de Inferência — serviço interno", docs_url=None, redoc_url=None)
 app.add_middleware(BodyLimitMiddleware)
+from src.common.tracing import install_http_tracing
+install_http_tracing(app, "inference", "/internal/draft/predict")
 
 
 def auth(authorization: str = Header(default="")):

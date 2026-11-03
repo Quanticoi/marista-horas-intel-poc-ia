@@ -87,6 +87,14 @@ eventos JSONL em `data/compose-logs`. O dashboard lê esses arquivos e permite
 filtrar pelo `correlation_id` comum à execução. Logs completos dos containers
 continuam acessíveis por `docker compose logs`.
 
+MLflow Tracing registra cada tentativa de etapa do notebook no mesmo experimento
+da jornada. Contexto W3C conecta spans do Jupyter aos spans da API/inferência;
+consultas SQL e carga/predição aparecem como operações filhas. A correlação usa
+execution_id e as tags finais ligam trace, run e versão. A captura é limitada a
+metadados técnicos, sem payloads acadêmicos ou credenciais. Spans são persistidos
+pelo próprio MLflow em PostgreSQL, usando seu schema suportado; modelos continuam
+no RustFS. [Operação e convenções](../operations/EXPERIMENTS_AND_TRACING.md).
+
 ## Rede e inicialização
 
 Containers usam DNS interno, como `postgres`, `mlflow`, `rustfs` e `api`.

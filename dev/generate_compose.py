@@ -92,7 +92,7 @@ journey = dict(
     SOURCE_DATABASE_URL='postgresql+psycopg://planning_readonly:${READONLY_PASSWORD:?Configure .env}@postgres:5432/planejamento_db',
     APPLICATION_DATABASE_URL='postgresql+psycopg://planning_app:${APP_PASSWORD:?Configure .env}@postgres:5432/planejamento_db',
     MLFLOW_UI_BASE_URL='http://127.0.0.1:5000',
-    MLFLOW_EXPERIMENT_NAME='planilha-turmas-proxy-v1', MODEL_NAME='planilha-turmas-demo',
+    MLFLOW_EXPERIMENT_NAME='${MLFLOW_EXPERIMENT_NAME:-planilha-turmas-proxy-v1}', MODEL_NAME='planilha-turmas-demo',
     JOURNEY_MODE='DEMO', JOURNEY_TIMEOUT='15', JOURNEY_RETRIES='2',
     MLFLOW_HTTP_REQUEST_TIMEOUT='15', MLFLOW_HTTP_REQUEST_MAX_RETRIES='2')
 for name in ('tools', 'jupyter'):
@@ -100,6 +100,8 @@ for name in ('tools', 'jupyter'):
 services['jupyter']['environment'].update(secret('INFERENCE_TOKEN'))
 services['jupyter']['volumes'] += ['./artifacts/reports:/reports']
 for name in ('jupyter', 'api', 'inference'):
+    services[name]['environment']['MLFLOW_EXPERIMENT_NAME'] = journey['MLFLOW_EXPERIMENT_NAME']
+    services[name]['environment']['MLFLOW_ENABLE_ASYNC_TRACE_LOGGING'] = 'false'
     services[name]['environment']['EVENT_DIRECTORY'] = '/logs'
     services[name].setdefault('volumes', []).append('./data/compose-logs:/logs')
 

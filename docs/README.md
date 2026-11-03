@@ -13,6 +13,7 @@ O ambiente local é Docker Compose. Kubernetes não é requisito para desenvolve
 - [MLflow: passo a passo da interface](operations/MLFLOW_TUTORIAL.md).
 - [RustFS: usuário e senha](operations/RUSTFS.md).
 - [Jupyter: editar arquivos locais](operations/JUPYTER.md).
+- [Experimentos, Tracing, repetição e verificação SQL/Storage](operations/EXPERIMENTS_AND_TRACING.md).
 - [Logs](operations/LOGS.md) e [solução de problemas](troubleshooting/README.md).
 
 ## Instalar e manter

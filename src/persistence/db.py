@@ -1,6 +1,7 @@
 from functools import lru_cache
 from sqlalchemy import create_engine, text
 from src.common.settings import database_url
+from src.common.tracing import operation_span
 
 
 @lru_cache
@@ -10,7 +11,7 @@ def engine(role="app"):
 
 
 def rows(sql, params=None, role="app"):
-    with engine(role).connect() as con:
+    with operation_span("postgres.query", database="planejamento_db", schema="planning"), engine(role).connect() as con:
         return [dict(r) for r in con.execute(text(sql), params or {}).mappings()]
 
 

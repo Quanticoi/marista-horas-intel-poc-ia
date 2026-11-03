@@ -8,6 +8,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field, ConfigDict
 from src.common.logging import event
 from src.data.journey import FEATURES
+from src.common.tracing import operation_span
 
 
 class DraftRequest(BaseModel):
@@ -28,7 +29,8 @@ def load_version(name, version, run_id, execution_id):
         or run.data.tags.get("purpose") != "draft-planilha-turmas"
         or run.data.tags.get("mode") != "DEMO" or run.info.status != "FINISHED"):
         raise ValueError("Model is not a finished DEMO version for this execution")
-    model = mlflow.sklearn.load_model(f"models:/{name}/{version}")
+    with operation_span("model.load", model_name=name, model_version=version, run_id=run_id):
+        model = mlflow.sklearn.load_model(f"models:/{name}/{version}")
     return model, registered
 
 
@@ -46,7 +48,8 @@ def router(auth):
             frame = pd.DataFrame(body.records)
             if set(frame.columns) != set(FEATURES) or frame.isna().any().any():
                 raise ValueError("Invalid input schema")
-            values = fitted.predict(frame[FEATURES]).tolist()
+            with operation_span("model.predict", rows=len(frame), model_version=body.model_version):
+                values = fitted.predict(frame[FEATURES]).tolist()
             elapsed = time.monotonic()-start
             event("inference", "draft version loaded and predicted", correlation_id=str(body.execution_id),
                 run_id=registered.run_id, version=registered.version, rows=len(values), duration_seconds=elapsed)

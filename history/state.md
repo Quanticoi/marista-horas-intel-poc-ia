@@ -1,5 +1,58 @@
 # Atualização — 03/11/2026: limpeza implementada e verificada
 
+## Tracing e provas de persistência — implementação atual
+
+Pedido do usuário: adicionar Traces e esclarecer repetição, experimentos, storage,
+banco de negócio e organização de 500 modelos. Implementados traces por tentativa
+de etapa, contexto W3C Jupyter/API/inferência, spans SQL/carga/predição, captura
+somente de metadados, tags execution_id/run/modelo. Destino remoto configurado antes
+de adotar contexto; primeira validação detectou spans NoOp, corrigido e retestado.
+Etapas 7b e 10b provam hashes RustFS/proxy e todas as linhas via nova conexão SQL.
+Experimento configurável pelo .env, mesmo destino em Jupyter/API/inferência.
+Notebook fonte e cópia editável atualizados; gerador correspondente --check PASS.
+Guia: docs/operations/EXPERIMENTS_AND_TRACING.md. Organização de 500 modelos é
+proposta documentada: não executados 500 treinos nem implementado orquestrador
+de campanhas ou schema de geração com vários modelos.
+
+Rebuild/deploy Docker e notebook completo em kernel novo PASS. Execução
+d6260507-b9f4-4011-a3f6-b3dd511400d5; run 03012b122e6143b2919807cd91973451;
+modelo planilha-turmas-demo v8, experimento 4; 1050 linhas SQL, 90 propostas/API.
+12 traces e 21 spans, incluindo filhos reais de API/inferência. Três arquivos do
+modelo comparados por SHA256 com RustFS; proposta DRAFT conferida linha a linha.
+10 testes da jornada PASS; suíte geral 44 PASS; 19 checks HTTP PASS.
+Falha controlada/repetição testadas sem registrar payload de erro sensível.
+Links conferidos no código da UI instalada: selectedEvaluationId + compareRunsMode.
+Evidências em tracing-acceptance-2026-11-03.md, journey-latest.json e JUnit.
+Volumes/dados anteriores preservados. Limpeza MLflow continua sem exclusões,
+aguardando decisão sobre preservação de histórico. Informações abaixo são históricas.
+
+Teste manual: repetição da etapa register falhava com NameError após del model.
+Corrigidos notebook fonte e célula correspondente no workspace, sem alterar demais
+células/outputs. register agora recupera versão já registrada e verifica run/modelo/
+execution_id; objeto ausente ou run incorreta bloqueiam novo registro. step informa
+NameError.name sem expor mensagem arbitrária. Três regressões PASS e repetição real
+da versão 6 duas vezes PASS, sem criar run/versão. Build das duas imagens PASS;
+arquivos também aplicados ao container Jupyter sem reiniciar kernel do usuário.
+Kernel já aberto mantém funções antigas até reload/restart; pode seguir etapa 8
+com trace da versão 6. Relatório register-repeat-junit.xml.
+
+MLflow: inventário em mlflow-inventory-2026-11-03.json. 9 runs/6 modelos do lab
+macroeconômico, 7 runs diagnósticas, 30 modelos acadêmicos vinculados ao catálogo,
+6 versões Planilha Turmas (1..5 vinculadas a propostas; 6 do teste manual atual).
+Nenhuma exclusão aplicada; aguardando escolha do usuário entre limpeza preservando
+rastreabilidade ou reset total. Traces não instrumentados: apenas Runs e eventos
+JSONL; variável trace é dicionário de IDs, não MLflow Trace. Explicação documentada.
+
+Correção posterior ao teste manual: Git ausente causava WARNING no MLflow.
+Dockerfiles Jupyter/aplicação agora instalam Git; ambas imagens reconstruídas.
+Git 2.39.5 instalado também no Jupyter ativo sem reiniciar sua sessão. GitPython
+e get_git_commit('/app') validados no container ativo e em containers isolados
+das duas imagens: PASS, sem warning. /app não é clone Git; code_version continua
+SHA256 dos fontes. Não usado GIT_PYTHON_REFRESH=quiet. Imagens novas disponíveis
+para próxima recriação; correção já aplicada ao Jupyter atual. Sem novo treino
+para esta alteração de dependência. Usuário pode reiniciar apenas o kernel se
+quiser uma execução limpa, após salvar o notebook.
+
 Usuário solicitou retirar notebooks antigos e itens fora do escopo da jornada.
 Somente Jornada Completa permanece em notebooks/ e workspace/notebooks/; 21 cópias
 antigas arquivadas em .runtime/notebooks-archive-20261103-101931. Edições da Jornada
@@ -15,9 +68,16 @@ Validação estática de 78 fontes Python, SQL, notebook, links e Compose: PASS.
 Build das duas imagens: PASS. Suíte: 37 testes PASS; 19 verificações HTTP PASS.
 Imagem Jupyter nova: somente notebook principal e SDK Kubernetes ausente, PASS.
 Container atual: /app/notebooks contém somente notebook principal, conferido.
-Nenhum serviço reiniciado durante a edição do usuário; imagens novas ainda não
-aplicadas aos serviços em execução. Não repetido treinamento nesta limpeza.
-Aguardando usuário confirmar que salvou edições antes de recriar Jupyter.
+Após autorização do usuário, compose.ps1 rebuild executado em 03/11: imagens
+aplicadas e containers da aplicação/Jupyter recriados; 11 serviços saudáveis.
+Volumes preservados. SHA256 do notebook editável igual antes/depois:
+63F164ECAD07442D61E06B98F8356281541A6699C56BD1DD108CABA36396CDFB.
+API Jupyter confirma writable=true após recriação. Não há restart pendente.
+Jornada executada em kernel novo: 1050 linhas SQL, 90 propostas/API, modelo
+planilha-turmas-demo versão 5; execução 46b6b778-3c52-4e15-ac52-3d3c5d5939a5;
+run 1d62be545bed47c7b3f8847159fd7ff4, experimento 4. Sete testes da jornada e
+19 checks HTTP PASS. Evidências atualizadas em artifacts/reports/journey-latest.json,
+journey-junit.xml, notebook executado e jupyter-after-rebuild-2026-11-03.json.
 
 ## Estado anterior
 # Estado atual — 30/10/2026

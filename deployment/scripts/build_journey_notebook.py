@@ -1,5 +1,7 @@
 """Deterministic notebook source generator (does not run services on host)."""
 import json
+import ast
+import sys
 from pathlib import Path
 
 cells = []
@@ -22,12 +24,16 @@ import mlflow.sklearn
 from IPython.display import display, Markdown
 from src.workbench.journey_config import Settings
 from src.workbench.journey_steps import dependencies, require_dependencies, step
+from src.common.tracing import configure_tracing, trace_headers, trace_evidence
+from src.workbench.verification import verify_model_storage, verify_proposal_sql
 cfg = Settings.load()
 execution_id = str(uuid.uuid4())
 statuses = []
 checks = dependencies(cfg, execution_id)
 display(pd.DataFrame(checks))
 require_dependencies(checks, cfg)
+experiment_id = configure_tracing(cfg)
+display({"experiment":cfg.experiment,"experiment_id":experiment_id,"model_name":cfg.model_name})
 statuses.append(dict(stage="dependencies", status="PASS"))
 display({"execution_id":execution_id, "mode":cfg.mode, "tracking":cfg.tracking})
 ''', "Tabela PASS; se houver FAIL o notebook interrompe com diagnóstico, sem tracking local.")
@@ -65,6 +71,8 @@ with step("tracking", execution_id, statuses):
     display(Markdown(f"[Abrir execução no MLflow]({trace['run_url']})"))
 ''', "experiment_id/run_id e link clicável; CSV de referência e SQL enviados pelo proxy.")
 section("6. Treinamento e avaliação", "Executar fit/predict reais. O modelo persistido é exatamente o avaliado; não há retreino oculto com o conjunto de avaliação.", '''
+if mlflow.active_run() is None or mlflow.active_run().info.run_id != trace["run_id"]:
+    raise RuntimeError("Treinamento exige a run desta jornada ativa. Para novo treino, execute desde a primeira etapa.")
 with step("fit and evaluate", execution_id, statuses):
     started = time.monotonic()
     model.fit(train[FEATURES], train[TARGET])
@@ -76,11 +84,12 @@ with step("fit and evaluate", execution_id, statuses):
 ''', "MAE/RMSE calculados e registrados; métricas DEMO não comprovam qualidade institucional.")
 section("7. Persistência do modelo e Registry", "O SDK envia modelo, transformações, assinatura e exemplo ao MLflow; somente o servidor grava o RustFS. A versão será selecionada explicitamente para teste DRAFT, sem alias champion.", '''
 with step("register", execution_id, statuses):
-    trace = register(cfg, model, train[FEATURES].head(3), trace, execution_id)
+    trace = register(cfg, globals().get("model"), train[FEATURES].head(3), trace, execution_id)
     mlflow.end_run(status="FINISHED")
     display(trace)
-    del model
+    globals().pop("model", None)  # Infer?ncia recarrega a vers?o persistida.
 ''', "Nome, versão, URI e run; objeto treinado removido da memória.")
+section('7b. Conferir o modelo no Object Store', 'Leitura independente no RustFS e pelo proxy MLflow, sem gravar uma segunda c?pia. **Esperado:** bytes e SHA256 id?nticos para modelo, assinatura e depend?ncias; bucket/chave exibidos. Pode repetir esta verifica??o.\n', 'with step("verify Object Store", execution_id, statuses):\n    storage_evidence = verify_model_storage(trace)\n    display(pd.DataFrame(storage_evidence))\n', "PASS; evid?ncia exibida.")
 section("8. Recarregar e inferir no serviço existente", "Baixar a versão registrada e executar predict no conjunto futuro. Chamar também o serviço inference: ele carrega a mesma versão e verifica run/execução/snapshot. Registro não significa promoção operacional.", '''
 from src.inference.journey import load_version
 from src.common.settings import required
@@ -88,7 +97,7 @@ with step("reload and inference", execution_id, statuses):
     restored, registered = load_version(trace["model_name"], trace["model_version"], trace["run_id"], execution_id)
     predictions = restored.predict(future[FEATURES])
     response = httpx.post(cfg.inference + "/internal/draft/predict", timeout=120,
-        headers={"Authorization":"Bearer " + required("INFERENCE_TOKEN"), "X-Correlation-ID":execution_id},
+        headers={"Authorization":"Bearer " + required("INFERENCE_TOKEN"), "X-Correlation-ID":execution_id, **trace_headers()},
         json={"execution_id":execution_id, "snapshot_id":snapshot["id"], "model_name":trace["model_name"],
               "model_version":trace["model_version"], "run_id":trace["run_id"], "records":future[FEATURES].to_dict("records")})
     response.raise_for_status()
@@ -117,11 +126,12 @@ with step("persist and idempotency", execution_id, statuses):
     assert generation["row_count"] == len(lines)
     display(generation)
 ''', "Geração DRAFT persistida com vínculos SQL/run/modelo/regra; repetição sem duplicações.")
+section('10b. Conferir a proposta diretamente no PostgreSQL', 'Nova conex?o com APPLICATION_DATABASE_URL, ap?s o commit. Banco de neg?cio planejamento_db, tabelas planning.proposal_generations e planning.proposal_lines. **Esperado:** todas as linhas e valores iguais ? proposta, com run e vers?o corretas. Consulta versionada em sql/queries/verify_proposal.sql; esta etapa somente l?.\n', 'with step("verify proposal SQL", execution_id, statuses):\n    database_evidence = verify_proposal_sql(cfg, execution_id, trace, lines)\n    display(database_evidence)\n', "PASS; evid?ncia exibida.")
 section("11. Consultar API e reconciliar", "A API consulta PostgreSQL sem treinamento. Comparar todas as linhas e rastreabilidade com a proposta escrita pelo notebook.", '''
 with step("API reconciliation", execution_id, statuses):
-    headers = {"Authorization":"Bearer " + required("API_TOKEN"), "X-Correlation-ID":execution_id}
+    headers = {"Authorization":"Bearer " + required("API_TOKEN"), "X-Correlation-ID":execution_id, **trace_headers()}
     def get_api(path):
-        r = httpx.get(cfg.api + path, headers=headers, timeout=cfg.timeout)
+        r = httpx.get(cfg.api + path, headers={**headers, **trace_headers()}, timeout=cfg.timeout)
         r.raise_for_status()
         return r.json()
     api_generation = get_api(f"/v1/proposals/{execution_id}")
@@ -139,9 +149,11 @@ with step("API reconciliation", execution_id, statuses):
     display(pd.DataFrame(api_lines).head())
 ''', "Mesmos IDs, quantidades e total no SQL e na API; run ligada à geração.")
 section("12. Evidências finais", "Salvar resumo reproduzível da execução no workspace e no MLflow. Consultar dashboard pelo correlation_id.", '''
+tracing = trace_evidence(cfg, statuses, trace, execution_id)
+display(pd.DataFrame(tracing))
 summary = {"execution_id":execution_id, "mode":cfg.mode, "sql_rows":len(history), "metrics":metrics,
     **trace, "proposal_id":execution_id, "persisted_rows":len(lines), "api_rows":len(api_lines),
-    "snapshot_id":snapshot["id"], "dataset_sha256":snapshot["dataset_sha256"], "stages":statuses}
+    "snapshot_id":snapshot["id"], "dataset_sha256":snapshot["dataset_sha256"], "stages":statuses, "traces":tracing, "storage_evidence":storage_evidence, "database_evidence":database_evidence}
 reports = Path("/workspace/reports")
 reports.mkdir(parents=True, exist_ok=True)
 report = reports / f"journey-{execution_id}.json"
@@ -157,4 +169,11 @@ notebook = dict(cells=cells, metadata={"kernelspec":{"display_name":"PUCPR Pytho
 for i, cell in enumerate(cells):
     cell["id"] = f"journey-{i:02d}"
 root = Path(__file__).resolve().parents[2]
+if "--check" in sys.argv:
+    existing = json.loads((root / "notebooks/01_jornada_completa_planilha_turmas.ipynb").read_text(encoding="utf-8"))
+    def code_trees(items):
+        return [ast.dump(ast.parse("".join(c["source"]))) for c in items if c["cell_type"] == "code"]
+    assert code_trees(existing["cells"]) == code_trees(cells), "Notebook code differs from generator"
+    print("PASS notebook generator code matches principal notebook")
+    sys.exit(0)
 (root / "notebooks/01_jornada_completa_planilha_turmas.ipynb").write_text(json.dumps(notebook, ensure_ascii=False, indent=1), encoding="utf-8")

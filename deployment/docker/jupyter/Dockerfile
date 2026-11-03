@@ -14,5 +14,8 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER config ./config
 COPY --chown=$MAMBA_USER:$MAMBA_USER notebooks ./notebooks
 COPY --chown=$MAMBA_USER:$MAMBA_USER sql ./sql
 COPY --chown=$MAMBA_USER:$MAMBA_USER tests ./tests
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
+USER $MAMBA_USER
 ENV PYTHONPATH=/app PYTHONUNBUFFERED=1
 CMD ["python", "-m", "src.common.launch", "jupyter"]

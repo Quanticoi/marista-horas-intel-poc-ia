@@ -14,6 +14,8 @@ from src.inference.service import create_job, process
 
 app = FastAPI(title="PUCPR Horários Inteligentes — dados sintéticos", version="1.0.0")
 app.add_middleware(BodyLimitMiddleware)
+from src.common.tracing import install_http_tracing
+install_http_tracing(app, "api", "/v1/proposals")
 
 
 def auth(authorization: str = Header(default="")):

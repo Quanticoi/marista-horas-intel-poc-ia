@@ -1,0 +1,301 @@
+{
+  "repeat_registration": "PASS, same version 6, no new run/model",
+  "experiments": [
+    {
+      "id": "4",
+      "name": "planilha-turmas-proxy-v1",
+      "runs": 6
+    },
+    {
+      "id": "3",
+      "name": "journey-diagnostics-proxy",
+      "runs": 7
+    },
+    {
+      "id": "2",
+      "name": "public-macrodata-timeseries",
+      "runs": 9
+    },
+    {
+      "id": "1",
+      "name": "pucpr-synthetic",
+      "runs": 30
+    },
+    {
+      "id": "0",
+      "name": "Default",
+      "runs": 0
+    }
+  ],
+  "models": [
+    {
+      "name": "C1-CR1-P1",
+      "versions": 1
+    },
+    {
+      "name": "C1-CR1-P2",
+      "versions": 1
+    },
+    {
+      "name": "C1-CR2-P1",
+      "versions": 1
+    },
+    {
+      "name": "C1-CR2-P2",
+      "versions": 1
+    },
+    {
+      "name": "C1-CR3-P1",
+      "versions": 1
+    },
+    {
+      "name": "C1-CR3-P2",
+      "versions": 1
+    },
+    {
+      "name": "C1-CR4-P1",
+      "versions": 1
+    },
+    {
+      "name": "C1-CR4-P2",
+      "versions": 1
+    },
+    {
+      "name": "C1-CR5-P1",
+      "versions": 1
+    },
+    {
+      "name": "C1-CR5-P2",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR1-P1",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR1-P2",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR2-P1",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR2-P2",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR3-P1",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR3-P2",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR4-P1",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR4-P2",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR5-P1",
+      "versions": 1
+    },
+    {
+      "name": "C2-CR5-P2",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR1-P1",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR1-P2",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR2-P1",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR2-P2",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR3-P1",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR3-P2",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR4-P1",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR4-P2",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR5-P1",
+      "versions": 1
+    },
+    {
+      "name": "C3-CR5-P2",
+      "versions": 1
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "versions": 6
+    },
+    {
+      "name": "public-macrodata-realcons-random_forest",
+      "versions": 1
+    },
+    {
+      "name": "public-macrodata-realcons-ridge",
+      "versions": 1
+    },
+    {
+      "name": "public-macrodata-realgdp-random_forest",
+      "versions": 1
+    },
+    {
+      "name": "public-macrodata-realgdp-ridge",
+      "versions": 1
+    },
+    {
+      "name": "public-macrodata-unemp-random_forest",
+      "versions": 1
+    },
+    {
+      "name": "public-macrodata-unemp-ridge",
+      "versions": 1
+    }
+  ],
+  "proposal_references": [
+    {
+      "model_name": "planilha-turmas-demo",
+      "model_version": "1",
+      "run_id": "10e217389382417cb0c6fa4ca83a79b8"
+    },
+    {
+      "model_name": "planilha-turmas-demo",
+      "model_version": "2",
+      "run_id": "37e337f034214c3d86b935655c7a84c6"
+    },
+    {
+      "model_name": "planilha-turmas-demo",
+      "model_version": "3",
+      "run_id": "ad2530361ab14f7d87017c21d11958a1"
+    },
+    {
+      "model_name": "planilha-turmas-demo",
+      "model_version": "4",
+      "run_id": "9c73432320ac49f8a0bdcac83a6005ec"
+    },
+    {
+      "model_name": "planilha-turmas-demo",
+      "model_version": "5",
+      "run_id": "1d62be545bed47c7b3f8847159fd7ff4"
+    }
+  ],
+  "catalog_references": [
+    {
+      "mlflow_registered_name": "C1-CR1-P1"
+    },
+    {
+      "mlflow_registered_name": "C1-CR1-P2"
+    },
+    {
+      "mlflow_registered_name": "C1-CR2-P1"
+    },
+    {
+      "mlflow_registered_name": "C1-CR2-P2"
+    },
+    {
+      "mlflow_registered_name": "C1-CR3-P1"
+    },
+    {
+      "mlflow_registered_name": "C1-CR3-P2"
+    },
+    {
+      "mlflow_registered_name": "C1-CR4-P1"
+    },
+    {
+      "mlflow_registered_name": "C1-CR4-P2"
+    },
+    {
+      "mlflow_registered_name": "C1-CR5-P1"
+    },
+    {
+      "mlflow_registered_name": "C1-CR5-P2"
+    },
+    {
+      "mlflow_registered_name": "C2-CR1-P1"
+    },
+    {
+      "mlflow_registered_name": "C2-CR1-P2"
+    },
+    {
+      "mlflow_registered_name": "C2-CR2-P1"
+    },
+    {
+      "mlflow_registered_name": "C2-CR2-P2"
+    },
+    {
+      "mlflow_registered_name": "C2-CR3-P1"
+    },
+    {
+      "mlflow_registered_name": "C2-CR3-P2"
+    },
+    {
+      "mlflow_registered_name": "C2-CR4-P1"
+    },
+    {
+      "mlflow_registered_name": "C2-CR4-P2"
+    },
+    {
+      "mlflow_registered_name": "C2-CR5-P1"
+    },
+    {
+      "mlflow_registered_name": "C2-CR5-P2"
+    },
+    {
+      "mlflow_registered_name": "C3-CR1-P1"
+    },
+    {
+      "mlflow_registered_name": "C3-CR1-P2"
+    },
+    {
+      "mlflow_registered_name": "C3-CR2-P1"
+    },
+    {
+      "mlflow_registered_name": "C3-CR2-P2"
+    },
+    {
+      "mlflow_registered_name": "C3-CR3-P1"
+    },
+    {
+      "mlflow_registered_name": "C3-CR3-P2"
+    },
+    {
+      "mlflow_registered_name": "C3-CR4-P1"
+    },
+    {
+      "mlflow_registered_name": "C3-CR4-P2"
+    },
+    {
+      "mlflow_registered_name": "C3-CR5-P1"
+    },
+    {
+      "mlflow_registered_name": "C3-CR5-P2"
+    }
+  ],
+  "deployment_references": [],
+  "cleanup_applied": false
+}

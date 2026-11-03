@@ -9,17 +9,27 @@ import mlflow
 from sqlalchemy import text
 from src.common.logging import event
 from src.workbench.journey_config import sql_engine
+from src.common.tracing import stage_span
 
 
 @contextmanager
 def step(name, execution_id, statuses):
     start = time.monotonic()
+    attempt = 1 + sum(row["stage"] == name for row in statuses)
+    trace_info = {"attempt": attempt}
     event("journey", "stage started", stage=name, correlation_id=execution_id)
     try:
-        yield
+        with stage_span(name, execution_id, attempt) as span:
+            if span is not None:
+                trace_info["trace_id"] = span.trace_id
+            yield
     except Exception as error:
-        statuses.append(dict(stage=name, status="FAILED", seconds=round(time.monotonic()-start, 3)))
-        event("journey", "stage failed", stage=name, correlation_id=execution_id, error=type(error).__name__)
+        missing = getattr(error, "name", None) if isinstance(error, NameError) else None
+        missing = missing if isinstance(missing, str) and missing.isidentifier() and len(missing) < 100 else None
+        detail = f" Nome não definido: {missing}. Execute as etapas anteriores na ordem." if missing else ""
+        statuses.append(dict(stage=name, status="FAILED", seconds=round(time.monotonic()-start, 3), **trace_info))
+        event("journey", "stage failed", stage=name, correlation_id=execution_id,
+              error=type(error).__name__, missing_name=missing, level="ERROR")
         if mlflow.active_run():
             try:
                 mlflow.set_tag("failure_stage", name)
@@ -28,11 +38,11 @@ def step(name, execution_id, statuses):
                 # An unavailable tracking server must not hide the original failure.
                 event("journey", "tracking failure could not be persisted", stage=name,
                       correlation_id=execution_id, level="ERROR")
-        raise RuntimeError(f"Etapa {name} falhou ({type(error).__name__}). Consulte os eventos por correlation_id={execution_id}; docker compose logs --tail 100 mlflow api inference") from None
+        raise RuntimeError(f"Etapa {name} falhou ({type(error).__name__}).{detail} Consulte os eventos por correlation_id={execution_id}; docker compose logs --tail 100 mlflow api inference") from None
     else:
         duration = round(time.monotonic()-start, 3)
-        statuses.append(dict(stage=name, status="PASS", seconds=duration))
-        event("journey", "stage completed", stage=name, correlation_id=execution_id, duration_seconds=duration)
+        statuses.append(dict(stage=name, status="PASS", seconds=duration, **trace_info))
+        event("journey", "stage completed", stage=name, correlation_id=execution_id, duration_seconds=duration, **trace_info)
 
 
 def dependencies(cfg, execution_id):

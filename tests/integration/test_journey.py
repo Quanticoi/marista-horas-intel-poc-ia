@@ -148,3 +148,55 @@ def test_dashboard_has_correlated_journey_events():
     response.raise_for_status()
     services = {row["service"] for row in response.json()}
     assert {"journey", "inference", "api"} <= services
+
+
+def test_traces_persisted_with_remote_spans_and_no_payloads():
+    report = json.loads(Path("/reports/journey-latest.json").read_text())
+    assert report["traces"]
+    all_names = set()
+    for item in report["traces"]:
+        recorded = mlflow.get_trace(item["trace_id"])
+        assert recorded.info.tags["execution_id"] == report["execution_id"]
+        assert recorded.info.tags["run_id"] == report["run_id"]
+        for span in recorded.data.spans:
+            all_names.add(span.name)
+            assert span.inputs is None and span.outputs is None
+    assert {"inference.http", "api.http", "postgres.query", "model.load", "model.predict"} <= all_names
+
+
+def test_read_only_storage_and_business_database_evidence():
+    from src.workbench.verification import verify_model_storage, verify_proposal_sql
+    cfg, report, _, _, lines = context()
+    storage = verify_model_storage(report)
+    assert len(storage) == 3 and all(row["status"] == "PASS" for row in storage)
+    evidence = verify_proposal_sql(cfg, report["execution_id"], report, lines)
+    assert evidence["status"] == "PASS" and evidence["stored_rows"] == report["persisted_rows"]
+    altered = [dict(r) for r in lines]
+    altered[0]["proposed_students"] += 1
+    with pytest.raises(ValueError, match="differs"):
+        verify_proposal_sql(cfg, report["execution_id"], report, altered)
+
+
+def test_repeated_stage_records_distinct_attempts_and_safe_failure():
+    from src.common import tracing
+    from src.workbench.journey_steps import step
+    cfg = Settings.load()
+    original = tracing._experiment_id
+    statuses = []
+    execution = str(uuid.uuid4())
+    try:
+        tracing.configure_tracing(cfg)
+        with step("diagnostic repeated stage", execution, statuses):
+            pass
+        with pytest.raises(RuntimeError, match="Nome não definido: model"):
+            with step("diagnostic repeated stage", execution, statuses):
+                raise NameError("password=do-not-export", name="model")
+        assert [r["attempt"] for r in statuses] == [1, 2]
+        assert statuses[0]["trace_id"] != statuses[1]["trace_id"]
+        for status in statuses:
+            mlflow.MlflowClient().set_trace_tag(status["trace_id"], "purpose", "controlled-failure-test")
+        failed = mlflow.get_trace(statuses[1]["trace_id"])
+        assert str(failed.info.state) == "ERROR"
+        assert "do-not-export" not in json.dumps(failed.to_dict(), default=str)
+    finally:
+        tracing._experiment_id = original

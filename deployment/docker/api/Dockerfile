@@ -14,5 +14,6 @@ COPY sql ./sql
 COPY alembic.ini ./
 COPY notebooks ./notebooks
 COPY tests ./tests
+RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
 USER 1000:1000
 CMD ["python", "-m", "uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

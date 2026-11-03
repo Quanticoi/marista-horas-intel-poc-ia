@@ -1,19 +1,19 @@
 {
-  "execution_id": "a741d0dd-d1ed-41eb-91d1-d5194c5fb692",
+  "execution_id": "d6260507-b9f4-4011-a3f6-b3dd511400d5",
   "mode": "DEMO",
   "sql_rows": 1050,
   "metrics": {
     "mae": 3.758630658273197,
     "rmse": 4.9142272796917865
   },
-  "run_id": "ad2530361ab14f7d87017c21d11958a1",
+  "run_id": "03012b122e6143b2919807cd91973451",
   "experiment_id": "4",
-  "run_url": "http://127.0.0.1:5000/#/experiments/4/runs/ad2530361ab14f7d87017c21d11958a1",
+  "run_url": "http://127.0.0.1:5000/#/experiments/4/runs/03012b122e6143b2919807cd91973451",
   "model_name": "planilha-turmas-demo",
-  "model_version": "3",
-  "model_uri": "models:/planilha-turmas-demo/3",
-  "artifact_uri": "models:/m-1717e4e5a7d540de8ecd8aed5e40a049",
-  "proposal_id": "a741d0dd-d1ed-41eb-91d1-d5194c5fb692",
+  "model_version": "8",
+  "model_uri": "models:/planilha-turmas-demo/8",
+  "artifact_uri": "models:/m-378e0cf868604331bf7c52e0c1421114",
+  "proposal_id": "d6260507-b9f4-4011-a3f6-b3dd511400d5",
   "persisted_rows": 90,
   "api_rows": 90,
   "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
@@ -26,52 +26,244 @@
     {
       "stage": "SQL extraction",
       "status": "PASS",
-      "seconds": 0.027
+      "seconds": 0.149,
+      "attempt": 1,
+      "trace_id": "tr-dbd16c0f0cdfcaaca9b2a98535332552"
     },
     {
       "stage": "prepare",
       "status": "PASS",
-      "seconds": 0.005
+      "seconds": 0.04,
+      "attempt": 1,
+      "trace_id": "tr-ee5c8c920f24b8c98b9c3d61fa87dfdc"
     },
     {
       "stage": "model and metrics",
       "status": "PASS",
-      "seconds": 0.009
+      "seconds": 0.044,
+      "attempt": 1,
+      "trace_id": "tr-7ab3caa11cfeaacdecae888e0b8ee02e"
     },
     {
       "stage": "tracking",
       "status": "PASS",
-      "seconds": 0.169
+      "seconds": 0.128,
+      "attempt": 1,
+      "trace_id": "tr-9a1339852106ae41b3764f3b24af6716"
     },
     {
       "stage": "fit and evaluate",
       "status": "PASS",
-      "seconds": 0.038
+      "seconds": 0.072,
+      "attempt": 1,
+      "trace_id": "tr-699053e4d8363f53a6006b898eeb7dc0"
     },
     {
       "stage": "register",
       "status": "PASS",
-      "seconds": 0.723
+      "seconds": 0.704,
+      "attempt": 1,
+      "trace_id": "tr-344065fb61896d8f04b95a2089ae84e2"
+    },
+    {
+      "stage": "verify Object Store",
+      "status": "PASS",
+      "seconds": 0.224,
+      "attempt": 1,
+      "trace_id": "tr-de7529fc236a7515ce50b86bdc95103d"
     },
     {
       "stage": "reload and inference",
       "status": "PASS",
-      "seconds": 0.347
+      "seconds": 0.869,
+      "attempt": 1,
+      "trace_id": "tr-9b9fb64e8e72f3e4a93c67fe1c3038e7"
     },
     {
       "stage": "compose proposal",
       "status": "PASS",
-      "seconds": 0.008
+      "seconds": 0.038,
+      "attempt": 1,
+      "trace_id": "tr-732c6137790284b1e666011cfe789997"
     },
     {
       "stage": "persist and idempotency",
       "status": "PASS",
-      "seconds": 0.04
+      "seconds": 0.064,
+      "attempt": 1,
+      "trace_id": "tr-63a82ff9241e7d9ce3c8ab57e124077f"
+    },
+    {
+      "stage": "verify proposal SQL",
+      "status": "PASS",
+      "seconds": 0.046,
+      "attempt": 1,
+      "trace_id": "tr-e05bcea5e1513a5d98d13ea5777719ca"
     },
     {
       "stage": "API reconciliation",
       "status": "PASS",
-      "seconds": 0.036
+      "seconds": 0.25,
+      "attempt": 1,
+      "trace_id": "tr-e1cdc52ce8dfc4cf66f7561a002413ac"
     }
-  ]
+  ],
+  "traces": [
+    {
+      "stage": "SQL extraction",
+      "attempt": 1,
+      "trace_id": "tr-dbd16c0f0cdfcaaca9b2a98535332552",
+      "spans": [
+        "SQL extraction"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-dbd16c0f0cdfcaaca9b2a98535332552&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "prepare",
+      "attempt": 1,
+      "trace_id": "tr-ee5c8c920f24b8c98b9c3d61fa87dfdc",
+      "spans": [
+        "prepare"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-ee5c8c920f24b8c98b9c3d61fa87dfdc&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "model and metrics",
+      "attempt": 1,
+      "trace_id": "tr-7ab3caa11cfeaacdecae888e0b8ee02e",
+      "spans": [
+        "model and metrics"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-7ab3caa11cfeaacdecae888e0b8ee02e&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "tracking",
+      "attempt": 1,
+      "trace_id": "tr-9a1339852106ae41b3764f3b24af6716",
+      "spans": [
+        "tracking"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-9a1339852106ae41b3764f3b24af6716&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "fit and evaluate",
+      "attempt": 1,
+      "trace_id": "tr-699053e4d8363f53a6006b898eeb7dc0",
+      "spans": [
+        "fit and evaluate"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-699053e4d8363f53a6006b898eeb7dc0&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "register",
+      "attempt": 1,
+      "trace_id": "tr-344065fb61896d8f04b95a2089ae84e2",
+      "spans": [
+        "register"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-344065fb61896d8f04b95a2089ae84e2&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "verify Object Store",
+      "attempt": 1,
+      "trace_id": "tr-de7529fc236a7515ce50b86bdc95103d",
+      "spans": [
+        "verify Object Store"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-de7529fc236a7515ce50b86bdc95103d&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "reload and inference",
+      "attempt": 1,
+      "trace_id": "tr-9b9fb64e8e72f3e4a93c67fe1c3038e7",
+      "spans": [
+        "reload and inference",
+        "model.load",
+        "inference.http",
+        "model.load",
+        "model.predict"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-9b9fb64e8e72f3e4a93c67fe1c3038e7&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "compose proposal",
+      "attempt": 1,
+      "trace_id": "tr-732c6137790284b1e666011cfe789997",
+      "spans": [
+        "compose proposal"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-732c6137790284b1e666011cfe789997&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "persist and idempotency",
+      "attempt": 1,
+      "trace_id": "tr-63a82ff9241e7d9ce3c8ab57e124077f",
+      "spans": [
+        "persist and idempotency"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-63a82ff9241e7d9ce3c8ab57e124077f&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "verify proposal SQL",
+      "attempt": 1,
+      "trace_id": "tr-e05bcea5e1513a5d98d13ea5777719ca",
+      "spans": [
+        "verify proposal SQL"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-e05bcea5e1513a5d98d13ea5777719ca&compareRunsMode=TRACES"
+    },
+    {
+      "stage": "API reconciliation",
+      "attempt": 1,
+      "trace_id": "tr-e1cdc52ce8dfc4cf66f7561a002413ac",
+      "spans": [
+        "API reconciliation",
+        "api.http",
+        "postgres.query",
+        "api.http",
+        "postgres.query",
+        "postgres.query"
+      ],
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-e1cdc52ce8dfc4cf66f7561a002413ac&compareRunsMode=TRACES"
+    }
+  ],
+  "storage_evidence": [
+    {
+      "bucket": "pucpr-poc",
+      "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/MLmodel",
+      "bytes": 1336,
+      "sha256": "a45490909929df0120c92c8eabbc86b53134266cf1bbe40be8bd3d119d1c9a93",
+      "model_version": "8",
+      "status": "PASS"
+    },
+    {
+      "bucket": "pucpr-poc",
+      "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/model.pkl",
+      "bytes": 8671,
+      "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+      "model_version": "8",
+      "status": "PASS"
+    },
+    {
+      "bucket": "pucpr-poc",
+      "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/requirements.txt",
+      "bytes": 80,
+      "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+      "model_version": "8",
+      "status": "PASS"
+    }
+  ],
+  "database_evidence": {
+    "database": "planejamento_db",
+    "schema": "planning",
+    "status": "PASS",
+    "execution_id": "d6260507-b9f4-4011-a3f6-b3dd511400d5",
+    "run_id": "03012b122e6143b2919807cd91973451",
+    "model_version": "8",
+    "proposal_status": "DRAFT",
+    "stored_rows": 90,
+    "proposed_students": 8694,
+    "proposed_groups": 270,
+    "query": "sql/queries/verify_proposal.sql"
+  }
 }
