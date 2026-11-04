@@ -1,5 +1,10 @@
 # Atualização — 03/11/2026: limpeza implementada e verificada
 
+04/11/2026: acesso RustFS destacado no início do README e em seção própria:
+console localhost:9001, campos de login relacionados às chaves do .env, bucket
+pucpr-poc/prefixo mlflow e diferença entre portas 9001/9000. Alteração documental;
+sem modificar credenciais nem reiniciar serviços. Validação estática PASS.
+
 ## Tracing e provas de persistência — implementação atual
 
 Pedido do usuário: adicionar Traces e esclarecer repetição, experimentos, storage,

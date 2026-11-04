@@ -1,5 +1,7 @@
 # Marista — Horários Inteligentes
 
+**RustFS:** [abrir console](http://localhost:9001) · [usuário, senha e localização dos modelos](#acessar-o-rustfs-e-conferir-os-modelos).
+
 Prova de conceito de uma plataforma de IA para apoiar o planejamento acadêmico.
 O projeto demonstra a geração de uma **proposta de Planilha Turmas**, desde a
 leitura do histórico até a consulta do resultado pela API, mantendo a ligação
@@ -269,6 +271,29 @@ No navegador, use as portas locais abaixo. Na jornada principal, o SDK envia
 artefatos ao proxy MLflow; o servidor usa as credenciais S3 para gravá-los no RustFS.
 
 ## Interfaces e acesso
+
+### Acessar o RustFS e conferir os modelos
+
+Abra o console em **[http://localhost:9001](http://localhost:9001)**.
+As credenciais estão no arquivo **`.env` na raiz deste repositório**:
+
+| Campo de login | Valor a copiar do `.env` |
+|---|---|
+| Access Key / usuário | Valor de `AWS_ACCESS_KEY_ID` |
+| Secret Key / senha | Valor de `AWS_SECRET_ACCESS_KEY` |
+
+Use os valores depois do sinal `=`, não os nomes das variáveis. Se aparecer uma
+escolha de autenticação, selecione **Key Login**. Não é necessário ter conta AWS;
+esses nomes configuram o acesso S3 ao RustFS local.
+
+Após entrar, abra o bucket **`pucpr-poc`** e o prefixo **`mlflow/`**. A etapa **7b**
+do notebook exibe a chave exata de cada arquivo da versão registrada e verifica
+se seus bytes coincidem com os baixados pelo MLflow.
+
+O console usa a porta **9001**. A porta **9000** é o endpoint S3, utilizado por
+ferramentas e serviços. [Guia de acesso ao RustFS](docs/operations/RUSTFS.md).
+
+### Demais interfaces
 
 | Interface | URL local | Autenticação |
 |---|---|---|
