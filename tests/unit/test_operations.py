@@ -29,3 +29,11 @@ def test_registry_recovery_searches_all_version_pages():
         def search_model_versions(self,query,max_results,page_token):
             return Page(['old'],None) if page_token=='next' else Page(['new'],'next')
     assert list(registered_versions(Client(),'hi.demo.test'))==['new','old']
+
+
+def test_report_replaces_read_only_previous_file(tmp_path):
+    from src.workbench.operations_sdk import write_report_file
+    path=tmp_path/'evidence.json';path.write_text('old');path.chmod(0o444)
+    write_report_file(path,'new')
+    assert path.read_text()=='new'
+    assert list(tmp_path.iterdir())==[path]

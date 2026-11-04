@@ -11,6 +11,8 @@ para abrir o Jupyter. Execute comandos do host a partir da raiz do repositório.
 | `verify_reset.py` | Prova independente SQL/SDK/S3/HTTP; chamado dentro de tools pelo teste de reset |
 | `preservation.py` | Captura referência e verifica runs/versões/propostas/modelo após rebuild; executado em tools |
 | `collect_evidence.py` | Copia evidências reais da stack isolada para artifacts/reports/v2/isolated |
+| `jupyter_editability.py` | Salva/relê um notebook temporário pela API e o remove; confere o catálogo editável |
+| `report.py` | Consolida as provas existentes; evidência ausente nunca recebe PASS |
 
 `failure_drills.py` e `reset.py` interrompem serviços **da stack de teste**.
 Não são comandos de limpeza cotidiana. `preservation.py before` recusa

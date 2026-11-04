@@ -28,6 +28,7 @@ for name,digest in before['protected_sha256'].items():
     else:
         protected.append(dict(path=name,sha256=digest,preserved_at=hashes.get(digest),status='PASS' if digest in hashes else 'FAIL'))
 runtime=read('v2/preservation-runtime-after.json')
+image_commit=runtime.get('git_commit','unknown')
 write('preservation-after',dict(test_id='V2-13',status='PASS' if runtime.get('status')=='PASS' and all(p['status']=='PASS' for p in protected) else 'FAIL',
     project='marista',evidence=dict(runtime=runtime,protected_files=protected),limitations=['Templates intentionally updated; exact old bytes retained outside notebook list','No database backup created']))
 
@@ -60,14 +61,14 @@ check(16,'README, arquitetura, comandos e índices',all((root/p).is_file() for p
 limitations=['Dados sintéticos e regra provisória; não homologa o contrato acadêmico V4.4',
     '500 identidades experimentais treinadas no mesmo snapshot DEMO; não são 500 séries acadêmicas reais nem 500 modelos simultâneos em memória',
     'Resets/falhas destrutivas executados somente na stack isolada; volumes principais preservados',
-    'Evidências antigas mantêm seu commit/hash original; imagens locais revisadas identificadas por d93258a; CI identifica seu próprio HEAD',
+    'Evidências mantêm seu commit/hash original; cada ensaio identifica a versão executada; CI identifica seu próprio HEAD',
     'Warnings de depreciação de dependências não impediram os testes']
 document=dict(test_id='V2-acceptance',status='PASS' if all(c['status']=='PASS' for c in checks) else 'PARTIAL',criteria=checks,
     tests=tests,main_journey=journey,api_generation=read('v2/probe-complete.json').get('evidence',{}).get('proposal_id'),
     ci=ci,limitations=limitations)
 write('acceptance-v2',document)
 lines=['# Aceite V2 e revisão do repositório','',document['status']+' — '+base['timestamp_utc'],
-    '',f'Código das imagens locais: d93258a. Relatório: {commit}. Testes finais: {tests}.',
+    '',f'Código da última conferência local: {image_commit}. Relatório: {commit}. Testes finais: {tests}.',
     '', '| Critério | Cenário | Resultado | Evidência |','|---|---|---|---|']
 for c in checks:
     links=', '.join('['+Path(p).name+'](../'+p+')' for p in c['evidence_paths'])

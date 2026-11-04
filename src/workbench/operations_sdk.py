@@ -2,6 +2,7 @@
 import json
 import os
 import time
+import tempfile
 from pathlib import Path
 from uuid import uuid4
 import httpx
@@ -52,6 +53,21 @@ def await_job(cfg,path,timeout=600):
         time.sleep(2)
     raise TimeoutError("Job remains persisted; query the same status URL to resume observation")
 
+def write_report_file(path,content):
+    """Replace atomically in the shared directory, including files owned by tools."""
+    temporary=None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w",encoding="utf-8",dir=path.parent,
+                prefix="."+path.name+"-",delete=False) as stream:
+            temporary=Path(stream.name)
+            stream.write(content)
+        temporary.chmod(0o644)
+        temporary.replace(path)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+
+
 def report(test_id,evidence,status="PASS",limitations=None):
     document=dict(timestamp_utc=utcnow(),git_commit=os.getenv("CODE_VERSION","uncommitted"),
         code_version=source_version(),environment="poc",project=os.getenv("POC_PROJECT","marista"),test_id=test_id,status=status,source_type="DEMO",
@@ -59,8 +75,8 @@ def report(test_id,evidence,status="PASS",limitations=None):
     reject_sensitive(document)
     root=Path("/reports/v2");root.mkdir(parents=True,exist_ok=True)
     path=root/(test_id+".json")
-    path.write_text(json.dumps(document,default=str,ensure_ascii=False,indent=2),encoding="utf-8")
-    path.with_suffix(".md").write_text(f"# {test_id}\n\n{status} — {document['timestamp_utc']}\n\nCódigo: {document['code_version']}\n\nEvidência: [{path.name}]({path.name})\n\n"+"\n".join("- "+x for x in document["limitations"]),encoding="utf-8")
+    write_report_file(path,json.dumps(document,default=str,ensure_ascii=False,indent=2))
+    write_report_file(path.with_suffix(".md"),f"# {test_id}\n\n{status} — {document['timestamp_utc']}\n\nCódigo: {document['code_version']}\n\nEvidência: [{path.name}]({path.name})\n\n"+"\n".join("- "+x for x in document["limitations"]))
     return str(path)
 
 def comparison(cfg,snapshot_id="",limit=100):

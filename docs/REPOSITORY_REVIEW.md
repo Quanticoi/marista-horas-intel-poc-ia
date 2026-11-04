@@ -12,6 +12,7 @@ As evidências históricas e os arquivos do usuário não foram tratados como li
 |---|---|---|
 | Alta | Reset reiniciava RabbitMQ e uma fila vazia desaparecia, invalidando o plano | Parar somente os escritores na conferência; dois resets reais isolados e rebootstrap PASS |
 | Alta | Notebook 09 rejeitava nomes de tabelas MLflow que contêm `secret` | Inventário apresenta identificadores como valores e somente contagem/hash; mantém filtro de segredos; teste específico |
+| Alta | Jupyter não sobrescrevia relatório criado pelo UID de tools | Escrita atômica no diretório compartilhado; prova com os usuários reais e teste de arquivo somente leitura |
 | Média | Grafo dizia VERIFIED quando relações eram truncadas | Contagem separada de relações; PARTIAL quando qualquer paginação trunca; regressão coberta |
 | Média | Logs de inferência perdiam a correlação da geração | Propagação do correlation_id recebido, com fallback apenas para a jornada antiga |
 | Média | Recuperação pesquisava somente a primeira página de versões | Percorrer todas as páginas do Registry; teste com duas páginas |
@@ -43,7 +44,8 @@ notebook executado também têm responsabilidades diferentes.
 
 ## Validação e limites
 
-78 testes unitários/integrados passaram durante a revisão; lint F/E9 não
+78 testes unitários/integrados passaram na rodada principal da revisão, com
+regressão adicional da escrita compartilhada na rodada final; lint F/E9 não
 encontrou ocorrências. Testes reais cobriram reset isolado, SIGKILL do worker com
 retomada de 30 treinos sem duplicar versões, falha MLflow/SQL, idempotência,
 hashes S3, proposta N:N e preservação do ambiente principal. O aceite final V2
