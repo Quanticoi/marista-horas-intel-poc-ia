@@ -1,0 +1,378 @@
+{
+  "$defs": {
+    "Modulation": {
+      "additionalProperties": false,
+      "properties": {
+        "rule_version": {
+          "title": "Rule Version",
+          "type": "string"
+        },
+        "capacity": {
+          "exclusiveMinimum": 0,
+          "title": "Capacity",
+          "type": "integer"
+        },
+        "proposed_groups": {
+          "minimum": 0,
+          "title": "Proposed Groups",
+          "type": "integer"
+        },
+        "groups": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Groups"
+        },
+        "provisional": {
+          "const": true,
+          "default": true,
+          "title": "Provisional",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "rule_version",
+        "capacity",
+        "proposed_groups"
+      ],
+      "title": "Modulation",
+      "type": "object"
+    },
+    "Offer": {
+      "additionalProperties": false,
+      "properties": {
+        "offer_id": {
+          "format": "uuid",
+          "title": "Offer Id",
+          "type": "string"
+        },
+        "campus_id": {
+          "format": "uuid",
+          "title": "Campus Id",
+          "type": "string"
+        },
+        "course_id": {
+          "format": "uuid",
+          "title": "Course Id",
+          "type": "string"
+        },
+        "period_id": {
+          "format": "uuid",
+          "title": "Period Id",
+          "type": "string"
+        },
+        "discipline_id": {
+          "format": "uuid",
+          "title": "Discipline Id",
+          "type": "string"
+        },
+        "cohort": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cohort"
+        },
+        "shift": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Shift"
+        },
+        "offer_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Offer Type"
+        },
+        "status": {
+          "const": "SUGERIDA",
+          "default": "SUGERIDA",
+          "title": "Status",
+          "type": "string"
+        },
+        "forecast_raw": {
+          "title": "Forecast Raw",
+          "type": "number"
+        },
+        "students": {
+          "$ref": "#/$defs/Students"
+        },
+        "modulation": {
+          "$ref": "#/$defs/Modulation"
+        },
+        "teacher_suggestion": {
+          "default": null,
+          "title": "Teacher Suggestion",
+          "type": "null"
+        },
+        "human_adjustment": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Adjustment"
+        },
+        "source_model_keys": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Model Keys",
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "offer_id",
+        "campus_id",
+        "course_id",
+        "period_id",
+        "discipline_id",
+        "forecast_raw",
+        "students",
+        "modulation",
+        "source_model_keys",
+        "warnings"
+      ],
+      "title": "Offer",
+      "type": "object"
+    },
+    "RuleResult": {
+      "additionalProperties": false,
+      "properties": {
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "NOT_EVALUATED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rule_id",
+        "status",
+        "reason",
+        "evidence"
+      ],
+      "title": "RuleResult",
+      "type": "object"
+    },
+    "Students": {
+      "additionalProperties": false,
+      "properties": {
+        "regular": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Regular"
+        },
+        "dependency": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dependency"
+        },
+        "elective": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Elective"
+        },
+        "total": {
+          "minimum": 0,
+          "title": "Total",
+          "type": "integer"
+        },
+        "origins": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Origins"
+        }
+      },
+      "required": [
+        "total"
+      ],
+      "title": "Students",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "poc-planilha-turmas-v1",
+      "default": "poc-planilha-turmas-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "contract_status": {
+      "const": "PROVISÓRIO / PENDENTE DE HOMOLOGAÇÃO",
+      "default": "PROVISÓRIO / PENDENTE DE HOMOLOGAÇÃO",
+      "title": "Contract Status",
+      "type": "string"
+    },
+    "proposal_id": {
+      "format": "uuid",
+      "title": "Proposal Id",
+      "type": "string"
+    },
+    "execution_id": {
+      "format": "uuid",
+      "title": "Execution Id",
+      "type": "string"
+    },
+    "proposal_revision": {
+      "const": 1,
+      "default": 1,
+      "title": "Proposal Revision",
+      "type": "integer"
+    },
+    "academic_cycle": {
+      "title": "Academic Cycle",
+      "type": "object"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    },
+    "source_type": {
+      "const": "DEMO",
+      "default": "DEMO",
+      "title": "Source Type",
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "format": "date-time",
+      "title": "Generated At Utc",
+      "type": "string"
+    },
+    "lineage": {
+      "title": "Lineage",
+      "type": "object"
+    },
+    "offers": {
+      "items": {
+        "$ref": "#/$defs/Offer"
+      },
+      "title": "Offers",
+      "type": "array"
+    },
+    "validation": {
+      "items": {
+        "$ref": "#/$defs/RuleResult"
+      },
+      "title": "Validation",
+      "type": "array"
+    },
+    "total_rows": {
+      "title": "Total Rows",
+      "type": "integer"
+    },
+    "limit": {
+      "title": "Limit",
+      "type": "integer"
+    },
+    "offset": {
+      "title": "Offset",
+      "type": "integer"
+    },
+    "payload_sha256": {
+      "title": "Payload Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "proposal_id",
+    "execution_id",
+    "academic_cycle",
+    "status",
+    "generated_at_utc",
+    "lineage",
+    "offers",
+    "validation",
+    "total_rows",
+    "limit",
+    "offset",
+    "payload_sha256"
+  ],
+  "title": "ApplicationView",
+  "type": "object"
+}

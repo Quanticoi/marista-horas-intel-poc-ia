@@ -1,0 +1,51 @@
+{
+  "timestamp_utc": "2026-11-04T14:07:28.725583+00:00",
+  "results": [
+    {
+      "notebook": "00_validacao_ambiente.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "02_teste_inferencia_planilha_turmas.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "03_exploracao_preparacao_dados.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "04_treinamento_individual.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "05_treinamento_campanha.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "06_avaliacao_comparativa.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "07_registry_governanca.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "08_auditoria_lineage.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "09_reset_total_ambiente_poc.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "limitations": "04 training opt-in disabled;05 scheduler NOT_IMPLEMENTED;07 no promotion;09 preview only"
+}

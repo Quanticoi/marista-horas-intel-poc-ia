@@ -1,4 +1,21 @@
-# Atualização — 03/11/2026: limpeza implementada e verificada
+# Atualização — 04/11/2026: correções v1.1 validadas
+
+Resultado atual: artifacts/reports/correcoes-v1.1-acceptance.md e JSON associado.
+Docker principal atualizado: 59 testes, 19 verificações HTTP e notebooks em
+kernels novos PASS. Execução 8d373b5a-f73d-4daa-b5cb-cde6ac238087, modelo v11,
+run 6d3153d23589442b8475e969f82a1d98; 1050 registros SQL e 90 linhas de proposta.
+CI remoto 41847743558 aprovado no commit feebce9, incluindo instalação limpa.
+Volumes, modelo v8 e proposta anterior preservados após rebuild, com hashes
+conferidos. Notebook original preservado; abrir a cópia atualizada editável
+01_jornada_completa_planilha_turmas.update-eeacc6e47d5c.ipynb no Jupyter.
+Catálogo auxiliar: nove notebooks PASS. Reset preview principal sem alterações;
+factory-reset e reset-data comprovados exclusivamente na stack isolada, agora
+parada. Nenhum reset no projeto marista. Evidências incluem prova independente
+SQL/SDK/S3/API após reset isolado. Scheduler persistente de campanhas permanece
+NOT_IMPLEMENTED; benchmark mediu 30 treinos reais e 500 identidades, não 500
+treinos. Contrato técnico DEMO não homologa regras acadêmicas V4.4.
+Último ajuste PowerShell mantém PROPOSAL_ID opcional vazio no bootstrap; parser
+validado. Os registros abaixo documentam os estados anteriores da execução.
 
 04/11/2026 — aceite parcial v1.1: migration005 e imagens aplicadas no projeto
 marista, volumes preservados. Jornada01 e notebook02 PASS no ambiente principal:

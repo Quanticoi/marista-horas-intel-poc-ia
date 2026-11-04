@@ -2,6 +2,9 @@
 
 **RustFS:** [abrir console](http://localhost:9001) · [usuário, senha e localização dos modelos](#acessar-o-rustfs-e-conferir-os-modelos).
 
+**Correções v1.1:** [relatório de execução e critérios de aceite](artifacts/reports/correcoes-v1.1-acceptance.md).
+Inclui testes reais, persistência, rastreabilidade, contrato da API e limitações.
+
 Prova de conceito de uma plataforma de IA para apoiar o planejamento acadêmico.
 O projeto demonstra a geração de uma **proposta de Planilha Turmas**, desde a
 leitura do histórico até a consulta do resultado pela API, mantendo a ligação

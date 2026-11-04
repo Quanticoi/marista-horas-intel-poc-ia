@@ -1,0 +1,1991 @@
+{
+  "plan_id": "b0a33725-9791-43e1-81dc-c7ec99cc004e",
+  "created_at_utc": "2026-11-04T13:59:51.238800+00:00",
+  "environment": "poc",
+  "mode": "reset-data",
+  "scope": {
+    "project": "marista",
+    "directory": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia",
+    "compose_sha256": "c6ac2792884d15737a3bc192b5a933107ff0a9f9e02511bd3a9258cb67fa41c2",
+    "volumes": [
+      "marista_postgres",
+      "marista_rabbitmq",
+      "marista_rustfs"
+    ],
+    "containers": [
+      {
+        "id": "612605cbb039c082f0c57b002b89997e705b55a25b6f47d2b679f3fd3bec00d3",
+        "service": "api",
+        "image": "sha256:bcf6aa7a7a88b0d299f9d02886356e699d68006667cbf9832bdf2ef487771768"
+      },
+      {
+        "id": "22f683589b9c4daa31fff736d44c7649180e3cbf9646be0349a054dd767f71d9",
+        "service": "dashboard",
+        "image": "sha256:bcf6aa7a7a88b0d299f9d02886356e699d68006667cbf9832bdf2ef487771768"
+      },
+      {
+        "id": "7ed8ab08e87ae64a25a4897ba02095e05fcdd9a0735d132e581f488a1e77908b",
+        "service": "inference",
+        "image": "sha256:bcf6aa7a7a88b0d299f9d02886356e699d68006667cbf9832bdf2ef487771768"
+      },
+      {
+        "id": "adeb0fc7e8fcfa2681d89401ea55e6db1f6a8d38f108d41464f8737717e8efe2",
+        "service": "ingestion",
+        "image": "sha256:bcf6aa7a7a88b0d299f9d02886356e699d68006667cbf9832bdf2ef487771768"
+      },
+      {
+        "id": "17b964ff9b8d25d5e97f015f2b368eafbc1e6e30bb7668c656562fbef98054a9",
+        "service": "jupyter",
+        "image": "sha256:14e0022c98388ed72c73c38043ec783672fbee1cc9211965d2b335da8932de63"
+      },
+      {
+        "id": "2a1db01c136971444fed4700eb5f822ff86429e4b3b3f451dc0de517ab40335c",
+        "service": "mlflow",
+        "image": "sha256:bcf6aa7a7a88b0d299f9d02886356e699d68006667cbf9832bdf2ef487771768"
+      },
+      {
+        "id": "fec705bbd63e80cec1202b156a6af82449e39ce1121846c31cc76f18a105e47e",
+        "service": "monitoramento",
+        "image": "sha256:bcf6aa7a7a88b0d299f9d02886356e699d68006667cbf9832bdf2ef487771768"
+      },
+      {
+        "id": "98935d082542aa64ae1bfcbf39ade872fd67742c474476f2fb45d4e2ecf637d5",
+        "service": "postgres",
+        "image": "sha256:d609c3005478af92bddad773423df829b7402ea0b356d5b72edd2fd54d1ad3ea"
+      },
+      {
+        "id": "d4b67f9904f1a01f10f4c0c60e6fe5bfe0f5a1b873d40c2e8ba6edbbe901879a",
+        "service": "rabbitmq",
+        "image": "sha256:697da87bf89699fda7c7da8067cc91b055353056d52a07e7f3c41bd67b0b5f71"
+      },
+      {
+        "id": "5075210559b104a3cd9105fc417a21548ec0c8a3a9253bb01e13294ace0c9213",
+        "service": "rustfs",
+        "image": "sha256:8cc9801755448b71a786705ce76692c77e14936cccd87cf2fc31842e58f4d1ff"
+      },
+      {
+        "id": "50d740301b0457e8b3304d9b8ef4815d78a8753660a8989abb70361a73a781ba",
+        "service": "worker",
+        "image": "sha256:bcf6aa7a7a88b0d299f9d02886356e699d68006667cbf9832bdf2ef487771768"
+      }
+    ]
+  },
+  "inventory": {
+    "bucket": "pucpr-poc",
+    "buckets": [
+      "pucpr-poc"
+    ],
+    "database_names": [
+      "mlflow_db",
+      "planejamento_db",
+      "postgres"
+    ],
+    "databases": {
+      "mlflow_db": {
+        "alembic_version": {
+          "count": 1,
+          "digest": "6928ed6a0b30741f6574f8d7c1d03428"
+        },
+        "assessments": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "budget_policies": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "datasets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_bindings": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_model_mappings": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoints": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "entity_associations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_dataset_records": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_dataset_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_datasets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "experiment_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "experiments": {
+          "count": 5,
+          "digest": "b6ec2c5baf0879a2eede3dd6ad2efe2a"
+        },
+        "input_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "inputs": {
+          "count": 16,
+          "digest": "dbaf634b979b753293bd2c6617509423"
+        },
+        "issues": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "latest_metrics": {
+          "count": 378,
+          "digest": "4ddcd440b6c91ca7eeccfc83176b63c4"
+        },
+        "logged_model_metrics": {
+          "count": 30,
+          "digest": "881a3014b193a25d4d4b92707316c121"
+        },
+        "logged_model_params": {
+          "count": 255,
+          "digest": "624a85a6e3b301833ba666e293152351"
+        },
+        "logged_model_tags": {
+          "count": 64,
+          "digest": "f29c4a802404c0e93e2eedcc558e1d36"
+        },
+        "logged_models": {
+          "count": 16,
+          "digest": "631f9afac0861323540ff4fe4dce65f4"
+        },
+        "metrics": {
+          "count": 378,
+          "digest": "79194b74703a6c17fdfd4e6c56b1eedc"
+        },
+        "model_definitions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_version_tags": {
+          "count": 91,
+          "digest": "a536b326a54e66a0449d5e4ee0f86408"
+        },
+        "model_versions": {
+          "count": 46,
+          "digest": "3bfa4a28b20c4f49a19d5cd0514e3449"
+        },
+        "online_scoring_configs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "params": {
+          "count": 386,
+          "digest": "f3098a92041f56cecd10d4ce8e5ab409"
+        },
+        "registered_model_aliases": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_model_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_models": {
+          "count": 37,
+          "digest": "11af268ab679a51b2c9d33e941a7fffb"
+        },
+        "runs": {
+          "count": 60,
+          "digest": "fb4477cb5cfa46e80b4fd5581a63fa5b"
+        },
+        "scorer_versions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "scorers": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "secrets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "span_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "spans": {
+          "count": 68,
+          "digest": "b4ae87e5aec71575674d351a8a2ceabf"
+        },
+        "tags": {
+          "count": 599,
+          "digest": "0084838856ae1ba2ac8f9ae2d9d3a811"
+        },
+        "trace_info": {
+          "count": 47,
+          "digest": "4441038eae9c56628efb9309f7de4c97"
+        },
+        "trace_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_request_metadata": {
+          "count": 523,
+          "digest": "7ed07572819b3a946a41847a171e4d53"
+        },
+        "trace_tags": {
+          "count": 345,
+          "digest": "33c97fe534d0cf21eb221bc96475e20a"
+        },
+        "webhook_events": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "webhooks": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "workspaces": {
+          "count": 1,
+          "digest": "f853bad469a0a08c243a1cef4b515440"
+        }
+      },
+      "planejamento_db": {
+        "academic_cycles": {
+          "count": 1,
+          "digest": "eb4fbcbf55946d1e91fe8d267ab4b60e"
+        },
+        "academic_periods": {
+          "count": 30,
+          "digest": "8cee18be6d733e27d197aa0b31d218ba"
+        },
+        "audit_events": {
+          "count": 10,
+          "digest": "ca7cc6157b5c2abd1570534af74cb9e2"
+        },
+        "campuses": {
+          "count": 3,
+          "digest": "2a1feab694fe2bc07c2dd54f878a9bd7"
+        },
+        "courses": {
+          "count": 15,
+          "digest": "e2a95968de4dd1a4e3baa38bc7053adf"
+        },
+        "dataset_snapshots": {
+          "count": 1,
+          "digest": "762d9d758a63cfeb5c53ca7da4a3a191"
+        },
+        "disciplines": {
+          "count": 90,
+          "digest": "272cc79e02ad459ce9d7d2e041f38754"
+        },
+        "historical_enrollments": {
+          "count": 350,
+          "digest": "37226622e013a30b29f324481c46a84b"
+        },
+        "lineage_edges": {
+          "count": 5,
+          "digest": "5f394316c3b14e67b7f08821d59fc826"
+        },
+        "lineage_entities": {
+          "count": 5,
+          "digest": "822f959ab3f01a9d91b1056ec731be38"
+        },
+        "model_catalog": {
+          "count": 30,
+          "digest": "7a42d7587cd72c901f50048cbedd0019"
+        },
+        "model_deployments": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_quality_evaluations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "offer_suggestions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "period_disciplines": {
+          "count": 90,
+          "digest": "486ae3dae01acddc14477e5cb0ec76ab"
+        },
+        "prediction_jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "predictions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_contract_evidence": {
+          "count": 1,
+          "digest": "05bc6a36c1b74da1257719eedbf3f94e"
+        },
+        "proposal_generations": {
+          "count": 9,
+          "digest": "926ba780e5c4d673e02bbb755981c9fb"
+        },
+        "proposal_lines": {
+          "count": 810,
+          "digest": "75119fe57be8c1ad364667ccd2c4eeed"
+        },
+        "proposal_model_usage": {
+          "count": 9,
+          "digest": "4f67b5fe916dbbd7904d9f0e58b11f66"
+        },
+        "training_executions": {
+          "count": 30,
+          "digest": "01eb3bd739695e5177c12d4120b88283"
+        }
+      }
+    },
+    "objects": [
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "0e0bd4ae-7d5b-414b-8af9-6d60248e72c3"
+      },
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "23eb49c1-7e28-48a8-969f-90c5d161d099"
+      },
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "2bb78657-fb59-4380-bb45-ba7f9771af3c"
+      },
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "683b27dd-5996-4bfc-92e7-6c6691e789ce"
+      },
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "78a62339-8e16-4009-b255-c32d7b3d87c3"
+      },
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "a60f05b9-f0fa-49aa-80d8-c129d18928dd"
+      },
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "e8c34d99-f960-4fea-914c-3d8dfe505cde"
+      },
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "efbbe072-8915-4f3b-a787-52c3135305f4"
+      },
+      {
+        "key": "lineage/poc/planilha-turmas/checks/3aebe1c2-b71a-409c-af83-9b61f6a39f6c/manifest.json",
+        "kind": "Versions",
+        "size": 36,
+        "version": "66925643-a29f-4655-8682-1b56a9220aea"
+      },
+      {
+        "key": "lineage/poc/planilha-turmas/inferences/bec3e7c0-c21e-480c-abf9-d9395ebf3ae7/manifest.json",
+        "kind": "Versions",
+        "size": 635,
+        "version": "770e7392-8179-445b-b2ba-9833e1afdf02"
+      },
+      {
+        "key": "lineage/poc/planilha-turmas/proposals/93519267-7809-4e64-9e04-a79b9fb03d40/revisions/1/manifest.json",
+        "kind": "Versions",
+        "size": 11508,
+        "version": "dfee55d0-98ab-49b6-bd1e-2295ba51bc53"
+      },
+      {
+        "key": "mlflow/1/09921087e028430b9d40e2c3a5f49237/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 399,
+        "version": "79199d5e-a5fc-481a-b111-46b5a4ec475c"
+      },
+      {
+        "key": "mlflow/1/0cf0c390b9374fe7ade530cd7632b1c5/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 389,
+        "version": "21cc2d36-2be5-4ed0-97c6-c394cef1019b"
+      },
+      {
+        "key": "mlflow/1/0d929ce5f3d7477d984ffbedd35b85f7/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 399,
+        "version": "406bd3a7-c618-4c85-a4a1-b42a6114548c"
+      },
+      {
+        "key": "mlflow/1/1910520f90b840b5868b14dbfd778582/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 374,
+        "version": "6f63eb74-16ea-43a7-94bd-48d886b40288"
+      },
+      {
+        "key": "mlflow/1/1b810e67d8c8463e85f9f8aca2fa2ec2/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 388,
+        "version": "392d0eaa-1ecf-45be-9391-aac6d84d20c6"
+      },
+      {
+        "key": "mlflow/1/22539dadd24645fd92696c20d85fb13e/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 390,
+        "version": "5d2dbe03-37c2-4e14-a982-ce0cfaa86686"
+      },
+      {
+        "key": "mlflow/1/2d6885eac1a64bba855a337d4a861aee/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 386,
+        "version": "73a20eee-3206-4586-966d-09846558753e"
+      },
+      {
+        "key": "mlflow/1/3733f03816694ebc82d49e7110e143ec/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 376,
+        "version": "0bd93202-6cdb-4881-9264-99e6d08da722"
+      },
+      {
+        "key": "mlflow/1/38036a46aae64d08b92287cd50544f72/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 387,
+        "version": "79e0d396-2cbd-40c4-8f16-fb570210983d"
+      },
+      {
+        "key": "mlflow/1/39fe97e5a3d9415695205da187a56c19/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 266,
+        "version": "773cb581-bbb4-47da-954b-c0ad89eedd7d"
+      },
+      {
+        "key": "mlflow/1/43dac1aff87140c2ac69a47ef2b6d020/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 399,
+        "version": "f5938199-bf04-4d76-a8ab-ee990d1fb61a"
+      },
+      {
+        "key": "mlflow/1/499f51d2b63640ddbf242ff862543d4b/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 388,
+        "version": "ecb2ad31-3f79-48d8-9143-e65460093dc6"
+      },
+      {
+        "key": "mlflow/1/4dc897e7671e4f1cb3a6b9a214f54897/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 401,
+        "version": "2cf32daf-9b38-4082-a6cb-fdbd30f429fc"
+      },
+      {
+        "key": "mlflow/1/6c42faf1f3624d4e8de457c6a6156300/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 387,
+        "version": "50b77a5b-bee1-4d2a-b64c-190aeb2d8de4"
+      },
+      {
+        "key": "mlflow/1/708a8307caf84f779e3e8baf5a8e9433/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 389,
+        "version": "cbe97599-f9e0-4358-84ba-5a3e175d85d9"
+      },
+      {
+        "key": "mlflow/1/76ed9009db424f389b8eec7427f05297/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 388,
+        "version": "aeabe38a-f759-496b-9ee0-94de7dcb41f8"
+      },
+      {
+        "key": "mlflow/1/9b7d7ad0e40a41a69688ef44efd98c3e/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 374,
+        "version": "e47f59dc-c691-483e-ae98-1bd5de557dc0"
+      },
+      {
+        "key": "mlflow/1/9cb04d54e61a4d15b668b2fad88cc1aa/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 402,
+        "version": "f3ab579f-8866-416c-9b47-e87a127de20e"
+      },
+      {
+        "key": "mlflow/1/a2f403ebeefd42c3b1e27f82b07389c5/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 399,
+        "version": "13c9c10c-cb8b-4951-9e10-683dffb4466c"
+      },
+      {
+        "key": "mlflow/1/a8ba19a22c934e8e9b2f891900fb347f/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 401,
+        "version": "62ac953f-3611-4f3c-bc97-c7d44ced077e"
+      },
+      {
+        "key": "mlflow/1/b0f189407e8a4a35b3a96b06b39212fe/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 387,
+        "version": "ea2b7516-b7bb-420c-8dbf-bb8acf4d4628"
+      },
+      {
+        "key": "mlflow/1/b7ebee316da64ef98e51d7863d00a2ec/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 388,
+        "version": "5714022c-93bc-4e6a-8f1d-7223b2d77023"
+      },
+      {
+        "key": "mlflow/1/bb3ca98771cd4f2baefe67794518c517/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 388,
+        "version": "ad46db98-29ac-426b-a3b0-60f1cd0a2175"
+      },
+      {
+        "key": "mlflow/1/bc0c26cda469432aa82fd107714b4fb9/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 399,
+        "version": "15f1600d-578a-4c34-aaec-7be3de9313d6"
+      },
+      {
+        "key": "mlflow/1/c76d1360957a461a80c1d92589ae229f/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 400,
+        "version": "df83c8bf-c239-49a9-9073-c7b91a7019d4"
+      },
+      {
+        "key": "mlflow/1/cf0a3cdac70a4228a222cb26e30839d6/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 391,
+        "version": "b8cf011a-9260-499b-b5e8-16e741c570e4"
+      },
+      {
+        "key": "mlflow/1/e995bb317f4e4178b8f0dcd1b6950f0b/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 400,
+        "version": "15bab3bc-5d39-4cba-b947-e8f2817d4bf8"
+      },
+      {
+        "key": "mlflow/1/ea59a1cd74f845438231357cd3570472/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 399,
+        "version": "37aac059-c62c-40e7-aa5f-bd8fbdd2baa9"
+      },
+      {
+        "key": "mlflow/1/ec479fc18bc142178c9a3f745a3920b6/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 398,
+        "version": "afcb2f70-a86c-4f08-a51f-4146c13cfdf7"
+      },
+      {
+        "key": "mlflow/1/fcf1d76e7cf34d4f99446ee80d25f66d/artifacts/model/model.json",
+        "kind": "Versions",
+        "size": 398,
+        "version": "7b65eddf-1e29-42fd-aae2-5c6c030c494c"
+      },
+      {
+        "key": "mlflow/2/282c3af6380946ef84625c971b1c4690/artifacts/dataset/macrodata.csv",
+        "kind": "Versions",
+        "size": 19458,
+        "version": "a0bda1b1-e6d2-4d85-8778-a7c76bedd82d"
+      },
+      {
+        "key": "mlflow/2/282c3af6380946ef84625c971b1c4690/artifacts/dataset/provenance.json",
+        "kind": "Versions",
+        "size": 348,
+        "version": "6522e660-7cbf-4cbe-a0cd-ac76b38ca3db"
+      },
+      {
+        "key": "mlflow/2/282c3af6380946ef84625c971b1c4690/artifacts/evaluation/realgdp-persistence-predictions.csv",
+        "kind": "Versions",
+        "size": 1013,
+        "version": "2ab3548d-67ac-43b8-b2d4-bff76f09e192"
+      },
+      {
+        "key": "mlflow/2/282c3af6380946ef84625c971b1c4690/artifacts/plots/historical-series.png",
+        "kind": "Versions",
+        "size": 115943,
+        "version": "33d00ba1-a90d-4a66-b6f8-a7b303ae998e"
+      },
+      {
+        "key": "mlflow/2/282c3af6380946ef84625c971b1c4690/artifacts/plots/test-predictions.png",
+        "kind": "Versions",
+        "size": 36755,
+        "version": "0b20fa88-89e6-43c5-b9bb-18a07b79ed4c"
+      },
+      {
+        "key": "mlflow/2/45ea4c27df7f4bce9b4d2f44dc32a283/artifacts/dataset/macrodata.csv",
+        "kind": "Versions",
+        "size": 19458,
+        "version": "47e10e20-c19e-40f7-a7b4-adc033c17e4d"
+      },
+      {
+        "key": "mlflow/2/45ea4c27df7f4bce9b4d2f44dc32a283/artifacts/dataset/provenance.json",
+        "kind": "Versions",
+        "size": 348,
+        "version": "c188a49f-aff1-4c36-8120-977bfd0efa9e"
+      },
+      {
+        "key": "mlflow/2/45ea4c27df7f4bce9b4d2f44dc32a283/artifacts/evaluation/unemp-random_forest-predictions.csv",
+        "kind": "Versions",
+        "size": 1092,
+        "version": "a80e85ad-43d8-4973-9be0-19376c9a6b65"
+      },
+      {
+        "key": "mlflow/2/45ea4c27df7f4bce9b4d2f44dc32a283/artifacts/plots/historical-series.png",
+        "kind": "Versions",
+        "size": 115943,
+        "version": "5d5fb9d2-cfd5-4835-81fd-4ca74fb4fdc0"
+      },
+      {
+        "key": "mlflow/2/45ea4c27df7f4bce9b4d2f44dc32a283/artifacts/plots/test-predictions.png",
+        "kind": "Versions",
+        "size": 28460,
+        "version": "434f611e-91e3-4432-ae3c-a2c119559982"
+      },
+      {
+        "key": "mlflow/2/770169065e084da6b65846af132254df/artifacts/dataset/macrodata.csv",
+        "kind": "Versions",
+        "size": 19458,
+        "version": "74caf0e3-bf3c-431f-9371-5fa146bbdbf6"
+      },
+      {
+        "key": "mlflow/2/770169065e084da6b65846af132254df/artifacts/dataset/provenance.json",
+        "kind": "Versions",
+        "size": 348,
+        "version": "2c996bed-f380-4d3e-916c-de99ae992ece"
+      },
+      {
+        "key": "mlflow/2/770169065e084da6b65846af132254df/artifacts/evaluation/realcons-persistence-predictions.csv",
+        "kind": "Versions",
+        "size": 850,
+        "version": "5b582568-2c49-4c1d-b8f8-a654ea975ce2"
+      },
+      {
+        "key": "mlflow/2/770169065e084da6b65846af132254df/artifacts/plots/historical-series.png",
+        "kind": "Versions",
+        "size": 115943,
+        "version": "ae4640d3-7b26-4035-806b-436971448540"
+      },
+      {
+        "key": "mlflow/2/770169065e084da6b65846af132254df/artifacts/plots/test-predictions.png",
+        "kind": "Versions",
+        "size": 33472,
+        "version": "0d652652-86f9-4f0e-a8d3-e0a69ba92793"
+      },
+      {
+        "key": "mlflow/2/9ebe14ac7a5b49e68a5cbe9d8301993e/artifacts/dataset/macrodata.csv",
+        "kind": "Versions",
+        "size": 19458,
+        "version": "8ed25ef2-5f85-4286-8102-f481c6c295d5"
+      },
+      {
+        "key": "mlflow/2/9ebe14ac7a5b49e68a5cbe9d8301993e/artifacts/dataset/provenance.json",
+        "kind": "Versions",
+        "size": 348,
+        "version": "e6b06c02-dd30-4808-8820-39f82723d18c"
+      },
+      {
+        "key": "mlflow/2/9ebe14ac7a5b49e68a5cbe9d8301993e/artifacts/evaluation/realcons-ridge-predictions.csv",
+        "kind": "Versions",
+        "size": 1127,
+        "version": "76d687eb-0cc8-4ffc-af31-067bd9dc8314"
+      },
+      {
+        "key": "mlflow/2/9ebe14ac7a5b49e68a5cbe9d8301993e/artifacts/plots/historical-series.png",
+        "kind": "Versions",
+        "size": 115943,
+        "version": "d4c264a1-52a6-4758-b607-f4cd1197276e"
+      },
+      {
+        "key": "mlflow/2/9ebe14ac7a5b49e68a5cbe9d8301993e/artifacts/plots/test-predictions.png",
+        "kind": "Versions",
+        "size": 32792,
+        "version": "c3acb839-1250-485a-b062-95cc795a138b"
+      },
+      {
+        "key": "mlflow/2/a74a0614ee4149768ba222f387055120/artifacts/dataset/macrodata.csv",
+        "kind": "Versions",
+        "size": 19458,
+        "version": "186cfaa9-4803-4ca3-abc2-659e64e584a8"
+      },
+      {
+        "key": "mlflow/2/a74a0614ee4149768ba222f387055120/artifacts/dataset/provenance.json",
+        "kind": "Versions",
+        "size": 348,
+        "version": "7638937a-be3b-46f9-9390-90048e538d2a"
+      },
+      {
+        "key": "mlflow/2/a74a0614ee4149768ba222f387055120/artifacts/evaluation/realcons-random_forest-predictions.csv",
+        "kind": "Versions",
+        "size": 1111,
+        "version": "26ae41d8-5c89-4cb4-b241-865e3bc17ddb"
+      },
+      {
+        "key": "mlflow/2/a74a0614ee4149768ba222f387055120/artifacts/plots/historical-series.png",
+        "kind": "Versions",
+        "size": 115943,
+        "version": "612a90fa-e7f1-4f8d-9079-02b85c9481bd"
+      },
+      {
+        "key": "mlflow/2/a74a0614ee4149768ba222f387055120/artifacts/plots/test-predictions.png",
+        "kind": "Versions",
+        "size": 27435,
+        "version": "2c26f63e-dc24-462d-965e-a8257e4362f2"
+      },
+      {
+        "key": "mlflow/2/b3d774de2caa4fb39c31b6302c7fa108/artifacts/dataset/macrodata.csv",
+        "kind": "Versions",
+        "size": 19458,
+        "version": "33602cf7-452b-4db4-9fee-ee0173f22eb4"
+      },
+      {
+        "key": "mlflow/2/b3d774de2caa4fb39c31b6302c7fa108/artifacts/dataset/provenance.json",
+        "kind": "Versions",
+        "size": 348,
+        "version": "1c479c6e-b998-426c-a14f-5695f48aa6f5"
+      },
+      {
+        "key": "mlflow/2/b3d774de2caa4fb39c31b6302c7fa108/artifacts/evaluation/unemp-ridge-predictions.csv",
+        "kind": "Versions",
+        "size": 1091,
+        "version": "c63564a3-bf76-476d-b513-de139b2819a4"
+      },
+      {
+        "key": "mlflow/2/b3d774de2caa4fb39c31b6302c7fa108/artifacts/plots/historical-series.png",
+        "kind": "Versions",
+        "size": 115943,
+        "version": "9d61a67e-a66b-481c-9e6c-977b215d426f"
+      },
+      {
+        "key": "mlflow/2/b3d774de2caa4fb39c31b6302c7fa108/artifacts/plots/test-predictions.png",
+        "kind": "Versions",
+        "size": 28266,
+        "version": "833332c1-996b-4812-a27e-ecafe477c706"
+      },
+      {
+        "key": "mlflow/2/e3983af2c5534ca9944116c6ec60ad1d/artifacts/dataset/macrodata.csv",
+        "kind": "Versions",
+        "size": 19458,
+        "version": "8d5674bb-2e96-4986-8d23-7464c3465e61"
+      },
+      {
+        "key": "mlflow/2/e3983af2c5534ca9944116c6ec60ad1d/artifacts/dataset/provenance.json",
+        "kind": "Versions",
+        "size": 348,
+        "version": "c7f775b1-a7ca-4527-91f2-11e6538cd101"
+      },
+      {
+        "key": "mlflow/2/e3983af2c5534ca9944116c6ec60ad1d/artifacts/evaluation/realgdp-ridge-predictions.csv",
+        "kind": "Versions",
+        "size": 1202,
+        "version": "37df3e2d-2fd4-466c-ac0e-4df7e9cedec7"
+      },
+      {
+        "key": "mlflow/2/e3983af2c5534ca9944116c6ec60ad1d/artifacts/plots/historical-series.png",
+        "kind": "Versions",
+        "size": 115943,
+        "version": "2efdb3a8-d4b6-429c-b54b-f36b5a337710"
+      },
+      {
+        "key": "mlflow/2/e3983af2c5534ca9944116c6ec60ad1d/artifacts/plots/test-predictions.png",
+        "kind": "Versions",
+        "size": 35403,
+        "version": "005fa8af-ac08-4ee4-8412-a636f5f3a7d8"
+      },
+      {
+        "key": "mlflow/2/e99c3a8851644f6391d629f7cdaacf7d/artifacts/dataset/macrodata.csv",
+        "kind": "Versions",
+        "size": 19458,
+        "version": "613d4d33-d36f-4c25-9cf2-fef1b0d1cce8"
+      },
+      {
+        "key": "mlflow/2/e99c3a8851644f6391d629f7cdaacf7d/artifacts/dataset/provenance.json",
+        "kind": "Versions",
+        "size": 348,
+        "version": "3ad609b3-2905-4e78-bafa-d8a2b515b779"
+      },
+      {
+        "key": "mlflow/2/e99c3a8851644f6391d629f7cdaacf7d/artifacts/evaluation/unemp-persistence-predictions.csv",
+        "kind": "Versions",
+        "size": 732,
+        "version": "a81d1b19-9bc4-48c0-933b-8247b1642c8a"
+      },
+      {
+        "key": "mlflow/2/e99c3a8851644f6391d629f7cdaacf7d/artifacts/plots/historical-series.png",
+        "kind": "Versions",
+        "size": 115943,
+        "version": "6c11384a-b7d2-493e-8f41-5a1a1c790c45"
+      },
+      {
+        "key": "mlflow/2/e99c3a8851644f6391d629f7cdaacf7d/artifacts/plots/test-predictions.png",
+        "kind": "Versions",
+        "size": 26369,
+        "version": "fad897a3-842b-44da-ac7e-b38889120e33"
+      },
+      {
+        "key": "mlflow/2/ff30e3de90bb47f6aff7da3c8078af94/artifacts/dataset/macrodata.csv",
+        "kind": "Versions",
+        "size": 19458,
+        "version": "dd1c21a8-2d55-4983-9219-4f09d985522e"
+      },
+      {
+        "key": "mlflow/2/ff30e3de90bb47f6aff7da3c8078af94/artifacts/dataset/provenance.json",
+        "kind": "Versions",
+        "size": 348,
+        "version": "81d9cbbc-70ec-4125-95c7-57e1fa3f0d52"
+      },
+      {
+        "key": "mlflow/2/ff30e3de90bb47f6aff7da3c8078af94/artifacts/evaluation/realgdp-random_forest-predictions.csv",
+        "kind": "Versions",
+        "size": 1194,
+        "version": "a5c41063-aed7-4c6f-b7b4-a653a59b76de"
+      },
+      {
+        "key": "mlflow/2/ff30e3de90bb47f6aff7da3c8078af94/artifacts/plots/historical-series.png",
+        "kind": "Versions",
+        "size": 115943,
+        "version": "dec34f22-4990-4a7e-a3b8-6cca9da9e26b"
+      },
+      {
+        "key": "mlflow/2/ff30e3de90bb47f6aff7da3c8078af94/artifacts/plots/test-predictions.png",
+        "kind": "Versions",
+        "size": 28216,
+        "version": "59b038f9-c24e-4ca9-912c-db4da6d56006"
+      },
+      {
+        "key": "mlflow/2/models/m-11a74a3dc3b241e28897cca56eee074f/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1325,
+        "version": "b97ffa6b-bc44-4858-8c56-5e572b89ae63"
+      },
+      {
+        "key": "mlflow/2/models/m-11a74a3dc3b241e28897cca56eee074f/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 229,
+        "version": "c6470d58-2c76-4e4d-8a24-d80864a95dbe"
+      },
+      {
+        "key": "mlflow/2/models/m-11a74a3dc3b241e28897cca56eee074f/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 192,
+        "version": "77e0bc85-d3d4-4980-aaa7-23327ffed1d0"
+      },
+      {
+        "key": "mlflow/2/models/m-11a74a3dc3b241e28897cca56eee074f/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 447822,
+        "version": "9872a111-476f-4b47-a67a-bc4c71081351"
+      },
+      {
+        "key": "mlflow/2/models/m-11a74a3dc3b241e28897cca56eee074f/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "625d9252-d2c4-4a7f-96a6-08f3c115225f"
+      },
+      {
+        "key": "mlflow/2/models/m-11a74a3dc3b241e28897cca56eee074f/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 108,
+        "version": "0b22574e-7814-42ad-a22c-9c2568db0966"
+      },
+      {
+        "key": "mlflow/2/models/m-11a74a3dc3b241e28897cca56eee074f/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 379,
+        "version": "cb64e6d2-e242-4461-af18-f240feba00f0"
+      },
+      {
+        "key": "mlflow/2/models/m-33dba3d24db54e5491fd41dfc32483ef/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1345,
+        "version": "e8140a9e-32f6-4102-9b1d-ff78f2227b72"
+      },
+      {
+        "key": "mlflow/2/models/m-33dba3d24db54e5491fd41dfc32483ef/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 229,
+        "version": "7ef3b6d7-f072-49c2-92ee-6b80661a90a0"
+      },
+      {
+        "key": "mlflow/2/models/m-33dba3d24db54e5491fd41dfc32483ef/artifacts/environment_variables.txt",
+        "kind": "Versions",
+        "size": 258,
+        "version": "219b722d-b836-48d9-814a-c62dba27f271"
+      },
+      {
+        "key": "mlflow/2/models/m-33dba3d24db54e5491fd41dfc32483ef/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 207,
+        "version": "66993667-ac5b-4554-a33e-386c7e5e62d9"
+      },
+      {
+        "key": "mlflow/2/models/m-33dba3d24db54e5491fd41dfc32483ef/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 1142,
+        "version": "2b20e68d-f8fb-4256-8f3e-4b048d752bb2"
+      },
+      {
+        "key": "mlflow/2/models/m-33dba3d24db54e5491fd41dfc32483ef/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "d38c4577-d6a4-44a8-9e2a-d9f161822e9c"
+      },
+      {
+        "key": "mlflow/2/models/m-33dba3d24db54e5491fd41dfc32483ef/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 108,
+        "version": "0366130f-50cb-4df5-8437-0aaf015c49c2"
+      },
+      {
+        "key": "mlflow/2/models/m-33dba3d24db54e5491fd41dfc32483ef/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 394,
+        "version": "844268fb-975b-452b-a4e6-2e220ce93ad6"
+      },
+      {
+        "key": "mlflow/2/models/m-438680e3419145028fdc8d4c0d062fff/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1323,
+        "version": "96273252-1f0a-404c-b4c8-f7a3090fb1e3"
+      },
+      {
+        "key": "mlflow/2/models/m-438680e3419145028fdc8d4c0d062fff/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 229,
+        "version": "29741640-60e7-4762-ab36-8c6a7297e1ee"
+      },
+      {
+        "key": "mlflow/2/models/m-438680e3419145028fdc8d4c0d062fff/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 149,
+        "version": "ee9709d6-b3aa-4927-8351-517a2f8df4c5"
+      },
+      {
+        "key": "mlflow/2/models/m-438680e3419145028fdc8d4c0d062fff/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 1142,
+        "version": "d220a329-f0de-4776-b38c-e252f739956b"
+      },
+      {
+        "key": "mlflow/2/models/m-438680e3419145028fdc8d4c0d062fff/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "a41b077b-ee4c-48ed-9cc6-cb4342f179a3"
+      },
+      {
+        "key": "mlflow/2/models/m-438680e3419145028fdc8d4c0d062fff/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 108,
+        "version": "6b873d38-8203-461b-a331-9432cb49bc61"
+      },
+      {
+        "key": "mlflow/2/models/m-438680e3419145028fdc8d4c0d062fff/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 336,
+        "version": "f959a7ed-9216-4375-accc-c654b80e8cfd"
+      },
+      {
+        "key": "mlflow/2/models/m-bbfd72c181104582a46c345ab9055ed4/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1325,
+        "version": "8d5a4317-3ebd-4ef4-8f3d-4b02c4a8337f"
+      },
+      {
+        "key": "mlflow/2/models/m-bbfd72c181104582a46c345ab9055ed4/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 229,
+        "version": "5a6ef0a3-42de-47eb-82c0-22cf783b4f15"
+      },
+      {
+        "key": "mlflow/2/models/m-bbfd72c181104582a46c345ab9055ed4/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 207,
+        "version": "21752395-1789-4ac2-a2d8-ccca3a13b825"
+      },
+      {
+        "key": "mlflow/2/models/m-bbfd72c181104582a46c345ab9055ed4/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 446094,
+        "version": "ddc76ad8-6ab6-40b6-8d28-ff7e74a31a75"
+      },
+      {
+        "key": "mlflow/2/models/m-bbfd72c181104582a46c345ab9055ed4/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "93703207-0d45-4c1b-b1cf-5986581116c3"
+      },
+      {
+        "key": "mlflow/2/models/m-bbfd72c181104582a46c345ab9055ed4/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 108,
+        "version": "2c78f50c-a6df-4d74-a850-ef93587bb8b3"
+      },
+      {
+        "key": "mlflow/2/models/m-bbfd72c181104582a46c345ab9055ed4/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 394,
+        "version": "ac30c846-c0e8-4176-960a-c5ee7ddebc5c"
+      },
+      {
+        "key": "mlflow/2/models/m-cbc6eb2873ed4f5fb5ee6f871745dece/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1325,
+        "version": "edac7057-657b-433b-89ed-a42ab4c18784"
+      },
+      {
+        "key": "mlflow/2/models/m-cbc6eb2873ed4f5fb5ee6f871745dece/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 229,
+        "version": "6f04cff4-76cc-4507-aefc-1a6d4eca3ff0"
+      },
+      {
+        "key": "mlflow/2/models/m-cbc6eb2873ed4f5fb5ee6f871745dece/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 149,
+        "version": "e5edc907-d91f-4114-86fc-3b320c86a17b"
+      },
+      {
+        "key": "mlflow/2/models/m-cbc6eb2873ed4f5fb5ee6f871745dece/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 406926,
+        "version": "01e1a11c-a1a9-41df-8dd7-dd03ea3835b0"
+      },
+      {
+        "key": "mlflow/2/models/m-cbc6eb2873ed4f5fb5ee6f871745dece/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "65b959a8-488b-408f-82fd-85a1ee45d55f"
+      },
+      {
+        "key": "mlflow/2/models/m-cbc6eb2873ed4f5fb5ee6f871745dece/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 108,
+        "version": "7d3843b6-e0c7-43f0-a59b-c7e48d38b400"
+      },
+      {
+        "key": "mlflow/2/models/m-cbc6eb2873ed4f5fb5ee6f871745dece/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 336,
+        "version": "377f4eb5-6391-4d87-b92d-798118dfd6f2"
+      },
+      {
+        "key": "mlflow/2/models/m-eadd86d83aaa48858e08f587d4c1981e/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1323,
+        "version": "9b512a0c-f94a-412d-845d-a85a34e97cb8"
+      },
+      {
+        "key": "mlflow/2/models/m-eadd86d83aaa48858e08f587d4c1981e/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 229,
+        "version": "11ed7285-72a7-45d5-af1d-85b2f13f5121"
+      },
+      {
+        "key": "mlflow/2/models/m-eadd86d83aaa48858e08f587d4c1981e/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 192,
+        "version": "0b000cea-edb8-4740-a9a1-13a1c7916b56"
+      },
+      {
+        "key": "mlflow/2/models/m-eadd86d83aaa48858e08f587d4c1981e/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 1142,
+        "version": "9e173477-5882-4de1-b49e-06c83c385bde"
+      },
+      {
+        "key": "mlflow/2/models/m-eadd86d83aaa48858e08f587d4c1981e/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "ee6bec3d-afdc-446c-b61e-a63faf85070c"
+      },
+      {
+        "key": "mlflow/2/models/m-eadd86d83aaa48858e08f587d4c1981e/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 108,
+        "version": "efbe4a20-920a-43bb-8642-abc7b1a8414e"
+      },
+      {
+        "key": "mlflow/2/models/m-eadd86d83aaa48858e08f587d4c1981e/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 379,
+        "version": "cddd27f8-c240-48ca-8784-70c5573d02d8"
+      },
+      {
+        "key": "mlflow/3/0238c619ca864aa586b1533f33f21e1a/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "e14286ca-791d-4d13-b483-5e3d97d5861b"
+      },
+      {
+        "key": "mlflow/3/097525b9787e49bc93289e51676c665b/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "27dcd906-14b0-4a67-a343-88fb8b684121"
+      },
+      {
+        "key": "mlflow/3/12f5ce5f117c479fba9916d928d543bb/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "de595585-0d03-48a4-955b-b717dd2542a9"
+      },
+      {
+        "key": "mlflow/3/7b8d166db4b74f968af1835b569f306c/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "3e288c2d-fc01-413c-982c-30c9513b7d25"
+      },
+      {
+        "key": "mlflow/3/7d68c7648abb4256833827ebc51110ce/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "0f145d75-6515-44db-9615-24ff0651ad12"
+      },
+      {
+        "key": "mlflow/3/9c3595ba49e14cb186a1734c0dffd211/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "c6668589-53f0-4c23-857d-b6325e1cf467"
+      },
+      {
+        "key": "mlflow/3/a2c78074e2b442dfa020291f92ab0184/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "9dd8d270-8854-4cee-9c5a-1560afcc3073"
+      },
+      {
+        "key": "mlflow/3/afa8111b5c4548fa8498afd074aaf671/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "63f4df08-2690-43c0-b2f7-3b596bd34f59"
+      },
+      {
+        "key": "mlflow/3/db01246f832c4deea7cba6fb49c305ea/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "bbaace0a-ba40-488e-a534-a3434c2939ca"
+      },
+      {
+        "key": "mlflow/3/e7a4c9ecc5ba448eb9c11779abfca2f0/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "a7193bcf-b829-41ce-bf4b-f7f5d1aebbdf"
+      },
+      {
+        "key": "mlflow/3/f1cdd65b1fd84e4fa200ac4f45b1492f/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "86d6e0dc-35e3-4532-9e4b-d361b4ec9929"
+      },
+      {
+        "key": "mlflow/4/03012b122e6143b2919807cd91973451/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "d5fd972b-ec09-4b1f-8b46-244b2c2f590c"
+      },
+      {
+        "key": "mlflow/4/03012b122e6143b2919807cd91973451/artifacts/evidence/journey-d6260507-b9f4-4011-a3f6-b3dd511400d5.json",
+        "kind": "Versions",
+        "size": 7801,
+        "version": "e18f3365-8973-4e88-8327-f0a8154e91fb"
+      },
+      {
+        "key": "mlflow/4/03012b122e6143b2919807cd91973451/artifacts/evidence/journey-latest.json",
+        "kind": "Versions",
+        "size": 8233,
+        "version": "5fd6d784-27cf-4e1f-992b-32893cb05e91"
+      },
+      {
+        "key": "mlflow/4/03012b122e6143b2919807cd91973451/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "9522f96f-90dd-4462-b136-aea2e5803d58"
+      },
+      {
+        "key": "mlflow/4/03012b122e6143b2919807cd91973451/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "c80e9fd8-fdee-4063-934a-d1f16986d23e"
+      },
+      {
+        "key": "mlflow/4/10e217389382417cb0c6fa4ca83a79b8/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "aa48e9ad-6841-473a-88d6-22d9c2e86cd1"
+      },
+      {
+        "key": "mlflow/4/10e217389382417cb0c6fa4ca83a79b8/artifacts/evidence/journey-c0cf5e09-1a94-4935-ae65-3b3a9fbc6710.json",
+        "kind": "Versions",
+        "size": 1786,
+        "version": "68f9f6da-70da-4327-8668-46936e1e25bb"
+      },
+      {
+        "key": "mlflow/4/10e217389382417cb0c6fa4ca83a79b8/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "0bd23e7c-ef3a-45bb-9efc-6f6c0f89a36b"
+      },
+      {
+        "key": "mlflow/4/10e217389382417cb0c6fa4ca83a79b8/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "75b42ffb-8b6f-4f25-a01d-2b638171bf5f"
+      },
+      {
+        "key": "mlflow/4/147fd510dc1044ebb6b97476ee4c0fc3/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "2cceaa4d-7f17-44d1-be1f-cb0c1c569ed2"
+      },
+      {
+        "key": "mlflow/4/147fd510dc1044ebb6b97476ee4c0fc3/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "9ac92028-0544-4af9-99f6-b9a278cd9236"
+      },
+      {
+        "key": "mlflow/4/147fd510dc1044ebb6b97476ee4c0fc3/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "628f3f12-baa1-4550-8f3e-1fee3b0d3cab"
+      },
+      {
+        "key": "mlflow/4/1d62be545bed47c7b3f8847159fd7ff4/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "a925a698-4a27-4b1f-9134-dc2d4c6fc71a"
+      },
+      {
+        "key": "mlflow/4/1d62be545bed47c7b3f8847159fd7ff4/artifacts/evidence/journey-46b6b778-3c52-4e15-ac52-3d3c5d5939a5.json",
+        "kind": "Versions",
+        "size": 1784,
+        "version": "d48c8f48-d26d-4dda-84c2-5e0c959dc0fa"
+      },
+      {
+        "key": "mlflow/4/1d62be545bed47c7b3f8847159fd7ff4/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "5701dfe3-3ac4-4965-b61d-194b4bb7eb7c"
+      },
+      {
+        "key": "mlflow/4/1d62be545bed47c7b3f8847159fd7ff4/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "eaa67b0d-d436-4dd4-b0cf-15f85289b394"
+      },
+      {
+        "key": "mlflow/4/37e337f034214c3d86b935655c7a84c6/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "47875cb2-a0fe-4734-bbd2-2903c93ef311"
+      },
+      {
+        "key": "mlflow/4/37e337f034214c3d86b935655c7a84c6/artifacts/evidence/journey-8a8eed2d-992b-4049-8095-840003270b83.json",
+        "kind": "Versions",
+        "size": 1785,
+        "version": "05381fbb-1f11-41a1-9251-6dfd1bda1c89"
+      },
+      {
+        "key": "mlflow/4/37e337f034214c3d86b935655c7a84c6/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "f108e8fb-ec75-4cc4-8d24-2cb283fb80af"
+      },
+      {
+        "key": "mlflow/4/37e337f034214c3d86b935655c7a84c6/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "4f6f9f07-6065-4a1e-a988-ac97be75ce3d"
+      },
+      {
+        "key": "mlflow/4/3d8f1eaeaa79412e90074567e6e2319b/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "e4f9b26b-de7c-402f-8046-f15399cdbcb6"
+      },
+      {
+        "key": "mlflow/4/3d8f1eaeaa79412e90074567e6e2319b/artifacts/evidence/journey-46be6191-4d5c-4124-a65a-b8f1d4db12b7.json",
+        "kind": "Versions",
+        "size": 1985,
+        "version": "6fa651c3-1f86-4978-98eb-04e97cf8e1a9"
+      },
+      {
+        "key": "mlflow/4/3d8f1eaeaa79412e90074567e6e2319b/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "d0d69edc-91b4-4339-9d22-c5f0de8d0348"
+      },
+      {
+        "key": "mlflow/4/3d8f1eaeaa79412e90074567e6e2319b/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "73ce1e2d-e5d0-42c3-8323-e8cdf236088e"
+      },
+      {
+        "key": "mlflow/4/69fdee4b8f744f88b03117dfa2eaa5bb/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "f753622e-db42-4e07-9531-7cadaa3b3007"
+      },
+      {
+        "key": "mlflow/4/69fdee4b8f744f88b03117dfa2eaa5bb/artifacts/evidence/journey-93519267-7809-4e64-9e04-a79b9fb03d40.json",
+        "kind": "Versions",
+        "size": 8388,
+        "version": "6f953a9f-59fb-4a91-be2c-ea90355eee01"
+      },
+      {
+        "key": "mlflow/4/69fdee4b8f744f88b03117dfa2eaa5bb/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "71990ff5-15e8-41e5-9b4d-f8fcf7dc80a2"
+      },
+      {
+        "key": "mlflow/4/69fdee4b8f744f88b03117dfa2eaa5bb/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "a03de294-cb82-46ed-8852-d06531d6a930"
+      },
+      {
+        "key": "mlflow/4/9c73432320ac49f8a0bdcac83a6005ec/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "3d475f96-66f1-4aa5-b9f1-e8a73fb5b5dd"
+      },
+      {
+        "key": "mlflow/4/9c73432320ac49f8a0bdcac83a6005ec/artifacts/evidence/journey-78a89666-8872-41e8-9ec6-3a9b7e8322a1.json",
+        "kind": "Versions",
+        "size": 1785,
+        "version": "ffc795e4-0b78-4f58-938c-59903d51a6b6"
+      },
+      {
+        "key": "mlflow/4/9c73432320ac49f8a0bdcac83a6005ec/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "cfdf0992-cc4c-40c4-a9e0-693d77406af5"
+      },
+      {
+        "key": "mlflow/4/9c73432320ac49f8a0bdcac83a6005ec/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "410e24d6-8b86-4bbc-be79-e0f3f4d83f82"
+      },
+      {
+        "key": "mlflow/4/ad2530361ab14f7d87017c21d11958a1/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "dafdb83d-cc51-4be9-a80d-6bfc5f6f665e"
+      },
+      {
+        "key": "mlflow/4/ad2530361ab14f7d87017c21d11958a1/artifacts/evidence/journey-a741d0dd-d1ed-41eb-91d1-d5194c5fb692.json",
+        "kind": "Versions",
+        "size": 1785,
+        "version": "52954579-dcea-4a91-87cc-89e4402636d8"
+      },
+      {
+        "key": "mlflow/4/ad2530361ab14f7d87017c21d11958a1/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "02498980-d146-4626-8901-eb7c6fd1dac4"
+      },
+      {
+        "key": "mlflow/4/ad2530361ab14f7d87017c21d11958a1/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "1a657ca0-07f5-4dae-9ddf-88618f9078d8"
+      },
+      {
+        "key": "mlflow/4/d16bb48748694adc95190ce52b2361ac/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "3976530c-5528-4b83-abb3-8dbe46936930"
+      },
+      {
+        "key": "mlflow/4/d16bb48748694adc95190ce52b2361ac/artifacts/evidence/journey-496e6a0c-3128-4f26-bfe1-b3f61359c6ec.json",
+        "kind": "Versions",
+        "size": 7611,
+        "version": "a5537332-3915-4edd-a9e0-fb07faf4cddd"
+      },
+      {
+        "key": "mlflow/4/d16bb48748694adc95190ce52b2361ac/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "52acbd0d-0c85-48d7-a9d5-59860a3dc357"
+      },
+      {
+        "key": "mlflow/4/d16bb48748694adc95190ce52b2361ac/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "8dacb277-a79d-4af6-9ffd-69d340027347"
+      },
+      {
+        "key": "mlflow/4/models/m-1717e4e5a7d540de8ecd8aed5e40a049/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1358,
+        "version": "66d7307a-385b-4d20-8caf-bc50d9e81092"
+      },
+      {
+        "key": "mlflow/4/models/m-1717e4e5a7d540de8ecd8aed5e40a049/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "1b0d8209-2d09-4563-a055-094ccd450bc7"
+      },
+      {
+        "key": "mlflow/4/models/m-1717e4e5a7d540de8ecd8aed5e40a049/artifacts/environment_variables.txt",
+        "kind": "Versions",
+        "size": 258,
+        "version": "9b15fa6a-48b2-45c8-90bf-6f5dadafe6e8"
+      },
+      {
+        "key": "mlflow/4/models/m-1717e4e5a7d540de8ecd8aed5e40a049/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "31626dae-7cd8-45e5-8740-448a80fe0bf4"
+      },
+      {
+        "key": "mlflow/4/models/m-1717e4e5a7d540de8ecd8aed5e40a049/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "bc58db30-015a-471d-812f-4fbcd444db00"
+      },
+      {
+        "key": "mlflow/4/models/m-1717e4e5a7d540de8ecd8aed5e40a049/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "6a8376fc-7b8e-4622-a072-3d29c4254902"
+      },
+      {
+        "key": "mlflow/4/models/m-1717e4e5a7d540de8ecd8aed5e40a049/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "f5f195f8-09f0-44bc-9e31-5698fba3271c"
+      },
+      {
+        "key": "mlflow/4/models/m-1717e4e5a7d540de8ecd8aed5e40a049/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "0db8bf7a-f2b4-41b1-8337-346d56f04cde"
+      },
+      {
+        "key": "mlflow/4/models/m-191c0a114ee0460382cfca759d83f59d/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1358,
+        "version": "ec8f7df3-880e-4b30-9e3b-0700c006f30f"
+      },
+      {
+        "key": "mlflow/4/models/m-191c0a114ee0460382cfca759d83f59d/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "14a02e52-603e-4080-bc45-7705303fafcc"
+      },
+      {
+        "key": "mlflow/4/models/m-191c0a114ee0460382cfca759d83f59d/artifacts/environment_variables.txt",
+        "kind": "Versions",
+        "size": 258,
+        "version": "5ca11f45-d3fb-48c0-86aa-1c89b184093b"
+      },
+      {
+        "key": "mlflow/4/models/m-191c0a114ee0460382cfca759d83f59d/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "6d41047a-1d0c-493d-8f49-3ce0ec48a6dd"
+      },
+      {
+        "key": "mlflow/4/models/m-191c0a114ee0460382cfca759d83f59d/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "afc1aee2-93fd-4d64-a5ca-7c9dd6ae9157"
+      },
+      {
+        "key": "mlflow/4/models/m-191c0a114ee0460382cfca759d83f59d/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "55455dc8-7480-4121-be76-6086f91eb266"
+      },
+      {
+        "key": "mlflow/4/models/m-191c0a114ee0460382cfca759d83f59d/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "30ee08b6-0ea7-45c2-83d6-a20d656d265e"
+      },
+      {
+        "key": "mlflow/4/models/m-191c0a114ee0460382cfca759d83f59d/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "4140a6de-9a0a-44f3-8c01-8ffee676db62"
+      },
+      {
+        "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1336,
+        "version": "91335e05-05cf-48fd-b594-3755b803559b"
+      },
+      {
+        "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "d648950f-ebce-4d30-b16a-d1a0ade44678"
+      },
+      {
+        "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "ddb51784-b349-4b78-be8a-b1b179974ac9"
+      },
+      {
+        "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "c9aee768-443b-4107-a219-625264c52ec0"
+      },
+      {
+        "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "eb83b038-b74f-4b84-9230-43c935af8226"
+      },
+      {
+        "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "e48fab57-c7a0-4bd5-9549-f8c07bbc6fa2"
+      },
+      {
+        "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "fa4965f6-6f44-4e27-8b5b-3aee5e11cbd4"
+      },
+      {
+        "key": "mlflow/4/models/m-48a6403d70774b9c8d20a5588492133b/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1336,
+        "version": "706ad53c-fbed-47f0-b46a-bf3a6ad77aec"
+      },
+      {
+        "key": "mlflow/4/models/m-48a6403d70774b9c8d20a5588492133b/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "ee92eb7b-180c-42e4-9643-68aae4d70a3b"
+      },
+      {
+        "key": "mlflow/4/models/m-48a6403d70774b9c8d20a5588492133b/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "805e80e3-069c-4587-894e-9a4058dc491d"
+      },
+      {
+        "key": "mlflow/4/models/m-48a6403d70774b9c8d20a5588492133b/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "0f092396-1e8f-4a60-b1e1-5e579b43a99c"
+      },
+      {
+        "key": "mlflow/4/models/m-48a6403d70774b9c8d20a5588492133b/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "c87d7469-8413-4333-8a63-babfbc6796cd"
+      },
+      {
+        "key": "mlflow/4/models/m-48a6403d70774b9c8d20a5588492133b/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "ebb9caba-d5b8-46b9-a304-db2c1888030b"
+      },
+      {
+        "key": "mlflow/4/models/m-48a6403d70774b9c8d20a5588492133b/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "869f29c4-4703-40cf-b3c7-e66c6109e6a9"
+      },
+      {
+        "key": "mlflow/4/models/m-700b76ebe7724bfd9d7fd19d3bd11f25/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1358,
+        "version": "d972c185-1a33-482a-a592-5ee3067eb7b7"
+      },
+      {
+        "key": "mlflow/4/models/m-700b76ebe7724bfd9d7fd19d3bd11f25/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "57b19673-7fa8-4bcc-9af6-f83dbb0a514d"
+      },
+      {
+        "key": "mlflow/4/models/m-700b76ebe7724bfd9d7fd19d3bd11f25/artifacts/environment_variables.txt",
+        "kind": "Versions",
+        "size": 258,
+        "version": "4df2da5a-a5f1-440b-991d-1252e13713d2"
+      },
+      {
+        "key": "mlflow/4/models/m-700b76ebe7724bfd9d7fd19d3bd11f25/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "f29a5338-fac0-4bdf-86ec-9a9f9ddccc8e"
+      },
+      {
+        "key": "mlflow/4/models/m-700b76ebe7724bfd9d7fd19d3bd11f25/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "4faf651a-690f-424c-a421-a92ae99bd606"
+      },
+      {
+        "key": "mlflow/4/models/m-700b76ebe7724bfd9d7fd19d3bd11f25/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "6fab0143-33e5-4a36-81ad-862ad6db593f"
+      },
+      {
+        "key": "mlflow/4/models/m-700b76ebe7724bfd9d7fd19d3bd11f25/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "802a1699-58c8-4a44-9290-b627bc7d75bc"
+      },
+      {
+        "key": "mlflow/4/models/m-700b76ebe7724bfd9d7fd19d3bd11f25/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "34d90cfe-ce21-488c-9ce1-5d32c601ec39"
+      },
+      {
+        "key": "mlflow/4/models/m-7a2566c6ce49447087e13b7128754f90/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1336,
+        "version": "8137e8c9-b234-49e7-9503-9415190b4699"
+      },
+      {
+        "key": "mlflow/4/models/m-7a2566c6ce49447087e13b7128754f90/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "8072a195-60e6-4bd7-9179-0357755e757d"
+      },
+      {
+        "key": "mlflow/4/models/m-7a2566c6ce49447087e13b7128754f90/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "96a0d672-faf5-44e7-a4a9-13b24cb61942"
+      },
+      {
+        "key": "mlflow/4/models/m-7a2566c6ce49447087e13b7128754f90/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "4af75f86-8ea8-4d89-8f00-d550800c38b6"
+      },
+      {
+        "key": "mlflow/4/models/m-7a2566c6ce49447087e13b7128754f90/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "15c0b53d-a54c-499b-bbc3-d980b81f7bd9"
+      },
+      {
+        "key": "mlflow/4/models/m-7a2566c6ce49447087e13b7128754f90/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "6acf3fce-4770-4ac4-8313-99de12905432"
+      },
+      {
+        "key": "mlflow/4/models/m-7a2566c6ce49447087e13b7128754f90/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "344d5f0e-cc46-4c7e-afb9-c487037572a6"
+      },
+      {
+        "key": "mlflow/4/models/m-93c49e5ff3e4476887b0bc9f4a3eec18/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1358,
+        "version": "eb2a1842-603e-4bc1-a758-c98bccde0df5"
+      },
+      {
+        "key": "mlflow/4/models/m-93c49e5ff3e4476887b0bc9f4a3eec18/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "67f147c8-7a65-4b8e-8fad-e2a1d374fecf"
+      },
+      {
+        "key": "mlflow/4/models/m-93c49e5ff3e4476887b0bc9f4a3eec18/artifacts/environment_variables.txt",
+        "kind": "Versions",
+        "size": 258,
+        "version": "5914bdd4-3a86-4f92-9888-f16b3843d4dc"
+      },
+      {
+        "key": "mlflow/4/models/m-93c49e5ff3e4476887b0bc9f4a3eec18/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "03cb0d01-c104-4339-a8e5-3bfa5b203d95"
+      },
+      {
+        "key": "mlflow/4/models/m-93c49e5ff3e4476887b0bc9f4a3eec18/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "721cc8d1-fe8c-4044-855d-d909a034cd74"
+      },
+      {
+        "key": "mlflow/4/models/m-93c49e5ff3e4476887b0bc9f4a3eec18/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "440a7961-5d9f-475a-838a-2a3e109e9018"
+      },
+      {
+        "key": "mlflow/4/models/m-93c49e5ff3e4476887b0bc9f4a3eec18/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "f31e3377-9bac-4f87-9279-7a00eb70c7c1"
+      },
+      {
+        "key": "mlflow/4/models/m-93c49e5ff3e4476887b0bc9f4a3eec18/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "ace33218-f9c8-48f0-b685-7dc5bf49f798"
+      },
+      {
+        "key": "mlflow/4/models/m-a58e4b5fbdd1416cb96f439f9b04cb84/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1358,
+        "version": "a02d4010-b8c8-47eb-a29d-d1228f46f367"
+      },
+      {
+        "key": "mlflow/4/models/m-a58e4b5fbdd1416cb96f439f9b04cb84/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "b928dc5a-ffe1-4146-8165-c956a7c10717"
+      },
+      {
+        "key": "mlflow/4/models/m-a58e4b5fbdd1416cb96f439f9b04cb84/artifacts/environment_variables.txt",
+        "kind": "Versions",
+        "size": 258,
+        "version": "add69b7d-beef-416d-99e4-1ef075784142"
+      },
+      {
+        "key": "mlflow/4/models/m-a58e4b5fbdd1416cb96f439f9b04cb84/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "03274705-08ec-455a-8fae-b673a062e5bd"
+      },
+      {
+        "key": "mlflow/4/models/m-a58e4b5fbdd1416cb96f439f9b04cb84/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "f7fb3458-23d9-496a-aba8-613980514fcc"
+      },
+      {
+        "key": "mlflow/4/models/m-a58e4b5fbdd1416cb96f439f9b04cb84/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "4454864f-4402-4620-a799-666ceb2d7d50"
+      },
+      {
+        "key": "mlflow/4/models/m-a58e4b5fbdd1416cb96f439f9b04cb84/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "7f84f959-54b7-4ddf-9ed1-8887f1adb558"
+      },
+      {
+        "key": "mlflow/4/models/m-a58e4b5fbdd1416cb96f439f9b04cb84/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "0c5e8f71-166c-49a9-9466-631b6b16a27d"
+      },
+      {
+        "key": "mlflow/4/models/m-db1606e7123a447787a484c642643f75/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1336,
+        "version": "53eb9027-e11f-42af-8728-adcdad231cf7"
+      },
+      {
+        "key": "mlflow/4/models/m-db1606e7123a447787a484c642643f75/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "26b16c9c-791f-4743-8d6b-766c73687b7f"
+      },
+      {
+        "key": "mlflow/4/models/m-db1606e7123a447787a484c642643f75/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "20d14368-a6f1-41e9-b53f-b5346cd53c70"
+      },
+      {
+        "key": "mlflow/4/models/m-db1606e7123a447787a484c642643f75/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "251c1d99-b192-4de6-ae35-fb76206cd0f1"
+      },
+      {
+        "key": "mlflow/4/models/m-db1606e7123a447787a484c642643f75/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "f1ce862b-a92d-4d54-9ee6-6cc2b4c8b963"
+      },
+      {
+        "key": "mlflow/4/models/m-db1606e7123a447787a484c642643f75/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "a831898d-5b26-440b-8ff1-d640b5060d1c"
+      },
+      {
+        "key": "mlflow/4/models/m-db1606e7123a447787a484c642643f75/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "646750bf-4b15-4a17-9b2a-ab0f2fae8e4e"
+      },
+      {
+        "key": "mlflow/4/models/m-e99a38f59ba447de95f8c2f986d0239a/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1336,
+        "version": "bae53749-9a51-42fc-9e47-65f751c1c902"
+      },
+      {
+        "key": "mlflow/4/models/m-e99a38f59ba447de95f8c2f986d0239a/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "a7181774-82c3-47a6-a119-2bf03a5c5e42"
+      },
+      {
+        "key": "mlflow/4/models/m-e99a38f59ba447de95f8c2f986d0239a/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "c12ebfda-b47e-4a4c-b962-ec7c00b93af9"
+      },
+      {
+        "key": "mlflow/4/models/m-e99a38f59ba447de95f8c2f986d0239a/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "273a716a-f517-4357-82d1-1315412df225"
+      },
+      {
+        "key": "mlflow/4/models/m-e99a38f59ba447de95f8c2f986d0239a/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "faa88da5-29ff-4aaf-87e6-6b669eb8acf2"
+      },
+      {
+        "key": "mlflow/4/models/m-e99a38f59ba447de95f8c2f986d0239a/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "2f754aa2-77e4-4a94-b4f2-6e67c547a449"
+      },
+      {
+        "key": "mlflow/4/models/m-e99a38f59ba447de95f8c2f986d0239a/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "5a349bcd-1768-4e7c-b650-7e81b9f71b7c"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/bronze.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "e48ec586-fea5-4b7a-b138-016c7dce5def"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/gold.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "2418d84b-6123-4daf-ade2-bec24f59f8af"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/manifest.json",
+        "kind": "Versions",
+        "size": 468,
+        "version": "02cd87d7-d436-41cb-9215-b7f481ffd60d"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/raw.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "f2cb66b8-9185-424f-87be-cd13414861b0"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/silver.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "90aa9030-df58-41c9-874c-b263e75ee0c4"
+      }
+    ],
+    "queues": [
+      {
+        "messages": 0,
+        "name": "celery",
+        "vhost": "/"
+      }
+    ],
+    "versioning": "Enabled"
+  },
+  "preserved": {
+    ".env": "d1d4a7d0e1b1a2c67071c3db04e285855c30cd7778d3479cfb82b17e29ea0490",
+    "notebooks\\00_validacao_ambiente.ipynb": "d6df3498af3ff28de5c31a52039501f4114c80dae3526a0d12a25779cb605c30",
+    "notebooks\\01_jornada_completa_planilha_turmas.ipynb": "eeacc6e47d5cc40cc1eace1731e08845012cf99207e08dc9546ea9c0bed2c0f5",
+    "notebooks\\02_teste_inferencia_planilha_turmas.ipynb": "60d50280d6c9f95ea2a3712a57e9ccfbf68082935bbc9d797ee6c8362f0ff140",
+    "notebooks\\03_exploracao_preparacao_dados.ipynb": "5a545cc4214c3937dca53986e9edf7f1c380a5a8f6f07f3c9f8827f242972ea4",
+    "notebooks\\04_treinamento_individual.ipynb": "3024eaf66645deb35027b34f7279ad3179920d4d61af409f585eca65e00c4203",
+    "notebooks\\05_treinamento_campanha.ipynb": "3b09babed96f036bc4a81209041c3465b71c9c28837462581cc2a8885e4f24ae",
+    "notebooks\\06_avaliacao_comparativa.ipynb": "22ebf6b89cc501b21336f00a943e7446aced08d511de7b7a467b3c895572b685",
+    "notebooks\\07_registry_governanca.ipynb": "9b93687b6d3cd6bf8fb720bc8a1a50e843556f5284370c8ea30665ecf381fa9c",
+    "notebooks\\08_auditoria_lineage.ipynb": "9e6f54df529704679bd035a7aaf06ac399ce4d4f7f1dd357a9c541fe06830fec",
+    "notebooks\\09_reset_total_ambiente_poc.ipynb": "977e37ae4e1ac959f4653a8f6b549425d47f65642a828049462cf4149555e818",
+    "workspace\\.ipynb_checkpoints\\Untitled-checkpoint.ipynb": "4a62b68a633d79c53a6fd8893e8ea42dcf2b9a8a3e907b1b9861661f04f21517",
+    "workspace\\.ipynb_checkpoints\\Untitled1-checkpoint.ipynb": "4a62b68a633d79c53a6fd8893e8ea42dcf2b9a8a3e907b1b9861661f04f21517",
+    "workspace\\notebooks\\.ipynb_checkpoints\\00_environment_validation-checkpoint.ipynb": "9e042e6c079158950713b8f029446e4ba0e3a77ba57ac23db157a0266ee4b0da",
+    "workspace\\notebooks\\.ipynb_checkpoints\\01_exploration-checkpoint.ipynb": "c6a2bfce255d7b036a7b34998af74b85c91fd675dfe4b2981c53c1ee8793fa57",
+    "workspace\\notebooks\\.ipynb_checkpoints\\01_jornada_completa_planilha_turmas-checkpoint.ipynb": "63f164ecad07442d61e06b98f8356281541a6699c56bd1dd108caba36396cdfb",
+    "workspace\\notebooks\\.ipynb_checkpoints\\02_features-checkpoint.ipynb": "1b3815d919983ebcbcd36ab7f3e853ad07d0f025c2057fa4d22387fb277ea298",
+    "workspace\\notebooks\\.ipynb_checkpoints\\03_training-checkpoint.ipynb": "d3fb3ff9caadc38076c8d4801846a01bd24ab578fb4f6e85f75b6a911811698b",
+    "workspace\\notebooks\\.ipynb_checkpoints\\04_evaluation-checkpoint.ipynb": "a4576c689eef1debf5e7738b10e67d1484a341f1ff34cebe04a60a079e4f60ce",
+    "workspace\\notebooks\\.ipynb_checkpoints\\05_registry-checkpoint.ipynb": "8b12262e97b55ef0c013504699e391f67c09d1919c443844754acef28139c029",
+    "workspace\\notebooks\\.ipynb_checkpoints\\06_inference-checkpoint.ipynb": "339764bfde343273878015fcd0c0e55c56e109e8107d9d4dd1a6d52cba0564a8",
+    "workspace\\notebooks\\.ipynb_checkpoints\\08_public_timeseries_lab-checkpoint.ipynb": "a2becb315f00079081ac2b92521923f6d0e9729bc5a2bb4b4221831a352f85ae",
+    "workspace\\notebooks\\.ipynb_checkpoints\\08_public_timeseries_lab.executed-checkpoint.ipynb": "74e4a078d521e32be4e70a95af4236bae0131545f62eca307140bf23c27b89cf",
+    "workspace\\notebooks\\00_validacao_ambiente.ipynb": "d6df3498af3ff28de5c31a52039501f4114c80dae3526a0d12a25779cb605c30",
+    "workspace\\notebooks\\01_jornada_completa_planilha_turmas.ipynb": "ab37343f32483440db03f8598617761e4a64a4eb24034fdbc50a4c3902614533",
+    "workspace\\notebooks\\01_jornada_completa_planilha_turmas.update-eeacc6e47d5c.ipynb": "eeacc6e47d5cc40cc1eace1731e08845012cf99207e08dc9546ea9c0bed2c0f5",
+    "workspace\\notebooks\\02_teste_inferencia_planilha_turmas.ipynb": "60d50280d6c9f95ea2a3712a57e9ccfbf68082935bbc9d797ee6c8362f0ff140",
+    "workspace\\notebooks\\03_exploracao_preparacao_dados.ipynb": "5a545cc4214c3937dca53986e9edf7f1c380a5a8f6f07f3c9f8827f242972ea4",
+    "workspace\\notebooks\\04_treinamento_individual.ipynb": "3024eaf66645deb35027b34f7279ad3179920d4d61af409f585eca65e00c4203",
+    "workspace\\notebooks\\05_treinamento_campanha.ipynb": "3b09babed96f036bc4a81209041c3465b71c9c28837462581cc2a8885e4f24ae",
+    "workspace\\notebooks\\06_avaliacao_comparativa.ipynb": "22ebf6b89cc501b21336f00a943e7446aced08d511de7b7a467b3c895572b685",
+    "workspace\\notebooks\\07_registry_governanca.ipynb": "9b93687b6d3cd6bf8fb720bc8a1a50e843556f5284370c8ea30665ecf381fa9c",
+    "workspace\\notebooks\\08_auditoria_lineage.ipynb": "9e6f54df529704679bd035a7aaf06ac399ce4d4f7f1dd357a9c541fe06830fec",
+    "workspace\\notebooks\\09_reset_total_ambiente_poc.ipynb": "977e37ae4e1ac959f4653a8f6b549425d47f65642a828049462cf4149555e818",
+    "workspace\\Untitled.ipynb": "1d1f2be697ea1c6d7a46bb3be9aca03b78cf9301eafd84b33af963d820d4a056",
+    "workspace\\Untitled1.ipynb": "e4b6e0056fd826f9a3987cc2bf398fdd388fb386fb2aaf387bcbaa36ac4131e8",
+    ".runtime\\migration\\logs.tar.gz": "3c66c370c1525e530db017938a98fac28e2d550ece2ca75d4529805f39bdb0e9",
+    ".runtime\\migration\\manifest.json": "d9c2df728d452ef3b8769dde8714aabf52e185ffee2b066a51ad212ae6bba70a",
+    ".runtime\\migration\\mlflow_db.dump": "79c5aecdf02033af3c87d3431f66599c75c50e9eacbcee58ceb9f5db184fd3d5",
+    ".runtime\\migration\\planejamento_db.dump": "cd19195afca540e5025fbc29ee223d9db62a563efdc6747a34de450d63a5b2e0",
+    ".runtime\\migration\\replicas.json": "ae877a4eaf339ccaa19859f697fdfc1096ab684fd4153fd759a8fd2e97d556e2",
+    ".runtime\\migration\\restored.ok": "991385b0f126825a2f5e8be20c8bc586345af9ce50fe08b704794ced9962e58a",
+    ".runtime\\migration\\rustfs.tar.gz": "b34785b5a2da8705398eefa82f1a397b628eb1ca872eca0d7ecd744b2b4c1d7a",
+    ".runtime\\migration\\validated.sha256": "7b8ccea4a01afea758073e7f55f41542f29254a33f09eb44cb039b7be337fe95",
+    ".runtime\\migration\\workspace.tar.gz": "6207fd5c063704bfeb8195d99780e1946d835e27f485fbd41f7d575269707ec6",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\00_validacao_ambiente.ipynb": "d6df3498af3ff28de5c31a52039501f4114c80dae3526a0d12a25779cb605c30",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\01_jornada_completa_planilha_turmas.ipynb": "eeacc6e47d5cc40cc1eace1731e08845012cf99207e08dc9546ea9c0bed2c0f5",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\02_teste_inferencia_planilha_turmas.ipynb": "60d50280d6c9f95ea2a3712a57e9ccfbf68082935bbc9d797ee6c8362f0ff140",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\03_exploracao_preparacao_dados.ipynb": "5a545cc4214c3937dca53986e9edf7f1c380a5a8f6f07f3c9f8827f242972ea4",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\04_treinamento_individual.ipynb": "3024eaf66645deb35027b34f7279ad3179920d4d61af409f585eca65e00c4203",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\05_treinamento_campanha.ipynb": "3b09babed96f036bc4a81209041c3465b71c9c28837462581cc2a8885e4f24ae",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\06_avaliacao_comparativa.ipynb": "22ebf6b89cc501b21336f00a943e7446aced08d511de7b7a467b3c895572b685",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\07_registry_governanca.ipynb": "9b93687b6d3cd6bf8fb720bc8a1a50e843556f5284370c8ea30665ecf381fa9c",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\08_auditoria_lineage.ipynb": "9e6f54df529704679bd035a7aaf06ac399ce4d4f7f1dd357a9c541fe06830fec",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\09_reset_total_ambiente_poc.ipynb": "977e37ae4e1ac959f4653a8f6b549425d47f65642a828049462cf4149555e818"
+  },
+  "status": "PREVIEW",
+  "plan_hash": "16d0dda7a6d35c18717422aa5e7dc9b90836c1852a708c65978ed9f1b7ffa86c"
+}

@@ -1,0 +1,34 @@
+{
+  "test_id": "AC13",
+  "status": "PASS",
+  "execution_id": "d6260507-b9f4-4011-a3f6-b3dd511400d5",
+  "run_id": "03012b122e6143b2919807cd91973451",
+  "model_version": "8",
+  "rows": 90,
+  "storage": [
+    {
+      "bucket": "pucpr-poc",
+      "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/MLmodel",
+      "bytes": 1336,
+      "sha256": "a45490909929df0120c92c8eabbc86b53134266cf1bbe40be8bd3d119d1c9a93",
+      "model_version": "8",
+      "status": "PASS"
+    },
+    {
+      "bucket": "pucpr-poc",
+      "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/model.pkl",
+      "bytes": 8671,
+      "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+      "model_version": "8",
+      "status": "PASS"
+    },
+    {
+      "bucket": "pucpr-poc",
+      "key": "mlflow/4/models/m-378e0cf868604331bf7c52e0c1421114/artifacts/requirements.txt",
+      "bytes": 80,
+      "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+      "model_version": "8",
+      "status": "PASS"
+    }
+  ]
+}

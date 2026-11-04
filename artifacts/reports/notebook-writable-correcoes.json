@@ -1,0 +1,46 @@
+[
+    {
+        "path":  "notebooks/00_validacao_ambiente.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/01_jornada_completa_planilha_turmas.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/01_jornada_completa_planilha_turmas.update-eeacc6e47d5c.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/02_teste_inferencia_planilha_turmas.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/03_exploracao_preparacao_dados.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/04_treinamento_individual.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/05_treinamento_campanha.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/06_avaliacao_comparativa.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/07_registry_governanca.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/08_auditoria_lineage.ipynb",
+        "writable":  true
+    },
+    {
+        "path":  "notebooks/09_reset_total_ambiente_poc.ipynb",
+        "writable":  true
+    }
+]

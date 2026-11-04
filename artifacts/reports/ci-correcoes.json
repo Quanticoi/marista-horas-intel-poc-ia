@@ -1,0 +1,13 @@
+{
+  "commit": "feebce942e982bde2723ae82f1ef220f2c269438",
+  "run_id": 41847743558,
+  "job_id": 126635599494,
+  "status": "PASS",
+  "url": "https://github.com/Quanticoi/marista-horas-intel-poc-ia/actions/runs/41847743558",
+  "tests_passed": 59,
+  "notebooks": [
+    "01",
+    "02"
+  ],
+  "artifact_id": 13332800707
+}

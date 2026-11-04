@@ -1,0 +1,271 @@
+{
+  "timestamp_utc": "2026-11-04T13:08:21.970109+00:00",
+  "code_version": "sha256:e52c2a1cce09f0ed41dd23ff88fe5ad0a1b4d73a0ea0c9586cd63b1f1acbe5b6",
+  "environment": "poc",
+  "training_campaign_id": "3f3a9008-688d-4a44-a80c-2fd0a9c60f12",
+  "training30": {
+    "actual_trained": 30,
+    "seconds": 11.001249348999409,
+    "cpu_seconds": 5.069887203,
+    "peak_rss_kib": 315568,
+    "errors": 0,
+    "versions": [
+      {
+        "model_key": "C1-CR1-P1",
+        "version": "1",
+        "run_id": "74f19a330f2e436a8fa2d9160309439b",
+        "artifact_uri": "mlflow-artifacts:/3/74f19a330f2e436a8fa2d9160309439b/artifacts/model",
+        "bundle_sha256": "d328ec7100b8fa9db97eed50a9d6be5b78eacd7baf68f3d6fab516d1255906fe",
+        "approved": false
+      },
+      {
+        "model_key": "C1-CR1-P2",
+        "version": "1",
+        "run_id": "5355472895a540d498a1ad4756a49da7",
+        "artifact_uri": "mlflow-artifacts:/3/5355472895a540d498a1ad4756a49da7/artifacts/model",
+        "bundle_sha256": "8a07bc741df8786507c57709c9b14299644376f2abf85149908e5d797d304da2",
+        "approved": false
+      },
+      {
+        "model_key": "C1-CR2-P1",
+        "version": "1",
+        "run_id": "c14ee24bffc44cde84c2eb33a8889bc7",
+        "artifact_uri": "mlflow-artifacts:/3/c14ee24bffc44cde84c2eb33a8889bc7/artifacts/model",
+        "bundle_sha256": "153a5b4b48e4bbbdc04d4e1cc29888bb07d1c500531706b8e99a7b3254ced4e5",
+        "approved": false
+      },
+      {
+        "model_key": "C1-CR2-P2",
+        "version": "1",
+        "run_id": "ce11bd81bcd8422c883e0798848161f9",
+        "artifact_uri": "mlflow-artifacts:/3/ce11bd81bcd8422c883e0798848161f9/artifacts/model",
+        "bundle_sha256": "4a573f3201575540e7773a7c90ac410e0d978e060b035c0adaf95fb3a174cdfe",
+        "approved": false
+      },
+      {
+        "model_key": "C1-CR3-P1",
+        "version": "1",
+        "run_id": "61b6cdb6e15a43b29dece4a3d88d4a7a",
+        "artifact_uri": "mlflow-artifacts:/3/61b6cdb6e15a43b29dece4a3d88d4a7a/artifacts/model",
+        "bundle_sha256": "2d505e813d2c9a53d194403345907a3e31e7512f788a9c1ab0da3a13a1098196",
+        "approved": false
+      },
+      {
+        "model_key": "C1-CR3-P2",
+        "version": "1",
+        "run_id": "19ae25e20d2e4d4dba4f7d2d83d1ba3e",
+        "artifact_uri": "mlflow-artifacts:/3/19ae25e20d2e4d4dba4f7d2d83d1ba3e/artifacts/model",
+        "bundle_sha256": "b902bd9701d8dd7516f766de23198def2454a84f4c60b6d46f88d055c8621375",
+        "approved": false
+      },
+      {
+        "model_key": "C1-CR4-P1",
+        "version": "1",
+        "run_id": "447732c0e7e64b8588859ea57cdda119",
+        "artifact_uri": "mlflow-artifacts:/3/447732c0e7e64b8588859ea57cdda119/artifacts/model",
+        "bundle_sha256": "bb5f56462532479aaf846a440580a4c411c8e665804d46182e5c8826fc56de57",
+        "approved": false
+      },
+      {
+        "model_key": "C1-CR4-P2",
+        "version": "1",
+        "run_id": "4d02b6d5c3ef431f9ec1605baceac163",
+        "artifact_uri": "mlflow-artifacts:/3/4d02b6d5c3ef431f9ec1605baceac163/artifacts/model",
+        "bundle_sha256": "d170d666cf17d248f18671f905ebb28351b671f0c27b9acc977ead434a6ef228",
+        "approved": false
+      },
+      {
+        "model_key": "C1-CR5-P1",
+        "version": "1",
+        "run_id": "2ea8bf1133844788871981a4e01d1bf4",
+        "artifact_uri": "mlflow-artifacts:/3/2ea8bf1133844788871981a4e01d1bf4/artifacts/model",
+        "bundle_sha256": "613a9bbfa86403744a1f9e36ed4dbca3bae9e1e01c8e50e3ed1e6db336b39f12",
+        "approved": false
+      },
+      {
+        "model_key": "C1-CR5-P2",
+        "version": "1",
+        "run_id": "e9afa6c41ab646d487e4637332fc8918",
+        "artifact_uri": "mlflow-artifacts:/3/e9afa6c41ab646d487e4637332fc8918/artifacts/model",
+        "bundle_sha256": "8df382aba605a15035ffa4a87204c4fa01184879c5b7aa688151201d1381d18d",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR1-P1",
+        "version": "1",
+        "run_id": "e52d5e2db3414a2a915ea55c76bc8987",
+        "artifact_uri": "mlflow-artifacts:/3/e52d5e2db3414a2a915ea55c76bc8987/artifacts/model",
+        "bundle_sha256": "560eeab8a53e7b6ccf9e2999a716c7ea020a3dcb35f6c101e19d1ac87b8dea5a",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR1-P2",
+        "version": "1",
+        "run_id": "bbb37614df7c4bf59010fd87564042f8",
+        "artifact_uri": "mlflow-artifacts:/3/bbb37614df7c4bf59010fd87564042f8/artifacts/model",
+        "bundle_sha256": "286f90c8e4a432575367cc24f2655f4e86a8bce8a9ec775c2ff1fe1b26f45e9d",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR2-P1",
+        "version": "1",
+        "run_id": "db9388ca23ad46469d83ab31a956d2ae",
+        "artifact_uri": "mlflow-artifacts:/3/db9388ca23ad46469d83ab31a956d2ae/artifacts/model",
+        "bundle_sha256": "ffd406d0d1393cd88f310f15cfce475e31d0f135a9354411b3c3cc20cf6a20d0",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR2-P2",
+        "version": "1",
+        "run_id": "d8285515e1f1438abad8743e8c5dc45f",
+        "artifact_uri": "mlflow-artifacts:/3/d8285515e1f1438abad8743e8c5dc45f/artifacts/model",
+        "bundle_sha256": "dfc26ea6f4e1a2e845237c30d60888662ecbb41852068964dba098893ab10dee",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR3-P1",
+        "version": "1",
+        "run_id": "dd5de5dc9f3e4778ae10bce446a58a8d",
+        "artifact_uri": "mlflow-artifacts:/3/dd5de5dc9f3e4778ae10bce446a58a8d/artifacts/model",
+        "bundle_sha256": "6d1a3676d29312ed04d88a3415c4a9a2b896752fcbbffc9f7d0a2086335928df",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR3-P2",
+        "version": "1",
+        "run_id": "ed5e1b200d764a0d80fb661104cb9616",
+        "artifact_uri": "mlflow-artifacts:/3/ed5e1b200d764a0d80fb661104cb9616/artifacts/model",
+        "bundle_sha256": "e5ff50344ea1a8c300361af8f20384f8575224e1059187801be7908e18a27d7a",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR4-P1",
+        "version": "1",
+        "run_id": "679abf8c4c4e4cf194399d658961e614",
+        "artifact_uri": "mlflow-artifacts:/3/679abf8c4c4e4cf194399d658961e614/artifacts/model",
+        "bundle_sha256": "ac1d96861afa201d2b5bfba155b16cb43816d34e3920c9d7b01af86d86818784",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR4-P2",
+        "version": "1",
+        "run_id": "032021f8e96f4fe3a2832b11d0456531",
+        "artifact_uri": "mlflow-artifacts:/3/032021f8e96f4fe3a2832b11d0456531/artifacts/model",
+        "bundle_sha256": "f3e20d806d3dab3abff89c879939bdd41e6a8084ba6d3d2e086611991544c773",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR5-P1",
+        "version": "1",
+        "run_id": "8ac80bae191a4911a279559896d4b7e5",
+        "artifact_uri": "mlflow-artifacts:/3/8ac80bae191a4911a279559896d4b7e5/artifacts/model",
+        "bundle_sha256": "254859ed377f3fa1e4609b697c4679620b11e469c36716dc9a3ae705dfd963ab",
+        "approved": false
+      },
+      {
+        "model_key": "C2-CR5-P2",
+        "version": "1",
+        "run_id": "864875cc587f452e9f1c21e63a3e2869",
+        "artifact_uri": "mlflow-artifacts:/3/864875cc587f452e9f1c21e63a3e2869/artifacts/model",
+        "bundle_sha256": "c07db0a626aaa1ccced7ccfdaf4eb26ad88c8960a6be7da33d8f73315c49710f",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR1-P1",
+        "version": "1",
+        "run_id": "0e08a7475375458283682d886868ec52",
+        "artifact_uri": "mlflow-artifacts:/3/0e08a7475375458283682d886868ec52/artifacts/model",
+        "bundle_sha256": "59c8a6bba35759237bb97c0128b3769424f07ac497594cf1390740f11fd34a2a",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR1-P2",
+        "version": "1",
+        "run_id": "9bc2b5f125da43b0bbb8b27ff7947b19",
+        "artifact_uri": "mlflow-artifacts:/3/9bc2b5f125da43b0bbb8b27ff7947b19/artifacts/model",
+        "bundle_sha256": "87c268037a40afc69202eb407d9f1fbf72dc36af087e94490723148d29f9b855",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR2-P1",
+        "version": "1",
+        "run_id": "89361229694a46799ded09a08803d203",
+        "artifact_uri": "mlflow-artifacts:/3/89361229694a46799ded09a08803d203/artifacts/model",
+        "bundle_sha256": "0cb445ea023836ad64071aebcc3725003e79b6de1ecdde243a0a75691e3aab3f",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR2-P2",
+        "version": "1",
+        "run_id": "b84c353815cf4d4b9c29c7691aadaaee",
+        "artifact_uri": "mlflow-artifacts:/3/b84c353815cf4d4b9c29c7691aadaaee/artifacts/model",
+        "bundle_sha256": "6351d6f161e786bed9645c5bed79ec7e9e6737a077c964817dbb3a5d70d35170",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR3-P1",
+        "version": "1",
+        "run_id": "951b6721f039497cb6e2030b5bac7114",
+        "artifact_uri": "mlflow-artifacts:/3/951b6721f039497cb6e2030b5bac7114/artifacts/model",
+        "bundle_sha256": "c2a00ef488af270c909dd7c76d51e4ac9ac2234375871c33bda3578cb00b67ab",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR3-P2",
+        "version": "1",
+        "run_id": "7858d80413664c039ddbbada2508c3bd",
+        "artifact_uri": "mlflow-artifacts:/3/7858d80413664c039ddbbada2508c3bd/artifacts/model",
+        "bundle_sha256": "bdd1a53dfd5ffa0096a7e6d36bdaa249c0d79ccd26e10cec2da8dd9f26c4eef6",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR4-P1",
+        "version": "1",
+        "run_id": "ee86bab5e67d4f45a2e970edb8520613",
+        "artifact_uri": "mlflow-artifacts:/3/ee86bab5e67d4f45a2e970edb8520613/artifacts/model",
+        "bundle_sha256": "8dbe08b038b2d9a8e30d95d652d0d412081f134801702ea8e782e0ed0d858179",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR4-P2",
+        "version": "1",
+        "run_id": "05bde767f148423683b0eda738f58f77",
+        "artifact_uri": "mlflow-artifacts:/3/05bde767f148423683b0eda738f58f77/artifacts/model",
+        "bundle_sha256": "83c6c5b9e2dd570c493780bd9df793c492ed1556f5fd540909d4b4c4d1693386",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR5-P1",
+        "version": "1",
+        "run_id": "14f5bbb98de6428ba1e37778d654549d",
+        "artifact_uri": "mlflow-artifacts:/3/14f5bbb98de6428ba1e37778d654549d/artifacts/model",
+        "bundle_sha256": "35925b0416ed98b18c2b026f4c8961773c9234f675bde9754d839a32f8f2d9fe",
+        "approved": false
+      },
+      {
+        "model_key": "C3-CR5-P2",
+        "version": "1",
+        "run_id": "31189f38fcf1453482b18f1e7b7d979d",
+        "artifact_uri": "mlflow-artifacts:/3/31189f38fcf1453482b18f1e7b7d979d/artifacts/model",
+        "bundle_sha256": "34454f9a834b5ebca48f3f34911ce57b76ddf3a0951a393d5ab4593f9322e70d",
+        "approved": false
+      }
+    ]
+  },
+  "inventory500": {
+    "identities": 500,
+    "registered_models": 0,
+    "trained_models": 0,
+    "api_containers": 0,
+    "simultaneously_loaded": 0,
+    "seconds": 0.3403754110040609,
+    "cpu_seconds": 0.21470188799999868,
+    "peak_rss_kib": 315568,
+    "errors": 0,
+    "storage": {
+      "uri": "s3://pucpr-poc/lineage/poc/planilha-turmas/campaigns/3f3a9008-688d-4a44-a80c-2fd0a9c60f12/manifest.json",
+      "sha256": "8e520117fd5f5d43c595b2c0859f623936ff0b5c090be12f35dc42ea4aaf3e5e"
+    }
+  },
+  "limitations": "RSS/CPU do processo; n\u00e3o mede capacidade simult\u00e2nea de 500 modelos"
+}
