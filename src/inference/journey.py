@@ -86,7 +86,7 @@ def router(auth):
                     snapshot_id=str(body.snapshot_id),run_id=registered.run_id,
                     registered_model_name=body.model_name,model_version=str(registered.version),
                     input_sha256=sha256(body.records),prediction_sha256=sha256(values),row_count=len(values)))
-            event("inference", "draft version loaded and predicted", correlation_id=str(body.execution_id),
+            event("inference", "draft version loaded and predicted", correlation_id=body.correlation_id or str(body.execution_id),
                 run_id=registered.run_id, version=registered.version, rows=len(values), duration_seconds=elapsed)
             return dict(inference_id=inference_id,execution_id=str(body.execution_id), run_id=registered.run_id,
                 model_name=body.model_name, model_version=str(registered.version),
@@ -94,6 +94,6 @@ def router(auth):
         except ValueError:
             raise HTTPException(409, "Version, execution, snapshot or schema mismatch")
         except Exception as error:
-            event("inference", "draft inference failed", correlation_id=str(body.execution_id), error=type(error).__name__)
+            event("inference", "draft inference failed", correlation_id=body.correlation_id or str(body.execution_id), error=type(error).__name__)
             raise HTTPException(503, "Registered artifact could not be loaded")
     return routes

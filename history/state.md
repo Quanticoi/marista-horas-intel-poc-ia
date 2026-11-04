@@ -1,3 +1,9 @@
+# Estado atual - revisão V2 em validação final
+
+04/11/2026: usuário acrescentou code review completo e limpeza. Dez scripts V1/diagnósticos obsoletos removidos com hashes em artifacts/reports/v2/repository-cleanup.json. Imports sem uso removidos; corrigidos correlação da inferência, paginação de edges, recuperação paginada do Registry, inventário do notebook09 e quiescência do reset. Credenciais unificadas no inicializador Python; Dockerfiles reorganizados para cache. Reset-data/empty e factory/demo-ready PASS somente isolado, seguidos das jornadas A/B. SIGKILL do worker recuperou campanha30 sem duplicar versões. Principal preservou69runs/49versões/12propostas; jornada v14 PASS. Nenhum backup de banco novo. CI4b6314b PASS; código da revisão ainda em validação.
+
+## Histórico de estados anteriores (não é orientação atual)
+
 # Atualização — 04/11/2026: correções v1.1 validadas
 
 V2 checkpoint: API/worker de geração, campanhas, revisão, lineage e catálogo

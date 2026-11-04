@@ -14,6 +14,8 @@ jobs:
         run: |
           python dev/validate_static.py
           python dev/generate_compose.py --check
+          python -m pip install ruff==0.11.13
+          ruff check src tests dev deployment/scripts --select F,E9 --no-cache
       - name: Generate disposable CI credentials
         shell: bash
         run: |

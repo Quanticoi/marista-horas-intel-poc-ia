@@ -1,7 +1,7 @@
 """Monitoring never trains or promotes. Actuals must exist in a later sealed snapshot."""
 import uuid
 from sqlalchemy import text
-from src.persistence.db import engine, rows, audit
+from src.persistence.db import engine, rows
 
 
 def evaluate(cycle_id):

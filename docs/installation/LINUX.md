@@ -1,25 +1,18 @@
 # Linux
 
 Docker Engine, plugin Compose, Git e Python 3.11+ para os utilitários de validação.
-Prepare .env com valores aleatórios para cada chave de .env.example; preserve
-as credenciais de volumes existentes. Crie workspace/notebooks, data/compose-logs
- e artifacts/reports com permissão para os usuários das imagens.
+O script abaixo prepara as credenciais ausentes, os diretórios e suas permissões,
+constrói as imagens, inicializa bancos/bucket e executa a jornada. Preserve o
+`.env` de qualquer ambiente que já tenha volumes.
 
 ```bash
-docker compose build mlflow jupyter
-docker compose run --rm --no-deps --entrypoint chown volume-tools 10001:10001 /restore/rustfs
-docker compose up -d --wait postgres rustfs rabbitmq
-docker compose run --rm tools bootstrap
-docker compose run --rm tools migrate
-docker compose run --rm tools buckets
-docker compose run --rm tools seed
-docker compose up -d --wait --wait-timeout 300
-docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_journey
+sh deployment/scripts/journey.sh rebuild
 make test
 ```
 
-Atualização C3: acrescentar INGESTION_TOKEN ao .env; build; tools migrate e
-tools migrate-mlflow antes de up. Para publicar, execute
+`init_env.py` é a única implementação de geração de credenciais, também usada
+pelo PowerShell. O servidor MLflow migra seu próprio schema antes de liberar
+o listener. Rebuild preserva os volumes. Para publicação C3 opcional, execute
 `python deployment/scripts/publish_models.py --model CHAVE` após aprovação e depois
 `docker compose -f compose.yaml -f .runtime/models.compose.json up -d --wait`.
 [Fluxo completo](../operations/C3_TRAINING.md).

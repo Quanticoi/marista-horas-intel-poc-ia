@@ -44,28 +44,9 @@ function Rebuild {
     # MLflow migrates its own backend before listening. No volumes are removed.
     Check-Services
 }
-if($Action -eq 'init' -and !(Test-Path '.env')) {
-    $keys=Get-Content '.env.example' | Where-Object {$_ -match '^[A-Z_]+='} | ForEach-Object {($_ -split '=',2)[0]}
-    $lines=foreach($key in $keys) {
-        if($key -eq 'MLFLOW_EXPERIMENT_NAME') { 'MLFLOW_EXPERIMENT_NAME=planilha-turmas-proxy-v1'; continue }
-        if($key -eq 'PROPOSAL_ID') { 'PROPOSAL_ID='; continue }
-        $bytes=New-Object byte[] 32
-        $rng=[Security.Cryptography.RandomNumberGenerator]::Create()
-        try {$rng.GetBytes($bytes)} finally {$rng.Dispose()}
-        $key+'='+([BitConverter]::ToString($bytes).Replace('-','').ToLowerInvariant())
-    }
-    [IO.File]::WriteAllText((Join-Path $root '.env'),($lines -join "`n"),[Text.UTF8Encoding]::new($false))
-}
-if(!(Test-Path '.env')) { throw 'Execute init para uma instalação nova; para dados existentes recupere o .env original.' }
+if($Action -ne 'init' -and !(Test-Path '.env')) { throw 'Execute init para uma instalação nova; para dados existentes recupere o .env original.' }
 & python deployment/scripts/init_env.py
-if($LASTEXITCODE) { throw 'Falha ao preparar credencial separada de operador.' }
-# Add only the new service credential; preserve all existing passwords and data.
-if(!(Select-String -Path '.env' -Pattern '^INGESTION_TOKEN=.+$' -Quiet)) {
-    $bytes=New-Object byte[] 32
-    $rng=[Security.Cryptography.RandomNumberGenerator]::Create()
-    try {$rng.GetBytes($bytes)} finally {$rng.Dispose()}
-    Add-Content -Path '.env' -Value ("`nINGESTION_TOKEN="+([BitConverter]::ToString($bytes).Replace('-','').ToLowerInvariant()))
-}
+if($LASTEXITCODE) { throw 'Falha ao preparar as credenciais locais.' }
 D @('config','--quiet')
 if($Action -eq 'check') { return }
 & docker --context $context info --format '{{.OperatingSystem}}'

@@ -1,7 +1,6 @@
 """Smoke the implemented catalog in fresh kernels; opt-in writes remain disabled."""
 import argparse
 import json
-import os
 from pathlib import Path
 import subprocess
 from src.common.lineage import utcnow

@@ -1,6 +1,5 @@
 """Read-only inventory for the external reset controller; no secrets in output."""
 import json
-import hashlib
 import httpx
 from sqlalchemy import create_engine,text,inspect
 from src.common.settings import database_url,required

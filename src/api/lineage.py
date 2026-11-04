@@ -22,8 +22,9 @@ def router(auth):
             """
         nodes=rows(traversal+"SELECT e.* FROM planning.lineage_entities e JOIN connected c ON e.entity_id=c.id ORDER BY e.entity_type,e.external_id LIMIT :limit OFFSET :offset",params)
         count=rows(traversal+"SELECT count(*) AS total FROM connected",params)[0]["total"]
+        edge_count=rows(traversal+"SELECT count(*) AS total FROM planning.lineage_edges WHERE parent_id IN (SELECT id FROM connected)",params)[0]["total"]
         edges=rows(traversal+"SELECT e.* FROM planning.lineage_edges e WHERE e.parent_id IN (SELECT id FROM connected) ORDER BY e.edge_id LIMIT :limit OFFSET :offset",params)
-        return dict(status="VERIFIED" if count<=limit and offset==0 else "PARTIAL",nodes=nodes,edges=edges,total_nodes=count,limit=limit,offset=offset,
+        return dict(status="VERIFIED" if max(count,edge_count)<=limit and offset==0 else "PARTIAL",nodes=nodes,edges=edges,total_nodes=count,total_edges=edge_count,limit=limit,offset=offset,
                     note="Graph existence only; verify artifact hashes separately. Edges have independent pagination.")
 
     @routes.get("")

@@ -6,7 +6,6 @@ from dataclasses import replace
 from pathlib import Path
 import httpx
 import mlflow
-import numpy as np
 import pytest
 from sqlalchemy import text
 from src.workbench.journey_config import Settings, sql_engine

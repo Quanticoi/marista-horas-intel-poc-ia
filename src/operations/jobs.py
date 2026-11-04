@@ -2,7 +2,6 @@
 import json
 import threading
 import time
-from uuid import uuid4
 from sqlalchemy import text
 from src.persistence.db import engine,rows,audit
 from src.common.lineage import sha256

@@ -1,7 +1,5 @@
 """Notebook SDK: HTTP to MLflow/intake; S3 to RustFS; never direct SQL."""
 import hashlib
-import os
-from pathlib import Path
 from urllib.parse import urlparse
 import httpx
 import mlflow

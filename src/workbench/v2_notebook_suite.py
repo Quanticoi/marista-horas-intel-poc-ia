@@ -6,7 +6,7 @@ import subprocess
 import argparse
 from pathlib import Path
 from uuid import uuid4
-from src.workbench.operations_sdk import report,call
+from src.workbench.operations_sdk import report
 from src.workbench.journey_config import Settings
 from src.data.journey import extract
 

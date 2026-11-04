@@ -20,3 +20,12 @@ def test_generation_rejects_duplicate_model_mapping():
     with pytest.raises(ValidationError):
         Generation(cycle_code="2026-1",snapshot_id="fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
             model_selectors=[dict(model_name="planilha-turmas-demo",model_version="1")]*2,requested_by="test",confirm_demo=True)
+def test_registry_recovery_searches_all_version_pages():
+    from src.operations.training import registered_versions
+    class Page(list):
+        def __init__(self,items,token):
+            super().__init__(items);self.token=token
+    class Client:
+        def search_model_versions(self,query,max_results,page_token):
+            return Page(['old'],None) if page_token=='next' else Page(['new'],'next')
+    assert list(registered_versions(Client(),'hi.demo.test'))==['new','old']

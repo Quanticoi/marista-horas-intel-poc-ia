@@ -46,7 +46,7 @@ def logs(namespace: str="", service: str="", pod: str="", level: str="", correla
          q: str=Query("",max_length=200), since: str="", until: str="", limit: int=Query(100,ge=1,le=1000)):
     output = deque(maxlen=limit)
     filters = dict(namespace=namespace,service=service,pod=pod,level=level,correlation_id=correlation_id)
-    # Bounded to 20 MiB per request; older data retained on PVC can be retrieved by backup.
+    # Bounded to 20 MiB per request; older JSONL files remain in the log mount.
     remaining = 20*1024*1024
     for path in sorted(DIRECTORY.glob("*.jsonl"),key=lambda p:p.stat().st_mtime,reverse=True):
         with path.open("rb") as stream:

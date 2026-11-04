@@ -43,8 +43,10 @@ def check(service):
                     assert connection.execute(text("SELECT 1")).scalar_one() == 1
             finally:
                 engine.dispose()
-        import statsmodels.api  # Catch the previously observed SciPy incompatibility.
-        import sklearn, pandas, ipykernel
+        # Imports deliberately exercise dependency compatibility, including SciPy.
+        from importlib import import_module
+        for dependency in ("statsmodels.api","sklearn","pandas","ipykernel"):
+            import_module(dependency)
         assert os.access("/workspace/notebooks", os.W_OK)
     print(f"PASS dependencies: {service}")
 

@@ -11,8 +11,22 @@ from src.data.journey import extract
 def main():
     if os.getenv("POC_PROJECT")!="marista-correcoes-isolated":
         raise RuntimeError("Disposable project required")
-    parser=argparse.ArgumentParser();parser.add_argument("stage",choices=["controls","failed-training","retry","sql-down"]);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument("stage",choices=["controls","failed-training","retry","sql-down","restart-start","restart-check"]);args=parser.parse_args()
     cfg=Settings.load();root=Path("/reports/v2")
+    if args.stage=="restart-check":
+        import mlflow
+        before=json.loads((root/"worker-restart-started.json").read_text())["evidence"]
+        cid=before["campaign_id"]
+        state=await_job(cfg,f"/v1/training/campaigns/{cid}",timeout=900)
+        assert state["status"]=="COMPLETED"
+        items=call(cfg,"GET",f"/v1/training/campaigns/{cid}/items")
+        assert len(items)==30
+        client=mlflow.MlflowClient()
+        for item in items:
+            versions=client.search_model_versions("name = '"+item["registered_model_name"]+"'")
+            assert len(versions)==1 and versions[0].run_id==item["mlflow_run_id"]
+        print(report("worker-restart-recovered",dict(campaign_id=cid,before=before,state=state,items=items,unique_versions=30)))
+        return
     if args.stage=="sql-down":
         response=httpx.get(cfg.api+"/v1/training/campaigns",headers={"Authorization":"Bearer "+required("API_TOKEN")},timeout=30)
         assert response.status_code==503
@@ -26,11 +40,19 @@ def main():
         items=call(cfg,"GET",f"/v1/training/campaigns/{cid}/items")
         print(report("retry-training-recovered",dict(campaign_id=cid,state=state,items=items)));return
     _,snapshot=extract(cfg);stamp=uuid4().hex[:8]
-    count=30 if args.stage=="controls" else 1
+    count=30 if args.stage in ("controls","restart-start") else 1
     submitted=campaign(cfg,dict(snapshot_id=snapshot["id"],cycle_code=cfg.cycle,
-        model_keys=[f"hi.demo.controls.{stamp}.{i}" for i in range(count)],max_attempts=1,
+        model_keys=[f"hi.demo.controls.{stamp}.{i}" for i in range(count)],max_attempts=3 if args.stage=="restart-start" else 1,
         requested_by="isolated-controls",confirm_training=True),str(uuid4()))
     cid=submitted["campaign_id"];url=f"/v1/training/campaigns/{cid}"
+    if args.stage=="restart-start":
+        deadline=time.monotonic()+60
+        while time.monotonic()<deadline:
+            state=call(cfg,"GET",url)
+            if state["counts"].get("RUNNING",0):
+                print(report("worker-restart-started",dict(campaign_id=cid,state=state),"PARTIAL"));return
+            time.sleep(.2)
+        raise TimeoutError("No active job available for restart test")
     if args.stage=="failed-training":
         state=await_job(cfg,url,timeout=600);assert state["status"]=="FAILED"
         print(report("retry-training-failed",dict(campaign_id=cid,state=state,reason="Host deliberately stopped isolated MLflow")));return

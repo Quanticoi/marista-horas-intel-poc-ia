@@ -1,8 +1,6 @@
 """Bounded real training campaign; counts are verified against actual Registry runs."""
 import argparse
-import json
 import time
-from pathlib import Path
 from uuid import uuid4
 import mlflow
 from src.workbench.journey_config import Settings

@@ -1,4 +1,3 @@
-import json
 import pytest
 from src.common.lineage import canonical,sha256,reject_sensitive
 from src.common.notebook_distribution import distribute

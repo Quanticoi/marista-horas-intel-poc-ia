@@ -1,7 +1,6 @@
 import hashlib
 import io
 import json
-import uuid
 from datetime import date
 import pandas as pd
 from sqlalchemy import text

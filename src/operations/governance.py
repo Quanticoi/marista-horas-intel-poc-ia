@@ -1,5 +1,4 @@
 """Human review is separate from training and DEMO inference authorization."""
-from uuid import uuid4
 from sqlalchemy import text
 import mlflow
 from src.persistence.db import engine,rows,audit

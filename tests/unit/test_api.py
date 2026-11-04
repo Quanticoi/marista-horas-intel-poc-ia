@@ -32,3 +32,15 @@ def test_pagination_bounds(client):
 def test_payload_is_bounded(client):
     response=client.post('/v1/inference/batch',content=b'x'*65537)
     assert response.status_code==413
+
+
+def test_lineage_reports_partial_when_edges_are_truncated(client,monkeypatch):
+    from src.api import lineage
+    responses=iter([[{'entity_id':'root'}],[{'entity_id':'root'}],[{'total':1}],
+                    [{'total':3}],[{'edge_id':'first'}]])
+    monkeypatch.setattr(lineage,'rows',lambda *args:next(responses))
+    response=client.get('/v1/lineage/graph?kind=proposal&external_id=test&limit=1',
+        headers={'Authorization':'Bearer test-only-token'})
+    assert response.status_code==200
+    assert response.json()['status']=='PARTIAL'
+    assert response.json()['total_edges']==3

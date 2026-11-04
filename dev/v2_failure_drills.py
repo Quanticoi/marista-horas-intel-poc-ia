@@ -1,5 +1,5 @@
 """Fault injection is hard-scoped to the disposable Compose project; restore in finally."""
-import subprocess,json
+import subprocess
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 base=["docker","compose","--env-file",".env","-f",".runtime/correcoes-isolated/compose.json"]
@@ -14,6 +14,12 @@ try:
 finally:
     run("up","-d","--no-deps","--wait","--wait-timeout","180","mlflow")
 stage("retry")
+stage("restart-start")
+try:
+    run("kill","-s","SIGKILL","worker")
+finally:
+    run("up","-d","--no-deps","--wait","--wait-timeout","180","worker")
+stage("restart-check")
 try:
     run("stop","postgres")
     stage("sql-down")

@@ -1,6 +1,5 @@
 """Collect sanitized Docker failure evidence before CI teardown."""
 import json
-import os
 from pathlib import Path
 import re
 import subprocess

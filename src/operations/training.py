@@ -25,6 +25,16 @@ def trace_for(client,version):
         artifact_uri=version.source,artifact_sha256=version.tags["artifact_sha256"],metrics=run.data.metrics,
         training_execution_id=version.tags["execution_id"])
 
+
+def registered_versions(client,name):
+    token=None
+    while True:
+        page=client.search_model_versions("name = '"+name+"'",max_results=100,page_token=token)
+        yield from page
+        token=page.token
+        if not token:
+            return
+
 def attach_lineage(job,result,snapshot_id):
     from src.persistence.db import engine
     from src.persistence.lineage import entity,edge
@@ -41,7 +51,7 @@ def execute(job):
     mlflow.set_tracking_uri(cfg.tracking);mlflow.set_registry_uri(cfg.tracking)
     client=mlflow.MlflowClient()
     # The version tag is created atomically with the version, not in a later call.
-    for version in client.search_model_versions("name = '"+cfg.model_name+"'"):
+    for version in registered_versions(client,cfg.model_name):
         if version.tags.get("operation_job_id")==job_id:
             result=trace_for(client,version)
             from src.workbench.verification import verify_model_storage
@@ -67,6 +77,8 @@ def execute(job):
         ruleset_hash=sha256({"version":RULE,"capacity":40}),source_type="DEMO",training_campaign_id=job["campaign_id"])
     experiment=client.get_experiment_by_name(cfg.experiment)
     eid=experiment.experiment_id if experiment else client.create_experiment(cfg.experiment)
+    if not client.get_experiment(eid).artifact_location.startswith("mlflow-artifacts:"):
+        raise ValueError("Training campaigns require a proxy artifact experiment")
     wall=time.monotonic();cpu=time.process_time()
     with mlflow.start_run(experiment_id=eid,run_name=cfg.model_name,tags={**identity.tags(),
             "cycle_code":cfg.cycle,"operation_job_id":job_id,"execution_id":job_id,

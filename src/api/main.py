@@ -1,7 +1,6 @@
 import hmac
 import re
 import uuid
-from typing import Annotated
 from fastapi import FastAPI, Depends, Header, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError

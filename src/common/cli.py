@@ -1,4 +1,4 @@
-"""Operations entrypoint for Compose tools containers or Kubernetes Jobs."""
+"""Operations entrypoint for Docker Compose tools containers."""
 import argparse
 import json
 import sys
@@ -64,7 +64,7 @@ def main():
         if len(a)!=3: parser.error("reconcile <model_key> <actor> <reason>")
         reconcile(*a)
     elif args.action=="predict":
-        import os,uuid,httpx
+        import os,httpx
         if len(a)!=3: parser.error("predict <cycle_id> <snapshot_id> <model_key>")
         response=httpx.post(os.environ["API_URI"]+"/v1/inference/predict",timeout=120,
             headers={"Authorization":"Bearer "+os.environ["API_TOKEN"]},json=dict(cycle_id=a[0],snapshot_id=a[1],model_key=a[2],requested_by="operator"))

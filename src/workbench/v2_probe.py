@@ -1,5 +1,4 @@
 """Small real API gate before broader campaign and failure acceptance."""
-import json
 from uuid import uuid4
 from src.workbench.journey_config import Settings
 from src.workbench.operations_sdk import campaign,generate,await_job,call,report

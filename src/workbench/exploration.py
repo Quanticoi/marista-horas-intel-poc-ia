@@ -1,5 +1,4 @@
 """Readable data and dependency evidence without embedded credentials."""
-import html
 import httpx
 from src.common.settings import required
 

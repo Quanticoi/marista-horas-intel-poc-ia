@@ -1,5 +1,4 @@
 """Synthetic only; gaps stay gaps and the last series is a new course."""
-import hashlib
 import math
 import random
 import uuid

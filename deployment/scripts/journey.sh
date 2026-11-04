@@ -3,10 +3,17 @@
 set -eu
 python deployment/scripts/init_env.py
 action="${1:-rebuild}"
-dc() { docker compose "$@"; }
+dc() {
+  if [ -f .runtime/models.compose.json ]; then
+    docker compose -f compose.yaml -f .runtime/models.compose.json "$@"
+  else
+    docker compose -f compose.yaml "$@"
+  fi
+}
 rebuild() {
   dc build mlflow jupyter
   mkdir -p workspace/notebooks data/compose-logs artifacts/reports/v2
+  chmod a+rwx workspace workspace/notebooks data/compose-logs
   chmod -R a+rwX artifacts/reports
   dc run --rm --no-deps --entrypoint chown volume-tools 10001:10001 /restore/rustfs
   dc up -d --wait --wait-timeout 240 postgres rustfs rabbitmq

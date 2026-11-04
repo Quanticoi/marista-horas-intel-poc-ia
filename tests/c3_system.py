@@ -36,7 +36,7 @@ def main():
     from src.persistence.db import engine
     from src.persistence.bootstrap import bootstrap, grants
     from src.data.storage import s3
-    from src.workbench.sdk import connect, submit_dataset, test_dataset, train, intake
+    from src.workbench.sdk import connect, submit_dataset, test_dataset, train
     from src.mlops.registry import promote
     from alembic.config import Config
     from alembic import command

@@ -1,8 +1,9 @@
 FROM mambaorg/micromamba:2.0.5
-ARG CODE_VERSION=uncommitted
-ENV CODE_VERSION=${CODE_VERSION}
 COPY --chown=$MAMBA_USER:$MAMBA_USER config/environment.yml /tmp/environment.yml
 RUN micromamba install -y -n base -f /tmp/environment.yml && micromamba clean --all --yes
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
+USER $MAMBA_USER
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 WORKDIR /app
 COPY --chown=$MAMBA_USER:$MAMBA_USER pyproject.toml ./
@@ -14,8 +15,7 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER config ./config
 COPY --chown=$MAMBA_USER:$MAMBA_USER notebooks ./notebooks
 COPY --chown=$MAMBA_USER:$MAMBA_USER sql ./sql
 COPY --chown=$MAMBA_USER:$MAMBA_USER tests ./tests
-USER root
-RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
-USER $MAMBA_USER
+ARG CODE_VERSION=uncommitted
+ENV CODE_VERSION=${CODE_VERSION}
 ENV PYTHONPATH=/app PYTHONUNBUFFERED=1
 CMD ["python", "-m", "src.common.launch", "jupyter"]
