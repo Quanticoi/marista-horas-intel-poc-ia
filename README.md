@@ -51,6 +51,58 @@ flowchart LR
 **04/05** submete treino ao worker, independente do kernel. Os bancos
 `planejamento_db` e `mlflow_db` usam uma única instância PostgreSQL.
 
+### Inicialização da plataforma e serving independente do Jupyter
+
+**Premissa C3:** subir a POC coloca de pé os serviços permanentes de **API Serviços Inteligentes, inferência, MLflow Tracking/Registry, monitoramento e worker**, além de PostgreSQL, RustFS, RabbitMQ, dashboard e Jupyter. O Jupyter é a bancada do cientista para dados, treinamento, avaliação e testes; **não mantém os serviços operacionais em execução**. Fechar o notebook ou reiniciar seu kernel não deve interromper APIs, workers ou modelos já registrados.
+
+```mermaid
+flowchart TB
+    START["Docker Compose — START"] --> API["API Serviços Inteligentes"]
+    START --> INF["Serviço de Inferência"]
+    START --> MLF["MLflow Server"]
+    START --> MON["Serviço de Monitoramento"]
+    START --> JUP["JupyterLab"]
+    START --> WRK["Worker / RabbitMQ"]
+    START --> DB[("PostgreSQL")]
+    START --> OBJ[("RustFS")]
+
+    JUP -->|"Treinamento e registro"| MLF
+    JUP -->|"Submete jobs de treino/geração"| API
+    WRK -->|"Tracking de treinamentos"| MLF
+    MLF -->|"Metadados"| DB
+    MLF -->|"Binários"| OBJ
+
+    API -->|"Solicita geração / predição"| WRK
+    WRK -->|"Solicita inferência"| INF
+    INF -->|"Resolve versão registrada"| MLF
+    INF -->|"Carrega artefato via MLflow/proxy"| OBJ
+    INF -->|"Retorna previsões"| WRK
+    WRK -->|"Persiste proposta DRAFT"| DB
+    API -->|"Consulta proposta"| DB
+    MON -.->|"Observa disponibilidade e execuções"| INF
+    MON -.->|"Consulta tracking/execuções"| MLF
+
+    classDef platform fill:#E6EDF5,stroke:#8093A9,color:#172B45
+    classDef training fill:#FCE8D6,stroke:#CB9958,color:#653B19
+    classDef operational fill:#DBF0E2,stroke:#62A57B,color:#214B32
+    class START platform
+    class JUP training
+    class API,INF,MLF,MON,WRK operational
+```
+
+**Startup de serviço não significa pré-carregamento de todos os modelos.** O runtime de inferência inicia disponível para receber chamadas, inclusive sem modelos registrados. No caminho DEMO implementado, a versão explícita é validada no Registry e o binário é carregado sob demanda, com cache de até **4 versões por processo**. O inventário de modelos no Registry é distinto do conjunto de modelos residentes em memória. O fluxo de APIs dedicadas por modelo aprovado exige publicação explícita e não deve ser confundido com o runtime DEMO compartilhado.
+
+| Momento | Comportamento esperado | Evidência / verificação |
+|---|---|---|
+| Após `start`, sem abrir Jupyter | API, inferência, MLflow, monitoramento e worker ficam operacionais | `compose.ps1 status`, readiness e endpoints autenticados |
+| Antes do primeiro treino | Plataforma continua disponível; ausência de versão é informada sem derrubar o serviço | Health/readiness separado da disponibilidade de um modelo |
+| Após treino e registro | Novo binário aparece no RustFS e nova versão no Registry; nenhuma promoção automática | Run, `model_version`, hash e chave do objeto |
+| Ao solicitar inferência | Serviço valida identidade e versão, carrega modelo registrado quando necessário e produz previsão | `inference_id`, trace, hash e resposta HTTP |
+| Após reiniciar apenas inferência | Serviço volta a atender usando o Registry e os artefatos persistidos, sem reexecutar Jupyter | Readiness, chamada de inferência e checagem de versão |
+| Ao revogar versão aprovada | Novas chamadas no modo `APPROVED` devem respeitar a revogação e a governança | Estado de aprovação, alias e teste negativo |
+
+**Limite demonstrado:** o ensaio V2 validou 500 treinamentos/versões DEMO e uma amostra de serving após reinício; **não** validou 500 modelos simultaneamente carregados nem 500 modelos acadêmicos distintos. O dimensionamento do cache, pré-carregamento seletivo, concorrência, memória e escalabilidade em GKE continuam decisões de arquitetura futura. Veja [operações V2](docs/operations/OPERATIONS_V2.md), [organização dos modelos](docs/operations/MLFLOW_MODEL_ORGANIZATION.md) e [aceite V2](artifacts/reports/v2/acceptance-v2.md).
+
 ## 2. Serviços e acessos
 
 | Serviço | Navegador/host | DNS interno | Responsabilidade, persistência e autenticação |
