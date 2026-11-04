@@ -47,7 +47,7 @@ def main():
         if 'build' in item:
             assert (ROOT/item['build']['dockerfile']).is_file()
     print('PASS Compose services, dependency graph, healthchecks, loopback, secrets references and mounts')
-    original=(ROOT/'dev/spec.md').read_text(encoding='utf-8')
+    original=(ROOT/'dev/spec-historica-v1.md').read_text(encoding='utf-8')
     canonical=re.search(r'```sql\n(-- Database planejamento_db.*?)```',original,re.S).group(1)
     assert (ROOT/'sql/ddl/001_planning.sql').read_text(encoding='utf-8')==canonical
     assert len(re.findall('CREATE TABLE IF NOT EXISTS',canonical))==16

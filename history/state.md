@@ -1,5 +1,11 @@
 # Atualização — 03/11/2026: limpeza implementada e verificada
 
+04/11/2026: dev/spec.md renomeado para dev/spec-historica-v1.md por solicitação
+do usuário, com aviso explícito de documento histórico. Validador SQL e ADR-002
+ajustados; contrato SQL original preservado. spec.md da raiz continua a referência
+principal, sujeita às decisões atuais registradas aqui. Arquivo local não versionado
+dev/spec-correcoes.md encontrado e preservado sem alterações.
+
 04/11/2026: acesso RustFS destacado no início do README e em seção própria:
 console localhost:9001, campos de login relacionados às chaves do .env, bucket
 pucpr-poc/prefixo mlflow e diferença entre portas 9001/9000. Alteração documental;

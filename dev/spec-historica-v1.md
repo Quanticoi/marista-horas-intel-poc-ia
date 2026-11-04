@@ -1,3 +1,10 @@
+# Especificação histórica v1 — referência original
+
+> Documento histórico, preservado para consulta e validação do contrato SQL original.
+> Não define a arquitetura ou o escopo vigentes. A referência principal é
+> [spec.md na raiz](../spec.md); decisões posteriores constam em
+> [history/state.md](../history/state.md). O conteúdo original segue abaixo.
+
 # SPEC — PUCPR Horários Inteligentes | PoC MLOps em Kubernetes
 
 **Versão:** 1.0 (baseline de implementação)  
