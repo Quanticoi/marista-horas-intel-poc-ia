@@ -1,0 +1,2029 @@
+{
+  "timestamp_utc": "2026-11-04T18:49:25.563312+00:00",
+  "git_commit": "8d735d6",
+  "code_version": "sha256:7660c236726aa3633599566013df94085e046adf5123354a048cbcb4bb04c747",
+  "environment": "poc",
+  "project": "marista-correcoes-isolated",
+  "test_id": "worker-restart-recovered",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+    "before": {
+      "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+      "state": {
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "idempotency_key": "5bd8ef6b-18d0-4b62-8e29-9ea921c6c2b7",
+        "request_hash": "f78ba716f2efad2ae83981438adba7cce835103ed8dfd6ffc185e33da77319a5",
+        "request": {
+          "alpha": 1.0,
+          "algorithm": "ridge",
+          "cycle_code": "2026-1",
+          "model_keys": [
+            "hi.demo.controls.cca53599.0",
+            "hi.demo.controls.cca53599.1",
+            "hi.demo.controls.cca53599.2",
+            "hi.demo.controls.cca53599.3",
+            "hi.demo.controls.cca53599.4",
+            "hi.demo.controls.cca53599.5",
+            "hi.demo.controls.cca53599.6",
+            "hi.demo.controls.cca53599.7",
+            "hi.demo.controls.cca53599.8",
+            "hi.demo.controls.cca53599.9",
+            "hi.demo.controls.cca53599.10",
+            "hi.demo.controls.cca53599.11",
+            "hi.demo.controls.cca53599.12",
+            "hi.demo.controls.cca53599.13",
+            "hi.demo.controls.cca53599.14",
+            "hi.demo.controls.cca53599.15",
+            "hi.demo.controls.cca53599.16",
+            "hi.demo.controls.cca53599.17",
+            "hi.demo.controls.cca53599.18",
+            "hi.demo.controls.cca53599.19",
+            "hi.demo.controls.cca53599.20",
+            "hi.demo.controls.cca53599.21",
+            "hi.demo.controls.cca53599.22",
+            "hi.demo.controls.cca53599.23",
+            "hi.demo.controls.cca53599.24",
+            "hi.demo.controls.cca53599.25",
+            "hi.demo.controls.cca53599.26",
+            "hi.demo.controls.cca53599.27",
+            "hi.demo.controls.cca53599.28",
+            "hi.demo.controls.cca53599.29"
+          ],
+          "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+          "max_attempts": 3,
+          "requested_by": "isolated-controls",
+          "schema_version": "poc-training-campaign-v2",
+          "confirm_training": true,
+          "max_parallel_jobs": 2
+        },
+        "correlation_id": "f1fa8e71-28b7-4344-a2a7-b1e60a60f48f",
+        "requested_by": "isolated-controls",
+        "status": "RUNNING",
+        "max_parallel_jobs": 2,
+        "requested_count": 30,
+        "created_at_utc": "2026-11-04T18:49:00.448221+00:00",
+        "started_at_utc": "2026-11-04T18:49:00.538423+00:00",
+        "ended_at_utc": null,
+        "counts": {
+          "PENDING": 28,
+          "RUNNING": 2
+        }
+      }
+    },
+    "state": {
+      "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+      "idempotency_key": "5bd8ef6b-18d0-4b62-8e29-9ea921c6c2b7",
+      "request_hash": "f78ba716f2efad2ae83981438adba7cce835103ed8dfd6ffc185e33da77319a5",
+      "request": {
+        "alpha": 1.0,
+        "algorithm": "ridge",
+        "cycle_code": "2026-1",
+        "model_keys": [
+          "hi.demo.controls.cca53599.0",
+          "hi.demo.controls.cca53599.1",
+          "hi.demo.controls.cca53599.2",
+          "hi.demo.controls.cca53599.3",
+          "hi.demo.controls.cca53599.4",
+          "hi.demo.controls.cca53599.5",
+          "hi.demo.controls.cca53599.6",
+          "hi.demo.controls.cca53599.7",
+          "hi.demo.controls.cca53599.8",
+          "hi.demo.controls.cca53599.9",
+          "hi.demo.controls.cca53599.10",
+          "hi.demo.controls.cca53599.11",
+          "hi.demo.controls.cca53599.12",
+          "hi.demo.controls.cca53599.13",
+          "hi.demo.controls.cca53599.14",
+          "hi.demo.controls.cca53599.15",
+          "hi.demo.controls.cca53599.16",
+          "hi.demo.controls.cca53599.17",
+          "hi.demo.controls.cca53599.18",
+          "hi.demo.controls.cca53599.19",
+          "hi.demo.controls.cca53599.20",
+          "hi.demo.controls.cca53599.21",
+          "hi.demo.controls.cca53599.22",
+          "hi.demo.controls.cca53599.23",
+          "hi.demo.controls.cca53599.24",
+          "hi.demo.controls.cca53599.25",
+          "hi.demo.controls.cca53599.26",
+          "hi.demo.controls.cca53599.27",
+          "hi.demo.controls.cca53599.28",
+          "hi.demo.controls.cca53599.29"
+        ],
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "max_attempts": 3,
+        "requested_by": "isolated-controls",
+        "schema_version": "poc-training-campaign-v2",
+        "confirm_training": true,
+        "max_parallel_jobs": 2
+      },
+      "correlation_id": "f1fa8e71-28b7-4344-a2a7-b1e60a60f48f",
+      "requested_by": "isolated-controls",
+      "status": "COMPLETED",
+      "max_parallel_jobs": 2,
+      "requested_count": 30,
+      "created_at_utc": "2026-11-04T18:49:00.448221+00:00",
+      "started_at_utc": "2026-11-04T18:49:00.538423+00:00",
+      "ended_at_utc": "2026-11-04T18:49:24.358678+00:00",
+      "counts": {
+        "COMPLETED": 30
+      }
+    },
+    "items": [
+      {
+        "job_id": "af06d7db-5059-4d9d-b3c5-08376004a609",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.0",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:18.346312+00:00",
+        "started_at_utc": "2026-11-04T18:49:17.248074+00:00",
+        "ended_at_utc": "2026-11-04T18:49:18.673972+00:00",
+        "mlflow_run_id": "0108d6123d19466597fa54de5cf6845a",
+        "registered_model_name": "hi.demo.controls.cca53599.0",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "0108d6123d19466597fa54de5cf6845a",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.21739848200000012,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273172.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.7079581279976992
+          },
+          "trace_id": "tr-3d78dfff65c70fdaac446d8633ae4e69",
+          "model_uri": "models:/hi.demo.controls.cca53599.0/1",
+          "model_name": "hi.demo.controls.cca53599.0",
+          "artifact_uri": "models:/m-c44c817f222a40e196bf2dd6c88c2ede",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-c44c817f222a40e196bf2dd6c88c2ede/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "688ab4368884c038f8bb31983782f054aa19cc33de371ac3e1840533333d49fd",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "964ea198-1fbc-4130-bd7b-1b6384f735ea"
+            },
+            {
+              "key": "mlflow/2/models/m-c44c817f222a40e196bf2dd6c88c2ede/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "a0c9951b-ff4f-464f-8f49-14124a96cb35"
+            },
+            {
+              "key": "mlflow/2/models/m-c44c817f222a40e196bf2dd6c88c2ede/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "04ff8b02-c715-433d-84b6-578503217cdc"
+            }
+          ],
+          "training_execution_id": "af06d7db-5059-4d9d-b3c5-08376004a609"
+        }
+      },
+      {
+        "job_id": "00c86067-4f1f-465e-8c3c-533831d5e823",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.1",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:01.293574+00:00",
+        "started_at_utc": "2026-11-04T18:49:00.538423+00:00",
+        "ended_at_utc": "2026-11-04T18:49:01.595067+00:00",
+        "mlflow_run_id": "e9a3794a9459418ca7af43c1f8ac13b7",
+        "registered_model_name": "hi.demo.controls.cca53599.1",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "e9a3794a9459418ca7af43c1f8ac13b7",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17893678999999985,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273476.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.47680453000066336
+          },
+          "trace_id": "tr-8d659de103720e2db8a7502d2f82e244",
+          "model_uri": "models:/hi.demo.controls.cca53599.1/1",
+          "model_name": "hi.demo.controls.cca53599.1",
+          "artifact_uri": "models:/m-2c200cbef69d46d888551202b8cd2907",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-2c200cbef69d46d888551202b8cd2907/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "6656556bf3c85f5a81de32a004d9c3857542c4a3ff4e078dbdb8176821baee04",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "8679a9e8-67ec-4d67-b5c2-baf29d080526"
+            },
+            {
+              "key": "mlflow/2/models/m-2c200cbef69d46d888551202b8cd2907/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "80e0dc77-7637-413c-affb-43b92d02b5a8"
+            },
+            {
+              "key": "mlflow/2/models/m-2c200cbef69d46d888551202b8cd2907/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "70820b0c-da96-4ee0-8235-674c0d3a5814"
+            }
+          ],
+          "training_execution_id": "00c86067-4f1f-465e-8c3c-533831d5e823"
+        }
+      },
+      {
+        "job_id": "2768729f-9b49-4b27-8b3a-90df20eab9d0",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.10",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:09.758635+00:00",
+        "started_at_utc": "2026-11-04T18:49:08.974256+00:00",
+        "ended_at_utc": "2026-11-04T18:49:10.026500+00:00",
+        "mlflow_run_id": "4f8782cf1d79447a873c80e8f337a92b",
+        "registered_model_name": "hi.demo.controls.cca53599.10",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "4f8782cf1d79447a873c80e8f337a92b",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17094172699999977,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 271252.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5067159549944336
+          },
+          "trace_id": "tr-bc6a14691621f0983aba4551a1716060",
+          "model_uri": "models:/hi.demo.controls.cca53599.10/1",
+          "model_name": "hi.demo.controls.cca53599.10",
+          "artifact_uri": "models:/m-e5591323e10444ec8a29b9909cbafee3",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-e5591323e10444ec8a29b9909cbafee3/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "c11d0c891385df9371556d1963615ad9e668ba902c1c5943fec145f84120e6c4",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "252915ec-d8cb-433d-b5d8-53c2a27aac0e"
+            },
+            {
+              "key": "mlflow/2/models/m-e5591323e10444ec8a29b9909cbafee3/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "8fbdafc2-d295-4831-a1ff-405efd9b9814"
+            },
+            {
+              "key": "mlflow/2/models/m-e5591323e10444ec8a29b9909cbafee3/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "4f86a60c-1f00-42f4-918c-a8a0ee7b2a88"
+            }
+          ],
+          "training_execution_id": "2768729f-9b49-4b27-8b3a-90df20eab9d0"
+        }
+      },
+      {
+        "job_id": "a891038e-1c02-4526-9719-892c0f41da81",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.11",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:16.910415+00:00",
+        "started_at_utc": "2026-11-04T18:49:16.046509+00:00",
+        "ended_at_utc": "2026-11-04T18:49:17.205510+00:00",
+        "mlflow_run_id": "973058940f5847fc8f9fd60b98e894aa",
+        "registered_model_name": "hi.demo.controls.cca53599.11",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "973058940f5847fc8f9fd60b98e894aa",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.18255165599999934,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273172.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5549643409904093
+          },
+          "trace_id": "tr-9e1bedfe6bfba2b5bbb0344fa01ce1cf",
+          "model_uri": "models:/hi.demo.controls.cca53599.11/1",
+          "model_name": "hi.demo.controls.cca53599.11",
+          "artifact_uri": "models:/m-99c55ff9bed94f1eac94b3972199365a",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-99c55ff9bed94f1eac94b3972199365a/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "9fde310b0e9c419d97ca11f2b99db4333f89dbb1b32274606473f0961429eec2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "e7831c1f-cc45-404d-bc9b-5a2a4ce94749"
+            },
+            {
+              "key": "mlflow/2/models/m-99c55ff9bed94f1eac94b3972199365a/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "be11e917-14fc-4cba-9580-aee4bae54021"
+            },
+            {
+              "key": "mlflow/2/models/m-99c55ff9bed94f1eac94b3972199365a/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "2aaa96c9-9cfe-4d8d-8b3d-7966eb5f9a14"
+            }
+          ],
+          "training_execution_id": "a891038e-1c02-4526-9719-892c0f41da81"
+        }
+      },
+      {
+        "job_id": "9851521b-d16a-49c5-93aa-6329ae4af7f0",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.12",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:14.431082+00:00",
+        "started_at_utc": "2026-11-04T18:49:13.651079+00:00",
+        "ended_at_utc": "2026-11-04T18:49:14.772748+00:00",
+        "mlflow_run_id": "2af9472b1e604be3b4bb0155b4af4200",
+        "registered_model_name": "hi.demo.controls.cca53599.12",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "2af9472b1e604be3b4bb0155b4af4200",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1745635809999997,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 272652.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5202153419959359
+          },
+          "trace_id": "tr-8cc4dbd6a0ecaa5e5ddb3c31bb9d4722",
+          "model_uri": "models:/hi.demo.controls.cca53599.12/1",
+          "model_name": "hi.demo.controls.cca53599.12",
+          "artifact_uri": "models:/m-002b40266f90484c83d8d4bf02875132",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-002b40266f90484c83d8d4bf02875132/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "60b8cbed9312815b462532818d101f2783ff5801db65359ee9957b1a70359aa0",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "d4b21635-6349-4f9e-9601-69abdaec3b6d"
+            },
+            {
+              "key": "mlflow/2/models/m-002b40266f90484c83d8d4bf02875132/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "8c3fb700-cc4d-4d54-b1ed-d82593c99749"
+            },
+            {
+              "key": "mlflow/2/models/m-002b40266f90484c83d8d4bf02875132/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "2ea9d47f-51d6-4236-b634-a4a61ae98094"
+            }
+          ],
+          "training_execution_id": "9851521b-d16a-49c5-93aa-6329ae4af7f0"
+        }
+      },
+      {
+        "job_id": "31ec7070-97b0-4932-b4b1-90f556b8b27d",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.13",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:09.754396+00:00",
+        "started_at_utc": "2026-11-04T18:49:08.976269+00:00",
+        "ended_at_utc": "2026-11-04T18:49:10.032233+00:00",
+        "mlflow_run_id": "39062d60aa064a06a1b9541d05621e6c",
+        "registered_model_name": "hi.demo.controls.cca53599.13",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "39062d60aa064a06a1b9541d05621e6c",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.16560541800000017,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 271884.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.49967799200385343
+          },
+          "trace_id": "tr-bdbce638e97b6d24d0b6f63d1633e745",
+          "model_uri": "models:/hi.demo.controls.cca53599.13/1",
+          "model_name": "hi.demo.controls.cca53599.13",
+          "artifact_uri": "models:/m-28abe73620c041929d4723bf374a7c2c",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-28abe73620c041929d4723bf374a7c2c/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "9581a682b79f0abad107834ef911ca80ded187a649c7649c1e5c4136270b4228",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "f8065632-0d42-4539-8fa3-e7bd1f7c1e14"
+            },
+            {
+              "key": "mlflow/2/models/m-28abe73620c041929d4723bf374a7c2c/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "1c9ff564-1e11-4ce1-aca5-6aecb72596ac"
+            },
+            {
+              "key": "mlflow/2/models/m-28abe73620c041929d4723bf374a7c2c/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "c3131c0d-1fce-4d80-a344-fa70bde9077c"
+            }
+          ],
+          "training_execution_id": "31ec7070-97b0-4932-b4b1-90f556b8b27d"
+        }
+      },
+      {
+        "job_id": "985b5107-2ebf-47a4-bea2-e022ab25768d",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.14",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:15.695408+00:00",
+        "started_at_utc": "2026-11-04T18:49:14.803328+00:00",
+        "ended_at_utc": "2026-11-04T18:49:16.017753+00:00",
+        "mlflow_run_id": "cb473f25f1cd4a54b0aff5dd8fb8d64e",
+        "registered_model_name": "hi.demo.controls.cca53599.14",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "cb473f25f1cd4a54b0aff5dd8fb8d64e",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1958800010000008,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273420.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.569581747011398
+          },
+          "trace_id": "tr-5cdcf7a6809ded700d5ef0977be600d5",
+          "model_uri": "models:/hi.demo.controls.cca53599.14/1",
+          "model_name": "hi.demo.controls.cca53599.14",
+          "artifact_uri": "models:/m-ce354e9d6fd54dc8a9a6f141eed7e872",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-ce354e9d6fd54dc8a9a6f141eed7e872/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "6f7983c0098ffd79ac2e5641b372c6d58850368cbb33a982b2bb487fa57a6e16",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "571ff194-9f05-40b4-b6a8-dd933c36dceb"
+            },
+            {
+              "key": "mlflow/2/models/m-ce354e9d6fd54dc8a9a6f141eed7e872/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "65e6b140-eeba-45dc-97dd-084416340708"
+            },
+            {
+              "key": "mlflow/2/models/m-ce354e9d6fd54dc8a9a6f141eed7e872/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "45626b6b-2b47-4815-8c15-4f46a44d7fff"
+            }
+          ],
+          "training_execution_id": "985b5107-2ebf-47a4-bea2-e022ab25768d"
+        }
+      },
+      {
+        "job_id": "9f5cec1d-1495-4e41-9676-9bee1882d405",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.15",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:15.698425+00:00",
+        "started_at_utc": "2026-11-04T18:49:14.805213+00:00",
+        "ended_at_utc": "2026-11-04T18:49:16.015171+00:00",
+        "mlflow_run_id": "f3a1de06c9e44f2eaf176c9dc1674c74",
+        "registered_model_name": "hi.demo.controls.cca53599.15",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "f3a1de06c9e44f2eaf176c9dc1674c74",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.20536162099999977,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 272980.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5648039630032144
+          },
+          "trace_id": "tr-e104df8be8654eef9aa4fa07599bf772",
+          "model_uri": "models:/hi.demo.controls.cca53599.15/1",
+          "model_name": "hi.demo.controls.cca53599.15",
+          "artifact_uri": "models:/m-6431f8f83d0349e687d060ed491b0ce4",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-6431f8f83d0349e687d060ed491b0ce4/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "303b091eabc8b828beb7b7155ad47bbf937ce215fb6926d8c7b67aa2603e8ba7",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "0d0fd858-c7ae-4db8-add9-02fa40a5f6eb"
+            },
+            {
+              "key": "mlflow/2/models/m-6431f8f83d0349e687d060ed491b0ce4/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "862f9f3a-1462-4107-abd5-ff49a6b193f1"
+            },
+            {
+              "key": "mlflow/2/models/m-6431f8f83d0349e687d060ed491b0ce4/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "43c80029-06e1-41c2-834d-73ea353f17c0"
+            }
+          ],
+          "training_execution_id": "9f5cec1d-1495-4e41-9676-9bee1882d405"
+        }
+      },
+      {
+        "job_id": "6d32409e-6a56-4137-a8f2-d77164996c62",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.16",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:12.104653+00:00",
+        "started_at_utc": "2026-11-04T18:49:11.209506+00:00",
+        "ended_at_utc": "2026-11-04T18:49:12.438607+00:00",
+        "mlflow_run_id": "888c698c288940818563cdf3215491bc",
+        "registered_model_name": "hi.demo.controls.cca53599.16",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "888c698c288940818563cdf3215491bc",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17778563300000005,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 271444.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.49902536600711755
+          },
+          "trace_id": "tr-1051bb06d50a113807fe66a032212886",
+          "model_uri": "models:/hi.demo.controls.cca53599.16/1",
+          "model_name": "hi.demo.controls.cca53599.16",
+          "artifact_uri": "models:/m-c2ad8bed5926454489ab3730dabbf60d",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-c2ad8bed5926454489ab3730dabbf60d/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "28d8eb44c1908170e89d304e03870d1d007d183a68a00ce54432246dec934640",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "125e23a7-fb44-46a1-acdd-b05232dcec35"
+            },
+            {
+              "key": "mlflow/2/models/m-c2ad8bed5926454489ab3730dabbf60d/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "31980be0-d91b-4676-b468-7e85664a2897"
+            },
+            {
+              "key": "mlflow/2/models/m-c2ad8bed5926454489ab3730dabbf60d/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "facafda8-cb98-4fc6-a9fe-0d9f5520eef9"
+            }
+          ],
+          "training_execution_id": "6d32409e-6a56-4137-a8f2-d77164996c62"
+        }
+      },
+      {
+        "job_id": "a3fe6cbf-b94a-442c-8b07-9aa7cbdf40cf",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.17",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:16.894046+00:00",
+        "started_at_utc": "2026-11-04T18:49:16.045208+00:00",
+        "ended_at_utc": "2026-11-04T18:49:17.206031+00:00",
+        "mlflow_run_id": "5ab70e8846f440c0b63411bd1b286fd2",
+        "registered_model_name": "hi.demo.controls.cca53599.17",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "5ab70e8846f440c0b63411bd1b286fd2",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17816344199999978,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273996.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5424395839945646
+          },
+          "trace_id": "tr-a25a438043d0fe46f98e3a03857d4b44",
+          "model_uri": "models:/hi.demo.controls.cca53599.17/1",
+          "model_name": "hi.demo.controls.cca53599.17",
+          "artifact_uri": "models:/m-b758a7e97b54450daff5b8ddc3f65905",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-b758a7e97b54450daff5b8ddc3f65905/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "79ccabf3eeb444215d3d9444433dabd07cc7378c34ef249506bd0dc951d1936b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "0c0dbd11-59a9-4ae8-8f31-5871dee53cf3"
+            },
+            {
+              "key": "mlflow/2/models/m-b758a7e97b54450daff5b8ddc3f65905/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "89f94d16-fd86-4239-aac3-d169c525d8a9"
+            },
+            {
+              "key": "mlflow/2/models/m-b758a7e97b54450daff5b8ddc3f65905/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "14ca4242-7343-4cf7-abff-17ae7421911c"
+            }
+          ],
+          "training_execution_id": "a3fe6cbf-b94a-442c-8b07-9aa7cbdf40cf"
+        }
+      },
+      {
+        "job_id": "fa1c647a-ec43-4ec3-b57c-60532a75f68e",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.18",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:24.077815+00:00",
+        "started_at_utc": "2026-11-04T18:49:23.215615+00:00",
+        "ended_at_utc": "2026-11-04T18:49:24.352120+00:00",
+        "mlflow_run_id": "ef88b9d7c034436d9a0ff2bf47acb8dd",
+        "registered_model_name": "hi.demo.controls.cca53599.18",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "ef88b9d7c034436d9a0ff2bf47acb8dd",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1790655689999996,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274764.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5274768670060439
+          },
+          "trace_id": "tr-0528e5a8b3184419aafdd4b37178d5d3",
+          "model_uri": "models:/hi.demo.controls.cca53599.18/1",
+          "model_name": "hi.demo.controls.cca53599.18",
+          "artifact_uri": "models:/m-fce9b80ac4f44be38b97310ec0a92e12",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-fce9b80ac4f44be38b97310ec0a92e12/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "84062106c20d939170fb57d112681d91fe86a3f03706db3040b45ba647e39872",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "2c5cd847-19a9-4780-92ae-1281e7b5e789"
+            },
+            {
+              "key": "mlflow/2/models/m-fce9b80ac4f44be38b97310ec0a92e12/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "cb3c2693-7998-42db-a6d7-3312348ae887"
+            },
+            {
+              "key": "mlflow/2/models/m-fce9b80ac4f44be38b97310ec0a92e12/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "b41cb266-6ddb-497c-9e7e-af18d20a8a61"
+            }
+          ],
+          "training_execution_id": "fa1c647a-ec43-4ec3-b57c-60532a75f68e"
+        }
+      },
+      {
+        "job_id": "aa17199c-0275-4ad2-bdd9-d55ace046b6a",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.19",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:18.348504+00:00",
+        "started_at_utc": "2026-11-04T18:49:17.245842+00:00",
+        "ended_at_utc": "2026-11-04T18:49:18.671114+00:00",
+        "mlflow_run_id": "3986e6a672394ce0b8d3e57e6834f64d",
+        "registered_model_name": "hi.demo.controls.cca53599.19",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "3986e6a672394ce0b8d3e57e6834f64d",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.21249725900000005,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273996.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.7334127940121107
+          },
+          "trace_id": "tr-29d683f774bdb63520398c048aa59097",
+          "model_uri": "models:/hi.demo.controls.cca53599.19/1",
+          "model_name": "hi.demo.controls.cca53599.19",
+          "artifact_uri": "models:/m-689e722a2ed54b15a39ff65b2de9fc36",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-689e722a2ed54b15a39ff65b2de9fc36/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "e130d4c0976f80f9d3492b4a79b63ae46a20c2cffb14070069dc4490edd9f94e",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "eb9a6517-20d7-4a9d-9e59-dbbcef2392ec"
+            },
+            {
+              "key": "mlflow/2/models/m-689e722a2ed54b15a39ff65b2de9fc36/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "a3c1829e-b0af-44c7-b548-28ad8a9f81bc"
+            },
+            {
+              "key": "mlflow/2/models/m-689e722a2ed54b15a39ff65b2de9fc36/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "3c7625f8-d466-46c6-961a-c5cbf255a095"
+            }
+          ],
+          "training_execution_id": "aa17199c-0275-4ad2-bdd9-d55ace046b6a"
+        }
+      },
+      {
+        "job_id": "c21d268c-6cc4-4a94-bacc-0cac202fa0e9",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.2",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:21.606278+00:00",
+        "started_at_utc": "2026-11-04T18:49:20.870545+00:00",
+        "ended_at_utc": "2026-11-04T18:49:22.005735+00:00",
+        "mlflow_run_id": "767238a871b14946aa71f1c98a584516",
+        "registered_model_name": "hi.demo.controls.cca53599.2",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "767238a871b14946aa71f1c98a584516",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.16513629600000002,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273556.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.46287827999913134
+          },
+          "trace_id": "tr-39e010bbb8b8793b827dc730338abea5",
+          "model_uri": "models:/hi.demo.controls.cca53599.2/1",
+          "model_name": "hi.demo.controls.cca53599.2",
+          "artifact_uri": "models:/m-9f607cddbc5f4d5eb5ce66ca09e6e432",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-9f607cddbc5f4d5eb5ce66ca09e6e432/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "bcf18383d595f92e24f8094a58337c5ba119cbac022998f4954a0ebb6989a6f5",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "ed87f355-5454-4fbc-8259-6092bd0e0380"
+            },
+            {
+              "key": "mlflow/2/models/m-9f607cddbc5f4d5eb5ce66ca09e6e432/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "a9f35c52-b0d3-46e4-be42-a6e2b9e03ba5"
+            },
+            {
+              "key": "mlflow/2/models/m-9f607cddbc5f4d5eb5ce66ca09e6e432/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "9078b710-f76f-41c4-a916-e0695d0821e1"
+            }
+          ],
+          "training_execution_id": "c21d268c-6cc4-4a94-bacc-0cac202fa0e9"
+        }
+      },
+      {
+        "job_id": "09e40fea-9212-4184-b3ac-32526d40b76b",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.20",
+        "status": "COMPLETED",
+        "attempt": 2,
+        "heartbeat_at_utc": "2026-11-04T18:49:08.286691+00:00",
+        "started_at_utc": "2026-11-04T18:49:01.625774+00:00",
+        "ended_at_utc": "2026-11-04T18:49:08.924592+00:00",
+        "mlflow_run_id": "9c8871b4dea545b6af03eaa601fda55d",
+        "registered_model_name": "hi.demo.controls.cca53599.20",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "9c8871b4dea545b6af03eaa601fda55d",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 1.5784386919999998,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 258776.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 1.1088146209949628
+          },
+          "trace_id": "tr-24195e040fb66a6226fcf03108e97cbc",
+          "model_uri": "models:/hi.demo.controls.cca53599.20/1",
+          "model_name": "hi.demo.controls.cca53599.20",
+          "artifact_uri": "models:/m-a3f54a5dcbf244019f2e1d24e663e5fe",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-a3f54a5dcbf244019f2e1d24e663e5fe/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "5d6ae332678512fdfd3a458844e924d9b68cc65dd5d0415ce6bcd57682da109e",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "19e60920-dde6-460a-ae7e-3d7efad76319"
+            },
+            {
+              "key": "mlflow/2/models/m-a3f54a5dcbf244019f2e1d24e663e5fe/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "83cdb224-d553-4410-8660-9851436bf3cc"
+            },
+            {
+              "key": "mlflow/2/models/m-a3f54a5dcbf244019f2e1d24e663e5fe/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "98f8f232-3b3d-43fb-869a-6ad5708f1539"
+            }
+          ],
+          "training_execution_id": "09e40fea-9212-4184-b3ac-32526d40b76b"
+        }
+      },
+      {
+        "job_id": "49cebc0a-9f62-4f51-a290-e65fbbcdeaa8",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.21",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:10.841586+00:00",
+        "started_at_utc": "2026-11-04T18:49:10.061281+00:00",
+        "ended_at_utc": "2026-11-04T18:49:11.176251+00:00",
+        "mlflow_run_id": "451d0182c93947b3ad1cc2bc57c8b6dd",
+        "registered_model_name": "hi.demo.controls.cca53599.21",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "451d0182c93947b3ad1cc2bc57c8b6dd",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17423754699999972,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 271444.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.49916573900554795
+          },
+          "trace_id": "tr-dc01e996ac9408ce5f6f24fd81985744",
+          "model_uri": "models:/hi.demo.controls.cca53599.21/1",
+          "model_name": "hi.demo.controls.cca53599.21",
+          "artifact_uri": "models:/m-771f8d06a7554ffaaf8fe0e98719e6b1",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-771f8d06a7554ffaaf8fe0e98719e6b1/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "5fbef8226230e7b47ebbf0fbde37269ed7853b96e38fa8a0c9e2bb59d9e16992",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "e4186f28-d2f8-402f-9a68-94cc069cb887"
+            },
+            {
+              "key": "mlflow/2/models/m-771f8d06a7554ffaaf8fe0e98719e6b1/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "945fcb31-f570-48dd-a2d5-36db99dd94f6"
+            },
+            {
+              "key": "mlflow/2/models/m-771f8d06a7554ffaaf8fe0e98719e6b1/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "2036c09c-f015-4eda-ad6b-e2b331fafa8e"
+            }
+          ],
+          "training_execution_id": "49cebc0a-9f62-4f51-a290-e65fbbcdeaa8"
+        }
+      },
+      {
+        "job_id": "6c744984-c73f-44b2-b2b2-aa1f260591ae",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.22",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:12.096605+00:00",
+        "started_at_utc": "2026-11-04T18:49:11.207574+00:00",
+        "ended_at_utc": "2026-11-04T18:49:12.441037+00:00",
+        "mlflow_run_id": "8e29910d2c51403eab563aeb57370d77",
+        "registered_model_name": "hi.demo.controls.cca53599.22",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "8e29910d2c51403eab563aeb57370d77",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1756445440000003,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 272268.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5060652039974229
+          },
+          "trace_id": "tr-3223f39466c3d84ed08b3aba78d32962",
+          "model_uri": "models:/hi.demo.controls.cca53599.22/1",
+          "model_name": "hi.demo.controls.cca53599.22",
+          "artifact_uri": "models:/m-524fdd4acea7430eb8168ff2d5e93924",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-524fdd4acea7430eb8168ff2d5e93924/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "1127de92dc3228ce50295c907e20a75e4e7d5efda729639c0d1a0a4b31335cff",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "f575c846-e92d-4259-9e9a-a48244dfdd58"
+            },
+            {
+              "key": "mlflow/2/models/m-524fdd4acea7430eb8168ff2d5e93924/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "d9d663fa-abf8-40dc-99a9-5a409007aca2"
+            },
+            {
+              "key": "mlflow/2/models/m-524fdd4acea7430eb8168ff2d5e93924/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "7fd01688-1a9b-44b1-9eea-89919cd21ab4"
+            }
+          ],
+          "training_execution_id": "6c744984-c73f-44b2-b2b2-aa1f260591ae"
+        }
+      },
+      {
+        "job_id": "eeda1cbb-55b9-4ccb-83ae-788e993e627b",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.23",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:24.085081+00:00",
+        "started_at_utc": "2026-11-04T18:49:23.213594+00:00",
+        "ended_at_utc": "2026-11-04T18:49:24.354489+00:00",
+        "mlflow_run_id": "1b458ca9dbd245a4b0c18ce8213c5e1b",
+        "registered_model_name": "hi.demo.controls.cca53599.23",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "1b458ca9dbd245a4b0c18ce8213c5e1b",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17850264900000035,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273940.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5393520830111811
+          },
+          "trace_id": "tr-28b1cf3134b8681ba013f2c649dd7183",
+          "model_uri": "models:/hi.demo.controls.cca53599.23/1",
+          "model_name": "hi.demo.controls.cca53599.23",
+          "artifact_uri": "models:/m-8858d32b003f44f886d22a1338fd7fd3",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-8858d32b003f44f886d22a1338fd7fd3/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "e63e958d949169359f86040e4802e8ab37a5820c8ef7efe121c1e537abe4248a",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "ad56591d-9b50-4b5b-8cbb-5f758ee56d07"
+            },
+            {
+              "key": "mlflow/2/models/m-8858d32b003f44f886d22a1338fd7fd3/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "6e5edc3e-7c85-44e8-8826-a358b61e3802"
+            },
+            {
+              "key": "mlflow/2/models/m-8858d32b003f44f886d22a1338fd7fd3/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "4852c0b6-3765-41f1-af95-43bd2927f77d"
+            }
+          ],
+          "training_execution_id": "eeda1cbb-55b9-4ccb-83ae-788e993e627b"
+        }
+      },
+      {
+        "job_id": "cef5e07d-6542-49b1-93c8-1c07b53c05b6",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.24",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:21.604200+00:00",
+        "started_at_utc": "2026-11-04T18:49:20.873163+00:00",
+        "ended_at_utc": "2026-11-04T18:49:22.008186+00:00",
+        "mlflow_run_id": "a6cda5b2964c4a57af3b8a024233e3aa",
+        "registered_model_name": "hi.demo.controls.cca53599.24",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "a6cda5b2964c4a57af3b8a024233e3aa",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.16963879399999993,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274572.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4589398810057901
+          },
+          "trace_id": "tr-9d6af06cd969b8f1608086a87a7ac1e1",
+          "model_uri": "models:/hi.demo.controls.cca53599.24/1",
+          "model_name": "hi.demo.controls.cca53599.24",
+          "artifact_uri": "models:/m-f412077626f34f5485f408bf475bcdf7",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-f412077626f34f5485f408bf475bcdf7/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "f515da10bdd0ef1edaeda70bf39a5728a57632d74eacdb061b1b8226467228bb",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "d760daf2-c9ca-420b-9ba7-09a4f40b5b05"
+            },
+            {
+              "key": "mlflow/2/models/m-f412077626f34f5485f408bf475bcdf7/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "62a0dff5-9a9e-4b6a-93ea-f648bb0969b8"
+            },
+            {
+              "key": "mlflow/2/models/m-f412077626f34f5485f408bf475bcdf7/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "c7ee63bb-b3ef-40ef-86da-3816f12db880"
+            }
+          ],
+          "training_execution_id": "cef5e07d-6542-49b1-93c8-1c07b53c05b6"
+        }
+      },
+      {
+        "job_id": "afcc3118-42c6-407a-8323-c94823623e12",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.25",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:19.450856+00:00",
+        "started_at_utc": "2026-11-04T18:49:18.698457+00:00",
+        "ended_at_utc": "2026-11-04T18:49:19.706478+00:00",
+        "mlflow_run_id": "7a299f7f517b439b810c0e040bf6b3e9",
+        "registered_model_name": "hi.demo.controls.cca53599.25",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "7a299f7f517b439b810c0e040bf6b3e9",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17089261499999964,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274380.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4745933290105313
+          },
+          "trace_id": "tr-88353ad81d16003633a7f8e6903df180",
+          "model_uri": "models:/hi.demo.controls.cca53599.25/1",
+          "model_name": "hi.demo.controls.cca53599.25",
+          "artifact_uri": "models:/m-559662356f2f4996afc5445c305e064a",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-559662356f2f4996afc5445c305e064a/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "214557c56f8e630a9c542ad4aaf3e7a6eab3925fb4a8c6c71d6e2acce5cca006",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "8c27b15e-59aa-453a-abe5-f98a6a123d65"
+            },
+            {
+              "key": "mlflow/2/models/m-559662356f2f4996afc5445c305e064a/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "c31737ff-725e-4fca-9169-22c85c223da6"
+            },
+            {
+              "key": "mlflow/2/models/m-559662356f2f4996afc5445c305e064a/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "74fe75a1-3364-4431-88f8-54977fe88458"
+            }
+          ],
+          "training_execution_id": "afcc3118-42c6-407a-8323-c94823623e12"
+        }
+      },
+      {
+        "job_id": "c185ef57-8505-4f15-8cd2-60410adce56d",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.26",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:20.512057+00:00",
+        "started_at_utc": "2026-11-04T18:49:19.735140+00:00",
+        "ended_at_utc": "2026-11-04T18:49:20.840507+00:00",
+        "mlflow_run_id": "5a070c5d8d124f2296fdacaacc348b62",
+        "registered_model_name": "hi.demo.controls.cca53599.26",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "5a070c5d8d124f2296fdacaacc348b62",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17596543199999992,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273556.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4984286070102826
+          },
+          "trace_id": "tr-6cbff8cd70c57d617a314ec74935d9aa",
+          "model_uri": "models:/hi.demo.controls.cca53599.26/1",
+          "model_name": "hi.demo.controls.cca53599.26",
+          "artifact_uri": "models:/m-4aa151b147d34fc9a9adaaee96113461",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-4aa151b147d34fc9a9adaaee96113461/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "ab0d7905dd0b0082c1e8906688ac9fd45d16b0f517d20e48b34cae5341115350",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "a4dea345-b3d8-4605-a097-c43203076ed9"
+            },
+            {
+              "key": "mlflow/2/models/m-4aa151b147d34fc9a9adaaee96113461/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "66ca4013-1aca-4345-a61a-141b4a2131e9"
+            },
+            {
+              "key": "mlflow/2/models/m-4aa151b147d34fc9a9adaaee96113461/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "cdceff42-699b-4b2e-851d-5c82543be86b"
+            }
+          ],
+          "training_execution_id": "c185ef57-8505-4f15-8cd2-60410adce56d"
+        }
+      },
+      {
+        "job_id": "029b6b96-4d70-4b72-bd58-eabd267a80d5",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.27",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:01.300187+00:00",
+        "started_at_utc": "2026-11-04T18:49:00.542914+00:00",
+        "ended_at_utc": "2026-11-04T18:49:01.597545+00:00",
+        "mlflow_run_id": "825a9aa9c8a146f69c6ddb74272cfbab",
+        "registered_model_name": "hi.demo.controls.cca53599.27",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "825a9aa9c8a146f69c6ddb74272cfbab",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.176706727,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273276.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.47606195499247406
+          },
+          "trace_id": "tr-ac152bb2372af6e7570eb98ee7cf0f1b",
+          "model_uri": "models:/hi.demo.controls.cca53599.27/1",
+          "model_name": "hi.demo.controls.cca53599.27",
+          "artifact_uri": "models:/m-bd1d957b54a54089bdbbe7143f04cea8",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-bd1d957b54a54089bdbbe7143f04cea8/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "4f6643dc794ad54f201b3f56e774d495f8131cc5d6f41c31de731900d454af76",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "5e91d924-4c6b-49bb-a074-237df8f2880c"
+            },
+            {
+              "key": "mlflow/2/models/m-bd1d957b54a54089bdbbe7143f04cea8/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "53a3c103-6ddd-4fe8-924c-67ab5cbdd402"
+            },
+            {
+              "key": "mlflow/2/models/m-bd1d957b54a54089bdbbe7143f04cea8/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "d3638f34-a29c-463e-8f63-8e803a75c22c"
+            }
+          ],
+          "training_execution_id": "029b6b96-4d70-4b72-bd58-eabd267a80d5"
+        }
+      },
+      {
+        "job_id": "d187a074-b3c4-4368-a905-2274bc6647d4",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.28",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:22.890845+00:00",
+        "started_at_utc": "2026-11-04T18:49:22.034839+00:00",
+        "ended_at_utc": "2026-11-04T18:49:23.185205+00:00",
+        "mlflow_run_id": "9101eea72deb4fe99cdfa4649f8e8923",
+        "registered_model_name": "hi.demo.controls.cca53599.28",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "9101eea72deb4fe99cdfa4649f8e8923",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1715887340000002,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273940.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5633539150003344
+          },
+          "trace_id": "tr-7be3803037d3273c6531b4cf4fc907dc",
+          "model_uri": "models:/hi.demo.controls.cca53599.28/1",
+          "model_name": "hi.demo.controls.cca53599.28",
+          "artifact_uri": "models:/m-c1eaa0c9319343f5a7fa1d2b5fa7c172",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-c1eaa0c9319343f5a7fa1d2b5fa7c172/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "765d3c1b80cee4a20305ecde169080776021c4602c95d827b80a22632fbbd658",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "07698ec6-4d06-45a2-a34d-96453e599289"
+            },
+            {
+              "key": "mlflow/2/models/m-c1eaa0c9319343f5a7fa1d2b5fa7c172/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "3be9e740-f22f-4f61-9135-30d4a6a40467"
+            },
+            {
+              "key": "mlflow/2/models/m-c1eaa0c9319343f5a7fa1d2b5fa7c172/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "21334ebf-bcde-47be-810f-40fc35009906"
+            }
+          ],
+          "training_execution_id": "d187a074-b3c4-4368-a905-2274bc6647d4"
+        }
+      },
+      {
+        "job_id": "ba61671d-ad12-4f74-9762-fae8b6b5b883",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.29",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:20.508946+00:00",
+        "started_at_utc": "2026-11-04T18:49:19.732906+00:00",
+        "ended_at_utc": "2026-11-04T18:49:20.843004+00:00",
+        "mlflow_run_id": "dd69c1636a4b47908adb906b76562200",
+        "registered_model_name": "hi.demo.controls.cca53599.29",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "dd69c1636a4b47908adb906b76562200",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17898807500000036,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274380.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.49591800100461114
+          },
+          "trace_id": "tr-60b0046cf7f8363c520e497641b94b65",
+          "model_uri": "models:/hi.demo.controls.cca53599.29/1",
+          "model_name": "hi.demo.controls.cca53599.29",
+          "artifact_uri": "models:/m-f41a610db0794093a4dc562f1dfc432c",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-f41a610db0794093a4dc562f1dfc432c/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "3c29eeec7e015e129eff17b9fc41312a961c304ffbbedec8caa976e808f2c531",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "1ac029cb-c1f9-41fc-ba1e-3f02cd11fab5"
+            },
+            {
+              "key": "mlflow/2/models/m-f41a610db0794093a4dc562f1dfc432c/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "93897dab-7903-4a1f-bb98-ba5c1b4ffb70"
+            },
+            {
+              "key": "mlflow/2/models/m-f41a610db0794093a4dc562f1dfc432c/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "c8938412-b4fd-400c-9d3e-4ff21cb585d4"
+            }
+          ],
+          "training_execution_id": "ba61671d-ad12-4f74-9762-fae8b6b5b883"
+        }
+      },
+      {
+        "job_id": "e4be6961-c94c-4f72-ae37-e701636fea65",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.3",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:22.894675+00:00",
+        "started_at_utc": "2026-11-04T18:49:22.037392+00:00",
+        "ended_at_utc": "2026-11-04T18:49:23.187904+00:00",
+        "mlflow_run_id": "a9cbcd5d3e0040ae97d4040d717b0de4",
+        "registered_model_name": "hi.demo.controls.cca53599.3",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "a9cbcd5d3e0040ae97d4040d717b0de4",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.16768888100000012,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274572.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.568239778993302
+          },
+          "trace_id": "tr-1f285f2b1590cd48e2e21eb3dfe36017",
+          "model_uri": "models:/hi.demo.controls.cca53599.3/1",
+          "model_name": "hi.demo.controls.cca53599.3",
+          "artifact_uri": "models:/m-1f5e342d97684cfabc18452e6b489a27",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-1f5e342d97684cfabc18452e6b489a27/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "89f509d7d9c1161b5de218378d906262db4f0a3f59fa3bfb7b92964e3350c089",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "1c6b169e-20dc-4b70-9b59-9ca5624561d9"
+            },
+            {
+              "key": "mlflow/2/models/m-1f5e342d97684cfabc18452e6b489a27/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "01e2200d-d439-4c31-9d9b-081c002505a3"
+            },
+            {
+              "key": "mlflow/2/models/m-1f5e342d97684cfabc18452e6b489a27/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "427d221a-a9ae-4e71-ab0b-16033548f0bd"
+            }
+          ],
+          "training_execution_id": "e4be6961-c94c-4f72-ae37-e701636fea65"
+        }
+      },
+      {
+        "job_id": "85c67199-71b9-499c-8f37-fe3e5cd8b90e",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.4",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:13.374598+00:00",
+        "started_at_utc": "2026-11-04T18:49:12.475966+00:00",
+        "ended_at_utc": "2026-11-04T18:49:13.625125+00:00",
+        "mlflow_run_id": "c510eb5c45ec4f02802ddfe4e4d0697e",
+        "registered_model_name": "hi.demo.controls.cca53599.4",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "c510eb5c45ec4f02802ddfe4e4d0697e",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17225746900000027,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 271636.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5051815579936374
+          },
+          "trace_id": "tr-ef30495f45e6d5ddc329abdaa16f5d8c",
+          "model_uri": "models:/hi.demo.controls.cca53599.4/1",
+          "model_name": "hi.demo.controls.cca53599.4",
+          "artifact_uri": "models:/m-c86d6a5ab4a8457584f1bbf6bbb228b0",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-c86d6a5ab4a8457584f1bbf6bbb228b0/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "1bccaadd5465b9bfcd54407cab1395420ea550385bf3494115acfcec1af601a4",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "6c0fa57c-528a-430b-98c4-26f6bde33788"
+            },
+            {
+              "key": "mlflow/2/models/m-c86d6a5ab4a8457584f1bbf6bbb228b0/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "2a361a57-c7e4-4c08-9efc-f2fae93034df"
+            },
+            {
+              "key": "mlflow/2/models/m-c86d6a5ab4a8457584f1bbf6bbb228b0/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "73886ab4-35d6-4dea-9959-fae469f7679e"
+            }
+          ],
+          "training_execution_id": "85c67199-71b9-499c-8f37-fe3e5cd8b90e"
+        }
+      },
+      {
+        "job_id": "223cf8d8-dc54-4f78-8989-8639a43d8687",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.5",
+        "status": "COMPLETED",
+        "attempt": 2,
+        "heartbeat_at_utc": "2026-11-04T18:49:08.290598+00:00",
+        "started_at_utc": "2026-11-04T18:49:01.628546+00:00",
+        "ended_at_utc": "2026-11-04T18:49:08.934439+00:00",
+        "mlflow_run_id": "c69c8c00565f445982a8f86acc54be8f",
+        "registered_model_name": "hi.demo.controls.cca53599.5",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "c69c8c00565f445982a8f86acc54be8f",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 1.4721687499999998,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 258380.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 1.1123132850043476
+          },
+          "trace_id": "tr-a6bc31113bfec6cda9e2235e37171da8",
+          "model_uri": "models:/hi.demo.controls.cca53599.5/1",
+          "model_name": "hi.demo.controls.cca53599.5",
+          "artifact_uri": "models:/m-f613895df9414bbdb4bde7cfaab0110b",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-f613895df9414bbdb4bde7cfaab0110b/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "4c6e37e491d11678efbc1478d496145fa2ab415ad594ca0a3f5d850375cce2bf",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "c7096b57-6a01-46af-b509-aea8a6971f0b"
+            },
+            {
+              "key": "mlflow/2/models/m-f613895df9414bbdb4bde7cfaab0110b/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "de2c46aa-9c06-4fad-83eb-ac30be6fa865"
+            },
+            {
+              "key": "mlflow/2/models/m-f613895df9414bbdb4bde7cfaab0110b/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "30406667-7768-4f51-bea4-326c5ddea03c"
+            }
+          ],
+          "training_execution_id": "223cf8d8-dc54-4f78-8989-8639a43d8687"
+        }
+      },
+      {
+        "job_id": "b3295d88-115e-4da2-9375-74ba9d8b8d67",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.6",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:19.454657+00:00",
+        "started_at_utc": "2026-11-04T18:49:18.700474+00:00",
+        "ended_at_utc": "2026-11-04T18:49:19.709049+00:00",
+        "mlflow_run_id": "38a046a6695e4b548172f4d0c60b1186",
+        "registered_model_name": "hi.demo.controls.cca53599.6",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "38a046a6695e4b548172f4d0c60b1186",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17286087500000047,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273364.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.47891078899556305
+          },
+          "trace_id": "tr-8da3c367bd41a72285fc167e217a83ab",
+          "model_uri": "models:/hi.demo.controls.cca53599.6/1",
+          "model_name": "hi.demo.controls.cca53599.6",
+          "artifact_uri": "models:/m-8930a02666774811b978a1d277ba390c",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-8930a02666774811b978a1d277ba390c/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "8c02c3bc25d22699577ed4999004e0298436416645b70e7abaec79555a0be2bc",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "01041526-3441-43e9-9ae8-58a016dba68c"
+            },
+            {
+              "key": "mlflow/2/models/m-8930a02666774811b978a1d277ba390c/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "825b219a-f9f9-470e-a963-14b2a07ea9e0"
+            },
+            {
+              "key": "mlflow/2/models/m-8930a02666774811b978a1d277ba390c/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "5baa6b9b-cdca-4f48-a14f-26c0efe4ef38"
+            }
+          ],
+          "training_execution_id": "b3295d88-115e-4da2-9375-74ba9d8b8d67"
+        }
+      },
+      {
+        "job_id": "8609000f-4fdd-4ae1-9e44-85a04b724d5c",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.7",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:13.368067+00:00",
+        "started_at_utc": "2026-11-04T18:49:12.478127+00:00",
+        "ended_at_utc": "2026-11-04T18:49:13.622725+00:00",
+        "mlflow_run_id": "9bef5763cbdd4c7aa67970bc444d5c26",
+        "registered_model_name": "hi.demo.controls.cca53599.7",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "9bef5763cbdd4c7aa67970bc444d5c26",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.172712298,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 272460.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4939090580010088
+          },
+          "trace_id": "tr-73485ad3cb18b8ef4072596304c263ab",
+          "model_uri": "models:/hi.demo.controls.cca53599.7/1",
+          "model_name": "hi.demo.controls.cca53599.7",
+          "artifact_uri": "models:/m-e42e76b82d874adc930e24b8fcb358f3",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-e42e76b82d874adc930e24b8fcb358f3/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "28c206570a8c54a6d2227d8a5b771f39fdfc24a78382c370cabe8e736f15e0be",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "c97452c7-5231-455f-9a04-9a6f4faf4aa0"
+            },
+            {
+              "key": "mlflow/2/models/m-e42e76b82d874adc930e24b8fcb358f3/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "113b4e8b-c02f-4c6b-a497-fca353637ae6"
+            },
+            {
+              "key": "mlflow/2/models/m-e42e76b82d874adc930e24b8fcb358f3/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "6ab758b8-ddf6-4c1d-a200-4c39771bc0f2"
+            }
+          ],
+          "training_execution_id": "8609000f-4fdd-4ae1-9e44-85a04b724d5c"
+        }
+      },
+      {
+        "job_id": "66bbd432-3f23-4a63-ad6f-d0732e4ad692",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.8",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:10.848927+00:00",
+        "started_at_utc": "2026-11-04T18:49:10.063590+00:00",
+        "ended_at_utc": "2026-11-04T18:49:11.172903+00:00",
+        "mlflow_run_id": "e7236de17c354adda065336948a2c8ec",
+        "registered_model_name": "hi.demo.controls.cca53599.8",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "e7236de17c354adda065336948a2c8ec",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.16849979300000006,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 272076.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.49855210099485703
+          },
+          "trace_id": "tr-6af98fe1cc397fc1174e60fdcec9b878",
+          "model_uri": "models:/hi.demo.controls.cca53599.8/1",
+          "model_name": "hi.demo.controls.cca53599.8",
+          "artifact_uri": "models:/m-f7b2369c9c384c8bb88418b1053874cd",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-f7b2369c9c384c8bb88418b1053874cd/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "67ffed3224b49befca948deaf0da6ec922a5ee53ccebc2f9cb5086007d24cc54",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "6c702cc4-943f-4876-b771-429559599161"
+            },
+            {
+              "key": "mlflow/2/models/m-f7b2369c9c384c8bb88418b1053874cd/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "5f0944c2-9c01-4284-bf93-c119f6478df6"
+            },
+            {
+              "key": "mlflow/2/models/m-f7b2369c9c384c8bb88418b1053874cd/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "1ccf4ff9-0818-4a9f-b61c-f3f9ef4a0507"
+            }
+          ],
+          "training_execution_id": "66bbd432-3f23-4a63-ad6f-d0732e4ad692"
+        }
+      },
+      {
+        "job_id": "93330675-ec3d-4929-8f0a-80f45ad6e632",
+        "campaign_id": "d7660552-bd49-4f1e-b5d5-dbf8a9e36fbb",
+        "model_key": "hi.demo.controls.cca53599.9",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T18:49:14.428653+00:00",
+        "started_at_utc": "2026-11-04T18:49:13.648598+00:00",
+        "ended_at_utc": "2026-11-04T18:49:14.775346+00:00",
+        "mlflow_run_id": "37210f50b30049a48cb383aa2485c8ff",
+        "registered_model_name": "hi.demo.controls.cca53599.9",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "37210f50b30049a48cb383aa2485c8ff",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17399174399999984,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 272020.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5171788689913228
+          },
+          "trace_id": "tr-128f3fd737ffe7c4a725570afe3b9a85",
+          "model_uri": "models:/hi.demo.controls.cca53599.9/1",
+          "model_name": "hi.demo.controls.cca53599.9",
+          "artifact_uri": "models:/m-201c116ed0f145e9ae68886ebf929bc4",
+          "experiment_id": "2",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/2/models/m-201c116ed0f145e9ae68886ebf929bc4/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "48bdba15f93e16dcefdcb4b8311b61baf880cf6bed1ad9413405f15e11c3c3f5",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "c389aab2-9f02-40c4-b8c2-d17a64c8d1ec"
+            },
+            {
+              "key": "mlflow/2/models/m-201c116ed0f145e9ae68886ebf929bc4/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "5eb5941b-dbc0-49a1-b79f-f38d0d42a21f"
+            },
+            {
+              "key": "mlflow/2/models/m-201c116ed0f145e9ae68886ebf929bc4/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "d6b965b8-d42a-44a4-945b-10f01bb8a5cc"
+            }
+          ],
+          "training_execution_id": "93330675-ec3d-4929-8f0a-80f45ad6e632"
+        }
+      }
+    ],
+    "unique_versions": 30
+  },
+  "limitations": []
+}

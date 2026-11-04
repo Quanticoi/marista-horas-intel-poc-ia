@@ -1,23 +1,24 @@
 {
-  "timestamp_utc": "2026-11-04T17:11:16.042634+00:00",
-  "git_commit": "uncommitted",
-  "code_version": "sha256:ecfa01f3ecd2a2f9148e7cb223f4cf72cdb6547717a541d8604c5b5c95158825",
+  "timestamp_utc": "2026-11-04T18:48:56.571798+00:00",
+  "git_commit": "8d735d6",
+  "code_version": "sha256:7660c236726aa3633599566013df94085e046adf5123354a048cbcb4bb04c747",
   "environment": "poc",
+  "project": "marista-correcoes-isolated",
   "test_id": "retry-training-recovered",
   "status": "PASS",
   "source_type": "DEMO",
   "evidence": {
-    "campaign_id": "5065952a-d58d-418d-ba63-ea39ec0d8e72",
+    "campaign_id": "0f727a34-3054-4f57-a45f-473033db622f",
     "state": {
-      "campaign_id": "5065952a-d58d-418d-ba63-ea39ec0d8e72",
-      "idempotency_key": "b8177681-ccc2-45ea-9b10-f81292b685de",
-      "request_hash": "ab65c0e5a943d66c71dca19397c99de02a5e74a5af3939c8dc1dd4d81ca6f7f2",
+      "campaign_id": "0f727a34-3054-4f57-a45f-473033db622f",
+      "idempotency_key": "410a800e-0a15-493b-86ae-b8bdf3508ae8",
+      "request_hash": "6990ba88a96ce586052ba002b96d47d8137cc53e7bb0819a29206c9b4ba9b76c",
       "request": {
         "alpha": 1.0,
         "algorithm": "ridge",
         "cycle_code": "2026-1",
         "model_keys": [
-          "hi.demo.controls.de64e858.0"
+          "hi.demo.controls.7f6f18d3.0"
         ],
         "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
         "max_attempts": 1,
@@ -26,76 +27,80 @@
         "confirm_training": true,
         "max_parallel_jobs": 2
       },
-      "correlation_id": "91e14c36-e65f-47c8-9ea6-a0ad2e10eef7",
+      "correlation_id": "c5a1d018-e655-4602-a221-cc93d1849599",
       "requested_by": "isolated-controls",
       "status": "COMPLETED",
       "max_parallel_jobs": 2,
       "requested_count": 1,
-      "created_at_utc": "2026-11-04T17:10:08.774396+00:00",
-      "started_at_utc": "2026-11-04T17:10:08.790928+00:00",
-      "ended_at_utc": "2026-11-04T17:11:15.839894+00:00",
+      "created_at_utc": "2026-11-04T18:47:45.850145+00:00",
+      "started_at_utc": "2026-11-04T18:47:45.870160+00:00",
+      "ended_at_utc": "2026-11-04T18:48:56.171382+00:00",
       "counts": {
         "COMPLETED": 1
       }
     },
     "items": [
       {
-        "job_id": "42a6aedc-5aed-4401-b069-24dbc8aa778f",
-        "campaign_id": "5065952a-d58d-418d-ba63-ea39ec0d8e72",
-        "model_key": "hi.demo.controls.de64e858.0",
+        "job_id": "02914af6-85ad-4803-868d-5ee7d2cc857d",
+        "campaign_id": "0f727a34-3054-4f57-a45f-473033db622f",
+        "model_key": "hi.demo.controls.7f6f18d3.0",
         "status": "COMPLETED",
         "attempt": 1,
-        "heartbeat_at_utc": "2026-11-04T17:11:15.656924+00:00",
-        "started_at_utc": "2026-11-04T17:10:08.790928+00:00",
-        "ended_at_utc": "2026-11-04T17:11:15.835331+00:00",
-        "mlflow_run_id": "a917242669d846cb8f17c350f9f81ae4",
-        "registered_model_name": "hi.demo.controls.de64e858.0",
+        "heartbeat_at_utc": "2026-11-04T18:48:55.968707+00:00",
+        "started_at_utc": "2026-11-04T18:47:45.870160+00:00",
+        "ended_at_utc": "2026-11-04T18:48:56.164350+00:00",
+        "mlflow_run_id": "94491c32637b4f1fb0566700dafabd89",
+        "registered_model_name": "hi.demo.controls.7f6f18d3.0",
         "model_version": "1",
         "error_code": null,
         "result": {
-          "run_id": "a917242669d846cb8f17c350f9f81ae4",
+          "run_id": "94491c32637b4f1fb0566700dafabd89",
           "metrics": {
             "mae": 3.758630658273197,
             "rmse": 4.9142272796917865,
-            "cpu_seconds": 0.190788446,
+            "cpu_seconds": 0.2065441240000001,
             "baseline_mae": 7.466666666666665,
-            "peak_rss_kib": 274172.0,
+            "peak_rss_kib": 273092.0,
             "baseline_rmse": 8.821497143283464,
-            "duration_seconds": 1.028759324006387
+            "duration_seconds": 0.7008950750023359
           },
-          "model_uri": "models:/hi.demo.controls.de64e858.0/1",
-          "model_name": "hi.demo.controls.de64e858.0",
-          "artifact_uri": "models:/m-7af27e665a254125a42dfec2d40a426d",
-          "experiment_id": "1",
+          "trace_id": "tr-627e2c0191038ddae687003ee30d087d",
+          "model_uri": "models:/hi.demo.controls.7f6f18d3.0/1",
+          "model_name": "hi.demo.controls.7f6f18d3.0",
+          "artifact_uri": "models:/m-779666e27faf4e65a72c4d068ba75d0a",
+          "experiment_id": "2",
           "model_version": "1",
           "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
           "storage_evidence": [
             {
-              "key": "mlflow/1/models/m-7af27e665a254125a42dfec2d40a426d/artifacts/MLmodel",
+              "key": "mlflow/2/models/m-779666e27faf4e65a72c4d068ba75d0a/artifacts/MLmodel",
               "bytes": 1336,
               "bucket": "pucpr-poc",
-              "sha256": "e6da08ae5b59ac852a17a12352e71ca3b3e74bcd1832d83eb2d5cb44e8020110",
+              "sha256": "a57261c12cfea0cad1212b687e6294eb0c353416d8dadfa46c29091d0125e564",
               "status": "PASS",
-              "model_version": "1"
+              "model_version": "1",
+              "object_version_id": "ffecc3ee-8ce9-421b-a74f-e79cddfc64a2"
             },
             {
-              "key": "mlflow/1/models/m-7af27e665a254125a42dfec2d40a426d/artifacts/model.pkl",
+              "key": "mlflow/2/models/m-779666e27faf4e65a72c4d068ba75d0a/artifacts/model.pkl",
               "bytes": 8671,
               "bucket": "pucpr-poc",
               "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
               "status": "PASS",
-              "model_version": "1"
+              "model_version": "1",
+              "object_version_id": "f8e300a6-6317-4e3e-8df6-452707fe8dd7"
             },
             {
-              "key": "mlflow/1/models/m-7af27e665a254125a42dfec2d40a426d/artifacts/requirements.txt",
+              "key": "mlflow/2/models/m-779666e27faf4e65a72c4d068ba75d0a/artifacts/requirements.txt",
               "bytes": 80,
               "bucket": "pucpr-poc",
               "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
               "status": "PASS",
-              "model_version": "1"
+              "model_version": "1",
+              "object_version_id": "4a70bb6c-baec-4d35-8707-6c7126c81d45"
             }
           ],
-          "training_execution_id": "42a6aedc-5aed-4401-b069-24dbc8aa778f"
+          "training_execution_id": "02914af6-85ad-4803-868d-5ee7d2cc857d"
         }
       }
     ]

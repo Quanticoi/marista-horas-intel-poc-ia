@@ -1,20 +1,21 @@
 {
-  "timestamp_utc": "2026-11-04T16:15:44.630595+00:00",
-  "git_commit": "uncommitted",
-  "code_version": "sha256:7233bbcbbea4d0aa52d5785a9f891f0de23370fc9586df450d9e6a6214cbc4e8",
+  "timestamp_utc": "2026-11-04T18:28:10.734731+00:00",
+  "git_commit": "4b6314b041703e49f3f89d60179bd4b6cd976309",
+  "code_version": "sha256:2c2283a410ea43094bb8ce3e5548959f088b68f452260cf3653470ba60e36f4b",
   "environment": "poc",
+  "project": "marista-correcoes-isolated",
   "test_id": "probe-complete",
   "status": "PASS",
   "source_type": "DEMO",
   "evidence": {
-    "campaign_id": "60a694f5-d771-4d3b-ad99-096ac6c7b101",
-    "proposal_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
+    "campaign_id": "916d1199-388a-4bf6-9fb2-9bc2cc25f0af",
+    "proposal_id": "b1a6dd4b-6156-41f9-8cff-f8232eb02fea",
     "pages": [
       {
         "schema_version": "poc-planilha-turmas-v1",
         "contract_status": "PROVISÓRIO / PENDENTE DE HOMOLOGAÇÃO",
-        "proposal_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
-        "execution_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
+        "proposal_id": "b1a6dd4b-6156-41f9-8cff-f8232eb02fea",
+        "execution_id": "b1a6dd4b-6156-41f9-8cff-f8232eb02fea",
         "proposal_revision": 1,
         "academic_cycle": {
           "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
@@ -22,7 +23,7 @@
         },
         "status": "DRAFT",
         "source_type": "DEMO",
-        "generated_at_utc": "2026-11-04T16:15:42.657897Z",
+        "generated_at_utc": "2026-11-04T18:28:08.454706Z",
         "lineage": {
           "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
           "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
@@ -31,15 +32,15 @@
           "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
           "model_usages": [
             {
-              "usage_id": "9ceab0ff-14cf-480a-8e66-9730e7ac7b3b",
-              "proposal_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
-              "inference_id": "53c701f4-c524-4477-9259-36f8823fe7c6",
-              "model_key": "hi.demo.probe.da910fa5",
-              "registered_model_name": "hi.demo.probe.da910fa5",
+              "usage_id": "476c0036-d901-4118-a72d-446575ed6d8d",
+              "proposal_id": "b1a6dd4b-6156-41f9-8cff-f8232eb02fea",
+              "inference_id": "e356b259-5ad1-44ec-bdca-225359d35b6e",
+              "model_key": "hi.demo.probe.dacbd6d8",
+              "registered_model_name": "hi.demo.probe.dacbd6d8",
               "model_version": "1",
-              "run_id": "6277582e511148c9a31b2aef3f22395e",
+              "run_id": "bee6d80971e04e02a85c125755d37011",
               "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
-              "artifact_uri": "models:/m-aec111d06b6b499e93ef62162f5628c3",
+              "artifact_uri": "models:/m-b8870302a6ab464fb604a6946d9a8093",
               "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
               "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
               "line_keys": [
@@ -135,13 +136,13 @@
                 "208586ed-41d4-56f8-9a3c-d971d5bbd016/2dec980d-d374-52f3-a770-b0a4c5e58075/f49a5c98-91da-5ff7-b5e6-d4019060dc48"
               ],
               "provenance_status": "VERIFIED",
-              "created_at_utc": "2026-11-04 16:15:42.657897+00:00"
+              "created_at_utc": "2026-11-04 18:28:08.454706+00:00"
             }
           ]
         },
         "offers": [
           {
-            "offer_id": "f81075ca-ae67-5122-b1e4-15d7749735b1",
+            "offer_id": "70a95fdc-11e8-584c-88cd-003e025ac36a",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "39c82c86-d06e-5f26-9712-a92b4018084e",
@@ -168,7 +169,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -176,7 +177,7 @@
             ]
           },
           {
-            "offer_id": "91f06a9e-044e-530d-b651-797ab387f823",
+            "offer_id": "cd91fb45-9457-5b5d-a981-7e9fb5ada20a",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "39c82c86-d06e-5f26-9712-a92b4018084e",
@@ -203,7 +204,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -211,7 +212,7 @@
             ]
           },
           {
-            "offer_id": "037b9689-3a73-5489-a376-74a909089d59",
+            "offer_id": "2f8c8e15-78cd-5b0b-b78e-864d66352fce",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "39c82c86-d06e-5f26-9712-a92b4018084e",
@@ -238,7 +239,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -246,7 +247,7 @@
             ]
           },
           {
-            "offer_id": "fb2ad22a-f1b8-50ac-9e58-538d3b9d649d",
+            "offer_id": "b5f66382-f96e-5cc1-b1ce-c60f9bcea195",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "519ead55-4294-52e1-b326-550e4be54cd0",
@@ -273,7 +274,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -281,7 +282,7 @@
             ]
           },
           {
-            "offer_id": "d62acf7f-e462-581e-ad08-1da2b8a9ef75",
+            "offer_id": "0c4a3184-c3a2-5667-bdbe-ad85165d6b85",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "519ead55-4294-52e1-b326-550e4be54cd0",
@@ -308,7 +309,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -316,7 +317,7 @@
             ]
           },
           {
-            "offer_id": "cbe904bc-71a3-5a7d-884a-fdaaaab5ca63",
+            "offer_id": "e3b68830-85f7-5c8d-926b-50b0aec14d75",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "519ead55-4294-52e1-b326-550e4be54cd0",
@@ -343,7 +344,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -351,7 +352,7 @@
             ]
           },
           {
-            "offer_id": "20d8de58-f53a-5881-bf9a-5c2b2c52b5fe",
+            "offer_id": "28131b3e-6073-55e0-997e-76247c611aed",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "92cbdefd-c378-5e89-b349-680d8e40f22a",
@@ -378,7 +379,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -386,7 +387,7 @@
             ]
           },
           {
-            "offer_id": "54bf519b-2c33-5a03-b55d-c81f3884442e",
+            "offer_id": "6f149489-80d0-5901-9c43-f3302e5a2a81",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "92cbdefd-c378-5e89-b349-680d8e40f22a",
@@ -413,7 +414,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -421,7 +422,7 @@
             ]
           },
           {
-            "offer_id": "7aec97d5-550d-5c19-a68a-fa157ad3289e",
+            "offer_id": "33033443-bf41-5bcd-91e9-b6f2906dd020",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "92cbdefd-c378-5e89-b349-680d8e40f22a",
@@ -448,7 +449,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -456,7 +457,7 @@
             ]
           },
           {
-            "offer_id": "eb80da93-64fd-5347-b49e-15c8b1245283",
+            "offer_id": "09706144-7222-5632-9de0-1660b305d85c",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "de0c4144-8a18-5c60-8573-743cb74009ce",
@@ -483,7 +484,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -491,7 +492,7 @@
             ]
           },
           {
-            "offer_id": "47b99801-295b-58ee-912b-027363adb027",
+            "offer_id": "570725ab-faa7-564c-9c22-e978b60c1e53",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "de0c4144-8a18-5c60-8573-743cb74009ce",
@@ -518,7 +519,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -526,7 +527,7 @@
             ]
           },
           {
-            "offer_id": "9857c1c0-feee-5bf9-8aeb-25eadccaeca4",
+            "offer_id": "b108377d-cfba-5424-a37f-39714219b17c",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "de0c4144-8a18-5c60-8573-743cb74009ce",
@@ -553,7 +554,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -561,7 +562,7 @@
             ]
           },
           {
-            "offer_id": "9a4ebd99-76c0-5205-b20f-d14b8eefd2c8",
+            "offer_id": "b47e7121-f4fd-5611-8770-bb93830da822",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "5ba5a515-9267-53eb-bf2a-37300a1f7959",
@@ -588,7 +589,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -596,7 +597,7 @@
             ]
           },
           {
-            "offer_id": "e2255899-77b4-5049-9e3c-11f72a102e12",
+            "offer_id": "d21139bd-370e-50ff-bd12-f6ccb1d5cb4f",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "5ba5a515-9267-53eb-bf2a-37300a1f7959",
@@ -623,7 +624,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -631,7 +632,7 @@
             ]
           },
           {
-            "offer_id": "4bc736b6-2cc5-529e-914f-bbc88e76c93d",
+            "offer_id": "6b91163f-6d44-5046-be3e-8e680255ba44",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "5ba5a515-9267-53eb-bf2a-37300a1f7959",
@@ -658,7 +659,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -666,7 +667,7 @@
             ]
           },
           {
-            "offer_id": "9ded62fe-b7cd-539b-bbf6-7bc7303bbb7d",
+            "offer_id": "e6fa6546-0c7d-5601-907f-4c52f43d0d4a",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "700b2ae9-d638-57bb-8fab-194eb40d1da4",
@@ -693,7 +694,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -701,7 +702,7 @@
             ]
           },
           {
-            "offer_id": "4ea1a026-1781-5423-846d-01c4202557b4",
+            "offer_id": "061b79a2-a26e-5dab-b2dd-68a9baf50257",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "700b2ae9-d638-57bb-8fab-194eb40d1da4",
@@ -728,7 +729,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -736,7 +737,7 @@
             ]
           },
           {
-            "offer_id": "4e65754f-53f0-5923-8dc2-6b72dba7a10e",
+            "offer_id": "505a344c-c8b1-5f13-97f2-b39713bf437c",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "700b2ae9-d638-57bb-8fab-194eb40d1da4",
@@ -763,7 +764,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -771,7 +772,7 @@
             ]
           },
           {
-            "offer_id": "f0d108b7-9cbc-50c8-a3f4-8919a6ae7354",
+            "offer_id": "4118d309-6281-5c6f-b706-14712bdb4f21",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "2dec980d-d374-52f3-a770-b0a4c5e58075",
@@ -798,7 +799,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -806,7 +807,7 @@
             ]
           },
           {
-            "offer_id": "80b037cf-a59b-5d64-bfd5-6891e245b443",
+            "offer_id": "d1538ed5-1ab3-529a-9c8a-7ba4fa227d5b",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "2dec980d-d374-52f3-a770-b0a4c5e58075",
@@ -833,7 +834,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -841,7 +842,7 @@
             ]
           },
           {
-            "offer_id": "fb461b02-9d0f-5f69-9fc6-d421a7c44fa6",
+            "offer_id": "a5a551df-fb58-59b9-b649-2aa2c5ff6606",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "2dec980d-d374-52f3-a770-b0a4c5e58075",
@@ -868,7 +869,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -876,7 +877,7 @@
             ]
           },
           {
-            "offer_id": "a6960a62-a8a7-5d98-8e60-eb01a433a7ac",
+            "offer_id": "7e3ce82d-039c-511b-9cb4-f0d64b99cf37",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "40757ba2-4564-5afd-b849-7358fae40278",
@@ -903,7 +904,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -911,7 +912,7 @@
             ]
           },
           {
-            "offer_id": "a464791b-cb63-5ce4-b4a8-85376bcc19ad",
+            "offer_id": "8d1d95c6-d0b2-505f-89ce-e8c2853127ba",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "40757ba2-4564-5afd-b849-7358fae40278",
@@ -938,7 +939,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -946,7 +947,7 @@
             ]
           },
           {
-            "offer_id": "7b873f63-d7c7-5c76-87a7-d911611f0ab8",
+            "offer_id": "e83d0d2b-8217-5ebf-9129-236533d31bda",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "40757ba2-4564-5afd-b849-7358fae40278",
@@ -973,7 +974,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -981,7 +982,7 @@
             ]
           },
           {
-            "offer_id": "a6dda170-da68-501e-85e2-ff1d00eac5a3",
+            "offer_id": "75cb54b0-7114-5878-a60c-fea483befc3a",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "091796e5-f9ab-5bd9-bdc8-2e0541a909b7",
@@ -1008,7 +1009,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1016,7 +1017,7 @@
             ]
           },
           {
-            "offer_id": "6db013c9-ad8d-5e07-a61c-7c3961446811",
+            "offer_id": "5fcb1f74-c415-54c8-a798-8be55cc01ccb",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "091796e5-f9ab-5bd9-bdc8-2e0541a909b7",
@@ -1043,7 +1044,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1051,7 +1052,7 @@
             ]
           },
           {
-            "offer_id": "a9dc0090-43a9-5b79-9293-b67dae9ec6a1",
+            "offer_id": "9d49f5f7-8159-58ca-b29d-ef0e93eb3d2f",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "091796e5-f9ab-5bd9-bdc8-2e0541a909b7",
@@ -1078,7 +1079,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1086,7 +1087,7 @@
             ]
           },
           {
-            "offer_id": "12ec269d-9fe5-578e-877d-8379bb07ff01",
+            "offer_id": "05af861e-4af9-5be9-90ce-4fc4ff98f1bb",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "86a57368-09d6-56dc-b40e-a32cbad43a80",
@@ -1113,7 +1114,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1121,7 +1122,7 @@
             ]
           },
           {
-            "offer_id": "7d4c0fd5-7a66-50e2-af5d-e9d4d4276e4b",
+            "offer_id": "006376f5-5bd7-5f9f-b349-6b65757a3c29",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "86a57368-09d6-56dc-b40e-a32cbad43a80",
@@ -1148,7 +1149,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1156,7 +1157,7 @@
             ]
           },
           {
-            "offer_id": "6ca4d364-e5a5-51e0-968e-ba9fa48f8329",
+            "offer_id": "355424e8-322a-5877-aaa5-60bc4a679cba",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "86a57368-09d6-56dc-b40e-a32cbad43a80",
@@ -1183,7 +1184,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1191,7 +1192,7 @@
             ]
           },
           {
-            "offer_id": "1690642c-8838-5578-a3e2-a357f8b4d4d6",
+            "offer_id": "38e0373d-74b5-5765-9a34-b31b955fc608",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "57de3178-30c7-5132-bd3c-82b864298e3b",
@@ -1218,7 +1219,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1226,7 +1227,7 @@
             ]
           },
           {
-            "offer_id": "b3664cfa-c22d-5264-81c7-f4e4e5e5b38f",
+            "offer_id": "c8a705b5-b29e-5c20-b97d-3e9f15bed520",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "57de3178-30c7-5132-bd3c-82b864298e3b",
@@ -1253,7 +1254,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1261,7 +1262,7 @@
             ]
           },
           {
-            "offer_id": "1383cca0-289c-52c7-aa41-d6f3a6c5f3ba",
+            "offer_id": "70508b25-20f4-5bc9-b73a-3d0afd76dfe8",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "57de3178-30c7-5132-bd3c-82b864298e3b",
@@ -1288,7 +1289,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1296,7 +1297,7 @@
             ]
           },
           {
-            "offer_id": "7139ff46-9535-541c-911b-ff5c04a926a1",
+            "offer_id": "c3760639-d601-5ef8-8a1f-21fe6dd996ed",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "6fcf36cd-b0ad-5c15-951d-b8480e526ed9",
@@ -1323,7 +1324,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1331,7 +1332,7 @@
             ]
           },
           {
-            "offer_id": "b14662f1-bf99-5411-8fc0-1399887b5c1b",
+            "offer_id": "fe8a44d0-4ce9-5b48-96c9-94aad7c7f619",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "6fcf36cd-b0ad-5c15-951d-b8480e526ed9",
@@ -1358,7 +1359,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1366,7 +1367,7 @@
             ]
           },
           {
-            "offer_id": "b0536ffc-a660-5b62-b1ea-4f26724c3c62",
+            "offer_id": "869e9480-60b5-5b93-b8f3-3716a447800e",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "6fcf36cd-b0ad-5c15-951d-b8480e526ed9",
@@ -1393,7 +1394,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1401,7 +1402,7 @@
             ]
           },
           {
-            "offer_id": "a20e54a3-84d7-5fe9-ac61-cb47c9abaea7",
+            "offer_id": "82aacc83-d5d7-537d-9c5e-63a309b61f89",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
@@ -1428,7 +1429,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1436,7 +1437,7 @@
             ]
           },
           {
-            "offer_id": "68ea95eb-bbdb-528f-828e-4ec5829f0047",
+            "offer_id": "cfc03e0e-ebce-58dd-908a-de8032ec29ea",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
@@ -1463,7 +1464,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1471,7 +1472,7 @@
             ]
           },
           {
-            "offer_id": "0df60608-7009-5dfe-9049-bc88e931aadb",
+            "offer_id": "25e054e1-ec93-58e3-af03-b668a2a77fd3",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
@@ -1498,7 +1499,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1506,7 +1507,7 @@
             ]
           },
           {
-            "offer_id": "64c37a16-988d-59bb-b488-33abd202fcb4",
+            "offer_id": "3564bcb5-ceeb-5452-a215-e3f57c33479c",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
@@ -1533,7 +1534,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1541,7 +1542,7 @@
             ]
           },
           {
-            "offer_id": "2e20b9f6-9997-5d86-ae2b-16d5393b94f5",
+            "offer_id": "716cd376-0e35-52e2-b4c6-eee902ef25b3",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
@@ -1568,7 +1569,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1576,7 +1577,7 @@
             ]
           },
           {
-            "offer_id": "de59fdc8-f8d1-5315-91bd-5b9eb1f4e679",
+            "offer_id": "acd2a08e-fe93-5f16-b153-38b3a4052627",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
@@ -1603,7 +1604,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1611,7 +1612,7 @@
             ]
           },
           {
-            "offer_id": "cae2faa3-fbbf-5194-88f6-73b8233b4ec6",
+            "offer_id": "e3e645e7-cfac-5f13-810e-2b04690feacd",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5",
@@ -1638,7 +1639,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1646,7 +1647,7 @@
             ]
           },
           {
-            "offer_id": "affb9c0d-51f1-5648-a0a6-dfe706dc2f8b",
+            "offer_id": "b4e3e9b1-dba7-521e-867c-42cd0f7e8785",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5",
@@ -1673,7 +1674,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1681,7 +1682,7 @@
             ]
           },
           {
-            "offer_id": "60e9f6cd-7e50-50d0-adce-197499897892",
+            "offer_id": "25196415-1f8c-5b2d-88a8-8efe310b492d",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5",
@@ -1708,7 +1709,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1716,7 +1717,7 @@
             ]
           },
           {
-            "offer_id": "0571d260-1ec9-5e45-ac40-5c44739d6616",
+            "offer_id": "763b9921-3db1-5989-8a59-746b1b652374",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "41c3929c-1c6a-58f7-922d-12aadd80b90d",
@@ -1743,7 +1744,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1751,7 +1752,7 @@
             ]
           },
           {
-            "offer_id": "1a14d688-b429-5c4c-9025-2174d9c9d9b0",
+            "offer_id": "43714c44-1097-555e-9a28-21ea58bbdc28",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "41c3929c-1c6a-58f7-922d-12aadd80b90d",
@@ -1778,7 +1779,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1786,7 +1787,7 @@
             ]
           },
           {
-            "offer_id": "3f369df1-b509-524c-9c84-742513bf4847",
+            "offer_id": "33b9b090-9e33-57fc-ac9d-2ef1498a3a7d",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "41c3929c-1c6a-58f7-922d-12aadd80b90d",
@@ -1813,7 +1814,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1821,7 +1822,7 @@
             ]
           },
           {
-            "offer_id": "2ff54031-b229-5b21-ab25-a489523b8b76",
+            "offer_id": "4639a19e-3845-53a7-a021-f6a7a1433e00",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "5dbb1a48-f1c2-5ede-81d4-d9ce7822f847",
@@ -1848,7 +1849,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1856,7 +1857,7 @@
             ]
           },
           {
-            "offer_id": "d23c6376-aec2-527b-a944-73bf1daf521e",
+            "offer_id": "5cac63d7-17b3-5c16-9352-4a494b2ad88f",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "5dbb1a48-f1c2-5ede-81d4-d9ce7822f847",
@@ -1883,7 +1884,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1891,7 +1892,7 @@
             ]
           },
           {
-            "offer_id": "eceb98d8-880d-50e2-882e-bcc0011dc711",
+            "offer_id": "aee21cf5-4879-5c55-9029-cd84bba31fad",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "5dbb1a48-f1c2-5ede-81d4-d9ce7822f847",
@@ -1918,7 +1919,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1926,7 +1927,7 @@
             ]
           },
           {
-            "offer_id": "a89be984-5f40-526e-b1c4-495a379883f1",
+            "offer_id": "dadb16a5-f907-59fb-b061-f29ab3889d68",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
@@ -1953,7 +1954,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1961,7 +1962,7 @@
             ]
           },
           {
-            "offer_id": "3da80536-d7b6-536e-b079-e97a43e93113",
+            "offer_id": "33bf9757-3d4b-5578-a2e6-d0c2e9c29e9a",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
@@ -1988,7 +1989,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -1996,7 +1997,7 @@
             ]
           },
           {
-            "offer_id": "a979cba7-6478-57d0-92b1-f6f1d5a9f175",
+            "offer_id": "d6d04a98-3038-5ff7-89e7-8c85bce5297c",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
@@ -2023,7 +2024,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2031,7 +2032,7 @@
             ]
           },
           {
-            "offer_id": "369fb697-cb0d-5b7d-bbd5-9ba5edf17e7a",
+            "offer_id": "aea9ae89-dd7d-5198-b28a-21def01f6103",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "e187f9a1-bc73-5576-942f-c8d22494a4fe",
@@ -2058,7 +2059,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2066,7 +2067,7 @@
             ]
           },
           {
-            "offer_id": "8c9ef882-a708-5d78-a0ab-3d971f4c68bf",
+            "offer_id": "f3264180-2793-54eb-ae22-76d7a6bf2bc5",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "e187f9a1-bc73-5576-942f-c8d22494a4fe",
@@ -2093,7 +2094,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2101,7 +2102,7 @@
             ]
           },
           {
-            "offer_id": "2c5a7706-5367-541a-a0c4-cb13f03ef4e1",
+            "offer_id": "88509173-ff21-5afc-affe-d86fbf1c1cf6",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "e187f9a1-bc73-5576-942f-c8d22494a4fe",
@@ -2128,7 +2129,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2136,7 +2137,7 @@
             ]
           },
           {
-            "offer_id": "bc8d6c5c-d6a0-53db-9226-4437512c2d21",
+            "offer_id": "7d9bbc5c-ba18-5c71-9258-618278315946",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "eef3d892-bcd4-56ca-9bd1-79da013febc4",
@@ -2163,7 +2164,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2171,7 +2172,7 @@
             ]
           },
           {
-            "offer_id": "72a8cdd0-89c6-58c1-bc8e-cad895ff87f1",
+            "offer_id": "c3817a07-61fa-5b08-a816-94990c2f1861",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "eef3d892-bcd4-56ca-9bd1-79da013febc4",
@@ -2198,7 +2199,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2206,7 +2207,7 @@
             ]
           },
           {
-            "offer_id": "2de1cf08-66b7-5aea-8ee9-95e9778af8be",
+            "offer_id": "8b8f7d45-6d36-5934-9edb-bed428fe5d96",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "eef3d892-bcd4-56ca-9bd1-79da013febc4",
@@ -2233,7 +2234,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2241,7 +2242,7 @@
             ]
           },
           {
-            "offer_id": "8c30c343-350e-54eb-8aee-4f3e2fff9b1d",
+            "offer_id": "95001602-1683-5d7f-abfc-d5d549f8bca1",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "1242140c-7db4-52dd-97c1-8d59049bc649",
@@ -2268,7 +2269,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2276,7 +2277,7 @@
             ]
           },
           {
-            "offer_id": "13709fd2-3a57-5f0c-bd78-7c91ab98a6ff",
+            "offer_id": "24305f73-5967-5e21-8949-94ba2bf9579c",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "1242140c-7db4-52dd-97c1-8d59049bc649",
@@ -2303,7 +2304,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2311,7 +2312,7 @@
             ]
           },
           {
-            "offer_id": "60d92736-ec45-57d9-b5a6-6691fbd5285b",
+            "offer_id": "0e2f60ae-7e7a-5869-9e1c-ac08c78e6036",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "1242140c-7db4-52dd-97c1-8d59049bc649",
@@ -2338,7 +2339,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2346,7 +2347,7 @@
             ]
           },
           {
-            "offer_id": "ada0ae00-a246-502c-9b4e-b5c4f79f23fc",
+            "offer_id": "abd0cde7-6e1c-5e29-a0a2-1e1686ec9e1c",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "156d48f4-518d-56a5-979d-583889c73b00",
@@ -2373,7 +2374,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2381,7 +2382,7 @@
             ]
           },
           {
-            "offer_id": "8905b40c-90d8-5180-97da-2bd4d5898c3e",
+            "offer_id": "ceac2e5b-f8f0-5a44-8937-8a3c1888c881",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "156d48f4-518d-56a5-979d-583889c73b00",
@@ -2408,7 +2409,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2416,7 +2417,7 @@
             ]
           },
           {
-            "offer_id": "3385eaac-6209-5cdf-90df-7c87ba2f1433",
+            "offer_id": "ca8c63a1-715b-5348-84f7-7772603925ee",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "156d48f4-518d-56a5-979d-583889c73b00",
@@ -2443,7 +2444,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2451,7 +2452,7 @@
             ]
           },
           {
-            "offer_id": "8b42fb5a-58ca-5fae-b58d-4be519b1dadb",
+            "offer_id": "41493ad9-48c0-5821-b132-bc5299de2e7c",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "8d2c27c1-8e41-512f-a583-8e71a8c16cf2",
@@ -2478,7 +2479,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2486,7 +2487,7 @@
             ]
           },
           {
-            "offer_id": "12d92425-3871-5bda-852e-0e55550051ea",
+            "offer_id": "f2fa1b19-b06c-5f24-9bb5-2b0e234721b5",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "8d2c27c1-8e41-512f-a583-8e71a8c16cf2",
@@ -2513,7 +2514,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2521,7 +2522,7 @@
             ]
           },
           {
-            "offer_id": "3dbc41d2-32ea-5115-a8a2-10368c659b99",
+            "offer_id": "8b32cafa-6caf-5bd8-a67a-0086116cb93d",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "8d2c27c1-8e41-512f-a583-8e71a8c16cf2",
@@ -2548,7 +2549,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2556,7 +2557,7 @@
             ]
           },
           {
-            "offer_id": "e882f41d-437c-5555-9c58-81e2e1b0b99b",
+            "offer_id": "5f97f327-81b9-5243-855a-0e80fad49a63",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44",
@@ -2583,7 +2584,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2591,7 +2592,7 @@
             ]
           },
           {
-            "offer_id": "c8fb5cad-725b-554a-9471-888266ec03e6",
+            "offer_id": "30ca9fa9-c37c-5cca-8c8f-d0cd051ed62f",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44",
@@ -2618,7 +2619,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2626,7 +2627,7 @@
             ]
           },
           {
-            "offer_id": "013abd53-cc12-5673-97a9-d94860d8a484",
+            "offer_id": "59c174cb-62ef-5d34-a358-c44edd3680e9",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44",
@@ -2653,7 +2654,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2661,7 +2662,7 @@
             ]
           },
           {
-            "offer_id": "c7f89a83-4a44-5580-9be0-4bce7389d510",
+            "offer_id": "aac55963-c176-584a-9d95-f7ad7e2195f2",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "003a4014-8321-5d09-b9bc-0f04d766cc80",
@@ -2688,7 +2689,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2696,7 +2697,7 @@
             ]
           },
           {
-            "offer_id": "0e1691f9-7861-5834-af0a-75d28c09c14f",
+            "offer_id": "fedc8f6a-d916-5b39-8abe-fa9d19834725",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "003a4014-8321-5d09-b9bc-0f04d766cc80",
@@ -2723,7 +2724,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2731,7 +2732,7 @@
             ]
           },
           {
-            "offer_id": "75306219-8808-53fd-9bb3-9b96f285da96",
+            "offer_id": "ab16e5b5-ac98-55f3-9fef-6d75ed15775d",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "003a4014-8321-5d09-b9bc-0f04d766cc80",
@@ -2758,7 +2759,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2766,7 +2767,7 @@
             ]
           },
           {
-            "offer_id": "a5a36942-4ad6-5d35-93d4-6b268b02d21e",
+            "offer_id": "53886f5c-927a-53ed-8136-b067072f7eba",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "b30529c9-d516-5198-9cee-d437f659e7ff",
@@ -2793,7 +2794,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2801,7 +2802,7 @@
             ]
           },
           {
-            "offer_id": "54f2d9f2-7f06-5335-94e1-4e544905fb77",
+            "offer_id": "efa4e477-efdd-50f3-a86e-225a2555b086",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "b30529c9-d516-5198-9cee-d437f659e7ff",
@@ -2828,7 +2829,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2836,7 +2837,7 @@
             ]
           },
           {
-            "offer_id": "ad844e05-273e-5c68-b9f1-5651ec9ec39b",
+            "offer_id": "628ebc33-7f94-56ce-879d-4db7f9fa798c",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "b30529c9-d516-5198-9cee-d437f659e7ff",
@@ -2863,7 +2864,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2871,7 +2872,7 @@
             ]
           },
           {
-            "offer_id": "402aba35-33c9-5fb1-b298-2946da770fff",
+            "offer_id": "ec07df58-d505-5baa-87f8-77800fdc05f0",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "468f544b-e1ab-58e0-a4f7-9afc1e52d0d4",
@@ -2898,7 +2899,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2906,7 +2907,7 @@
             ]
           },
           {
-            "offer_id": "a9c6f9df-f3b8-592a-9ab5-fb07521d9695",
+            "offer_id": "abc6cfc8-4f59-52fe-abd3-6f3a3df0ac25",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "468f544b-e1ab-58e0-a4f7-9afc1e52d0d4",
@@ -2933,7 +2934,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2941,7 +2942,7 @@
             ]
           },
           {
-            "offer_id": "54ec83ef-30e1-574d-b56c-55b26b76c877",
+            "offer_id": "42565a5c-c3c5-51c3-820c-5d2e8b9bfb74",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "468f544b-e1ab-58e0-a4f7-9afc1e52d0d4",
@@ -2968,7 +2969,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -2976,7 +2977,7 @@
             ]
           },
           {
-            "offer_id": "68d9fb73-3948-5218-b2cf-f0a2ad06d5d1",
+            "offer_id": "78e18e5e-16bf-5099-a672-9b18f954048b",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "a10d68c5-35a1-55d2-a73c-249467d5f8a6",
@@ -3003,7 +3004,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -3011,7 +3012,7 @@
             ]
           },
           {
-            "offer_id": "72826c54-7c66-5daf-84e2-493645b68c29",
+            "offer_id": "091d7dcf-c23d-59df-b464-b17d9c563c40",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "a10d68c5-35a1-55d2-a73c-249467d5f8a6",
@@ -3038,7 +3039,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -3046,7 +3047,7 @@
             ]
           },
           {
-            "offer_id": "e58f134c-4631-5eed-adcf-82dfe85cc98a",
+            "offer_id": "cfda4f66-5cfe-59d6-a573-59fba3c99e93",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "a10d68c5-35a1-55d2-a73c-249467d5f8a6",
@@ -3073,7 +3074,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -3081,7 +3082,7 @@
             ]
           },
           {
-            "offer_id": "980c45e1-841c-59e1-9c3c-e94340250270",
+            "offer_id": "37df48b6-4b45-5324-96c8-9fd8407518b7",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "11e42499-2538-5286-a8b9-3fda55802247",
@@ -3108,7 +3109,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -3116,7 +3117,7 @@
             ]
           },
           {
-            "offer_id": "767e8740-c46f-56ea-959c-f2dba2f098b8",
+            "offer_id": "abcf20e8-000c-5592-bd69-c857ded3305e",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "11e42499-2538-5286-a8b9-3fda55802247",
@@ -3143,7 +3144,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -3151,7 +3152,7 @@
             ]
           },
           {
-            "offer_id": "165e7c02-9fb7-521a-b33a-7337629f5fa9",
+            "offer_id": "ea97089f-81f9-52b8-80a1-07dc7f119be1",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "11e42499-2538-5286-a8b9-3fda55802247",
@@ -3178,7 +3179,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -3186,7 +3187,7 @@
             ]
           },
           {
-            "offer_id": "ce066548-5fa4-5ae9-9282-7e01a3a44381",
+            "offer_id": "9b9e75a3-2a32-5860-8618-6e5d6cbd0a9b",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "1494b22f-3999-5714-ba12-3e8a1c65117c",
@@ -3213,7 +3214,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -3221,7 +3222,7 @@
             ]
           },
           {
-            "offer_id": "a064a700-5444-5961-972b-400b08db04a6",
+            "offer_id": "6181af4a-fd4b-5625-a5c2-f036eaec6425",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "1494b22f-3999-5714-ba12-3e8a1c65117c",
@@ -3248,7 +3249,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -3256,7 +3257,7 @@
             ]
           },
           {
-            "offer_id": "da2d31be-8aa1-566b-9311-44d37655360f",
+            "offer_id": "4b468ece-c73e-5e98-abf5-16d168cdd0b7",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "1494b22f-3999-5714-ba12-3e8a1c65117c",
@@ -3283,7 +3284,7 @@
             "teacher_suggestion": null,
             "human_adjustment": null,
             "source_model_keys": [
-              "hi.demo.probe.da910fa5"
+              "hi.demo.probe.dacbd6d8"
             ],
             "warnings": [
               "Composição de estudantes/coorte/turno desconhecida",
@@ -3374,7 +3375,7 @@
         "total_rows": 90,
         "limit": 100,
         "offset": 0,
-        "payload_sha256": "1ae7491f23a0493949ac83e56d7f1be5273489a39df6eb14dd1ed707853db63e"
+        "payload_sha256": "41a4f559bf8eb21879549c57e48455aef3cf90eb76ba3b6e00e857afb20b07ba"
       }
     ],
     "reconciliation": {
@@ -3382,8 +3383,8 @@
         "database": "planejamento_db",
         "schema": "planning",
         "status": "PASS",
-        "execution_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
-        "run_id": "6277582e511148c9a31b2aef3f22395e",
+        "execution_id": "b1a6dd4b-6156-41f9-8cff-f8232eb02fea",
+        "run_id": "bee6d80971e04e02a85c125755d37011",
         "model_version": "1",
         "proposal_status": "DRAFT",
         "stored_rows": 90,
@@ -3394,25 +3395,28 @@
       "storage": [
         {
           "bucket": "pucpr-poc",
-          "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/MLmodel",
+          "key": "mlflow/2/models/m-b8870302a6ab464fb604a6946d9a8093/artifacts/MLmodel",
           "bytes": 1336,
-          "sha256": "836efd978b9c1750ec3702d7d9028b6bdb218998a0fcb23d8ab09e322bd778cd",
+          "sha256": "176b5017ccbbd83bd763d7fe709c89640376bd05ac3edcd0c8f84f692a153df0",
+          "object_version_id": "f46a23f4-7085-4c94-aeac-1a9bbd04b614",
           "model_version": "1",
           "status": "PASS"
         },
         {
           "bucket": "pucpr-poc",
-          "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/model.pkl",
+          "key": "mlflow/2/models/m-b8870302a6ab464fb604a6946d9a8093/artifacts/model.pkl",
           "bytes": 8671,
           "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "object_version_id": "15371d4d-160d-402d-8c0f-d6efaf89b078",
           "model_version": "1",
           "status": "PASS"
         },
         {
           "bucket": "pucpr-poc",
-          "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/requirements.txt",
+          "key": "mlflow/2/models/m-b8870302a6ab464fb604a6946d9a8093/artifacts/requirements.txt",
           "bytes": 80,
           "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+          "object_version_id": "f8604c1b-6724-4417-bf37-a546fc5b0f63",
           "model_version": "1",
           "status": "PASS"
         }

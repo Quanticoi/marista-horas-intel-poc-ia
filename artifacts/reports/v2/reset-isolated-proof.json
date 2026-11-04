@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "2026-11-04T18:27:52.846851+00:00",
+  "git_commit": "8d735d64fb278da57d5d3a3bef8b0d1800753f3d",
+  "environment": "poc",
+  "project": "marista-correcoes-isolated",
+  "test_id": "V2-12",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "resets": [
+    {
+      "mode": "reset-data",
+      "reinitialize": "empty",
+      "plan_id": "97ebd2fa-df99-44b5-9fef-88e97e3f287b",
+      "status": "RESET_PASS",
+      "preview_unchanged": true
+    },
+    {
+      "mode": "factory-reset",
+      "reinitialize": "demo-ready",
+      "plan_id": "8a186e1f-3eb9-4819-b6ec-f99ff331853e",
+      "status": "RESET_PASS",
+      "preview_unchanged": true
+    }
+  ],
+  "post_rebuild_journeys": "A and B executed with real training, API generation and reconciliation"
+}

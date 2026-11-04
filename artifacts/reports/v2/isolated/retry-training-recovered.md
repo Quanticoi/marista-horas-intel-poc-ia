@@ -1,8 +1,8 @@
 # retry-training-recovered
 
-PASS — 2026-11-04T17:11:16.042634+00:00
+PASS — 2026-11-04T18:48:56.571798+00:00
 
-Código: sha256:ecfa01f3ecd2a2f9148e7cb223f4cf72cdb6547717a541d8604c5b5c95158825
+Código: sha256:7660c236726aa3633599566013df94085e046adf5123354a048cbcb4bb04c747
 
 Evidência: [retry-training-recovered.json](retry-training-recovered.json)
 

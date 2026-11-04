@@ -1,0 +1,108 @@
+{
+  "timestamp_utc": "2026-11-04T19:24:32.167298+00:00",
+  "git_commit": "d93258a",
+  "code_version": "sha256:db008f2da68ffaa9713315bf12d3c4f534e5c6ae5b3e45cc236e1de03f4df336",
+  "environment": "poc",
+  "project": "marista",
+  "test_id": "probe-training",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign": {
+      "campaign_id": "7d156255-ee18-4fb6-9c09-a7626dd5e1da",
+      "idempotency_key": "168e4337-d4b3-4f39-800f-d1b5126dd34b",
+      "request_hash": "90ca6e95a5bb80c509e2e41c94c43ac73cceaa50bc1995f4c1f4d96b8e24a2c0",
+      "request": {
+        "alpha": 1.0,
+        "algorithm": "ridge",
+        "cycle_code": "2026-1",
+        "model_keys": [
+          "hi.demo.probe.168e4337"
+        ],
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "max_attempts": 3,
+        "requested_by": "v2-probe",
+        "schema_version": "poc-training-campaign-v2",
+        "confirm_training": true,
+        "max_parallel_jobs": 2
+      },
+      "correlation_id": "168e4337-d4b3-4f39-800f-d1b5126dd34b",
+      "requested_by": "v2-probe",
+      "status": "COMPLETED",
+      "max_parallel_jobs": 2,
+      "requested_count": 1,
+      "created_at_utc": "2026-11-04T19:24:28.043044+00:00",
+      "started_at_utc": "2026-11-04T19:24:28.092215+00:00",
+      "ended_at_utc": "2026-11-04T19:24:30.160995+00:00",
+      "counts": {
+        "COMPLETED": 1
+      }
+    },
+    "items": [
+      {
+        "job_id": "b47c16a6-a8bc-4b05-b892-0a9b5e84cf52",
+        "campaign_id": "7d156255-ee18-4fb6-9c09-a7626dd5e1da",
+        "model_key": "hi.demo.probe.168e4337",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T19:24:29.688908+00:00",
+        "started_at_utc": "2026-11-04T19:24:28.092215+00:00",
+        "ended_at_utc": "2026-11-04T19:24:30.152399+00:00",
+        "mlflow_run_id": "e400ad37fd404c7ab55e7d50b4b16282",
+        "registered_model_name": "hi.demo.probe.168e4337",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "e400ad37fd404c7ab55e7d50b4b16282",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 1.850820029,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 258964.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.8336478050041478
+          },
+          "trace_id": "tr-9cf95540eb800ef12441eccbedb0afde",
+          "model_uri": "models:/hi.demo.probe.168e4337/1",
+          "model_name": "hi.demo.probe.168e4337",
+          "artifact_uri": "models:/m-0bacf32e6668446f92c16a320ba63e34",
+          "experiment_id": "4",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/4/models/m-0bacf32e6668446f92c16a320ba63e34/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "20fdb25731970617ee3295ad599e151325f230ca9783be7aef38f866c0760e3d",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "adfcbea5-197a-48f7-935f-6a9c4e98ba55"
+            },
+            {
+              "key": "mlflow/4/models/m-0bacf32e6668446f92c16a320ba63e34/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "eff17465-8234-4115-84c6-c7e2fb389dfc"
+            },
+            {
+              "key": "mlflow/4/models/m-0bacf32e6668446f92c16a320ba63e34/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1",
+              "object_version_id": "a8a5e8d2-1d9e-4223-bf4c-286546016a2b"
+            }
+          ],
+          "training_execution_id": "b47c16a6-a8bc-4b05-b892-0a9b5e84cf52"
+        }
+      }
+    ]
+  },
+  "limitations": []
+}

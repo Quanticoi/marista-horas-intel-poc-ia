@@ -1,0 +1,92 @@
+{
+  "timestamp_utc": "2026-11-04T19:24:34.241256+00:00",
+  "git_commit": "d93258a",
+  "code_version": "sha256:db008f2da68ffaa9713315bf12d3c4f534e5c6ae5b3e45cc236e1de03f4df336",
+  "environment": "poc",
+  "project": "marista",
+  "test_id": "probe-generation",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "request": {
+      "cycle_code": "2026-1",
+      "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+      "model_selectors": [
+        {
+          "model_name": "hi.demo.probe.168e4337",
+          "model_version": "1"
+        }
+      ],
+      "requested_by": "v2-probe",
+      "confirm_demo": true
+    },
+    "submission": {
+      "generation_job_id": "6391c652-a079-4a73-a6c6-a385e8b9774f",
+      "job_id": "6391c652-a079-4a73-a6c6-a385e8b9774f",
+      "correlation_id": "168e4337-d4b3-4f39-800f-d1b5126dd34b",
+      "status": "PENDING",
+      "attempt": 0,
+      "error_code": null,
+      "status_url": "/v1/proposals/generations/6391c652-a079-4a73-a6c6-a385e8b9774f",
+      "proposal_id": null,
+      "proposal_url": null,
+      "trace_id": null,
+      "started_at_utc": null,
+      "ended_at_utc": null
+    },
+    "status": {
+      "generation_job_id": "6391c652-a079-4a73-a6c6-a385e8b9774f",
+      "job_id": "6391c652-a079-4a73-a6c6-a385e8b9774f",
+      "correlation_id": "168e4337-d4b3-4f39-800f-d1b5126dd34b",
+      "status": "COMPLETED",
+      "attempt": 1,
+      "error_code": null,
+      "status_url": "/v1/proposals/generations/6391c652-a079-4a73-a6c6-a385e8b9774f",
+      "proposal_id": "6391c652-a079-4a73-a6c6-a385e8b9774f",
+      "proposal_url": "/v1/proposals/6391c652-a079-4a73-a6c6-a385e8b9774f/application-view",
+      "trace_id": "tr-06eb28f48ed0bf410d60d080dff96e38",
+      "started_at_utc": "2026-11-04T19:24:32.219368+00:00",
+      "ended_at_utc": "2026-11-04T19:24:32.703147+00:00",
+      "events": [
+        {
+          "event_type": "CREATED",
+          "details": {},
+          "created_at_utc": "2026-11-04T19:24:32.204227+00:00"
+        },
+        {
+          "event_type": "RUNNING",
+          "details": {
+            "attempt": 1
+          },
+          "created_at_utc": "2026-11-04T19:24:32.219368+00:00"
+        },
+        {
+          "event_type": "CHECKPOINT",
+          "details": {
+            "fields": [
+              "trace_id"
+            ]
+          },
+          "created_at_utc": "2026-11-04T19:24:32.240022+00:00"
+        },
+        {
+          "event_type": "CHECKPOINT",
+          "details": {
+            "fields": [
+              "composition"
+            ]
+          },
+          "created_at_utc": "2026-11-04T19:24:32.578443+00:00"
+        },
+        {
+          "event_type": "COMPLETED",
+          "details": {
+            "seconds": 0.47330709599191323
+          },
+          "created_at_utc": "2026-11-04T19:24:32.703147+00:00"
+        }
+      ]
+    }
+  },
+  "limitations": []
+}

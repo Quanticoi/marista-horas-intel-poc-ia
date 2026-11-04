@@ -1,0 +1,70 @@
+{
+  "timestamp_utc": "2026-11-04T20:12:21.347778+00:00",
+  "git_commit": "798b586ce95ae163251a025efafeac4e2fe21863",
+  "code_version": "sha256:c3a9af6b6859448a4fba9603744e3529671c9b735b1eb6b668f9b4a7987b9c9e",
+  "environment": "poc",
+  "project": "marista",
+  "test_id": "00_validacao_ambiente",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "dependencies": [
+      {
+        "dependency": "source SQL",
+        "status": "PASS",
+        "attempts": 1
+      },
+      {
+        "dependency": "application SQL",
+        "status": "PASS",
+        "attempts": 1
+      },
+      {
+        "dependency": "MLflow PostgreSQL + proxy artifact roundtrip",
+        "status": "PASS",
+        "attempts": 1
+      }
+    ],
+    "services": [
+      {
+        "service": "API",
+        "status": "PASS",
+        "diagnosis": "docker compose logs --tail 80 API"
+      },
+      {
+        "service": "inference",
+        "status": "PASS",
+        "diagnosis": "docker compose logs --tail 80 inference"
+      },
+      {
+        "service": "intake",
+        "status": "PASS",
+        "diagnosis": "docker compose logs --tail 80 intake"
+      },
+      {
+        "service": "dashboard",
+        "status": "PASS",
+        "diagnosis": "docker compose logs --tail 80 dashboard"
+      },
+      {
+        "service": "RabbitMQ",
+        "status": "PASS",
+        "evidence": "API /ready performs broker ensure_connection"
+      },
+      {
+        "service": "RustFS",
+        "status": "PASS",
+        "evidence": "S3 head_bucket"
+      }
+    ],
+    "versions": {
+      "mlflow": "3.11.1",
+      "sklearn": "1.6.1",
+      "numpy": "2.2.2"
+    }
+  },
+  "limitations": [
+    "Dados DEMO e contrato provisório; regras não avaliadas não são homologação",
+    "Execução sem erro do notebook não implica execução de operações opt-in desativadas"
+  ]
+}

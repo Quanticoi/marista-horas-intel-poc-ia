@@ -1,0 +1,46 @@
+{
+  "timestamp_utc": "2026-11-04T20:12:17.075315+00:00",
+  "git_commit": "798b586ce95ae163251a025efafeac4e2fe21863",
+  "code_version": "sha256:c3a9af6b6859448a4fba9603744e3529671c9b735b1eb6b668f9b4a7987b9c9e",
+  "environment": "poc",
+  "project": "marista",
+  "test_id": "preservation-runtime-after",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "preserved_runs": 69,
+    "preserved_versions": 49,
+    "preserved_proposals": 12,
+    "artifact": [
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/4/models/m-036811b115484c20b5a05920c3112063/artifacts/MLmodel",
+        "bytes": 1336,
+        "sha256": "8e397d82a6dc8e33e1cf5ba2b8cecf4e2cbe86ea2a66a4509a442d7402271c2a",
+        "object_version_id": "09e60c6c-d27b-42e4-8fcb-b30f5e615319",
+        "model_version": "13",
+        "status": "PASS"
+      },
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/4/models/m-036811b115484c20b5a05920c3112063/artifacts/model.pkl",
+        "bytes": 8671,
+        "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "object_version_id": "7ff9bb6c-d103-4f48-b8c0-2a6e46333e68",
+        "model_version": "13",
+        "status": "PASS"
+      },
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/4/models/m-036811b115484c20b5a05920c3112063/artifacts/requirements.txt",
+        "bytes": 80,
+        "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+        "object_version_id": "2a38991f-8e4b-4ef2-8ba6-11fa7300b28e",
+        "model_version": "13",
+        "status": "PASS"
+      }
+    ],
+    "execution_id": "81d0a4af-b0d4-4a3f-b99e-671159d59fed"
+  },
+  "limitations": []
+}

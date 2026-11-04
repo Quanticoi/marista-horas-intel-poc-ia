@@ -1,0 +1,560 @@
+{
+  "timestamp_utc": "2026-11-04T20:16:52.218627+00:00",
+  "git_commit": "798b586ce95ae163251a025efafeac4e2fe21863",
+  "environment": "poc",
+  "source_type": "DEMO",
+  "test_id": "V2-acceptance",
+  "status": "PASS",
+  "criteria": [
+    {
+      "id": "V2-01",
+      "scenario": "Jornada01 em kernel novo",
+      "status": "PASS",
+      "evidence_paths": [
+        "journey-latest.json",
+        "01_jornada_completa_planilha_turmas.executed.ipynb"
+      ]
+    },
+    {
+      "id": "V2-02",
+      "scenario": "API gera DRAFT e reconcilia SQL/S3",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/probe-complete.json"
+      ]
+    },
+    {
+      "id": "V2-03",
+      "scenario": "Idempotência, conflito e recuperação",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/final-junit.xml",
+        "v2/isolated/worker-restart-recovered.json"
+      ]
+    },
+    {
+      "id": "V2-04",
+      "scenario": "Notebook02: leitura e geração HTTP",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/isolated/notebook-suite.json"
+      ]
+    },
+    {
+      "id": "V2-05",
+      "scenario": "Contrato técnico e limites V4.4",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/final-junit.xml",
+        "v2/probe-complete.json"
+      ]
+    },
+    {
+      "id": "V2-06",
+      "scenario": "Registry e hashes no Object Store",
+      "status": "PASS",
+      "evidence_paths": [
+        "journey-latest.json"
+      ]
+    },
+    {
+      "id": "V2-07",
+      "scenario": "Linhagem N:N e busca reversa",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/lineage-cross-system.json",
+        "v2/lineage-negative-tests.json"
+      ]
+    },
+    {
+      "id": "V2-08",
+      "scenario": "Campanhas persistentes e controles",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/isolated/campaign-controls.json",
+        "v2/isolated/worker-restart-recovered.json"
+      ]
+    },
+    {
+      "id": "V2-09",
+      "scenario": "30 treinamentos reais",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/training-campaign-30.json"
+      ]
+    },
+    {
+      "id": "V2-10",
+      "scenario": "500 treinamentos reais",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/training-campaign-500.json"
+      ]
+    },
+    {
+      "id": "V2-11",
+      "scenario": "Aprovação/revogação/rollback isolados",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/lineage-negative-tests.json"
+      ]
+    },
+    {
+      "id": "V2-12",
+      "scenario": "Dois resets e jornadas pós-rebuild isolados",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/reset-isolated-proof.json",
+        "v2/isolated/reset-independent-empty.json",
+        "v2/isolated/reset-independent-demo-ready.json"
+      ]
+    },
+    {
+      "id": "V2-13",
+      "scenario": "Dados e arquivos anteriores preservados",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/preservation-after.json"
+      ]
+    },
+    {
+      "id": "V2-14",
+      "scenario": "Dez notebooks; opt-ins e edição após restart",
+      "status": "PASS",
+      "evidence_paths": [
+        "catalog-smoke.json",
+        "v2/isolated/notebook-suite.json",
+        "v2/jupyter-editability.json"
+      ]
+    },
+    {
+      "id": "V2-15",
+      "scenario": "CI remoto em checkout limpo",
+      "status": "PASS",
+      "evidence_paths": [
+        "v2/ci-result.json"
+      ]
+    },
+    {
+      "id": "V2-16",
+      "scenario": "README, arquitetura, comandos e índices",
+      "status": "PASS",
+      "evidence_paths": [
+        "../../README.md"
+      ]
+    }
+  ],
+  "tests": 79,
+  "main_journey": {
+    "execution_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
+    "mode": "DEMO",
+    "sql_rows": 1050,
+    "metrics": {
+      "mae": 3.758630658273197,
+      "rmse": 4.9142272796917865
+    },
+    "run_id": "c0d9f3138c874049b339e0f54ab8348c",
+    "experiment_id": "4",
+    "run_url": "http://127.0.0.1:5000/#/experiments/4/runs/c0d9f3138c874049b339e0f54ab8348c",
+    "model_name": "planilha-turmas-demo",
+    "model_version": "15",
+    "model_uri": "models:/planilha-turmas-demo/15",
+    "artifact_uri": "models:/m-342590e0c9ca494e99e6d746160225f8",
+    "inference_id": "be5cf3b8-2839-4658-bc50-e8d24d4c2add",
+    "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+    "proposal_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
+    "persisted_rows": 90,
+    "api_rows": 90,
+    "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+    "dataset_sha256": "5fc39eeeead59aa48813182e6a93d2308a4a9243655501f17d09a981c6c66a56",
+    "stages": [
+      {
+        "stage": "dependencies",
+        "status": "PASS"
+      },
+      {
+        "stage": "SQL extraction",
+        "status": "PASS",
+        "seconds": 0.199,
+        "attempt": 1,
+        "trace_id": "tr-4222edf555191c6c97a244cb6330e788"
+      },
+      {
+        "stage": "prepare",
+        "status": "PASS",
+        "seconds": 0.045,
+        "attempt": 1,
+        "trace_id": "tr-e3bbd67a52793a1edf81fca8c6fa2614"
+      },
+      {
+        "stage": "model and metrics",
+        "status": "PASS",
+        "seconds": 0.044,
+        "attempt": 1,
+        "trace_id": "tr-0ea4a6b4b33d6cb4ef6e01df7e3db1f6"
+      },
+      {
+        "stage": "tracking",
+        "status": "PASS",
+        "seconds": 0.152,
+        "attempt": 1,
+        "trace_id": "tr-42410e8fafa17c97720af61ba16bc7c7"
+      },
+      {
+        "stage": "fit and evaluate",
+        "status": "PASS",
+        "seconds": 0.097,
+        "attempt": 1,
+        "trace_id": "tr-6729e65a3bdc382eccf04fa0dd3d74ce"
+      },
+      {
+        "stage": "register",
+        "status": "PASS",
+        "seconds": 1.159,
+        "attempt": 1,
+        "trace_id": "tr-1c61032c4f969e14529ed85397d18177"
+      },
+      {
+        "stage": "verify Object Store",
+        "status": "PASS",
+        "seconds": 0.291,
+        "attempt": 1,
+        "trace_id": "tr-1885e64cc3ee4d33e08f9eb6e6c11d90"
+      },
+      {
+        "stage": "reload and inference",
+        "status": "PASS",
+        "seconds": 1.039,
+        "attempt": 1,
+        "trace_id": "tr-f94aea0befa7ae596ba1c43bd3fc8d94"
+      },
+      {
+        "stage": "compose proposal",
+        "status": "PASS",
+        "seconds": 0.044,
+        "attempt": 1,
+        "trace_id": "tr-aefa5756077a436d82fecfd549b42358"
+      },
+      {
+        "stage": "persist and idempotency",
+        "status": "PASS",
+        "seconds": 0.122,
+        "attempt": 1,
+        "trace_id": "tr-ea6a564e8cd9dc1c0f752ee0a4d9cf07"
+      },
+      {
+        "stage": "verify proposal SQL",
+        "status": "PASS",
+        "seconds": 0.067,
+        "attempt": 1,
+        "trace_id": "tr-d90a4428170918659ad87a1b078ceb52"
+      },
+      {
+        "stage": "API reconciliation",
+        "status": "PASS",
+        "seconds": 0.363,
+        "attempt": 1,
+        "trace_id": "tr-1ba0a12ba58ff329b3e4a8b3b2dd6b96"
+      }
+    ],
+    "traces": [
+      {
+        "stage": "SQL extraction",
+        "attempt": 1,
+        "trace_id": "tr-4222edf555191c6c97a244cb6330e788",
+        "spans": [
+          "SQL extraction"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-4222edf555191c6c97a244cb6330e788&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "prepare",
+        "attempt": 1,
+        "trace_id": "tr-e3bbd67a52793a1edf81fca8c6fa2614",
+        "spans": [
+          "prepare"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-e3bbd67a52793a1edf81fca8c6fa2614&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "model and metrics",
+        "attempt": 1,
+        "trace_id": "tr-0ea4a6b4b33d6cb4ef6e01df7e3db1f6",
+        "spans": [
+          "model and metrics"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-0ea4a6b4b33d6cb4ef6e01df7e3db1f6&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "tracking",
+        "attempt": 1,
+        "trace_id": "tr-42410e8fafa17c97720af61ba16bc7c7",
+        "spans": [
+          "tracking"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-42410e8fafa17c97720af61ba16bc7c7&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "fit and evaluate",
+        "attempt": 1,
+        "trace_id": "tr-6729e65a3bdc382eccf04fa0dd3d74ce",
+        "spans": [
+          "fit and evaluate"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-6729e65a3bdc382eccf04fa0dd3d74ce&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "register",
+        "attempt": 1,
+        "trace_id": "tr-1c61032c4f969e14529ed85397d18177",
+        "spans": [
+          "register"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-1c61032c4f969e14529ed85397d18177&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "verify Object Store",
+        "attempt": 1,
+        "trace_id": "tr-1885e64cc3ee4d33e08f9eb6e6c11d90",
+        "spans": [
+          "verify Object Store"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-1885e64cc3ee4d33e08f9eb6e6c11d90&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "reload and inference",
+        "attempt": 1,
+        "trace_id": "tr-f94aea0befa7ae596ba1c43bd3fc8d94",
+        "spans": [
+          "reload and inference",
+          "model.load",
+          "inference.http",
+          "model.load",
+          "model.predict"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-f94aea0befa7ae596ba1c43bd3fc8d94&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "compose proposal",
+        "attempt": 1,
+        "trace_id": "tr-aefa5756077a436d82fecfd549b42358",
+        "spans": [
+          "compose proposal"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-aefa5756077a436d82fecfd549b42358&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "persist and idempotency",
+        "attempt": 1,
+        "trace_id": "tr-ea6a564e8cd9dc1c0f752ee0a4d9cf07",
+        "spans": [
+          "persist and idempotency"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-ea6a564e8cd9dc1c0f752ee0a4d9cf07&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "verify proposal SQL",
+        "attempt": 1,
+        "trace_id": "tr-d90a4428170918659ad87a1b078ceb52",
+        "spans": [
+          "verify proposal SQL"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-d90a4428170918659ad87a1b078ceb52&compareRunsMode=TRACES"
+      },
+      {
+        "stage": "API reconciliation",
+        "attempt": 1,
+        "trace_id": "tr-1ba0a12ba58ff329b3e4a8b3b2dd6b96",
+        "spans": [
+          "API reconciliation",
+          "api.http",
+          "postgres.query",
+          "api.http",
+          "postgres.query",
+          "postgres.query"
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-1ba0a12ba58ff329b3e4a8b3b2dd6b96&compareRunsMode=TRACES"
+      }
+    ],
+    "storage_evidence": [
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/4/models/m-342590e0c9ca494e99e6d746160225f8/artifacts/MLmodel",
+        "bytes": 1336,
+        "sha256": "752dfba474fc343bf7f6654ed174c08207af206086532c6ba0480b631622ccfc",
+        "object_version_id": "9d81a473-df96-4333-9fe9-1e6ee9a5d1e1",
+        "model_version": "15",
+        "status": "PASS"
+      },
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/4/models/m-342590e0c9ca494e99e6d746160225f8/artifacts/model.pkl",
+        "bytes": 8671,
+        "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "object_version_id": "f0e9a40e-7cc0-4ad3-af4d-a358027084a8",
+        "model_version": "15",
+        "status": "PASS"
+      },
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/4/models/m-342590e0c9ca494e99e6d746160225f8/artifacts/requirements.txt",
+        "bytes": 80,
+        "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+        "object_version_id": "d857cedd-8e60-4513-b5ab-8ee094633e90",
+        "model_version": "15",
+        "status": "PASS"
+      }
+    ],
+    "database_evidence": {
+      "database": "planejamento_db",
+      "schema": "planning",
+      "status": "PASS",
+      "execution_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
+      "run_id": "c0d9f3138c874049b339e0f54ab8348c",
+      "model_version": "15",
+      "proposal_status": "DRAFT",
+      "stored_rows": 90,
+      "proposed_students": 8694,
+      "proposed_groups": 270,
+      "query": "sql/queries/verify_proposal.sql"
+    }
+  },
+  "api_generation": "6391c652-a079-4a73-a6c6-a385e8b9774f",
+  "ci": {
+    "url": "https://github.com/Quanticoi/marista-horas-intel-poc-ia/actions/runs/41903976793",
+    "source_type": "DEMO",
+    "environment": "poc",
+    "test_id": "V2-15",
+    "conclusion": "success",
+    "created_at": "2026-11-04T20:10:03Z",
+    "completed_at": "2026-11-04T20:15:26Z",
+    "jobs": [
+      {
+        "completedAt": "2026-11-04T20:15:25Z",
+        "conclusion": "success",
+        "databaseId": 126833549099,
+        "name": "validate",
+        "startedAt": "2026-11-04T20:10:06Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-11-04T20:10:07Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-11-04T20:10:07Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:10:08Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-11-04T20:10:08Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:10:10Z",
+            "conclusion": "success",
+            "name": "Static contracts",
+            "number": 3,
+            "startedAt": "2026-11-04T20:10:08Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:10:10Z",
+            "conclusion": "success",
+            "name": "Generate disposable CI credentials",
+            "number": 4,
+            "startedAt": "2026-11-04T20:10:10Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:12:45Z",
+            "conclusion": "success",
+            "name": "Build and provision dependencies",
+            "number": 5,
+            "startedAt": "2026-11-04T20:10:10Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:13:29Z",
+            "conclusion": "success",
+            "name": "Validate each instance and its dependencies",
+            "number": 6,
+            "startedAt": "2026-11-04T20:12:45Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:13:32Z",
+            "conclusion": "success",
+            "name": "Application contract notebook (read-only)",
+            "number": 7,
+            "startedAt": "2026-11-04T20:13:29Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:15:17Z",
+            "conclusion": "success",
+            "name": "V2 notebooks including opt-in paths in disposable CI",
+            "number": 8,
+            "startedAt": "2026-11-04T20:13:32Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:15:17Z",
+            "conclusion": "success",
+            "name": "Sanitized runtime diagnostics before cleanup",
+            "number": 9,
+            "startedAt": "2026-11-04T20:15:17Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:15:19Z",
+            "conclusion": "success",
+            "name": "Test reports",
+            "number": 10,
+            "startedAt": "2026-11-04T20:15:17Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:15:23Z",
+            "conclusion": "success",
+            "name": "Dispose isolated CI stack",
+            "number": 11,
+            "startedAt": "2026-11-04T20:15:19Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:15:23Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 22,
+            "startedAt": "2026-11-04T20:15:23Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-04T20:15:23Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 23,
+            "startedAt": "2026-11-04T20:15:23Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Quanticoi/marista-horas-intel-poc-ia/actions/runs/41903976793/job/126833549099"
+      }
+    ],
+    "timestamp_utc": "2026-11-04T20:16:51.2960903Z",
+    "workflow_status": "completed",
+    "status": "PASS",
+    "git_commit": "798b586ce95ae163251a025efafeac4e2fe21863"
+  },
+  "limitations": [
+    "Dados sintéticos e regra provisória; não homologa o contrato acadêmico V4.4",
+    "500 identidades experimentais treinadas no mesmo snapshot DEMO; não são 500 séries acadêmicas reais nem 500 modelos simultâneos em memória",
+    "Resets/falhas destrutivas executados somente na stack isolada; volumes principais preservados",
+    "Evidências mantêm seu commit/hash original; cada ensaio identifica a versão executada; CI identifica seu próprio HEAD",
+    "Warnings de depreciação de dependências não impediram os testes"
+  ]
+}

@@ -1,0 +1,465 @@
+{
+  "plan_id": "97ebd2fa-df99-44b5-9fef-88e97e3f287b",
+  "created_at_utc": "2026-11-04T18:23:55.939048+00:00",
+  "environment": "poc",
+  "mode": "reset-data",
+  "scope": {
+    "project": "marista-correcoes-isolated",
+    "directory": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia",
+    "compose_sha256": "338808e7df54fb2444f8f8f2385d158df94f643cc4ea2bd74793eaf330a451bb",
+    "volumes": [
+      "marista-correcoes-isolated_postgres",
+      "marista-correcoes-isolated_rabbitmq",
+      "marista-correcoes-isolated_rustfs"
+    ],
+    "containers": [
+      {
+        "id": "036dc9ac7def53ab3655e9245473a1971ced2712f4a0ff883bf7a5a4f83963c5",
+        "service": "api",
+        "image": "sha256:644f859464d7952b10d216c31716bbbf5e1f4fc652f9639d94a58c1daa8bb6bf"
+      },
+      {
+        "id": "89cdfac6a270158ac066c88ef9ad0f7f683240f2d54c00feeefe0de2e373cc5e",
+        "service": "dashboard",
+        "image": "sha256:644f859464d7952b10d216c31716bbbf5e1f4fc652f9639d94a58c1daa8bb6bf"
+      },
+      {
+        "id": "c1b1038d97a428406bcab2aceac4e1c3529b7403f52f31d980715d172d8b1175",
+        "service": "inference",
+        "image": "sha256:644f859464d7952b10d216c31716bbbf5e1f4fc652f9639d94a58c1daa8bb6bf"
+      },
+      {
+        "id": "e4e6f154cefcdf253f4dcd180c741a73da73908b5006e92892edd4b331e7e5f8",
+        "service": "ingestion",
+        "image": "sha256:644f859464d7952b10d216c31716bbbf5e1f4fc652f9639d94a58c1daa8bb6bf"
+      },
+      {
+        "id": "b37e98a4d6a8ad27b4854bdfa092d7fbb36d9deb4209f9f989bfc5644d35a3eb",
+        "service": "jupyter",
+        "image": "sha256:2c4289e66fed31f3acd025638d303f09f04b11d9d60a00ef36154accbf44ad27"
+      },
+      {
+        "id": "afdbe8599ded660f79ce3af01caa0e6f6dc35ffe2196d79830b62e3fa6c4cc71",
+        "service": "mlflow",
+        "image": "sha256:644f859464d7952b10d216c31716bbbf5e1f4fc652f9639d94a58c1daa8bb6bf"
+      },
+      {
+        "id": "373a1ecc81a3522431cd61863875a0037de984e0643671de6cad90e6bc22213a",
+        "service": "monitoramento",
+        "image": "sha256:644f859464d7952b10d216c31716bbbf5e1f4fc652f9639d94a58c1daa8bb6bf"
+      },
+      {
+        "id": "14ca3c0c9fa6911171161162fad281193fa4c41d9c3ad4148b59c4abe87be1a1",
+        "service": "postgres",
+        "image": "sha256:d609c3005478af92bddad773423df829b7402ea0b356d5b72edd2fd54d1ad3ea"
+      },
+      {
+        "id": "d8634186e94bfbb35cacee610a9647176142235bf8267d3b257f3fbecd4c76f5",
+        "service": "rabbitmq",
+        "image": "sha256:697da87bf89699fda7c7da8067cc91b055353056d52a07e7f3c41bd67b0b5f71"
+      },
+      {
+        "id": "0b2005e49a3702cbbc7f6d7fc810f915bdf9330c6c57b6e6b5a51428001c2824",
+        "service": "rustfs",
+        "image": "sha256:8cc9801755448b71a786705ce76692c77e14936cccd87cf2fc31842e58f4d1ff"
+      },
+      {
+        "id": "860b0fa0a26c31cb1cb739ca78da1fd7b90ec2e312241194aa908103c133d4e5",
+        "service": "worker",
+        "image": "sha256:644f859464d7952b10d216c31716bbbf5e1f4fc652f9639d94a58c1daa8bb6bf"
+      }
+    ]
+  },
+  "inventory": {
+    "bucket": "pucpr-poc",
+    "buckets": [
+      "pucpr-poc"
+    ],
+    "database_names": [
+      "mlflow_db",
+      "planejamento_db",
+      "postgres"
+    ],
+    "databases": {
+      "mlflow_db": {
+        "alembic_version": {
+          "count": 1,
+          "digest": "6928ed6a0b30741f6574f8d7c1d03428"
+        },
+        "assessments": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "budget_policies": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "datasets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_bindings": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_model_mappings": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoints": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "entity_associations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_dataset_records": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_dataset_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_datasets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "experiment_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "experiments": {
+          "count": 1,
+          "digest": "255a3c8e0aa0801b415888c7209f65f3"
+        },
+        "input_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "inputs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "issues": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "latest_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "logged_model_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "logged_model_params": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "logged_model_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "logged_models": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_definitions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_version_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_versions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "online_scoring_configs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "params": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_model_aliases": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_model_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_models": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "runs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "scorer_versions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "scorers": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "secrets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "span_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "spans": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_info": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_request_metadata": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "webhook_events": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "webhooks": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "workspaces": {
+          "count": 1,
+          "digest": "f853bad469a0a08c243a1cef4b515440"
+        }
+      },
+      "planejamento_db": {
+        "academic_cycles": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "academic_periods": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "audit_events": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "campuses": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "courses": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "dataset_snapshots": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "disciplines": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "historical_enrollments": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "lineage_edges": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "lineage_entities": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_approval_requests": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_catalog": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_deployments": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_quality_evaluations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "offer_suggestions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "operation_events": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "operation_jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "period_disciplines": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "prediction_jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "predictions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_contract_evidence": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_generations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_lines": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_model_usage": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "training_campaigns": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "training_executions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      }
+    },
+    "objects": [
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "f5a6c524-4cc6-404b-8bd4-a41b406b84cf"
+      }
+    ],
+    "queues": [
+      {
+        "messages": 0,
+        "name": "celery",
+        "vhost": "/"
+      }
+    ],
+    "versioning": "Enabled"
+  },
+  "preserved": {
+    ".env": "db3b5b7502c574fefbbfc8bdfa07d67c928aad848f4df5883e4cab4309aa48f5",
+    "notebooks\\00_validacao_ambiente.ipynb": "cfb263add9201887f9c4f9dddd83c4714b83ef5b52a1db8f8f0f7cd616cd9f14",
+    "notebooks\\01_jornada_completa_planilha_turmas.ipynb": "eeacc6e47d5cc40cc1eace1731e08845012cf99207e08dc9546ea9c0bed2c0f5",
+    "notebooks\\02_teste_inferencia_planilha_turmas.ipynb": "9a9265265f0b7cb85fd32db4cb6e49d22e4d11adc23947d6c834170ca2c9ca82",
+    "notebooks\\03_exploracao_preparacao_dados.ipynb": "17e5ce6f8cc31d9c6c16fe973942dd88982480396965011b13e1ed863e7d61cc",
+    "notebooks\\04_treinamento_individual.ipynb": "fee632066b9cc02a40d4b168900854de9e313b3b64b4c5421b3ce86bbaa35c59",
+    "notebooks\\05_treinamento_campanha.ipynb": "1c346b81261993ab9482507296bbbbeae4e861807494de179f21d74a46f555b8",
+    "notebooks\\06_avaliacao_comparativa.ipynb": "bd544c6f9f6384d27c5f147536595f025497e31d6b1d5ceab35c0174c2a26f0d",
+    "notebooks\\07_registry_governanca.ipynb": "4fe24414624ed8c314a82d5ab925859fe635d0736a5cb57adc7b54e9bd56bddd",
+    "notebooks\\08_auditoria_lineage.ipynb": "1c8901c344d39c1c936bdd5d0b260040fbcf5b5be50557791661abdffe7130ac",
+    "notebooks\\09_reset_total_ambiente_poc.ipynb": "9ca85ff5cfe97117cee2597dd8788fbc39277e377c7e734bc68603b96656a1c3",
+    "workspace\\.ipynb_checkpoints\\Untitled-checkpoint.ipynb": "4a62b68a633d79c53a6fd8893e8ea42dcf2b9a8a3e907b1b9861661f04f21517",
+    "workspace\\.ipynb_checkpoints\\Untitled1-checkpoint.ipynb": "4a62b68a633d79c53a6fd8893e8ea42dcf2b9a8a3e907b1b9861661f04f21517",
+    "workspace\\notebook-backups\\00_validacao_ambiente.7f7f67c3408ad9d8e4a8afa3c5230b28523242b7b03d0afda694d6f38df78ad7.ipynb": "7f7f67c3408ad9d8e4a8afa3c5230b28523242b7b03d0afda694d6f38df78ad7",
+    "workspace\\notebook-backups\\01_jornada_completa_planilha_turmas.ab37343f32483440db03f8598617761e4a64a4eb24034fdbc50a4c3902614533.ipynb": "ab37343f32483440db03f8598617761e4a64a4eb24034fdbc50a4c3902614533",
+    "workspace\\notebook-backups\\01_jornada_completa_planilha_turmas.update-eeacc6e47d5c.703a4e4525c82b083180d5d9b13f3062a727c3a6e028e8af42fbb4439bee8f64.ipynb": "703a4e4525c82b083180d5d9b13f3062a727c3a6e028e8af42fbb4439bee8f64",
+    "workspace\\notebook-backups\\02_teste_inferencia_planilha_turmas.032d0a27af1011aff8cdb4153d90d7f183f2e4bd31db7289288686c1b14e4fa3.ipynb": "032d0a27af1011aff8cdb4153d90d7f183f2e4bd31db7289288686c1b14e4fa3",
+    "workspace\\notebook-backups\\05_treinamento_campanha.cdacd6575da465860a3c32a2586a6fffebae63478399eb8e7497a4ec43581c0f.ipynb": "cdacd6575da465860a3c32a2586a6fffebae63478399eb8e7497a4ec43581c0f",
+    "workspace\\notebook-backups\\07_registry_governanca.b361bfd3c1741b5915a6c3f6696b151fdf210c6e2dd5924dfd0f310057f7563e.ipynb": "b361bfd3c1741b5915a6c3f6696b151fdf210c6e2dd5924dfd0f310057f7563e",
+    "workspace\\notebook-backups\\08_auditoria_lineage.02c7a1201aff4de7da7a5d508d2a83ced4f30215896ccbccda947b243d13086e.ipynb": "02c7a1201aff4de7da7a5d508d2a83ced4f30215896ccbccda947b243d13086e",
+    "workspace\\notebooks\\.ipynb_checkpoints\\00_environment_validation-checkpoint.ipynb": "9e042e6c079158950713b8f029446e4ba0e3a77ba57ac23db157a0266ee4b0da",
+    "workspace\\notebooks\\.ipynb_checkpoints\\00_validacao_ambiente-checkpoint.ipynb": "d6df3498af3ff28de5c31a52039501f4114c80dae3526a0d12a25779cb605c30",
+    "workspace\\notebooks\\.ipynb_checkpoints\\01_exploration-checkpoint.ipynb": "c6a2bfce255d7b036a7b34998af74b85c91fd675dfe4b2981c53c1ee8793fa57",
+    "workspace\\notebooks\\.ipynb_checkpoints\\01_jornada_completa_planilha_turmas-checkpoint.ipynb": "63f164ecad07442d61e06b98f8356281541a6699c56bd1dd108caba36396cdfb",
+    "workspace\\notebooks\\.ipynb_checkpoints\\01_jornada_completa_planilha_turmas.update-eeacc6e47d5c-checkpoint.ipynb": "eeacc6e47d5cc40cc1eace1731e08845012cf99207e08dc9546ea9c0bed2c0f5",
+    "workspace\\notebooks\\.ipynb_checkpoints\\02_features-checkpoint.ipynb": "1b3815d919983ebcbcd36ab7f3e853ad07d0f025c2057fa4d22387fb277ea298",
+    "workspace\\notebooks\\.ipynb_checkpoints\\02_teste_inferencia_planilha_turmas-checkpoint.ipynb": "60d50280d6c9f95ea2a3712a57e9ccfbf68082935bbc9d797ee6c8362f0ff140",
+    "workspace\\notebooks\\.ipynb_checkpoints\\03_training-checkpoint.ipynb": "d3fb3ff9caadc38076c8d4801846a01bd24ab578fb4f6e85f75b6a911811698b",
+    "workspace\\notebooks\\.ipynb_checkpoints\\04_evaluation-checkpoint.ipynb": "a4576c689eef1debf5e7738b10e67d1484a341f1ff34cebe04a60a079e4f60ce",
+    "workspace\\notebooks\\.ipynb_checkpoints\\05_registry-checkpoint.ipynb": "8b12262e97b55ef0c013504699e391f67c09d1919c443844754acef28139c029",
+    "workspace\\notebooks\\.ipynb_checkpoints\\05_treinamento_campanha-checkpoint.ipynb": "3b09babed96f036bc4a81209041c3465b71c9c28837462581cc2a8885e4f24ae",
+    "workspace\\notebooks\\.ipynb_checkpoints\\06_inference-checkpoint.ipynb": "339764bfde343273878015fcd0c0e55c56e109e8107d9d4dd1a6d52cba0564a8",
+    "workspace\\notebooks\\.ipynb_checkpoints\\07_registry_governanca-checkpoint.ipynb": "9b93687b6d3cd6bf8fb720bc8a1a50e843556f5284370c8ea30665ecf381fa9c",
+    "workspace\\notebooks\\.ipynb_checkpoints\\08_auditoria_lineage-checkpoint.ipynb": "9e6f54df529704679bd035a7aaf06ac399ce4d4f7f1dd357a9c541fe06830fec",
+    "workspace\\notebooks\\.ipynb_checkpoints\\08_public_timeseries_lab-checkpoint.ipynb": "a2becb315f00079081ac2b92521923f6d0e9729bc5a2bb4b4221831a352f85ae",
+    "workspace\\notebooks\\.ipynb_checkpoints\\08_public_timeseries_lab.executed-checkpoint.ipynb": "74e4a078d521e32be4e70a95af4236bae0131545f62eca307140bf23c27b89cf",
+    "workspace\\notebooks\\00_validacao_ambiente.ipynb": "cfb263add9201887f9c4f9dddd83c4714b83ef5b52a1db8f8f0f7cd616cd9f14",
+    "workspace\\notebooks\\01_jornada_completa_planilha_turmas.ipynb": "4a1bc2d7e2e43e27315d826ef98b1a62fa8017f46536d1490dcbf2a84ea5e528",
+    "workspace\\notebooks\\02_teste_inferencia_planilha_turmas.ipynb": "9a9265265f0b7cb85fd32db4cb6e49d22e4d11adc23947d6c834170ca2c9ca82",
+    "workspace\\notebooks\\03_exploracao_preparacao_dados.ipynb": "17e5ce6f8cc31d9c6c16fe973942dd88982480396965011b13e1ed863e7d61cc",
+    "workspace\\notebooks\\04_treinamento_individual.ipynb": "fee632066b9cc02a40d4b168900854de9e313b3b64b4c5421b3ce86bbaa35c59",
+    "workspace\\notebooks\\05_treinamento_campanha.ipynb": "1c346b81261993ab9482507296bbbbeae4e861807494de179f21d74a46f555b8",
+    "workspace\\notebooks\\06_avaliacao_comparativa.ipynb": "bd544c6f9f6384d27c5f147536595f025497e31d6b1d5ceab35c0174c2a26f0d",
+    "workspace\\notebooks\\07_registry_governanca.ipynb": "4fe24414624ed8c314a82d5ab925859fe635d0736a5cb57adc7b54e9bd56bddd",
+    "workspace\\notebooks\\08_auditoria_lineage.ipynb": "1c8901c344d39c1c936bdd5d0b260040fbcf5b5be50557791661abdffe7130ac",
+    "workspace\\notebooks\\09_reset_total_ambiente_poc.ipynb": "9ca85ff5cfe97117cee2597dd8788fbc39277e377c7e734bc68603b96656a1c3",
+    "workspace\\Untitled.ipynb": "1d1f2be697ea1c6d7a46bb3be9aca03b78cf9301eafd84b33af963d820d4a056",
+    "workspace\\Untitled1.ipynb": "e4b6e0056fd826f9a3987cc2bf398fdd388fb386fb2aaf387bcbaa36ac4131e8",
+    ".runtime\\migration\\logs.tar.gz": "3c66c370c1525e530db017938a98fac28e2d550ece2ca75d4529805f39bdb0e9",
+    ".runtime\\migration\\manifest.json": "d9c2df728d452ef3b8769dde8714aabf52e185ffee2b066a51ad212ae6bba70a",
+    ".runtime\\migration\\mlflow_db.dump": "79c5aecdf02033af3c87d3431f66599c75c50e9eacbcee58ceb9f5db184fd3d5",
+    ".runtime\\migration\\planejamento_db.dump": "cd19195afca540e5025fbc29ee223d9db62a563efdc6747a34de450d63a5b2e0",
+    ".runtime\\migration\\replicas.json": "ae877a4eaf339ccaa19859f697fdfc1096ab684fd4153fd759a8fd2e97d556e2",
+    ".runtime\\migration\\restored.ok": "991385b0f126825a2f5e8be20c8bc586345af9ce50fe08b704794ced9962e58a",
+    ".runtime\\migration\\rustfs.tar.gz": "b34785b5a2da8705398eefa82f1a397b628eb1ca872eca0d7ecd744b2b4c1d7a",
+    ".runtime\\migration\\validated.sha256": "7b8ccea4a01afea758073e7f55f41542f29254a33f09eb44cb039b7be337fe95",
+    ".runtime\\migration\\workspace.tar.gz": "6207fd5c063704bfeb8195d99780e1946d835e27f485fbd41f7d575269707ec6",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\00_validacao_ambiente.ipynb": "cfb263add9201887f9c4f9dddd83c4714b83ef5b52a1db8f8f0f7cd616cd9f14",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\01_jornada_completa_planilha_turmas.ipynb": "eeacc6e47d5cc40cc1eace1731e08845012cf99207e08dc9546ea9c0bed2c0f5",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\02_teste_inferencia_planilha_turmas.ipynb": "9a9265265f0b7cb85fd32db4cb6e49d22e4d11adc23947d6c834170ca2c9ca82",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\03_exploracao_preparacao_dados.ipynb": "17e5ce6f8cc31d9c6c16fe973942dd88982480396965011b13e1ed863e7d61cc",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\04_treinamento_individual.ipynb": "fee632066b9cc02a40d4b168900854de9e313b3b64b4c5421b3ce86bbaa35c59",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\05_treinamento_campanha.ipynb": "1c346b81261993ab9482507296bbbbeae4e861807494de179f21d74a46f555b8",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\06_avaliacao_comparativa.ipynb": "bd544c6f9f6384d27c5f147536595f025497e31d6b1d5ceab35c0174c2a26f0d",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\07_registry_governanca.ipynb": "4fe24414624ed8c314a82d5ab925859fe635d0736a5cb57adc7b54e9bd56bddd",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\08_auditoria_lineage.ipynb": "1c8901c344d39c1c936bdd5d0b260040fbcf5b5be50557791661abdffe7130ac",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\09_reset_total_ambiente_poc.ipynb": "9ca85ff5cfe97117cee2597dd8788fbc39277e377c7e734bc68603b96656a1c3"
+  },
+  "status": "PREVIEW",
+  "plan_hash": "cbf95999769ba3e079fff9266a054fb516d8a267ef81ef27309e62ca97c9ad9b"
+}

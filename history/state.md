@@ -1,3 +1,41 @@
+# Estado atual — V2 validada e repositório revisado
+
+04/11/2026. Onze serviços principais saudáveis em Docker Compose. Código final
+798b586; CI41903976793 aprovado com instalação limpa, 79 testes e notebooks
+com escrita explícita. Matriz técnica 16/16 em artifacts/reports/v2/acceptance-v2.md.
+
+Jornada 01 executada no workspace em kernel novo: modelo 15, run
+c0d9f3138c874049b339e0f54ab8348c, execução 712b11cd-a96a-4bb9-83bb-691724ceae88.
+Foram lidos 1.050 registros SQL e reconciliadas 90 linhas de proposta pela API.
+Geração operacional pela API/worker:6391c652-a079-4a73-a6c6-a385e8b9774f.
+
+Campanha isolada 417cb008-faac-4cfe-9220-94d16bbf421a: 500 treinos reais em 310,72 s,
+concorrência 2. Snapshot DEMO compartilhado; isso não comprova qualidade acadêmica
+real ou 500 modelos carregados simultaneamente. Serving: 60 chamadas com 6 versões,
+p95 aproximado 0,383 s. Pausa, retomada, cancelamento, falhas MLflow/SQL,
+SIGKILL do worker com retomada de 30 treinos sem duplicação, aprovação, revogação,
+rollback, hashes e lineage N:N passaram. Ambos os resets e as jornadas posteriores
+passaram exclusivamente na stack isolada; seus containers agora estão parados.
+
+O ambiente principal preservou 69 runs concluídas, 49 versões e 12 propostas anteriores.
+Arquivos anteriores conferidos por hash; templates antigos e edições preservados
+fora da lista do Jupyter. Nenhum backup de banco novo e nenhum reset principal.
+Dez notebooks editáveis, com uma única jornada principal. Escrita e releitura pela
+API do Jupyter comprovadas após o último rebuild.
+
+Revisão em docs/REPOSITORY_REVIEW.md: dez scripts obsoletos e 33 imports sem uso
+removidos. Dev contém apenas README e três especificações. Ferramentas recorrentes
+em deployment/scripts; ensaios em tests/acceptance, ambos com índices de uso.
+Cache antigo de dev removido. Geração de credenciais unificada; gravação atômica
+para relatórios compartilhados; corrigidas correlação dos logs, paginação do
+grafo e busca paginada de versões para recuperação.
+
+Sem pendências de implementação ou aceite técnico V2. Dados reais e homologação
+acadêmica permanecem fora do aceite DEMO; contrato provisório identificado.
+Somente development publicada; staging e main sem merge.
+
+## Histórico de estados anteriores (não é orientação atual)
+
 # Estado atual - revisão V2 em validação final
 
 04/11/2026: usuário acrescentou code review completo e limpeza. Dez scripts V1/diagnósticos obsoletos removidos com hashes em artifacts/reports/v2/repository-cleanup.json. Imports sem uso removidos; corrigidos correlação da inferência, paginação de edges, recuperação paginada do Registry, inventário do notebook09 e quiescência do reset. Credenciais unificadas no inicializador Python; Dockerfiles reorganizados para cache. Reset-data/empty e factory/demo-ready PASS somente isolado, seguidos das jornadas A/B. SIGKILL do worker recuperou campanha30 sem duplicar versões. Principal preservou69runs/49versões/12propostas; jornada v14 PASS. Nenhum backup de banco novo. CI4b6314b PASS; código da revisão ainda em validação.

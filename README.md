@@ -215,6 +215,12 @@ Sem migrations próprias das tabelas MLflow. Bootstrap usa SDK suportado e
 ## 9. Evidências e diagnóstico
 
 [Relatórios V2](artifacts/reports/v2/) registram execução, IDs, hashes e limitações.
+[Aceite consolidado](artifacts/reports/v2/acceptance-v2.md) reúne a matriz dos
+16 critérios, testes e links das execuções. A
+[revisão de código](docs/REPOSITORY_REVIEW.md) registra os problemas corrigidos
+e a [limpeza](artifacts/reports/v2/repository-cleanup.json) lista os dez scripts
+obsoletos removidos. `dev` contém apenas instruções; consulte os índices de
+[ferramentas](deployment/scripts/README.md) e [ensaios](tests/acceptance/README.md).
 [Aceite V1.1 histórico](artifacts/reports/correcoes-v1.1-acceptance.md) não substitui
 aceite V2. PASS exige execução real; PARTIAL/NOT_EXECUTED não são conclusão.
 

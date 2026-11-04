@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-04T16:02:07.971275+00:00",
+  "timestamp_utc": "2026-11-04T20:12:47.879257+00:00",
   "results": [
     {
       "notebook": "00_validacao_ambiente.ipynb",
@@ -47,5 +47,5 @@
       "exit_code": 0
     }
   ],
-  "limitations": "04 training opt-in disabled;05 scheduler NOT_IMPLEMENTED;07 no promotion;09 preview only"
+  "limitations": "Read-only defaults only; opt-in training/generation/governance tested separately by v2_notebook_suite;09 preview only"
 }

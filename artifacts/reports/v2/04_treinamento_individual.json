@@ -1,0 +1,17 @@
+{
+  "timestamp_utc": "2026-11-04T20:12:30.532083+00:00",
+  "git_commit": "798b586ce95ae163251a025efafeac4e2fe21863",
+  "code_version": "sha256:c3a9af6b6859448a4fba9603744e3529671c9b735b1eb6b668f9b4a7987b9c9e",
+  "environment": "poc",
+  "project": "marista",
+  "test_id": "04_treinamento_individual",
+  "status": "PARTIAL",
+  "source_type": "DEMO",
+  "evidence": {
+    "training": "NOT_EXECUTED: escolha campanha existente ou habilite escrita"
+  },
+  "limitations": [
+    "Dados DEMO e contrato provisório; regras não avaliadas não são homologação",
+    "Execução sem erro do notebook não implica execução de operações opt-in desativadas"
+  ]
+}

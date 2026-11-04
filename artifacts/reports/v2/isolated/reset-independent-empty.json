@@ -1,0 +1,410 @@
+{
+  "timestamp_utc": "2026-11-04T18:25:21.490405+00:00",
+  "git_commit": "4b6314b041703e49f3f89d60179bd4b6cd976309",
+  "code_version": "sha256:3bdb22449ff0f0ea423655f772c442fb8e6721fc3c3a80ce245791431fa8f9bc",
+  "environment": "poc",
+  "project": "marista-correcoes-isolated",
+  "test_id": "reset-independent-empty",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "mode": "empty",
+    "models": 0,
+    "runs": 0,
+    "campaigns": 0,
+    "inventory": {
+      "databases": {
+        "planejamento_db": [
+          {
+            "table": "academic_cycles",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "academic_periods",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "audit_events",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "campuses",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "courses",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "dataset_snapshots",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "disciplines",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "historical_enrollments",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "lineage_edges",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "lineage_entities",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "model_approval_requests",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "model_catalog",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "model_deployments",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "model_quality_evaluations",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "offer_suggestions",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "operation_events",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "operation_jobs",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "period_disciplines",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "prediction_jobs",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "predictions",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "proposal_contract_evidence",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "proposal_generations",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "proposal_lines",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "proposal_model_usage",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "training_campaigns",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "training_executions",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          }
+        ],
+        "mlflow_db": [
+          {
+            "table": "alembic_version",
+            "count": 1,
+            "digest": "6928ed6a0b30741f6574f8d7c1d03428"
+          },
+          {
+            "table": "assessments",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "budget_policies",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "datasets",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "endpoint_bindings",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "endpoint_model_mappings",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "endpoint_tags",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "endpoints",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "entity_associations",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "evaluation_dataset_records",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "evaluation_dataset_tags",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "evaluation_datasets",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "experiment_tags",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "experiments",
+            "count": 1,
+            "digest": "22230d11c1fa069bfebeab6f271f00d0"
+          },
+          {
+            "table": "input_tags",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "inputs",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "issues",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "jobs",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "latest_metrics",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "logged_model_metrics",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "logged_model_params",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "logged_model_tags",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "logged_models",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "metrics",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "model_definitions",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "model_version_tags",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "model_versions",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "online_scoring_configs",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "params",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "registered_model_aliases",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "registered_model_tags",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "registered_models",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "runs",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "scorer_versions",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "scorers",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "secrets",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "span_metrics",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "spans",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "tags",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "trace_info",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "trace_metrics",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "trace_request_metadata",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "trace_tags",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "webhook_events",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "webhooks",
+            "count": 0,
+            "digest": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          {
+            "table": "workspaces",
+            "count": 1,
+            "digest": "f853bad469a0a08c243a1cef4b515440"
+          }
+        ]
+      },
+      "database_names": [
+        "mlflow_db",
+        "planejamento_db",
+        "postgres"
+      ],
+      "buckets": [
+        "pucpr-poc"
+      ],
+      "queues": [
+        {
+          "name": "celery",
+          "vhost": "/",
+          "messages": 0
+        }
+      ],
+      "bucket": "pucpr-poc",
+      "versioning": "Enabled",
+      "objects": [
+        {
+          "key": "checks/compatibility",
+          "version": "042ffc49-2d41-4648-bcac-2b02bcfb019a",
+          "kind": "Versions",
+          "size": 5
+        }
+      ]
+    }
+  },
+  "limitations": []
+}

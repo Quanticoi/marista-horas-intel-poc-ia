@@ -1,0 +1,140 @@
+{
+  "timestamp_utc": "2026-11-04T20:16:52.218627+00:00",
+  "git_commit": "798b586ce95ae163251a025efafeac4e2fe21863",
+  "environment": "poc",
+  "source_type": "DEMO",
+  "test_id": "V2-13",
+  "status": "PASS",
+  "project": "marista",
+  "evidence": {
+    "runtime": {
+      "timestamp_utc": "2026-11-04T20:12:17.075315+00:00",
+      "git_commit": "798b586ce95ae163251a025efafeac4e2fe21863",
+      "code_version": "sha256:c3a9af6b6859448a4fba9603744e3529671c9b735b1eb6b668f9b4a7987b9c9e",
+      "environment": "poc",
+      "project": "marista",
+      "test_id": "preservation-runtime-after",
+      "status": "PASS",
+      "source_type": "DEMO",
+      "evidence": {
+        "preserved_runs": 69,
+        "preserved_versions": 49,
+        "preserved_proposals": 12,
+        "artifact": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/4/models/m-036811b115484c20b5a05920c3112063/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "8e397d82a6dc8e33e1cf5ba2b8cecf4e2cbe86ea2a66a4509a442d7402271c2a",
+            "object_version_id": "09e60c6c-d27b-42e4-8fcb-b30f5e615319",
+            "model_version": "13",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/4/models/m-036811b115484c20b5a05920c3112063/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "object_version_id": "7ff9bb6c-d103-4f48-b8c0-2a6e46333e68",
+            "model_version": "13",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/4/models/m-036811b115484c20b5a05920c3112063/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "object_version_id": "2a38991f-8e4b-4ef2-8ba6-11fa7300b28e",
+            "model_version": "13",
+            "status": "PASS"
+          }
+        ],
+        "execution_id": "81d0a4af-b0d4-4a3f-b99e-671159d59fed"
+      },
+      "limitations": []
+    },
+    "protected_files": [
+      {
+        "path": ".env",
+        "status": "PASS",
+        "note": "Existing bytes preserved; separate operator credential appended"
+      },
+      {
+        "path": "workspace/notebooks/00_validacao_ambiente.ipynb",
+        "sha256": "7f7f67c3408ad9d8e4a8afa3c5230b28523242b7b03d0afda694d6f38df78ad7",
+        "preserved_at": "workspace/notebook-backups/00_validacao_ambiente.7f7f67c3408ad9d8e4a8afa3c5230b28523242b7b03d0afda694d6f38df78ad7.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebooks/01_jornada_completa_planilha_turmas.ipynb",
+        "sha256": "4a1bc2d7e2e43e27315d826ef98b1a62fa8017f46536d1490dcbf2a84ea5e528",
+        "preserved_at": "workspace/notebooks/01_jornada_completa_planilha_turmas.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebooks/02_teste_inferencia_planilha_turmas.ipynb",
+        "sha256": "032d0a27af1011aff8cdb4153d90d7f183f2e4bd31db7289288686c1b14e4fa3",
+        "preserved_at": "workspace/notebook-backups/02_teste_inferencia_planilha_turmas.032d0a27af1011aff8cdb4153d90d7f183f2e4bd31db7289288686c1b14e4fa3.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebooks/03_exploracao_preparacao_dados.ipynb",
+        "sha256": "5a545cc4214c3937dca53986e9edf7f1c380a5a8f6f07f3c9f8827f242972ea4",
+        "preserved_at": "workspace/notebook-backups/03_exploracao_preparacao_dados.5a545cc4214c3937dca53986e9edf7f1c380a5a8f6f07f3c9f8827f242972ea4.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebooks/04_treinamento_individual.ipynb",
+        "sha256": "3024eaf66645deb35027b34f7279ad3179920d4d61af409f585eca65e00c4203",
+        "preserved_at": "workspace/notebook-backups/04_treinamento_individual.3024eaf66645deb35027b34f7279ad3179920d4d61af409f585eca65e00c4203.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebooks/05_treinamento_campanha.ipynb",
+        "sha256": "cdacd6575da465860a3c32a2586a6fffebae63478399eb8e7497a4ec43581c0f",
+        "preserved_at": "workspace/notebook-backups/05_treinamento_campanha.cdacd6575da465860a3c32a2586a6fffebae63478399eb8e7497a4ec43581c0f.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebooks/06_avaliacao_comparativa.ipynb",
+        "sha256": "22ebf6b89cc501b21336f00a943e7446aced08d511de7b7a467b3c895572b685",
+        "preserved_at": "workspace/notebook-backups/06_avaliacao_comparativa.22ebf6b89cc501b21336f00a943e7446aced08d511de7b7a467b3c895572b685.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebooks/07_registry_governanca.ipynb",
+        "sha256": "b361bfd3c1741b5915a6c3f6696b151fdf210c6e2dd5924dfd0f310057f7563e",
+        "preserved_at": "workspace/notebook-backups/07_registry_governanca.b361bfd3c1741b5915a6c3f6696b151fdf210c6e2dd5924dfd0f310057f7563e.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebooks/08_auditoria_lineage.ipynb",
+        "sha256": "02c7a1201aff4de7da7a5d508d2a83ced4f30215896ccbccda947b243d13086e",
+        "preserved_at": "workspace/notebook-backups/08_auditoria_lineage.02c7a1201aff4de7da7a5d508d2a83ced4f30215896ccbccda947b243d13086e.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebooks/09_reset_total_ambiente_poc.ipynb",
+        "sha256": "977e37ae4e1ac959f4653a8f6b549425d47f65642a828049462cf4149555e818",
+        "preserved_at": "workspace/notebook-backups/09_reset_total_ambiente_poc.977e37ae4e1ac959f4653a8f6b549425d47f65642a828049462cf4149555e818.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebook-backups/01_jornada_completa_planilha_turmas.ab37343f32483440db03f8598617761e4a64a4eb24034fdbc50a4c3902614533.ipynb",
+        "sha256": "ab37343f32483440db03f8598617761e4a64a4eb24034fdbc50a4c3902614533",
+        "preserved_at": "workspace/notebook-backups/01_jornada_completa_planilha_turmas.ab37343f32483440db03f8598617761e4a64a4eb24034fdbc50a4c3902614533.ipynb",
+        "status": "PASS"
+      },
+      {
+        "path": "workspace/notebook-backups/01_jornada_completa_planilha_turmas.update-eeacc6e47d5c.703a4e4525c82b083180d5d9b13f3062a727c3a6e028e8af42fbb4439bee8f64.ipynb",
+        "sha256": "703a4e4525c82b083180d5d9b13f3062a727c3a6e028e8af42fbb4439bee8f64",
+        "preserved_at": "workspace/notebook-backups/01_jornada_completa_planilha_turmas.update-eeacc6e47d5c.703a4e4525c82b083180d5d9b13f3062a727c3a6e028e8af42fbb4439bee8f64.ipynb",
+        "status": "PASS"
+      }
+    ]
+  },
+  "limitations": [
+    "Templates intentionally updated; exact old bytes retained outside notebook list",
+    "No database backup created"
+  ]
+}

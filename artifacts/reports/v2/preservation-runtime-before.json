@@ -1,0 +1,1640 @@
+{
+  "runs": {
+    "0458ef944f184403a9242d8052c863a8": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "4aac59f96a4b448f918be9e01810dba8": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.00987927900860086,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.16025154601084068
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "2b061b9c373a4089bec09639dbd63ed3": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "e5eb660aa44b4542b7281105c34613da": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.009996238004532643,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.18404534200089984
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "14f0d5870f2e4aeb9b2088c639fb4732": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "218505656de54340bae7de7ea465e928": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "6d3153d23589442b8475e969f82a1d98": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.00944116900791414,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.47814879899669904
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "fefce538a4a3403d9010ff841287ad46": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "9ae5f4e86d1f4fcc86b4de32e7141a01": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "69fdee4b8f744f88b03117dfa2eaa5bb": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.013838898994436022,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.576565634997678
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "9c3595ba49e14cb186a1734c0dffd211": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "3d8f1eaeaa79412e90074567e6e2319b": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.010904861002927646,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.1342863639947609
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "f1cdd65b1fd84e4fa200ac4f45b1492f": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "03012b122e6143b2919807cd91973451": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.009476059000007808,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.5194244290032657
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "097525b9787e49bc93289e51676c665b": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "d16bb48748694adc95190ce52b2361ac": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.010613525999360718,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.4356549570002244
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "7d68c7648abb4256833827ebc51110ce": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "147fd510dc1044ebb6b97476ee4c0fc3": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.010528655999223702
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "12f5ce5f117c479fba9916d928d543bb": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "db01246f832c4deea7cba6fb49c305ea": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "1d62be545bed47c7b3f8847159fd7ff4": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.010289292000379646,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.49118126499888604
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "e7a4c9ecc5ba448eb9c11779abfca2f0": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "9c73432320ac49f8a0bdcac83a6005ec": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.013084825999612804,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.4303355339998234
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "afa8111b5c4548fa8498afd074aaf671": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "ad2530361ab14f7d87017c21d11958a1": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.010157905000028222,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.16026599899998928
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "a2c78074e2b442dfa020291f92ab0184": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "37e337f034214c3d86b935655c7a84c6": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.011763206000068749,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.4939475559999664
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "0238c619ca864aa586b1533f33f21e1a": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "10e217389382417cb0c6fa4ca83a79b8": {
+      "status": "FINISHED",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "training_seconds": 0.02064652400002842,
+        "inference_rows": 90.0,
+        "inference_seconds": 0.9980925610000213
+      },
+      "params": {
+        "algorithm": "Ridge",
+        "alpha": "1.0",
+        "seed": "42",
+        "features": "[\"course_id\", \"period_id\", \"discipline_id\", \"semester_index\", \"semester\"]",
+        "target": "students",
+        "rows": "1050",
+        "min_semester": "4040",
+        "max_semester": "4051",
+        "evaluation": "last semester; transformations fitted on earlier semesters only"
+      }
+    },
+    "7b8d166db4b74f968af1835b569f306c": {
+      "status": "FINISHED",
+      "metrics": {},
+      "params": {
+        "check": "write-read"
+      }
+    },
+    "45ea4c27df7f4bce9b4d2f44dc32a283": {
+      "status": "FINISHED",
+      "metrics": {
+        "validation_mae": 0.16609661216697386,
+        "validation_rmse": 0.21210400059011286,
+        "test_mae": 0.2638979410835126,
+        "test_rmse": 0.354512560086608
+      },
+      "params": {
+        "model_bootstrap": "True",
+        "model_ccp_alpha": "0.0",
+        "model_criterion": "squared_error",
+        "model_max_depth": "6",
+        "model_max_features": "1.0",
+        "model_max_leaf_nodes": "None",
+        "model_max_samples": "None",
+        "model_min_impurity_decrease": "0.0",
+        "model_min_samples_leaf": "3",
+        "model_min_samples_split": "2",
+        "model_min_weight_fraction_leaf": "0.0",
+        "model_monotonic_cst": "None",
+        "model_n_estimators": "100",
+        "model_n_jobs": "1",
+        "model_oob_score": "False",
+        "model_random_state": "42",
+        "model_verbose": "0",
+        "model_warm_start": "False",
+        "series": "unemp",
+        "algorithm": "random_forest",
+        "horizon": "1",
+        "train_rows": "159",
+        "validation_rows": "20",
+        "test_rows": "20",
+        "split": "chronological",
+        "selection_metric": "validation_mae",
+        "seed": "42",
+        "features": "lag1,lag2,lag4,mean4,previous_change"
+      }
+    },
+    "b3d774de2caa4fb39c31b6302c7fa108": {
+      "status": "FINISHED",
+      "metrics": {
+        "validation_mae": 0.16628987990914215,
+        "validation_rmse": 0.19408954463699607,
+        "test_mae": 0.21027826556406498,
+        "test_rmse": 0.27423158732091457
+      },
+      "params": {
+        "series": "unemp",
+        "algorithm": "ridge",
+        "horizon": "1",
+        "train_rows": "159",
+        "validation_rows": "20",
+        "test_rows": "20",
+        "split": "chronological",
+        "selection_metric": "validation_mae",
+        "seed": "42",
+        "features": "lag1,lag2,lag4,mean4,previous_change",
+        "model_memory": "None",
+        "model_steps": "[('standardscaler', StandardScaler()), ('ridge', Ridge())]",
+        "model_transform_input": "None",
+        "model_verbose": "False",
+        "model_standardscaler": "StandardScaler()",
+        "model_ridge": "Ridge()",
+        "model_standardscaler__copy": "True",
+        "model_standardscaler__with_mean": "True",
+        "model_standardscaler__with_std": "True",
+        "model_ridge__alpha": "1.0",
+        "model_ridge__copy_X": "True",
+        "model_ridge__fit_intercept": "True",
+        "model_ridge__max_iter": "None",
+        "model_ridge__positive": "False",
+        "model_ridge__random_state": "None",
+        "model_ridge__solver": "auto",
+        "model_ridge__tol": "0.0001"
+      }
+    },
+    "e99c3a8851644f6391d629f7cdaacf7d": {
+      "status": "FINISHED",
+      "metrics": {
+        "validation_mae": 0.19,
+        "validation_rmse": 0.2408318915758459,
+        "test_mae": 0.30999999999999994,
+        "test_rmse": 0.47434164902525683
+      },
+      "params": {
+        "series": "unemp",
+        "algorithm": "persistence",
+        "horizon": "1",
+        "train_rows": "159",
+        "validation_rows": "20",
+        "test_rows": "20",
+        "split": "chronological",
+        "selection_metric": "validation_mae",
+        "seed": "42",
+        "features": "lag1,lag2,lag4,mean4,previous_change"
+      }
+    },
+    "a74a0614ee4149768ba222f387055120": {
+      "status": "FINISHED",
+      "metrics": {
+        "validation_mae": 979.8438081349201,
+        "validation_rmse": 1036.3575686730726,
+        "test_mae": 732.7654824170284,
+        "test_rmse": 764.5805347432982
+      },
+      "params": {
+        "series": "realcons",
+        "algorithm": "random_forest",
+        "horizon": "1",
+        "train_rows": "159",
+        "validation_rows": "20",
+        "test_rows": "20",
+        "split": "chronological",
+        "selection_metric": "validation_mae",
+        "seed": "42",
+        "features": "lag1,lag2,lag4,mean4,previous_change",
+        "model_bootstrap": "True",
+        "model_ccp_alpha": "0.0",
+        "model_criterion": "squared_error",
+        "model_max_depth": "6",
+        "model_max_features": "1.0",
+        "model_max_leaf_nodes": "None",
+        "model_max_samples": "None",
+        "model_min_impurity_decrease": "0.0",
+        "model_min_samples_leaf": "3",
+        "model_min_samples_split": "2",
+        "model_min_weight_fraction_leaf": "0.0",
+        "model_monotonic_cst": "None",
+        "model_n_estimators": "100",
+        "model_n_jobs": "1",
+        "model_oob_score": "False",
+        "model_random_state": "42",
+        "model_verbose": "0",
+        "model_warm_start": "False"
+      }
+    },
+    "9ebe14ac7a5b49e68a5cbe9d8301993e": {
+      "status": "FINISHED",
+      "metrics": {
+        "validation_mae": 30.12007384549247,
+        "validation_rmse": 36.44800988567712,
+        "test_mae": 53.20154911518093,
+        "test_rmse": 71.48365652141815
+      },
+      "params": {
+        "series": "realcons",
+        "algorithm": "ridge",
+        "horizon": "1",
+        "train_rows": "159",
+        "validation_rows": "20",
+        "test_rows": "20",
+        "split": "chronological",
+        "selection_metric": "validation_mae",
+        "seed": "42",
+        "features": "lag1,lag2,lag4,mean4,previous_change",
+        "model_memory": "None",
+        "model_steps": "[('standardscaler', StandardScaler()), ('ridge', Ridge())]",
+        "model_transform_input": "None",
+        "model_verbose": "False",
+        "model_standardscaler": "StandardScaler()",
+        "model_ridge": "Ridge()",
+        "model_standardscaler__copy": "True",
+        "model_standardscaler__with_mean": "True",
+        "model_standardscaler__with_std": "True",
+        "model_ridge__alpha": "1.0",
+        "model_ridge__copy_X": "True",
+        "model_ridge__fit_intercept": "True",
+        "model_ridge__max_iter": "None",
+        "model_ridge__positive": "False",
+        "model_ridge__random_state": "None",
+        "model_ridge__solver": "auto",
+        "model_ridge__tol": "0.0001"
+      }
+    },
+    "770169065e084da6b65846af132254df": {
+      "status": "FINISHED",
+      "metrics": {
+        "validation_mae": 63.469999999999985,
+        "validation_rmse": 70.18943652715843,
+        "test_mae": 54.000000000000185,
+        "test_rmse": 61.87683734645802
+      },
+      "params": {
+        "series": "realcons",
+        "algorithm": "persistence",
+        "horizon": "1",
+        "train_rows": "159",
+        "validation_rows": "20",
+        "test_rows": "20",
+        "split": "chronological",
+        "selection_metric": "validation_mae",
+        "seed": "42",
+        "features": "lag1,lag2,lag4,mean4,previous_change"
+      }
+    },
+    "ff30e3de90bb47f6aff7da3c8078af94": {
+      "status": "FINISHED",
+      "metrics": {
+        "validation_mae": 1090.2051199402908,
+        "validation_rmse": 1150.3198784161232,
+        "test_mae": 949.9499019090875,
+        "test_rmse": 992.8609900539111
+      },
+      "params": {
+        "series": "realgdp",
+        "algorithm": "random_forest",
+        "horizon": "1",
+        "train_rows": "159",
+        "validation_rows": "20",
+        "test_rows": "20",
+        "split": "chronological",
+        "selection_metric": "validation_mae",
+        "seed": "42",
+        "features": "lag1,lag2,lag4,mean4,previous_change",
+        "model_bootstrap": "True",
+        "model_ccp_alpha": "0.0",
+        "model_criterion": "squared_error",
+        "model_max_depth": "6",
+        "model_max_features": "1.0",
+        "model_max_leaf_nodes": "None",
+        "model_max_samples": "None",
+        "model_min_impurity_decrease": "0.0",
+        "model_min_samples_leaf": "3",
+        "model_min_samples_split": "2",
+        "model_min_weight_fraction_leaf": "0.0",
+        "model_monotonic_cst": "None",
+        "model_n_estimators": "100",
+        "model_n_jobs": "1",
+        "model_oob_score": "False",
+        "model_random_state": "42",
+        "model_verbose": "0",
+        "model_warm_start": "False"
+      }
+    },
+    "e3983af2c5534ca9944116c6ec60ad1d": {
+      "status": "FINISHED",
+      "metrics": {
+        "validation_mae": 63.21994006675222,
+        "validation_rmse": 82.79815793852767,
+        "test_mae": 82.00843063022258,
+        "test_rmse": 110.54954679014253
+      },
+      "params": {
+        "series": "realgdp",
+        "algorithm": "ridge",
+        "horizon": "1",
+        "train_rows": "159",
+        "validation_rows": "20",
+        "test_rows": "20",
+        "split": "chronological",
+        "selection_metric": "validation_mae",
+        "seed": "42",
+        "features": "lag1,lag2,lag4,mean4,previous_change",
+        "model_memory": "None",
+        "model_steps": "[('standardscaler', StandardScaler()), ('ridge', Ridge())]",
+        "model_transform_input": "None",
+        "model_verbose": "False",
+        "model_standardscaler": "StandardScaler()",
+        "model_ridge": "Ridge()",
+        "model_standardscaler__copy": "True",
+        "model_standardscaler__with_mean": "True",
+        "model_standardscaler__with_std": "True",
+        "model_ridge__alpha": "1.0",
+        "model_ridge__copy_X": "True",
+        "model_ridge__fit_intercept": "True",
+        "model_ridge__max_iter": "None",
+        "model_ridge__positive": "False",
+        "model_ridge__random_state": "None",
+        "model_ridge__solver": "auto",
+        "model_ridge__tol": "0.0001"
+      }
+    },
+    "282c3af6380946ef84625c971b1c4690": {
+      "status": "FINISHED",
+      "metrics": {
+        "validation_mae": 81.03584999999984,
+        "validation_rmse": 99.83258949185868,
+        "test_mae": 88.15499999999993,
+        "test_rmse": 103.20540525331026
+      },
+      "params": {
+        "series": "realgdp",
+        "algorithm": "persistence",
+        "horizon": "1",
+        "train_rows": "159",
+        "validation_rows": "20",
+        "test_rows": "20",
+        "split": "chronological",
+        "selection_metric": "validation_mae",
+        "seed": "42",
+        "features": "lag1,lag2,lag4,mean4,previous_change"
+      }
+    },
+    "39fe97e5a3d9415695205da187a56c19": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 2.0,
+        "seasonal_rmse": 2.0,
+        "seasonal_smape": 2.1052631578947367,
+        "peak_rss_kb": 306792.0
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "True",
+        "history_length": "3"
+      }
+    },
+    "22539dadd24645fd92696c20d85fb13e": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 9.0,
+        "seasonal_rmse": 9.192388155425117,
+        "seasonal_smape": 9.110002061090068,
+        "forest_mae": 11.666666666666668,
+        "forest_rmse": 12.091142232482055,
+        "forest_smape": 11.653048388856078,
+        "ridge_mae": 9.0146801680945,
+        "ridge_rmse": 9.326707308269517,
+        "ridge_smape": 8.982192369468965,
+        "peak_rss_kb": 306792.0
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "bb3ca98771cd4f2baefe67794518c517": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 8.0,
+        "seasonal_rmse": 8.972179222463181,
+        "seasonal_smape": 9.025172117039588,
+        "forest_mae": 8.230729166666666,
+        "forest_rmse": 9.154104614510521,
+        "forest_smape": 9.21255372734731,
+        "ridge_mae": 10.660702044093568,
+        "ridge_rmse": 12.2659995982606,
+        "ridge_smape": 12.285776491913268,
+        "peak_rss_kb": 306792.0
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "9cb04d54e61a4d15b668b2fad88cc1aa": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 4.3901399063456665,
+        "seasonal_mae": 5.5,
+        "seasonal_rmse": 6.123724356957945,
+        "seasonal_smape": 6.24482969631142,
+        "forest_mae": 6.142708333333335,
+        "forest_rmse": 7.187402475183769,
+        "forest_smape": 7.015703955418237,
+        "ridge_rmse": 4.5708497510341655,
+        "ridge_smape": 4.677689424319159,
+        "peak_rss_kb": 306792.0
+      },
+      "params": {
+        "algorithm": "ridge",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "c76d1360957a461a80c1d92589ae229f": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 6.846859895466423,
+        "ridge_rmse": 10.346911658962972,
+        "ridge_smape": 7.138612438295332,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 7.25,
+        "seasonal_rmse": 10.5,
+        "seasonal_smape": 7.633252101419599,
+        "forest_mae": 8.1796875,
+        "forest_rmse": 11.616627109046112,
+        "forest_smape": 8.530227161133244
+      },
+      "params": {
+        "algorithm": "ridge",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "0d929ce5f3d7477d984ffbedd35b85f7": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 5.505451931668631,
+        "ridge_rmse": 5.684032076794329,
+        "ridge_smape": 6.166533911693879,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 7.75,
+        "seasonal_rmse": 8.874119674649425,
+        "seasonal_smape": 8.77134511919444,
+        "forest_mae": 8.037500000000001,
+        "forest_rmse": 9.57286203285099,
+        "forest_smape": 8.85256903267368
+      },
+      "params": {
+        "algorithm": "ridge",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "6c42faf1f3624d4e8de457c6a6156300": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 7.292016564410005,
+        "ridge_rmse": 8.948770466005886,
+        "ridge_smape": 8.4604115440663,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 5.5,
+        "seasonal_rmse": 5.70087712549569,
+        "seasonal_smape": 6.213700664819192,
+        "forest_mae": 9.713541666666664,
+        "forest_rmse": 9.867184187230022,
+        "forest_smape": 10.924407136095803
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "cf0a3cdac70a4228a222cb26e30839d6": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 4.455793797473689,
+        "ridge_rmse": 5.450024459248511,
+        "ridge_smape": 5.203622609759771,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 5.0,
+        "seasonal_rmse": 5.338539126015656,
+        "seasonal_smape": 5.868939142303407,
+        "forest_mae": 3.046875,
+        "forest_rmse": 4.135238241322986,
+        "forest_smape": 3.5716854066735455
+      },
+      "params": {
+        "algorithm": "forest",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "708a8307caf84f779e3e8baf5a8e9433": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 9.660853147382113,
+        "ridge_rmse": 11.720231777239881,
+        "ridge_smape": 11.689229773256242,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 7.25,
+        "seasonal_rmse": 7.952986860293433,
+        "seasonal_smape": 8.554581143887761,
+        "forest_mae": 9.02291666666667,
+        "forest_rmse": 11.06300689359714,
+        "forest_smape": 10.49345563772244
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "9b7d7ad0e40a41a69688ef44efd98c3e": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 7.122992356809277,
+        "ridge_rmse": 8.215431787847791,
+        "ridge_smape": 8.825088201499122,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 6.25,
+        "seasonal_rmse": 7.5,
+        "seasonal_smape": 7.904407904407904,
+        "forest_mae": 7.521874999999998,
+        "forest_rmse": 7.790090359713421,
+        "forest_smape": 9.371241051200377
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "4dc897e7671e4f1cb3a6b9a214f54897": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 11.243728852434629,
+        "ridge_rmse": 12.222872065964992,
+        "ridge_smape": 12.72538942321929,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 9.75,
+        "seasonal_rmse": 12.237238250520416,
+        "seasonal_smape": 11.016113463694108,
+        "forest_mae": 8.919791666666665,
+        "forest_rmse": 10.252413545450867,
+        "forest_smape": 9.871569816065751
+      },
+      "params": {
+        "algorithm": "forest",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "bc0c26cda469432aa82fd107714b4fb9": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 10.19620466647342,
+        "ridge_rmse": 12.009618014832993,
+        "ridge_smape": 11.723938600413023,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 9.5,
+        "seasonal_rmse": 10.024968827881711,
+        "seasonal_smape": 11.12755606949516,
+        "forest_mae": 7.846875000000004,
+        "forest_rmse": 8.877985853362242,
+        "forest_smape": 9.11102558668778
+      },
+      "params": {
+        "algorithm": "forest",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "a2f403ebeefd42c3b1e27f82b07389c5": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 10.501340581386444,
+        "ridge_rmse": 10.706234468101902,
+        "ridge_smape": 12.748459188278616,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 8.5,
+        "seasonal_rmse": 10.04987562112089,
+        "seasonal_smape": 10.133451467222038,
+        "forest_mae": 5.938749999999999,
+        "forest_rmse": 7.727750723852316,
+        "forest_smape": 6.925554208979878
+      },
+      "params": {
+        "algorithm": "forest",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "a8ba19a22c934e8e9b2f891900fb347f": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 1.9455780079460965,
+        "ridge_rmse": 2.2212553796396537,
+        "ridge_smape": 2.2255809068500745,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 4.75,
+        "seasonal_rmse": 5.123475382979799,
+        "seasonal_smape": 5.654088695624698,
+        "forest_mae": 6.471875000000004,
+        "forest_rmse": 8.040160966551328,
+        "forest_smape": 7.386094798340496
+      },
+      "params": {
+        "algorithm": "ridge",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "76ed9009db424f389b8eec7427f05297": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 10.221633435444915,
+        "ridge_rmse": 11.606018021374132,
+        "ridge_smape": 12.704983026845488,
+        "peak_rss_kb": 306792.0,
+        "seasonal_mae": 7.25,
+        "seasonal_rmse": 8.170067319184096,
+        "seasonal_smape": 9.141537633516524,
+        "forest_mae": 8.42520833333333,
+        "forest_rmse": 9.064058879335212,
+        "forest_smape": 10.770820569017165
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "ea59a1cd74f845438231357cd3570472": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 3.655335745591856,
+        "ridge_rmse": 3.9716195533831993,
+        "ridge_smape": 4.378119537727311,
+        "peak_rss_kb": 306600.0,
+        "seasonal_mae": 4.5,
+        "seasonal_rmse": 5.5677643628300215,
+        "seasonal_smape": 5.80502518704766,
+        "forest_mae": 5.550625000000004,
+        "forest_rmse": 6.43819911252363,
+        "forest_smape": 6.936190256403097
+      },
+      "params": {
+        "algorithm": "ridge",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "b0f189407e8a4a35b3a96b06b39212fe": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 10.054164577597874,
+        "ridge_rmse": 10.613181233287285,
+        "ridge_smape": 13.424593018638808,
+        "peak_rss_kb": 306600.0,
+        "seasonal_mae": 6.5,
+        "seasonal_rmse": 7.905694150420948,
+        "seasonal_smape": 8.831330578559623,
+        "forest_mae": 11.850312500000001,
+        "forest_rmse": 12.717914914231226,
+        "forest_smape": 15.559140051813817
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "3733f03816694ebc82d49e7110e143ec": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 4.768704112620526,
+        "ridge_rmse": 5.671741534056532,
+        "ridge_smape": 6.028291531292891,
+        "peak_rss_kb": 306600.0,
+        "seasonal_mae": 4.75,
+        "seasonal_rmse": 6.103277807866851,
+        "seasonal_smape": 5.600750600750601,
+        "forest_mae": 7.8125,
+        "forest_rmse": 8.755748111954796,
+        "forest_smape": 9.376580311145212
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "11"
+      }
+    },
+    "499f51d2b63640ddbf242ff862543d4b": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 4.702632640965334,
+        "ridge_rmse": 5.799697430211045,
+        "ridge_smape": 6.636108094358445,
+        "peak_rss_kb": 306600.0,
+        "seasonal_mae": 4.25,
+        "seasonal_rmse": 5.809475019311125,
+        "seasonal_smape": 5.988910810916103,
+        "forest_mae": 5.675000000000001,
+        "forest_rmse": 7.434148404491263,
+        "forest_smape": 7.9561439617771486
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "1b810e67d8c8463e85f9f8aca2fa2ec2": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 8.70257561840981,
+        "ridge_rmse": 11.153260645113924,
+        "ridge_smape": 11.367293179401608,
+        "peak_rss_kb": 306600.0,
+        "seasonal_mae": 7.0,
+        "seasonal_rmse": 7.968688725254614,
+        "seasonal_smape": 10.869939903056402,
+        "forest_mae": 10.09375,
+        "forest_rmse": 10.409584675912868,
+        "forest_smape": 14.237047974738683
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "2d6885eac1a64bba855a337d4a861aee": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 4.092729628350867,
+        "ridge_rmse": 5.530262302849091,
+        "ridge_smape": 5.5433402127244165,
+        "peak_rss_kb": 306600.0,
+        "seasonal_mae": 4.0,
+        "seasonal_rmse": 4.58257569495584,
+        "seasonal_smape": 5.516411850926856,
+        "forest_mae": 4.549999999999997,
+        "forest_rmse": 4.813749837704488,
+        "forest_smape": 5.693752808396495
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "43dac1aff87140c2ac69a47ef2b6d020": {
+      "status": "FINISHED",
+      "metrics": {
+        "ridge_mae": 8.736619212353162,
+        "ridge_rmse": 13.376786837962879,
+        "ridge_smape": 9.46382267242658,
+        "peak_rss_kb": 306600.0,
+        "seasonal_mae": 10.5,
+        "seasonal_rmse": 11.853269591129697,
+        "seasonal_smape": 12.56221151916516,
+        "forest_mae": 7.704166666666666,
+        "forest_rmse": 8.651363191396165,
+        "forest_smape": 9.005110517532797
+      },
+      "params": {
+        "algorithm": "forest",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "e995bb317f4e4178b8f0dcd1b6950f0b": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 3.5,
+        "seasonal_rmse": 4.123105625617661,
+        "seasonal_smape": 4.512303606785838,
+        "ridge_mae": 5.100368653349662,
+        "ridge_rmse": 6.198066133478835,
+        "ridge_smape": 6.409565278498623,
+        "peak_rss_kb": 306408.0,
+        "forest_mae": 3.2802083333333343,
+        "forest_rmse": 4.303802118314819,
+        "forest_smape": 4.101964080392652
+      },
+      "params": {
+        "algorithm": "forest",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "1910520f90b840b5868b14dbfd778582": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 4.75,
+        "seasonal_rmse": 6.5,
+        "seasonal_smape": 6.086849326815882,
+        "ridge_mae": 4.844803710400356,
+        "ridge_rmse": 6.753787331422624,
+        "ridge_smape": 6.056155082197702,
+        "forest_mae": 6.041666666666664,
+        "forest_rmse": 7.707448147373061,
+        "forest_smape": 7.880333952051064,
+        "peak_rss_kb": 306408.0
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "b7ebee316da64ef98e51d7863d00a2ec": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 4.0,
+        "seasonal_rmse": 5.0990195135927845,
+        "seasonal_smape": 5.317175650748104,
+        "ridge_mae": 6.330915448203541,
+        "ridge_rmse": 7.249524799680924,
+        "ridge_smape": 8.182300358516036,
+        "forest_mae": 8.544791666666665,
+        "forest_rmse": 10.286082535329525,
+        "forest_smape": 11.125971490796264,
+        "peak_rss_kb": 306408.0
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "ec479fc18bc142178c9a3f745a3920b6": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 7.75,
+        "seasonal_rmse": 8.645808232895291,
+        "seasonal_smape": 10.511874954382844,
+        "ridge_mae": 6.551557175581365,
+        "ridge_rmse": 9.268092718094563,
+        "ridge_smape": 8.639092064939259,
+        "forest_mae": 10.471354166666664,
+        "forest_rmse": 10.891208636521295,
+        "forest_smape": 13.86490975532076,
+        "peak_rss_kb": 306408.0
+      },
+      "params": {
+        "algorithm": "ridge",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "38036a46aae64d08b92287cd50544f72": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 7.0,
+        "seasonal_rmse": 7.314369419163897,
+        "seasonal_smape": 9.939831786764424,
+        "ridge_mae": 9.698844597472998,
+        "ridge_rmse": 10.195320921253618,
+        "ridge_smape": 13.884566822221451,
+        "forest_mae": 9.337499999999999,
+        "forest_rmse": 10.481188506080784,
+        "forest_smape": 12.469973992008363,
+        "peak_rss_kb": 306408.0
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "fcf1d76e7cf34d4f99446ee80d25f66d": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 8.75,
+        "seasonal_rmse": 9.526279441628825,
+        "seasonal_smape": 12.786106504272887,
+        "ridge_mae": 4.937649436364154,
+        "ridge_rmse": 5.281111055993474,
+        "ridge_smape": 6.899035865283063,
+        "forest_mae": 10.959895833333329,
+        "forest_rmse": 11.870316007871738,
+        "forest_smape": 15.202893076113073,
+        "peak_rss_kb": 306408.0
+      },
+      "params": {
+        "algorithm": "ridge",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "0cf0c390b9374fe7ade530cd7632b1c5": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 8.0,
+        "seasonal_rmse": 10.488088481701515,
+        "seasonal_smape": 12.904540763673891,
+        "ridge_mae": 12.746397320565052,
+        "ridge_rmse": 15.633121783374685,
+        "ridge_smape": 21.221915911716778,
+        "forest_mae": 11.263333333333334,
+        "forest_rmse": 12.986122306887628,
+        "forest_smape": 17.498719161828024,
+        "peak_rss_kb": 306408.0
+      },
+      "params": {
+        "algorithm": "seasonal",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    },
+    "09921087e028430b9d40e2c3a5f49237": {
+      "status": "FINISHED",
+      "metrics": {
+        "seasonal_mae": 9.75,
+        "seasonal_rmse": 10.874281585465774,
+        "seasonal_smape": 14.66306247559064,
+        "ridge_mae": 14.607781361758612,
+        "ridge_rmse": 16.497768759633864,
+        "ridge_smape": 21.035653751394698,
+        "forest_mae": 8.745833333333332,
+        "forest_rmse": 9.367287568388667,
+        "forest_smape": 13.38594319582602,
+        "peak_rss_kb": 306408.0
+      },
+      "params": {
+        "algorithm": "forest",
+        "fallback": "False",
+        "history_length": "12"
+      }
+    }
+  },
+  "versions": [
+    {
+      "name": "planilha-turmas-demo",
+      "version": "13",
+      "run_id": "4aac59f96a4b448f918be9e01810dba8",
+      "source": "models:/m-036811b115484c20b5a05920c3112063"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "12",
+      "run_id": "e5eb660aa44b4542b7281105c34613da",
+      "source": "models:/m-7a20e59a2cc7435e85adbdca36192770"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "11",
+      "run_id": "6d3153d23589442b8475e969f82a1d98",
+      "source": "models:/m-0fa1b34b9a6440a7b31b1ebbf29f339b"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "10",
+      "run_id": "69fdee4b8f744f88b03117dfa2eaa5bb",
+      "source": "models:/m-db1606e7123a447787a484c642643f75"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "9",
+      "run_id": "3d8f1eaeaa79412e90074567e6e2319b",
+      "source": "models:/m-48a6403d70774b9c8d20a5588492133b"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "8",
+      "run_id": "03012b122e6143b2919807cd91973451",
+      "source": "models:/m-378e0cf868604331bf7c52e0c1421114"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "7",
+      "run_id": "d16bb48748694adc95190ce52b2361ac",
+      "source": "models:/m-e99a38f59ba447de95f8c2f986d0239a"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "6",
+      "run_id": "147fd510dc1044ebb6b97476ee4c0fc3",
+      "source": "models:/m-7a2566c6ce49447087e13b7128754f90"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "5",
+      "run_id": "1d62be545bed47c7b3f8847159fd7ff4",
+      "source": "models:/m-a58e4b5fbdd1416cb96f439f9b04cb84"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "4",
+      "run_id": "9c73432320ac49f8a0bdcac83a6005ec",
+      "source": "models:/m-700b76ebe7724bfd9d7fd19d3bd11f25"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "3",
+      "run_id": "ad2530361ab14f7d87017c21d11958a1",
+      "source": "models:/m-1717e4e5a7d540de8ecd8aed5e40a049"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "2",
+      "run_id": "37e337f034214c3d86b935655c7a84c6",
+      "source": "models:/m-191c0a114ee0460382cfca759d83f59d"
+    },
+    {
+      "name": "planilha-turmas-demo",
+      "version": "1",
+      "run_id": "10e217389382417cb0c6fa4ca83a79b8",
+      "source": "models:/m-93c49e5ff3e4476887b0bc9f4a3eec18"
+    },
+    {
+      "name": "public-macrodata-unemp-random_forest",
+      "version": "1",
+      "run_id": "45ea4c27df7f4bce9b4d2f44dc32a283",
+      "source": "models:/m-cbc6eb2873ed4f5fb5ee6f871745dece"
+    },
+    {
+      "name": "public-macrodata-unemp-ridge",
+      "version": "1",
+      "run_id": "b3d774de2caa4fb39c31b6302c7fa108",
+      "source": "models:/m-438680e3419145028fdc8d4c0d062fff"
+    },
+    {
+      "name": "public-macrodata-realcons-random_forest",
+      "version": "1",
+      "run_id": "a74a0614ee4149768ba222f387055120",
+      "source": "models:/m-11a74a3dc3b241e28897cca56eee074f"
+    },
+    {
+      "name": "public-macrodata-realcons-ridge",
+      "version": "1",
+      "run_id": "9ebe14ac7a5b49e68a5cbe9d8301993e",
+      "source": "models:/m-eadd86d83aaa48858e08f587d4c1981e"
+    },
+    {
+      "name": "public-macrodata-realgdp-random_forest",
+      "version": "1",
+      "run_id": "ff30e3de90bb47f6aff7da3c8078af94",
+      "source": "models:/m-bbfd72c181104582a46c345ab9055ed4"
+    },
+    {
+      "name": "public-macrodata-realgdp-ridge",
+      "version": "1",
+      "run_id": "e3983af2c5534ca9944116c6ec60ad1d",
+      "source": "models:/m-33dba3d24db54e5491fd41dfc32483ef"
+    },
+    {
+      "name": "C3-CR5-P2",
+      "version": "1",
+      "run_id": "39fe97e5a3d9415695205da187a56c19",
+      "source": "s3://pucpr-poc/mlflow/1/39fe97e5a3d9415695205da187a56c19/artifacts/model"
+    },
+    {
+      "name": "C3-CR5-P1",
+      "version": "1",
+      "run_id": "22539dadd24645fd92696c20d85fb13e",
+      "source": "s3://pucpr-poc/mlflow/1/22539dadd24645fd92696c20d85fb13e/artifacts/model"
+    },
+    {
+      "name": "C3-CR4-P2",
+      "version": "1",
+      "run_id": "bb3ca98771cd4f2baefe67794518c517",
+      "source": "s3://pucpr-poc/mlflow/1/bb3ca98771cd4f2baefe67794518c517/artifacts/model"
+    },
+    {
+      "name": "C3-CR4-P1",
+      "version": "1",
+      "run_id": "9cb04d54e61a4d15b668b2fad88cc1aa",
+      "source": "s3://pucpr-poc/mlflow/1/9cb04d54e61a4d15b668b2fad88cc1aa/artifacts/model"
+    },
+    {
+      "name": "C3-CR3-P2",
+      "version": "1",
+      "run_id": "c76d1360957a461a80c1d92589ae229f",
+      "source": "s3://pucpr-poc/mlflow/1/c76d1360957a461a80c1d92589ae229f/artifacts/model"
+    },
+    {
+      "name": "C3-CR3-P1",
+      "version": "1",
+      "run_id": "0d929ce5f3d7477d984ffbedd35b85f7",
+      "source": "s3://pucpr-poc/mlflow/1/0d929ce5f3d7477d984ffbedd35b85f7/artifacts/model"
+    },
+    {
+      "name": "C3-CR2-P2",
+      "version": "1",
+      "run_id": "6c42faf1f3624d4e8de457c6a6156300",
+      "source": "s3://pucpr-poc/mlflow/1/6c42faf1f3624d4e8de457c6a6156300/artifacts/model"
+    },
+    {
+      "name": "C3-CR2-P1",
+      "version": "1",
+      "run_id": "cf0a3cdac70a4228a222cb26e30839d6",
+      "source": "s3://pucpr-poc/mlflow/1/cf0a3cdac70a4228a222cb26e30839d6/artifacts/model"
+    },
+    {
+      "name": "C3-CR1-P2",
+      "version": "1",
+      "run_id": "708a8307caf84f779e3e8baf5a8e9433",
+      "source": "s3://pucpr-poc/mlflow/1/708a8307caf84f779e3e8baf5a8e9433/artifacts/model"
+    },
+    {
+      "name": "C3-CR1-P1",
+      "version": "1",
+      "run_id": "9b7d7ad0e40a41a69688ef44efd98c3e",
+      "source": "s3://pucpr-poc/mlflow/1/9b7d7ad0e40a41a69688ef44efd98c3e/artifacts/model"
+    },
+    {
+      "name": "C2-CR5-P2",
+      "version": "1",
+      "run_id": "4dc897e7671e4f1cb3a6b9a214f54897",
+      "source": "s3://pucpr-poc/mlflow/1/4dc897e7671e4f1cb3a6b9a214f54897/artifacts/model"
+    },
+    {
+      "name": "C2-CR5-P1",
+      "version": "1",
+      "run_id": "bc0c26cda469432aa82fd107714b4fb9",
+      "source": "s3://pucpr-poc/mlflow/1/bc0c26cda469432aa82fd107714b4fb9/artifacts/model"
+    },
+    {
+      "name": "C2-CR4-P2",
+      "version": "1",
+      "run_id": "a2f403ebeefd42c3b1e27f82b07389c5",
+      "source": "s3://pucpr-poc/mlflow/1/a2f403ebeefd42c3b1e27f82b07389c5/artifacts/model"
+    },
+    {
+      "name": "C2-CR4-P1",
+      "version": "1",
+      "run_id": "a8ba19a22c934e8e9b2f891900fb347f",
+      "source": "s3://pucpr-poc/mlflow/1/a8ba19a22c934e8e9b2f891900fb347f/artifacts/model"
+    },
+    {
+      "name": "C2-CR3-P2",
+      "version": "1",
+      "run_id": "76ed9009db424f389b8eec7427f05297",
+      "source": "s3://pucpr-poc/mlflow/1/76ed9009db424f389b8eec7427f05297/artifacts/model"
+    },
+    {
+      "name": "C2-CR3-P1",
+      "version": "1",
+      "run_id": "ea59a1cd74f845438231357cd3570472",
+      "source": "s3://pucpr-poc/mlflow/1/ea59a1cd74f845438231357cd3570472/artifacts/model"
+    },
+    {
+      "name": "C2-CR2-P2",
+      "version": "1",
+      "run_id": "b0f189407e8a4a35b3a96b06b39212fe",
+      "source": "s3://pucpr-poc/mlflow/1/b0f189407e8a4a35b3a96b06b39212fe/artifacts/model"
+    },
+    {
+      "name": "C2-CR2-P1",
+      "version": "1",
+      "run_id": "3733f03816694ebc82d49e7110e143ec",
+      "source": "s3://pucpr-poc/mlflow/1/3733f03816694ebc82d49e7110e143ec/artifacts/model"
+    },
+    {
+      "name": "C2-CR1-P2",
+      "version": "1",
+      "run_id": "499f51d2b63640ddbf242ff862543d4b",
+      "source": "s3://pucpr-poc/mlflow/1/499f51d2b63640ddbf242ff862543d4b/artifacts/model"
+    },
+    {
+      "name": "C2-CR1-P1",
+      "version": "1",
+      "run_id": "1b810e67d8c8463e85f9f8aca2fa2ec2",
+      "source": "s3://pucpr-poc/mlflow/1/1b810e67d8c8463e85f9f8aca2fa2ec2/artifacts/model"
+    },
+    {
+      "name": "C1-CR5-P2",
+      "version": "1",
+      "run_id": "2d6885eac1a64bba855a337d4a861aee",
+      "source": "s3://pucpr-poc/mlflow/1/2d6885eac1a64bba855a337d4a861aee/artifacts/model"
+    },
+    {
+      "name": "C1-CR5-P1",
+      "version": "1",
+      "run_id": "43dac1aff87140c2ac69a47ef2b6d020",
+      "source": "s3://pucpr-poc/mlflow/1/43dac1aff87140c2ac69a47ef2b6d020/artifacts/model"
+    },
+    {
+      "name": "C1-CR4-P2",
+      "version": "1",
+      "run_id": "e995bb317f4e4178b8f0dcd1b6950f0b",
+      "source": "s3://pucpr-poc/mlflow/1/e995bb317f4e4178b8f0dcd1b6950f0b/artifacts/model"
+    },
+    {
+      "name": "C1-CR4-P1",
+      "version": "1",
+      "run_id": "1910520f90b840b5868b14dbfd778582",
+      "source": "s3://pucpr-poc/mlflow/1/1910520f90b840b5868b14dbfd778582/artifacts/model"
+    },
+    {
+      "name": "C1-CR3-P2",
+      "version": "1",
+      "run_id": "b7ebee316da64ef98e51d7863d00a2ec",
+      "source": "s3://pucpr-poc/mlflow/1/b7ebee316da64ef98e51d7863d00a2ec/artifacts/model"
+    },
+    {
+      "name": "C1-CR3-P1",
+      "version": "1",
+      "run_id": "ec479fc18bc142178c9a3f745a3920b6",
+      "source": "s3://pucpr-poc/mlflow/1/ec479fc18bc142178c9a3f745a3920b6/artifacts/model"
+    },
+    {
+      "name": "C1-CR2-P2",
+      "version": "1",
+      "run_id": "38036a46aae64d08b92287cd50544f72",
+      "source": "s3://pucpr-poc/mlflow/1/38036a46aae64d08b92287cd50544f72/artifacts/model"
+    },
+    {
+      "name": "C1-CR2-P1",
+      "version": "1",
+      "run_id": "fcf1d76e7cf34d4f99446ee80d25f66d",
+      "source": "s3://pucpr-poc/mlflow/1/fcf1d76e7cf34d4f99446ee80d25f66d/artifacts/model"
+    },
+    {
+      "name": "C1-CR1-P2",
+      "version": "1",
+      "run_id": "0cf0c390b9374fe7ade530cd7632b1c5",
+      "source": "s3://pucpr-poc/mlflow/1/0cf0c390b9374fe7ade530cd7632b1c5/artifacts/model"
+    },
+    {
+      "name": "C1-CR1-P1",
+      "version": "1",
+      "run_id": "09921087e028430b9d40e2c3a5f49237",
+      "source": "s3://pucpr-poc/mlflow/1/09921087e028430b9d40e2c3a5f49237/artifacts/model"
+    }
+  ],
+  "proposals": [
+    {
+      "execution_id": "46b6b778-3c52-4e15-ac52-3d3c5d5939a5",
+      "payload_sha256": "30032cbd16ed9d8af1659960d702824670cda70681765286401d431e8e42d9ef",
+      "row_count": 90
+    },
+    {
+      "execution_id": "46be6191-4d5c-4124-a65a-b8f1d4db12b7",
+      "payload_sha256": "a28dd8c8c9f46c910a016d941450787cfd10d91ea38b1172c19c9604dacea45e",
+      "row_count": 90
+    },
+    {
+      "execution_id": "496e6a0c-3128-4f26-bfe1-b3f61359c6ec",
+      "payload_sha256": "4fe53816394ac528c3fc0c788189952863fd7f65785591ea27d771ecb334b01d",
+      "row_count": 90
+    },
+    {
+      "execution_id": "61541e92-a80a-4041-8592-c8b87fadf475",
+      "payload_sha256": "7b325d6c58c39d57c356a8cfa6746fbcb8014c6d661dab1000ff7a324120ff20",
+      "row_count": 90
+    },
+    {
+      "execution_id": "78a89666-8872-41e8-9ec6-3a9b7e8322a1",
+      "payload_sha256": "ff79e496d3c8b29766cb056cfc2adab1ead9cfc73fc8bc8524edc969b59b1525",
+      "row_count": 90
+    },
+    {
+      "execution_id": "81d0a4af-b0d4-4a3f-b99e-671159d59fed",
+      "payload_sha256": "37c1570e1e26a1f36794548240acf5f822bfdb05348d0e283dc4f21bf189b109",
+      "row_count": 90
+    },
+    {
+      "execution_id": "8a8eed2d-992b-4049-8095-840003270b83",
+      "payload_sha256": "99d45c29764d88e8438098e0b80911aaffa93754070cadfe14a0deb40daf38e7",
+      "row_count": 90
+    },
+    {
+      "execution_id": "8d373b5a-f73d-4daa-b5cb-cde6ac238087",
+      "payload_sha256": "9a3d78e8e7fd577aba26ff2fb5a611bcc26e28782876a78a97a3e9f77a5615a2",
+      "row_count": 90
+    },
+    {
+      "execution_id": "93519267-7809-4e64-9e04-a79b9fb03d40",
+      "payload_sha256": "af9d0949c3e0f2b815644c8474358a9f678e26506d92baa0090da1a3d999c1a6",
+      "row_count": 90
+    },
+    {
+      "execution_id": "a741d0dd-d1ed-41eb-91d1-d5194c5fb692",
+      "payload_sha256": "00bd16eb962ec0763f4881653921c33f3a0bca799a6d8cacb72975506dd567ea",
+      "row_count": 90
+    },
+    {
+      "execution_id": "c0cf5e09-1a94-4935-ae65-3b3a9fbc6710",
+      "payload_sha256": "e6ebcdec9e0e03dff3da354c15e9777aa26677c2b0e89caed9950625aff2b072",
+      "row_count": 90
+    },
+    {
+      "execution_id": "d6260507-b9f4-4011-a3f6-b3dd511400d5",
+      "payload_sha256": "77a77040b40fb303e9d89fb9fc11a79786b30e8db6b1592967fd6827104756b9",
+      "row_count": 90
+    }
+  ]
+}

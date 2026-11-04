@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-11-04T20:15:42.871107+00:00",
+  "git_commit": "798b586ce95ae163251a025efafeac4e2fe21863",
+  "environment": "poc",
+  "project": "marista",
+  "test_id": "jupyter-editability",
+  "source_type": "DEMO",
+  "status": "PASS",
+  "notebooks": [
+    "00_validacao_ambiente.ipynb",
+    "01_jornada_completa_planilha_turmas.ipynb",
+    "02_teste_inferencia_planilha_turmas.ipynb",
+    "03_exploracao_preparacao_dados.ipynb",
+    "04_treinamento_individual.ipynb",
+    "05_treinamento_campanha.ipynb",
+    "06_avaliacao_comparativa.ipynb",
+    "07_registry_governanca.ipynb",
+    "08_auditoria_lineage.ipynb",
+    "09_reset_total_ambiente_poc.ipynb"
+  ],
+  "save_and_reload": true,
+  "temporary_notebook_removed": true
+}

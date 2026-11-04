@@ -1,0 +1,130 @@
+{
+    "url":  "https://github.com/Quanticoi/marista-horas-intel-poc-ia/actions/runs/41903976793",
+    "source_type":  "DEMO",
+    "environment":  "poc",
+    "test_id":  "V2-15",
+    "conclusion":  "success",
+    "created_at":  "2026-11-04T20:10:03Z",
+    "completed_at":  "2026-11-04T20:15:26Z",
+    "jobs":  [
+                 {
+                     "completedAt":  "2026-11-04T20:15:25Z",
+                     "conclusion":  "success",
+                     "databaseId":  126833549099,
+                     "name":  "validate",
+                     "startedAt":  "2026-11-04T20:10:06Z",
+                     "status":  "completed",
+                     "steps":  [
+                                   {
+                                       "completedAt":  "2026-11-04T20:10:07Z",
+                                       "conclusion":  "success",
+                                       "name":  "Set up job",
+                                       "number":  1,
+                                       "startedAt":  "2026-11-04T20:10:07Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:10:08Z",
+                                       "conclusion":  "success",
+                                       "name":  "Run actions/checkout@v4",
+                                       "number":  2,
+                                       "startedAt":  "2026-11-04T20:10:08Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:10:10Z",
+                                       "conclusion":  "success",
+                                       "name":  "Static contracts",
+                                       "number":  3,
+                                       "startedAt":  "2026-11-04T20:10:08Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:10:10Z",
+                                       "conclusion":  "success",
+                                       "name":  "Generate disposable CI credentials",
+                                       "number":  4,
+                                       "startedAt":  "2026-11-04T20:10:10Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:12:45Z",
+                                       "conclusion":  "success",
+                                       "name":  "Build and provision dependencies",
+                                       "number":  5,
+                                       "startedAt":  "2026-11-04T20:10:10Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:13:29Z",
+                                       "conclusion":  "success",
+                                       "name":  "Validate each instance and its dependencies",
+                                       "number":  6,
+                                       "startedAt":  "2026-11-04T20:12:45Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:13:32Z",
+                                       "conclusion":  "success",
+                                       "name":  "Application contract notebook (read-only)",
+                                       "number":  7,
+                                       "startedAt":  "2026-11-04T20:13:29Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:15:17Z",
+                                       "conclusion":  "success",
+                                       "name":  "V2 notebooks including opt-in paths in disposable CI",
+                                       "number":  8,
+                                       "startedAt":  "2026-11-04T20:13:32Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:15:17Z",
+                                       "conclusion":  "success",
+                                       "name":  "Sanitized runtime diagnostics before cleanup",
+                                       "number":  9,
+                                       "startedAt":  "2026-11-04T20:15:17Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:15:19Z",
+                                       "conclusion":  "success",
+                                       "name":  "Test reports",
+                                       "number":  10,
+                                       "startedAt":  "2026-11-04T20:15:17Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:15:23Z",
+                                       "conclusion":  "success",
+                                       "name":  "Dispose isolated CI stack",
+                                       "number":  11,
+                                       "startedAt":  "2026-11-04T20:15:19Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:15:23Z",
+                                       "conclusion":  "success",
+                                       "name":  "Post Run actions/checkout@v4",
+                                       "number":  22,
+                                       "startedAt":  "2026-11-04T20:15:23Z",
+                                       "status":  "completed"
+                                   },
+                                   {
+                                       "completedAt":  "2026-11-04T20:15:23Z",
+                                       "conclusion":  "success",
+                                       "name":  "Complete job",
+                                       "number":  23,
+                                       "startedAt":  "2026-11-04T20:15:23Z",
+                                       "status":  "completed"
+                                   }
+                               ],
+                     "url":  "https://github.com/Quanticoi/marista-horas-intel-poc-ia/actions/runs/41903976793/job/126833549099"
+                 }
+             ],
+    "timestamp_utc":  "2026-11-04T20:16:51.2960903Z",
+    "workflow_status":  "completed",
+    "status":  "PASS",
+    "git_commit":  "798b586ce95ae163251a025efafeac4e2fe21863"
+}

@@ -44,9 +44,10 @@ notebook executado também têm responsabilidades diferentes.
 
 ## Validação e limites
 
-78 testes unitários/integrados passaram na rodada principal da revisão, com
-regressão adicional da escrita compartilhada na rodada final; lint F/E9 não
-encontrou ocorrências. Testes reais cobriram reset isolado, SIGKILL do worker com
+79 testes unitários/integrados passaram na rodada final, incluindo a regressão
+da escrita compartilhada; lint F/E9 não encontrou ocorrências. O
+[CI final](https://github.com/Quanticoi/marista-horas-intel-poc-ia/actions/runs/41903976793)
+passou no commit 798b586. Testes reais cobriram reset isolado, SIGKILL do worker com
 retomada de 30 treinos sem duplicar versões, falha MLflow/SQL, idempotência,
 hashes S3, proposta N:N e preservação do ambiente principal. O aceite final V2
 registra separadamente o commit, rebuild, notebooks e CI finais.

@@ -1,22 +1,23 @@
 {
-  "timestamp_utc": "2026-11-04T16:15:41.758092+00:00",
-  "git_commit": "uncommitted",
-  "code_version": "sha256:7233bbcbbea4d0aa52d5785a9f891f0de23370fc9586df450d9e6a6214cbc4e8",
+  "timestamp_utc": "2026-11-04T18:28:07.904857+00:00",
+  "git_commit": "4b6314b041703e49f3f89d60179bd4b6cd976309",
+  "code_version": "sha256:2c2283a410ea43094bb8ce3e5548959f088b68f452260cf3653470ba60e36f4b",
   "environment": "poc",
+  "project": "marista-correcoes-isolated",
   "test_id": "probe-training",
   "status": "PASS",
   "source_type": "DEMO",
   "evidence": {
     "campaign": {
-      "campaign_id": "60a694f5-d771-4d3b-ad99-096ac6c7b101",
-      "idempotency_key": "da910fa5-0f94-43de-b904-18c8cbfe5613",
-      "request_hash": "79109ef4b68fc269c01376708017e915a2b181833ee86b3b4cf768f543d74480",
+      "campaign_id": "916d1199-388a-4bf6-9fb2-9bc2cc25f0af",
+      "idempotency_key": "dacbd6d8-f867-4efb-bbae-cc9654bf81ab",
+      "request_hash": "793f757eaeac3f6907359344e0d4274318d1e76d18dfa37e910171720e7e14fa",
       "request": {
         "alpha": 1.0,
         "algorithm": "ridge",
         "cycle_code": "2026-1",
         "model_keys": [
-          "hi.demo.probe.da910fa5"
+          "hi.demo.probe.dacbd6d8"
         ],
         "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
         "max_attempts": 3,
@@ -25,76 +26,80 @@
         "confirm_training": true,
         "max_parallel_jobs": 2
       },
-      "correlation_id": "da910fa5-0f94-43de-b904-18c8cbfe5613",
+      "correlation_id": "dacbd6d8-f867-4efb-bbae-cc9654bf81ab",
       "requested_by": "v2-probe",
       "status": "COMPLETED",
       "max_parallel_jobs": 2,
       "requested_count": 1,
-      "created_at_utc": "2026-11-04T16:15:37.671198+00:00",
-      "started_at_utc": "2026-11-04T16:15:37.705518+00:00",
-      "ended_at_utc": "2026-11-04T16:15:40.133773+00:00",
+      "created_at_utc": "2026-11-04T18:28:03.772552+00:00",
+      "started_at_utc": "2026-11-04T18:28:03.833308+00:00",
+      "ended_at_utc": "2026-11-04T18:28:06.145872+00:00",
       "counts": {
         "COMPLETED": 1
       }
     },
     "items": [
       {
-        "job_id": "f1c95b23-ee64-4799-86bb-c46eaf6f02b9",
-        "campaign_id": "60a694f5-d771-4d3b-ad99-096ac6c7b101",
-        "model_key": "hi.demo.probe.da910fa5",
+        "job_id": "739395cc-cd67-4b71-8e87-96f3a06b483e",
+        "campaign_id": "916d1199-388a-4bf6-9fb2-9bc2cc25f0af",
+        "model_key": "hi.demo.probe.dacbd6d8",
         "status": "COMPLETED",
         "attempt": 1,
-        "heartbeat_at_utc": "2026-11-04T16:15:39.803200+00:00",
-        "started_at_utc": "2026-11-04T16:15:37.705518+00:00",
-        "ended_at_utc": "2026-11-04T16:15:40.128383+00:00",
-        "mlflow_run_id": "6277582e511148c9a31b2aef3f22395e",
-        "registered_model_name": "hi.demo.probe.da910fa5",
+        "heartbeat_at_utc": "2026-11-04T18:28:05.707310+00:00",
+        "started_at_utc": "2026-11-04T18:28:03.833308+00:00",
+        "ended_at_utc": "2026-11-04T18:28:06.137955+00:00",
+        "mlflow_run_id": "bee6d80971e04e02a85c125755d37011",
+        "registered_model_name": "hi.demo.probe.dacbd6d8",
         "model_version": "1",
         "error_code": null,
         "result": {
-          "run_id": "6277582e511148c9a31b2aef3f22395e",
+          "run_id": "bee6d80971e04e02a85c125755d37011",
           "metrics": {
             "mae": 3.758630658273197,
             "rmse": 4.9142272796917865,
-            "cpu_seconds": 2.001943888,
+            "cpu_seconds": 1.724943009,
             "baseline_mae": 7.466666666666665,
-            "peak_rss_kib": 258468.0,
+            "peak_rss_kib": 259356.0,
             "baseline_rmse": 8.821497143283464,
-            "duration_seconds": 1.226081137006986
+            "duration_seconds": 0.855567799997516
           },
-          "model_uri": "models:/hi.demo.probe.da910fa5/1",
-          "model_name": "hi.demo.probe.da910fa5",
-          "artifact_uri": "models:/m-aec111d06b6b499e93ef62162f5628c3",
-          "experiment_id": "1",
+          "trace_id": "tr-219f4a494949f3e068cd3a2e43969f47",
+          "model_uri": "models:/hi.demo.probe.dacbd6d8/1",
+          "model_name": "hi.demo.probe.dacbd6d8",
+          "artifact_uri": "models:/m-b8870302a6ab464fb604a6946d9a8093",
+          "experiment_id": "2",
           "model_version": "1",
           "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
           "storage_evidence": [
             {
-              "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/MLmodel",
+              "key": "mlflow/2/models/m-b8870302a6ab464fb604a6946d9a8093/artifacts/MLmodel",
               "bytes": 1336,
               "bucket": "pucpr-poc",
-              "sha256": "836efd978b9c1750ec3702d7d9028b6bdb218998a0fcb23d8ab09e322bd778cd",
+              "sha256": "176b5017ccbbd83bd763d7fe709c89640376bd05ac3edcd0c8f84f692a153df0",
               "status": "PASS",
-              "model_version": "1"
+              "model_version": "1",
+              "object_version_id": "f46a23f4-7085-4c94-aeac-1a9bbd04b614"
             },
             {
-              "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/model.pkl",
+              "key": "mlflow/2/models/m-b8870302a6ab464fb604a6946d9a8093/artifacts/model.pkl",
               "bytes": 8671,
               "bucket": "pucpr-poc",
               "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
               "status": "PASS",
-              "model_version": "1"
+              "model_version": "1",
+              "object_version_id": "15371d4d-160d-402d-8c0f-d6efaf89b078"
             },
             {
-              "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/requirements.txt",
+              "key": "mlflow/2/models/m-b8870302a6ab464fb604a6946d9a8093/artifacts/requirements.txt",
               "bytes": 80,
               "bucket": "pucpr-poc",
               "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
               "status": "PASS",
-              "model_version": "1"
+              "model_version": "1",
+              "object_version_id": "f8604c1b-6724-4417-bf37-a546fc5b0f63"
             }
           ],
-          "training_execution_id": "f1c95b23-ee64-4799-86bb-c46eaf6f02b9"
+          "training_execution_id": "739395cc-cd67-4b71-8e87-96f3a06b483e"
         }
       }
     ]

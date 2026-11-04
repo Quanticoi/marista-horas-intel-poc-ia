@@ -1,458 +1,459 @@
 {
-  "timestamp_utc": "2026-11-04T16:57:45.634954+00:00",
-  "git_commit": "uncommitted",
-  "code_version": "sha256:0133b02d6c27fba2db326cf52ccdeada7ec5f05c63034629b818fcfaa783637c",
+  "timestamp_utc": "2026-11-04T20:07:38.018293+00:00",
+  "git_commit": "d93258a",
+  "code_version": "sha256:c3a9af6b6859448a4fba9603744e3529671c9b735b1eb6b668f9b4a7987b9c9e",
   "environment": "poc",
+  "project": "marista-correcoes-isolated",
   "test_id": "serving-after-restart",
   "status": "PASS",
   "source_type": "DEMO",
   "evidence": {
-    "campaign_id": "52eaaa10-4fa7-4410-861f-71ef572fcb89",
+    "campaign_id": "417cb008-faac-4cfe-9220-94d16bbf421a",
     "sample_size": 6,
     "requests": 60,
     "concurrency": 2,
-    "p50_seconds": 0.2788951580005232,
-    "p95_seconds": 0.5198285050435516,
-    "p99_seconds": 0.7005905537605577,
+    "p50_seconds": 0.26959174600051483,
+    "p95_seconds": 0.3829850872483803,
+    "p99_seconds": 0.40151836321179873,
     "before": {
       "cache": {
         "hits": 0,
-        "misses": 0,
+        "misses": 60,
         "maxsize": 4,
-        "currsize": 0
+        "currsize": 4
       },
-      "peak_rss_kib": 233324,
+      "peak_rss_kib": 300068,
       "policy": "At most four verified explicit versions per process; registration does not load a model"
     },
     "after": {
       "cache": {
         "hits": 0,
-        "misses": 64,
+        "misses": 120,
         "maxsize": 4,
         "currsize": 4
       },
-      "peak_rss_kib": 301548,
+      "peak_rss_kib": 302180,
       "policy": "At most four verified explicit versions per process; registration does not load a model"
     },
     "observations": [
       {
-        "seconds": 0.7000881249987287,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.27248187200166285,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "6623ecd7-329b-4d01-b4d2-55c27ef2392c",
+        "inference_id": "71c5d45d-a4af-4655-addc-bec4c29cf7f5",
         "rows": 5
       },
       {
-        "seconds": 0.7013135610031895,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.2724074159923475,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "2735b62c-d16b-47f4-81d4-8403675333ac",
+        "inference_id": "dcd5b2b6-ce80-4592-9352-86b4cb651f54",
         "rows": 5
       },
       {
-        "seconds": 0.26383651699870825,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.2515205009985948,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "d5afd8a6-2277-46ce-9050-f1bd1980fc18",
+        "inference_id": "bd3db078-d123-4e34-9aeb-6f777a0d45d4",
         "rows": 5
       },
       {
-        "seconds": 0.2618463319959119,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.2515590190014336,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "cb114a9b-7c6d-48b1-b581-f6aad7daa420",
+        "inference_id": "acf34dc5-5c4d-4be2-a170-ecf121190b3d",
         "rows": 5
       },
       {
-        "seconds": 0.2774123870040057,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.26008141899365,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "b41fd5a4-0f79-4016-a41a-193615fc289c",
+        "inference_id": "724ba459-11f7-43e5-997a-61dbf01e3888",
         "rows": 5
       },
       {
-        "seconds": 0.27768464900145773,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.259386084988364,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "8753432b-cd30-45e1-a563-883e8da8638a",
+        "inference_id": "3603697e-f495-4646-a894-a12170b77510",
         "rows": 5
       },
       {
-        "seconds": 0.27186500901007093,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.2610055770055624,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "c9274ead-bf46-4b65-b4f6-a3bcee5ce597",
+        "inference_id": "9175cd49-905b-4574-8222-d2b5a5eb7748",
         "rows": 5
       },
       {
-        "seconds": 0.27166515099816024,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.2613562279875623,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "678b1dc8-7d01-489f-ae3d-35c2ef106ab1",
+        "inference_id": "9a59ee34-64d9-40e6-af92-d6a1e32e5f54",
         "rows": 5
       },
       {
-        "seconds": 0.29912430699914694,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.3836667169962311,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "9fc4ff3b-9c88-457b-b49b-34b0252573bd",
+        "inference_id": "1b48e7a6-f63e-4b61-a105-a1efe23e0272",
         "rows": 5
       },
       {
-        "seconds": 0.2988542469975073,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.3829492119984934,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "74b203e6-75be-42eb-a0d3-2dda36289a88",
+        "inference_id": "0ae29293-941c-4b5d-bc3c-4ada142f6460",
         "rows": 5
       },
       {
-        "seconds": 0.5215450990071986,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.2537756329984404,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "2972b8f3-4350-4742-89ba-7efab671f155",
+        "inference_id": "63aac9ce-62e6-4264-9519-89dcff70d430",
         "rows": 5
       },
       {
-        "seconds": 0.5197381579928333,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.2533821760007413,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "657a7e0a-d09d-405a-91e5-2084a8d21784",
+        "inference_id": "53a87a62-d101-4240-879a-2c4e2cd8c054",
         "rows": 5
       },
       {
-        "seconds": 0.343992893001996,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.32030647300416604,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "3a3ef794-f85e-4a72-9aa1-96020782819c",
+        "inference_id": "2f23ebb9-5c01-49ab-ae62-b899146cdd7c",
         "rows": 5
       },
       {
-        "seconds": 0.42364974500378594,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.3199310299969511,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "d57a5c58-42fd-44fe-a6d1-cd09e796a88b",
+        "inference_id": "cec67313-29c6-4cfc-9290-19c1615cfff8",
         "rows": 5
       },
       {
-        "seconds": 0.3429215960059082,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.40148643200518563,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "e048ca0c-e950-4492-b480-73e9427b2513",
+        "inference_id": "5ce03b92-fb33-49cb-ae8e-5edab288dcce",
         "rows": 5
       },
       {
-        "seconds": 0.28395352899678983,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.40156431299692485,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "c58d395a-81a4-46ae-977a-95cc747799ac",
+        "inference_id": "2c3f8b82-cd14-4250-a115-2e1edf9aac38",
         "rows": 5
       },
       {
-        "seconds": 0.4031190130044706,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.28557531599653885,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "8be1618d-cf33-4a56-a542-742961da60ba",
+        "inference_id": "8ebce4e1-b680-4ecd-add5-16d0d8c87636",
         "rows": 5
       },
       {
-        "seconds": 0.3966844879905693,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.28553084800660145,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "df7917a7-5e0d-4254-af5b-27adef33d3ba",
+        "inference_id": "a3a370cd-c533-439b-9aa3-b1051eceeb09",
         "rows": 5
       },
       {
-        "seconds": 0.24306099700334016,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.25858413700188976,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "71dcfaee-c6b1-4cd5-a0e2-252a02e94f41",
+        "inference_id": "3d1139c6-6c9d-4019-8da5-1352498ac1a4",
         "rows": 5
       },
       {
-        "seconds": 0.2542560130095808,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.25825381799950264,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "e8df73a0-7be4-4bb3-a9ee-b8d2b906d2ee",
+        "inference_id": "64604c5c-e9e4-4857-94d0-8ec5868a165f",
         "rows": 5
       },
       {
-        "seconds": 0.2909687689971179,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.2654825460049324,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "4f856c71-4f9f-473c-adcf-578530a8e1c1",
+        "inference_id": "5d39ae7a-5273-45c4-a2c5-d1ad639790ce",
         "rows": 5
       },
       {
-        "seconds": 0.28253175799909513,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.26557468000100926,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "c1bc36c3-1b25-4688-aac2-80195fedf424",
+        "inference_id": "96e234c7-b682-4a44-8cd9-491d7f460e51",
         "rows": 5
       },
       {
-        "seconds": 0.2621154769876739,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.2635114139993675,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "c29fbb2c-9f5e-4774-9923-d7017ec0668f",
+        "inference_id": "5d03889b-e4f0-4cc4-8819-6cf9fa671e35",
         "rows": 5
       },
       {
-        "seconds": 0.2894554189988412,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.26381804299307987,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "c037131b-da86-4f9c-964f-d4d0eeca4647",
+        "inference_id": "80e1f9dc-3796-4b03-aa21-eed7007a41bd",
         "rows": 5
       },
       {
-        "seconds": 0.2761045289953472,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.2563041319954209,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "72223a8d-5cb0-4d1c-a88a-d1ce1eab373f",
+        "inference_id": "77b8c6fb-9a31-4eb1-9cc5-b708e85cc8f1",
         "rows": 5
       },
       {
-        "seconds": 0.35792539299291093,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.25563851300103124,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "75110bcf-d17a-4462-9add-3e9045b1aa6f",
+        "inference_id": "f9f1a24a-00d8-46ca-8171-6c5505e7ed33",
         "rows": 5
       },
       {
-        "seconds": 0.3400048540061107,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.255814399002702,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "9016f6ca-80e5-4420-a586-691290bf0188",
+        "inference_id": "5f1c57a4-5144-446d-bfc5-0ddc29de5f86",
         "rows": 5
       },
       {
-        "seconds": 0.3305886120069772,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.2558354430075269,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "e2356ee0-f381-4583-aa84-066eae5fbcdb",
+        "inference_id": "790972e9-c9f1-4a56-b4fa-58f20a6e9d55",
         "rows": 5
       },
       {
-        "seconds": 0.2330391030118335,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.2695392720052041,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "2a9a7d27-aa3a-4c8d-84f5-5e2a22b80927",
+        "inference_id": "3d2b4102-185b-4072-96ed-7c56950245f8",
         "rows": 5
       },
       {
-        "seconds": 0.25710264600638766,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.26921454099647235,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "e0d0e8ed-99ff-426b-9334-d41511cb76c2",
+        "inference_id": "cbe98774-26cd-4ccb-a993-8f2bf7bb939b",
         "rows": 5
       },
       {
-        "seconds": 0.26463623699964955,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.3019910959992558,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "287f5a59-1cda-40ff-b53f-bbdbe1d0cf99",
+        "inference_id": "fcf58503-8749-4b97-874f-a3b307189107",
         "rows": 5
       },
       {
-        "seconds": 0.2775557889981428,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.3020606779900845,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "33dd98a3-00a4-4343-8aab-e2dff163ad11",
+        "inference_id": "6cd37485-0f05-438d-b13b-98bb6cb1b912",
         "rows": 5
       },
       {
-        "seconds": 0.3681092609913321,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.294961407998926,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "ea864425-9a42-4fad-9b8c-742085e3ffe0",
+        "inference_id": "3c345988-6141-44eb-88b8-406c53583397",
         "rows": 5
       },
       {
-        "seconds": 0.5114650369941955,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.294949123999686,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "56c3ecf9-f4b2-4508-b9e9-ce843269b6be",
+        "inference_id": "0ff21c41-e2cc-4d33-96d7-9ab8182f9fe1",
         "rows": 5
       },
       {
-        "seconds": 0.4962281810003333,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.26930748400627635,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "3b2464ff-2956-483e-bd4d-4c6b1f07e76f",
+        "inference_id": "6fc1958f-c5fa-4ac3-b01a-5d307deac34f",
         "rows": 5
       },
       {
-        "seconds": 0.40134909299376886,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.26964421999582555,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "294b0d4b-eb1b-45ee-8454-cd7147cf69dc",
+        "inference_id": "03add5aa-8fa0-4b04-8363-bbc6c85721f8",
         "rows": 5
       },
       {
-        "seconds": 0.3519731600099476,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.2986882429977413,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "faf8d2a6-ab01-44b2-aba5-015fc24ee518",
+        "inference_id": "e509aaac-aa4f-4076-bcd5-6c0d4a253e2d",
         "rows": 5
       },
       {
-        "seconds": 0.2912867290142458,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.3021893109980738,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "582b98d5-b00b-4521-8120-ddf7dd12c710",
+        "inference_id": "6808b531-9686-43c1-b50a-45ccd9091538",
         "rows": 5
       },
       {
-        "seconds": 0.3032357000047341,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.27018184299231507,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "a06a9e2f-b77c-407f-b17f-37d9024d3480",
+        "inference_id": "ba02580c-5d69-4c1d-9999-11f99210555b",
         "rows": 5
       },
       {
-        "seconds": 0.3847276799933752,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.2663981700025033,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "9f1058e0-2727-4fdb-818c-20ec8c2bdf53",
+        "inference_id": "81d0cdcc-bf19-4cc2-a43c-59d6bfe18cf3",
         "rows": 5
       },
       {
-        "seconds": 0.3549903549865121,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.2709040269983234,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "338b3044-0b4e-4a0d-8143-b1cc5652c1cb",
+        "inference_id": "8dc68dcf-d4b1-439b-b2f7-cacf8006b567",
         "rows": 5
       },
       {
-        "seconds": 0.24002000800101086,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.2705698940117145,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "065a012f-1bcd-4021-8e33-f2cdc83d8673",
+        "inference_id": "531221ee-9eca-44ac-8685-2a67852008ec",
         "rows": 5
       },
       {
-        "seconds": 0.2540271159959957,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.27771168600884266,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "39475e34-4649-4945-af34-6c6f2bfca2a5",
+        "inference_id": "3758f19a-0e8a-4b4f-9b52-3b43a8b2768f",
         "rows": 5
       },
       {
-        "seconds": 0.25479453199659474,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.27771522699913476,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "f4ba5cfe-dd54-478b-8168-a612c5eb58b9",
+        "inference_id": "b53e1307-ba66-4390-8fdd-9405319f8ebd",
         "rows": 5
       },
       {
-        "seconds": 0.25400462599645834,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.3626729170064209,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "82b74098-9cff-4b57-b028-c6f3d088c153",
+        "inference_id": "569826d2-06d9-4cad-aef5-417397064b52",
         "rows": 5
       },
       {
-        "seconds": 0.26186979899648577,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.36270315300498623,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "51c8615f-4e11-4896-b470-25573434dde7",
+        "inference_id": "3aede722-53cd-48da-bdcf-4aba5ec787d0",
         "rows": 5
       },
       {
-        "seconds": 0.2497493340051733,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.25815372400393244,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "fc895c30-1afc-42f7-a741-4ed2c0f553de",
+        "inference_id": "cf8480ec-4af8-4751-b20a-ffdfc8c85232",
         "rows": 5
       },
       {
-        "seconds": 0.2670011050067842,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.2578449299908243,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "45b11afa-3a0f-4614-9b1d-23dbf1d413d7",
+        "inference_id": "b72a85de-9dd5-43ed-aff3-eafae3dac64f",
         "rows": 5
       },
       {
-        "seconds": 0.24709807999897748,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.24464151200663764,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "3f099813-fa28-4698-83f7-9ff3862136d7",
+        "inference_id": "e3108892-30b0-40ac-93de-b2588da4c1fe",
         "rows": 5
       },
       {
-        "seconds": 0.2438345849950565,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.24415362099534832,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "d0fdbf23-68e5-4319-a939-9835e47b3740",
+        "inference_id": "b3320a9e-d7a3-4cf1-9e3f-bc92f8252eb1",
         "rows": 5
       },
       {
-        "seconds": 0.2522025479993317,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.2682560969988117,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "627e6754-9708-4912-a8e0-c2ec64a9cd8b",
+        "inference_id": "16e42e33-a2d7-4dd5-b774-01faf5f15ba4",
         "rows": 5
       },
       {
-        "seconds": 0.27576356200734153,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.2681190040020738,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "5e166ec6-3550-4821-977b-a6e0138ba8c8",
+        "inference_id": "9ad41ae5-dbc1-45bd-bdb2-3d54368da265",
         "rows": 5
       },
       {
-        "seconds": 0.2801056669995887,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.2653320180106675,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "a9900c42-9944-498e-8525-6394f26fad43",
+        "inference_id": "5079a6a7-1473-41c3-bcd4-b75b6ffe5abd",
         "rows": 5
       },
       {
-        "seconds": 0.27210110500163864,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.2650101920007728,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "edec3161-aba2-4721-a82b-9c4e870d44ec",
+        "inference_id": "6cf30386-f1a9-4490-bdf9-4522551b5928",
         "rows": 5
       },
       {
-        "seconds": 0.3828269859950524,
-        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "seconds": 0.2802568210026948,
+        "model_name": "hi.demo.scale500.e7bad0c8.000",
         "version": "1",
-        "inference_id": "fe4bebe0-9e50-4071-b72f-5ed340e8ed7c",
+        "inference_id": "35b38d09-d121-43e4-81b4-b9b2cf811526",
         "rows": 5
       },
       {
-        "seconds": 0.3577110479964176,
-        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "seconds": 0.28030122400377877,
+        "model_name": "hi.demo.scale500.e7bad0c8.017",
         "version": "1",
-        "inference_id": "fa183d43-3c85-48dc-a779-9ad4ddaa2042",
+        "inference_id": "669e001c-0ce8-46d6-b1a2-956962919bab",
         "rows": 5
       },
       {
-        "seconds": 0.2572449279978173,
-        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "seconds": 0.290159345997381,
+        "model_name": "hi.demo.scale500.e7bad0c8.099",
         "version": "1",
-        "inference_id": "ce9578a4-4949-4b09-ad62-03af9d6f4fc0",
+        "inference_id": "dd57607b-4d78-437b-bf8c-6051cb49a57f",
         "rows": 5
       },
       {
-        "seconds": 0.2731998399976874,
-        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "seconds": 0.2907253619923722,
+        "model_name": "hi.demo.scale500.e7bad0c8.249",
         "version": "1",
-        "inference_id": "d83fa00a-14c5-40d3-b009-6d6b16a47afe",
+        "inference_id": "0896c052-e4ee-4cd0-9959-2602af4f4b17",
         "rows": 5
       },
       {
-        "seconds": 0.25902621999557596,
-        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "seconds": 0.31911647800006904,
+        "model_name": "hi.demo.scale500.e7bad0c8.399",
         "version": "1",
-        "inference_id": "9cdff7ee-6afe-4778-8f0d-03448dd4ab64",
+        "inference_id": "65655d9e-d053-4300-9266-183ea025e13d",
         "rows": 5
       },
       {
-        "seconds": 0.2194681029941421,
-        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "seconds": 0.31801637800526805,
+        "model_name": "hi.demo.scale500.e7bad0c8.499",
         "version": "1",
-        "inference_id": "04c19697-619e-4a42-b8b2-8a99261ea64f",
+        "inference_id": "1f45c326-1f4d-485e-ae58-a085086a6a96",
         "rows": 5
       }
     ]

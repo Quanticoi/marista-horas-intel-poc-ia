@@ -1,0 +1,9 @@
+{
+  "plan_id": "680a1a8d-7b00-49df-8fa1-9fc0fe6a5246",
+  "status": "RESET_PARTIAL",
+  "steps": [
+    "writers stopped"
+  ],
+  "timestamp_utc": "2026-11-04T18:00:42.571826+00:00",
+  "error_type": "ValueError"
+}
