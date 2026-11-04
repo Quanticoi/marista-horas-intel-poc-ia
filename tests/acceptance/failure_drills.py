@@ -1,7 +1,7 @@
 """Fault injection is hard-scoped to the disposable Compose project; restore in finally."""
 import subprocess
 from pathlib import Path
-root=Path(__file__).resolve().parents[1]
+root=Path(__file__).resolve().parents[2]
 base=["docker","compose","--env-file",".env","-f",".runtime/correcoes-isolated/compose.json"]
 def run(*args):
     subprocess.run(base+list(args),cwd=root,check=True,timeout=900)

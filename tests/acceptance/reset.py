@@ -2,14 +2,14 @@
 import importlib.util,json,subprocess
 from pathlib import Path
 from datetime import datetime,timezone
-root=Path(__file__).resolve().parents[1]
+root=Path(__file__).resolve().parents[2]
 spec=importlib.util.spec_from_file_location("reset",root/"deployment/scripts/reset_poc.py")
 reset=importlib.util.module_from_spec(spec);spec.loader.exec_module(reset)
 project="marista-correcoes-isolated"
 proofs=[]
 def proof(mode):
     reset.compose(project,"run","--rm","--no-deps","--entrypoint","python","-e","RESET_EXPECTED_MODE="+mode,
-        "-v",str(root/"dev/verify_reset_v2.py")+":/app/verify_reset_v2.py:ro","tools","/app/verify_reset_v2.py")
+        "-v",str(root/"tests/acceptance/verify_reset.py")+":/app/verify_reset_v2.py:ro","tools","/app/verify_reset_v2.py")
 def journey():
     reset.compose(project,"exec","-T","jupyter","/usr/local/bin/_entrypoint.sh","python","-m","src.workbench.execute_journey")
     reset.compose(project,"exec","-T","jupyter","/usr/local/bin/_entrypoint.sh","python","-m","src.workbench.v2_probe")

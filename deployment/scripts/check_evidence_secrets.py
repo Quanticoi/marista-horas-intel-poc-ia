@@ -1,6 +1,6 @@
 """Check evidence for configured secret values without revealing matches."""
 from pathlib import Path
-root=Path(__file__).resolve().parents[1]
+root=Path(__file__).resolve().parents[2]
 values=[]
 for line in (root/".env").read_text().splitlines():
     if "=" in line and not line.startswith("#"):

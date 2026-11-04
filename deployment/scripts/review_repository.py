@@ -6,7 +6,7 @@ from collections import defaultdict
 from datetime import datetime,timezone
 from pathlib import Path
 
-root=Path(__file__).resolve().parents[1]
+root=Path(__file__).resolve().parents[2]
 paths=[]
 for folder in ('src','tests','deployment','dev','config','sql','notebooks','docs'):
     paths.extend(p for p in (root/folder).rglob('*') if p.is_file()

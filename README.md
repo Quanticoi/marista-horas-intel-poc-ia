@@ -111,7 +111,7 @@ e dados e executa uma nova jornada DEMO identificada; não faz reset.
 Linux: `docker compose up -d --wait`, `docker compose ps`, `docker compose stop`;
 rebuild pelo script. Bootstrap acrescenta OPERATOR_TOKEN ausente sem trocar
 credenciais existentes. Configuração: [.env.example](.env.example),
-[Compose](compose.yaml), [gerador](dev/generate_compose.py).
+[Compose](compose.yaml), [gerador](deployment/scripts/generate_compose.py).
 
 Fonte SQL sintética: `planejamento_db.planning`. Notebook lê com usuário readonly;
 worker usa usuário de aplicação. [Consulta versionada](sql/queries/journey_history.sql)
@@ -221,8 +221,8 @@ aceite V2. PASS exige execução real; PARTIAL/NOT_EXECUTED não são conclusão
 ```powershell
 .\deployment\scripts\compose.ps1 journey
 .\deployment\scripts\compose.ps1 test
-python dev/validate_static.py
-python dev/generate_compose.py --check
+python deployment/scripts/validate_static.py
+python deployment/scripts/generate_compose.py --check
 docker compose logs --tail 100 api worker inference mlflow
 ```
 

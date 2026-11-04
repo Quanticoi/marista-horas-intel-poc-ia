@@ -3,7 +3,7 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 shared = dict(DB_HOST="postgres", RABBITMQ_HOST="rabbitmq", RUNTIME="compose",
     MLFLOW_TRACKING_URI="http://mlflow:5000", MLFLOW_S3_ENDPOINT_URL="http://rustfs:9000",
     S3_BUCKET="pucpr-poc", API_URI="http://api:8000", INFERENCE_URI="http://inference:8001",

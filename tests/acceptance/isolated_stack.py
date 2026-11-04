@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 directory = ROOT / ".runtime" / "correcoes-isolated"
 directory.mkdir(parents=True, exist_ok=True)
 document = json.loads((ROOT / "compose.yaml").read_text())

@@ -1,0 +1,18 @@
+{
+    "timestamp_utc":  "2026-11-04T19:26:00.1265404Z",
+    "status":  "PASS",
+    "test_id":  "dev-organization",
+    "moves":  {
+                  "dev/v2_failure_drills.py":  "tests/acceptance/failure_drills.py",
+                  "dev/v2_reset_acceptance.py":  "tests/acceptance/reset.py",
+                  "dev/review_repository.py":  "deployment/scripts/review_repository.py",
+                  "dev/collect_v2_evidence.py":  "tests/acceptance/collect_evidence.py",
+                  "dev/validate_static.py":  "deployment/scripts/validate_static.py",
+                  "dev/check_evidence_secrets.py":  "deployment/scripts/check_evidence_secrets.py",
+                  "dev/generate_compose.py":  "deployment/scripts/generate_compose.py",
+                  "dev/isolated_stack.py":  "tests/acceptance/isolated_stack.py",
+                  "dev/verify_reset_v2.py":  "tests/acceptance/verify_reset.py",
+                  "dev/preservation_v2.py":  "tests/acceptance/preservation.py"
+              },
+    "note":  "History and old evidence retain paths used at execution time"
+}

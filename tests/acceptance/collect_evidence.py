@@ -2,7 +2,7 @@
 import hashlib,json,shutil
 from pathlib import Path
 from datetime import datetime,timezone
-root=Path(__file__).resolve().parents[1]
+root=Path(__file__).resolve().parents[2]
 source=root/".runtime/correcoes-isolated/artifacts/reports/v2"
 destination=root/"artifacts/reports/v2/isolated"
 shutil.copytree(source,destination,dirs_exist_ok=True)
