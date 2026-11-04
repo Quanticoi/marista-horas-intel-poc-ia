@@ -2,6 +2,13 @@
 import json
 from pathlib import Path
 
+def inventory_view(inventory):
+    """Table names are identifiers, not credential fields; retain only hashes/counts."""
+    return {**inventory,"databases":{
+        database:[dict(table=name,count=values["count"],digest=values["digest"])
+                  for name,values in tables.items()]
+        for database,tables in inventory.get("databases",{}).items()}}
+
 def review_plan(params):
     mode="reset-data" if params.reset_mode=="preview" else params.reset_mode
     result=dict(state="PREVIEW_REQUIRED",commands={
@@ -14,11 +21,14 @@ def review_plan(params):
         if not plan.exists():
             raise ValueError("Plan not found: generate preview on host and select its UUID")
         document=json.loads(plan.read_text())
-        result.update(state="PLAN_AVAILABLE",plan_id=str(params.reset_plan_id),inventory=document.get("inventory",{}),
-            protected_files=document.get("preserved",{}),plan=document)
+        result.update(state="PLAN_AVAILABLE",plan_id=str(params.reset_plan_id),inventory=inventory_view(document.get("inventory",{})),
+            protected_files=document.get("preserved",{}),
+            plan_metadata={k:document[k] for k in ("plan_id","plan_hash","mode","environment","created_at_utc","scope")})
         project=document["scope"]["project"]
         result["commands"]["execution"]=f"python deployment/scripts/reset_poc.py execute --environment poc --project {project} --plan-id {params.reset_plan_id} --execute --reinitialize {params.reinitialize}"
         executed=root/(str(params.reset_plan_id)+".result.json")
         if executed.exists():
             result["result"]=json.loads(executed.read_text())
+            if "after" in result["result"]:
+                result["result"]["after"]=inventory_view(result["result"]["after"])
     return result

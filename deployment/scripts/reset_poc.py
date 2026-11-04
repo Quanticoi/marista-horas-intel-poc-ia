@@ -142,7 +142,11 @@ def execute_plan(plan,environment,project,phrase,execute,reinitialize):
     with lock():
         try:
             validate_plan(plan,phrase,execute,environment,project)
-            compose(project,"stop")
+            # Quiesce all application writers without restarting persistence.
+            # Restarting RabbitMQ can remove an empty queue and invalidate the
+            # inventory even though no data was written during quiescence.
+            compose(project,"stop","worker","api","inference","jupyter",
+                    "ingestion","dashboard","monitoramento","mlflow")
             result["steps"].append("writers stopped")
             compose(project,"up","-d","--wait","--wait-timeout","180","postgres","rustfs","rabbitmq")
             if plan["inventory"]!=data_inventory(project):
