@@ -33,6 +33,8 @@ function Test-Application {
 }
 function Test-Journey {
     D @('exec','-T','jupyter','/usr/local/bin/_entrypoint.sh','python','-m','src.workbench.execute_journey')
+    $proposalId=(Get-Content -Raw 'artifacts/reports/journey-latest.json' | ConvertFrom-Json).execution_id
+    D @('exec','-T','jupyter','/usr/local/bin/_entrypoint.sh','python','-m','src.workbench.execute_notebook','02_teste_inferencia_planilha_turmas.ipynb','--proposal-id',$proposalId)
     D @('run','--rm','--no-deps','--entrypoint','python','tools','-m','pytest','tests/integration/test_journey.py','-q','-o','cache_dir=/tmp/pytest-cache','--junitxml=/reports/journey-junit.xml')
 }
 function Rebuild {

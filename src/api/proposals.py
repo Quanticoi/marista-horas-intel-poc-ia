@@ -1,6 +1,8 @@
 from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException, Query
 from src.persistence.db import rows
+from src.persistence.db import engine
+from src.api.proposal_contract import ApplicationView, build_view
 
 
 def router(auth):
@@ -29,4 +31,18 @@ def router(auth):
         return rows("""SELECT * FROM planning.proposal_lines WHERE execution_id=:id
             ORDER BY course_id,period_id,discipline_id LIMIT :limit OFFSET :offset""",
             dict(id=execution_id,limit=limit,offset=offset))
+    @routes.get("/{execution_id}/application-view", response_model=ApplicationView,
+                description="PROVISÓRIO / PENDENTE DE HOMOLOGAÇÃO. Hash da página JSON canônica sem payload_sha256.")
+    def application_view(execution_id: UUID, limit: int = Query(100,ge=1,le=500), offset: int = Query(0,ge=0)):
+        try:
+            with engine().connect() as con:
+                return build_view(con,execution_id,limit,offset)
+        except LookupError:
+            raise HTTPException(404,"Proposal generation not found") from None
+
+    @routes.get("/{execution_id}/lineage")
+    def lineage(execution_id: UUID, limit: int = Query(100,ge=1,le=500), offset: int = Query(0,ge=0)):
+        generation(execution_id)
+        return rows("SELECT * FROM planning.v_lineage_proposal WHERE proposal_id=:id ORDER BY model_key,model_version LIMIT :limit OFFSET :offset",
+                    dict(id=execution_id,limit=limit,offset=offset))
     return routes

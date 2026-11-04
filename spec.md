@@ -1,6 +1,11 @@
 > Decisão vigente (30/10/2026): jornada completa exclusivamente em Docker Compose, sem Rancher/Kubernetes. Veja docs/operations/JOURNEY.md e history/state.md. Exigências históricas de pods abaixo não se aplicam ao runtime desta POC.
 
-# SPEC — PUCPR Horários Inteligentes | PoC MLOps em Kubernetes
+# SPEC — PUCPR Horários Inteligentes | baseline e evolução
+
+Correções vigentes: [spec-correcoes v1.1](dev/spec-correcoes.md), implementadas
+incrementalmente com evidências em artifacts/reports. Operação atual está no
+[README](README.md). As seções de Kubernetes abaixo são baseline histórico,
+preservado para rastreio; não são instruções de instalação da POC Compose.
 
 **Versão:** 1.0 (baseline de implementação)  
 **Estado:** proposta técnica da PoC; não equivale a implantação concluída nem à homologação do C3  

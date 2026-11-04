@@ -18,6 +18,28 @@ salas e professores nem representa integração com fontes institucionais.
 
 ## Arquitetura
 
+Referências institucionais: desenhos de componentes, containers e sequência V3;
+requisitos V4.4 de 25/09/2026. [Fontes e diagnóstico](artifacts/reports/correcoes-fase-a-2026-11-04.md)
+e [matriz de responsabilidades/cobertura](docs/architecture/FUNCTIONAL_COVERAGE.md).
+Jupyter é análogo funcional ao Workbench, RustFS ao Object Storage e PostgreSQL ao
+armazenamento relacional. Na arquitetura-alvo, o worker da aplicação coordena e
+persiste o negócio; a escrita DRAFT pelo notebook é um adaptador demonstrativo.
+Não há publicação institucional ou aprovação automática.
+
+### Navegação da evolução v1.1
+
+- [Catálogo dos dez notebooks e permissões](notebooks/README.md).
+- [Identidades, hashes e navegação HI-LINEAGE](docs/architecture/LINEAGE.md).
+- [Contrato JSON provisório da aplicação](docs/contracts/README.md).
+- [Notebook02: validar a proposta existente](docs/operations/INFERENCE_NOTEBOOK.md).
+- [Organização de30/500 modelos e limites medidos](docs/operations/MLFLOW_MODEL_ORGANIZATION.md).
+- [Reset total e confirmação forte](docs/operations/RESET_POC.md).
+
+O contrato `poc-planilha-turmas-v1` é **PROVISÓRIO / PENDENTE DE HOMOLOGAÇÃO**.
+No notebook02, ausência de dados de coorte, turno, origem de estudantes ou matriz
+institucional aparece como null/NOT_EVALUATED. Capacidade40 é regra DEMO, não
+comprovação de RF040–047.
+
 O Jupyter é o ambiente de trabalho do analista: abre as conexões SQL, prepara os
 dados e treina o modelo. O MLflow é um serviço independente: recebe parâmetros,
 métricas e artefatos, mantém o catálogo de versões e grava os binários no RustFS.
@@ -179,9 +201,9 @@ A implementação fica em módulos Python reutilizáveis de `src/`.
 | `notebooks/` no repositório | Fontes versionadas distribuídas com o projeto |
 | `notebooks/` dentro do Jupyter | Cópias editáveis, salvas no host em `workspace/notebooks/` |
 
-A inicialização disponibiliza somente a Jornada Completa no workspace e preserva arquivos
-já existentes. Para adotar uma versão atualizada do notebook versionado, salve suas
-alterações e copie a versão desejada para o workspace. Para versionar alterações
+A inicialização disponibiliza o catálogo00–09 no workspace e preserva arquivos
+editados. Atualizações conflitantes recebem sufixo `.update-<hash>`; compare essa
+cópia com sua edição antes de incorporá-la. Para versionar alterações
 feitas no Jupyter, revise e copie o arquivo de volta para `notebooks/` do repositório.
 
 Para executar automaticamente:
@@ -405,6 +427,47 @@ workspace/             Trabalho local do Jupyter, ignorado pelo Git
 ```
 
 ## Fluxos complementares e documentação
+
+## Reset total da POC — operação destrutiva
+
+### Inicialização Linux/Bash
+
+Com Docker Engine/Compose e Python3 instalados, no diretório do repositório:
+
+```bash
+python3 deployment/scripts/init_env.py
+mkdir -p workspace/notebooks data/compose-logs artifacts/reports
+chmod 777 workspace workspace/notebooks data/compose-logs artifacts/reports
+sh deployment/scripts/journey.sh rebuild
+docker compose ps
+```
+
+O chmod permite escrita dos UIDs dos containers neste ambiente local; ajuste ACLs
+conforme a política do host. O script preserva `.env` existente e volumes. Windows
+usa o quickstart PowerShell acima. Testes Linux remotos são evidenciados pelo CI.
+
+### Controlador de reset
+
+Use o [guia de reset](docs/operations/RESET_POC.md) e notebook09 para inspecionar
+um plano. Preview não apaga dados. Execução exige escopo Docker comprovado, plano
+atual, `--execute` e frase de confirmação digitada. Rebuild normal preserva volumes.
+Não inclua reset em rotinas de teste ou inicialização.
+
+## Contrato da aplicação e auditoria
+
+`GET /v1/proposals/{execution_id}/application-view` expõe o contrato provisório
+versionado, com paginação estável, quantidade prevista/proposta e regras avaliadas.
+`GET /v1/proposals/{execution_id}/lineage` e `GET /v1/lineage` permitem navegar
+partindo de proposta, run, chave de modelo ou snapshot. Todas exigem API_TOKEN.
+[Schema e códigos HTTP](docs/contracts/README.md). Notebook02 consome a API real
+e confere SQL e storage, sem treinar novamente.
+
+Migration005 acrescenta relações N:N e evidência de contrato em planejamento_db;
+metadados internos do MLflow continuam exclusivamente em mlflow_db. Versões
+anteriores são preservadas. Dados legados sem hash/ID de inferência ficam
+LEGACY_PARTIAL, sem completar informações por suposição.
+
+## Fluxos complementares
 
 O SDK em `src/workbench/sdk.py` oferece recebimento de datasets
 pela API, treinamento por série acadêmica e preparação de candidatos para

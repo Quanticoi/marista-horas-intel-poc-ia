@@ -102,6 +102,8 @@ with step("reload and inference", execution_id, statuses):
               "model_version":trace["model_version"], "run_id":trace["run_id"], "records":future[FEATURES].to_dict("records")})
     response.raise_for_status()
     inference = response.json()
+    trace["inference_id"] = inference["inference_id"]
+    trace["artifact_sha256"] = next(item["sha256"] for item in storage_evidence if item["key"].endswith("/model.pkl"))
     assert inference["model_version"] == trace["model_version"] and inference["run_id"] == trace["run_id"]
     np.testing.assert_allclose(predictions, inference["predictions"], rtol=1e-10)
     client = mlflow.MlflowClient()
@@ -124,6 +126,9 @@ with step("persist and idempotency", execution_id, statuses):
     repeated = persist(cfg, execution_id, snapshot, trace, lines, capacity)
     assert generation["execution_id"] == repeated["execution_id"]
     assert generation["row_count"] == len(lines)
+    from src.persistence.lineage import publish_manifest
+    lineage_manifest = publish_manifest(cfg, execution_id)
+    display(lineage_manifest)
     display(generation)
 ''', "Geração DRAFT persistida com vínculos SQL/run/modelo/regra; repetição sem duplicações.")
 section('10b. Conferir a proposta diretamente no PostgreSQL', 'Nova conex?o com APPLICATION_DATABASE_URL, ap?s o commit. Banco de neg?cio planejamento_db, tabelas planning.proposal_generations e planning.proposal_lines. **Esperado:** todas as linhas e valores iguais ? proposta, com run e vers?o corretas. Consulta versionada em sql/queries/verify_proposal.sql; esta etapa somente l?.\n', 'with step("verify proposal SQL", execution_id, statuses):\n    database_evidence = verify_proposal_sql(cfg, execution_id, trace, lines)\n    display(database_evidence)\n', "PASS; evid?ncia exibida.")

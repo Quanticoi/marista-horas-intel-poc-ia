@@ -55,7 +55,7 @@ def main():
     assert (ROOT/'sql/ddl/002_immutability.sql').read_text(encoding='utf-8').strip() in contract
     print('PASS original DDL preserved (16 tables); additive triggers reconciled with spec')
     notebooks=list((ROOT/'notebooks').glob('*.ipynb'))
-    assert [path.name for path in notebooks] == ['01_jornada_completa_planilha_turmas.ipynb']
+    assert sorted(path.name[:2] for path in notebooks) == [f'{i:02d}' for i in range(10)]
     for path in notebooks:
         notebook=json.loads(path.read_text(encoding='utf-8'))
         for cell in notebook['cells']:

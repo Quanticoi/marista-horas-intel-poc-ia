@@ -34,7 +34,11 @@ def persist(cfg, execution_id, snapshot, trace, lines, capacity=40):
         experiment_id=trace["experiment_id"], model_name=trace["model_name"],
         model_version=trace["model_version"], artifact_uri=trace["artifact_uri"],
         rule_version=RULE, capacity=capacity, mode=cfg.mode, row_count=len(lines))
-    payload = json.dumps({"metadata":metadata, "lines":sorted(lines, key=lambda r:tuple(r[k] for k in KEYS))}, sort_keys=True)
+    content = {"metadata":metadata, "lines":sorted(lines, key=lambda r:tuple(r[k] for k in KEYS))}
+    provenance = {k:trace[k] for k in ("inference_id","artifact_sha256","model_usages") if k in trace}
+    if provenance:
+        content["provenance"] = provenance
+    payload = json.dumps(content, sort_keys=True)
     metadata["payload_sha256"] = hashlib.sha256(payload.encode()).hexdigest()
     engine = sql_engine(cfg.application, cfg.timeout)
     try:
@@ -52,6 +56,8 @@ def persist(cfg, execution_id, snapshot, trace, lines, capacity=40):
                 VALUES (:execution_id,:course_id,:period_id,:discipline_id,:forecast_raw,:proposed_students,:proposed_groups,:human_adjustment)"""),
                 [dict(row, execution_id=execution_id) for row in lines])
             from src.persistence.db import audit
+            from src.persistence.lineage import attach
+            attach(con, execution_id, snapshot, trace, lines, RULE, capacity)
             audit(con, "jupyter-DEMO", "PROPOSAL_CREATED", "proposal", execution_id, execution_id,
                 {"run_id":trace["run_id"], "rows":len(lines), "rule":RULE})
             return dict(con.execute(text("SELECT * FROM planning.proposal_generations WHERE execution_id=:id"), {"id":execution_id}).mappings().one())

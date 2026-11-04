@@ -25,6 +25,8 @@ def auth(authorization: str = Header(default="")):
 
 from src.api.proposals import router as proposal_router
 app.include_router(proposal_router(auth))
+from src.api.lineage import router as lineage_router
+app.include_router(lineage_router(auth))
 
 
 @app.middleware("http")

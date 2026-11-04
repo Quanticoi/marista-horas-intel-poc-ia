@@ -28,4 +28,8 @@ O ambiente local é Docker Compose. Kubernetes não é requisito para desenvolve
 
 - [Decisões arquiteturais](adr/README.md): histórico identificado; ADRs 007/008 definem o fluxo atual.
 
-A estrutura atual distribui somente a Jornada Completa. Consulte a revisão do repositório para a lista de itens removidos e os dados preservados.
+A evolução v1.1 distribui o [catálogo00–09](../notebooks/README.md), preservando
+edições existentes. Consulte [lineage](architecture/LINEAGE.md),
+[contrato HTTP](contracts/README.md), [cobertura funcional](architecture/FUNCTIONAL_COVERAGE.md)
+e [reset controlado](operations/RESET_POC.md). O histórico de limpeza anterior
+não limita este novo catálogo solicitado.

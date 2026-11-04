@@ -27,6 +27,8 @@ def manifest(directory, provenance):
 
 
 def object_prefix(uri):
+    if uri.startswith("mlflow-artifacts:/"):
+        uri = f"s3://{bucket()}/mlflow/" + uri.removeprefix("mlflow-artifacts:/").lstrip("/")
     location = urlparse(uri)
     if location.scheme != "s3" or location.netloc != bucket() or not location.path.startswith("/mlflow/") or location.query or location.fragment:
         raise ValueError("Artifact outside approved object storage")

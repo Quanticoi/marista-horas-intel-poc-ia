@@ -98,6 +98,7 @@ journey = dict(
 for name in ('tools', 'jupyter'):
     services[name]['environment'].update(journey)
 services['jupyter']['environment'].update(secret('INFERENCE_TOKEN'))
+services['jupyter']['environment']['PROPOSAL_ID'] = '${PROPOSAL_ID:-}'
 services['jupyter']['volumes'] += ['./artifacts/reports:/reports']
 for name in ('jupyter', 'api', 'inference'):
     services[name]['environment']['MLFLOW_EXPERIMENT_NAME'] = journey['MLFLOW_EXPERIMENT_NAME']

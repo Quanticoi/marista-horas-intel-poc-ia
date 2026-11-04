@@ -15,7 +15,7 @@ def extract(cfg):
     try:
         with engine.connect() as con:
             # Explicit DEMO source. Never select an arbitrary newest real dataset.
-            snapshots = con.execute(text("""SELECT s.id::text, c.id::text AS cycle_id,
+            snapshots = con.execute(text("""SELECT s.id::text, s.sha256 AS snapshot_sha256, c.id::text AS cycle_id,
                 c.target_year*2+c.target_semester-1 AS target_index, c.target_semester
                 FROM planning.dataset_snapshots s JOIN planning.academic_cycles c ON c.id=s.cycle_id
                 WHERE c.cycle_code=:cycle AND s.source_reference='SYNTHETIC' AND s.sealed_at IS NOT NULL"""),

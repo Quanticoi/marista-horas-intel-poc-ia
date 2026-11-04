@@ -51,9 +51,16 @@ def router(auth):
             with operation_span("model.predict", rows=len(frame), model_version=body.model_version):
                 values = fitted.predict(frame[FEATURES]).tolist()
             elapsed = time.monotonic()-start
+            inference_id = str(uuid.uuid4())
+            from src.common.lineage import manifest,put_manifest,utcnow,sha256
+            put_manifest(f"lineage/poc/planilha-turmas/inferences/{inference_id}/manifest.json",
+                manifest("inference",{},utcnow(),inference_id=inference_id,execution_id=str(body.execution_id),
+                    correlation_id=str(body.execution_id),snapshot_id=str(body.snapshot_id),run_id=registered.run_id,
+                    registered_model_name=body.model_name,model_version=str(registered.version),
+                    input_sha256=sha256(body.records),prediction_sha256=sha256(values),row_count=len(values)))
             event("inference", "draft version loaded and predicted", correlation_id=str(body.execution_id),
                 run_id=registered.run_id, version=registered.version, rows=len(values), duration_seconds=elapsed)
-            return dict(execution_id=str(body.execution_id), run_id=registered.run_id,
+            return dict(inference_id=inference_id,execution_id=str(body.execution_id), run_id=registered.run_id,
                 model_name=body.model_name, model_version=str(registered.version),
                 loaded=True, operationally_promoted=False, predictions=values, duration_seconds=elapsed)
         except ValueError:

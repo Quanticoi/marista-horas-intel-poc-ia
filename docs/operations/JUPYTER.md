@@ -3,10 +3,12 @@
 Abra a [Jornada Completa — Planilha Turmas](http://127.0.0.1:8888/lab/tree/notebooks/01_jornada_completa_planilha_turmas.ipynb).
 Use o token JUPYTER_TOKEN do .env local para entrar.
 
-Apenas esse notebook é distribuído pelo projeto. A cópia editável está em
+O projeto distribui o [catálogo00–09](../../notebooks/README.md). A cópia editável está em
 `workspace/notebooks/` no Windows, montada como `/workspace/notebooks/` no container.
 As fontes versionadas estão em `notebooks/` na raiz do repositório. A inicialização
-preserva edições existentes e copia a Jornada Completa apenas quando ela está ausente.
+preserva edições existentes. Atualizações conflitantes são publicadas com sufixo
+`.update-<hash>`, sem sobrescrever sua cópia. Arquivos sem edição podem ser atualizados
+quando o hash anterior é conhecido pelo mecanismo de distribuição.
 
 ## Editar e voltar à visualização
 

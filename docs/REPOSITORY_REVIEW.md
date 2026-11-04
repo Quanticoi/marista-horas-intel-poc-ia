@@ -31,6 +31,9 @@ Planilha Turmas → API, com os serviços Docker Compose e seus fluxos auxiliare
 O inventário de remoção, com caminhos e contagens, está em
 [cleanup-2026-11-03.json](../artifacts/reports/cleanup-2026-11-03.json).
 
-A inicialização do Jupyter passa a distribuir somente a Jornada Completa e abrir
+Na revisão de03/11, a inicialização passou a distribuir somente a Jornada Completa e abrir
 sua cópia editável. O volume templates foi removido da configuração; a recriação
 do container aplica essa mudança, preservando o workspace.
+
+Atualização04/11: a spec-correcoes v1.1 solicita um novo catálogo00–09, agora
+distribuído sem sobrescrever edições. A limpeza acima descreve o estado histórico.

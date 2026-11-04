@@ -22,9 +22,8 @@ def main():
     elif sys.argv[1] == "jupyter":
         workspace=Path("/workspace/notebooks")
         workspace.mkdir(parents=True,exist_ok=True)
-        path = Path("/app/notebooks/01_jornada_completa_planilha_turmas.ipynb")
-        if not (workspace/path.name).exists():
-            shutil.copy2(path,workspace/path.name)
+        from src.common.notebook_distribution import distribute
+        distribute("/app/notebooks",workspace)
         os.environ["JUPYTER_TOKEN"]=required("JUPYTER_TOKEN")
         os.execvp("jupyter",["jupyter","lab","--ip=0.0.0.0","--port=8888","--no-browser",
             "--ServerApp.root_dir=/workspace",

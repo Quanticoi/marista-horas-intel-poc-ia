@@ -1,5 +1,29 @@
 # Atualização — 03/11/2026: limpeza implementada e verificada
 
+04/11/2026 — aceite parcial v1.1: migration005 e imagens aplicadas no projeto
+marista, volumes preservados. Jornada01 e notebook02 PASS no ambiente principal:
+execution93519267-7809-4e64-9e04-a79b9fb03d40, run69fdee4b8f744f88b03117dfa2eaa5bb,
+planilha-turmas-demo v10,1050 SQL/90 propostas. Suíte58PASS;10 jornadaPASS.
+Workspace01 original preservado byte a byte (AB37343F...); nova versão distribuída
+como 01_jornada_completa_planilha_turmas.update-eeacc6e47d5c.ipynb.
+Stack isolada: notebook01/02 PASS,35unit+17integração PASS;30 treinos reais11s,
+500 identidades0.34s (não500treinos); proposta N:N duas versões/90linhas PASS.
+Factory-reset isolado plano8479badb-3529-4e07-b94f-88355fe8a25a RESET_PASS:
+demo-ready,zero runs/propostas,arquivos protegidos preservados.6guardasresetPASS.
+Pendente nesta atualização: smoke catálogo, prova pós-rebuild, reset-data isolado,
+relatório consolidado e CI remoto. Scheduler persistente de campanhas está
+explicitamente NOT_IMPLEMENTED (evolução incremental permitida pela spec).
+
+04/11/2026 — spec-correcoes v1.1 EM IMPLEMENTAÇÃO. Diagnóstico em
+artifacts/reports/correcoes-fase-a-2026-11-04.md. V3 e V4.4 localizados e consultados
+no Drive. Módulo HI-LINEAGE, migration005 aditiva, contrato application-view,
+lookup lineage e notebook02 em desenvolvimento; ainda não aceitos ponta a ponta.
+Stack separada marista-correcoes-isolated criada após esgotamento do pool padrão
+de redes Docker, com subnet livre 10.254.241.0/24. Nenhuma rede alheia removida.
+Causa CI reproduzida: mlflow db upgrade em banco vazio falha UndefinedTable metrics.
+Inicialização pelo SDK público MLflow antes do upgrade corrigiu banco novo;
+MLflow isolado healthy. Não alterados dados/volumes/workspace da stack marista.
+
 04/11/2026: dev/spec.md renomeado para dev/spec-historica-v1.md por solicitação
 do usuário, com aviso explícito de documento histórico. Validador SQL e ADR-002
 ajustados; contrato SQL original preservado. spec.md da raiz continua a referência

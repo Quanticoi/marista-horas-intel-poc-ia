@@ -621,6 +621,7 @@
         "MLFLOW_HTTP_REQUEST_TIMEOUT": "15",
         "MLFLOW_HTTP_REQUEST_MAX_RETRIES": "2",
         "INFERENCE_TOKEN": "${INFERENCE_TOKEN:?Configure .env}",
+        "PROPOSAL_ID": "${PROPOSAL_ID:-}",
         "MLFLOW_ENABLE_ASYNC_TRACE_LOGGING": "false",
         "EVENT_DIRECTORY": "/logs"
       },

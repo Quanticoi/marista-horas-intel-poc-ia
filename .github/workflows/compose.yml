@@ -45,16 +45,13 @@ jobs:
           docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_journey
           docker compose run --rm --no-deps --entrypoint python tools -m pytest tests/unit tests/integration -q -o cache_dir=/tmp/pytest-cache --junitxml=/reports/compose-junit.xml
           python deployment/scripts/check_access.py
-      - name: C3 training, binary persistence and dedicated API (disposable CI only)
+      - name: Application contract notebook (read-only)
         run: |
-          docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.acceptance train
-          docker compose run --rm --no-deps tools promote C1-CR1-P1 1 ci-validation "Disposable CI model only"
-          python deployment/scripts/publish_models.py --model C1-CR1-P1
-          docker compose -f compose.yaml -f .runtime/models.compose.json up -d --wait --wait-timeout 300
-          for svc in $(python -c "import json; print(' '.join(json.load(open('.runtime/models.compose.json'))['services']))"); do
-            docker compose -f compose.yaml -f .runtime/models.compose.json exec -T "$svc" python -m pip check
-          done
-          docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.acceptance predict | tee artifacts/reports/c3-ci-prediction.txt
+          proposal_id=$(python -c "import json; print(json.load(open('artifacts/reports/journey-latest.json'))['execution_id'])")
+          docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_notebook 02_teste_inferencia_planilha_turmas.ipynb --proposal-id "$proposal_id"
+      - name: Sanitized runtime diagnostics before cleanup
+        if: always()
+        run: python deployment/scripts/ci_diagnostics.py
       - name: Test reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -65,7 +62,7 @@ jobs:
         if: always()
         run: |
           if [ -f .runtime/models.compose.json ]; then
-            docker compose -f compose.yaml -f .runtime/models.compose.json down -v
+            docker compose -f compose.yaml -f .runtime/models.compose.json down
           else
-            docker compose down -v
+            docker compose down
           fi
