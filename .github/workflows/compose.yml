@@ -68,7 +68,9 @@ jobs:
       - name: Dispose isolated CI stack
         if: always()
         run: |
-          if [ -f .runtime/models.compose.json ]; then
+          if [ ! -f .env ]; then
+            echo "Provisioning did not start; no Compose stack to dispose."
+          elif [ -f .runtime/models.compose.json ]; then
             docker compose -f compose.yaml -f .runtime/models.compose.json down
           else
             docker compose down

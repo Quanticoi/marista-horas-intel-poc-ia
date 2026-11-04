@@ -1,0 +1,60 @@
+{
+    "environment":  "poc",
+    "test_id":  "repository-cleanup-v2",
+    "preserved":  "Volumes, .env, notebooks editaveis, evidencias, history, migrations e rotas utilizadas",
+    "timestamp_utc":  "2026-11-04T18:45:56.6085960Z",
+    "source_type":  "DEMO",
+    "removed":  [
+                    {
+                        "path":  "dev/consolidate_journey.py",
+                        "sha256":  "A305A8A05CC5BA27023ADCCB37808BA7614FB73AF7BE8ED3EA262F920D8EBD47",
+                        "reason":  "Consolidacao pontual concluida; notebook_distribution.py mantem a regra"
+                    },
+                    {
+                        "path":  "dev/diagnose_mlflow.py",
+                        "sha256":  "61EA82C95E18AEF6C1A02E6C3267A093392AF74BE406A3BD1B9C155FEBDE9225",
+                        "reason":  "Diagnostico pontual encerrado; bootstrap suportado em mlflow_schema.py"
+                    },
+                    {
+                        "path":  "src/workbench/multi_model_proof.py",
+                        "sha256":  "8E3CB99EFDBE8A7BE1D39402A4EE1E2D1F44E6DCEA10FBB49C177CEAF9E422CF",
+                        "reason":  "Substituido pela prova HTTP v2_lineage_proof.py"
+                    },
+                    {
+                        "path":  "dev/normalize_evidence_encoding.py",
+                        "sha256":  "4C33F4FFD2F86260EE82111F938B43D4D002BA845A45992B8344CFDCD52CBBD7",
+                        "reason":  "Conversao historica concluida"
+                    },
+                    {
+                        "path":  "src/workbench/preservation_check.py",
+                        "sha256":  "E20AB471460EBA5E3B8FEF0668DA76B94AEC0C3EE5FB29A74D4AB5697098D9E4",
+                        "reason":  "Substituido por preservation_v2.py com cobertura de todos os registros anteriores"
+                    },
+                    {
+                        "path":  "dev/inventory_v2.py",
+                        "sha256":  "B5D7CC0734CF42718838C6D8064ACE3EC0EF8A2C26795F0F1E4F1D4DB406A1CD",
+                        "reason":  "Inventario inicial imutavel ja capturado"
+                    },
+                    {
+                        "path":  "dev/build_correcoes_report.py",
+                        "sha256":  "3FC42A7AB3D97CA448E81104BAB7E942BBB9F0ADA1ED6040F261BDED698C20EE",
+                        "reason":  "Relatorio V1.1 fixo ja publicado; substituido pelo aceite V2"
+                    },
+                    {
+                        "path":  "dev/prove_preview.py",
+                        "sha256":  "4862D37C6D4C8F2FB8970F2A3A1D4E4DBE8D079771E0F4757F0843EE407C8F33",
+                        "reason":  "Prova integrada em v2_reset_acceptance.py"
+                    },
+                    {
+                        "path":  "dev/verify_reset.py",
+                        "sha256":  "9478084CF25CD033684B56CCCF8BDF70D37D966E967226D686643AD62339A59E",
+                        "reason":  "Substituido por verify_reset_v2.py"
+                    },
+                    {
+                        "path":  "src/workbench/benchmark.py",
+                        "sha256":  "3B9221DFCE4935B76A5BA8196069DEB5BBF567DD3AD564741AAF54043D46A376",
+                        "reason":  "Benchmark V1 substituido por campanhas reais v2_campaign.py"
+                    }
+                ],
+    "status":  "PASS"
+}
