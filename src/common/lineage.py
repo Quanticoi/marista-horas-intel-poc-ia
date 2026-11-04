@@ -45,13 +45,13 @@ def reject_sensitive(value):
     """Reject credentials in manifests, including unknown nested fields."""
     if isinstance(value, dict):
         for key, item in value.items():
-            if re.search(r"password|secret|token|authorization|database_url", str(key), re.I):
+            if re.search(r"password|secret|token|authorization|database_url|access_key|credential|connection_string", str(key), re.I):
                 raise ValueError("Sensitive metadata key rejected")
             reject_sensitive(item)
     elif isinstance(value, (list, tuple)):
         for item in value:
             reject_sensitive(item)
-    elif isinstance(value, str) and re.search(r"://[^/\s]+@|Bearer\s", value, re.I):
+    elif isinstance(value, str) and re.search(r"://[^/\s]+@|Bearer\s|X-Amz-Signature=", value, re.I):
         raise ValueError("Sensitive metadata value rejected")
 
 

@@ -22,6 +22,9 @@ jobs:
           done
           mkdir -p workspace/notebooks data/compose-logs artifacts/reports
           chmod 777 workspace workspace/notebooks artifacts/reports data/compose-logs
+          # Checkout includes historical reports owned by the runner; both container
+          # UIDs must be able to replace those generated evidence files.
+          chmod -R a+rwX artifacts/reports
       - name: Build and provision dependencies
         run: |
           docker compose config --quiet

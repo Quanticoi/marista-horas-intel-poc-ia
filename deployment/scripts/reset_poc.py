@@ -63,6 +63,7 @@ def validate_scope(environment,project):
         if mounts & expected and labels.get("com.docker.compose.project")!=project:
             raise ValueError("Volume shared with another project")
         if labels.get("com.docker.compose.project")==project and labels.get("com.docker.compose.oneoff","").lower()!="true":
+            validate_labels(labels)
             if Path(labels.get("com.docker.compose.project.config_files","")).resolve()!=SCOPES[project].resolve():
                 raise ValueError("Container belongs to a different Compose definition")
             environment_values=dict(item.split("=",1) for item in container["Config"].get("Env",[]) if "=" in item)
@@ -75,6 +76,11 @@ def validate_scope(environment,project):
         raise ValueError("Missing dedicated services; cannot verify ownership")
     return {"project":project,"directory":str(ROOT),"compose_sha256":hashlib.sha256(SCOPES[project].read_bytes()).hexdigest(),
             "volumes":sorted(expected),"containers":sorted(selected,key=lambda c:c["service"])}
+
+
+def validate_labels(labels):
+    if labels.get("io.marista.environment")!="poc" or labels.get("io.marista.solution")!="horarios-inteligentes":
+        raise ValueError("Actual container environment/solution is not the authorized POC")
 
 
 def data_inventory(project):

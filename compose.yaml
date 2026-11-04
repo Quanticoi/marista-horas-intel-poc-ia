@@ -11,6 +11,10 @@
           "max-file": "3"
         }
       },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
+      },
       "environment": {
         "POSTGRES_PASSWORD": "${POSTGRES_PASSWORD:?Configure .env}"
       },
@@ -39,6 +43,10 @@
           "max-size": "10m",
           "max-file": "3"
         }
+      },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
       },
       "ports": [
         "127.0.0.1:9000:9000",
@@ -80,6 +88,10 @@
           "max-file": "3"
         }
       },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
+      },
       "ports": [
         "127.0.0.1:15672:15672"
       ],
@@ -112,6 +124,10 @@
           "max-size": "10m",
           "max-file": "3"
         }
+      },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
       },
       "ports": [
         "127.0.0.1:5000:5000"
@@ -175,6 +191,10 @@
           "max-size": "10m",
           "max-file": "3"
         }
+      },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
       },
       "ports": [
         "127.0.0.1:8020:8020"
@@ -245,6 +265,10 @@
           "max-size": "10m",
           "max-file": "3"
         }
+      },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
       },
       "ports": [
         "127.0.0.1:8001:8001"
@@ -322,6 +346,10 @@
           "max-file": "3"
         }
       },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
+      },
       "ports": [
         "127.0.0.1:8000:8000"
       ],
@@ -395,6 +423,10 @@
           "max-file": "3"
         }
       },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
+      },
       "build": {
         "context": ".",
         "dockerfile": "deployment/docker/api/Dockerfile"
@@ -455,6 +487,10 @@
           "max-size": "10m",
           "max-file": "3"
         }
+      },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
       },
       "ports": [
         "127.0.0.1:8010:8010"
@@ -517,6 +553,10 @@
           "max-size": "10m",
           "max-file": "3"
         }
+      },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
       },
       "ports": [
         "127.0.0.1:8088:8088"
@@ -585,6 +625,10 @@
           "max-size": "10m",
           "max-file": "3"
         }
+      },
+      "labels": {
+        "io.marista.environment": "poc",
+        "io.marista.solution": "horarios-inteligentes"
       },
       "ports": [
         "127.0.0.1:8888:8888"

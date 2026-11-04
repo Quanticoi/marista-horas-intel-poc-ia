@@ -10,7 +10,7 @@ def test_canonical_hash():
         canonical({"x":float("nan")})
 
 
-@pytest.mark.parametrize("value",[{"nested":{"password":"x"}},{"uri":"postgresql://user:secret@host/db"},{"x":"Bearer abc"}])
+@pytest.mark.parametrize("value",[{"nested":{"password":"x"}},{"uri":"postgresql://user:secret@host/db"},{"x":"Bearer abc"},{"AWS_ACCESS_KEY_ID":"hidden"}])
 def test_sensitive_metadata(value):
     with pytest.raises(ValueError):
         reject_sensitive(value)

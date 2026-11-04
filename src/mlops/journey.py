@@ -24,7 +24,7 @@ def start(cfg, execution_id, snapshot, frame):
     run = mlflow.start_run(experiment_id=eid,
         run_name=f"{cfg.model_name}__{cfg.cycle}__{execution_id[:8]}", tags={
         **identity.tags(), "execution_id":execution_id, "correlation_id":execution_id, "mode":cfg.mode,
-        "model_key":cfg.model_name,
+        "model_key":cfg.model_name,"algorithm":"Ridge",
         "purpose":"draft-planilha-turmas", "cycle":cfg.cycle, "scope":cfg.course or "all",
         "snapshot_id":snapshot["id"], "dataset_sha256":snapshot["dataset_sha256"],
         "query_sha256":snapshot["query_sha256"], "query_version":snapshot["query_version"],

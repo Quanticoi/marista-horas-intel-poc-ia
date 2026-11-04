@@ -52,6 +52,9 @@ def router(auth):
                 values = fitted.predict(frame[FEATURES]).tolist()
             elapsed = time.monotonic()-start
             inference_id = str(uuid.uuid4())
+            if mlflow.get_current_active_span() is not None:
+                mlflow.update_current_trace(tags={"inference_id":inference_id,"model_key":body.model_name,
+                                                  "model_version":body.model_version})
             from src.common.lineage import manifest,put_manifest,utcnow,sha256
             put_manifest(f"lineage/poc/planilha-turmas/inferences/{inference_id}/manifest.json",
                 manifest("inference",{},utcnow(),inference_id=inference_id,execution_id=str(body.execution_id),

@@ -28,6 +28,9 @@ def test_scope_and_confirmation(reset):
         reset.validate_plan({},"yes",True,"poc","marista")
     with pytest.raises(ValueError):
         reset.validate_plan({},reset.PHRASE,False,"poc","marista")
+    for environment in (None,"dev","qa","uat","prd"):
+        with pytest.raises(ValueError):
+            reset.validate_labels({"io.marista.environment":environment,"io.marista.solution":"horarios-inteligentes"})
 
 
 def test_tampered_and_stale(reset,monkeypatch):

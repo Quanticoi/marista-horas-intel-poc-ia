@@ -438,6 +438,7 @@ Com Docker Engine/Compose e Python3 instalados, no diretório do repositório:
 python3 deployment/scripts/init_env.py
 mkdir -p workspace/notebooks data/compose-logs artifacts/reports
 chmod 777 workspace workspace/notebooks data/compose-logs artifacts/reports
+chmod -R a+rwX artifacts/reports
 sh deployment/scripts/journey.sh rebuild
 docker compose ps
 ```

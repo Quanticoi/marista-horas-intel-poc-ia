@@ -18,7 +18,8 @@ def secret(keys):
 
 def base(name, image, port=None):
     item = dict(image=image, restart="unless-stopped", logging={"driver": "json-file",
-        "options": {"max-size": "10m", "max-file": "3"}})
+        "options": {"max-size": "10m", "max-file": "3"}},
+        labels={"io.marista.environment":"poc","io.marista.solution":"horarios-inteligentes"})
     if port:
         item['ports'] = [f'127.0.0.1:{port}:{port}']
     services[name] = item

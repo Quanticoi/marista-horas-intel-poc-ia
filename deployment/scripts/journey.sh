@@ -6,6 +6,7 @@ dc() { docker compose "$@"; }
 rebuild() {
   dc build mlflow jupyter
   mkdir -p workspace/notebooks data/compose-logs artifacts/reports
+  chmod -R a+rwX artifacts/reports
   dc run --rm --no-deps --entrypoint chown volume-tools 10001:10001 /restore/rustfs
   dc up -d --wait --wait-timeout 240 postgres rustfs rabbitmq
   for step in bootstrap migrate buckets seed; do dc run --rm --no-deps tools "$step"; done
