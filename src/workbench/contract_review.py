@@ -80,7 +80,7 @@ def reconcile(cfg, execution_id, pages, offers):
     if snapshot["sha256"]!=pages[0]["lineage"]["snapshot_sha256"]:
         raise ValueError("Snapshot SQL/Object Store integrity mismatch")
     usages=pages[0]["lineage"]["model_usages"]
-    if usages and all(u["provenance_status"]=="VERIFIED" for u in usages) and any(not o["source_model_keys"] for o in offers):
+    if usages and all(u["provenance_status"] in ("RECORDED","VERIFIED") for u in usages) and any(not o["source_model_keys"] for o in offers):
         raise ValueError("Verified proposal contains an offer without model origin")
     storage = []
     for usage in pages[0]["lineage"]["model_usages"]:
