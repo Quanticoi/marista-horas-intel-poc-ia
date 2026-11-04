@@ -23,7 +23,7 @@ def inspect_graph(cfg,kind,external_id,version="",limit=100,offset=0):
                 run=client.get_run(node["external_id"])
                 check["url"]=f"{cfg.ui}/#/experiments/{run.info.experiment_id}/runs/{run.info.run_id}"
             elif node["entity_type"]=="proposal":
-                proposal=call(cfg,"GET",f"/v1/proposals/{node['external_id']}/application-view?limit=1")
+                call(cfg,"GET",f"/v1/proposals/{node['external_id']}/application-view?limit=1")
                 # The append-only proposal flag is RECORDED, never live proof.
                 # Consult the cross-system verifier instead of trusting a stored label.
                 verified=call(cfg,"GET",f"/v1/audit/proposal/{node['external_id']}")
