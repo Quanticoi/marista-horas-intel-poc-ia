@@ -15,6 +15,13 @@ def distribute(source, workspace):
         digest=hashlib.sha256(path.read_bytes()).hexdigest()
         target=workspace/path.name
         current=hashlib.sha256(target.read_bytes()).hexdigest() if target.exists() else None
+        # Keep exact prior releases as well as edits outside the visible notebook list.
+        if current and current!=digest and prior.get(path.name)!=digest:
+            backup=workspace.parent/"notebook-backups"
+            backup.mkdir(parents=True,exist_ok=True)
+            archived=backup/(path.stem+"."+current+".ipynb")
+            if not archived.exists():
+                shutil.copyfile(target,archived)
         if current is None or current==prior.get(path.name) or current==digest:
             if current!=digest:
                 shutil.copyfile(path,target)

@@ -1,0 +1,677 @@
+{
+  "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+  "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+  "tested_git_commit": null,
+  "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+  "working_tree_uncommitted": true,
+  "tests": 85,
+  "failures": 0,
+  "status": "READY_FOR_LOCAL_TEST",
+  "acceptance_status": "AUTOMATED_CHECKS_PASSED_MANUAL_TEST_BY_USER",
+  "criteria": [
+    {
+      "test_id": "V3-01",
+      "status": "AUTO_PASS",
+      "evidence_file": "runtime-after.json",
+      "checks": [
+        "Onze serviços healthy; diagrama de startup preservado."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-02",
+      "status": "MANUAL_NOT_CHECKED",
+      "evidence_file": "ui-observations.json",
+      "checks": [
+        "SDK comprova nomes/tags/Registry; UI exige observação real registrada."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": {
+        "mlflow_status": "MANUAL_NOT_CHECKED",
+        "session_status": "MANUAL_NOT_CHECKED",
+        "observation": "Ainda não há inspeção visual completa registrada. A tentativa anterior de Computer Use foi encerrada porque a URL atual do navegador não pôde ser determinada com segurança.",
+        "automatic_checks_are_not_manual": true,
+        "interfaces": {
+          "MLflow": "NOT_CHECKED",
+          "RustFS": "NOT_CHECKED",
+          "Jupyter": "NOT_CHECKED",
+          "Dashboard": "NOT_CHECKED"
+        },
+        "manual_guide": "docs/operations/MANUAL_ACCEPTANCE_V3.md",
+        "credentials": "Somente variáveis locais; nenhum valor registrado."
+      }
+    },
+    {
+      "test_id": "V3-03",
+      "status": "AUTO_PASS",
+      "evidence_file": "isolated/notebooks/04-train.ipynb",
+      "checks": [
+        "Treino e repetição idempotente em kernel novo, tabela Onde conferir."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-04",
+      "status": "AUTO_PASS",
+      "evidence_file": "isolated/notebooks/05-campaign-30.ipynb",
+      "checks": [
+        "Campanha real com 30 escopos DEMO; default manual permanece três."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-05",
+      "status": "AUTO_PASS",
+      "evidence_file": "scenario-latest.json",
+      "checks": [
+        "Catálogo imutável aponta para três arquivos originais; sem duplicar binário."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-06",
+      "status": "AUTO_PASS",
+      "evidence_file": "main-suite-junit.xml",
+      "checks": [
+        "Comparação byte a byte proxy/S3, hash Registry/catálogo e assinatura."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-07",
+      "status": "AUTO_PASS",
+      "evidence_file": "main-suite-junit.xml",
+      "checks": [
+        "Quatro views e consultas parametrizadas; nove ofertas com três contribuições."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-08",
+      "status": "AUTO_PASS",
+      "evidence_file": "scenario-latest.json",
+      "checks": [
+        "Auditoria reversa verifica run/versão/snapshot/manifests/atribuição de linhas."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-09",
+      "status": "AUTO_PASS",
+      "evidence_file": "isolated/notebooks/02-generate.ipynb",
+      "checks": [
+        "Geração HTTP por API/worker e conferência SQL, sem treino no notebook02."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-10",
+      "status": "AUTO_PASS",
+      "evidence_file": "isolated/serving.json",
+      "checks": [
+        "Jupyter parado; cache vazio após restart; três modelos recarregados."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": "2026-11-04T21:47:30.218538+00:00",
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-11",
+      "status": "AUTO_PASS",
+      "evidence_file": "reset-isolated-proof.json",
+      "checks": [
+        "Rebootstrap empty saudável sem modelos; saúde/registro/cache/aprovação distintos."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": "2026-11-04T21:25:51.904593+00:00",
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-12",
+      "status": "AUTO_PASS",
+      "evidence_file": "isolated/negative.json",
+      "checks": [
+        "Revisão explícita DEMO; revogação bloqueia APPROVED com cache quente."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": "2026-11-04T21:44:19.873316+00:00",
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-13",
+      "status": "AUTO_PASS",
+      "evidence_file": "preservation-after.json",
+      "checks": [
+        "Histórico preservado; versões sem catálogo completo permanecem LEGACY_PARTIAL."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": "2026-11-04T21:48:29.944109+00:00",
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-14",
+      "status": "AUTO_PASS",
+      "evidence_file": "scenario-latest.json",
+      "checks": [
+        "Três períodos DEMO distintos, três SHA256 e segunda versão com alpha diferente."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-15",
+      "status": "MANUAL_NOT_CHECKED",
+      "evidence_file": "ui-observations.json",
+      "checks": [
+        "Roteiro completo e pacote JSON/Markdown/CSV; inspeção de todas as interfaces ainda necessária."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": {
+        "mlflow_status": "MANUAL_NOT_CHECKED",
+        "session_status": "MANUAL_NOT_CHECKED",
+        "observation": "Ainda não há inspeção visual completa registrada. A tentativa anterior de Computer Use foi encerrada porque a URL atual do navegador não pôde ser determinada com segurança.",
+        "automatic_checks_are_not_manual": true,
+        "interfaces": {
+          "MLflow": "NOT_CHECKED",
+          "RustFS": "NOT_CHECKED",
+          "Jupyter": "NOT_CHECKED",
+          "Dashboard": "NOT_CHECKED"
+        },
+        "manual_guide": "docs/operations/MANUAL_ACCEPTANCE_V3.md",
+        "credentials": "Somente variáveis locais; nenhum valor registrado."
+      }
+    },
+    {
+      "test_id": "V3-16",
+      "status": "AUTO_PASS",
+      "evidence_file": "isolated/negative.json",
+      "checks": [
+        "Artefatos/tags/assinatura/manifest divergentes, snapshot errado, versão ausente, auth e revogação rejeitados."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": "2026-11-04T21:44:19.873316+00:00",
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-17",
+      "status": "NOT_EXECUTED",
+      "evidence_file": "../../../.github/workflows/compose.yml",
+      "checks": [
+        "CI remoto não executado e fora do fechamento local solicitado pelo usuário. Pipeline contém testes novos; nenhum commit/PR foi criado."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-18",
+      "status": "AUTO_PASS",
+      "evidence_file": "acceptance-v3.json",
+      "checks": [
+        "Estados automáticos, manuais e bloqueados separados; nenhum 20/20 fabricado."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": null,
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-19",
+      "status": "AUTO_PASS",
+      "evidence_file": "reset-isolated-proof.json",
+      "checks": [
+        "Reset-data/empty e factory-reset/demo-ready somente isolados; arquivos protegidos conferidos."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": null,
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": "2026-11-04T21:25:51.904593+00:00",
+      "manual_observation": null
+    },
+    {
+      "test_id": "V3-20",
+      "status": "AUTO_PASS",
+      "evidence_file": "preservation-after.json",
+      "checks": [
+        "83 runs, 57 versões, 395 objetos, 22 propostas e dez notebooks anteriores preservados."
+      ],
+      "git_commit": null,
+      "base_git_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+      "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+      "environment": "poc",
+      "source_type": "DEMO",
+      "report_generated_at_utc": "2026-11-04T21:59:49.667302+00:00",
+      "executed_at_utc": "2026-11-04T21:48:29.944109+00:00",
+      "manual_observation": null
+    }
+  ],
+  "counts": {
+    "AUTO_PASS": 17,
+    "MANUAL_NOT_CHECKED": 2,
+    "NOT_EXECUTED": 1
+  },
+  "proposal_id": "ca4539df-4a11-4647-9d77-2cc36a484968",
+  "campaign_id": "4626d239-6145-4cc3-95ca-5640799dff03",
+  "models": [
+    {
+      "run_id": "18cdc4f10eaf47e4ab30104994e34ca5",
+      "catalog": {
+        "domain": "planilha-turmas",
+        "run_id": "18cdc4f10eaf47e4ab30104994e34ca5",
+        "run_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1__ridge__20261104T214812Z__a01__3551d8f6",
+        "trace_id": "tr-8168bd79001ca7912cb9f009cd81bbde",
+        "algorithm": "ridge",
+        "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+        "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
+        "model_key": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1",
+        "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
+        "catalog_id": "c8454d20-98fc-5cf4-91bd-8e88b6c3c209",
+        "cycle_code": "2026-1",
+        "campus_code": "DEMO-C1",
+        "config_hash": "b95ae8af440a4b136469b2e9e5977f890d9ca7c4bb7cf54492369d0e7a714b8e",
+        "course_code": "DEMO-CR1",
+        "environment": "poc",
+        "period_code": "P1",
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "solution_id": "horarios-inteligentes",
+        "source_type": "DEMO",
+        "artifact_uri": "models:/m-580070f5f05c467f8c3fb922b69d9913",
+        "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+        "execution_id": "3551d8f6-f527-43e9-a399-0364383c0bc8",
+        "manifest_uri": "s3://pucpr-poc/lineage/poc/planilha-turmas/catalog/cycles/2026-1/models/hi.pt.demanda.DEMO-C1.DEMO-CR1.P1/versions/v0004/manifest.json",
+        "model_family": "demanda-alunos",
+        "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
+        "experiment_id": "5",
+        "model_version": "4",
+        "period_number": "1",
+        "query_version": "journey-history-v1",
+        "correlation_id": "a3bf1ec6-7fbb-40b8-945f-594978d1ea43",
+        "data_as_of_utc": "2025-12-31T00:00:00+00:00",
+        "dataset_sha256": "22b3c1491ef5f01f1c646bc43fd8350d324bce87b3bf4ef3d8b2bfb229637117",
+        "artifact_sha256": "8e6043209a63edaadbdd46de27731ca0c7fbcf9555c8d94579dae7b93de0bf72",
+        "experiment_name": "HI/POC/PlanilhaTurmas/Demanda/2026-1",
+        "manifest_sha256": "fc70250322f4b8336efc5992881c79080f530fb42ce1ca200bb18286a5256416",
+        "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
+        "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
+        "operation_job_id": "3551d8f6-f527-43e9-a399-0364383c0bc8",
+        "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
+        "validation_status": "DEMO_CANDIDATE",
+        "model_display_name": "Planilha Turmas DEMO • DEMO-C1 • DEMO-CR1 • Período 1",
+        "feature_schema_hash": "08c74a87750ccb243562cadb7f995a59c3be4c73caf7e102a53705f160c97ce7",
+        "model_signature_hash": "34fa99829b3165cf12121ca03583e611c0afaadeec8982b7982fa048dd250e1c",
+        "training_campaign_id": "7e14b64f-6c41-4a7b-b3e7-33b5750afd1f",
+        "campaign_display_name": "POC DEMO • Três períodos distintos",
+        "registered_model_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1",
+        "training_execution_id": "3551d8f6-f527-43e9-a399-0364383c0bc8",
+        "dataset_schema_version": "1.0",
+        "lineage_schema_version": "HI-LINEAGE/1.1"
+      },
+      "metrics": {
+        "mae": 2.451818181818176,
+        "rmse": 2.451818181818176,
+        "cpu_seconds": 0.1225307579999999,
+        "baseline_mae": 2.18181818181818,
+        "peak_rss_kib": 268628.0,
+        "baseline_rmse": 2.18181818181818,
+        "duration_seconds": 0.416387195000425
+      },
+      "trace_id": "tr-8168bd79001ca7912cb9f009cd81bbde",
+      "model_uri": "models:/hi.pt.demanda.DEMO-C1.DEMO-CR1.P1/4",
+      "model_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1",
+      "artifact_uri": "models:/m-580070f5f05c467f8c3fb922b69d9913",
+      "experiment_id": "5",
+      "model_version": "4",
+      "artifact_sha256": "8e6043209a63edaadbdd46de27731ca0c7fbcf9555c8d94579dae7b93de0bf72",
+      "storage_evidence": [
+        {
+          "key": "mlflow/5/models/m-580070f5f05c467f8c3fb922b69d9913/artifacts/MLmodel",
+          "bytes": 1336,
+          "bucket": "pucpr-poc",
+          "sha256": "09f012fc593620440f4a1cffe5f2fa2713e5f211a9663cb90c9773ff50a6ca2c",
+          "status": "PASS",
+          "model_version": "4",
+          "object_version_id": "fde2ae65-c707-429a-a7b6-abce6a98064c"
+        },
+        {
+          "key": "mlflow/5/models/m-580070f5f05c467f8c3fb922b69d9913/artifacts/model.pkl",
+          "bytes": 2532,
+          "bucket": "pucpr-poc",
+          "sha256": "8e6043209a63edaadbdd46de27731ca0c7fbcf9555c8d94579dae7b93de0bf72",
+          "status": "PASS",
+          "model_version": "4",
+          "object_version_id": "5c01d54a-fae2-48b2-b127-853c44da003f"
+        },
+        {
+          "key": "mlflow/5/models/m-580070f5f05c467f8c3fb922b69d9913/artifacts/requirements.txt",
+          "bytes": 80,
+          "bucket": "pucpr-poc",
+          "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+          "status": "PASS",
+          "model_version": "4",
+          "object_version_id": "b70e36e1-a60c-44ef-90f8-e8741e002a48"
+        }
+      ],
+      "training_execution_id": "3551d8f6-f527-43e9-a399-0364383c0bc8"
+    },
+    {
+      "run_id": "efeccb749af2422f84df5f1b43153f43",
+      "catalog": {
+        "domain": "planilha-turmas",
+        "run_id": "efeccb749af2422f84df5f1b43153f43",
+        "run_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P2__ridge__20261104T214810Z__a01__eb5b207c",
+        "trace_id": "tr-88f62745d3216846310add15ea484ec8",
+        "algorithm": "ridge",
+        "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+        "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
+        "model_key": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P2",
+        "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
+        "catalog_id": "89021437-58a6-5166-9899-086fe6f333b1",
+        "cycle_code": "2026-1",
+        "campus_code": "DEMO-C1",
+        "config_hash": "f6e5e1fe48c795d059feccfe6fdb0d886c03a03c891d9c8eb137b1bcd76016ff",
+        "course_code": "DEMO-CR1",
+        "environment": "poc",
+        "period_code": "P2",
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "solution_id": "horarios-inteligentes",
+        "source_type": "DEMO",
+        "artifact_uri": "models:/m-5e8cc895967c445d8d924a9839d144d0",
+        "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+        "execution_id": "eb5b207c-550f-4c37-b8a9-7fce3fea9710",
+        "manifest_uri": "s3://pucpr-poc/lineage/poc/planilha-turmas/catalog/cycles/2026-1/models/hi.pt.demanda.DEMO-C1.DEMO-CR1.P2/versions/v0002/manifest.json",
+        "model_family": "demanda-alunos",
+        "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
+        "experiment_id": "5",
+        "model_version": "2",
+        "period_number": "2",
+        "query_version": "journey-history-v1",
+        "correlation_id": "811cc2d3-64d4-49eb-95e3-afa2de977822",
+        "data_as_of_utc": "2025-12-31T00:00:00+00:00",
+        "dataset_sha256": "7d0b348d3136b500c89edb327d0976d12a8455c33d770ba931b6e39130c56015",
+        "artifact_sha256": "63c36c2277e545a1e54894a5ba827506213434b20b4bec30f0ffece46804962e",
+        "experiment_name": "HI/POC/PlanilhaTurmas/Demanda/2026-1",
+        "manifest_sha256": "67902df1442ffc285d10dcffc07310aa97ca7e63ef2cbfe323846c73373c76ba",
+        "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
+        "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
+        "operation_job_id": "eb5b207c-550f-4c37-b8a9-7fce3fea9710",
+        "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
+        "validation_status": "DEMO_CANDIDATE",
+        "model_display_name": "Planilha Turmas DEMO • DEMO-C1 • DEMO-CR1 • Período 2",
+        "feature_schema_hash": "08c74a87750ccb243562cadb7f995a59c3be4c73caf7e102a53705f160c97ce7",
+        "model_signature_hash": "34fa99829b3165cf12121ca03583e611c0afaadeec8982b7982fa048dd250e1c",
+        "training_campaign_id": "4626d239-6145-4cc3-95ca-5640799dff03",
+        "campaign_display_name": "POC DEMO • Três períodos distintos",
+        "registered_model_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P2",
+        "training_execution_id": "eb5b207c-550f-4c37-b8a9-7fce3fea9710",
+        "dataset_schema_version": "1.0",
+        "lineage_schema_version": "HI-LINEAGE/1.1"
+      },
+      "metrics": {
+        "mae": 6.622459893048138,
+        "rmse": 6.622459893048138,
+        "cpu_seconds": 0.1307995150000001,
+        "baseline_mae": 4.363636363636367,
+        "peak_rss_kib": 269308.0,
+        "baseline_rmse": 4.363636363636367,
+        "duration_seconds": 0.45339241799956653
+      },
+      "trace_id": "tr-88f62745d3216846310add15ea484ec8",
+      "model_uri": "models:/hi.pt.demanda.DEMO-C1.DEMO-CR1.P2/2",
+      "model_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P2",
+      "artifact_uri": "models:/m-5e8cc895967c445d8d924a9839d144d0",
+      "experiment_id": "5",
+      "model_version": "2",
+      "artifact_sha256": "63c36c2277e545a1e54894a5ba827506213434b20b4bec30f0ffece46804962e",
+      "storage_evidence": [
+        {
+          "key": "mlflow/5/models/m-5e8cc895967c445d8d924a9839d144d0/artifacts/MLmodel",
+          "bytes": 1336,
+          "bucket": "pucpr-poc",
+          "sha256": "87f4ae43cc7cfadee1b746deef34b90ee1f26b5cec7c4c36c10903096f4e8101",
+          "status": "PASS",
+          "model_version": "2",
+          "object_version_id": "9f3712a9-3acf-417a-a646-06f996c46265"
+        },
+        {
+          "key": "mlflow/5/models/m-5e8cc895967c445d8d924a9839d144d0/artifacts/model.pkl",
+          "bytes": 2532,
+          "bucket": "pucpr-poc",
+          "sha256": "63c36c2277e545a1e54894a5ba827506213434b20b4bec30f0ffece46804962e",
+          "status": "PASS",
+          "model_version": "2",
+          "object_version_id": "ad033c9d-f0ac-49bf-8479-73741f56d4cd"
+        },
+        {
+          "key": "mlflow/5/models/m-5e8cc895967c445d8d924a9839d144d0/artifacts/requirements.txt",
+          "bytes": 80,
+          "bucket": "pucpr-poc",
+          "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+          "status": "PASS",
+          "model_version": "2",
+          "object_version_id": "7b4a9359-ba58-44b2-9249-dfaa8bcda917"
+        }
+      ],
+      "training_execution_id": "eb5b207c-550f-4c37-b8a9-7fce3fea9710"
+    },
+    {
+      "run_id": "626ab2a7935248baae5285af455acb9a",
+      "catalog": {
+        "domain": "planilha-turmas",
+        "run_id": "626ab2a7935248baae5285af455acb9a",
+        "run_name": "hi.pt.demanda.DEMO-C1.DEMO-CR2.P1__ridge__20261104T214807Z__a01__0f04b7fb",
+        "trace_id": "tr-650bcbd7a9a5997c96a086a3455846b5",
+        "algorithm": "ridge",
+        "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+        "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
+        "model_key": "hi.pt.demanda.DEMO-C1.DEMO-CR2.P1",
+        "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
+        "catalog_id": "871f4e77-eafd-5fb4-a094-9419851165a2",
+        "cycle_code": "2026-1",
+        "campus_code": "DEMO-C1",
+        "config_hash": "f6e5e1fe48c795d059feccfe6fdb0d886c03a03c891d9c8eb137b1bcd76016ff",
+        "course_code": "DEMO-CR2",
+        "environment": "poc",
+        "period_code": "P1",
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "solution_id": "horarios-inteligentes",
+        "source_type": "DEMO",
+        "artifact_uri": "models:/m-82054893058342ebbc8a3e43fb84f204",
+        "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+        "execution_id": "0f04b7fb-382b-41ff-b113-6892dce4d86f",
+        "manifest_uri": "s3://pucpr-poc/lineage/poc/planilha-turmas/catalog/cycles/2026-1/models/hi.pt.demanda.DEMO-C1.DEMO-CR2.P1/versions/v0002/manifest.json",
+        "model_family": "demanda-alunos",
+        "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
+        "experiment_id": "5",
+        "model_version": "2",
+        "period_number": "1",
+        "query_version": "journey-history-v1",
+        "correlation_id": "811cc2d3-64d4-49eb-95e3-afa2de977822",
+        "data_as_of_utc": "2025-12-31T00:00:00+00:00",
+        "dataset_sha256": "7900273a22a096bef7a848c3bd0671e7d89290caec9f9d6dafa3c134e9566c20",
+        "artifact_sha256": "3cbfade08119c5eb2d15399d7602988f00495e22786115daf32cdbb3ec6273fd",
+        "experiment_name": "HI/POC/PlanilhaTurmas/Demanda/2026-1",
+        "manifest_sha256": "fa95363a872815faf34b0c0662cf91b42fed4ee876b2c24940939f8071e05f61",
+        "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
+        "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
+        "operation_job_id": "0f04b7fb-382b-41ff-b113-6892dce4d86f",
+        "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
+        "validation_status": "DEMO_CANDIDATE",
+        "model_display_name": "Planilha Turmas DEMO • DEMO-C1 • DEMO-CR2 • Período 1",
+        "feature_schema_hash": "08c74a87750ccb243562cadb7f995a59c3be4c73caf7e102a53705f160c97ce7",
+        "model_signature_hash": "34fa99829b3165cf12121ca03583e611c0afaadeec8982b7982fa048dd250e1c",
+        "training_campaign_id": "4626d239-6145-4cc3-95ca-5640799dff03",
+        "campaign_display_name": "POC DEMO • Três períodos distintos",
+        "registered_model_name": "hi.pt.demanda.DEMO-C1.DEMO-CR2.P1",
+        "training_execution_id": "0f04b7fb-382b-41ff-b113-6892dce4d86f",
+        "dataset_schema_version": "1.0",
+        "lineage_schema_version": "HI-LINEAGE/1.1"
+      },
+      "metrics": {
+        "mae": 8.291978609625673,
+        "rmse": 8.291978609625673,
+        "cpu_seconds": 0.5577286680000001,
+        "baseline_mae": 10.727272727272727,
+        "peak_rss_kib": 256436.0,
+        "baseline_rmse": 10.727272727272727,
+        "duration_seconds": 1.3673820050025824
+      },
+      "trace_id": "tr-650bcbd7a9a5997c96a086a3455846b5",
+      "model_uri": "models:/hi.pt.demanda.DEMO-C1.DEMO-CR2.P1/2",
+      "model_name": "hi.pt.demanda.DEMO-C1.DEMO-CR2.P1",
+      "artifact_uri": "models:/m-82054893058342ebbc8a3e43fb84f204",
+      "experiment_id": "5",
+      "model_version": "2",
+      "artifact_sha256": "3cbfade08119c5eb2d15399d7602988f00495e22786115daf32cdbb3ec6273fd",
+      "storage_evidence": [
+        {
+          "key": "mlflow/5/models/m-82054893058342ebbc8a3e43fb84f204/artifacts/MLmodel",
+          "bytes": 1336,
+          "bucket": "pucpr-poc",
+          "sha256": "596e81a9604d0a41692b45584ee97aef181a1c4fc576b7540d28d7b1a814444e",
+          "status": "PASS",
+          "model_version": "2",
+          "object_version_id": "7ff784fa-578e-43fe-a598-1e2b455018cc"
+        },
+        {
+          "key": "mlflow/5/models/m-82054893058342ebbc8a3e43fb84f204/artifacts/model.pkl",
+          "bytes": 2532,
+          "bucket": "pucpr-poc",
+          "sha256": "3cbfade08119c5eb2d15399d7602988f00495e22786115daf32cdbb3ec6273fd",
+          "status": "PASS",
+          "model_version": "2",
+          "object_version_id": "1c3f8ad3-615c-40d7-bec0-91ede3ff5a53"
+        },
+        {
+          "key": "mlflow/5/models/m-82054893058342ebbc8a3e43fb84f204/artifacts/requirements.txt",
+          "bytes": 80,
+          "bucket": "pucpr-poc",
+          "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+          "status": "PASS",
+          "model_version": "2",
+          "object_version_id": "e1f22c1c-b8c1-403f-b968-55335bbc3ffc"
+        }
+      ],
+      "training_execution_id": "0f04b7fb-382b-41ff-b113-6892dce4d86f"
+    }
+  ],
+  "limitations": [
+    "Base Git b02739caf75c202402332c04b3c626dd1fa9eb40 com alterações locais: não é um commit que contenha a V3. Não houve commit, push ou PR.",
+    "Cada prova conserva sua data e versão de código; resets ocorreram antes do reforço final da auditoria. Migração e controlador não mudaram depois do ensaio.",
+    "Por orientação posterior do usuário, a entrega é do código pronto para teste local. Conferência visual fica com o usuário; CI remoto não é condição para esta entrega. Nenhum resultado não executado foi marcado PASS.",
+    "500 ensaios V2 são baseline histórico de orquestração sobre o mesmo dataset/um SHA; não certificam V3 ou 500 comportamentos. V3 executou campanha de 30 escopos e prova de três modelos distintos.",
+    "DEMO e contrato provisório; V4.4, PRIME, dados reais, produção/GCP e SLO não homologados.",
+    "Catálogo SQL 1.1 indexa novas versões. Registro antigo sem contexto suficiente não recebe backfill inventado; consultar Registry/lineage e LEGACY_PARTIAL.",
+    "O inventário anterior não continha aprovações: nenhuma aprovação histórica principal foi exercitada na prova de preservação; governança foi testada no isolado."
+  ]
+}

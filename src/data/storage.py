@@ -15,3 +15,8 @@ def s3():
 
 def bucket():
     return os.getenv("S3_BUCKET", "pucpr-poc")
+
+
+def artifact_destination():
+    """Single server/proof mapping; MLflow proxy URI is relative to this destination."""
+    return f's3://{bucket()}/mlflow'

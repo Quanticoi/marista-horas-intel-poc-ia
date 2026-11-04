@@ -2,13 +2,14 @@ import os
 from typing import Literal
 from pydantic import BaseModel,ConfigDict,Field
 from uuid import UUID
+from src.common.tagging import MODEL_PATTERN
 
 class Parameters(BaseModel):
     model_config=ConfigDict(extra="forbid")
     mode:Literal["READ_EXISTING","GENERATE_AND_VALIDATE"]="READ_EXISTING"
     proposal_id:UUID|None=None
     snapshot_id:UUID|None=None
-    model_name:str=Field(default="planilha-turmas-demo",pattern=r"^(planilha-turmas-demo|hi\.demo\.[A-Za-z0-9_.-]+)$",max_length=160)
+    model_name:str=Field(default="planilha-turmas-demo",pattern=MODEL_PATTERN,max_length=160)
     model_version:str=Field(default="",pattern=r"^([1-9][0-9]*)?$")
     registry_prefix:str=Field(default="",pattern=r"^[A-Za-z0-9_.-]{0,160}$")
     registry_page_token:str=Field(default="",max_length=2048)
@@ -21,7 +22,8 @@ class Parameters(BaseModel):
     algorithm:Literal["ridge","dummy"]="ridge"
     alpha:float=Field(default=1,gt=0,le=1000)
     capacity:int=Field(default=40,ge=1,le=500)
-    model_count:int=Field(default=30,ge=1,le=500)
+    model_count:int=Field(default=3,ge=1,le=500)
+    campaign_display_name:str=Field(default="POC DEMO • Validação manual",min_length=1,max_length=160)
     parallel_jobs:int=Field(default=2,ge=1,le=2)
     campaign_action:Literal["create","observe","pause","resume","cancel","retry-failed"]="observe"
     governance_action:Literal["read","request","approve","reject"]="read"

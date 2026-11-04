@@ -1,0 +1,10 @@
+bucket,key,bytes,sha256,model_key,model_version,run_id
+pucpr-poc,mlflow/5/models/m-580070f5f05c467f8c3fb922b69d9913/artifacts/MLmodel,1336,09f012fc593620440f4a1cffe5f2fa2713e5f211a9663cb90c9773ff50a6ca2c,hi.pt.demanda.DEMO-C1.DEMO-CR1.P1,4,18cdc4f10eaf47e4ab30104994e34ca5
+pucpr-poc,mlflow/5/models/m-580070f5f05c467f8c3fb922b69d9913/artifacts/model.pkl,2532,8e6043209a63edaadbdd46de27731ca0c7fbcf9555c8d94579dae7b93de0bf72,hi.pt.demanda.DEMO-C1.DEMO-CR1.P1,4,18cdc4f10eaf47e4ab30104994e34ca5
+pucpr-poc,mlflow/5/models/m-580070f5f05c467f8c3fb922b69d9913/artifacts/requirements.txt,80,3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2,hi.pt.demanda.DEMO-C1.DEMO-CR1.P1,4,18cdc4f10eaf47e4ab30104994e34ca5
+pucpr-poc,mlflow/5/models/m-5e8cc895967c445d8d924a9839d144d0/artifacts/MLmodel,1336,87f4ae43cc7cfadee1b746deef34b90ee1f26b5cec7c4c36c10903096f4e8101,hi.pt.demanda.DEMO-C1.DEMO-CR1.P2,2,efeccb749af2422f84df5f1b43153f43
+pucpr-poc,mlflow/5/models/m-5e8cc895967c445d8d924a9839d144d0/artifacts/model.pkl,2532,63c36c2277e545a1e54894a5ba827506213434b20b4bec30f0ffece46804962e,hi.pt.demanda.DEMO-C1.DEMO-CR1.P2,2,efeccb749af2422f84df5f1b43153f43
+pucpr-poc,mlflow/5/models/m-5e8cc895967c445d8d924a9839d144d0/artifacts/requirements.txt,80,3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2,hi.pt.demanda.DEMO-C1.DEMO-CR1.P2,2,efeccb749af2422f84df5f1b43153f43
+pucpr-poc,mlflow/5/models/m-82054893058342ebbc8a3e43fb84f204/artifacts/MLmodel,1336,596e81a9604d0a41692b45584ee97aef181a1c4fc576b7540d28d7b1a814444e,hi.pt.demanda.DEMO-C1.DEMO-CR2.P1,2,626ab2a7935248baae5285af455acb9a
+pucpr-poc,mlflow/5/models/m-82054893058342ebbc8a3e43fb84f204/artifacts/model.pkl,2532,3cbfade08119c5eb2d15399d7602988f00495e22786115daf32cdbb3ec6273fd,hi.pt.demanda.DEMO-C1.DEMO-CR2.P1,2,626ab2a7935248baae5285af455acb9a
+pucpr-poc,mlflow/5/models/m-82054893058342ebbc8a3e43fb84f204/artifacts/requirements.txt,80,3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2,hi.pt.demanda.DEMO-C1.DEMO-CR2.P1,2,626ab2a7935248baae5285af455acb9a

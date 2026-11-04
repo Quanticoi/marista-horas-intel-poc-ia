@@ -174,7 +174,7 @@ def execute_plan(plan,environment,project,phrase,execute,reinitialize):
                 compose(project,"up","-d","--wait","--wait-timeout","300")
                 after=data_inventory(project)
                 for table in ("proposal_generations","proposal_lines","training_executions","prediction_jobs","model_deployments",
-                              "operation_jobs","operation_events","training_campaigns","model_approval_requests"):
+                              "operation_jobs","operation_events","training_campaigns","model_approval_requests","model_version_catalog"):
                     if after["databases"]["planejamento_db"][table]["count"]:
                         raise ValueError("Unexpected business residue")
                 for table in ("runs","registered_models","model_versions","trace_info"):

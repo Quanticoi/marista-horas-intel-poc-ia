@@ -1,0 +1,72 @@
+{
+  "status": "AUTO_PASS",
+  "executed_at_utc": "2026-11-04T21:48:29.944109+00:00",
+  "base_commit": "b02739caf75c202402332c04b3c626dd1fa9eb40",
+  "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+  "checks": {
+    "runs": 83,
+    "versions": 57,
+    "objects": 395,
+    "proposals": 22,
+    "snapshots": 1,
+    "approvals": 0
+  },
+  "editable_notebooks": [
+    {
+      "name": "workspace/notebooks/00_validacao_ambiente.ipynb",
+      "sha256": "cfb263add9201887f9c4f9dddd83c4714b83ef5b52a1db8f8f0f7cd616cd9f14",
+      "preserved_at": "workspace/notebook-backups/00_validacao_ambiente.cfb263add9201887f9c4f9dddd83c4714b83ef5b52a1db8f8f0f7cd616cd9f14.ipynb"
+    },
+    {
+      "name": "workspace/notebooks/01_jornada_completa_planilha_turmas.ipynb",
+      "sha256": "4a1bc2d7e2e43e27315d826ef98b1a62fa8017f46536d1490dcbf2a84ea5e528",
+      "preserved_at": "workspace/notebook-backups/01_jornada_completa_planilha_turmas.4a1bc2d7e2e43e27315d826ef98b1a62fa8017f46536d1490dcbf2a84ea5e528.ipynb"
+    },
+    {
+      "name": "workspace/notebooks/02_teste_inferencia_planilha_turmas.ipynb",
+      "sha256": "9a9265265f0b7cb85fd32db4cb6e49d22e4d11adc23947d6c834170ca2c9ca82",
+      "preserved_at": "workspace/notebook-backups/02_teste_inferencia_planilha_turmas.9a9265265f0b7cb85fd32db4cb6e49d22e4d11adc23947d6c834170ca2c9ca82.ipynb"
+    },
+    {
+      "name": "workspace/notebooks/03_exploracao_preparacao_dados.ipynb",
+      "sha256": "83f5a474b1e71bd69eecd9f2c7a134eb5f24801673b6eb635a66dab775c5a098",
+      "preserved_at": "workspace/notebook-backups/03_exploracao_preparacao_dados.83f5a474b1e71bd69eecd9f2c7a134eb5f24801673b6eb635a66dab775c5a098.ipynb"
+    },
+    {
+      "name": "workspace/notebooks/04_treinamento_individual.ipynb",
+      "sha256": "ca0655269619663d61cae96b2bc28ef2ba339ab7a8abc9a079e55e78d56b0481",
+      "preserved_at": "workspace/notebook-backups/04_treinamento_individual.ca0655269619663d61cae96b2bc28ef2ba339ab7a8abc9a079e55e78d56b0481.ipynb"
+    },
+    {
+      "name": "workspace/notebooks/05_treinamento_campanha.ipynb",
+      "sha256": "613151f7d0f11aa696fbb125789cd77d9cb605a2245524c6e081cb978a4f9956",
+      "preserved_at": "workspace/notebook-backups/05_treinamento_campanha.613151f7d0f11aa696fbb125789cd77d9cb605a2245524c6e081cb978a4f9956.ipynb"
+    },
+    {
+      "name": "workspace/notebooks/06_avaliacao_comparativa.ipynb",
+      "sha256": "a0dab6165490636a8d3689dcb53fc7a57948446c690b9083c3778c1e63e38302",
+      "preserved_at": "workspace/notebook-backups/06_avaliacao_comparativa.a0dab6165490636a8d3689dcb53fc7a57948446c690b9083c3778c1e63e38302.ipynb"
+    },
+    {
+      "name": "workspace/notebooks/07_registry_governanca.ipynb",
+      "sha256": "3f9725b64b6a9a70c02718e84a11b7a398368e6ed744c957835bbbcc5f94f956",
+      "preserved_at": "workspace/notebook-backups/07_registry_governanca.3f9725b64b6a9a70c02718e84a11b7a398368e6ed744c957835bbbcc5f94f956.ipynb"
+    },
+    {
+      "name": "workspace/notebooks/08_auditoria_lineage.ipynb",
+      "sha256": "1c8901c344d39c1c936bdd5d0b260040fbcf5b5be50557791661abdffe7130ac",
+      "preserved_at": "workspace/notebook-backups/08_auditoria_lineage.1c8901c344d39c1c936bdd5d0b260040fbcf5b5be50557791661abdffe7130ac.ipynb"
+    },
+    {
+      "name": "workspace/notebooks/09_reset_total_ambiente_poc.ipynb",
+      "sha256": "9ca85ff5cfe97117cee2597dd8788fbc39277e377c7e734bc68603b96656a1c3",
+      "preserved_at": "workspace/notebook-backups/09_reset_total_ambiente_poc.9ca85ff5cfe97117cee2597dd8788fbc39277e377c7e734bc68603b96656a1c3.ipynb"
+    }
+  ],
+  "mlflow_health": 200,
+  "migrations": [
+    {
+      "version_num": "008"
+    }
+  ]
+}

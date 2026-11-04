@@ -1,0 +1,26 @@
+{
+  "test_id": "mlflow-down",
+  "executed_at_utc": "2026-11-04T21:16:19.977382+00:00",
+  "source_type": "DEMO",
+  "checks": {
+    "preflight_blocks_before_fit": true
+  },
+  "dependencies": [
+    {
+      "dependency": "source SQL",
+      "status": "PASS",
+      "attempts": 1
+    },
+    {
+      "dependency": "application SQL",
+      "status": "PASS",
+      "attempts": 1
+    },
+    {
+      "dependency": "MLflow PostgreSQL + proxy artifact roundtrip",
+      "status": "FAIL",
+      "error": "ConnectError"
+    }
+  ],
+  "status": "AUTO_PASS"
+}

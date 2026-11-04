@@ -1,0 +1,4 @@
+bucket,key,bytes,sha256,model_key,model_version,run_id
+pucpr-poc,mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/MLmodel,1336,d1ba43508ec6fc0a1d34d487a39af29294c7af2212affc3f8bd263118f5d6c79,hi.demo.notebook.a9291c01,1,420b1e103c8741ddbb8ec66427a95c0b
+pucpr-poc,mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/model.pkl,8671,4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b,hi.demo.notebook.a9291c01,1,420b1e103c8741ddbb8ec66427a95c0b
+pucpr-poc,mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/requirements.txt,80,3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2,hi.demo.notebook.a9291c01,1,420b1e103c8741ddbb8ec66427a95c0b

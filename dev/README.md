@@ -4,7 +4,8 @@ Esta pasta não contém scripts executáveis.
 
 | Arquivo | Finalidade |
 |---|---|
-| `spec_correcoes.v2.md` | Instrução atual das correções V2 |
+| `spec-correcoes.v3.md` | Instrução atual: bancada de validação manual, nomes e auditoria |
+| `spec_correcoes.v2.md` | Referência das operações persistentes V2 |
 | `spec-correcoes.md` | Instrução anterior; contexto e critérios V1.1 |
 | `spec-historica-v1.md` | Referência histórica do contrato/DDL original, sem força sobre decisões posteriores |
 

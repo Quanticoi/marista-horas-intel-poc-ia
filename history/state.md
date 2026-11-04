@@ -1,3 +1,21 @@
+# V3 — código finalizado para teste local pelo usuário
+
+Pedido posterior: commit autorizado pelo usuário na branch development. Incluir implementação, documentação e evidências V3; push e PR não solicitados nesta etapa. Validação estática, lint e verificação de segredos passaram antes do commit.
+
+Orientação mais recente: finalizar o código e deixar o teste local com o usuário. Não prosseguir com automação visual nem exigir CI remoto para esta entrega. Implementação e imagens aplicadas; 85 testes principais passaram. Nenhum ajuste funcional identificado permanece pendente. Não criar commit/PR sem pedido explícito.
+
+Entrega: artifacts/reports/v3/acceptance-v3.md/json, estado READY_FOR_LOCAL_TEST. Conferência local ficou com o usuário; resultados não executados continuam identificados, sem falsa aprovação manual. Histórico e evidências preservados.
+
+## Estado anterior — mantido como histórico
+
+# V3 em implementação — 04/11/2026
+
+Base b02739c, diagrama startup preservado. V3 implementada e rebuild principal aplicado com migration008 aditiva. Suíte principal: 85 testes, zero falhas/erros (artifacts/reports/v3/main-suite-junit.xml). Preservação comprovada de 83 runs, 57 versões, 22 propostas e 395 objetos; notebooks anteriores preservados. Dez notebooks executados em kernels novos na stack isolada; três modelos distintos, duas versões, geração API e recuperação sem Jupyter comprovados. Reset-data/empty e factory-reset/demo-ready PASS somente no projeto isolado. Nenhum reset principal.
+
+Revisão final aplicada: assinatura validada antes de desserializar, cache sincronizado, auditoria verifica manifesto da proposta e atribuição de linhas, snapshot SQL/S3 e tags removidas de ambos os objetos. Imagens atualizadas; 85 testes principais novamente PASS. Dez notebooks isolados em kernels novos PASS, negativos ampliados PASS e recuperação de três modelos sem Jupyter novamente PASS. Workspace principal: dez notebooks editáveis e gravação/releitura pela API PASS; notebook04 executado com chave funcional DEMO. Relatórios novos em v3, sem reaproveitar v2 como destino.
+
+Matriz consolidada em artifacts/reports/v3/acceptance-v3.md/json: 17 AUTO_PASS, 2 MANUAL_NOT_CHECKED e 1 BLOCKED (CI remoto). Pendentes: conferência visual completa e CI remoto em checkout limpo. Computer Use encerrou a tentativa anterior por não conseguir determinar a URL do navegador com segurança; UI permanece MANUAL_NOT_CHECKED até observação real. Não criar commit/PR nesta etapa, conforme spec V3. Alterações ainda não publicadas. Evidências e índice SHA em artifacts/reports/v3.
+
 # Estado atual — V2 validada e repositório revisado
 
 04/11/2026. Onze serviços principais saudáveis em Docker Compose. Código final

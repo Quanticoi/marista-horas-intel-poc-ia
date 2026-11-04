@@ -13,7 +13,7 @@ assert all(e.name=="Default" for e in experiments)
 assert not client.search_registered_models()
 assert not client.search_runs([e.experiment_id for e in experiments])
 data=inventory()
-for table in ("proposal_generations","proposal_lines","training_executions","prediction_jobs","operation_jobs","operation_events","training_campaigns","model_approval_requests"):
+for table in ("proposal_generations","proposal_lines","training_executions","prediction_jobs","operation_jobs","operation_events","training_campaigns","model_approval_requests","model_version_catalog"):
     assert data["databases"]["planejamento_db"][table]["count"]==0
 assert data["databases"]["planejamento_db"]["dataset_snapshots"]["count"]==(1 if mode=="demo-ready" else 0)
 for table,values in data["databases"]["mlflow_db"].items():

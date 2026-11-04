@@ -68,12 +68,16 @@ def write_report_file(path,content):
             temporary.unlink(missing_ok=True)
 
 
-def report(test_id,evidence,status="PASS",limitations=None):
+def report(test_id,evidence,status="PASS",limitations=None,generation="v2"):
+    if generation not in ('v2','v3'):
+        raise ValueError('Unsupported evidence generation')
     document=dict(timestamp_utc=utcnow(),git_commit=os.getenv("CODE_VERSION","uncommitted"),
         code_version=source_version(),environment="poc",project=os.getenv("POC_PROJECT","marista"),test_id=test_id,status=status,source_type="DEMO",
         evidence=evidence,limitations=limitations or [])
     reject_sensitive(document)
-    root=Path("/reports/v2");root.mkdir(parents=True,exist_ok=True)
+    root=Path('/reports')/generation;root.mkdir(parents=True,exist_ok=True)
+    if root.stat().st_uid==os.geteuid():
+        root.chmod(0o777)
     path=root/(test_id+".json")
     write_report_file(path,json.dumps(document,default=str,ensure_ascii=False,indent=2))
     write_report_file(path.with_suffix(".md"),f"# {test_id}\n\n{status} — {document['timestamp_utc']}\n\nCódigo: {document['code_version']}\n\nEvidência: [{path.name}]({path.name})\n\n"+"\n".join("- "+x for x in document["limitations"]))
@@ -82,8 +86,10 @@ def report(test_id,evidence,status="PASS",limitations=None):
 def comparison(cfg,snapshot_id="",limit=100):
     import mlflow
     mlflow.set_tracking_uri(cfg.tracking)
-    client=mlflow.MlflowClient();exp=client.get_experiment_by_name(cfg.experiment)
-    if exp is None:
+    from src.common.tagging import experiment_name
+    client=mlflow.MlflowClient()
+    experiments=[e for e in (client.get_experiment_by_name(cfg.experiment),client.get_experiment_by_name(experiment_name(cfg.cycle))) if e]
+    if not experiments:
         return []
     if snapshot_id:
         from uuid import UUID
@@ -92,4 +98,6 @@ def comparison(cfg,snapshot_id="",limit=100):
     return [{"run_id":r.info.run_id,"snapshot_id":r.data.tags.get("snapshot_id"),"model_key":r.data.tags.get("model_key"),
              "algorithm":r.data.params.get("algorithm"),"train_rows":r.data.params.get("train_rows"),
              "evaluation_rows":r.data.params.get("evaluation_rows"),"url":f"{cfg.ui}/#/experiments/{exp.experiment_id}/runs/{r.info.run_id}",
-             **r.data.metrics} for r in client.search_runs([exp.experiment_id],filter_string=query,max_results=limit)]
+             'target':r.data.params.get('target'),'evaluation_window':r.data.params.get('evaluation_window'),
+             'dataset_sha256':r.data.tags.get('dataset_sha256'),
+             **r.data.metrics} for exp in experiments for r in client.search_runs([exp.experiment_id],filter_string=query,max_results=limit)]

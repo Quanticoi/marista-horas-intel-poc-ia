@@ -5,6 +5,40 @@ SQL → treino real → MLflow/Registry → RustFS → inferência de versão ex
 PostgreSQL de negócio → contrato HTTP da aplicação. Jupyter é a bancada do
 cientista; a geração operacional V2 pertence à API e ao worker.
 
+A bancada V3 acrescenta nomes por escopo acadêmico DEMO, catálogo SQL e manifests
+legíveis no RustFS. Comece pelo [roteiro de validação manual](docs/operations/MANUAL_ACCEPTANCE_V3.md),
+com [consultas SQL](docs/operations/SQL_VALIDATION_V3.md) e o
+[dicionário HI-LINEAGE/1.1](docs/contracts/HI_TAGGING_STANDARD.md).
+No 04 escolha uma série; no 05 execute três séries; no 02 gere pela API;
+no 08 confira a proposta até os arquivos e exporte JSON/Markdown/CSV.
+
+[Entrega para teste local](artifacts/reports/v3/acceptance-v3.md): implementação
+aplicada ao Docker Compose e verificações automáticas registradas. A conferência
+local fica com o usuário; nenhuma aprovação visual ou execução de CI é presumida.
+
+### Onde conferir a mesma execução
+
+| Destino | Conferência |
+|---|---|
+| [Jupyter](http://localhost:8888) | 04/05 mostram contexto, parâmetros, progresso e tabela Onde conferir |
+| [MLflow](http://localhost:5000) | HI/POC/PlanilhaTurmas/Demanda/ciclo; run por tentativa; Registry por chave estável |
+| [RustFS](http://localhost:9001) | pucpr-poc/lineage/poc/planilha-turmas/catalog/cycles/ciclo/models/chave/versions/v000N/manifest.json |
+| PostgreSQL planejamento_db.planning | v_model_inventory, v_training_inventory, v_proposal_lineage_readable, v_storage_manifest_inventory |
+| [API Swagger](http://localhost:8000/docs) | GET /v1/audit/model, /v1/audit/proposal/{id}, /v1/audit/inventory; Bearer obrigatório |
+| [Dashboard](http://localhost:8088) | Catálogo auditável e Logs: filtros chave/run/campanha/proposta/correlação |
+
+`hi.pt.demanda.DEMO-C1.DEMO-CR1.P1` deriva dos códigos sintéticos existentes.
+Não é nome institucional. Uma nova chave de operação cria nova versão/proposta;
+a mesma chave com o mesmo payload recupera a operação anterior. Os nomes antigos
+continuam válidos. Legado sem prova completa recebe LEGACY_PARTIAL.
+O índice de catálogo guarda referências e hashes; o binário continua apenas no
+prefixo MLflow gerenciado. Aprovação corrente fica no PostgreSQL e precisa concordar
+com o alias; manifests imutáveis não armazenam autorização corrente.
+
+Para aplicar mudanças locais com preservação: `deployment/scripts/compose.ps1 rebuild`.
+A migração 008 é aditiva. Rebuild não remove volumes, histórico nem edições de notebooks.
+O inventário anterior à V3 está em `artifacts/reports/v3/inventory-before.json`.
+
 **Dados sintéticos, regras DEMO e contrato provisório.** Não publica no PRIME,
 não matricula estudantes, não aloca docentes/horários/salas e não homologa a V4.4.
 Capacidade40 é ilustrativa. Quantidades por categoria desconhecidas continuam

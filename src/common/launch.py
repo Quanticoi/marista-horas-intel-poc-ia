@@ -14,9 +14,10 @@ def main():
             drivername="postgresql+psycopg2").render_as_string(hide_password=False)
         # Supported migration command, executed before the listener is released.
         from src.persistence.mlflow_schema import upgrade
+        from src.data.storage import artifact_destination
         upgrade()
         os.execvp("mlflow",["mlflow","server","--host","0.0.0.0","--port","5000",
-                  "--serve-artifacts","--artifacts-destination",f"s3://{os.getenv('S3_BUCKET', 'pucpr-poc')}/mlflow",
+                  "--serve-artifacts","--artifacts-destination",artifact_destination(),
                   "--allowed-hosts","mlflow:5000,127.0.0.1:*,localhost:*"])
     elif sys.argv[1] == "jupyter":
         workspace=Path("/workspace/notebooks")

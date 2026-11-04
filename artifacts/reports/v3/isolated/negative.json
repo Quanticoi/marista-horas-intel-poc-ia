@@ -1,0 +1,21 @@
+{
+  "test_id": "negative",
+  "executed_at_utc": "2026-11-04T21:44:19.873316+00:00",
+  "source_type": "DEMO",
+  "checks": {
+    "corrupted_object_rejected": true,
+    "missing_object_rejected": true,
+    "altered_model_signature_rejected_before_deserialization": true,
+    "conflicting_tag_rejected_with_warm_cache": true,
+    "catalog_detects_shared_tag_deleted_from_both_objects": true,
+    "altered_proposal_manifest_rejected": true,
+    "revocation_blocks_warm_cache": true,
+    "wrong_snapshot_rejected": true,
+    "missing_version_rejected": true,
+    "no_auth_rejected": true
+  },
+  "model_key": "hi.demo.v3-negative.f3c26d13",
+  "model_version": "1",
+  "run_id": "fd2908848d2545928a73061cfc8325a4",
+  "status": "AUTO_PASS"
+}

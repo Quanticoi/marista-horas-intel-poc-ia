@@ -1,0 +1,163 @@
+{
+  "timestamp_utc": "2026-11-04T21:50:40.936315+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+  "environment": "poc",
+  "project": "marista",
+  "test_id": "04_treinamento_individual",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign": {
+      "campaign_id": "f76168f8-6eef-4fa9-9e5f-ccab2c0ab9ae",
+      "idempotency_key": "v3-final-workspace-individual-01",
+      "request_hash": "a0803a2ffa1621eab7c6be1ef64fb1de63c2e11d3de19c5e351e527f49bd9448",
+      "request": {
+        "alpha": 1.0,
+        "algorithm": "ridge",
+        "cycle_code": "2026-1",
+        "model_keys": [
+          "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1"
+        ],
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "max_attempts": 3,
+        "requested_by": "scientist-demo",
+        "schema_version": "poc-training-campaign-v2",
+        "confirm_training": true,
+        "max_parallel_jobs": 2,
+        "campaign_display_name": "POC DEMO • Validação manual"
+      },
+      "correlation_id": "51cae864-b9a0-44e9-b94f-757c9978ca9c",
+      "requested_by": "scientist-demo",
+      "status": "COMPLETED",
+      "max_parallel_jobs": 2,
+      "requested_count": 1,
+      "created_at_utc": "2026-11-04T21:50:38.836522+00:00",
+      "started_at_utc": "2026-11-04T21:50:38.855616+00:00",
+      "ended_at_utc": "2026-11-04T21:50:39.632972+00:00",
+      "counts": {
+        "COMPLETED": 1
+      }
+    },
+    "items": [
+      {
+        "job_id": "77a7b2be-100a-4be4-9fc0-e57f03da8a80",
+        "campaign_id": "f76168f8-6eef-4fa9-9e5f-ccab2c0ab9ae",
+        "model_key": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T21:50:39.382288+00:00",
+        "started_at_utc": "2026-11-04T21:50:38.855616+00:00",
+        "ended_at_utc": "2026-11-04T21:50:39.627898+00:00",
+        "mlflow_run_id": "2836a33c2571431da2bd061d413f1401",
+        "registered_model_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1",
+        "model_version": "5",
+        "error_code": null,
+        "result": {
+          "run_id": "2836a33c2571431da2bd061d413f1401",
+          "catalog": {
+            "domain": "planilha-turmas",
+            "run_id": "2836a33c2571431da2bd061d413f1401",
+            "run_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1__ridge__20261104T215038Z__a01__77a7b2be",
+            "trace_id": "tr-6f3b145ab10602ab7a7b4cd312ff035c",
+            "algorithm": "ridge",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
+            "model_key": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1",
+            "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
+            "catalog_id": "c8454d20-98fc-5cf4-91bd-8e88b6c3c209",
+            "cycle_code": "2026-1",
+            "campus_code": "DEMO-C1",
+            "config_hash": "f6e5e1fe48c795d059feccfe6fdb0d886c03a03c891d9c8eb137b1bcd76016ff",
+            "course_code": "DEMO-CR1",
+            "environment": "poc",
+            "period_code": "P1",
+            "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+            "solution_id": "horarios-inteligentes",
+            "source_type": "DEMO",
+            "artifact_uri": "models:/m-d20bb98c195f4c2aaa841b6d40c6d6d5",
+            "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+            "execution_id": "77a7b2be-100a-4be4-9fc0-e57f03da8a80",
+            "manifest_uri": "s3://pucpr-poc/lineage/poc/planilha-turmas/catalog/cycles/2026-1/models/hi.pt.demanda.DEMO-C1.DEMO-CR1.P1/versions/v0005/manifest.json",
+            "model_family": "demanda-alunos",
+            "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
+            "experiment_id": "5",
+            "model_version": "5",
+            "period_number": "1",
+            "query_version": "journey-history-v1",
+            "correlation_id": "51cae864-b9a0-44e9-b94f-757c9978ca9c",
+            "data_as_of_utc": "2025-12-31T00:00:00+00:00",
+            "dataset_sha256": "22b3c1491ef5f01f1c646bc43fd8350d324bce87b3bf4ef3d8b2bfb229637117",
+            "artifact_sha256": "ed906b992cc3d85b0641488fa01758037fd33efd7bd6f3c6c299f88ee89a2758",
+            "experiment_name": "HI/POC/PlanilhaTurmas/Demanda/2026-1",
+            "manifest_sha256": "cbc924534922f1a479907ccccec3308ea755d690c3e88d57414daa4cd628f2c9",
+            "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
+            "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
+            "operation_job_id": "77a7b2be-100a-4be4-9fc0-e57f03da8a80",
+            "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
+            "validation_status": "DEMO_CANDIDATE",
+            "model_display_name": "Planilha Turmas DEMO • DEMO-C1 • DEMO-CR1 • Período 1",
+            "feature_schema_hash": "08c74a87750ccb243562cadb7f995a59c3be4c73caf7e102a53705f160c97ce7",
+            "model_signature_hash": "34fa99829b3165cf12121ca03583e611c0afaadeec8982b7982fa048dd250e1c",
+            "training_campaign_id": "f76168f8-6eef-4fa9-9e5f-ccab2c0ab9ae",
+            "campaign_display_name": "POC DEMO • Validação manual",
+            "registered_model_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1",
+            "training_execution_id": "77a7b2be-100a-4be4-9fc0-e57f03da8a80",
+            "dataset_schema_version": "1.0",
+            "lineage_schema_version": "HI-LINEAGE/1.1"
+          },
+          "metrics": {
+            "mae": 2.4994652406417117,
+            "rmse": 2.4994652406417117,
+            "cpu_seconds": 0.12685226199999988,
+            "baseline_mae": 2.18181818181818,
+            "peak_rss_kib": 275156.0,
+            "baseline_rmse": 2.18181818181818,
+            "duration_seconds": 0.4253905270015821
+          },
+          "trace_id": "tr-6f3b145ab10602ab7a7b4cd312ff035c",
+          "model_uri": "models:/hi.pt.demanda.DEMO-C1.DEMO-CR1.P1/5",
+          "model_name": "hi.pt.demanda.DEMO-C1.DEMO-CR1.P1",
+          "artifact_uri": "models:/m-d20bb98c195f4c2aaa841b6d40c6d6d5",
+          "experiment_id": "5",
+          "model_version": "5",
+          "artifact_sha256": "ed906b992cc3d85b0641488fa01758037fd33efd7bd6f3c6c299f88ee89a2758",
+          "storage_evidence": [
+            {
+              "key": "mlflow/5/models/m-d20bb98c195f4c2aaa841b6d40c6d6d5/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "12097cab8e71807217ef26a34d7b3f742c2fd227b2c45dc2a4ec81a935dd5321",
+              "status": "PASS",
+              "model_version": "5",
+              "object_version_id": "161d7131-725e-48e5-9b75-3f1b80f2ce6e"
+            },
+            {
+              "key": "mlflow/5/models/m-d20bb98c195f4c2aaa841b6d40c6d6d5/artifacts/model.pkl",
+              "bytes": 2532,
+              "bucket": "pucpr-poc",
+              "sha256": "ed906b992cc3d85b0641488fa01758037fd33efd7bd6f3c6c299f88ee89a2758",
+              "status": "PASS",
+              "model_version": "5",
+              "object_version_id": "bdbe8ba0-aabc-492f-abfb-8da9d7277a47"
+            },
+            {
+              "key": "mlflow/5/models/m-d20bb98c195f4c2aaa841b6d40c6d6d5/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "5",
+              "object_version_id": "fb851ccf-ff0e-4729-a134-194fe897d5ba"
+            }
+          ],
+          "training_execution_id": "77a7b2be-100a-4be4-9fc0-e57f03da8a80"
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Dados DEMO e contrato provisório; regras não avaliadas não são homologação",
+    "Execução sem erro do notebook não implica execução de operações opt-in desativadas"
+  ]
+}

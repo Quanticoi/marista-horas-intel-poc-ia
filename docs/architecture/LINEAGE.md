@@ -1,5 +1,12 @@
 # HI-LINEAGE/1.0
 
+Extensão compatível atual: [HI-LINEAGE/1.1](../contracts/HI_TAGGING_STANDARD.md).
+Migration008 adiciona catálogo de versões e quatro views legíveis. Metadados
+anteriores permanecem intactos. O agregador de auditoria compara tags run/versão,
+assinatura, bytes SDK/S3, manifesto imutável e catálogo SQL antes de VERIFIED.
+RECORDED em view não equivale à reconciliação viva. Uma oferta conserva uma linha
+na view; contribuições N:N ficam em array e em proposal_model_usage.
+
 Implementação central: `src/common/lineage.py`. JSON canônico usa UTF-8, chaves
 ordenadas, sem espaços, sem NaN; SHA-256 dos bytes. IDs UUID gerados uma vez.
 

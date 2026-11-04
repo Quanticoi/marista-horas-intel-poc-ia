@@ -7,7 +7,7 @@ import mlflow
 from sqlalchemy import text
 from src.common.settings import ROOT
 from src.data.journey import KEYS
-from src.data.storage import s3, bucket
+from src.data.storage import s3, bucket, artifact_destination
 from src.workbench.journey_config import sql_engine
 
 
@@ -19,13 +19,18 @@ def verify_model_storage(trace):
     logged = client.get_logged_model(version.source.removeprefix("models:/"))
     if not logged.artifact_location.startswith("mlflow-artifacts:/"):
         raise ValueError("Expected proxy artifact location")
-    prefix = "mlflow/" + logged.artifact_location.removeprefix("mlflow-artifacts:/").lstrip("/")
+    from urllib.parse import urlparse
+    destination=urlparse(artifact_destination())
+    prefix=destination.path.strip('/')+'/'+logged.artifact_location.removeprefix('mlflow-artifacts:/').lstrip('/')
     storage = s3()
+    actual_keys={obj['Key'] for page in storage.get_paginator('list_objects_v2').paginate(Bucket=destination.netloc,Prefix=prefix+'/') for obj in page.get('Contents',[])}
     evidence = []
     with tempfile.TemporaryDirectory() as folder:
         downloaded = Path(mlflow.artifacts.download_artifacts(artifact_uri=trace["model_uri"], dst_path=folder))
         for filename in ("MLmodel", "model.pkl", "requirements.txt"):
             key = f"{prefix}/{filename}"
+            if key not in actual_keys:
+                raise ValueError('MISSING: SDK-resolved artifact object '+filename)
             response = storage.get_object(Bucket=bucket(), Key=key)
             try:
                 stored = response["Body"].read()

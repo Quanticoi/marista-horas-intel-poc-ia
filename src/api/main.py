@@ -28,6 +28,8 @@ from src.api.proposals import router as proposal_router
 app.include_router(proposal_router(auth))
 from src.api.lineage import router as lineage_router
 app.include_router(lineage_router(auth))
+from src.api.audit import router as audit_router
+app.include_router(audit_router(auth))
 
 
 @app.middleware("http")

@@ -1,0 +1,364 @@
+{
+  "plan_id": "82792fed-072b-44f7-93eb-599afc1352b1",
+  "status": "RESET_PASS",
+  "steps": [
+    "writers stopped",
+    "exclusive volumes removed"
+  ],
+  "timestamp_utc": "2026-11-04T21:24:28.689631+00:00",
+  "after": {
+    "bucket": "pucpr-poc",
+    "buckets": [
+      "pucpr-poc"
+    ],
+    "database_names": [
+      "mlflow_db",
+      "planejamento_db",
+      "postgres"
+    ],
+    "databases": {
+      "mlflow_db": {
+        "alembic_version": {
+          "count": 1,
+          "digest": "6928ed6a0b30741f6574f8d7c1d03428"
+        },
+        "assessments": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "budget_policies": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "datasets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_bindings": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_model_mappings": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoints": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "entity_associations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_dataset_records": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_dataset_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_datasets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "experiment_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "experiments": {
+          "count": 1,
+          "digest": "1130868b4f629f9b757276eb1c526f4b"
+        },
+        "input_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "inputs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "issues": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "latest_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "logged_model_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "logged_model_params": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "logged_model_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "logged_models": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_definitions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_version_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_versions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "online_scoring_configs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "params": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_model_aliases": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_model_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_models": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "runs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "scorer_versions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "scorers": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "secrets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "span_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "spans": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_info": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_request_metadata": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "webhook_events": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "webhooks": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "workspaces": {
+          "count": 1,
+          "digest": "f853bad469a0a08c243a1cef4b515440"
+        }
+      },
+      "planejamento_db": {
+        "academic_cycles": {
+          "count": 1,
+          "digest": "fe0055c294028bbca001f4fa72a8b978"
+        },
+        "academic_periods": {
+          "count": 30,
+          "digest": "8cee18be6d733e27d197aa0b31d218ba"
+        },
+        "audit_events": {
+          "count": 1,
+          "digest": "65d5be7dafcac0f690cc639ace8ecb41"
+        },
+        "campuses": {
+          "count": 3,
+          "digest": "2a1feab694fe2bc07c2dd54f878a9bd7"
+        },
+        "courses": {
+          "count": 15,
+          "digest": "e2a95968de4dd1a4e3baa38bc7053adf"
+        },
+        "dataset_snapshots": {
+          "count": 1,
+          "digest": "a1a9890a138028d26d0e0d3059b5aa8e"
+        },
+        "disciplines": {
+          "count": 90,
+          "digest": "272cc79e02ad459ce9d7d2e041f38754"
+        },
+        "historical_enrollments": {
+          "count": 350,
+          "digest": "5e74286583276a594842f1f76b45aaa9"
+        },
+        "lineage_edges": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "lineage_entities": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_approval_requests": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_catalog": {
+          "count": 30,
+          "digest": "223cb982fed51bfa3e74629f20ee7f79"
+        },
+        "model_deployments": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_quality_evaluations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_version_catalog": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "offer_suggestions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "operation_events": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "operation_jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "period_disciplines": {
+          "count": 90,
+          "digest": "486ae3dae01acddc14477e5cb0ec76ab"
+        },
+        "prediction_jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "predictions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_contract_evidence": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_generations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_lines": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_model_usage": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "training_campaigns": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "training_executions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      }
+    },
+    "objects": [
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "b7f30efb-2453-49eb-87fe-120651ba55ef"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/bronze.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "6a9893fa-9285-47b8-a1b6-2410b03a9f9b"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/gold.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "6a317668-9b06-487a-98d9-7be6b13d3bbb"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/manifest.json",
+        "kind": "Versions",
+        "size": 468,
+        "version": "b5737dca-0ea5-45cf-b9c2-c6967df65a95"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/raw.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "e95d5780-0cc9-4755-af8c-01cf5a6d28fc"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/silver.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "3cd84e2d-4cdc-4208-b27f-2d46459912a5"
+      }
+    ],
+    "queues": [
+      {
+        "messages": 0,
+        "name": "celery",
+        "vhost": "/"
+      }
+    ],
+    "versioning": "Enabled"
+  }
+}

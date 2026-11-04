@@ -169,6 +169,11 @@ display(summary)
 display(Markdown(f"[Run MLflow]({trace['run_url']}) · [API](http://127.0.0.1:8000/docs) · [Dashboard](http://127.0.0.1:8088) · [RustFS](http://127.0.0.1:9001)"))
 ''', "Todas as etapas PASS, evidência local e no Artifact Store, links sem segredos.")
 
+section("13. Onde conferir", "Jornada 01 é a demonstração legada agregada; o fluxo operacional de geração é API/worker pelo notebook 02. Catálogo 1.1 por série acadêmica: notebooks 04/05.", '''
+from src.workbench.manual_validation import display_locations
+display_locations(cfg,[dict(trace,storage_evidence=storage_evidence)])
+''', "Nomes DEMO, IDs completos, arquivos físicos e links de conferência.")
+
 notebook = dict(cells=cells, metadata={"kernelspec":{"display_name":"PUCPR Python 3.12", "language":"python", "name":"pucpr"},
     "language_info":{"name":"python", "version":"3.12.9"}}, nbformat=4, nbformat_minor=5)
 for i, cell in enumerate(cells):

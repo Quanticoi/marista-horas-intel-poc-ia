@@ -1,5 +1,12 @@
 # Organização e capacidade de modelos
 
+V3: novos escopos DEMO usam `hi.pt.demanda.DEMO-C1.DEMO-CR1.P1`, derivado do
+catálogo SQL. Treino é filtrado por período antes do split; default da campanha
+no notebook05 é três escopos. Experimento fixo por domínio/ciclo e nomes de run
+incluem algoritmo/UTC/tentativa. Consulte o [dicionário](../contracts/HI_TAGGING_STANDARD.md).
+Os 500 ensaios V2 tinham um SHA distinto de model.pkl: constituem teste de
+orquestração, não 500 comportamentos acadêmicos nem aceite do código V3.
+
 Um MLflow por ambiente; experimento por domínio/campanha; run por tentativa;
 Registry por identidade estável. Nomes legados planilha-turmas-demo e C1-CR1-P1
 não são renomeados. Novos ensaios usam hi.demo.*; tags incluem solução, ambiente,

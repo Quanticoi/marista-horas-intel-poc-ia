@@ -13,6 +13,15 @@ para abrir o Jupyter. Execute comandos do host a partir da raiz do repositório.
 | `collect_evidence.py` | Copia evidências reais da stack isolada para artifacts/reports/v2/isolated |
 | `jupyter_editability.py` | Salva/relê um notebook temporário pela API e o remove; confere o catálogo editável |
 | `report.py` | Consolida as provas existentes; evidência ausente nunca recebe PASS |
+| `inventory_v3.py` | Inventário anterior somente leitura; executado em tools com /repository:ro; recusa sobrescrever baseline |
+| `preservation_v3.py` | Compara baseline V3 com SQL/SDK/S3 e cópias editáveis/arquivadas; tools com PYTHONPATH=/app |
+| `probe_v3.py` | Serving sem Jupyter, falhas de artefatos/tags/assinatura/manifest e MLflow down; somente projeto isolado |
+| `report_v3.py` | Consolida matriz V3-01..20 e índice SHA dos arquivos; não inventa PASS manual ou CI |
+
+V3: `reset.py --report-version v3` e `jupyter_editability.py --report-version v3`
+mantêm evidências separadas da V2. Os notebooks atuais exportam em `/reports/v3`.
+Use [o roteiro manual](../../docs/operations/MANUAL_ACCEPTANCE_V3.md) e consulte
+[o relatório final](../../artifacts/reports/v3/acceptance-v3.md) para limites das provas.
 
 `failure_drills.py` e `reset.py` interrompem serviços **da stack de teste**.
 Não são comandos de limpeza cotidiana. `preservation.py before` recusa

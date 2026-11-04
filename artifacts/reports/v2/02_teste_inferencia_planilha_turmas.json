@@ -1,20 +1,20 @@
 {
-  "timestamp_utc": "2026-11-04T20:12:24.820478+00:00",
-  "git_commit": "798b586ce95ae163251a025efafeac4e2fe21863",
-  "code_version": "sha256:c3a9af6b6859448a4fba9603744e3529671c9b735b1eb6b668f9b4a7987b9c9e",
+  "timestamp_utc": "2026-11-04T21:20:36.873393+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:d081aecc7d89ee87a6143bdf87abc7be151614b447c65ca82abe4665a418e5b7",
   "environment": "poc",
   "project": "marista",
   "test_id": "02_teste_inferencia_planilha_turmas",
   "status": "PASS",
   "source_type": "DEMO",
   "evidence": {
-    "proposal_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
+    "proposal_id": "7f3923d2-8b69-4d16-9ccd-169bd658080a",
     "http_pages": [
       {
         "schema_version": "poc-planilha-turmas-v1",
         "contract_status": "PROVISÓRIO / PENDENTE DE HOMOLOGAÇÃO",
-        "proposal_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
-        "execution_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
+        "proposal_id": "7f3923d2-8b69-4d16-9ccd-169bd658080a",
+        "execution_id": "7f3923d2-8b69-4d16-9ccd-169bd658080a",
         "proposal_revision": 1,
         "academic_cycle": {
           "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
@@ -22,7 +22,7 @@
         },
         "status": "DRAFT",
         "source_type": "DEMO",
-        "generated_at_utc": "2026-11-04T19:24:24.629371Z",
+        "generated_at_utc": "2026-11-04T21:20:32.082174Z",
         "lineage": {
           "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
           "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
@@ -31,15 +31,15 @@
           "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
           "model_usages": [
             {
-              "usage_id": "6ea71abd-f407-405e-8854-f94d97d6758c",
-              "proposal_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
-              "inference_id": "be5cf3b8-2839-4658-bc50-e8d24d4c2add",
+              "usage_id": "6ca757bd-7809-43a0-b513-93eca75431f3",
+              "proposal_id": "7f3923d2-8b69-4d16-9ccd-169bd658080a",
+              "inference_id": "63a3e167-0e13-41e8-ac55-34980a56a4d1",
               "model_key": "planilha-turmas-demo",
               "registered_model_name": "planilha-turmas-demo",
-              "model_version": "15",
-              "run_id": "c0d9f3138c874049b339e0f54ab8348c",
+              "model_version": "16",
+              "run_id": "6a544fd7093446b89f22dde2085ca4b0",
               "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
-              "artifact_uri": "models:/m-342590e0c9ca494e99e6d746160225f8",
+              "artifact_uri": "models:/m-e5e65b834a6e47a68828fccf9ae5102a",
               "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
               "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
               "line_keys": [
@@ -135,13 +135,13 @@
                 "208586ed-41d4-56f8-9a3c-d971d5bbd016/2dec980d-d374-52f3-a770-b0a4c5e58075/f49a5c98-91da-5ff7-b5e6-d4019060dc48"
               ],
               "provenance_status": "VERIFIED",
-              "created_at_utc": "2026-11-04 19:24:24.629371+00:00"
+              "created_at_utc": "2026-11-04 21:20:32.082174+00:00"
             }
           ]
         },
         "offers": [
           {
-            "offer_id": "3338dee0-4d05-5c12-85a1-433633a18d50",
+            "offer_id": "a3577cb2-f407-5c17-a806-b0d8c8960872",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "39c82c86-d06e-5f26-9712-a92b4018084e",
@@ -176,7 +176,7 @@
             ]
           },
           {
-            "offer_id": "5778aa1a-d3eb-5991-a62e-69c80ff97456",
+            "offer_id": "1cbb22de-87ad-5f3c-9cfc-4207388fb9af",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "39c82c86-d06e-5f26-9712-a92b4018084e",
@@ -211,7 +211,7 @@
             ]
           },
           {
-            "offer_id": "12700109-403e-5d63-9e9b-54c8b387f44d",
+            "offer_id": "faaff627-6013-5755-b12f-21b45233d157",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "39c82c86-d06e-5f26-9712-a92b4018084e",
@@ -246,7 +246,7 @@
             ]
           },
           {
-            "offer_id": "f8152078-0673-538e-8b14-1ab65ffa6b79",
+            "offer_id": "60dd9a14-8a91-5498-af25-ac13fb9e7300",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "519ead55-4294-52e1-b326-550e4be54cd0",
@@ -281,7 +281,7 @@
             ]
           },
           {
-            "offer_id": "1ee59f8d-e1d0-5a9b-9b83-a7202eec5993",
+            "offer_id": "c7a096de-d24d-5259-a754-8acfd862977f",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "519ead55-4294-52e1-b326-550e4be54cd0",
@@ -316,7 +316,7 @@
             ]
           },
           {
-            "offer_id": "6a60ad24-d51f-5b35-84da-af4a24130135",
+            "offer_id": "702d26b2-8b97-5909-afc9-275d456f772b",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
             "period_id": "519ead55-4294-52e1-b326-550e4be54cd0",
@@ -351,7 +351,7 @@
             ]
           },
           {
-            "offer_id": "60ac25f1-0013-5efe-b954-24bf37d9edca",
+            "offer_id": "cb634795-5fe8-50a0-ba33-09dc98a3d901",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "92cbdefd-c378-5e89-b349-680d8e40f22a",
@@ -386,7 +386,7 @@
             ]
           },
           {
-            "offer_id": "deca44a5-19a8-53a1-8a67-6ca092763c5f",
+            "offer_id": "2d9c5e0c-bedf-5b8c-b400-0bec1eb2650f",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "92cbdefd-c378-5e89-b349-680d8e40f22a",
@@ -421,7 +421,7 @@
             ]
           },
           {
-            "offer_id": "e30c7852-45d2-5b64-b1c7-bdda73a65aa2",
+            "offer_id": "52821a32-bc87-5882-8ce7-3a858f9fa887",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "92cbdefd-c378-5e89-b349-680d8e40f22a",
@@ -456,7 +456,7 @@
             ]
           },
           {
-            "offer_id": "aeccbe91-ebd4-53b8-94ae-27e3be7b24cb",
+            "offer_id": "08bec60e-3a88-5cc0-bf3e-c92408ba2a5f",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "de0c4144-8a18-5c60-8573-743cb74009ce",
@@ -491,7 +491,7 @@
             ]
           },
           {
-            "offer_id": "ef3e14a4-6a3b-510b-b9fa-2a2dc0320669",
+            "offer_id": "66fcc014-b536-5c3d-a71e-2e0d32fa262b",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "de0c4144-8a18-5c60-8573-743cb74009ce",
@@ -526,7 +526,7 @@
             ]
           },
           {
-            "offer_id": "6e8120fe-6645-52a2-8857-3b08aaea045f",
+            "offer_id": "8239c042-d654-5c85-9fc0-9830a0ff1b99",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
             "period_id": "de0c4144-8a18-5c60-8573-743cb74009ce",
@@ -561,7 +561,7 @@
             ]
           },
           {
-            "offer_id": "7f007141-72a6-53a8-891e-c1c55000e814",
+            "offer_id": "461d9db4-be47-539e-921e-5019f9a9fdc6",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "5ba5a515-9267-53eb-bf2a-37300a1f7959",
@@ -596,7 +596,7 @@
             ]
           },
           {
-            "offer_id": "1c536cc9-dde6-5713-b078-5b17ebe7c3dd",
+            "offer_id": "a090b771-df29-58a2-9d1d-89cd6f32156f",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "5ba5a515-9267-53eb-bf2a-37300a1f7959",
@@ -631,7 +631,7 @@
             ]
           },
           {
-            "offer_id": "a5456334-c7bb-57aa-8d01-795e9c5995e7",
+            "offer_id": "c1a8fc3e-1544-504a-870b-4662a427471d",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "5ba5a515-9267-53eb-bf2a-37300a1f7959",
@@ -666,7 +666,7 @@
             ]
           },
           {
-            "offer_id": "783746e8-fba8-59f9-985c-f362d07a9d7f",
+            "offer_id": "400b267a-55ed-514a-8c72-c78a66120e73",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "700b2ae9-d638-57bb-8fab-194eb40d1da4",
@@ -701,7 +701,7 @@
             ]
           },
           {
-            "offer_id": "806d3e5a-b739-5bf3-b16e-571f8ee56529",
+            "offer_id": "2d6f2ad1-a377-5843-b826-9380315939a6",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "700b2ae9-d638-57bb-8fab-194eb40d1da4",
@@ -736,7 +736,7 @@
             ]
           },
           {
-            "offer_id": "1040d3a6-25b6-579f-85c9-d46f7ead6723",
+            "offer_id": "fa3335c5-8b57-509b-ad65-55e707bcc6dc",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
             "period_id": "700b2ae9-d638-57bb-8fab-194eb40d1da4",
@@ -771,7 +771,7 @@
             ]
           },
           {
-            "offer_id": "884298c3-d042-57b8-8ea3-2628cf566e58",
+            "offer_id": "9b73a773-8946-5370-be76-fcc4d027a73d",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "2dec980d-d374-52f3-a770-b0a4c5e58075",
@@ -806,7 +806,7 @@
             ]
           },
           {
-            "offer_id": "486ada95-b778-574d-b37a-0f91917f3ec6",
+            "offer_id": "0ac230d8-4f95-5cff-8b3f-ff80415d9b3e",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "2dec980d-d374-52f3-a770-b0a4c5e58075",
@@ -841,7 +841,7 @@
             ]
           },
           {
-            "offer_id": "7891a1b4-51b4-5635-9da9-d59fd5dfaf17",
+            "offer_id": "956a2909-2f8e-5165-86d4-573e3ffc98ff",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "2dec980d-d374-52f3-a770-b0a4c5e58075",
@@ -876,7 +876,7 @@
             ]
           },
           {
-            "offer_id": "c1667375-1833-5dd7-b578-636bf26aae4a",
+            "offer_id": "4ce1784f-5628-5d70-9f45-c2bba0cc08f1",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "40757ba2-4564-5afd-b849-7358fae40278",
@@ -911,7 +911,7 @@
             ]
           },
           {
-            "offer_id": "44d5cc8e-b0f5-5add-8784-135e90a64bc5",
+            "offer_id": "0376e769-d444-594e-8fdc-30820a8c48a9",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "40757ba2-4564-5afd-b849-7358fae40278",
@@ -946,7 +946,7 @@
             ]
           },
           {
-            "offer_id": "1d09a9d0-53ce-5da1-817f-514dbecf1816",
+            "offer_id": "a702e71e-af27-5c6c-99ff-62e265df4def",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
             "period_id": "40757ba2-4564-5afd-b849-7358fae40278",
@@ -981,7 +981,7 @@
             ]
           },
           {
-            "offer_id": "2c348b88-0744-58a6-badb-8cb4ab7aaad8",
+            "offer_id": "4f419576-ae01-527e-bca3-625d3e320cc5",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "091796e5-f9ab-5bd9-bdc8-2e0541a909b7",
@@ -1016,7 +1016,7 @@
             ]
           },
           {
-            "offer_id": "a9b90d79-f15d-5c3c-bbbe-35ac4033b5d4",
+            "offer_id": "e2495fae-0a4b-5151-921b-9a8b7dbca9ee",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "091796e5-f9ab-5bd9-bdc8-2e0541a909b7",
@@ -1051,7 +1051,7 @@
             ]
           },
           {
-            "offer_id": "7298a26d-6e4d-5028-aa6e-09f30e4a4612",
+            "offer_id": "6d0a92a7-5010-5d74-acdc-03c9ee18a60b",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "091796e5-f9ab-5bd9-bdc8-2e0541a909b7",
@@ -1086,7 +1086,7 @@
             ]
           },
           {
-            "offer_id": "7ee48af3-933d-5510-8d3b-77dbdb1eee42",
+            "offer_id": "594122f2-83ec-5b48-9f27-6e4a1d55a9c5",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "86a57368-09d6-56dc-b40e-a32cbad43a80",
@@ -1121,7 +1121,7 @@
             ]
           },
           {
-            "offer_id": "39649aa3-7d9e-58c2-9e70-a750080f3dff",
+            "offer_id": "ac73ef96-4b6c-5572-bba4-ed2f07e480c2",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "86a57368-09d6-56dc-b40e-a32cbad43a80",
@@ -1156,7 +1156,7 @@
             ]
           },
           {
-            "offer_id": "b1d72afe-e2b1-57ea-8790-95ed996a43b0",
+            "offer_id": "e57e81a5-f135-5e11-8307-22c71ec0c59b",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
             "period_id": "86a57368-09d6-56dc-b40e-a32cbad43a80",
@@ -1191,7 +1191,7 @@
             ]
           },
           {
-            "offer_id": "d195575e-b0af-5ba8-a867-28b11b071870",
+            "offer_id": "7ff664f4-2513-52b6-850f-77dbd8e82aab",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "57de3178-30c7-5132-bd3c-82b864298e3b",
@@ -1226,7 +1226,7 @@
             ]
           },
           {
-            "offer_id": "3a4aa2bb-3c22-56ee-9703-ec50b71bb5c3",
+            "offer_id": "725b7876-5683-5ce7-8da5-385ec0373a37",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "57de3178-30c7-5132-bd3c-82b864298e3b",
@@ -1261,7 +1261,7 @@
             ]
           },
           {
-            "offer_id": "d726f925-31c3-5c59-99a0-3d78fa446c2b",
+            "offer_id": "6bf25c4c-e9c9-5f8e-8a33-32e5199f46e2",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "57de3178-30c7-5132-bd3c-82b864298e3b",
@@ -1296,7 +1296,7 @@
             ]
           },
           {
-            "offer_id": "bae5dc56-b631-5da0-ab1b-1a137553910e",
+            "offer_id": "e4f4a81f-63ea-56ce-9bb2-ab706d85fc25",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "6fcf36cd-b0ad-5c15-951d-b8480e526ed9",
@@ -1331,7 +1331,7 @@
             ]
           },
           {
-            "offer_id": "e6d32b13-f2f5-5ea2-b6ae-41f9f65e9644",
+            "offer_id": "87b55fb1-a035-5dc4-a6dd-17a41d036617",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "6fcf36cd-b0ad-5c15-951d-b8480e526ed9",
@@ -1366,7 +1366,7 @@
             ]
           },
           {
-            "offer_id": "7b440a3d-81fd-537f-8ce2-db4c17fc9f30",
+            "offer_id": "1c1ebc02-ab1a-52c4-a941-1318985b6b06",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
             "period_id": "6fcf36cd-b0ad-5c15-951d-b8480e526ed9",
@@ -1401,7 +1401,7 @@
             ]
           },
           {
-            "offer_id": "55f007b4-c296-5a4d-9d25-f1f37a502fb1",
+            "offer_id": "2674ca0d-1225-53ab-9a9f-6436615ce4dc",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
@@ -1436,7 +1436,7 @@
             ]
           },
           {
-            "offer_id": "ff7fff1f-e7d5-583a-865c-85bb301fcf5c",
+            "offer_id": "634fd700-045c-51d5-964e-4bc5d0b66fdc",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
@@ -1471,7 +1471,7 @@
             ]
           },
           {
-            "offer_id": "e396f99f-c0f0-5f12-bfa0-b3ed9039b812",
+            "offer_id": "8caf5e1a-64bf-5d5a-89c3-6c59224e3b15",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
@@ -1506,7 +1506,7 @@
             ]
           },
           {
-            "offer_id": "dea80cd1-17d6-50ac-ab26-486fea1cbd8c",
+            "offer_id": "68119964-4b37-5f16-8030-d334b0d71822",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
@@ -1541,7 +1541,7 @@
             ]
           },
           {
-            "offer_id": "b948a8b4-62b0-50a6-b60a-2ba3e47e001c",
+            "offer_id": "72b7479c-9fc6-5af1-bfa0-4fadcf62f752",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
@@ -1576,7 +1576,7 @@
             ]
           },
           {
-            "offer_id": "47c1a5da-0668-5cea-8d98-98ebf74ec947",
+            "offer_id": "c0bb1e82-98d5-54c6-8310-c7ab4bdd2f09",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
             "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
@@ -1611,7 +1611,7 @@
             ]
           },
           {
-            "offer_id": "c7f6a027-297f-5f7e-bd4f-9c7e239b373a",
+            "offer_id": "0c2132eb-402b-518b-853a-8bdfa8cd4e24",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5",
@@ -1646,7 +1646,7 @@
             ]
           },
           {
-            "offer_id": "346c59f7-02d4-59cb-9c67-72bec1f5cea7",
+            "offer_id": "bd7fce6b-00e4-54e5-a0db-e6a2adf57438",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5",
@@ -1681,7 +1681,7 @@
             ]
           },
           {
-            "offer_id": "6f17fb08-a120-567b-b000-25147ef21941",
+            "offer_id": "418dfb4d-f1e8-5732-bed5-1cf6fa1db368",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5",
@@ -1716,7 +1716,7 @@
             ]
           },
           {
-            "offer_id": "a12aadd0-e92b-5c2d-8172-c6dbe4fcec02",
+            "offer_id": "291b4e40-6ad0-554b-ad48-82fef0ccdd7c",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "41c3929c-1c6a-58f7-922d-12aadd80b90d",
@@ -1751,7 +1751,7 @@
             ]
           },
           {
-            "offer_id": "1c298e90-cd35-5e20-be50-48ed6852a39a",
+            "offer_id": "382177fb-d2ab-5158-90db-f711644b63af",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "41c3929c-1c6a-58f7-922d-12aadd80b90d",
@@ -1786,7 +1786,7 @@
             ]
           },
           {
-            "offer_id": "6e40907e-e72f-581f-818e-a9cdcd76385a",
+            "offer_id": "99e46ff5-c2b2-594d-8ad3-37a23c730757",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
             "period_id": "41c3929c-1c6a-58f7-922d-12aadd80b90d",
@@ -1821,7 +1821,7 @@
             ]
           },
           {
-            "offer_id": "04817086-876d-5f7e-ab3a-56ed535e765b",
+            "offer_id": "7729f7b5-bfda-5a08-8de8-5b9d7d0fc832",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "5dbb1a48-f1c2-5ede-81d4-d9ce7822f847",
@@ -1856,7 +1856,7 @@
             ]
           },
           {
-            "offer_id": "dd0c9edc-629a-521f-bc7e-b7dd9b80a6ab",
+            "offer_id": "cf6db631-4169-5945-b53d-a97c062c4206",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "5dbb1a48-f1c2-5ede-81d4-d9ce7822f847",
@@ -1974,13 +1974,13 @@
         "total_rows": 90,
         "limit": 50,
         "offset": 0,
-        "payload_sha256": "f906a8ad9fe646d14aaef45fa482d308354e7562794cfff3aa4d823ab8ea3abb"
+        "payload_sha256": "bd72826d59b3c0f0037926691bbe358f9b2cfaab5c2bcdc26afd4c0eaa6e45ab"
       },
       {
         "schema_version": "poc-planilha-turmas-v1",
         "contract_status": "PROVISÓRIO / PENDENTE DE HOMOLOGAÇÃO",
-        "proposal_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
-        "execution_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
+        "proposal_id": "7f3923d2-8b69-4d16-9ccd-169bd658080a",
+        "execution_id": "7f3923d2-8b69-4d16-9ccd-169bd658080a",
         "proposal_revision": 1,
         "academic_cycle": {
           "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
@@ -1988,7 +1988,7 @@
         },
         "status": "DRAFT",
         "source_type": "DEMO",
-        "generated_at_utc": "2026-11-04T19:24:24.629371Z",
+        "generated_at_utc": "2026-11-04T21:20:32.082174Z",
         "lineage": {
           "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
           "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
@@ -1997,15 +1997,15 @@
           "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
           "model_usages": [
             {
-              "usage_id": "6ea71abd-f407-405e-8854-f94d97d6758c",
-              "proposal_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
-              "inference_id": "be5cf3b8-2839-4658-bc50-e8d24d4c2add",
+              "usage_id": "6ca757bd-7809-43a0-b513-93eca75431f3",
+              "proposal_id": "7f3923d2-8b69-4d16-9ccd-169bd658080a",
+              "inference_id": "63a3e167-0e13-41e8-ac55-34980a56a4d1",
               "model_key": "planilha-turmas-demo",
               "registered_model_name": "planilha-turmas-demo",
-              "model_version": "15",
-              "run_id": "c0d9f3138c874049b339e0f54ab8348c",
+              "model_version": "16",
+              "run_id": "6a544fd7093446b89f22dde2085ca4b0",
               "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
-              "artifact_uri": "models:/m-342590e0c9ca494e99e6d746160225f8",
+              "artifact_uri": "models:/m-e5e65b834a6e47a68828fccf9ae5102a",
               "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
               "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
               "line_keys": [
@@ -2101,13 +2101,13 @@
                 "208586ed-41d4-56f8-9a3c-d971d5bbd016/2dec980d-d374-52f3-a770-b0a4c5e58075/f49a5c98-91da-5ff7-b5e6-d4019060dc48"
               ],
               "provenance_status": "VERIFIED",
-              "created_at_utc": "2026-11-04 19:24:24.629371+00:00"
+              "created_at_utc": "2026-11-04 21:20:32.082174+00:00"
             }
           ]
         },
         "offers": [
           {
-            "offer_id": "3d9a27e1-94c8-5741-9ccc-fae143bb7e60",
+            "offer_id": "6e85c966-6415-5a4f-9ee8-670609b130dd",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "5dbb1a48-f1c2-5ede-81d4-d9ce7822f847",
@@ -2142,7 +2142,7 @@
             ]
           },
           {
-            "offer_id": "844e8545-8fa1-58d7-824d-bb8496858032",
+            "offer_id": "f716fe2d-99f4-5d7c-9c42-1f8b7c0ce83b",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
@@ -2177,7 +2177,7 @@
             ]
           },
           {
-            "offer_id": "3bfc78f8-2008-53b6-a02f-00d8f1781895",
+            "offer_id": "ab57aa73-701e-5753-842c-44f9729d5025",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
@@ -2212,7 +2212,7 @@
             ]
           },
           {
-            "offer_id": "d2ab187a-c16b-5a46-a8a8-d6599545d742",
+            "offer_id": "54df2646-da12-5a13-93c4-0954f7274f0a",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
             "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
@@ -2247,7 +2247,7 @@
             ]
           },
           {
-            "offer_id": "127121cc-c452-5cfe-a673-6f4c1c763f41",
+            "offer_id": "2fb35b0b-7021-5b38-9bd5-69bd5db44823",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "e187f9a1-bc73-5576-942f-c8d22494a4fe",
@@ -2282,7 +2282,7 @@
             ]
           },
           {
-            "offer_id": "6b13e910-2497-537e-87d4-e5bd7d7829a3",
+            "offer_id": "0a68d833-1e66-5d06-88ab-2d2def44123c",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "e187f9a1-bc73-5576-942f-c8d22494a4fe",
@@ -2317,7 +2317,7 @@
             ]
           },
           {
-            "offer_id": "d2402c80-7df0-584b-a09d-9c6144dc0be6",
+            "offer_id": "73789639-57f2-51e3-b92c-b4cd070fee72",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "e187f9a1-bc73-5576-942f-c8d22494a4fe",
@@ -2352,7 +2352,7 @@
             ]
           },
           {
-            "offer_id": "211d28e0-0aa3-5b20-bfd7-f5efa48f1a26",
+            "offer_id": "f7e76769-2bbc-505e-87e1-4f4ad2a5e635",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "eef3d892-bcd4-56ca-9bd1-79da013febc4",
@@ -2387,7 +2387,7 @@
             ]
           },
           {
-            "offer_id": "7bfdf934-cdd2-5617-965d-602d9465e29b",
+            "offer_id": "00a12365-6aea-5019-878c-ad4e41de510e",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "eef3d892-bcd4-56ca-9bd1-79da013febc4",
@@ -2422,7 +2422,7 @@
             ]
           },
           {
-            "offer_id": "b1d0a973-0c8b-5ef1-808d-6cf967e60149",
+            "offer_id": "cfeb5860-5cfa-51b2-b5c0-bc20dc0140f4",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
             "period_id": "eef3d892-bcd4-56ca-9bd1-79da013febc4",
@@ -2457,7 +2457,7 @@
             ]
           },
           {
-            "offer_id": "f6dbd401-f28a-559e-a1ab-e13fa3f5a9d0",
+            "offer_id": "e77ef68c-5905-5fa7-ae26-f0b61d4e939f",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "1242140c-7db4-52dd-97c1-8d59049bc649",
@@ -2492,7 +2492,7 @@
             ]
           },
           {
-            "offer_id": "ba5e6c9a-2f3a-5ab2-998a-d524bbfb3663",
+            "offer_id": "8a8d53ce-5562-53f3-875e-151c985f73d8",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "1242140c-7db4-52dd-97c1-8d59049bc649",
@@ -2527,7 +2527,7 @@
             ]
           },
           {
-            "offer_id": "fbf72523-a9ce-56e7-82e9-ccbdf86ee660",
+            "offer_id": "d24ecba0-90aa-5d48-a898-9176897a65b2",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "1242140c-7db4-52dd-97c1-8d59049bc649",
@@ -2562,7 +2562,7 @@
             ]
           },
           {
-            "offer_id": "3dfd658a-5e22-52ec-bcfc-c539a0540eb4",
+            "offer_id": "f7d9729f-2f57-57c8-a99c-87dfdc598ae3",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "156d48f4-518d-56a5-979d-583889c73b00",
@@ -2597,7 +2597,7 @@
             ]
           },
           {
-            "offer_id": "034f0731-b1b4-5dd6-847b-8e1a596f6c74",
+            "offer_id": "def9d5f6-0dd9-5bb7-ac7c-bffaf0519f21",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "156d48f4-518d-56a5-979d-583889c73b00",
@@ -2632,7 +2632,7 @@
             ]
           },
           {
-            "offer_id": "1503a56d-f39d-51c9-9702-52eb0c43be06",
+            "offer_id": "1eb03239-e50c-52f5-a6ee-c14a78a6285d",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
             "period_id": "156d48f4-518d-56a5-979d-583889c73b00",
@@ -2667,7 +2667,7 @@
             ]
           },
           {
-            "offer_id": "aedd4024-963a-54dd-b621-1cc315382df1",
+            "offer_id": "0b84eba5-5b41-545f-a575-d71fc93b2b35",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "8d2c27c1-8e41-512f-a583-8e71a8c16cf2",
@@ -2702,7 +2702,7 @@
             ]
           },
           {
-            "offer_id": "8fa5306e-d159-50ec-b445-3089f2553412",
+            "offer_id": "e3e22147-c936-5cf6-8b1f-3655ef492391",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "8d2c27c1-8e41-512f-a583-8e71a8c16cf2",
@@ -2737,7 +2737,7 @@
             ]
           },
           {
-            "offer_id": "953a6976-df63-58ff-bdc5-a8f008ffba9c",
+            "offer_id": "519ab589-f517-5bb5-b741-816082d83daa",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "8d2c27c1-8e41-512f-a583-8e71a8c16cf2",
@@ -2772,7 +2772,7 @@
             ]
           },
           {
-            "offer_id": "fa065ee2-e23d-5369-b2ec-876a849af442",
+            "offer_id": "d8ee14e3-3a80-5d37-813d-282da3d3f86c",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44",
@@ -2807,7 +2807,7 @@
             ]
           },
           {
-            "offer_id": "2f749c2e-1abb-5ed7-a117-d78373da5e19",
+            "offer_id": "1931ccd8-8c9f-5b2a-a8e5-bf75a7662ec6",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44",
@@ -2842,7 +2842,7 @@
             ]
           },
           {
-            "offer_id": "0fb291f6-fddf-58d5-9168-4f2ca7326494",
+            "offer_id": "dd650898-c70f-5cf9-90d6-d978828b758e",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
             "period_id": "e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44",
@@ -2877,7 +2877,7 @@
             ]
           },
           {
-            "offer_id": "a7704451-5f37-534b-ac97-e36527640967",
+            "offer_id": "8d4913b7-057a-5c5c-951e-d1f9540f0d64",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "003a4014-8321-5d09-b9bc-0f04d766cc80",
@@ -2912,7 +2912,7 @@
             ]
           },
           {
-            "offer_id": "602552c7-68cb-5e7d-8917-a1161494bc98",
+            "offer_id": "67ddf446-36db-540b-8162-9f5f3c58b751",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "003a4014-8321-5d09-b9bc-0f04d766cc80",
@@ -2947,7 +2947,7 @@
             ]
           },
           {
-            "offer_id": "18e43def-b8e4-556e-8768-ec1fc3c16aa0",
+            "offer_id": "6a032115-fd88-5f9d-9c8f-4546fe0f236a",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "003a4014-8321-5d09-b9bc-0f04d766cc80",
@@ -2982,7 +2982,7 @@
             ]
           },
           {
-            "offer_id": "2adfadb5-6778-533a-a371-55562678f9d1",
+            "offer_id": "87bd355d-1571-5c5b-87de-af51dd161277",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "b30529c9-d516-5198-9cee-d437f659e7ff",
@@ -3017,7 +3017,7 @@
             ]
           },
           {
-            "offer_id": "81435cf6-cf55-5851-880d-ca26c3b873b0",
+            "offer_id": "618a83d9-58fa-5401-800c-17e97f23d4ce",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "b30529c9-d516-5198-9cee-d437f659e7ff",
@@ -3052,7 +3052,7 @@
             ]
           },
           {
-            "offer_id": "90c1ffbd-7054-5870-aabc-c790f17bf9df",
+            "offer_id": "e2e9b095-d4e7-56dc-bd22-f1d9a89f83b3",
             "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
             "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
             "period_id": "b30529c9-d516-5198-9cee-d437f659e7ff",
@@ -3087,7 +3087,7 @@
             ]
           },
           {
-            "offer_id": "919c6acd-746d-53b6-92ff-e6b1a725e939",
+            "offer_id": "9773a531-8a2e-59f6-b1ca-d9d432bff161",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "468f544b-e1ab-58e0-a4f7-9afc1e52d0d4",
@@ -3122,7 +3122,7 @@
             ]
           },
           {
-            "offer_id": "d0fe445c-efe7-5ed9-9dd7-ae5d9c052c6d",
+            "offer_id": "2a671d72-7651-5a1c-8b24-246514c1e3b1",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "468f544b-e1ab-58e0-a4f7-9afc1e52d0d4",
@@ -3157,7 +3157,7 @@
             ]
           },
           {
-            "offer_id": "30269208-9444-5252-b5b3-9492ad6d65d0",
+            "offer_id": "30cc0cb1-f014-5f61-9a0a-bc02fa69bb03",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "468f544b-e1ab-58e0-a4f7-9afc1e52d0d4",
@@ -3192,7 +3192,7 @@
             ]
           },
           {
-            "offer_id": "3eaedadd-c2e1-55e1-bb04-51832ca7873e",
+            "offer_id": "be82318b-adbf-54c6-bfe2-160db629e917",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "a10d68c5-35a1-55d2-a73c-249467d5f8a6",
@@ -3227,7 +3227,7 @@
             ]
           },
           {
-            "offer_id": "0e136bbe-64b8-54cc-af12-78f340fe26b9",
+            "offer_id": "4cfd8050-6f20-562f-a9e0-ff67ae8518fe",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "a10d68c5-35a1-55d2-a73c-249467d5f8a6",
@@ -3262,7 +3262,7 @@
             ]
           },
           {
-            "offer_id": "8064c8e9-0794-58e1-8aae-647bd5a2d4bb",
+            "offer_id": "d2d8a397-f3f3-51e7-966f-bc79004aa3fe",
             "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
             "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
             "period_id": "a10d68c5-35a1-55d2-a73c-249467d5f8a6",
@@ -3297,7 +3297,7 @@
             ]
           },
           {
-            "offer_id": "a2f49457-fb4f-5dda-81b3-22b67ebc0b97",
+            "offer_id": "f40ec3d5-a57e-5957-b2e8-4bf824162845",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "11e42499-2538-5286-a8b9-3fda55802247",
@@ -3332,7 +3332,7 @@
             ]
           },
           {
-            "offer_id": "b260c47c-7576-5bf6-95a1-2c9c510a0080",
+            "offer_id": "5324245d-78d2-5f28-8e82-cebed26ece0b",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "11e42499-2538-5286-a8b9-3fda55802247",
@@ -3367,7 +3367,7 @@
             ]
           },
           {
-            "offer_id": "b87b5c43-49c7-5068-ab22-8de850545461",
+            "offer_id": "a7b5001c-39cd-541e-83c2-a11485d73875",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "11e42499-2538-5286-a8b9-3fda55802247",
@@ -3402,7 +3402,7 @@
             ]
           },
           {
-            "offer_id": "7cad49ef-26d6-5f2a-ba56-4647ae8fca0e",
+            "offer_id": "d41566ca-4b24-5e50-8b39-9a16841603c8",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "1494b22f-3999-5714-ba12-3e8a1c65117c",
@@ -3437,7 +3437,7 @@
             ]
           },
           {
-            "offer_id": "0bec07bc-6a9d-5107-97bf-8f0b6cc77184",
+            "offer_id": "41976dd6-4531-59d2-a393-f26eea44a540",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "1494b22f-3999-5714-ba12-3e8a1c65117c",
@@ -3472,7 +3472,7 @@
             ]
           },
           {
-            "offer_id": "8b685d8f-000d-5262-827a-836b41ed22fd",
+            "offer_id": "772749ac-f9b1-5c49-8c60-9d75d9b21669",
             "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
             "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
             "period_id": "1494b22f-3999-5714-ba12-3e8a1c65117c",
@@ -3590,7 +3590,7 @@
         "total_rows": 90,
         "limit": 50,
         "offset": 50,
-        "payload_sha256": "2a8708e802b32ecaced0cc56edefafd5e465e5526fa9d6c2a0ff9f4525d83f6a"
+        "payload_sha256": "71d2326c3f596b9b62e6215572dbed043563d031af2772008623e4db4c604ee0"
       }
     ],
     "reconciliation": {
@@ -3598,9 +3598,9 @@
         "database": "planejamento_db",
         "schema": "planning",
         "status": "PASS",
-        "execution_id": "712b11cd-a96a-4bb9-83bb-691724ceae88",
-        "run_id": "c0d9f3138c874049b339e0f54ab8348c",
-        "model_version": "15",
+        "execution_id": "7f3923d2-8b69-4d16-9ccd-169bd658080a",
+        "run_id": "6a544fd7093446b89f22dde2085ca4b0",
+        "model_version": "16",
         "proposal_status": "DRAFT",
         "stored_rows": 90,
         "proposed_students": 8694,
@@ -3610,29 +3610,29 @@
       "storage": [
         {
           "bucket": "pucpr-poc",
-          "key": "mlflow/4/models/m-342590e0c9ca494e99e6d746160225f8/artifacts/MLmodel",
+          "key": "mlflow/4/models/m-e5e65b834a6e47a68828fccf9ae5102a/artifacts/MLmodel",
           "bytes": 1336,
-          "sha256": "752dfba474fc343bf7f6654ed174c08207af206086532c6ba0480b631622ccfc",
-          "object_version_id": "9d81a473-df96-4333-9fe9-1e6ee9a5d1e1",
-          "model_version": "15",
+          "sha256": "77faa155ec7f16bfae2ae0931a2195ffc845cd25656b9f03d4c12b4275729ec3",
+          "object_version_id": "ee8b5720-9595-499a-bd37-d6abab440358",
+          "model_version": "16",
           "status": "PASS"
         },
         {
           "bucket": "pucpr-poc",
-          "key": "mlflow/4/models/m-342590e0c9ca494e99e6d746160225f8/artifacts/model.pkl",
+          "key": "mlflow/4/models/m-e5e65b834a6e47a68828fccf9ae5102a/artifacts/model.pkl",
           "bytes": 8671,
           "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
-          "object_version_id": "f0e9a40e-7cc0-4ad3-af4d-a358027084a8",
-          "model_version": "15",
+          "object_version_id": "03df0714-1787-447e-9d46-b265411f3391",
+          "model_version": "16",
           "status": "PASS"
         },
         {
           "bucket": "pucpr-poc",
-          "key": "mlflow/4/models/m-342590e0c9ca494e99e6d746160225f8/artifacts/requirements.txt",
+          "key": "mlflow/4/models/m-e5e65b834a6e47a68828fccf9ae5102a/artifacts/requirements.txt",
           "bytes": 80,
           "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
-          "object_version_id": "d857cedd-8e60-4513-b5ab-8ee094633e90",
-          "model_version": "15",
+          "object_version_id": "24646b28-b97a-4677-b7a8-a4f13a0bf002",
+          "model_version": "16",
           "status": "PASS"
         }
       ],

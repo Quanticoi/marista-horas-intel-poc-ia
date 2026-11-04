@@ -1,0 +1,80 @@
+{
+  "timestamp_utc": "2026-11-04T21:44:09.115073+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:2faff281694a57a839bdd1574db9cccfc917959f2370281f8867c76638ae22d1",
+  "environment": "poc",
+  "project": "marista-correcoes-isolated",
+  "test_id": "07_registry_governanca",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "candidate": {
+      "run_id": "420b1e103c8741ddbb8ec66427a95c0b",
+      "experiment_id": "3",
+      "model_name": "hi.demo.notebook.a9291c01",
+      "model_version": "1",
+      "model_uri": "models:/hi.demo.notebook.a9291c01/1",
+      "artifact_uri": "models:/m-053c00350db44eb1a28c5dae0ed54a66",
+      "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+      "metrics": {
+        "mae": 3.758630658273197,
+        "rmse": 4.9142272796917865,
+        "baseline_mae": 7.466666666666665,
+        "baseline_rmse": 8.821497143283464,
+        "duration_seconds": 0.5707518139970489,
+        "cpu_seconds": 0.22584980599999938,
+        "peak_rss_kib": 276956.0
+      },
+      "training_execution_id": "e7cdf170-3841-4794-a1b7-f454f9c7cf2a"
+    },
+    "storage": [
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/MLmodel",
+        "bytes": 1336,
+        "sha256": "d1ba43508ec6fc0a1d34d487a39af29294c7af2212affc3f8bd263118f5d6c79",
+        "object_version_id": "203e4bec-7aef-40ba-92c5-bf1182776cf7",
+        "model_version": "1",
+        "status": "PASS"
+      },
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/model.pkl",
+        "bytes": 8671,
+        "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "object_version_id": "8ef84859-a09a-4855-8bfc-85178ba7212f",
+        "model_version": "1",
+        "status": "PASS"
+      },
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/requirements.txt",
+        "bytes": 80,
+        "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+        "object_version_id": "a4aea68c-84c8-4a9a-bf83-206683aadabb",
+        "model_version": "1",
+        "status": "PASS"
+      }
+    ],
+    "review": {
+      "approval_id": "20057c10-3a68-4d68-8e12-23dfc4adcc3a",
+      "model_name": "hi.demo.notebook.a9291c01",
+      "model_version": "1",
+      "action": "APPROVE",
+      "reason": "Isolated notebook approval acceptance",
+      "requested_by": "scientist-demo",
+      "reviewed_by": "poc-reviewer",
+      "correlation_id": "244d2aa2-294a-4cf1-9968-bd124f58e147",
+      "status": "APPROVED",
+      "prior_version": null,
+      "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+      "run_id": "420b1e103c8741ddbb8ec66427a95c0b",
+      "created_at_utc": "2026-11-04T21:44:04.468685+00:00",
+      "reviewed_at_utc": "2026-11-04T21:44:08.922753+00:00"
+    }
+  },
+  "limitations": [
+    "Dados DEMO e contrato provisório; regras não avaliadas não são homologação",
+    "Execução sem erro do notebook não implica execução de operações opt-in desativadas"
+  ]
+}

@@ -14,12 +14,16 @@ def emit(con,kind,job=None,campaign=None,details=None):
     con.execute(text("INSERT INTO planning.operation_events(job_id,campaign_id,event_type,details) VALUES (:job,:campaign,:kind,CAST(:details AS jsonb))"),
         dict(job=job,campaign=campaign,kind=kind,details=json.dumps(details or {},default=str)))
     correlation=None
+    refs={}
     if job:
-        correlation=con.execute(text("SELECT correlation_id FROM planning.operation_jobs WHERE job_id=:id"),{"id":job}).scalar_one()
+        current=con.execute(text("SELECT correlation_id,model_key,result,campaign_id FROM planning.operation_jobs WHERE job_id=:id"),{"id":job}).mappings().one()
+        correlation=current['correlation_id']
+        refs=dict(model_key=current['model_key'],run_id=current['result'].get('run_id'),proposal_id=current['result'].get('proposal_id'))
+        campaign=campaign or current['campaign_id']
     elif campaign:
         correlation=con.execute(text("SELECT correlation_id FROM planning.training_campaigns WHERE campaign_id=:id"),{"id":campaign}).scalar_one()
     event("worker",kind,job_id=str(job) if job else None,campaign_id=str(campaign) if campaign else None,
-          correlation_id=correlation,details=details or {})
+          correlation_id=correlation,details=details or {},**refs)
 
 def create(kind,payload,key,actor,correlation,con=None,campaign=None,model_key=None):
     if con is None:
@@ -112,6 +116,9 @@ def refresh_campaign(campaign_id):
         if status!=row["status"]:
             con.execute(text("UPDATE planning.training_campaigns SET status=:status,ended_at_utc=CASE WHEN :status IN ('COMPLETED','PARTIAL','FAILED','CANCELLED') THEN now() ELSE ended_at_utc END WHERE campaign_id=:id"),dict(id=campaign_id,status=status))
             emit(con,status,campaign=campaign_id,details=counts)
+    if status=='COMPLETED':
+        from src.persistence.catalog import publish_campaign
+        publish_campaign(campaign_id)
 
 def control(campaign_id,action,actor):
     with engine().begin() as con:

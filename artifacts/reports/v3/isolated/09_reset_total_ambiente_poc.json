@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2026-11-04T21:45:19.972979+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+  "environment": "poc",
+  "project": "marista-correcoes-isolated",
+  "test_id": "09_reset_total_ambiente_poc",
+  "status": "PARTIAL",
+  "source_type": "DEMO",
+  "evidence": {
+    "state": "PREVIEW_REQUIRED",
+    "commands": {
+      "preview": "python deployment/scripts/reset_poc.py preview --environment poc --project marista --mode reset-data",
+      "execution": "Use the external controller with a fresh plan, --execute and the exact confirmation phrase. Never execute from this notebook.",
+      "reinitialize": "demo-ready"
+    },
+    "risks": [
+      "Data deletion is irreversible without separately maintained backups",
+      "Factory reset stops this kernel"
+    ],
+    "destructive_execution": "NOT_EXECUTED"
+  },
+  "limitations": [
+    "Dados DEMO e contrato provisório; regras não avaliadas não são homologação",
+    "Execução sem erro do notebook não implica execução de operações opt-in desativadas"
+  ]
+}

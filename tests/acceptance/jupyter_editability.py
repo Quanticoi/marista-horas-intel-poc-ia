@@ -1,5 +1,5 @@
 """Verify saving through Jupyter after rebuild; remove only our temporary notebook."""
-import json
+import argparse,json
 import subprocess
 from datetime import datetime,timezone
 from pathlib import Path
@@ -7,6 +7,7 @@ from urllib.request import Request,urlopen
 from uuid import uuid4
 
 root=Path(__file__).resolve().parents[2]
+parser=argparse.ArgumentParser();parser.add_argument('--report-version',choices=['v2','v3'],default='v2');args=parser.parse_args()
 values=dict(line.split('=',1) for line in (root/'.env').read_text().splitlines() if '=' in line and not line.startswith('#'))
 def request(method,path,body=None):
     data=json.dumps(body).encode() if body is not None else None
@@ -35,5 +36,5 @@ document=dict(timestamp_utc=datetime.now(timezone.utc).isoformat(),
     git_commit=subprocess.check_output(['git','-c','safe.directory='+root.as_posix(),'rev-parse','HEAD'],text=True).strip(),
     environment='poc',project='marista',test_id='jupyter-editability',source_type='DEMO',status='PASS',
     notebooks=names,save_and_reload=True,temporary_notebook_removed=True)
-(root/'artifacts/reports/v2/jupyter-editability.json').write_text(json.dumps(document,indent=2),encoding='utf-8')
+(root/'artifacts/reports'/args.report_version/'jupyter-editability.json').write_text(json.dumps(document,indent=2),encoding='utf-8')
 print('PASS: ten writable notebooks, one main journey, save/reload verified after rebuild')

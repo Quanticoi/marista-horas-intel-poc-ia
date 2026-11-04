@@ -1,0 +1,14 @@
+{
+  "mlflow_status": "MANUAL_NOT_CHECKED",
+  "session_status": "MANUAL_NOT_CHECKED",
+  "observation": "Ainda não há inspeção visual completa registrada. A tentativa anterior de Computer Use foi encerrada porque a URL atual do navegador não pôde ser determinada com segurança.",
+  "automatic_checks_are_not_manual": true,
+  "interfaces": {
+    "MLflow": "NOT_CHECKED",
+    "RustFS": "NOT_CHECKED",
+    "Jupyter": "NOT_CHECKED",
+    "Dashboard": "NOT_CHECKED"
+  },
+  "manual_guide": "docs/operations/MANUAL_ACCEPTANCE_V3.md",
+  "credentials": "Somente variáveis locais; nenhum valor registrado."
+}

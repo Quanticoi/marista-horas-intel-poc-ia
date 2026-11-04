@@ -15,7 +15,7 @@ def main():
     if os.getenv("POC_ISOLATED_TESTS")!="1":
         raise RuntimeError("Opt-in suite requires explicitly isolated stack")
     cfg=Settings.load();_,snapshot=extract(cfg);prefix=uuid4().hex[:8]
-    results=[];root=Path("/reports/v2/notebooks");root.mkdir(parents=True,exist_ok=True)
+    results=[];root=Path("/reports/v3/notebooks");root.mkdir(parents=True,exist_ok=True)
     base=dict(V2_SNAPSHOT_ID=snapshot["id"],V2_REQUEST_KEY="notebooks-"+prefix,
         V2_MODEL_NAME="hi.demo.notebook."+prefix,V2_CONFIRMATION="EXECUTE_DEMO",V2_EXECUTE_WRITE="true")
     def run(number,case,parameters=None):
@@ -27,13 +27,13 @@ def main():
         if executed.exists(): shutil.copyfile(executed,root/(case+".ipynb"))
         results.append(dict(notebook=source.name,case=case,status="PASS" if process.returncode==0 else "FAIL",evidence="notebooks/"+case+".ipynb"))
         print(results[-1],flush=True)
-        report("notebook-suite",results,"PARTIAL" if process.returncode==0 else "FAIL")
+        report("notebook-suite",results,"PARTIAL" if process.returncode==0 else "FAIL",generation='v3')
         if process.returncode:
             raise RuntimeError("Notebook failed: "+case+"; inspect executed evidence")
-        saved=Path("/reports/v2")/(source.stem+".json")
+        saved=Path("/reports/v3")/(source.stem+".json")
         return json.loads(saved.read_text())["evidence"] if saved.exists() else {}
     if args.resume_governance:
-        saved=lambda name:json.loads((Path("/reports/v2")/(name+".json")).read_text())["evidence"]
+        saved=lambda name:json.loads((Path("/reports/v3")/(name+".json")).read_text())["evidence"]
         results.extend(r for r in saved("notebook-suite") if r["status"]=="PASS")
         single=saved("04_treinamento_individual");proposal=saved("02_teste_inferencia_planilha_turmas")["proposal_id"]
         request=saved("07_registry_governanca");version=request["review"]["model_version"]
@@ -53,13 +53,18 @@ def main():
         run(6,"06-compare",dict(V2_SNAPSHOT_ID=snapshot["id"]))
         run(7,"07-read",dict(base,V2_EXECUTE_WRITE="false",V2_MODEL_VERSION=version))
         request=run(7,"07-request",dict(base,V2_MODEL_VERSION=version,V2_GOVERNANCE_ACTION="request",V2_REASON="Isolated notebook approval acceptance"))
-    approved=run(7,"07-approve",dict(base,V2_MODEL_VERSION=version,V2_GOVERNANCE_ACTION="approve",V2_APPROVAL_ID=request["review"]["approval_id"]))
+    from src.workbench.operations_sdk import call
+    existing=[r for r in call(cfg,'GET','/v1/governance/requests?limit=500') if r['approval_id']==request['review']['approval_id']]
+    if args.resume_governance and existing and existing[0]['status']=='APPROVED':
+        approved={'review':existing[0]}
+    else:
+        approved=run(7,"07-approve",dict(base,V2_MODEL_VERSION=version,V2_GOVERNANCE_ACTION="approve",V2_APPROVAL_ID=request["review"]["approval_id"]))
     assert approved["review"]["status"]=="APPROVED"
     run(8,"08-proposal",dict(V2_PROPOSAL_ID=proposal))
     for kind,external in (("campaign",single["campaign"]["campaign_id"]),("run",single["items"][0]["mlflow_run_id"]),("snapshot",snapshot["id"]),("model",base["V2_MODEL_NAME"])):
         run(8,"08-"+kind,dict(V2_LINEAGE_KIND=kind,V2_EXTERNAL_ID=external,V2_MODEL_VERSION=version))
     run(9,"09-preview")
-    report("notebook-suite",results,"PASS",["Reset notebook is read-only; destructive controller acceptance is a separate isolated test","Governance approval is a technical DEMO approval, not academic publication"])
+    report("notebook-suite",results,"PASS",["Reset notebook is read-only; destructive controller acceptance is a separate isolated test","Governance approval is a technical DEMO approval, not academic publication"],generation='v3')
 
 if __name__=="__main__":
     main()

@@ -34,7 +34,12 @@ def execute(job):
                 assert_approved(name,version)
             registered=mlflow.MlflowClient().get_model_version(name,version)
             trace=trace_for(mlflow.MlflowClient(),registered)
-            selected=future.iloc[index::len(body["model_selectors"])].copy()
+            if name.startswith('hi.pt.demanda.'):
+                selected=future[future.period_id.astype(str)==registered.tags.get('period_id')].copy()
+            else:
+                if any(s['model_name'].startswith('hi.pt.demanda.') for s in body['model_selectors']):
+                    raise ValueError('Do not mix academic scopes with pooled legacy selectors')
+                selected=future.iloc[index::len(body["model_selectors"])].copy()
             if selected.empty:
                 raise ValueError("More model selectors than proposal rows")
             request=dict(execution_id=registered.tags["execution_id"],model_name=name,model_version=version,
@@ -47,6 +52,9 @@ def execute(job):
             if prediction["model_version"]!=version or prediction["run_id"]!=registered.run_id:
                 raise ValueError("Inference returned another model version")
             composed=compose(selected,prediction["predictions"],body["capacity"])
+            existing={tuple(str(r[k]) for k in KEYS) for r in lines}
+            if any(tuple(str(r[k]) for k in KEYS) in existing for r in composed):
+                raise ValueError('Overlapping model scopes in the same proposal')
             lines.extend(composed);trace["inference_id"]=prediction["inference_id"];traces.append(trace)
             usages.append(dict(model_key=name,registered_model_name=name,model_version=version,run_id=registered.run_id,
                 snapshot_id=snapshot["id"],artifact_uri=registered.source,artifact_sha256=trace["artifact_sha256"],

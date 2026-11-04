@@ -1,0 +1,155 @@
+{
+  "manual_session_id": "b5ce6c0a-e36d-45e9-8e5e-8a0069067dde",
+  "executed_at_utc": "2026-11-04T21:45:15.615675+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:c02b59b92e12bc01b01745cc19d2818552f15868d4852fc6891dcad2aa88f1dd",
+  "environment": "poc",
+  "source_type": "DEMO",
+  "evidence": {
+    "model_key": "hi.demo.notebook.a9291c01",
+    "model_version": "1",
+    "status": "VERIFIED",
+    "registry_accessible": true,
+    "registered": true,
+    "sql_approved": true,
+    "approved": true,
+    "artifact_verifiable": true,
+    "checks": [
+      "native_ids",
+      "shared_tags",
+      "finished_run",
+      "signature",
+      "proxy_equals_s3",
+      "catalog_equals_manifest",
+      "snapshot_sql_equals_manifest"
+    ],
+    "serving": {
+      "healthy": true,
+      "cached": true,
+      "cache": {
+        "hits": 4,
+        "misses": 13,
+        "maxsize": 4,
+        "currsize": 4
+      }
+    },
+    "run_id": "420b1e103c8741ddbb8ec66427a95c0b",
+    "artifact_uri": "models:/m-053c00350db44eb1a28c5dae0ed54a66",
+    "aliases": {
+      "champion": "1"
+    },
+    "metadata": {
+      "files": [
+        {
+          "key": "mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/MLmodel",
+          "bytes": 1336,
+          "bucket": "pucpr-poc",
+          "sha256": "d1ba43508ec6fc0a1d34d487a39af29294c7af2212affc3f8bd263118f5d6c79",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "203e4bec-7aef-40ba-92c5-bf1182776cf7"
+        },
+        {
+          "key": "mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/model.pkl",
+          "bytes": 8671,
+          "bucket": "pucpr-poc",
+          "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "8ef84859-a09a-4855-8bfc-85178ba7212f"
+        },
+        {
+          "key": "mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/requirements.txt",
+          "bytes": 80,
+          "bucket": "pucpr-poc",
+          "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "a4aea68c-84c8-4a9a-bf83-206683aadabb"
+        }
+      ],
+      "domain": "planilha-turmas",
+      "run_id": "420b1e103c8741ddbb8ec66427a95c0b",
+      "run_name": "hi.demo.notebook.a9291c01__ridge__20261104T214305Z__a01__e7cdf170",
+      "algorithm": "ridge",
+      "model_key": "hi.demo.notebook.a9291c01",
+      "cycle_code": "2026-1",
+      "config_hash": "f6e5e1fe48c795d059feccfe6fdb0d886c03a03c891d9c8eb137b1bcd76016ff",
+      "environment": "poc",
+      "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+      "solution_id": "horarios-inteligentes",
+      "source_type": "DEMO",
+      "artifact_uri": "models:/m-053c00350db44eb1a28c5dae0ed54a66",
+      "code_version": "sha256:d1a2c43715541bde0987fbdc282d0715e97950e29f8b1c6ec5137a5bcf41a628",
+      "execution_id": "e7cdf170-3841-4794-a1b7-f454f9c7cf2a",
+      "model_family": "demanda-alunos",
+      "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
+      "experiment_id": "3",
+      "model_version": 1,
+      "query_version": "journey-history-v1",
+      "sql_reference": "planejamento_db.planning.model_version_catalog",
+      "correlation_id": "3f1c5325-3afc-40b5-bded-0207ebb993c7",
+      "created_at_utc": "2026-11-04T21:43:06.474000+00:00",
+      "data_as_of_utc": "2025-12-31T00:00:00+00:00",
+      "dataset_sha256": "5fc39eeeead59aa48813182e6a93d2308a4a9243655501f17d09a981c6c66a56",
+      "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+      "experiment_name": "HI/POC/PlanilhaTurmas/Demanda/2026-1",
+      "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
+      "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
+      "operation_job_id": "e7cdf170-3841-4794-a1b7-f454f9c7cf2a",
+      "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
+      "validation_status": "DEMO_CANDIDATE",
+      "model_display_name": "Ensaio DEMO agregado • hi.demo.notebook.a9291c01",
+      "status_at_creation": "DEMO_CANDIDATE",
+      "feature_schema_hash": "08c74a87750ccb243562cadb7f995a59c3be4c73caf7e102a53705f160c97ce7",
+      "model_signature_hash": "34fa99829b3165cf12121ca03583e611c0afaadeec8982b7982fa048dd250e1c",
+      "training_campaign_id": "4c559b77-6699-4fe2-9ade-dce8ecd33c90",
+      "campaign_display_name": "POC DEMO • Validação manual",
+      "registered_model_name": "hi.demo.notebook.a9291c01",
+      "training_execution_id": "e7cdf170-3841-4794-a1b7-f454f9c7cf2a",
+      "dataset_schema_version": "1.0",
+      "lineage_schema_version": "HI-LINEAGE/1.1",
+      "manifest_schema_version": "HI-LINEAGE/1.1"
+    },
+    "manifest_uri": "s3://pucpr-poc/lineage/poc/planilha-turmas/catalog/cycles/2026-1/models/hi.demo.notebook.a9291c01/versions/v0001/manifest.json",
+    "manifest_sha256": "24c12ccb21e8a1fd003a5abba87736174cd287f04180d0f00730e3302c192243",
+    "files": [
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/MLmodel",
+        "bytes": 1336,
+        "sha256": "d1ba43508ec6fc0a1d34d487a39af29294c7af2212affc3f8bd263118f5d6c79",
+        "object_version_id": "203e4bec-7aef-40ba-92c5-bf1182776cf7",
+        "model_version": "1",
+        "status": "PASS"
+      },
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/model.pkl",
+        "bytes": 8671,
+        "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "object_version_id": "8ef84859-a09a-4855-8bfc-85178ba7212f",
+        "model_version": "1",
+        "status": "PASS"
+      },
+      {
+        "bucket": "pucpr-poc",
+        "key": "mlflow/3/models/m-053c00350db44eb1a28c5dae0ed54a66/artifacts/requirements.txt",
+        "bytes": 80,
+        "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+        "object_version_id": "a4aea68c-84c8-4a9a-bf83-206683aadabb",
+        "model_version": "1",
+        "status": "PASS"
+      }
+    ]
+  },
+  "manual_checks": {
+    "MLflow UI": "NOT_CHECKED",
+    "RustFS UI": "NOT_CHECKED",
+    "PostgreSQL": "NOT_CHECKED",
+    "Dashboard": "NOT_CHECKED"
+  },
+  "limitations": [
+    "Dados DEMO; contrato provisório; observações manuais não são inferidas de testes HTTP"
+  ]
+}

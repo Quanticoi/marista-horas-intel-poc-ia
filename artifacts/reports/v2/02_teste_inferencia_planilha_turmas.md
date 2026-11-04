@@ -1,8 +1,8 @@
 # 02_teste_inferencia_planilha_turmas
 
-PASS — 2026-11-04T20:12:24.820478+00:00
+PASS — 2026-11-04T21:20:36.873393+00:00
 
-Código: sha256:c3a9af6b6859448a4fba9603744e3529671c9b735b1eb6b668f9b4a7987b9c9e
+Código: sha256:d081aecc7d89ee87a6143bdf87abc7be151614b447c65ca82abe4665a418e5b7
 
 Evidência: [02_teste_inferencia_planilha_turmas.json](02_teste_inferencia_planilha_turmas.json)
 

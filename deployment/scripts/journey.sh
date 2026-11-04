@@ -12,7 +12,7 @@ dc() {
 }
 rebuild() {
   dc build mlflow jupyter
-  mkdir -p workspace/notebooks data/compose-logs artifacts/reports/v2
+  mkdir -p workspace/notebooks data/compose-logs artifacts/reports/v2 artifacts/reports/v3
   chmod a+rwx workspace workspace/notebooks data/compose-logs
   chmod -R a+rwX artifacts/reports
   dc run --rm --no-deps --entrypoint chown volume-tools 10001:10001 /restore/rustfs

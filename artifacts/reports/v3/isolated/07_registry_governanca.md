@@ -1,0 +1,10 @@
+# 07_registry_governanca
+
+PASS — 2026-11-04T21:44:09.115073+00:00
+
+Código: sha256:2faff281694a57a839bdd1574db9cccfc917959f2370281f8867c76638ae22d1
+
+Evidência: [07_registry_governanca.json](07_registry_governanca.json)
+
+- Dados DEMO e contrato provisório; regras não avaliadas não são homologação
+- Execução sem erro do notebook não implica execução de operações opt-in desativadas

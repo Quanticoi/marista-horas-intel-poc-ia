@@ -1,0 +1,670 @@
+{
+  "plan_id": "82792fed-072b-44f7-93eb-599afc1352b1",
+  "created_at_utc": "2026-11-04T21:24:23.307053+00:00",
+  "environment": "poc",
+  "mode": "factory-reset",
+  "scope": {
+    "project": "marista-correcoes-isolated",
+    "directory": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia",
+    "compose_sha256": "338808e7df54fb2444f8f8f2385d158df94f643cc4ea2bd74793eaf330a451bb",
+    "volumes": [
+      "marista-correcoes-isolated_postgres",
+      "marista-correcoes-isolated_rabbitmq",
+      "marista-correcoes-isolated_rustfs"
+    ],
+    "containers": [
+      {
+        "id": "c09be6c458d941bdfb4f4499b3867e60f9b00e82912aef50954c76aba310d132",
+        "service": "api",
+        "image": "sha256:c651b51e5f80d11b3d685528cba95058c32dfdeba277f368cdc0935f8dfe7772"
+      },
+      {
+        "id": "feff983a8f0627ed6af31f6b8f354abb0a020f7849d93c6b5bf2cbeb0b1969a0",
+        "service": "dashboard",
+        "image": "sha256:c651b51e5f80d11b3d685528cba95058c32dfdeba277f368cdc0935f8dfe7772"
+      },
+      {
+        "id": "0a37d18e0bac247cf154d5682160645e7c0f3094cfeed77379161754306fabc8",
+        "service": "inference",
+        "image": "sha256:c651b51e5f80d11b3d685528cba95058c32dfdeba277f368cdc0935f8dfe7772"
+      },
+      {
+        "id": "3d58383e1e92754efa6ee1dcdc3726de17b995803357501502367201ee5ac513",
+        "service": "ingestion",
+        "image": "sha256:c651b51e5f80d11b3d685528cba95058c32dfdeba277f368cdc0935f8dfe7772"
+      },
+      {
+        "id": "2e8705e1873803fb72c894318f220228e68e542a1974312b4b0bb08c232d9dff",
+        "service": "jupyter",
+        "image": "sha256:94b0b3415e232a34a95e9a1e341efd23720fd2bcf82e000dc95d4c232a3c781e"
+      },
+      {
+        "id": "86feebda2fcd481d54382d377dde489e27f8f9405d314d5065b54565f3b6252d",
+        "service": "mlflow",
+        "image": "sha256:c651b51e5f80d11b3d685528cba95058c32dfdeba277f368cdc0935f8dfe7772"
+      },
+      {
+        "id": "bdf4319f336cb6828bd631ae2e6d568890b1aa25c8076ec53c28859a02c7d0ae",
+        "service": "monitoramento",
+        "image": "sha256:c651b51e5f80d11b3d685528cba95058c32dfdeba277f368cdc0935f8dfe7772"
+      },
+      {
+        "id": "a0b2d0c4721b03c6d9536ffd87b79519ea9ebd9fcc1c3f17ef8c78839442c404",
+        "service": "postgres",
+        "image": "sha256:d609c3005478af92bddad773423df829b7402ea0b356d5b72edd2fd54d1ad3ea"
+      },
+      {
+        "id": "64e542e334f32edec6f327d8f14eca2d25fe0ae05199f4a709526f1309179bee",
+        "service": "rabbitmq",
+        "image": "sha256:697da87bf89699fda7c7da8067cc91b055353056d52a07e7f3c41bd67b0b5f71"
+      },
+      {
+        "id": "9e324cb60577de3f6e19abe7150a82fb2968b748a185bf006accad115a814ee5",
+        "service": "rustfs",
+        "image": "sha256:8cc9801755448b71a786705ce76692c77e14936cccd87cf2fc31842e58f4d1ff"
+      },
+      {
+        "id": "55e2439647861e9af8cc9d3c18d8d54876f6427506d3f5c8787ae2d555490b5a",
+        "service": "worker",
+        "image": "sha256:c651b51e5f80d11b3d685528cba95058c32dfdeba277f368cdc0935f8dfe7772"
+      }
+    ]
+  },
+  "inventory": {
+    "bucket": "pucpr-poc",
+    "buckets": [
+      "pucpr-poc"
+    ],
+    "database_names": [
+      "mlflow_db",
+      "planejamento_db",
+      "postgres"
+    ],
+    "databases": {
+      "mlflow_db": {
+        "alembic_version": {
+          "count": 1,
+          "digest": "6928ed6a0b30741f6574f8d7c1d03428"
+        },
+        "assessments": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "budget_policies": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "datasets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_bindings": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_model_mappings": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoint_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "endpoints": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "entity_associations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_dataset_records": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_dataset_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "evaluation_datasets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "experiment_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "experiments": {
+          "count": 4,
+          "digest": "e7e4a9087f29a1a19afa588fe97718e2"
+        },
+        "input_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "inputs": {
+          "count": 2,
+          "digest": "3f046730fa2364be7b8a38e3989ab0bf"
+        },
+        "issues": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "latest_metrics": {
+          "count": 12,
+          "digest": "f820406c38bd4885e2881db3b99a2ca5"
+        },
+        "logged_model_metrics": {
+          "count": 7,
+          "digest": "613568970e7aefcb5c610a8cf226298c"
+        },
+        "logged_model_params": {
+          "count": 17,
+          "digest": "a40dc3105b78b6e2e3a613683a7414e7"
+        },
+        "logged_model_tags": {
+          "count": 7,
+          "digest": "36561a6b0405744152b162e9eedbd97b"
+        },
+        "logged_models": {
+          "count": 2,
+          "digest": "fdef152463b695857508c9e4de2f00a3"
+        },
+        "metrics": {
+          "count": 12,
+          "digest": "a79a2972ec6de63fa29686b7fd32eee1"
+        },
+        "model_definitions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_version_tags": {
+          "count": 51,
+          "digest": "5f5d3495225485a0cc93eee9aa56f676"
+        },
+        "model_versions": {
+          "count": 2,
+          "digest": "7c52ba9dce9e32f02b7fb84fdc1d8967"
+        },
+        "online_scoring_configs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "params": {
+          "count": 18,
+          "digest": "7a3bbe684435f99bc539859b33545bfd"
+        },
+        "registered_model_aliases": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_model_tags": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "registered_models": {
+          "count": 2,
+          "digest": "d2a3700712c88a0362b53a3046a88c97"
+        },
+        "runs": {
+          "count": 3,
+          "digest": "fd82ad13d3cb85d620fe737299982929"
+        },
+        "scorer_versions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "scorers": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "secrets": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "span_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "spans": {
+          "count": 29,
+          "digest": "f5ba8399200582218e61b6fe0ea2f8f5"
+        },
+        "tags": {
+          "count": 79,
+          "digest": "1e311e71a567146fdae177b2124d8142"
+        },
+        "trace_info": {
+          "count": 14,
+          "digest": "228eb5bf6cac8f2b414a26b2559622c6"
+        },
+        "trace_metrics": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "trace_request_metadata": {
+          "count": 156,
+          "digest": "baf8ea61c270a5a2d5be433e7c7ee388"
+        },
+        "trace_tags": {
+          "count": 112,
+          "digest": "2b84289c5e380cc94d5cc8b321de2d09"
+        },
+        "webhook_events": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "webhooks": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "workspaces": {
+          "count": 1,
+          "digest": "f853bad469a0a08c243a1cef4b515440"
+        }
+      },
+      "planejamento_db": {
+        "academic_cycles": {
+          "count": 1,
+          "digest": "32c6a0226ae5cf0c662f44519ff24dd4"
+        },
+        "academic_periods": {
+          "count": 30,
+          "digest": "8cee18be6d733e27d197aa0b31d218ba"
+        },
+        "audit_events": {
+          "count": 3,
+          "digest": "0c80f0a730480f99fae21cad5ab0e25b"
+        },
+        "campuses": {
+          "count": 3,
+          "digest": "2a1feab694fe2bc07c2dd54f878a9bd7"
+        },
+        "courses": {
+          "count": 15,
+          "digest": "e2a95968de4dd1a4e3baa38bc7053adf"
+        },
+        "dataset_snapshots": {
+          "count": 1,
+          "digest": "cf3de730855a886be8cc999b8f3bff58"
+        },
+        "disciplines": {
+          "count": 90,
+          "digest": "272cc79e02ad459ce9d7d2e041f38754"
+        },
+        "historical_enrollments": {
+          "count": 350,
+          "digest": "96d839b5729a9cf472ed4fbd4a51b98c"
+        },
+        "lineage_edges": {
+          "count": 11,
+          "digest": "9377f135e9caa94f7450f8853f98da82"
+        },
+        "lineage_entities": {
+          "count": 10,
+          "digest": "100f87bd4045c7b5d4087ec6ee7c6f99"
+        },
+        "model_approval_requests": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_catalog": {
+          "count": 30,
+          "digest": "bcec7ef2234b3ed3017d2fb3387a1751"
+        },
+        "model_deployments": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_quality_evaluations": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "model_version_catalog": {
+          "count": 1,
+          "digest": "ccf07dd89da8140c36f9ad730055eb8a"
+        },
+        "offer_suggestions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "operation_events": {
+          "count": 13,
+          "digest": "861ff6595f460c7dbc459ae06bec6926"
+        },
+        "operation_jobs": {
+          "count": 2,
+          "digest": "77d82435ebab87fe1ee7bfee75b1f5b2"
+        },
+        "period_disciplines": {
+          "count": 90,
+          "digest": "486ae3dae01acddc14477e5cb0ec76ab"
+        },
+        "prediction_jobs": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "predictions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        },
+        "proposal_contract_evidence": {
+          "count": 2,
+          "digest": "1657f458c23796706335d0008a5d056b"
+        },
+        "proposal_generations": {
+          "count": 2,
+          "digest": "9a98d9e3903208cdc4a52a0db513b0c7"
+        },
+        "proposal_lines": {
+          "count": 180,
+          "digest": "9dbb0fdc20ac93195a6b07f55723faf0"
+        },
+        "proposal_model_usage": {
+          "count": 2,
+          "digest": "34d0ef5c93fb8c566aed61f6118972c6"
+        },
+        "training_campaigns": {
+          "count": 1,
+          "digest": "c5cca93ed6d8218da2d71502642f3e35"
+        },
+        "training_executions": {
+          "count": 0,
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      }
+    },
+    "objects": [
+      {
+        "key": "checks/compatibility",
+        "kind": "Versions",
+        "size": 5,
+        "version": "9ece3946-de56-4f94-ad4e-1acd6b58958f"
+      },
+      {
+        "key": "lineage/poc/planilha-turmas/catalog/campaigns/8367b372-66d0-418f-83b3-d59c405e9154/manifest.json",
+        "kind": "Versions",
+        "size": 687,
+        "version": "b065e81d-75a2-46b2-ba7c-fc0066c6337b"
+      },
+      {
+        "key": "lineage/poc/planilha-turmas/catalog/cycles/2026-1/models/hi.demo.probe.efe5d76a/versions/v0001/manifest.json",
+        "kind": "Versions",
+        "size": 3058,
+        "version": "79331d71-a2ba-429d-95d0-05cc4f599a4f"
+      },
+      {
+        "key": "lineage/poc/planilha-turmas/inferences/2d09e3cd-3de9-4e37-bb85-938bb8b44f00/manifest.json",
+        "kind": "Versions",
+        "size": 689,
+        "version": "8f288059-4331-4162-a6b3-ca51ddab088c"
+      },
+      {
+        "key": "lineage/poc/planilha-turmas/inferences/c16b1fb3-b61c-4559-84c6-34dedecd326f/manifest.json",
+        "kind": "Versions",
+        "size": 653,
+        "version": "eec08e5f-e55f-4baf-89b8-227f939babdc"
+      },
+      {
+        "key": "lineage/poc/planilha-turmas/proposals/4c3efdca-bdbe-4285-aab1-68887771920d/revisions/1/manifest.json",
+        "kind": "Versions",
+        "size": 11507,
+        "version": "9b520f96-03b5-4ff9-95b5-561c32626055"
+      },
+      {
+        "key": "lineage/poc/planilha-turmas/proposals/53d85dfb-d350-4e30-9d26-19c315572015/revisions/1/manifest.json",
+        "kind": "Versions",
+        "size": 11511,
+        "version": "63891766-3b46-40e5-afbd-71d343b0751d"
+      },
+      {
+        "key": "mlflow/1/d9eb3a117b784a419cdbe1ac5ca7c189/artifacts/diagnostic.txt",
+        "kind": "Versions",
+        "size": 36,
+        "version": "719d83a5-63c8-4447-a591-5e6fc7018897"
+      },
+      {
+        "key": "mlflow/2/7e28fa182b1e4533ab55dcfe320bd282/artifacts/evaluation.json",
+        "kind": "Versions",
+        "size": 2819,
+        "version": "b4c0d496-f12b-462a-a4f2-54d51afabbcb"
+      },
+      {
+        "key": "mlflow/2/7e28fa182b1e4533ab55dcfe320bd282/artifacts/evidence/journey-4c3efdca-bdbe-4285-aab1-68887771920d.json",
+        "kind": "Versions",
+        "size": 8583,
+        "version": "7aba1dcc-e5d4-4b7d-a26c-d49e8574431f"
+      },
+      {
+        "key": "mlflow/2/7e28fa182b1e4533ab55dcfe320bd282/artifacts/reference/extraction.csv",
+        "kind": "Versions",
+        "size": 127156,
+        "version": "b4476d1c-48fd-44b7-a83e-c73125de391b"
+      },
+      {
+        "key": "mlflow/2/7e28fa182b1e4533ab55dcfe320bd282/artifacts/reference/journey_history.sql",
+        "kind": "Versions",
+        "size": 988,
+        "version": "693f484c-0c8d-4ea7-9a79-eeec3a8ebb7a"
+      },
+      {
+        "key": "mlflow/2/models/m-48c89409c0ff496391ac188b6dc12df9/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1336,
+        "version": "9801f651-ec2b-4fc5-9659-38f85f607025"
+      },
+      {
+        "key": "mlflow/2/models/m-48c89409c0ff496391ac188b6dc12df9/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "9cf5c1ce-59e3-4ed7-87aa-57591405c03a"
+      },
+      {
+        "key": "mlflow/2/models/m-48c89409c0ff496391ac188b6dc12df9/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "e92b8686-9068-47ed-bba8-2ce5b1503480"
+      },
+      {
+        "key": "mlflow/2/models/m-48c89409c0ff496391ac188b6dc12df9/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "87867972-4321-40e2-a61a-49ae1bf6776e"
+      },
+      {
+        "key": "mlflow/2/models/m-48c89409c0ff496391ac188b6dc12df9/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 122,
+        "version": "d1ef8c2d-3a8b-4ec6-a63e-d7c05ac902b7"
+      },
+      {
+        "key": "mlflow/2/models/m-48c89409c0ff496391ac188b6dc12df9/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "19544475-cc06-469e-854f-9dd74ecf50d9"
+      },
+      {
+        "key": "mlflow/2/models/m-48c89409c0ff496391ac188b6dc12df9/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "d1bcf3d0-2747-46a0-a1cf-ffb8ff2b4d92"
+      },
+      {
+        "key": "mlflow/3/models/m-99b5070154de4a42920b01e89ca1dd31/artifacts/MLmodel",
+        "kind": "Versions",
+        "size": 1336,
+        "version": "6620181d-4f0e-41d4-b999-8a07490e82c3"
+      },
+      {
+        "key": "mlflow/3/models/m-99b5070154de4a42920b01e89ca1dd31/artifacts/conda.yaml",
+        "kind": "Versions",
+        "size": 193,
+        "version": "f47025ef-95b1-4277-8322-fb5b60c3049c"
+      },
+      {
+        "key": "mlflow/3/models/m-99b5070154de4a42920b01e89ca1dd31/artifacts/input_example.json",
+        "kind": "Versions",
+        "size": 489,
+        "version": "f053613b-0af5-4c50-83b4-19ce8804057d"
+      },
+      {
+        "key": "mlflow/3/models/m-99b5070154de4a42920b01e89ca1dd31/artifacts/model.pkl",
+        "kind": "Versions",
+        "size": 8671,
+        "version": "9d373ef5-edb7-4fa0-bf4c-7ef3cd665944"
+      },
+      {
+        "key": "mlflow/3/models/m-99b5070154de4a42920b01e89ca1dd31/artifacts/python_env.yaml",
+        "kind": "Versions",
+        "size": 114,
+        "version": "a5add5d5-bf1e-475a-b003-d71f4ffb110b"
+      },
+      {
+        "key": "mlflow/3/models/m-99b5070154de4a42920b01e89ca1dd31/artifacts/requirements.txt",
+        "kind": "Versions",
+        "size": 80,
+        "version": "0260aa55-8764-41f0-a183-855f2e0c4ce2"
+      },
+      {
+        "key": "mlflow/3/models/m-99b5070154de4a42920b01e89ca1dd31/artifacts/serving_input_example.json",
+        "kind": "Versions",
+        "size": 730,
+        "version": "a93c8c7c-aef8-4609-8560-0ceabb237d1d"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/bronze.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "00b114eb-072f-4ad1-8ec7-dd09a79ca085"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/gold.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "bc325899-1d12-45de-8aca-52985ec4ea8d"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/manifest.json",
+        "kind": "Versions",
+        "size": 468,
+        "version": "a87d9f4d-b640-4964-9635-e527d5b31762"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/raw.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "881ba3b7-db6b-4638-ba84-de5cd099cc7c"
+      },
+      {
+        "key": "snapshots/fb931e1e-43d0-5ff8-938c-0d2ba4a68794/silver.parquet",
+        "kind": "Versions",
+        "size": 9337,
+        "version": "a169ab20-985d-4c80-a4d2-02857597bc20"
+      }
+    ],
+    "queues": [
+      {
+        "messages": 0,
+        "name": "celery",
+        "vhost": "/"
+      }
+    ],
+    "versioning": "Enabled"
+  },
+  "preserved": {
+    ".env": "db3b5b7502c574fefbbfc8bdfa07d67c928aad848f4df5883e4cab4309aa48f5",
+    "notebooks\\00_validacao_ambiente.ipynb": "0387c5f95eb6681bb05199b1b00521049444d60b420be7ee41e4f31ad261cedb",
+    "notebooks\\01_jornada_completa_planilha_turmas.ipynb": "a4f6e579250d7c832b37d6c6900bf6b42150abd0d53d76776d1a0515aa24ef45",
+    "notebooks\\02_teste_inferencia_planilha_turmas.ipynb": "fb516eb7c3be8e15762af2a92693587603688097f59ed6bf2d539f263a234b21",
+    "notebooks\\03_exploracao_preparacao_dados.ipynb": "68ef8632eea168698897a3c7dccd865bcc8a7c84ee672ac4f0c24ac2a899c08e",
+    "notebooks\\04_treinamento_individual.ipynb": "4f2b6841408686d61c4b0e6e8da6e57fd7a7b8b9a5cef09de36d79f1cf9a7a9b",
+    "notebooks\\05_treinamento_campanha.ipynb": "a014d0d28e4134ac7b19d1eed68e835a386df425a770dcf887354ab4838350e1",
+    "notebooks\\06_avaliacao_comparativa.ipynb": "6e49d469266744f41888947fc701bcb1674ea37d75e42ae1ae02601adf2e4015",
+    "notebooks\\07_registry_governanca.ipynb": "66eae3f925518adace65133ced6c01fa39d635d01036c765d8a3099aa722066c",
+    "notebooks\\08_auditoria_lineage.ipynb": "773f58f42e94b192c9ffbc548752c04d03ab9aee861664c9d5aa801eed8fa3df",
+    "notebooks\\09_reset_total_ambiente_poc.ipynb": "dc8e33bb241d0699a2d9053da7f67424bfcc674268c9cfd97aa60ca3c2e4b152",
+    "workspace\\.ipynb_checkpoints\\Untitled-checkpoint.ipynb": "4a62b68a633d79c53a6fd8893e8ea42dcf2b9a8a3e907b1b9861661f04f21517",
+    "workspace\\.ipynb_checkpoints\\Untitled1-checkpoint.ipynb": "4a62b68a633d79c53a6fd8893e8ea42dcf2b9a8a3e907b1b9861661f04f21517",
+    "workspace\\.Trash-57439\\files\\editability-check-0fc4bdbbdada4966b880ca086a1c5935.ipynb": "153e37d1603b7b22ba0258368b72fc05b06179bdc9ad265ad05bd59e16f95f35",
+    "workspace\\.Trash-57439\\files\\editability-check-ca9a007168dd49c188355958584487e9.ipynb": "153e37d1603b7b22ba0258368b72fc05b06179bdc9ad265ad05bd59e16f95f35",
+    "workspace\\notebook-backups\\00_validacao_ambiente.7f7f67c3408ad9d8e4a8afa3c5230b28523242b7b03d0afda694d6f38df78ad7.ipynb": "7f7f67c3408ad9d8e4a8afa3c5230b28523242b7b03d0afda694d6f38df78ad7",
+    "workspace\\notebook-backups\\00_validacao_ambiente.cfb263add9201887f9c4f9dddd83c4714b83ef5b52a1db8f8f0f7cd616cd9f14.ipynb": "cfb263add9201887f9c4f9dddd83c4714b83ef5b52a1db8f8f0f7cd616cd9f14",
+    "workspace\\notebook-backups\\01_jornada_completa_planilha_turmas.4a1bc2d7e2e43e27315d826ef98b1a62fa8017f46536d1490dcbf2a84ea5e528.ipynb": "4a1bc2d7e2e43e27315d826ef98b1a62fa8017f46536d1490dcbf2a84ea5e528",
+    "workspace\\notebook-backups\\01_jornada_completa_planilha_turmas.ab37343f32483440db03f8598617761e4a64a4eb24034fdbc50a4c3902614533.ipynb": "ab37343f32483440db03f8598617761e4a64a4eb24034fdbc50a4c3902614533",
+    "workspace\\notebook-backups\\01_jornada_completa_planilha_turmas.update-eeacc6e47d5c.703a4e4525c82b083180d5d9b13f3062a727c3a6e028e8af42fbb4439bee8f64.ipynb": "703a4e4525c82b083180d5d9b13f3062a727c3a6e028e8af42fbb4439bee8f64",
+    "workspace\\notebook-backups\\02_teste_inferencia_planilha_turmas.032d0a27af1011aff8cdb4153d90d7f183f2e4bd31db7289288686c1b14e4fa3.ipynb": "032d0a27af1011aff8cdb4153d90d7f183f2e4bd31db7289288686c1b14e4fa3",
+    "workspace\\notebook-backups\\02_teste_inferencia_planilha_turmas.9a9265265f0b7cb85fd32db4cb6e49d22e4d11adc23947d6c834170ca2c9ca82.ipynb": "9a9265265f0b7cb85fd32db4cb6e49d22e4d11adc23947d6c834170ca2c9ca82",
+    "workspace\\notebook-backups\\03_exploracao_preparacao_dados.5a545cc4214c3937dca53986e9edf7f1c380a5a8f6f07f3c9f8827f242972ea4.ipynb": "5a545cc4214c3937dca53986e9edf7f1c380a5a8f6f07f3c9f8827f242972ea4",
+    "workspace\\notebook-backups\\03_exploracao_preparacao_dados.83f5a474b1e71bd69eecd9f2c7a134eb5f24801673b6eb635a66dab775c5a098.ipynb": "83f5a474b1e71bd69eecd9f2c7a134eb5f24801673b6eb635a66dab775c5a098",
+    "workspace\\notebook-backups\\04_treinamento_individual.3024eaf66645deb35027b34f7279ad3179920d4d61af409f585eca65e00c4203.ipynb": "3024eaf66645deb35027b34f7279ad3179920d4d61af409f585eca65e00c4203",
+    "workspace\\notebook-backups\\04_treinamento_individual.ca0655269619663d61cae96b2bc28ef2ba339ab7a8abc9a079e55e78d56b0481.ipynb": "ca0655269619663d61cae96b2bc28ef2ba339ab7a8abc9a079e55e78d56b0481",
+    "workspace\\notebook-backups\\05_treinamento_campanha.613151f7d0f11aa696fbb125789cd77d9cb605a2245524c6e081cb978a4f9956.ipynb": "613151f7d0f11aa696fbb125789cd77d9cb605a2245524c6e081cb978a4f9956",
+    "workspace\\notebook-backups\\05_treinamento_campanha.cdacd6575da465860a3c32a2586a6fffebae63478399eb8e7497a4ec43581c0f.ipynb": "cdacd6575da465860a3c32a2586a6fffebae63478399eb8e7497a4ec43581c0f",
+    "workspace\\notebook-backups\\06_avaliacao_comparativa.22ebf6b89cc501b21336f00a943e7446aced08d511de7b7a467b3c895572b685.ipynb": "22ebf6b89cc501b21336f00a943e7446aced08d511de7b7a467b3c895572b685",
+    "workspace\\notebook-backups\\06_avaliacao_comparativa.a0dab6165490636a8d3689dcb53fc7a57948446c690b9083c3778c1e63e38302.ipynb": "a0dab6165490636a8d3689dcb53fc7a57948446c690b9083c3778c1e63e38302",
+    "workspace\\notebook-backups\\07_registry_governanca.3f9725b64b6a9a70c02718e84a11b7a398368e6ed744c957835bbbcc5f94f956.ipynb": "3f9725b64b6a9a70c02718e84a11b7a398368e6ed744c957835bbbcc5f94f956",
+    "workspace\\notebook-backups\\07_registry_governanca.b361bfd3c1741b5915a6c3f6696b151fdf210c6e2dd5924dfd0f310057f7563e.ipynb": "b361bfd3c1741b5915a6c3f6696b151fdf210c6e2dd5924dfd0f310057f7563e",
+    "workspace\\notebook-backups\\08_auditoria_lineage.02c7a1201aff4de7da7a5d508d2a83ced4f30215896ccbccda947b243d13086e.ipynb": "02c7a1201aff4de7da7a5d508d2a83ced4f30215896ccbccda947b243d13086e",
+    "workspace\\notebook-backups\\08_auditoria_lineage.1c8901c344d39c1c936bdd5d0b260040fbcf5b5be50557791661abdffe7130ac.ipynb": "1c8901c344d39c1c936bdd5d0b260040fbcf5b5be50557791661abdffe7130ac",
+    "workspace\\notebook-backups\\09_reset_total_ambiente_poc.977e37ae4e1ac959f4653a8f6b549425d47f65642a828049462cf4149555e818.ipynb": "977e37ae4e1ac959f4653a8f6b549425d47f65642a828049462cf4149555e818",
+    "workspace\\notebook-backups\\09_reset_total_ambiente_poc.9ca85ff5cfe97117cee2597dd8788fbc39277e377c7e734bc68603b96656a1c3.ipynb": "9ca85ff5cfe97117cee2597dd8788fbc39277e377c7e734bc68603b96656a1c3",
+    "workspace\\notebooks\\.ipynb_checkpoints\\00_environment_validation-checkpoint.ipynb": "9e042e6c079158950713b8f029446e4ba0e3a77ba57ac23db157a0266ee4b0da",
+    "workspace\\notebooks\\.ipynb_checkpoints\\00_validacao_ambiente-checkpoint.ipynb": "d6df3498af3ff28de5c31a52039501f4114c80dae3526a0d12a25779cb605c30",
+    "workspace\\notebooks\\.ipynb_checkpoints\\01_exploration-checkpoint.ipynb": "c6a2bfce255d7b036a7b34998af74b85c91fd675dfe4b2981c53c1ee8793fa57",
+    "workspace\\notebooks\\.ipynb_checkpoints\\01_jornada_completa_planilha_turmas-checkpoint.ipynb": "63f164ecad07442d61e06b98f8356281541a6699c56bd1dd108caba36396cdfb",
+    "workspace\\notebooks\\.ipynb_checkpoints\\01_jornada_completa_planilha_turmas.update-eeacc6e47d5c-checkpoint.ipynb": "eeacc6e47d5cc40cc1eace1731e08845012cf99207e08dc9546ea9c0bed2c0f5",
+    "workspace\\notebooks\\.ipynb_checkpoints\\02_features-checkpoint.ipynb": "1b3815d919983ebcbcd36ab7f3e853ad07d0f025c2057fa4d22387fb277ea298",
+    "workspace\\notebooks\\.ipynb_checkpoints\\02_teste_inferencia_planilha_turmas-checkpoint.ipynb": "60d50280d6c9f95ea2a3712a57e9ccfbf68082935bbc9d797ee6c8362f0ff140",
+    "workspace\\notebooks\\.ipynb_checkpoints\\03_exploracao_preparacao_dados-checkpoint.ipynb": "17e5ce6f8cc31d9c6c16fe973942dd88982480396965011b13e1ed863e7d61cc",
+    "workspace\\notebooks\\.ipynb_checkpoints\\03_training-checkpoint.ipynb": "d3fb3ff9caadc38076c8d4801846a01bd24ab578fb4f6e85f75b6a911811698b",
+    "workspace\\notebooks\\.ipynb_checkpoints\\04_evaluation-checkpoint.ipynb": "a4576c689eef1debf5e7738b10e67d1484a341f1ff34cebe04a60a079e4f60ce",
+    "workspace\\notebooks\\.ipynb_checkpoints\\04_treinamento_individual-checkpoint.ipynb": "fee632066b9cc02a40d4b168900854de9e313b3b64b4c5421b3ce86bbaa35c59",
+    "workspace\\notebooks\\.ipynb_checkpoints\\05_registry-checkpoint.ipynb": "8b12262e97b55ef0c013504699e391f67c09d1919c443844754acef28139c029",
+    "workspace\\notebooks\\.ipynb_checkpoints\\05_treinamento_campanha-checkpoint.ipynb": "3b09babed96f036bc4a81209041c3465b71c9c28837462581cc2a8885e4f24ae",
+    "workspace\\notebooks\\.ipynb_checkpoints\\06_avaliacao_comparativa-checkpoint.ipynb": "bd544c6f9f6384d27c5f147536595f025497e31d6b1d5ceab35c0174c2a26f0d",
+    "workspace\\notebooks\\.ipynb_checkpoints\\06_inference-checkpoint.ipynb": "339764bfde343273878015fcd0c0e55c56e109e8107d9d4dd1a6d52cba0564a8",
+    "workspace\\notebooks\\.ipynb_checkpoints\\07_registry_governanca-checkpoint.ipynb": "9b93687b6d3cd6bf8fb720bc8a1a50e843556f5284370c8ea30665ecf381fa9c",
+    "workspace\\notebooks\\.ipynb_checkpoints\\08_auditoria_lineage-checkpoint.ipynb": "9e6f54df529704679bd035a7aaf06ac399ce4d4f7f1dd357a9c541fe06830fec",
+    "workspace\\notebooks\\.ipynb_checkpoints\\08_public_timeseries_lab-checkpoint.ipynb": "a2becb315f00079081ac2b92521923f6d0e9729bc5a2bb4b4221831a352f85ae",
+    "workspace\\notebooks\\.ipynb_checkpoints\\08_public_timeseries_lab.executed-checkpoint.ipynb": "74e4a078d521e32be4e70a95af4236bae0131545f62eca307140bf23c27b89cf",
+    "workspace\\notebooks\\00_validacao_ambiente.ipynb": "0387c5f95eb6681bb05199b1b00521049444d60b420be7ee41e4f31ad261cedb",
+    "workspace\\notebooks\\01_jornada_completa_planilha_turmas.ipynb": "a4f6e579250d7c832b37d6c6900bf6b42150abd0d53d76776d1a0515aa24ef45",
+    "workspace\\notebooks\\02_teste_inferencia_planilha_turmas.ipynb": "fb516eb7c3be8e15762af2a92693587603688097f59ed6bf2d539f263a234b21",
+    "workspace\\notebooks\\03_exploracao_preparacao_dados.ipynb": "68ef8632eea168698897a3c7dccd865bcc8a7c84ee672ac4f0c24ac2a899c08e",
+    "workspace\\notebooks\\04_treinamento_individual.ipynb": "4f2b6841408686d61c4b0e6e8da6e57fd7a7b8b9a5cef09de36d79f1cf9a7a9b",
+    "workspace\\notebooks\\05_treinamento_campanha.ipynb": "a014d0d28e4134ac7b19d1eed68e835a386df425a770dcf887354ab4838350e1",
+    "workspace\\notebooks\\06_avaliacao_comparativa.ipynb": "6e49d469266744f41888947fc701bcb1674ea37d75e42ae1ae02601adf2e4015",
+    "workspace\\notebooks\\07_registry_governanca.ipynb": "66eae3f925518adace65133ced6c01fa39d635d01036c765d8a3099aa722066c",
+    "workspace\\notebooks\\08_auditoria_lineage.ipynb": "773f58f42e94b192c9ffbc548752c04d03ab9aee861664c9d5aa801eed8fa3df",
+    "workspace\\notebooks\\09_reset_total_ambiente_poc.ipynb": "dc8e33bb241d0699a2d9053da7f67424bfcc674268c9cfd97aa60ca3c2e4b152",
+    "workspace\\Untitled.ipynb": "1d1f2be697ea1c6d7a46bb3be9aca03b78cf9301eafd84b33af963d820d4a056",
+    "workspace\\Untitled1.ipynb": "e4b6e0056fd826f9a3987cc2bf398fdd388fb386fb2aaf387bcbaa36ac4131e8",
+    ".runtime\\migration\\logs.tar.gz": "3c66c370c1525e530db017938a98fac28e2d550ece2ca75d4529805f39bdb0e9",
+    ".runtime\\migration\\manifest.json": "d9c2df728d452ef3b8769dde8714aabf52e185ffee2b066a51ad212ae6bba70a",
+    ".runtime\\migration\\mlflow_db.dump": "79c5aecdf02033af3c87d3431f66599c75c50e9eacbcee58ceb9f5db184fd3d5",
+    ".runtime\\migration\\planejamento_db.dump": "cd19195afca540e5025fbc29ee223d9db62a563efdc6747a34de450d63a5b2e0",
+    ".runtime\\migration\\replicas.json": "ae877a4eaf339ccaa19859f697fdfc1096ab684fd4153fd759a8fd2e97d556e2",
+    ".runtime\\migration\\restored.ok": "991385b0f126825a2f5e8be20c8bc586345af9ce50fe08b704794ced9962e58a",
+    ".runtime\\migration\\rustfs.tar.gz": "b34785b5a2da8705398eefa82f1a397b628eb1ca872eca0d7ecd744b2b4c1d7a",
+    ".runtime\\migration\\validated.sha256": "7b8ccea4a01afea758073e7f55f41542f29254a33f09eb44cb039b7be337fe95",
+    ".runtime\\migration\\workspace.tar.gz": "6207fd5c063704bfeb8195d99780e1946d835e27f485fbd41f7d575269707ec6",
+    ".runtime\\correcoes-isolated\\workspace\\notebook-backups\\05_treinamento_campanha.29c2d40860dadbd6a3220a0272a1e68669a0ca7d3c2b80dee168b8b355cb4f97.ipynb": "29c2d40860dadbd6a3220a0272a1e68669a0ca7d3c2b80dee168b8b355cb4f97",
+    ".runtime\\correcoes-isolated\\workspace\\notebook-backups\\06_avaliacao_comparativa.a77716c53a8bc1fb975f8e5d3b4c687df53b0f90a1548e896e37faeb75fd8a2f.ipynb": "a77716c53a8bc1fb975f8e5d3b4c687df53b0f90a1548e896e37faeb75fd8a2f",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\00_validacao_ambiente.ipynb": "0387c5f95eb6681bb05199b1b00521049444d60b420be7ee41e4f31ad261cedb",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\01_jornada_completa_planilha_turmas.ipynb": "a4f6e579250d7c832b37d6c6900bf6b42150abd0d53d76776d1a0515aa24ef45",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\02_teste_inferencia_planilha_turmas.ipynb": "fb516eb7c3be8e15762af2a92693587603688097f59ed6bf2d539f263a234b21",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\03_exploracao_preparacao_dados.ipynb": "68ef8632eea168698897a3c7dccd865bcc8a7c84ee672ac4f0c24ac2a899c08e",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\04_treinamento_individual.ipynb": "4f2b6841408686d61c4b0e6e8da6e57fd7a7b8b9a5cef09de36d79f1cf9a7a9b",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\05_treinamento_campanha.ipynb": "a014d0d28e4134ac7b19d1eed68e835a386df425a770dcf887354ab4838350e1",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\06_avaliacao_comparativa.ipynb": "6e49d469266744f41888947fc701bcb1674ea37d75e42ae1ae02601adf2e4015",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\07_registry_governanca.ipynb": "66eae3f925518adace65133ced6c01fa39d635d01036c765d8a3099aa722066c",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\08_auditoria_lineage.ipynb": "773f58f42e94b192c9ffbc548752c04d03ab9aee861664c9d5aa801eed8fa3df",
+    ".runtime\\correcoes-isolated\\workspace\\notebooks\\09_reset_total_ambiente_poc.ipynb": "dc8e33bb241d0699a2d9053da7f67424bfcc674268c9cfd97aa60ca3c2e4b152"
+  },
+  "status": "PREVIEW",
+  "plan_hash": "02c48e40597236bd7fc73d019d6d7116ddd5fd915a39bc86505d0c1b72c05a1e"
+}

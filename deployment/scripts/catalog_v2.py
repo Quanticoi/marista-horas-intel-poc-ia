@@ -4,11 +4,14 @@ def build(notebook,setup):
 from src.workbench.operations_sdk import call, report, await_job
 params=Parameters.load()
 display(params.model_dump(mode="json"))
+from src.workbench.manual_validation import display_locations, audit, export_session
 display({"state":"READY", "write_enabled":params.execute_write, "tracking":"remote Docker service", "browser_ui":cfg.ui})
 evidence={}
 '''
     end='''report_status="PARTIAL" if any(isinstance(value,str) and value.startswith("NOT_EXECUTED") for value in evidence.values()) else "PASS"
-display(report(NOTEBOOK_ID,evidence,status=report_status,limitations=["Dados DEMO e contrato provisório; regras não avaliadas não são homologação", "Execução sem erro do notebook não implica execução de operações opt-in desativadas"]))
+if evidence.get("campaign",{}).get("status") in ("FAILED","PARTIAL","CANCELLED","PAUSED"):
+    report_status="PARTIAL"
+display(report(NOTEBOOK_ID,evidence,status=report_status,generation="v3",limitations=["Dados DEMO e contrato provisório; regras não avaliadas não são homologação", "Execução sem erro do notebook não implica execução de operações opt-in desativadas"]))
 '''
     def emit(name,title,sections):
         intro=("Configuração tipada. Pré-requisitos: Docker saudável, seed DEMO, token por ambiente. Entradas: parâmetros abaixo; saídas: tabelas, IDs e relatório JSON/Markdown. Escritas exigem confirmação EXECUTE_DEMO e chave estável; repetir chave igual recupera o mesmo job. Espere READY; erros de dependência exigem verificar docker compose logs.",
@@ -79,7 +82,7 @@ if params.execute_write:
         raise ValueError("Selecione snapshot_id da tabela SQL")
     payload=dict(snapshot_id=str(params.snapshot_id),cycle_code=cfg.cycle,model_keys=model_keys,
         algorithm=params.algorithm,alpha=params.alpha,max_parallel_jobs=params.parallel_jobs,
-        requested_by=params.requester,confirm_training=True)
+        requested_by=params.requester,confirm_training=True,campaign_display_name=params.campaign_display_name)
     display({"preflight":payload,"budget":"máximo 2 processos, 2 GiB no container worker; identidades experimentais sintéticas"})
     submitted=campaign(cfg,payload,params.request_key)
     campaign_id=submitted["campaign_id"]
@@ -90,13 +93,20 @@ if campaign_id:
     items=call(cfg,"GET",f"/v1/training/campaigns/{campaign_id}/items?limit=500")
     display(state);display(pd.DataFrame(items))
     evidence.update(campaign=state,items=items)
+    if params.execute_write and state["status"]!="COMPLETED":
+        report(NOTEBOOK_ID,evidence,status="FAIL",generation="v3")
+        raise RuntimeError("Campanha não completou: "+state["status"]+"; consulte os erros dos jobs persistidos")
 else:
     evidence["training"]="NOT_EXECUTED: escolha campanha existente ou habilite escrita"
 '''
     emit("04_treinamento_individual","Experimento individual e baseline",[
         ("1. Selecionar snapshot, algoritmo ridge/dummy e alpha. Uma campanha com um item mantém idempotência e execução independente do kernel.",'''from src.data.journey import extract
 _,snapshot=extract(cfg);display(snapshot)
+scopes=call(cfg,"GET","/v1/audit/scopes")
+display(pd.DataFrame(scopes))
 model_keys=[params.model_name]
+if params.model_name=="planilha-turmas-demo":
+    model_keys=[scopes[0]["model_key"]]
 display({"model":params.model_name,"algorithm":params.algorithm,"alpha":params.alpha,"baseline":"DummyRegressor mean"})
 '''),("2. Submeter e acompanhar treino real opt-in; candidato não é promovido.",training),
         ("3. Comparar métricas, prova de download/checksum e reload feitas pelo job. Se executado, o resultado deve ter três evidências de arquivo por modelo.",'''for item in evidence.get("items",[]):
@@ -104,12 +114,18 @@ display({"model":params.model_name,"algorithm":params.algorithm,"alpha":params.a
         display(item["result"])
         assert len(item["result"]["storage_evidence"])==3
         display(Markdown(f"[Run]({cfg.ui}/#/experiments/{item['result']['experiment_id']}/runs/{item['mlflow_run_id']})"))
+display_locations(cfg,evidence.get("items",[]))
 ''')])
     emit("05_treinamento_campanha","Campanhas persistentes de modelos",[
-        ("1. Catálogo de campanhas e orçamento. Identidades hi.demo são experimentos sintéticos separados sobre o snapshot, não 500 fontes acadêmicas reais.",'''display(pd.DataFrame(call(cfg,"GET","/v1/training/campaigns")))
-from hashlib import sha256
-prefix=sha256(params.request_key.encode()).hexdigest()[:10]
-model_keys=[f"hi.demo.campaign.{prefix}.{i:03}" for i in range(params.model_count)]
+        ("1. Catálogo e orçamento. Chaves hi.pt.demanda representam períodos cadastrados DEMO; não são fontes institucionais. Default: três modelos, máximo de dois processos.",'''display(pd.DataFrame(call(cfg,"GET","/v1/training/campaigns")))
+from src.data.journey import extract
+_,snapshot=extract(cfg,snapshot_id=str(params.snapshot_id) if params.snapshot_id else None)
+display(snapshot)
+scopes=call(cfg,"GET","/v1/audit/scopes")
+display(pd.DataFrame(scopes))
+if params.model_count>len(scopes):
+    raise ValueError("O catálogo DEMO não possui esse número de séries distintas; use até "+str(len(scopes)))
+model_keys=[s["model_key"] for s in scopes[:params.model_count]]
 display({"model_count":len(model_keys),"max_parallel_jobs":params.parallel_jobs,"first_keys":model_keys[:5]})
 '''),("2. Controle opt-in: pause/resume/cancel/retry-failed. Cancelamento é cooperativo; itens em execução concluem, pendentes são cancelados.",'''if params.campaign_action not in ("create","observe"):
     params.authorize()
@@ -121,6 +137,7 @@ display({"model_count":len(model_keys),"max_parallel_jobs":params.parallel_jobs,
 '''+training),
         ("4. Quantidades comprovadas e progresso. Treinos reais, versões e instâncias de serving são números distintos.",'''items=evidence.get("items",[])
 display({"requested":len(items),"completed":sum(i["status"]=="COMPLETED" for i in items),"registered_versions":sum(bool(i["model_version"]) for i in items),"automatically_promoted":0,"new_HTTP_servers":0})
+display_locations(cfg,items)
 ''')])
     emit("06_avaliacao_comparativa","Comparar runs e escolher candidato",[
         ("1. Filtrar por snapshot explícito. Compare apenas a mesma janela; baseline e métricas são demonstrativos.",'''from src.workbench.operations_sdk import comparison
@@ -128,7 +145,8 @@ records=comparison(cfg,str(params.snapshot_id) if params.snapshot_id else "",lim
 table=pd.DataFrame(records);display(table)
 evidence["runs"]=records
 '''),("2. Eleger candidato por menor MAE dentro de um único snapshot/janela, sem aprovar ou promover.",'''if not table.empty and "mae" in table and params.snapshot_id:
-    groups=table.groupby(["snapshot_id","train_rows","evaluation_rows"],dropna=False)
+    comparable=table.dropna(subset=["snapshot_id","model_key","evaluation_window","target","dataset_sha256"])
+    groups=comparable.groupby(["snapshot_id","model_key","evaluation_window","target","dataset_sha256"])
     candidates=[g.sort_values("mae").iloc[0].to_dict() for _,g in groups if g.mae.notna().any()]
     display(pd.DataFrame(candidates));evidence["candidates"]=candidates
 else:
@@ -174,6 +192,11 @@ display(pd.DataFrame(evidence["nodes"]));display(pd.DataFrame(evidence["edges"])
 from src.workbench.lineage_review import render_graph
 display(HTML(render_graph(evidence)))
 display(pd.DataFrame(evidence["checks"]))
+reconciled=audit(cfg,params.lineage_kind,external_id,params.model_version)
+display(reconciled)
+inventory_rows=call(cfg,"GET","/v1/audit/inventory?limit=500")
+display(pd.DataFrame(inventory_rows))
+display(export_session(reconciled,inventory_rows))
 ''')])
     emit("09_reset_total_ambiente_poc","Preparar e auditar reset externo",[
         ("1. Selecionar modo e rebootstrap, sem executar exclusão. O controlador do host encerra o kernel em factory-reset; Run All é sempre somente leitura.",'''from src.workbench.reset_review import review_plan

@@ -22,7 +22,7 @@ jobs:
           for key in POSTGRES_PASSWORD MIGRATION_PASSWORD APP_PASSWORD READONLY_PASSWORD MLFLOW_PASSWORD AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY RABBITMQ_PASSWORD API_TOKEN OPERATOR_TOKEN DASHBOARD_TOKEN JUPYTER_TOKEN INFERENCE_TOKEN MONITOR_TOKEN INGESTION_TOKEN; do
             printf '%s=%s\n' "$key" "$(openssl rand -hex 32)" >> .env
           done
-          mkdir -p workspace/notebooks data/compose-logs artifacts/reports/v2
+          mkdir -p workspace/notebooks data/compose-logs artifacts/reports/v2 artifacts/reports/v3
           chmod 777 workspace workspace/notebooks artifacts/reports data/compose-logs
           # Checkout includes historical reports owned by the runner; both container
           # UIDs must be able to replace those generated evidence files.

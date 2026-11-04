@@ -1,0 +1,79 @@
+﻿[
+    {
+        "Service":  "api",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "/run/desktop/m…",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "dashboard",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "/run/desktop/m…",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "inference",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "/run/desktop/m…",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "ingestion",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "jupyter",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "/run/desktop/m…,/run/desktop/m…,/run/desktop/m…",
+        "Image":  "marista-jupyter:compose"
+    },
+    {
+        "Service":  "mlflow",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "monitoramento",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "postgres",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "marista_postgr…",
+        "Image":  "postgres:15.10-bookworm"
+    },
+    {
+        "Service":  "rabbitmq",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "marista_rabbit…",
+        "Image":  "rabbitmq:4.0.5-management"
+    },
+    {
+        "Service":  "rustfs",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "marista_rustfs",
+        "Image":  "rustfs/rustfs:1.0.0"
+    },
+    {
+        "Service":  "worker",
+        "Health":  "healthy",
+        "State":  "running",
+        "Mounts":  "/run/desktop/m…",
+        "Image":  "marista-app:compose"
+    }
+]

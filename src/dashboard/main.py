@@ -43,9 +43,11 @@ def ready():
 
 @app.get("/api/logs",dependencies=[Depends(auth)])
 def logs(namespace: str="", service: str="", pod: str="", level: str="", correlation_id: str="",
+         model_key:str="",run_id:str="",campaign_id:str="",proposal_id:str="",
          q: str=Query("",max_length=200), since: str="", until: str="", limit: int=Query(100,ge=1,le=1000)):
     output = deque(maxlen=limit)
-    filters = dict(namespace=namespace,service=service,pod=pod,level=level,correlation_id=correlation_id)
+    filters = dict(namespace=namespace,service=service,pod=pod,level=level,correlation_id=correlation_id,
+                   model_key=model_key,run_id=run_id,campaign_id=campaign_id,proposal_id=proposal_id)
     # Bounded to 20 MiB per request; older JSONL files remain in the log mount.
     remaining = 20*1024*1024
     for path in sorted(DIRECTORY.glob("*.jsonl"),key=lambda p:p.stat().st_mtime,reverse=True):
@@ -95,6 +97,24 @@ def jobs():
 def models():
     return rows("""SELECT m.model_key,d.registered_version,d.status FROM planning.model_catalog m LEFT JOIN planning.model_deployments d
        ON d.model_id=m.id AND d.alias='champion' AND d.status='APPROVED' ORDER BY m.model_key""",role="readonly")
+
+
+@app.get('/api/catalog',dependencies=[Depends(auth)])
+def catalog(model_key:str='',run_id:str='',campaign_id:str='',proposal_id:str='',correlation_id:str='',limit:int=Query(100,ge=1,le=500)):
+    from urllib.parse import quote
+    values=rows('''SELECT v.model_key,v.model_version,v.model_display_name,v.run_name,v.experiment_name,
+      v.run_id,v.experiment_id,v.snapshot_id,v.manifest_uri,v.sql_approved,v.integrity_status
+      FROM planning.v_model_inventory v WHERE (:model='' OR v.model_key=:model)
+      AND (:run='' OR v.run_id=:run) AND (:campaign='' OR v.campaign_id::text=:campaign)
+      AND (:proposal='' OR EXISTS(SELECT 1 FROM planning.proposal_model_usage u WHERE u.proposal_id::text=:proposal
+        AND u.model_key=v.model_key AND u.model_version=v.model_version))
+      AND (:correlation='' OR v.metadata->>'correlation_id'=:correlation)
+      ORDER BY v.model_key,v.model_version::integer DESC LIMIT :limit''',
+      dict(model=model_key,run=run_id,campaign=campaign_id,proposal=proposal_id,correlation=correlation_id,limit=limit),role='readonly')
+    for value in values:
+        value['run_url']=f"http://localhost:5000/#/experiments/{value['experiment_id']}/runs/{value['run_id']}"
+        value['registry_url']=f"http://localhost:5000/#/models/{quote(value['model_key'],safe='')}/versions/{value['model_version']}"
+    return values
 
 
 @app.get("/api/campaigns",dependencies=[Depends(auth)])
