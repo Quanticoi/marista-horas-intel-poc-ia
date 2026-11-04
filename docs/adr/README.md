@@ -13,3 +13,5 @@ As ADRs anteriores identificam explicitamente o conteúdo histórico/substituíd
 - [006: Pods de inferência e monitoramento](006-inference-monitoring-pods.md)
 - [007: Docker Compose no desenvolvimento](007-compose-development.md)
 - [008: Binários C3 e API por modelo](008-c3-binary-serving.md)
+- [009: Lineage e contrato provisório](009-lineage-contract.md)
+- [010: Jobs, campanhas, governança e compatibilidade V2](010-durable-operations-v2.md)

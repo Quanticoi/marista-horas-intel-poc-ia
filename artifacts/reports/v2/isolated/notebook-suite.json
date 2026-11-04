@@ -1,0 +1,123 @@
+{
+  "timestamp_utc": "2026-11-04T16:50:37.408139+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:ac9d309083cafb0864362254c698df7bcd95c4e38aed99b2e827ae992ab80e31",
+  "environment": "poc",
+  "test_id": "notebook-suite",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": [
+    {
+      "notebook": "00_validacao_ambiente.ipynb",
+      "case": "00-read",
+      "status": "PASS",
+      "evidence": "notebooks/00-read.ipynb"
+    },
+    {
+      "notebook": "01_jornada_completa_planilha_turmas.ipynb",
+      "case": "01-legacy",
+      "status": "PASS",
+      "evidence": "notebooks/01-legacy.ipynb"
+    },
+    {
+      "notebook": "03_exploracao_preparacao_dados.ipynb",
+      "case": "03-read",
+      "status": "PASS",
+      "evidence": "notebooks/03-read.ipynb"
+    },
+    {
+      "notebook": "04_treinamento_individual.ipynb",
+      "case": "04-train",
+      "status": "PASS",
+      "evidence": "notebooks/04-train.ipynb"
+    },
+    {
+      "notebook": "04_treinamento_individual.ipynb",
+      "case": "04-repeat-same-key",
+      "status": "PASS",
+      "evidence": "notebooks/04-repeat-same-key.ipynb"
+    },
+    {
+      "notebook": "02_teste_inferencia_planilha_turmas.ipynb",
+      "case": "02-generate",
+      "status": "PASS",
+      "evidence": "notebooks/02-generate.ipynb"
+    },
+    {
+      "notebook": "02_teste_inferencia_planilha_turmas.ipynb",
+      "case": "02-read",
+      "status": "PASS",
+      "evidence": "notebooks/02-read.ipynb"
+    },
+    {
+      "notebook": "05_treinamento_campanha.ipynb",
+      "case": "05-campaign-30",
+      "status": "PASS",
+      "evidence": "notebooks/05-campaign-30.ipynb"
+    },
+    {
+      "notebook": "06_avaliacao_comparativa.ipynb",
+      "case": "06-compare",
+      "status": "PASS",
+      "evidence": "notebooks/06-compare.ipynb"
+    },
+    {
+      "notebook": "07_registry_governanca.ipynb",
+      "case": "07-read",
+      "status": "PASS",
+      "evidence": "notebooks/07-read.ipynb"
+    },
+    {
+      "notebook": "07_registry_governanca.ipynb",
+      "case": "07-request",
+      "status": "PASS",
+      "evidence": "notebooks/07-request.ipynb"
+    },
+    {
+      "notebook": "07_registry_governanca.ipynb",
+      "case": "07-approve",
+      "status": "PASS",
+      "evidence": "notebooks/07-approve.ipynb"
+    },
+    {
+      "notebook": "08_auditoria_lineage.ipynb",
+      "case": "08-proposal",
+      "status": "PASS",
+      "evidence": "notebooks/08-proposal.ipynb"
+    },
+    {
+      "notebook": "08_auditoria_lineage.ipynb",
+      "case": "08-campaign",
+      "status": "PASS",
+      "evidence": "notebooks/08-campaign.ipynb"
+    },
+    {
+      "notebook": "08_auditoria_lineage.ipynb",
+      "case": "08-run",
+      "status": "PASS",
+      "evidence": "notebooks/08-run.ipynb"
+    },
+    {
+      "notebook": "08_auditoria_lineage.ipynb",
+      "case": "08-snapshot",
+      "status": "PASS",
+      "evidence": "notebooks/08-snapshot.ipynb"
+    },
+    {
+      "notebook": "08_auditoria_lineage.ipynb",
+      "case": "08-model",
+      "status": "PASS",
+      "evidence": "notebooks/08-model.ipynb"
+    },
+    {
+      "notebook": "09_reset_total_ambiente_poc.ipynb",
+      "case": "09-preview",
+      "status": "PASS",
+      "evidence": "notebooks/09-preview.ipynb"
+    }
+  ],
+  "limitations": [
+    "Reset notebook is read-only; destructive controller acceptance is a separate isolated test",
+    "Governance approval is a technical DEMO approval, not academic publication"
+  ]
+}

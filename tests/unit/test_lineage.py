@@ -24,7 +24,10 @@ def test_distribution_preserves_edits(tmp_path):
     (workspace/path.name).write_text("personal edit")
     path.write_text("new source")
     distribute(source,workspace)
-    assert (workspace/path.name).read_text()=="personal edit"
-    assert len(list(workspace.glob("*.update-*.ipynb")))==1
+    assert (workspace/path.name).read_text()=="new source"
+    assert [p.read_text() for p in (workspace.parent/"notebook-backups").glob("*.ipynb")]==["personal edit"]
+    assert len(list(workspace.glob("*.ipynb")))==1
+    (workspace/path.name).write_text("new personal edit")
     distribute(source,workspace)
-    assert len(list(workspace.glob("*.update-*.ipynb")))==1
+    assert (workspace/path.name).read_text()=="new personal edit"
+    assert len(list(workspace.glob("*.ipynb")))==1

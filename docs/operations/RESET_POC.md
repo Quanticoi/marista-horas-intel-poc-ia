@@ -33,7 +33,7 @@ python deployment/scripts/reset_poc.py status --environment poc --project marist
 `empty`: schemas/serviços prontos sem dados sintéticos. `demo-ready`: catálogos e
 snapshot seed, sem runs/modelos/propostas. Bootstrap cria objeto checks/compatibility
 e pode criar Default vazio no MLflow; não são resíduos de treinamento.
-Reset-data sem reinitialize deixa bancos removidos: prefira indicar empty/demo-ready.
+O rebootstrap é obrigatório: quando omitido, `reinitialize` usa `empty`.
 Não há treinamento ou promoção no rebootstrap.
 
 Backup é decisão explícita antes do reset: use o procedimento existente de backup,

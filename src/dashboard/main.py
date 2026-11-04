@@ -97,6 +97,22 @@ def models():
        ON d.model_id=m.id AND d.alias='champion' AND d.status='APPROVED' ORDER BY m.model_key""",role="readonly")
 
 
+@app.get("/api/campaigns",dependencies=[Depends(auth)])
+def campaigns():
+    return rows("""SELECT c.campaign_id,c.status,c.correlation_id,c.requested_count,
+        count(j.job_id) FILTER(WHERE j.status='COMPLETED') AS completed,
+        count(j.job_id) FILTER(WHERE j.status='FAILED') AS failed,
+        count(j.job_id) FILTER(WHERE j.status='RUNNING') AS running
+        FROM planning.training_campaigns c LEFT JOIN planning.operation_jobs j USING(campaign_id)
+        GROUP BY c.campaign_id ORDER BY c.created_at_utc DESC LIMIT 100""",role="readonly")
+
+@app.get("/api/operations",dependencies=[Depends(auth)])
+def operations():
+    return rows("""SELECT job_id,kind,status,correlation_id,campaign_id,attempt,
+        result->>'proposal_id' AS proposal_id,result->>'trace_id' AS trace_id,error_code
+        FROM planning.operation_jobs ORDER BY created_at_utc DESC LIMIT 100""",role="readonly")
+
+
 @app.get("/api/health/services",dependencies=[Depends(auth)])
 def services():
     import socket

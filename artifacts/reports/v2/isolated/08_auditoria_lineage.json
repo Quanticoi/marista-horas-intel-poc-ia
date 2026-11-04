@@ -1,0 +1,4893 @@
+{
+  "timestamp_utc": "2026-11-04T16:50:32.985290+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:ac9d309083cafb0864362254c698df7bcd95c4e38aed99b2e827ae992ab80e31",
+  "environment": "poc",
+  "test_id": "08_auditoria_lineage",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "status": "PARTIAL",
+    "nodes": [
+      {
+        "entity_id": "8a053df6-35c2-43e9-9b3e-91791b2ceb93",
+        "entity_type": "campaign",
+        "external_id": "00b98583-e68e-4174-aebc-d7cf2dd03960",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:10.496476+00:00",
+        "attributes": {}
+      },
+      {
+        "entity_id": "c2b99e86-586f-4426-a9bb-6de766da2d83",
+        "entity_type": "campaign",
+        "external_id": "3950bdc3-fb0c-4590-b169-60362016370e",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:37.620174+00:00",
+        "attributes": {}
+      },
+      {
+        "entity_id": "58051e55-49c5-4d0c-8502-8685ee03fc59",
+        "entity_type": "campaign",
+        "external_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:31.908987+00:00",
+        "attributes": {}
+      },
+      {
+        "entity_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "entity_type": "campaign",
+        "external_id": "52eaaa10-4fa7-4410-861f-71ef572fcb89",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:26:49.467289+00:00",
+        "attributes": {}
+      },
+      {
+        "entity_id": "02ed3fd9-933d-4da5-b14e-9e04c22f4c5a",
+        "entity_type": "campaign",
+        "external_id": "60a694f5-d771-4d3b-ad99-096ac6c7b101",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:15:40.120869+00:00",
+        "attributes": {}
+      },
+      {
+        "entity_id": "893c379c-5264-43ca-9fc1-63625282e008",
+        "entity_type": "inference",
+        "external_id": "4979b7be-4ce8-47fa-a0ef-26178c4c29f0",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:28:59.631732+00:00",
+        "attributes": {}
+      },
+      {
+        "entity_id": "0e7db84a-8d04-4166-9879-799f3791afa6",
+        "entity_type": "inference",
+        "external_id": "53c701f4-c524-4477-9259-36f8823fe7c6",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:15:42.657897+00:00",
+        "attributes": {}
+      },
+      {
+        "entity_id": "8f2028dd-2819-440a-82dd-f6bfcdb55fb6",
+        "entity_type": "inference",
+        "external_id": "e1435b44-4223-456c-9bce-17a6a09642dc",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:20.328241+00:00",
+        "attributes": {}
+      },
+      {
+        "entity_id": "c9d634aa-eabc-4a7e-a151-42a100a16a10",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.000/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:45.523853+00:00",
+        "attributes": {
+          "run_id": "4bd8a5c80db14bfaa760796fbf2894d0",
+          "model_key": "hi.demo.campaign.83fa031898.000"
+        }
+      },
+      {
+        "entity_id": "0b6e06fc-b39d-4139-8cb2-a884b4c8e1c8",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.001/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:49.497059+00:00",
+        "attributes": {
+          "run_id": "086155f186324c0c95ad100979a1d1cc",
+          "model_key": "hi.demo.campaign.83fa031898.001"
+        }
+      },
+      {
+        "entity_id": "38c9aef5-2d63-4228-8f22-7dd0888b2e4e",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.002/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:39.435485+00:00",
+        "attributes": {
+          "run_id": "27d3f2f2162e4bdb885f2fe1cc48847f",
+          "model_key": "hi.demo.campaign.83fa031898.002"
+        }
+      },
+      {
+        "entity_id": "926d2da7-c404-4e30-afe4-182ac1bc1932",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.003/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:37.795211+00:00",
+        "attributes": {
+          "run_id": "f8be6b9d9ee74b46a9546ad0505ce65b",
+          "model_key": "hi.demo.campaign.83fa031898.003"
+        }
+      },
+      {
+        "entity_id": "2a1c86b6-9559-4e8c-a3ca-534242caabd8",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.004/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:31.908987+00:00",
+        "attributes": {
+          "run_id": "e1b6eb5439ed4b679636d6d7ce514cab",
+          "model_key": "hi.demo.campaign.83fa031898.004"
+        }
+      },
+      {
+        "entity_id": "8d962153-f5ea-4a0e-8c63-9a05202c2f62",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.005/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:55.922819+00:00",
+        "attributes": {
+          "run_id": "5dfdec868dfb4aefa5f95552a7cfa8d8",
+          "model_key": "hi.demo.campaign.83fa031898.005"
+        }
+      },
+      {
+        "entity_id": "1331f8d5-e074-48de-9250-b6b41f1534a3",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.006/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:44.065451+00:00",
+        "attributes": {
+          "run_id": "c22790ce77954a71811524d8891b5c04",
+          "model_key": "hi.demo.campaign.83fa031898.006"
+        }
+      },
+      {
+        "entity_id": "49438e1d-178c-4cdd-9a5e-205ddddc7ba2",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.007/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:32.376007+00:00",
+        "attributes": {
+          "run_id": "4fa610b55e16474ab1770983a50cd660",
+          "model_key": "hi.demo.campaign.83fa031898.007"
+        }
+      },
+      {
+        "entity_id": "15f424d1-a33b-4f07-bdb6-648325129fb5",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.008/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:42.171623+00:00",
+        "attributes": {
+          "run_id": "1b0d3a931bd84447add5cadb0614566d",
+          "model_key": "hi.demo.campaign.83fa031898.008"
+        }
+      },
+      {
+        "entity_id": "e8ced35e-5ba9-4e13-af56-744c11afdf08",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.009/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:43.576409+00:00",
+        "attributes": {
+          "run_id": "1bf968b6ce5049f2b3009514d5f3e14e",
+          "model_key": "hi.demo.campaign.83fa031898.009"
+        }
+      },
+      {
+        "entity_id": "68120528-ac7d-497a-a5bf-4d379d4d950b",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.010/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:55.919366+00:00",
+        "attributes": {
+          "run_id": "67b193b467784807aa95838c081414ee",
+          "model_key": "hi.demo.campaign.83fa031898.010"
+        }
+      },
+      {
+        "entity_id": "697afb3f-6449-439d-b354-ede2b1e6a5ec",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.011/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:35.984605+00:00",
+        "attributes": {
+          "run_id": "ad9d019357544a25bb900ed4f18eae0d",
+          "model_key": "hi.demo.campaign.83fa031898.011"
+        }
+      },
+      {
+        "entity_id": "0cffb524-0798-4e52-b169-523860895eb6",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.012/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:33.696002+00:00",
+        "attributes": {
+          "run_id": "863ffda73275425b8d2f7d0635162a6d",
+          "model_key": "hi.demo.campaign.83fa031898.012"
+        }
+      },
+      {
+        "entity_id": "fd8b6812-668d-4827-8a50-996efd567246",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.013/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:30:02.288333+00:00",
+        "attributes": {
+          "run_id": "2381a63849d34fb180a3594d8f58cf38",
+          "model_key": "hi.demo.campaign.83fa031898.013"
+        }
+      },
+      {
+        "entity_id": "9928c9d5-6242-42f4-94fe-56566853b9d0",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.014/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:35.431706+00:00",
+        "attributes": {
+          "run_id": "6cdeca39e66f4bbf99863d285f49cdab",
+          "model_key": "hi.demo.campaign.83fa031898.014"
+        }
+      },
+      {
+        "entity_id": "a25f8d7f-65e3-47d0-9a82-2e06449ba67d",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.015/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:41.654888+00:00",
+        "attributes": {
+          "run_id": "2ba65a7cf5834683969b7e1020f2c9a6",
+          "model_key": "hi.demo.campaign.83fa031898.015"
+        }
+      },
+      {
+        "entity_id": "c5ae00cb-fcd9-47d9-87b8-e7dab205ee57",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.016/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:50.117497+00:00",
+        "attributes": {
+          "run_id": "3f07e4c1b1004f64b6d5fbe1bda34459",
+          "model_key": "hi.demo.campaign.83fa031898.016"
+        }
+      },
+      {
+        "entity_id": "a2bb3488-33c5-4e62-806f-fe4f31a9ae32",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.017/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:53.650704+00:00",
+        "attributes": {
+          "run_id": "f90c7275e2694929a918968c9c608f16",
+          "model_key": "hi.demo.campaign.83fa031898.017"
+        }
+      },
+      {
+        "entity_id": "05d78087-a6a0-404d-8353-6484e3ea8bbc",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.018/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:30:02.288802+00:00",
+        "attributes": {
+          "run_id": "db698545765f4be9ac08605414ae6a56",
+          "model_key": "hi.demo.campaign.83fa031898.018"
+        }
+      },
+      {
+        "entity_id": "d9f5663a-3afb-42e1-9339-496b7989cf19",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.019/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:47.888341+00:00",
+        "attributes": {
+          "run_id": "d82734a6018a419baff3944b1b43f285",
+          "model_key": "hi.demo.campaign.83fa031898.019"
+        }
+      },
+      {
+        "entity_id": "414e9972-778b-48a7-bfb9-ab0f1bb5d2bd",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.020/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:30:00.296275+00:00",
+        "attributes": {
+          "run_id": "e3581546afce447bb939bb62bccb6f28",
+          "model_key": "hi.demo.campaign.83fa031898.020"
+        }
+      },
+      {
+        "entity_id": "0dbc2b51-d3b5-4628-862a-946ed618ae1f",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.021/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:30:00.294504+00:00",
+        "attributes": {
+          "run_id": "8a7ea22255e743158f570a3989b87092",
+          "model_key": "hi.demo.campaign.83fa031898.021"
+        }
+      },
+      {
+        "entity_id": "b49d6903-0b00-42b8-af69-7d5e5e81b0bd",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.022/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:47.430662+00:00",
+        "attributes": {
+          "run_id": "2f4f324171fa40c8b151a1d299d3d22c",
+          "model_key": "hi.demo.campaign.83fa031898.022"
+        }
+      },
+      {
+        "entity_id": "923d1ad9-5b9a-4f65-b515-9c5a61e85ecd",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.023/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:37.264164+00:00",
+        "attributes": {
+          "run_id": "c705c960dfb64a298af4e0de0f3ec48f",
+          "model_key": "hi.demo.campaign.83fa031898.023"
+        }
+      },
+      {
+        "entity_id": "449ea379-8d83-4c6b-8e3f-3d3d770fee5f",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.024/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:34.133002+00:00",
+        "attributes": {
+          "run_id": "9d5669cf48664b898ce05351eea5cc0e",
+          "model_key": "hi.demo.campaign.83fa031898.024"
+        }
+      },
+      {
+        "entity_id": "667c3e83-0342-4912-b62c-ab30131a1aa7",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.025/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:53.650821+00:00",
+        "attributes": {
+          "run_id": "d72d777f13354e55971de5d9d2a7603d",
+          "model_key": "hi.demo.campaign.83fa031898.025"
+        }
+      },
+      {
+        "entity_id": "a102a156-2926-4881-85c7-547efd26153f",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.026/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:45.965303+00:00",
+        "attributes": {
+          "run_id": "cfb5764bc65940a4a04ef18731b9a699",
+          "model_key": "hi.demo.campaign.83fa031898.026"
+        }
+      },
+      {
+        "entity_id": "1528a007-8c48-4ad2-a6b6-1f26482fc12c",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.027/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:58.268614+00:00",
+        "attributes": {
+          "run_id": "484cef5da1c3404d9afc518d4e1860ba",
+          "model_key": "hi.demo.campaign.83fa031898.027"
+        }
+      },
+      {
+        "entity_id": "848752cb-4d15-46bf-8cd3-f983a322f39d",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.028/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:58.268613+00:00",
+        "attributes": {
+          "run_id": "54d879b3ae74492f886620da64587a24",
+          "model_key": "hi.demo.campaign.83fa031898.028"
+        }
+      },
+      {
+        "entity_id": "f1fb5e53-f74a-49e9-a219-904128b4389a",
+        "entity_type": "model",
+        "external_id": "hi.demo.campaign.83fa031898.029/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:39.965397+00:00",
+        "attributes": {
+          "run_id": "178237f11c7d44f0b3296a94c98d4204",
+          "model_key": "hi.demo.campaign.83fa031898.029"
+        }
+      },
+      {
+        "entity_id": "6c73e6ff-9804-4ed0-a2ed-864e60fb50c2",
+        "entity_type": "model",
+        "external_id": "hi.demo.notebook.abdb8f09/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:10.496476+00:00",
+        "attributes": {
+          "run_id": "eb44663c5112462ea5b95fd92c204151",
+          "model_key": "hi.demo.notebook.abdb8f09"
+        }
+      },
+      {
+        "entity_id": "75ab3abb-d2eb-4abb-becb-74c7dcfddf77",
+        "entity_type": "model",
+        "external_id": "hi.demo.probe.da910fa5/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:15:40.120869+00:00",
+        "attributes": {
+          "run_id": "6277582e511148c9a31b2aef3f22395e",
+          "model_key": "hi.demo.probe.da910fa5"
+        }
+      },
+      {
+        "entity_id": "9e06ac43-22f4-450f-ad08-f35eb593e580",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.000/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:23:21.369063+00:00",
+        "attributes": {
+          "run_id": "0cb047e880754b5599e0139d67f55d2f",
+          "model_key": "hi.demo.scale30.16013c03.000"
+        }
+      },
+      {
+        "entity_id": "8827e717-c2eb-46a5-97dc-647548c0fd34",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.001/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:40.142498+00:00",
+        "attributes": {
+          "run_id": "32037d7043bc4adb85de936016a7fa09",
+          "model_key": "hi.demo.scale30.16013c03.001"
+        }
+      },
+      {
+        "entity_id": "49c8a1af-e46c-4578-a64e-ae7ad4a36c1d",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.002/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:26:52.503112+00:00",
+        "attributes": {
+          "run_id": "bb275232f95344689a56c0ac1a93a64b",
+          "model_key": "hi.demo.scale30.16013c03.002"
+        }
+      },
+      {
+        "entity_id": "268a69a3-2950-4ae3-ac9c-3aefb07f47ec",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.003/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:26:47.813313+00:00",
+        "attributes": {
+          "run_id": "fd7c108aa233458e99ac27714a9f5fb4",
+          "model_key": "hi.demo.scale30.16013c03.003"
+        }
+      },
+      {
+        "entity_id": "fc4463a1-1d80-49f5-9b97-8b51d390bfd0",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.004/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:43.844403+00:00",
+        "attributes": {
+          "run_id": "2254e17335ca48989e815eda922f5904",
+          "model_key": "hi.demo.scale30.16013c03.004"
+        }
+      },
+      {
+        "entity_id": "b23aa202-ec03-4013-beca-c10d6e814f4b",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.005/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:21:35.013470+00:00",
+        "attributes": {
+          "run_id": "e496b7b2351a4bd58cb5cf83315bc7d2",
+          "model_key": "hi.demo.scale30.16013c03.005"
+        }
+      },
+      {
+        "entity_id": "f16188d2-dadb-44a6-ae1f-13adcf3837fa",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.006/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:53.486688+00:00",
+        "attributes": {
+          "run_id": "2c9aa2d52fa14b23a9ba4634e55b2564",
+          "model_key": "hi.demo.scale30.16013c03.006"
+        }
+      },
+      {
+        "entity_id": "7d8e65f4-6ef0-45da-80b7-e9d55c5236f6",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.007/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:20:43.533794+00:00",
+        "attributes": {
+          "run_id": "6279726d30bf4cc8ac05c9405f20f829",
+          "model_key": "hi.demo.scale30.16013c03.007"
+        }
+      },
+      {
+        "entity_id": "6876744b-f316-459b-8db9-0d8334480d2e",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.008/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:44.686073+00:00",
+        "attributes": {
+          "run_id": "ba63eacfe4c8450b91e4e88bbb04d198",
+          "model_key": "hi.demo.scale30.16013c03.008"
+        }
+      },
+      {
+        "entity_id": "9166ec70-1093-436e-bdf1-6965f00096d9",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.009/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:23:19.235291+00:00",
+        "attributes": {
+          "run_id": "2c70e25747774ee89fe6e829996ecdaa",
+          "model_key": "hi.demo.scale30.16013c03.009"
+        }
+      },
+      {
+        "entity_id": "0d1dda9b-81ef-4343-8553-72cb57eb3871",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.010/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:20:01.790804+00:00",
+        "attributes": {
+          "run_id": "6c519f7dbac44de2a9ef51304587b2b0",
+          "model_key": "hi.demo.scale30.16013c03.010"
+        }
+      },
+      {
+        "entity_id": "c45c4ee4-dc27-4a37-b74f-92442162dc25",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.011/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:38.667276+00:00",
+        "attributes": {
+          "run_id": "4908b293c73c4e8ea8529d777127a86c",
+          "model_key": "hi.demo.scale30.16013c03.011"
+        }
+      },
+      {
+        "entity_id": "621ff22d-0b8d-42f3-bf2c-87276e076419",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.012/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:21:34.258575+00:00",
+        "attributes": {
+          "run_id": "19468d29434642f5a3b7bc978a3a9c69",
+          "model_key": "hi.demo.scale30.16013c03.012"
+        }
+      },
+      {
+        "entity_id": "e5acf77f-27ad-408c-b93e-7800bb418a82",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.013/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:37.620174+00:00",
+        "attributes": {
+          "run_id": "836778943fb640a3a71295045b586b6a",
+          "model_key": "hi.demo.scale30.16013c03.013"
+        }
+      },
+      {
+        "entity_id": "c6bb30b0-94fd-4028-889d-5e5a933c001e",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.014/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:20:16.956289+00:00",
+        "attributes": {
+          "run_id": "1b1aa7c3fca74316804427183bb30ffd",
+          "model_key": "hi.demo.scale30.16013c03.014"
+        }
+      },
+      {
+        "entity_id": "4c9d7215-d5d2-4f6b-bb20-a15081722d92",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.015/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:37.620378+00:00",
+        "attributes": {
+          "run_id": "ba4c237db40b4c1f8f9706206eba8e24",
+          "model_key": "hi.demo.scale30.16013c03.015"
+        }
+      },
+      {
+        "entity_id": "c98a9be2-be51-4a79-acc7-30bc6b381e40",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.016/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:26:47.813163+00:00",
+        "attributes": {
+          "run_id": "2983e5b6cc064f18ad0735b0bfc4ea77",
+          "model_key": "hi.demo.scale30.16013c03.016"
+        }
+      },
+      {
+        "entity_id": "1841f746-7006-4b38-a4c7-ae8e776a5070",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.017/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:20:16.956421+00:00",
+        "attributes": {
+          "run_id": "e19987f144bc4965b389c19e082171c9",
+          "model_key": "hi.demo.scale30.16013c03.017"
+        }
+      },
+      {
+        "entity_id": "4f08e248-46a1-474d-b97a-4b18617e7202",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.018/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:52.735913+00:00",
+        "attributes": {
+          "run_id": "48611751c99b417dbf63928e101291ff",
+          "model_key": "hi.demo.scale30.16013c03.018"
+        }
+      },
+      {
+        "entity_id": "b1aaf70a-979d-4bd8-9da2-2049f0f8f6ef",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.019/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:47.626442+00:00",
+        "attributes": {
+          "run_id": "65cfb6f0d8914d8fae8e69cc68a8c59f",
+          "model_key": "hi.demo.scale30.16013c03.019"
+        }
+      },
+      {
+        "entity_id": "ff9414fb-62c5-4736-a786-0b975ddcac32",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.020/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:41.356853+00:00",
+        "attributes": {
+          "run_id": "48a2fdc7957c419e93754f33b0151fbe",
+          "model_key": "hi.demo.scale30.16013c03.020"
+        }
+      },
+      {
+        "entity_id": "1e85805b-9cad-4ba1-b35c-3de5d76df2db",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.021/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:26:50.696061+00:00",
+        "attributes": {
+          "run_id": "0784699d404646cb88481662aeea8720",
+          "model_key": "hi.demo.scale30.16013c03.021"
+        }
+      },
+      {
+        "entity_id": "3a6a873b-1293-4204-bada-eb000064ddb0",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.022/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:26:52.503058+00:00",
+        "attributes": {
+          "run_id": "d3756f8c5b784be4a9f1bccb7fd4cee1",
+          "model_key": "hi.demo.scale30.16013c03.022"
+        }
+      },
+      {
+        "entity_id": "e92b251f-40a2-443c-9cbb-8b734173330a",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.023/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:26:50.696035+00:00",
+        "attributes": {
+          "run_id": "4dc2bb32804243d2acfa010658edabac",
+          "model_key": "hi.demo.scale30.16013c03.023"
+        }
+      },
+      {
+        "entity_id": "29295f18-81cb-44e5-a2cc-05905f1b778a",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.024/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:20:43.534056+00:00",
+        "attributes": {
+          "run_id": "eaa46f211fc24f9c9b4e520f6317bfd5",
+          "model_key": "hi.demo.scale30.16013c03.024"
+        }
+      },
+      {
+        "entity_id": "6e795a99-3c03-489b-a36e-57f9375d7d1b",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.025/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:41.392783+00:00",
+        "attributes": {
+          "run_id": "07a51a4050e54fa9bc470c88693509b1",
+          "model_key": "hi.demo.scale30.16013c03.025"
+        }
+      },
+      {
+        "entity_id": "b30ddf22-714a-4a15-b21b-7c0b2526a930",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.026/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:20:01.900797+00:00",
+        "attributes": {
+          "run_id": "844ec2d99ed84699b6f6ca76b8ebbce4",
+          "model_key": "hi.demo.scale30.16013c03.026"
+        }
+      },
+      {
+        "entity_id": "404fe692-d217-4c69-a845-2b215ad8848f",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.027/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:40.143236+00:00",
+        "attributes": {
+          "run_id": "44c269ea0018406b9bb2edd259f458a2",
+          "model_key": "hi.demo.scale30.16013c03.027"
+        }
+      },
+      {
+        "entity_id": "f64138b3-f206-489b-b0ac-14e2505fd051",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.028/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:47.468732+00:00",
+        "attributes": {
+          "run_id": "2b846f80b4604231891dd258036528c9",
+          "model_key": "hi.demo.scale30.16013c03.028"
+        }
+      },
+      {
+        "entity_id": "6699e355-bd99-4fe2-97e0-89a1cc8b4dee",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale30.16013c03.029/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:19:38.666952+00:00",
+        "attributes": {
+          "run_id": "c8da6807974b4fee8268c94c44c79f92",
+          "model_key": "hi.demo.scale30.16013c03.029"
+        }
+      },
+      {
+        "entity_id": "3db8a551-8165-4d48-8885-e36de89e734e",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.000/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:26:53.403750+00:00",
+        "attributes": {
+          "run_id": "8bb6e33fbca84d90936486413ff0b4f6",
+          "model_key": "hi.demo.scale500.f72c3e08.000"
+        }
+      },
+      {
+        "entity_id": "64062ea5-a4fd-4a2a-afee-6d12de7c3e7f",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.001/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:16.245006+00:00",
+        "attributes": {
+          "run_id": "4403386cd2164ce18f85d99e315220d2",
+          "model_key": "hi.demo.scale500.f72c3e08.001"
+        }
+      },
+      {
+        "entity_id": "1e9b273a-dfe2-4f15-8b02-391e280a9478",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.002/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:27:23.929771+00:00",
+        "attributes": {
+          "run_id": "12e0da6f48c54c9d8ff9f6e38f312729",
+          "model_key": "hi.demo.scale500.f72c3e08.002"
+        }
+      },
+      {
+        "entity_id": "fdc50fd0-5bac-4fe6-965a-5140b7e7111b",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.003/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:31:21.651549+00:00",
+        "attributes": {
+          "run_id": "3467b9759d9548e3862f5de6b9bc39ca",
+          "model_key": "hi.demo.scale500.f72c3e08.003"
+        }
+      },
+      {
+        "entity_id": "47b217c3-4a91-473c-b890-ec36a10e5d6f",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.004/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:28:58.149773+00:00",
+        "attributes": {
+          "run_id": "546a6ff5c30048499b24b6c952a668fc",
+          "model_key": "hi.demo.scale500.f72c3e08.004"
+        }
+      },
+      {
+        "entity_id": "7200654d-670d-4799-b2e9-deb5f79e57a0",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.005/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:03.581235+00:00",
+        "attributes": {
+          "run_id": "bbb0f1ce0f534b8b931f6a4f38b35849",
+          "model_key": "hi.demo.scale500.f72c3e08.005"
+        }
+      },
+      {
+        "entity_id": "058d4d52-350b-4fda-ad17-08c6a1fb3368",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.006/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:31:19.405430+00:00",
+        "attributes": {
+          "run_id": "adddfb59b6f14ea680ec703bdad50361",
+          "model_key": "hi.demo.scale500.f72c3e08.006"
+        }
+      },
+      {
+        "entity_id": "de4a6330-dfe8-4e30-a255-f7c282cc65fe",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.007/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:31:34.538606+00:00",
+        "attributes": {
+          "run_id": "5f397dd065064d6c8ceb49198c59bc75",
+          "model_key": "hi.demo.scale500.f72c3e08.007"
+        }
+      },
+      {
+        "entity_id": "257cb994-d3fc-46dd-b647-212b653fb8fa",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.008/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:30:32.726953+00:00",
+        "attributes": {
+          "run_id": "afaf414b1a2044868365b8c3844cdf19",
+          "model_key": "hi.demo.scale500.f72c3e08.008"
+        }
+      },
+      {
+        "entity_id": "b1bf7ff4-0267-48a0-b71d-1b0430dd4f8a",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.009/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:28:14.777277+00:00",
+        "attributes": {
+          "run_id": "09cd48b4345946d9b3297f37cea27a83",
+          "model_key": "hi.demo.scale500.f72c3e08.009"
+        }
+      },
+      {
+        "entity_id": "ee724eaa-25b5-4f7c-a6ca-fa41d4445282",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.010/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:31:01.045023+00:00",
+        "attributes": {
+          "run_id": "84631e473884411ba6e49e18b7918c2d",
+          "model_key": "hi.demo.scale500.f72c3e08.010"
+        }
+      },
+      {
+        "entity_id": "283938fa-5014-47bd-ab02-5ca9f9ca6e1c",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.011/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:28:06.060056+00:00",
+        "attributes": {
+          "run_id": "f9179017bc874da0ac50e40c89874fe0",
+          "model_key": "hi.demo.scale500.f72c3e08.011"
+        }
+      },
+      {
+        "entity_id": "6befb26b-e106-4a24-a21f-c27020b29231",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.012/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:27:15.933568+00:00",
+        "attributes": {
+          "run_id": "21b75bdd36b143fe96c38d9a64ac8336",
+          "model_key": "hi.demo.scale500.f72c3e08.012"
+        }
+      },
+      {
+        "entity_id": "dd5a3e61-0e42-41e5-a78b-89ba2a95b999",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.013/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:30:05.530256+00:00",
+        "attributes": {
+          "run_id": "bfb91d12fc794d748ec602ff31c0dc25",
+          "model_key": "hi.demo.scale500.f72c3e08.013"
+        }
+      },
+      {
+        "entity_id": "bc3d3cde-faed-4ac7-b4e4-179b94aa2489",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.014/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:31:33.501536+00:00",
+        "attributes": {
+          "run_id": "b60581ae2083482483542e4d22983e51",
+          "model_key": "hi.demo.scale500.f72c3e08.014"
+        }
+      },
+      {
+        "entity_id": "0681c0de-2e76-46f2-a770-b26fd68053ee",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.015/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:28:41.629390+00:00",
+        "attributes": {
+          "run_id": "679161b6ed054903babbd1d2a66409ed",
+          "model_key": "hi.demo.scale500.f72c3e08.015"
+        }
+      },
+      {
+        "entity_id": "23191839-7ef0-447e-8b0a-4115ff57d381",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.016/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:30:12.965998+00:00",
+        "attributes": {
+          "run_id": "abe4e12f661040b3bd4088eb4784385f",
+          "model_key": "hi.demo.scale500.f72c3e08.016"
+        }
+      },
+      {
+        "entity_id": "5a4e5e98-90ba-4ac2-b96c-29f714336398",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.017/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:27:28.688555+00:00",
+        "attributes": {
+          "run_id": "2560372a1fda4073a5728748738388e6",
+          "model_key": "hi.demo.scale500.f72c3e08.017"
+        }
+      },
+      {
+        "entity_id": "6b2fab3c-8d9c-43df-ab68-0391bda04d6c",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.018/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:30:18.347260+00:00",
+        "attributes": {
+          "run_id": "ebc3e6a8a68a4989a27a51737ac80a54",
+          "model_key": "hi.demo.scale500.f72c3e08.018"
+        }
+      },
+      {
+        "entity_id": "3368d958-8024-453c-b987-8f8af26fbed4",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.019/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:31:33.501204+00:00",
+        "attributes": {
+          "run_id": "04c692e21e5b43ae9bb0eca94600f498",
+          "model_key": "hi.demo.scale500.f72c3e08.019"
+        }
+      },
+      {
+        "entity_id": "7665f03b-f5ba-4bd5-8294-435d398d9193",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.020/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:23.697382+00:00",
+        "attributes": {
+          "run_id": "0d51ea25399e46e0852cc732bc64dffe",
+          "model_key": "hi.demo.scale500.f72c3e08.020"
+        }
+      },
+      {
+        "entity_id": "357e4ca6-36f9-4fb2-ab9d-e178039f09fb",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.021/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:27:26.957431+00:00",
+        "attributes": {
+          "run_id": "1fc2f570376146fbb13ea362b1a4c040",
+          "model_key": "hi.demo.scale500.f72c3e08.021"
+        }
+      },
+      {
+        "entity_id": "166ae926-aad8-47d7-9f25-fda34d0605f2",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.022/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:27:06.826383+00:00",
+        "attributes": {
+          "run_id": "a509321765ff41a891da48610041ba88",
+          "model_key": "hi.demo.scale500.f72c3e08.022"
+        }
+      },
+      {
+        "entity_id": "de9e54d0-5c17-468a-b026-87ce07faffa8",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.023/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:31:12.316332+00:00",
+        "attributes": {
+          "run_id": "0a869c2e51774870917fff19ac64cf22",
+          "model_key": "hi.demo.scale500.f72c3e08.023"
+        }
+      },
+      {
+        "entity_id": "88a8b76e-e203-4773-8f1c-32cd64d6e484",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.024/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:28:29.706052+00:00",
+        "attributes": {
+          "run_id": "bd2f96a04ee4446fb4c131c81af6b5e2",
+          "model_key": "hi.demo.scale500.f72c3e08.024"
+        }
+      },
+      {
+        "entity_id": "8109ffe9-2ffe-43e0-88c0-e7d272f86b2e",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.025/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:31:18.571326+00:00",
+        "attributes": {
+          "run_id": "9a98760abd3c4a6da49b6565f88c86c4",
+          "model_key": "hi.demo.scale500.f72c3e08.025"
+        }
+      },
+      {
+        "entity_id": "c3a91279-5cd3-4edc-95c6-d2a3861b4b93",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.026/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:27:00.766632+00:00",
+        "attributes": {
+          "run_id": "51bb2e9f3a794d228a6f6b93e07e1881",
+          "model_key": "hi.demo.scale500.f72c3e08.026"
+        }
+      },
+      {
+        "entity_id": "cbc65f1b-2135-4b54-a0a0-5dcbd9f962b0",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.027/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:34.569243+00:00",
+        "attributes": {
+          "run_id": "bdebce5fe2c34bbeb6ab82732ab38a9b",
+          "model_key": "hi.demo.scale500.f72c3e08.027"
+        }
+      },
+      {
+        "entity_id": "956dd21a-d8e8-42cb-a5b6-5bf21cabd845",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.028/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:28:45.136776+00:00",
+        "attributes": {
+          "run_id": "0d130a2576f442d5a1a8b32bb2c30a93",
+          "model_key": "hi.demo.scale500.f72c3e08.028"
+        }
+      },
+      {
+        "entity_id": "820d73c5-0420-497d-b1a9-637dae77dfa5",
+        "entity_type": "model",
+        "external_id": "hi.demo.scale500.f72c3e08.029/1",
+        "environment": "poc",
+        "domain": "planilha-turmas",
+        "created_at_utc": "2026-11-04T16:29:59.204130+00:00",
+        "attributes": {
+          "run_id": "2269bf5947f741cab65c2e6cbdde6477",
+          "model_key": "hi.demo.scale500.f72c3e08.029"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "edge_id": "0016c5e6-e62e-4221-b99f-0c030b1d33fc",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "cfed87ec-1e84-435c-9536-821245f10809",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:30:03.409966+00:00"
+      },
+      {
+        "edge_id": "00469224-d7ea-43cc-bfdd-f84f1404e29d",
+        "parent_id": "782adffe-4cf6-4a1e-ba4e-04d30a57acf0",
+        "child_id": "1ecd7423-e2b1-48ec-ac26-60c9250c385b",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:27:44.007960+00:00"
+      },
+      {
+        "edge_id": "0046b943-9fec-4352-99de-7e18d8d53215",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "17f84c18-ce8b-48bf-82d9-7415e483581e",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:27:40.842322+00:00"
+      },
+      {
+        "edge_id": "004af48a-b9fc-4311-ab0c-d5471ef33570",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "2b1e7aec-18c2-4f19-9b9c-7a7eb7c1c1e6",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:28:26.625598+00:00"
+      },
+      {
+        "edge_id": "00796492-02d7-4519-834b-1c3a0f0647be",
+        "parent_id": "f66fe05d-43a1-4235-bd38-1e1f90bfea80",
+        "child_id": "956dd21a-d8e8-42cb-a5b6-5bf21cabd845",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:28:45.136776+00:00"
+      },
+      {
+        "edge_id": "00af7f37-4de5-421b-8af5-a7170d0ca4ce",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "10042471-cc3f-4356-b7fb-d5ac3baf1b0e",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:31:14.707104+00:00"
+      },
+      {
+        "edge_id": "00bb2093-a3b3-4c41-83bd-193087f1aed7",
+        "parent_id": "55d7e78d-f015-4523-aeb1-ba24251bf376",
+        "child_id": "c146a193-1d93-4aba-aa18-6d59963cf316",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:27:04.885973+00:00"
+      },
+      {
+        "edge_id": "00c2de78-b68d-4e39-9236-789eb146cae4",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "d38b0f21-044d-43cf-bc2c-195caed7831c",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:30:32.726953+00:00"
+      },
+      {
+        "edge_id": "00d71248-9e08-4e90-8f73-acd16957c17c",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "764ba9cb-aa72-4c8c-9034-e45eb15f2bdb",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:26:54.309153+00:00"
+      },
+      {
+        "edge_id": "00f9fcc6-8ba3-4eb9-8a09-05968fb1a638",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "e9e42549-b0ea-4569-b6d4-da36e1d26686",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:30:16.075763+00:00"
+      },
+      {
+        "edge_id": "0102d9b6-71c9-4c9e-a26d-8ae9527bae07",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "ef3bc37d-0d6a-4b24-98a9-04df7125992a",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:19:47.626442+00:00"
+      },
+      {
+        "edge_id": "011ecb8d-cef6-4b06-8ab1-155317141c05",
+        "parent_id": "36ef7e50-3108-4a76-ab76-15a18b4eb47c",
+        "child_id": "36eac280-c20a-435b-b24b-165058689c30",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:27:09.867767+00:00"
+      },
+      {
+        "edge_id": "01a2a9ef-87cd-4c50-b7f2-2c2eb7b8a518",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "be861b31-30af-457e-8391-a5ab6ad49a22",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:27:54.922942+00:00"
+      },
+      {
+        "edge_id": "01ffb5b3-e4f1-40af-ab9e-772bfa87be03",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "ebdef386-3e46-4152-b214-187685190bee",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:31:11.484001+00:00"
+      },
+      {
+        "edge_id": "025f4e6b-642d-4f93-8d90-8c420c8a41b4",
+        "parent_id": "acebd26c-1b8c-4674-8037-85705360321c",
+        "child_id": "fc4463a1-1d80-49f5-9b97-8b51d390bfd0",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:19:43.844403+00:00"
+      },
+      {
+        "edge_id": "028a75c3-566d-411c-8e18-47db6db19edc",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "65501625-c88f-49da-8db4-3646e51537ef",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:27:24.787883+00:00"
+      },
+      {
+        "edge_id": "02975fc1-359e-4c02-aa97-c7a6ac71c4a0",
+        "parent_id": "666d0309-74eb-4756-9bcc-c3c6168e166b",
+        "child_id": "0681c0de-2e76-46f2-a770-b26fd68053ee",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:28:41.629390+00:00"
+      },
+      {
+        "edge_id": "02b78997-3dd3-402d-913f-b9697add0fe1",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "72db943d-1373-4d9e-91d8-3fccdd8c90d0",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:30:29.665741+00:00"
+      },
+      {
+        "edge_id": "033b58fa-a1c4-4796-ba29-202a9447a613",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "e40f140b-1f56-44ff-8afd-27ff9940959a",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:27:25.283749+00:00"
+      },
+      {
+        "edge_id": "038a77c1-2769-4747-a4ee-a7453ebf5994",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "258a70f3-adf4-4d40-9876-17750ab6896c",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:30:28.672383+00:00"
+      },
+      {
+        "edge_id": "03a69fcc-9178-43c7-8471-ca71341875f8",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "27073713-9ee6-4406-a335-c63ec6d47412",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:28:52.601978+00:00"
+      },
+      {
+        "edge_id": "041c89ea-428b-495c-aabb-46e54a2c47bc",
+        "parent_id": "cd92eb6f-6525-461d-bbfc-bd1c1821a342",
+        "child_id": "3db8a551-8165-4d48-8885-e36de89e734e",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:26:53.403750+00:00"
+      },
+      {
+        "edge_id": "046c0d60-733e-4b8e-8332-d8c6a87d4427",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "063b52be-fc19-49f5-92e0-4e15bdf5c65b",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:28:40.694773+00:00"
+      },
+      {
+        "edge_id": "0488d40d-63e8-4170-a9f6-0076c67404e5",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "989801f8-9b5c-49b5-b830-8be05fb1df15",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:27:03.854138+00:00"
+      },
+      {
+        "edge_id": "0522e61b-2ef5-4019-bfa6-9d2c3561a8c9",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "a82d1359-44aa-4ffa-b7ee-7d651a3e6640",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:29:11.355723+00:00"
+      },
+      {
+        "edge_id": "0551aca9-b739-48c2-9ffe-a4dbe347166d",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "14d08776-0f7f-446b-b4c9-4700e7e47e14",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:31:27.251921+00:00"
+      },
+      {
+        "edge_id": "0551d57a-4402-4732-80b0-da8d89645907",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "c3f228c4-12a5-4359-a310-0d1a1816c45c",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:28:58.149773+00:00"
+      },
+      {
+        "edge_id": "05ab1069-ac9b-4d2a-9c27-1236e8d190da",
+        "parent_id": "d51a66f8-0a62-44c4-856d-c48eaaf576fe",
+        "child_id": "dfa70d6f-c76e-4fae-b7e4-f547726b1c31",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:30:48.115848+00:00"
+      },
+      {
+        "edge_id": "05c425d5-b841-4029-a395-54c9699ede95",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "a2da1ec1-ac80-4a32-91d3-119f3178bb40",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:27:03.856418+00:00"
+      },
+      {
+        "edge_id": "05fb0b26-da2c-4924-86e0-bb049ce24091",
+        "parent_id": "08df18b9-6b5c-49dc-a775-fc76a06380bd",
+        "child_id": "820d73c5-0420-497d-b1a9-637dae77dfa5",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:29:59.204130+00:00"
+      },
+      {
+        "edge_id": "06156954-55bd-44b6-b4e1-d090d002953d",
+        "parent_id": "c4a3e50c-86cb-47eb-969d-81e69256b309",
+        "child_id": "307066d3-f27e-4492-a9ec-b88c89f9e6fe",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:28:26.065202+00:00"
+      },
+      {
+        "edge_id": "062f1b1b-3b0a-40c5-9ede-df7eec21558b",
+        "parent_id": "be861b31-30af-457e-8391-a5ab6ad49a22",
+        "child_id": "2854d87a-a541-45c4-ae9d-be0bfe848ecd",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:27:54.922942+00:00"
+      },
+      {
+        "edge_id": "0633413c-b443-41f5-a955-2574b288970a",
+        "parent_id": "7e12ce30-6643-432d-a75e-8b694af7afc2",
+        "child_id": "392add98-4f98-4486-bc65-1dea69845778",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:29:02.240760+00:00"
+      },
+      {
+        "edge_id": "06488e42-bf2f-4e42-a1f6-caf9a0b5db95",
+        "parent_id": "e5eb1f1d-a384-4869-9544-debc86756132",
+        "child_id": "124f6b3d-8c52-40f8-9c0d-ba5636511911",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:28:19.495870+00:00"
+      },
+      {
+        "edge_id": "06528f45-2ea5-496e-95e8-7740393fa31e",
+        "parent_id": "58051e55-49c5-4d0c-8502-8685ee03fc59",
+        "child_id": "4cb59421-8045-461b-a77a-81bd61a30cf9",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:29:55.922819+00:00"
+      },
+      {
+        "edge_id": "065b0d09-a772-4140-83e3-4af611241e6d",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "88166ecc-2a3c-4db0-83f5-e0b8f3dc204f",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:30:41.923460+00:00"
+      },
+      {
+        "edge_id": "066a1044-4025-4f0e-9eb5-48cf555f30f3",
+        "parent_id": "c18068ce-1f31-4fc6-8630-bea5001d1d87",
+        "child_id": "52783530-7b6b-44ed-81e1-0f9dd2e0bd44",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:30:35.773751+00:00"
+      },
+      {
+        "edge_id": "06898361-b33c-4d35-a085-2d4fb2498d26",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "b07c2edb-37d5-485e-9517-8de6e60603e7",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:30:06.515357+00:00"
+      },
+      {
+        "edge_id": "069481ee-a65e-4c84-993e-19da4e989f95",
+        "parent_id": "5bec30b2-c714-4464-9f60-a16a79b59f98",
+        "child_id": "47b24b62-136e-452c-9245-37c9710fe156",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:31:24.258538+00:00"
+      },
+      {
+        "edge_id": "06b95089-456e-4af7-9895-a507116b159e",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "190342a0-5036-468b-8496-7b11f0b16c1b",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:27:11.886982+00:00"
+      },
+      {
+        "edge_id": "06bba75b-3884-4a32-898b-2dab23e680fb",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "9585900d-0add-4b60-8878-ce0532e51425",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:27:17.543468+00:00"
+      },
+      {
+        "edge_id": "06ebc7a4-d924-4d37-b79d-9465836d9291",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "4cde6d84-e6c1-4fc9-819e-ec756ec87eb5",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:29:45.062360+00:00"
+      },
+      {
+        "edge_id": "06f4a867-85f1-4758-94b9-0c05cd1077a2",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "9511e120-29d7-4f30-bc0b-9ae4d4e98c84",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:29:17.296038+00:00"
+      },
+      {
+        "edge_id": "06f57bbd-975a-41bb-ad94-9b741f9d61f5",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "be4734cf-f146-4143-878f-fc7f3d094e2c",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:28:15.903881+00:00"
+      },
+      {
+        "edge_id": "070f49df-d3b5-4c99-bdb0-3f8e3a80733d",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "9a9fe715-a7b3-4211-9c5e-3162bf1e0dc6",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:29:36.843338+00:00"
+      },
+      {
+        "edge_id": "07355851-23a2-482b-bc5f-a6175424ba35",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "90259435-309e-475c-9c51-4034b63fecd1",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:28:04.102930+00:00"
+      },
+      {
+        "edge_id": "078308eb-3dbb-43b0-a98f-969e50563f65",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "009d4188-6c22-482a-837c-04de4a548751",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:28:20.463246+00:00"
+      },
+      {
+        "edge_id": "079886c0-1010-4001-9c5e-5bc7c72282c4",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "ff62ffcf-c9c6-45ed-a4d9-ff9147153f4d",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:28:54.422864+00:00"
+      },
+      {
+        "edge_id": "07c1221d-0125-465f-b705-5ee72f817c88",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "b7acb480-33b5-4853-8850-fc328d28c21a",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:29:00.210096+00:00"
+      },
+      {
+        "edge_id": "07d78016-78d3-4bc5-9cfb-c8712671b922",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "46d49896-dd82-4b2f-8965-d7755b31a461",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:28:35.067921+00:00"
+      },
+      {
+        "edge_id": "07d9878c-585f-46f6-8943-650a5411883d",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "91d6b5d2-14d0-4dd5-a709-d3d29eef9db9",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:31:11.937269+00:00"
+      },
+      {
+        "edge_id": "07e68b4d-0db7-4e55-85ef-3ff9fb3e5b65",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "feceac88-f928-4feb-b323-4b2bb507eb3e",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:28:01.396262+00:00"
+      },
+      {
+        "edge_id": "07fff442-d83b-425c-95c8-9681a873d5e9",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "5e5e16c5-07f4-42b7-9997-1a5373d43da1",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:29:24.200016+00:00"
+      },
+      {
+        "edge_id": "080f8888-17ce-42db-b57d-8cb7694102ec",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "6ffeef35-77d9-4688-9e5f-2c93415c9e8d",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:30:48.114981+00:00"
+      },
+      {
+        "edge_id": "082942af-a79e-453b-bd78-e7f577cd09ae",
+        "parent_id": "79ff5a2d-2f9b-4429-a85d-db13b113f8a5",
+        "child_id": "c5743ce4-1bcb-4d9b-8bfd-8607a1f889ef",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:30:28.664649+00:00"
+      },
+      {
+        "edge_id": "0861d10c-571c-41a4-9cb7-0996bf1cb63b",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "df81cbd6-3429-44c3-b578-8cce16e69e8d",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:30:27.573057+00:00"
+      },
+      {
+        "edge_id": "0866befa-9f36-4952-8950-7a660c8b1e4d",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "ce83af95-f3f7-455e-8dc0-64d3fa5c8ade",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:19:41.356853+00:00"
+      },
+      {
+        "edge_id": "087b7db1-9166-46a0-b45a-28f6639728f5",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "35e6acb7-8834-42d5-97b6-e2b5257fb616",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:27:19.819841+00:00"
+      },
+      {
+        "edge_id": "08ae4f3d-4e54-4e45-a26b-d5f6fccab78a",
+        "parent_id": "c9fd4be6-7e37-4fb7-9d60-d000f6c54fd1",
+        "child_id": "4e525602-3c47-4850-8082-cd8a43ccf3cf",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:31:40.509259+00:00"
+      },
+      {
+        "edge_id": "08aefbf0-9ee7-4b42-a1f0-e1e07e45af09",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "a14cbc31-5552-426d-994c-2bc84d3a855e",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:30:49.217209+00:00"
+      },
+      {
+        "edge_id": "08b232e1-d5ab-4528-95b0-6708f31b5703",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "908d02ff-c3f6-4223-a057-5b0d51d0ae21",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:27:56.744023+00:00"
+      },
+      {
+        "edge_id": "08d2bde1-2c39-45e2-9cad-820ce45d1fd4",
+        "parent_id": "10c9534e-aa3c-40e6-8fe7-76e55159571e",
+        "child_id": "6257b96b-b4cd-4281-bcde-18e34c63e4a9",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:28:12.975292+00:00"
+      },
+      {
+        "edge_id": "08e45b44-4881-41da-a3ba-60e9f51c6d8e",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "b5b3a26e-ddb2-479e-a908-8e64745cb128",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:29:23.697382+00:00"
+      },
+      {
+        "edge_id": "08e6e516-767b-4029-997c-ba92bc8bc935",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "f0b117e9-9da0-4261-8c86-a61e6c44f6cb",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:27:43.684848+00:00"
+      },
+      {
+        "edge_id": "096d0ac7-fc16-43a0-bd56-ed54d92e2d27",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "648a3b24-0cd6-4038-a8be-f71677ffce3f",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:29:49.497059+00:00"
+      },
+      {
+        "edge_id": "099626ed-01b5-445f-9f69-d621401b22c0",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "2c423ee6-6b55-42eb-93cf-13a8bc88b806",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:31:19.012430+00:00"
+      },
+      {
+        "edge_id": "0997c594-cc80-44a9-b883-cc322b89682f",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "6494c76e-867b-41f2-966d-aedbdb772f75",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:30:38.826547+00:00"
+      },
+      {
+        "edge_id": "09a3cb18-ae90-4e06-a5de-0cd470bafc2a",
+        "parent_id": "09dbf0a2-3ba8-41bd-a389-68c01a44f0d4",
+        "child_id": "919da166-18d9-44a9-bf8b-7507e2423b8d",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:28:30.314211+00:00"
+      },
+      {
+        "edge_id": "09b701f7-8e3e-466c-8b39-b80f722f10ea",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "1f545b85-336f-4441-9cd1-9884598fc3ae",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:31:31.248744+00:00"
+      },
+      {
+        "edge_id": "09d7c5d0-6052-437c-bf38-1bd61183f852",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "fb2e0d9a-9da1-476f-b805-18a55cb1c5a5",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:29:01.312329+00:00"
+      },
+      {
+        "edge_id": "09e2ebe1-256c-4709-898c-76bf17103c44",
+        "parent_id": "0eed179d-191b-4af4-b35f-7c7f72a3e9a9",
+        "child_id": "10769ef1-aa42-41e1-8b9d-7307d6036400",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:30:11.770161+00:00"
+      },
+      {
+        "edge_id": "0a00c221-6db0-46ba-953b-c41f61653e29",
+        "parent_id": "a47cfa91-397b-4a6a-836a-1c2119685bdf",
+        "child_id": "118e7793-de42-42e8-8ff0-546e53e98f96",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:29:40.647244+00:00"
+      },
+      {
+        "edge_id": "0a0265e6-1ea1-4838-a944-6f0b4389288c",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "79daa1df-a709-4bc9-8817-1a52396824f7",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:27:25.617963+00:00"
+      },
+      {
+        "edge_id": "0a3b8126-d9f8-4f9a-8ec7-f2d73530383d",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "a662a6b3-ac9f-4fd3-9d60-f1fcbe2d5499",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:31:17.702893+00:00"
+      },
+      {
+        "edge_id": "0a4dd373-1b56-4b2d-94de-705d374b276d",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "90421546-55ee-4e0e-a606-5a5f0a164918",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:29:41.197845+00:00"
+      },
+      {
+        "edge_id": "0a5c04ab-1836-4ae3-98c1-9981cae6f60a",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "97234ea1-3fdc-438e-af40-ac6b9cd84a5c",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:29:59.204419+00:00"
+      },
+      {
+        "edge_id": "0a99ce27-11b2-4ba3-b9f9-315045c39252",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "bffcaa7d-75d7-4d4a-b74a-561ea1682629",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:29:05.667153+00:00"
+      },
+      {
+        "edge_id": "0acef1ef-8d86-4abc-a4bd-c54facd81c4c",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "06f07e3e-6381-4c4c-9b78-95d4ea8300c1",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:27:50.636972+00:00"
+      },
+      {
+        "edge_id": "0b0ffe7c-19a6-42e7-ac89-166c43ca6477",
+        "parent_id": "d24de806-a0a6-4c72-ae6f-eefcf701a60e",
+        "child_id": "4547541b-ec67-48ed-98f9-752c58c39365",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:30:19.374494+00:00"
+      },
+      {
+        "edge_id": "0b1c3c26-1b2e-4e4d-94af-a2ff1b0fd6ac",
+        "parent_id": "f3c38735-1882-4b1d-998c-e548cfc823d2",
+        "child_id": "38c9aef5-2d63-4228-8f22-7dd0888b2e4e",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:29:39.435485+00:00"
+      },
+      {
+        "edge_id": "0b7ef1e4-eb41-4c29-b1a2-e6e0770cf35f",
+        "parent_id": "bffcaa7d-75d7-4d4a-b74a-561ea1682629",
+        "child_id": "acf880ac-4956-43b4-a3ac-f9211291a946",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:29:05.667153+00:00"
+      },
+      {
+        "edge_id": "0b83976b-5493-47b5-bbee-48a2c733abb2",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "817944ce-bbb4-4143-85b2-e8cd062e2a51",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:29:03.581235+00:00"
+      },
+      {
+        "edge_id": "0b97e453-97d6-4358-b8f5-58b1d15d3569",
+        "parent_id": "1191f653-2483-41a1-8517-d53d6f677702",
+        "child_id": "76c0b06b-1a40-410d-811f-d0df3f2af922",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:30:36.966258+00:00"
+      },
+      {
+        "edge_id": "0bb3c8ae-2f83-44a4-b1ac-aef850766a57",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "29c33b92-c330-4658-94ea-13fae274e470",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:28:10.634575+00:00"
+      },
+      {
+        "edge_id": "0c0d77e1-9360-4bd9-be02-361e249d7bfe",
+        "parent_id": "35e6acb7-8834-42d5-97b6-e2b5257fb616",
+        "child_id": "2136ad6e-8088-48ef-936c-18aede718321",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:27:19.819841+00:00"
+      },
+      {
+        "edge_id": "0c2585c4-47ec-4843-9eec-26915a22de8e",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "3f6ad29d-b2d3-4d5a-887e-a072a07de19b",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:30:18.347317+00:00"
+      },
+      {
+        "edge_id": "0c33ec9d-47f5-466d-9d73-0941c1e5ca02",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "dc0f5318-7bd1-4322-8c77-9e47020c61c0",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:27:34.915429+00:00"
+      },
+      {
+        "edge_id": "0c5df916-ba8e-41c4-a804-89197ebb7d66",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "d0b3eea4-896e-42c4-b078-2b2c9fe3ad21",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:30:35.777891+00:00"
+      },
+      {
+        "edge_id": "0c6e66a1-8326-4ca4-b3f9-340b5aaf6e5e",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "4e6995b4-3d31-4d5b-b6c6-0415ac6fce78",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:27:56.117142+00:00"
+      },
+      {
+        "edge_id": "0c82d084-8277-4004-9049-08ccac40cd0c",
+        "parent_id": "58051e55-49c5-4d0c-8502-8685ee03fc59",
+        "child_id": "ba00e34d-3199-4440-909a-cd0a1918bc81",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:29:47.430662+00:00"
+      },
+      {
+        "edge_id": "0cbfdab8-390b-48f3-b9ee-9a8014f60db7",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "ba4fb04d-d80e-4ed0-aaa2-fe8414ce40ea",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:31:24.676365+00:00"
+      },
+      {
+        "edge_id": "0ccb87a0-828e-4bc4-92c2-1e37c1ea9d7e",
+        "parent_id": "c5e77736-2af2-4ce4-a0b6-5c6c25a7713c",
+        "child_id": "ba9d321f-2269-40fa-a747-5468473ed7a7",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:31:28.161294+00:00"
+      },
+      {
+        "edge_id": "0ceea07a-a4f9-4af4-a906-a98a94bb08f5",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "fe8710a2-73ea-4e76-bcf1-d32a808d0b4f",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:27:19.027629+00:00"
+      },
+      {
+        "edge_id": "0d039473-9db0-4039-a971-378660c6a616",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "e6639732-4b59-4ace-bc00-924ab69e6c72",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:30:06.515345+00:00"
+      },
+      {
+        "edge_id": "0d084128-cff5-4e88-a2e9-08dec8dc94b3",
+        "parent_id": "362db0e3-c585-49a8-9004-bef31dee4281",
+        "child_id": "d24de806-a0a6-4c72-ae6f-eefcf701a60e",
+        "relation_type": "TRAINED_ON",
+        "created_at_utc": "2026-11-04T16:30:19.374494+00:00"
+      },
+      {
+        "edge_id": "0d1f43ce-1ea8-43c7-ae88-b12e3649d53a",
+        "parent_id": "b5371c58-f025-473f-853a-9f7b6d459df7",
+        "child_id": "9a9fe715-a7b3-4211-9c5e-3162bf1e0dc6",
+        "relation_type": "CONTRIBUTED_TO",
+        "created_at_utc": "2026-11-04T16:29:36.843338+00:00"
+      },
+      {
+        "edge_id": "0d6ae493-a768-4778-8695-28978bfd8226",
+        "parent_id": "80c97cfb-e309-40ff-ae43-83465c3693c7",
+        "child_id": "292a7ca8-4447-49b5-b689-3d1bb1a67e87",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:30:10.351997+00:00"
+      },
+      {
+        "edge_id": "0da77f21-0d16-429c-a567-fde622a7a6e5",
+        "parent_id": "e5d3f7e0-897d-4433-bb04-480cc37070a8",
+        "child_id": "8ed22a75-49a7-4fa5-a3b6-71cea702d115",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:29:57.183906+00:00"
+      },
+      {
+        "edge_id": "0dd878ca-ba3d-4049-a04c-afb23d329298",
+        "parent_id": "f4c2a033-7f7e-42fd-a8b9-d51575b45ed7",
+        "child_id": "1e85805b-9cad-4ba1-b35c-3de5d76df2db",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:26:50.696061+00:00"
+      },
+      {
+        "edge_id": "0e36fdaa-1a97-44fd-b62e-d34dd9878e52",
+        "parent_id": "ada20fe5-cb3b-419b-afba-3c60cfc68265",
+        "child_id": "449ea379-8d83-4c6b-8e3f-3d3d770fee5f",
+        "relation_type": "REGISTERED_AS",
+        "created_at_utc": "2026-11-04T16:29:34.133002+00:00"
+      }
+    ],
+    "total_nodes": 1138,
+    "limit": 100,
+    "offset": 0,
+    "note": "Graph existence only; verify artifact hashes separately. Edges have independent pagination.",
+    "checks": [
+      {
+        "kind": "campaign",
+        "id": "00b98583-e68e-4174-aebc-d7cf2dd03960",
+        "status": "VERIFIED",
+        "evidence": "PostgreSQL lineage entity"
+      },
+      {
+        "kind": "campaign",
+        "id": "3950bdc3-fb0c-4590-b169-60362016370e",
+        "status": "VERIFIED",
+        "evidence": "PostgreSQL lineage entity"
+      },
+      {
+        "kind": "campaign",
+        "id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "status": "VERIFIED",
+        "evidence": "PostgreSQL lineage entity"
+      },
+      {
+        "kind": "campaign",
+        "id": "52eaaa10-4fa7-4410-861f-71ef572fcb89",
+        "status": "VERIFIED",
+        "evidence": "PostgreSQL lineage entity"
+      },
+      {
+        "kind": "campaign",
+        "id": "60a694f5-d771-4d3b-ad99-096ac6c7b101",
+        "status": "VERIFIED",
+        "evidence": "PostgreSQL lineage entity"
+      },
+      {
+        "kind": "inference",
+        "id": "4979b7be-4ce8-47fa-a0ef-26178c4c29f0",
+        "status": "VERIFIED",
+        "evidence": "PostgreSQL lineage entity"
+      },
+      {
+        "kind": "inference",
+        "id": "53c701f4-c524-4477-9259-36f8823fe7c6",
+        "status": "VERIFIED",
+        "evidence": "PostgreSQL lineage entity"
+      },
+      {
+        "kind": "inference",
+        "id": "e1435b44-4223-456c-9bce-17a6a09642dc",
+        "status": "VERIFIED",
+        "evidence": "PostgreSQL lineage entity"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.000/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ecb439dbef7f4b38826df294b4e57675/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "c4b0838119dfa4d9490c4589f8ba7edba142b9a2332a58d79c659e84af816adb",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ecb439dbef7f4b38826df294b4e57675/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ecb439dbef7f4b38826df294b4e57675/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/4bd8a5c80db14bfaa760796fbf2894d0"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.001/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-231dbe5be87d4687b45560cbde63d277/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "692c871624ef6d65d91f5f8abd6c9b93270f9c1cc31f5249671e0909b66364e9",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-231dbe5be87d4687b45560cbde63d277/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-231dbe5be87d4687b45560cbde63d277/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/086155f186324c0c95ad100979a1d1cc"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.002/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-5aef1be11dfd4bd0a79bb87423fe8867/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "4193e37fb4533cfb13c3cd83c60490ac1bc406a453ab18f97103cbe5c14699ce",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-5aef1be11dfd4bd0a79bb87423fe8867/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-5aef1be11dfd4bd0a79bb87423fe8867/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/27d3f2f2162e4bdb885f2fe1cc48847f"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.003/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c740d7ac42f2475baae5841d803f6e59/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "e0deacaa90ea1632ad719690b78cecc675dd8fcfea478d25dfd512a1c2ad03f9",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c740d7ac42f2475baae5841d803f6e59/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c740d7ac42f2475baae5841d803f6e59/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/f8be6b9d9ee74b46a9546ad0505ce65b"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.004/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ba053aef2c0c4667b519e504f89c35d8/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "ca4e87392ca61f4101684d5e6020ab8f4262b4af1b83af080daf29a41d16a5ea",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ba053aef2c0c4667b519e504f89c35d8/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ba053aef2c0c4667b519e504f89c35d8/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/e1b6eb5439ed4b679636d6d7ce514cab"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.005/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-2aae147b181745299e7c0072d2dfc4e6/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "ad4df816a813027558e2e55b9e452fb66ed40a4b70388d0f2cbbdfa4ef34ce6a",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-2aae147b181745299e7c0072d2dfc4e6/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-2aae147b181745299e7c0072d2dfc4e6/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/5dfdec868dfb4aefa5f95552a7cfa8d8"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.006/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-4fe652f5a96b453dae430fb848eeb043/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "c251b8e161ffcf3a3c6016a5e14febbe2a0226f51ce06d821a42401995923d28",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-4fe652f5a96b453dae430fb848eeb043/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-4fe652f5a96b453dae430fb848eeb043/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/c22790ce77954a71811524d8891b5c04"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.007/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9b6a80bd15a348bd945448d6127c10e6/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "df7803680591295609e832d616557ef436fdb0ac60f2c01b674aefebfda60502",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9b6a80bd15a348bd945448d6127c10e6/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9b6a80bd15a348bd945448d6127c10e6/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/4fa610b55e16474ab1770983a50cd660"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.008/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-b14abba507c34cb79167e03cfda9b7ab/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "fd7fbecce4066311ee79f4f4c10deeb1e5bab9e2277f597db21bf2f26da163f0",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-b14abba507c34cb79167e03cfda9b7ab/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-b14abba507c34cb79167e03cfda9b7ab/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/1b0d3a931bd84447add5cadb0614566d"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.009/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-168baa88dc5b4b3a980a66606653e03c/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "81cec1abf8edad350ef95fc623f9dcefc5985187e026229df83358fe12a19d06",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-168baa88dc5b4b3a980a66606653e03c/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-168baa88dc5b4b3a980a66606653e03c/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/1bf968b6ce5049f2b3009514d5f3e14e"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.010/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-686583fa698a49fc9591d43857b849fd/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "682c343d84a8f62dfd3faa18e44faf7991fbcec47a1f1c9403f6a12e0e2ad16e",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-686583fa698a49fc9591d43857b849fd/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-686583fa698a49fc9591d43857b849fd/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/67b193b467784807aa95838c081414ee"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.011/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-47e194e914de4b6588275700bc16b269/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "bcbdbd93c6cdd70c7d627d0e42c78856c26ebd200931296fb23081095474053a",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-47e194e914de4b6588275700bc16b269/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-47e194e914de4b6588275700bc16b269/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/ad9d019357544a25bb900ed4f18eae0d"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.012/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9a062365f5104671854a34f651ba5ba9/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "ccdc220d4e503691025f0ded86428b8ef69e31d5e2ded46c844c6ec9fb5862f9",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9a062365f5104671854a34f651ba5ba9/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9a062365f5104671854a34f651ba5ba9/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/863ffda73275425b8d2f7d0635162a6d"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.013/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-4535ccc73bf9468c99598763c6f1bdd2/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "11427c6e2b2d3d44111934c6c8213b5e0fc61354b83c1416e67503120aafec26",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-4535ccc73bf9468c99598763c6f1bdd2/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-4535ccc73bf9468c99598763c6f1bdd2/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2381a63849d34fb180a3594d8f58cf38"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.014/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3a1aab22f25749a8ab0b1ed1ebd684f7/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "46d31aaca886d7ba2e9260a943bae10e3b400978738593dcfde06a15a4530238",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3a1aab22f25749a8ab0b1ed1ebd684f7/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3a1aab22f25749a8ab0b1ed1ebd684f7/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/6cdeca39e66f4bbf99863d285f49cdab"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.015/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-b5ccf82a3bda45d7b1dd0037f061e295/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "98cebcf484fccfcd42b1d88b43e5295ec2583a895c76d95591f7033b250c0070",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-b5ccf82a3bda45d7b1dd0037f061e295/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-b5ccf82a3bda45d7b1dd0037f061e295/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2ba65a7cf5834683969b7e1020f2c9a6"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.016/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-56eb7d4ebcd84fa690bfecabb7b40d54/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "e46c695220d6132209432e77ba5e92b9d73bc0a7a8a6ce4f2123b576fe71b59a",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-56eb7d4ebcd84fa690bfecabb7b40d54/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-56eb7d4ebcd84fa690bfecabb7b40d54/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/3f07e4c1b1004f64b6d5fbe1bda34459"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.017/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-510ed845c6a54bc4bc55f1e39aac76e6/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "dacde7586860edef445f786f18de18a5ad5527a9cfeef8abbf2bc8d73906a36c",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-510ed845c6a54bc4bc55f1e39aac76e6/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-510ed845c6a54bc4bc55f1e39aac76e6/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/f90c7275e2694929a918968c9c608f16"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.018/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6cecb802ff2c4932aac6426b9023cd18/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "b61edf48301242fe7cf057d65e17425b2f7d1e24940b6ad191d3afc0dc4e723d",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6cecb802ff2c4932aac6426b9023cd18/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6cecb802ff2c4932aac6426b9023cd18/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/db698545765f4be9ac08605414ae6a56"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.019/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-0b4e97283ba24c5fa0230a2078ee6d18/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "494d00e6b33d91167e4a2af2397fae647a994ccb3670e9d43931e650ac2555e5",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-0b4e97283ba24c5fa0230a2078ee6d18/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-0b4e97283ba24c5fa0230a2078ee6d18/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/d82734a6018a419baff3944b1b43f285"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.020/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ec35de3b041e4983b0133854d42d8bb5/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "c373408e0826cd12829a42e40edffd93e3f98c7b1da6769be705e848aca46d82",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ec35de3b041e4983b0133854d42d8bb5/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ec35de3b041e4983b0133854d42d8bb5/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/e3581546afce447bb939bb62bccb6f28"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.021/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-184ac2ea490146968469d7c6aedd50cd/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "2a023fe3518b7e593347ea1a394d8b6cd69fd695c62cb1cea7f49876adc35065",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-184ac2ea490146968469d7c6aedd50cd/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-184ac2ea490146968469d7c6aedd50cd/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/8a7ea22255e743158f570a3989b87092"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.022/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ae96baa51ddf4674af6476b27c512c52/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "828c24120cfe303c2bde1682c07d779e7d8f95320e8b18d825e51e03f21cf5e8",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ae96baa51ddf4674af6476b27c512c52/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ae96baa51ddf4674af6476b27c512c52/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2f4f324171fa40c8b151a1d299d3d22c"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.023/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3bfe15c6167547b9900342dc7bc24c37/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "276ef987de75cd8128cfdf6fb2be42907b056a54405320541e65d2b81631a904",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3bfe15c6167547b9900342dc7bc24c37/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3bfe15c6167547b9900342dc7bc24c37/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/c705c960dfb64a298af4e0de0f3ec48f"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.024/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8bd5f697b94748bcb225703ec655ccd6/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "ad944e90fb7588d478e34239759123a2cc58a4ad5346fe1f6d34875172dffb48",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8bd5f697b94748bcb225703ec655ccd6/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8bd5f697b94748bcb225703ec655ccd6/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/9d5669cf48664b898ce05351eea5cc0e"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.025/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6f938f6cde094062a5225f329031fd59/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "b02bb924e04b1fbd3632821535de16f9859242424372f6babaeebd90041c5f49",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6f938f6cde094062a5225f329031fd59/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6f938f6cde094062a5225f329031fd59/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/d72d777f13354e55971de5d9d2a7603d"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.026/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-bdd7fadf16aa4f2793e5ae4d2636ce2f/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "ba8f19a18dcce36db02d07faa3ce11a6c2dd5d029ddb210e097005214596e3d1",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-bdd7fadf16aa4f2793e5ae4d2636ce2f/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-bdd7fadf16aa4f2793e5ae4d2636ce2f/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/cfb5764bc65940a4a04ef18731b9a699"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.027/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-e6fb4634167a41d197db2366154f8691/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "73299ff7b91fe17fb3f7e78e0860fa7fdaf15a0951916d67bd62d505aac15438",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-e6fb4634167a41d197db2366154f8691/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-e6fb4634167a41d197db2366154f8691/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/484cef5da1c3404d9afc518d4e1860ba"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.028/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d5f261ba2cc648f59814caeaab2ff880/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "43bcfca8a25f0ad76f610a9a1481995f1af06fa8f0e6f5c6f4e06609a43cdbf3",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d5f261ba2cc648f59814caeaab2ff880/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d5f261ba2cc648f59814caeaab2ff880/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/54d879b3ae74492f886620da64587a24"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.campaign.83fa031898.029/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-29c4b75393074f1498cee7a1bd429cfc/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "8e5232b45542f90349d0f126bd992a0a0492279e01ea72c36b7b8f8def3bead5",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-29c4b75393074f1498cee7a1bd429cfc/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-29c4b75393074f1498cee7a1bd429cfc/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/178237f11c7d44f0b3296a94c98d4204"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.notebook.abdb8f09/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3c632036203740d982f1b29aa117263d/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "c1456acc4e87b4087686717f5612d0a412cdf9fca4078a9229aed6d272fbc184",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3c632036203740d982f1b29aa117263d/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3c632036203740d982f1b29aa117263d/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/eb44663c5112462ea5b95fd92c204151"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.probe.da910fa5/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "836efd978b9c1750ec3702d7d9028b6bdb218998a0fcb23d8ab09e322bd778cd",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/6277582e511148c9a31b2aef3f22395e"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.000/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-7d97f5a42af34ff3bba050d8397866d9/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "f616122ed5d5ac08422979fa97ce362c75219ec31d2a7e75a5a08918b74c93ed",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-7d97f5a42af34ff3bba050d8397866d9/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-7d97f5a42af34ff3bba050d8397866d9/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/0cb047e880754b5599e0139d67f55d2f"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.001/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c910f4a4bb7f49ec9f30986eb441ffb4/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "5aa0f495b46cf026a77a7ba71ee240d24b4ef22655a8b2f845d624a7090d4d4b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c910f4a4bb7f49ec9f30986eb441ffb4/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c910f4a4bb7f49ec9f30986eb441ffb4/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/32037d7043bc4adb85de936016a7fa09"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.002/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-e96f1bcd069349d8bc03a5c16d08f862/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "2200ea5d2383552b3312e76406ac858e82afa13f5c996c0d71a2288637a29272",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-e96f1bcd069349d8bc03a5c16d08f862/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-e96f1bcd069349d8bc03a5c16d08f862/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/bb275232f95344689a56c0ac1a93a64b"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.003/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d2447124ac7c48848e1fbb48bde0eda3/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "8c5fb7fdc860be0e2dfb3e6fee7f581e4dc21b4278737be87d9b617ba7bba848",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d2447124ac7c48848e1fbb48bde0eda3/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d2447124ac7c48848e1fbb48bde0eda3/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/fd7c108aa233458e99ac27714a9f5fb4"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.004/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-52d4176330764cfdb545d80d60f9d549/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "83c5958b2856fadb4b8aa65765b8e082dd7fc62d37ebd65745f3bc3f452f413d",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-52d4176330764cfdb545d80d60f9d549/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-52d4176330764cfdb545d80d60f9d549/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2254e17335ca48989e815eda922f5904"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.005/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d0ef6675bd7845be8e9d3096e0af72a3/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "d4e944b5d286acf04203beef6d6bbb4428c7d3f806191a93664599e84fb7a1b6",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d0ef6675bd7845be8e9d3096e0af72a3/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d0ef6675bd7845be8e9d3096e0af72a3/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/e496b7b2351a4bd58cb5cf83315bc7d2"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.006/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ef79a74e39034b58afced225d1c9ffba/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "9e5536044c5ab515b41ace9eb05e40b91a7d7455fd61b7131b59740164b4a9cc",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ef79a74e39034b58afced225d1c9ffba/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ef79a74e39034b58afced225d1c9ffba/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2c9aa2d52fa14b23a9ba4634e55b2564"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.007/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-499ae53dd5b146bfb09966d252cf65b3/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "c93910f5b3a81803f4610b09d0a44d9a5a9188da6bbf826639f0df32338a732d",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-499ae53dd5b146bfb09966d252cf65b3/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-499ae53dd5b146bfb09966d252cf65b3/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/6279726d30bf4cc8ac05c9405f20f829"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.008/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8d043da921f041a9aa712ca7f01c476c/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "5c0468ea5c53c3cabebc2a5b4b06e5d1cf02aab0dbabf304c81cf442e1c1f631",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8d043da921f041a9aa712ca7f01c476c/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8d043da921f041a9aa712ca7f01c476c/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/ba63eacfe4c8450b91e4e88bbb04d198"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.009/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6430fd055a8045cdb15a86a31ab1736a/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "44034b4686377effc190117a2f27b96d42798a0b3611a93d852e22cb461d4486",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6430fd055a8045cdb15a86a31ab1736a/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6430fd055a8045cdb15a86a31ab1736a/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2c70e25747774ee89fe6e829996ecdaa"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.010/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-48c4eaa1c65d4043bfcd07b07f879019/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "4e0ace42359f6e19ac537416781914f2b03fbaf8dabb9aab5c2accb2d6e1ca2a",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-48c4eaa1c65d4043bfcd07b07f879019/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-48c4eaa1c65d4043bfcd07b07f879019/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/6c519f7dbac44de2a9ef51304587b2b0"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.011/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9b057d4dc113490391059d2c0d4e6801/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "d40a38bd1abf33a040ae5bc8646662cb235fd4215fbfe7341d587f2ea595c2ec",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9b057d4dc113490391059d2c0d4e6801/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9b057d4dc113490391059d2c0d4e6801/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/4908b293c73c4e8ea8529d777127a86c"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.012/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8d869a6d3c8b4223b2e295bcbc1e1eb8/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "4f87f0aa3637f2465c9cb41196b3aa97b525aa8edbcbc65ee148516eaf978d00",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8d869a6d3c8b4223b2e295bcbc1e1eb8/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8d869a6d3c8b4223b2e295bcbc1e1eb8/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/19468d29434642f5a3b7bc978a3a9c69"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.013/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-36c7044c36ab4082b65410a5c806333f/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "51920132bdbc72fed80be1e9088d017551ad6dddce6e21b1d63c3ff8fabd3e11",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-36c7044c36ab4082b65410a5c806333f/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-36c7044c36ab4082b65410a5c806333f/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/836778943fb640a3a71295045b586b6a"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.014/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-912a750003eb44999693c085bc21dd13/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "9ccbbbf154d1c0d4f71d3fc46b64627f8949cca06f018abf9da3229ed066890e",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-912a750003eb44999693c085bc21dd13/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-912a750003eb44999693c085bc21dd13/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/1b1aa7c3fca74316804427183bb30ffd"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.015/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8ba30034e1a64541aa4f852fdd137216/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "cd7faa45fd3b5673de643a19b9dd31a5765eb50dce93d9ad09fd989227fa3d36",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8ba30034e1a64541aa4f852fdd137216/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8ba30034e1a64541aa4f852fdd137216/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/ba4c237db40b4c1f8f9706206eba8e24"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.016/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-33348f0b84164178a6187d0d44149f4f/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "e3f73f91504ff0bc26a1a234bfa440d1d0a5cd328d1c288c84e11962677e293a",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-33348f0b84164178a6187d0d44149f4f/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-33348f0b84164178a6187d0d44149f4f/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2983e5b6cc064f18ad0735b0bfc4ea77"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.017/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6f213dffa4394293903746286dd606b1/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "ccaf231ebe1310b93007350f4fbc55461e0a65b531c431416dd30934d8bcf0c4",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6f213dffa4394293903746286dd606b1/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6f213dffa4394293903746286dd606b1/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/e19987f144bc4965b389c19e082171c9"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.018/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-1ab082123b3d4768b9fdc1f29946ed7d/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "9422db8a82d274fe94925553946e0caa6387ba149d10092cbe10597187235fc4",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-1ab082123b3d4768b9fdc1f29946ed7d/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-1ab082123b3d4768b9fdc1f29946ed7d/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/48611751c99b417dbf63928e101291ff"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.019/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-1d707fa6a077403aa75ac5277f4c3b83/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "6b7170b520aa0be8343bfae2d25d775edb9d9f430550f1610dd6a9e6c2a7bb7f",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-1d707fa6a077403aa75ac5277f4c3b83/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-1d707fa6a077403aa75ac5277f4c3b83/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/65cfb6f0d8914d8fae8e69cc68a8c59f"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.020/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-76485a71bb244f349cb8e155a91568a3/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "d21491736c1dbc624573657cd2913296503e9d991aa118b91a1d45b375ca5839",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-76485a71bb244f349cb8e155a91568a3/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-76485a71bb244f349cb8e155a91568a3/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/48a2fdc7957c419e93754f33b0151fbe"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.021/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-0ea5ebb812ca477b83da49c0c35ab1e6/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "d540e5afbf969c1dbf6185eed4352e6b51aa235c7e360f93cc46e789b9451042",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-0ea5ebb812ca477b83da49c0c35ab1e6/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-0ea5ebb812ca477b83da49c0c35ab1e6/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/0784699d404646cb88481662aeea8720"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.022/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-fbf95dc3c5654fbdb343fa266cf9524a/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "aac6cd9f4ad7125d14a7fa66f3466179e21732f324daac5d93034a25359fb26e",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-fbf95dc3c5654fbdb343fa266cf9524a/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-fbf95dc3c5654fbdb343fa266cf9524a/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/d3756f8c5b784be4a9f1bccb7fd4cee1"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.023/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-215fda2476934b8b841d01ba341712c3/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "68afa3c05ae7d15929b7fdeb2b822995fbbd713f3aa49b125dcbbc4bbcbc8d24",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-215fda2476934b8b841d01ba341712c3/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-215fda2476934b8b841d01ba341712c3/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/4dc2bb32804243d2acfa010658edabac"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.024/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-bb937b4d74fc4cd384d428ac208aad59/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "ead124437597498027df4a03ed42d1264a0a532aff16f712ec4dc2a2c43d9499",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-bb937b4d74fc4cd384d428ac208aad59/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-bb937b4d74fc4cd384d428ac208aad59/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/eaa46f211fc24f9c9b4e520f6317bfd5"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.025/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-aa9c8fd6a137426bafd59c95a208808f/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "f8978495f8d228cef8fa0e5857f5758721789bace6d5dbd5583911bceec1285e",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-aa9c8fd6a137426bafd59c95a208808f/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-aa9c8fd6a137426bafd59c95a208808f/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/07a51a4050e54fa9bc470c88693509b1"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.026/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9989fc262812482b873eb3c68d040731/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "f50494b4971b7535174301af599bece0ee4071d600ac03af7586b14b2f7ca564",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9989fc262812482b873eb3c68d040731/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-9989fc262812482b873eb3c68d040731/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/844ec2d99ed84699b6f6ca76b8ebbce4"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.027/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ec71c3f7147d49e7955699bf21cbfd9c/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "5d8001b930e5b31b1a36b0d55c032109bda8f16aad44af067c784632925bd305",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ec71c3f7147d49e7955699bf21cbfd9c/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-ec71c3f7147d49e7955699bf21cbfd9c/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/44c269ea0018406b9bb2edd259f458a2"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.028/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-2b9cbbf1ac974801b70e068ceb859cde/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "f3233eb8666913ac3d29c119c82ff88dcfab9ccaa40a43875ae62fea1670c038",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-2b9cbbf1ac974801b70e068ceb859cde/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-2b9cbbf1ac974801b70e068ceb859cde/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2b846f80b4604231891dd258036528c9"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale30.16013c03.029/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-79fce3b6c7fa4e528ac7214ee2699acb/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "3169726cca6274045f31ec4fa915f1d16c0b6ce53b5744aee8dc181df6be6a97",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-79fce3b6c7fa4e528ac7214ee2699acb/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-79fce3b6c7fa4e528ac7214ee2699acb/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/c8da6807974b4fee8268c94c44c79f92"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.000/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-fc146192a2a14868abe6bfc5135e2baa/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "a44baf68fcb0e175bcdbc2132ef249c937ff42f22c03b91e46598b3120955b95",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-fc146192a2a14868abe6bfc5135e2baa/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-fc146192a2a14868abe6bfc5135e2baa/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/8bb6e33fbca84d90936486413ff0b4f6"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.001/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-89f7cad8fe2040f898bb80800127b4c2/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "78b867d19a30fac7601764827839075b98e63c067e2b7e2710a413f8c6063c21",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-89f7cad8fe2040f898bb80800127b4c2/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-89f7cad8fe2040f898bb80800127b4c2/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/4403386cd2164ce18f85d99e315220d2"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.002/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8e5b903a198d4f5092fe8db7e0b618e4/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "924281387092a3ce04628a26f7f24ab87a6820335f88b3d1d103a7a4019dbccd",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8e5b903a198d4f5092fe8db7e0b618e4/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8e5b903a198d4f5092fe8db7e0b618e4/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/12e0da6f48c54c9d8ff9f6e38f312729"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.003/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-dd11e8bf74be4ebb89cb5ebcb8909982/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "7bcab03479efe5b8261bcccf29121c21a8ee5d0e5542c3fe3a9d4167e48b0a20",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-dd11e8bf74be4ebb89cb5ebcb8909982/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-dd11e8bf74be4ebb89cb5ebcb8909982/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/3467b9759d9548e3862f5de6b9bc39ca"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.004/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-f72b67a1aba44e7db9905bfeedbe263f/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "a833c9a5fa4addbc9b50cd9f376cd0e86c059864487d866d981a1960c8474413",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-f72b67a1aba44e7db9905bfeedbe263f/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-f72b67a1aba44e7db9905bfeedbe263f/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/546a6ff5c30048499b24b6c952a668fc"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.005/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-564229ece94b4e47be50cc573184a860/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "41b173d810d14f75a61660427e3c278635642f8f4477a4c0576b1607b8e8536a",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-564229ece94b4e47be50cc573184a860/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-564229ece94b4e47be50cc573184a860/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/bbb0f1ce0f534b8b931f6a4f38b35849"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.006/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8da02333a79b40d4932598f9d1e34c83/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "5b23521746a19680a4d1e254af99e688d07873244e37e547fd5e9143c2dd2a07",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8da02333a79b40d4932598f9d1e34c83/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8da02333a79b40d4932598f9d1e34c83/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/adddfb59b6f14ea680ec703bdad50361"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.007/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-dab73b5c7a5a46cbad442787913060a2/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "805ea13767f94bde67bf63cc0d1ef922278a1653e97ab666f22d956dcbbd9396",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-dab73b5c7a5a46cbad442787913060a2/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-dab73b5c7a5a46cbad442787913060a2/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/5f397dd065064d6c8ceb49198c59bc75"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.008/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-233b291f9d0d40449c9ed7c7406542ee/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "2caf78b513a2b122439d4d1f823aa81efc38054aefa74286dfa3fc0a8a0a17fd",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-233b291f9d0d40449c9ed7c7406542ee/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-233b291f9d0d40449c9ed7c7406542ee/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/afaf414b1a2044868365b8c3844cdf19"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.009/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-4d0dab9dc6dc444cbfaad582b26158d7/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "c55711c5e041e966d8165b0187014d9ba5d4badeb4322c55acaadfaa8acff19b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-4d0dab9dc6dc444cbfaad582b26158d7/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-4d0dab9dc6dc444cbfaad582b26158d7/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/09cd48b4345946d9b3297f37cea27a83"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.010/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-636db8e2b6c74bc6be9d63adf90815e3/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "47b1687c017a417debab6b49daf9b161534f4e920d2c6530368a7704c32e70a3",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-636db8e2b6c74bc6be9d63adf90815e3/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-636db8e2b6c74bc6be9d63adf90815e3/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/84631e473884411ba6e49e18b7918c2d"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.011/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-60581ebc67444877a94751d724a0d181/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "e50e6ba517124e6460a5214f883122fb087282518c4c9b84c84143ecd207752a",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-60581ebc67444877a94751d724a0d181/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-60581ebc67444877a94751d724a0d181/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/f9179017bc874da0ac50e40c89874fe0"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.012/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-947d51c7ad5f446db5187e395d0776e8/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "a699f77fae3c6f8b25dc79726992b72db004cdaa02f5b4fe3f6c4c579aa52cb4",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-947d51c7ad5f446db5187e395d0776e8/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-947d51c7ad5f446db5187e395d0776e8/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/21b75bdd36b143fe96c38d9a64ac8336"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.013/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-a03411d3c5ec48479f800810674da034/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "13deb9767fb9e02ffb8b9abe96754429eedb13fe5e890f9feb92188ce505ba08",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-a03411d3c5ec48479f800810674da034/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-a03411d3c5ec48479f800810674da034/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/bfb91d12fc794d748ec602ff31c0dc25"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.014/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3173e16ec1524c5aa710873f67185368/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "3440e56f2ead7dadd9717580d17c12bbec598703a163f449754bcc3460b31f92",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3173e16ec1524c5aa710873f67185368/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-3173e16ec1524c5aa710873f67185368/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/b60581ae2083482483542e4d22983e51"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.015/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8875a2d64e744bfa8dc7ff6d14e4c7d7/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "a62593ac7f0078bc248fa9ddfb7db8d6f742d501fec885823e6edc878260eb3e",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8875a2d64e744bfa8dc7ff6d14e4c7d7/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8875a2d64e744bfa8dc7ff6d14e4c7d7/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/679161b6ed054903babbd1d2a66409ed"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.016/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-a147f9e6a66a463c89a5144adf19b389/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "0dd9f4f70494e2ed91d7b9eb8acf8e721a7b47575d23134705acb42f2daad6d3",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-a147f9e6a66a463c89a5144adf19b389/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-a147f9e6a66a463c89a5144adf19b389/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/abe4e12f661040b3bd4088eb4784385f"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.017/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d25cc112d6094816890872a8aa329f63/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "c5e678a3f961057e147c202bd2741968f78b448b449b9b4353fbe129b752a769",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d25cc112d6094816890872a8aa329f63/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d25cc112d6094816890872a8aa329f63/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2560372a1fda4073a5728748738388e6"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.018/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-7f5abc9387c948a884bee44b734c910a/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "22456c8d08b32d09da3d091046b5a8410ba19536131c2cf39ade35c12359c7ac",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-7f5abc9387c948a884bee44b734c910a/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-7f5abc9387c948a884bee44b734c910a/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/ebc3e6a8a68a4989a27a51737ac80a54"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.019/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d38e721b80e847f380cb53f1b658e1de/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "7fb7e6fb2553fcdfb6c38ce3e37df93c72edea61489efd1f3ee3c5690c135509",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d38e721b80e847f380cb53f1b658e1de/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-d38e721b80e847f380cb53f1b658e1de/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/04c692e21e5b43ae9bb0eca94600f498"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.020/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6c01786946ca449280013a66288cc11e/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "2cf8de63c068b3eac19a0d044ccca4ad7f8eed4e243a0e6463c6b3cacb0ed460",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6c01786946ca449280013a66288cc11e/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-6c01786946ca449280013a66288cc11e/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/0d51ea25399e46e0852cc732bc64dffe"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.021/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-120b4719acef488dbce20aaa10187d52/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "aac6aa64affd34b0cfcf38109b41d1dd2699cbbb40d3507d64620d1b765e27f0",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-120b4719acef488dbce20aaa10187d52/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-120b4719acef488dbce20aaa10187d52/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/1fc2f570376146fbb13ea362b1a4c040"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.022/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-5a5466ffa5994c35ba6776c45cf38e8f/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "be885b8b5cbbdc995b4c31e009ecad731bde012aa9327f8ea3a398bce8057397",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-5a5466ffa5994c35ba6776c45cf38e8f/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-5a5466ffa5994c35ba6776c45cf38e8f/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/a509321765ff41a891da48610041ba88"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.023/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-38908d59882744a4ba9e5cb5526e9029/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "880d194c57d3e5b764de440349fd48fa931146918fa4a9d291481cb8779fb951",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-38908d59882744a4ba9e5cb5526e9029/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-38908d59882744a4ba9e5cb5526e9029/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/0a869c2e51774870917fff19ac64cf22"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.024/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8073a6e84a0441a59a97e81d90dc6724/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "ae93a487ef899506ce2c36e5fdfba76d600ee6c841b77ffa686c00d78af13735",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8073a6e84a0441a59a97e81d90dc6724/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-8073a6e84a0441a59a97e81d90dc6724/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/bd2f96a04ee4446fb4c131c81af6b5e2"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.025/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c10d21dcbbff403b8b5dd7545bdc4e91/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "f52b489d3c7632f2bbd72ecb8fb5992f70ee458c173f4fd7da931ecc00f91971",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c10d21dcbbff403b8b5dd7545bdc4e91/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c10d21dcbbff403b8b5dd7545bdc4e91/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/9a98760abd3c4a6da49b6565f88c86c4"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.026/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-21ee9e0127cf4ab69e89151871ca528b/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "33b0ef4adac2f340f8cc7705a532a10ec55fb3e501fa23eff513ac39e0921b02",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-21ee9e0127cf4ab69e89151871ca528b/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-21ee9e0127cf4ab69e89151871ca528b/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/51bb2e9f3a794d228a6f6b93e07e1881"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.027/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c4e47649091347bb924bc6218f3adba1/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "31e4b7f5064aef66aa083fefc828db4192ab8052e7b7d7f48c989939b7a01312",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c4e47649091347bb924bc6218f3adba1/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-c4e47649091347bb924bc6218f3adba1/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/bdebce5fe2c34bbeb6ab82732ab38a9b"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.028/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-fa110ce7ad3a403a83fee184953b2c5d/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "5eba1a86769bad3c573208510d321be913b9be3d7d3cd7372573d0ff9ad0d43e",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-fa110ce7ad3a403a83fee184953b2c5d/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-fa110ce7ad3a403a83fee184953b2c5d/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/0d130a2576f442d5a1a8b32bb2c30a93"
+      },
+      {
+        "kind": "model",
+        "id": "hi.demo.scale500.f72c3e08.029/1",
+        "status": "VERIFIED",
+        "evidence": [
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-7060587e95fc4fed8f53fd76d76f5dfb/artifacts/MLmodel",
+            "bytes": 1336,
+            "sha256": "93faeff43a7f948585e419c04cd45a7d41c2aaef6adea5d7519930ca313cf9d7",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-7060587e95fc4fed8f53fd76d76f5dfb/artifacts/model.pkl",
+            "bytes": 8671,
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "model_version": "1",
+            "status": "PASS"
+          },
+          {
+            "bucket": "pucpr-poc",
+            "key": "mlflow/1/models/m-7060587e95fc4fed8f53fd76d76f5dfb/artifacts/requirements.txt",
+            "bytes": 80,
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "model_version": "1",
+            "status": "PASS"
+          }
+        ],
+        "url": "http://127.0.0.1:5000/#/experiments/1/runs/2269bf5947f741cab65c2e6cbdde6477"
+      }
+    ]
+  },
+  "limitations": [
+    "Dados DEMO e contrato provisório; regras não avaliadas não são homologação"
+  ]
+}

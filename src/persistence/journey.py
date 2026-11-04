@@ -26,9 +26,9 @@ def compose(future, predictions, capacity=40):
     return lines
 
 
-def persist(cfg, execution_id, snapshot, trace, lines, capacity=40):
+def persist(cfg, execution_id, snapshot, trace, lines, capacity=40, actor="jupyter-DEMO", correlation_id=None):
     uuid.UUID(execution_id)
-    metadata = dict(execution_id=execution_id, correlation_id=execution_id,
+    metadata = dict(execution_id=execution_id, correlation_id=correlation_id or execution_id,
         cycle_id=snapshot["cycle_id"], snapshot_id=snapshot["id"], course_scope=cfg.course,
         dataset_sha256=snapshot["dataset_sha256"], run_id=trace["run_id"],
         experiment_id=trace["experiment_id"], model_name=trace["model_name"],
@@ -58,7 +58,7 @@ def persist(cfg, execution_id, snapshot, trace, lines, capacity=40):
             from src.persistence.db import audit
             from src.persistence.lineage import attach
             attach(con, execution_id, snapshot, trace, lines, RULE, capacity)
-            audit(con, "jupyter-DEMO", "PROPOSAL_CREATED", "proposal", execution_id, execution_id,
+            audit(con, actor, "PROPOSAL_CREATED", "proposal", execution_id, correlation_id or execution_id,
                 {"run_id":trace["run_id"], "rows":len(lines), "rule":RULE})
             return dict(con.execute(text("SELECT * FROM planning.proposal_generations WHERE execution_id=:id"), {"id":execution_id}).mappings().one())
     finally:

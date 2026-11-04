@@ -1,0 +1,103 @@
+{
+  "timestamp_utc": "2026-11-04T16:15:41.758092+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:7233bbcbbea4d0aa52d5785a9f891f0de23370fc9586df450d9e6a6214cbc4e8",
+  "environment": "poc",
+  "test_id": "probe-training",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign": {
+      "campaign_id": "60a694f5-d771-4d3b-ad99-096ac6c7b101",
+      "idempotency_key": "da910fa5-0f94-43de-b904-18c8cbfe5613",
+      "request_hash": "79109ef4b68fc269c01376708017e915a2b181833ee86b3b4cf768f543d74480",
+      "request": {
+        "alpha": 1.0,
+        "algorithm": "ridge",
+        "cycle_code": "2026-1",
+        "model_keys": [
+          "hi.demo.probe.da910fa5"
+        ],
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "max_attempts": 3,
+        "requested_by": "v2-probe",
+        "schema_version": "poc-training-campaign-v2",
+        "confirm_training": true,
+        "max_parallel_jobs": 2
+      },
+      "correlation_id": "da910fa5-0f94-43de-b904-18c8cbfe5613",
+      "requested_by": "v2-probe",
+      "status": "COMPLETED",
+      "max_parallel_jobs": 2,
+      "requested_count": 1,
+      "created_at_utc": "2026-11-04T16:15:37.671198+00:00",
+      "started_at_utc": "2026-11-04T16:15:37.705518+00:00",
+      "ended_at_utc": "2026-11-04T16:15:40.133773+00:00",
+      "counts": {
+        "COMPLETED": 1
+      }
+    },
+    "items": [
+      {
+        "job_id": "f1c95b23-ee64-4799-86bb-c46eaf6f02b9",
+        "campaign_id": "60a694f5-d771-4d3b-ad99-096ac6c7b101",
+        "model_key": "hi.demo.probe.da910fa5",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:15:39.803200+00:00",
+        "started_at_utc": "2026-11-04T16:15:37.705518+00:00",
+        "ended_at_utc": "2026-11-04T16:15:40.128383+00:00",
+        "mlflow_run_id": "6277582e511148c9a31b2aef3f22395e",
+        "registered_model_name": "hi.demo.probe.da910fa5",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "6277582e511148c9a31b2aef3f22395e",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 2.001943888,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 258468.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 1.226081137006986
+          },
+          "model_uri": "models:/hi.demo.probe.da910fa5/1",
+          "model_name": "hi.demo.probe.da910fa5",
+          "artifact_uri": "models:/m-aec111d06b6b499e93ef62162f5628c3",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "836efd978b9c1750ec3702d7d9028b6bdb218998a0fcb23d8ab09e322bd778cd",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-aec111d06b6b499e93ef62162f5628c3/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "f1c95b23-ee64-4799-86bb-c46eaf6f02b9"
+        }
+      }
+    ]
+  },
+  "limitations": []
+}

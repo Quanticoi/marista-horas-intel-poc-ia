@@ -57,6 +57,8 @@ if($Action -eq 'init' -and !(Test-Path '.env')) {
     [IO.File]::WriteAllText((Join-Path $root '.env'),($lines -join "`n"),[Text.UTF8Encoding]::new($false))
 }
 if(!(Test-Path '.env')) { throw 'Execute init para uma instalação nova; para dados existentes recupere o .env original.' }
+& python deployment/scripts/init_env.py
+if($LASTEXITCODE) { throw 'Falha ao preparar credencial separada de operador.' }
 # Add only the new service credential; preserve all existing passwords and data.
 if(!(Select-String -Path '.env' -Pattern '^INGESTION_TOKEN=.+$' -Quiet)) {
     $bytes=New-Object byte[] 32

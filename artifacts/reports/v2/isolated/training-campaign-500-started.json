@@ -1,0 +1,14 @@
+{
+  "timestamp_utc": "2026-11-04T16:32:06.384126+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:10c4f4fb436ca99d968cc4b9306784faa18003d2ceff60b6293e4fdb67f8cb71",
+  "environment": "poc",
+  "test_id": "training-campaign-500-started",
+  "status": "PARTIAL",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign_id": "52eaaa10-4fa7-4410-861f-71ef572fcb89",
+    "requested_count": 500
+  },
+  "limitations": []
+}

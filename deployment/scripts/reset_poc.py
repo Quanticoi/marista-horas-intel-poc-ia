@@ -132,6 +132,9 @@ def lock():
 
 
 def execute_plan(plan,environment,project,phrase,execute,reinitialize):
+    reinitialize=reinitialize or "empty"
+    if reinitialize not in ("empty","demo-ready"):
+        raise ValueError("A supported rebootstrap mode is required")
     validate_plan(plan,phrase,execute,environment,project)
     if plan["mode"]=="factory-reset" and any(o["key"].startswith("backups/") for o in plan["inventory"]["objects"]):
         raise ValueError("Backups inside volume: export and verify externally before reset")
@@ -166,7 +169,8 @@ def execute_plan(plan,environment,project,phrase,execute,reinitialize):
                     compose(project,"run","--rm","--no-deps","tools","seed")
                 compose(project,"up","-d","--wait","--wait-timeout","300")
                 after=data_inventory(project)
-                for table in ("proposal_generations","proposal_lines","training_executions","prediction_jobs","model_deployments"):
+                for table in ("proposal_generations","proposal_lines","training_executions","prediction_jobs","model_deployments",
+                              "operation_jobs","operation_events","training_campaigns","model_approval_requests"):
                     if after["databases"]["planejamento_db"][table]["count"]:
                         raise ValueError("Unexpected business residue")
                 for table in ("runs","registered_models","model_versions","trace_info"):
@@ -197,7 +201,7 @@ def main():
     parser.add_argument("--plan-id")
     parser.add_argument("--execute",action="store_true")
     parser.add_argument("--confirmation")
-    parser.add_argument("--reinitialize",choices=["empty","demo-ready"])
+    parser.add_argument("--reinitialize",choices=["empty","demo-ready"],default="empty")
     args=parser.parse_args()
     if args.action=="preview":
         print(json.dumps(preview(args.environment,args.project,args.mode),indent=2))

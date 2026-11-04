@@ -1,12 +1,16 @@
 """Execute the principal notebook in a fresh kernel inside Jupyter's container."""
 import json
+import argparse
 from pathlib import Path
 import nbformat
 from nbclient import NotebookClient
 
 
 def main():
-    source = Path("/app/notebooks/01_jornada_completa_planilha_turmas.ipynb")
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--workspace",action="store_true")
+    args=parser.parse_args()
+    source = Path("/workspace/notebooks" if args.workspace else "/app/notebooks")/"01_jornada_completa_planilha_turmas.ipynb"
     output = Path("/reports/01_jornada_completa_planilha_turmas.executed.ipynb")
     notebook = nbformat.read(source, as_version=4)
     nbformat.validate(notebook)

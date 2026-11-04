@@ -9,6 +9,8 @@ document = json.loads((ROOT / "compose.yaml").read_text())
 document["name"] = "marista-correcoes-isolated"
 document["networks"] = {"default": {"ipam": {"config": [{"subnet": "10.254.241.0/24"}]}}}
 for name, service in document["services"].items():
+    service.setdefault("environment",{})["POC_ISOLATED_TESTS"]="1"
+    service["environment"]["POC_PROJECT"]="marista-correcoes-isolated"
     service.pop("ports", None)
     service.pop("build", None)
     mounts = []

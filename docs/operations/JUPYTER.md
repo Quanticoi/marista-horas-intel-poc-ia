@@ -6,9 +6,13 @@ Use o token JUPYTER_TOKEN do .env local para entrar.
 O projeto distribui o [catálogo00–09](../../notebooks/README.md). A cópia editável está em
 `workspace/notebooks/` no Windows, montada como `/workspace/notebooks/` no container.
 As fontes versionadas estão em `notebooks/` na raiz do repositório. A inicialização
-preserva edições existentes. Atualizações conflitantes são publicadas com sufixo
-`.update-<hash>`, sem sobrescrever sua cópia. Arquivos sem edição podem ser atualizados
-quando o hash anterior é conhecido pelo mecanismo de distribuição.
+preserva edições existentes nos reinícios da mesma versão. Quando a fonte muda,
+a cópia editada anterior é arquivada em `workspace/notebook-backups/`, com hash
+no nome, antes de atualizar o arquivo principal. Há um único notebook por etapa.
+
+Os links para navegador usam `MLFLOW_UI_BASE_URL` (localhost:5000). Links internos
+impressos automaticamente pelo SDK são desativados; a visualização de traces
+também usa a URL externa. O tracking continua no DNS interno `mlflow:5000`.
 
 ## Editar e voltar à visualização
 

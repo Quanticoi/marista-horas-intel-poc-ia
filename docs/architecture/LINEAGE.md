@@ -38,7 +38,7 @@ continuam válidos. Backfill conserva apenas fatos disponíveis e marca
 `LEGACY_PARTIAL`; inference_id/hash/atribuição desconhecidos ficam NULL.
 Não existe FK cruzando mlflow_db e planejamento_db: a validação usa SDK.
 
-Navegue por `GET /v1/lineage?kind=proposal|run|model|snapshot&external_id=...`.
+Navegue por `GET /v1/lineage?kind=proposal|run|model|snapshot|campaign&external_id=...`.
 Bearer API_TOKEN é obrigatório; limit1–500/offset, resultado FOUND/NOT_FOUND.
 SQL equivalente em `sql/queries/lineage_by_*.sql`. A vista
 `planning.v_lineage_proposal` inclui origens legadas, mesmo sem grafo completo.
@@ -54,4 +54,17 @@ em falha de storage, repetir `publish_manifest` completa a publicação sem dupl
 O contrato legado de bundle2.0 chama hash de snapshot de dataset_sha256.
 Esse legado não é reinterpretado silenciosamente. A jornada HI-LINEAGE separa
 snapshot_sha256 e dataset_sha256. Aprovação permanece em model_deployments;
-tag de validação não é autorização de publicação.
+tag de validação não é autorização de publicação. V2 acrescenta revisão de modelos
+agregados em model_approval_requests; os contratos de serving permanecem separados.
+
+V2: /v1/lineage/graph expõe entidades/arestas conectadas, com limit/offset e versão
+explícita para modelo. O08 verifica Registry, snapshot e hashes e apresenta grafo,
+links e VERIFIED/LEGACY_PARTIAL/MISSING/MISMATCH. A existência de uma aresta sozinha
+não comprova o binário; a tabela de checks contém a evidência correspondente.
+Campanha liga-se a cada run; modelo pode contribuir a várias propostas. As páginas
+do grafo têm limite e indicam PARTIAL quando truncadas.
+
+Jobs de worker possuem trace_id, job_id, campaign_id e correlation_id; o worker
+propaga W3C para inferência. Payloads, credenciais e SQL sensível não são registrados
+em traces. Estados são transacionais no PostgreSQL; tags são índices de consulta,
+não autoridade de aprovação. Versão é explícita e hash SHA256 representa bytes.

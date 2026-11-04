@@ -1,21 +1,21 @@
 {
-  "execution_id": "8d373b5a-f73d-4daa-b5cb-cde6ac238087",
+  "execution_id": "81d0a4af-b0d4-4a3f-b99e-671159d59fed",
   "mode": "DEMO",
   "sql_rows": 1050,
   "metrics": {
     "mae": 3.758630658273197,
     "rmse": 4.9142272796917865
   },
-  "run_id": "6d3153d23589442b8475e969f82a1d98",
+  "run_id": "4aac59f96a4b448f918be9e01810dba8",
   "experiment_id": "4",
-  "run_url": "http://127.0.0.1:5000/#/experiments/4/runs/6d3153d23589442b8475e969f82a1d98",
+  "run_url": "http://127.0.0.1:5000/#/experiments/4/runs/4aac59f96a4b448f918be9e01810dba8",
   "model_name": "planilha-turmas-demo",
-  "model_version": "11",
-  "model_uri": "models:/planilha-turmas-demo/11",
-  "artifact_uri": "models:/m-0fa1b34b9a6440a7b31b1ebbf29f339b",
-  "inference_id": "4235298d-af2e-47c4-95d2-45d51e935d8e",
+  "model_version": "13",
+  "model_uri": "models:/planilha-turmas-demo/13",
+  "artifact_uri": "models:/m-036811b115484c20b5a05920c3112063",
+  "inference_id": "5ea3b815-17af-4779-a7b2-11b47da42216",
   "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
-  "proposal_id": "8d373b5a-f73d-4daa-b5cb-cde6ac238087",
+  "proposal_id": "81d0a4af-b0d4-4a3f-b99e-671159d59fed",
   "persisted_rows": 90,
   "api_rows": 90,
   "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
@@ -28,156 +28,156 @@
     {
       "stage": "SQL extraction",
       "status": "PASS",
-      "seconds": 0.155,
+      "seconds": 0.199,
       "attempt": 1,
-      "trace_id": "tr-131e95ed04246ee493d11e4a86e6d36d"
+      "trace_id": "tr-a001a5f241b918fa638d0c9c174c9a76"
     },
     {
       "stage": "prepare",
       "status": "PASS",
-      "seconds": 0.044,
+      "seconds": 0.067,
       "attempt": 1,
-      "trace_id": "tr-a23d3bebda6e017b37d0e1aa2127f09b"
+      "trace_id": "tr-aab80625802a482adc9cd267f2dc9fc4"
     },
     {
       "stage": "model and metrics",
       "status": "PASS",
-      "seconds": 0.052,
+      "seconds": 0.042,
       "attempt": 1,
-      "trace_id": "tr-fbb70313318c7b333a1934d10e5d641d"
+      "trace_id": "tr-aed55f8e4a2dd4f350293bb47b09b83c"
     },
     {
       "stage": "tracking",
       "status": "PASS",
-      "seconds": 0.143,
+      "seconds": 0.139,
       "attempt": 1,
-      "trace_id": "tr-caf66535ab5df27c830fa4d8c1589ec7"
+      "trace_id": "tr-a807ffe11fa9ac9c2ff35a518ec1d39f"
     },
     {
       "stage": "fit and evaluate",
       "status": "PASS",
       "seconds": 0.074,
       "attempt": 1,
-      "trace_id": "tr-ab47a7625f5d08e58878f1a17be2362b"
+      "trace_id": "tr-b06524b8f000954e967ebf310c4bb7ec"
     },
     {
       "stage": "register",
       "status": "PASS",
-      "seconds": 1.063,
+      "seconds": 0.953,
       "attempt": 1,
-      "trace_id": "tr-4308a3e9aa21ce5ba26f742ca93a516a"
+      "trace_id": "tr-76cd6c734be019ce3edc981f8961ee2d"
     },
     {
       "stage": "verify Object Store",
       "status": "PASS",
-      "seconds": 0.229,
+      "seconds": 0.225,
       "attempt": 1,
-      "trace_id": "tr-5811e1461b80b66d84be2c34eb8a4b38"
+      "trace_id": "tr-df47e314386097142093f1207c959804"
     },
     {
       "stage": "reload and inference",
       "status": "PASS",
-      "seconds": 0.86,
+      "seconds": 0.433,
       "attempt": 1,
-      "trace_id": "tr-e1764721ec74697b0b16ec2d8e93f71a"
+      "trace_id": "tr-15ed4c11d40b2ac748d62ae1ea2d4c5b"
     },
     {
       "stage": "compose proposal",
       "status": "PASS",
       "seconds": 0.041,
       "attempt": 1,
-      "trace_id": "tr-af49d442e47e0fbbabbcdc7bf19dd206"
+      "trace_id": "tr-3693a9041b44d51ab942d0635d7b2a7c"
     },
     {
       "stage": "persist and idempotency",
       "status": "PASS",
-      "seconds": 0.11,
+      "seconds": 0.113,
       "attempt": 1,
-      "trace_id": "tr-0aeaecf97c02a8d4ef49f4809df2ef49"
+      "trace_id": "tr-dda627f33ab739a60584886375a74548"
     },
     {
       "stage": "verify proposal SQL",
       "status": "PASS",
-      "seconds": 0.048,
+      "seconds": 0.053,
       "attempt": 1,
-      "trace_id": "tr-57cfff03931e67b2a40108f436f4625a"
+      "trace_id": "tr-8a7ed274f5c105d0d4da020021759e35"
     },
     {
       "stage": "API reconciliation",
       "status": "PASS",
-      "seconds": 0.324,
+      "seconds": 0.129,
       "attempt": 1,
-      "trace_id": "tr-dac19302c31e8cc47b99d19cf14dc36e"
+      "trace_id": "tr-dc1a2bf3c9c55c0a1f76a081680083fa"
     }
   ],
   "traces": [
     {
       "stage": "SQL extraction",
       "attempt": 1,
-      "trace_id": "tr-131e95ed04246ee493d11e4a86e6d36d",
+      "trace_id": "tr-a001a5f241b918fa638d0c9c174c9a76",
       "spans": [
         "SQL extraction"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-131e95ed04246ee493d11e4a86e6d36d&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-a001a5f241b918fa638d0c9c174c9a76&compareRunsMode=TRACES"
     },
     {
       "stage": "prepare",
       "attempt": 1,
-      "trace_id": "tr-a23d3bebda6e017b37d0e1aa2127f09b",
+      "trace_id": "tr-aab80625802a482adc9cd267f2dc9fc4",
       "spans": [
         "prepare"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-a23d3bebda6e017b37d0e1aa2127f09b&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-aab80625802a482adc9cd267f2dc9fc4&compareRunsMode=TRACES"
     },
     {
       "stage": "model and metrics",
       "attempt": 1,
-      "trace_id": "tr-fbb70313318c7b333a1934d10e5d641d",
+      "trace_id": "tr-aed55f8e4a2dd4f350293bb47b09b83c",
       "spans": [
         "model and metrics"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-fbb70313318c7b333a1934d10e5d641d&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-aed55f8e4a2dd4f350293bb47b09b83c&compareRunsMode=TRACES"
     },
     {
       "stage": "tracking",
       "attempt": 1,
-      "trace_id": "tr-caf66535ab5df27c830fa4d8c1589ec7",
+      "trace_id": "tr-a807ffe11fa9ac9c2ff35a518ec1d39f",
       "spans": [
         "tracking"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-caf66535ab5df27c830fa4d8c1589ec7&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-a807ffe11fa9ac9c2ff35a518ec1d39f&compareRunsMode=TRACES"
     },
     {
       "stage": "fit and evaluate",
       "attempt": 1,
-      "trace_id": "tr-ab47a7625f5d08e58878f1a17be2362b",
+      "trace_id": "tr-b06524b8f000954e967ebf310c4bb7ec",
       "spans": [
         "fit and evaluate"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-ab47a7625f5d08e58878f1a17be2362b&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-b06524b8f000954e967ebf310c4bb7ec&compareRunsMode=TRACES"
     },
     {
       "stage": "register",
       "attempt": 1,
-      "trace_id": "tr-4308a3e9aa21ce5ba26f742ca93a516a",
+      "trace_id": "tr-76cd6c734be019ce3edc981f8961ee2d",
       "spans": [
         "register"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-4308a3e9aa21ce5ba26f742ca93a516a&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-76cd6c734be019ce3edc981f8961ee2d&compareRunsMode=TRACES"
     },
     {
       "stage": "verify Object Store",
       "attempt": 1,
-      "trace_id": "tr-5811e1461b80b66d84be2c34eb8a4b38",
+      "trace_id": "tr-df47e314386097142093f1207c959804",
       "spans": [
         "verify Object Store"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-5811e1461b80b66d84be2c34eb8a4b38&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-df47e314386097142093f1207c959804&compareRunsMode=TRACES"
     },
     {
       "stage": "reload and inference",
       "attempt": 1,
-      "trace_id": "tr-e1764721ec74697b0b16ec2d8e93f71a",
+      "trace_id": "tr-15ed4c11d40b2ac748d62ae1ea2d4c5b",
       "spans": [
         "reload and inference",
         "model.load",
@@ -185,39 +185,39 @@
         "model.load",
         "model.predict"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-e1764721ec74697b0b16ec2d8e93f71a&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-15ed4c11d40b2ac748d62ae1ea2d4c5b&compareRunsMode=TRACES"
     },
     {
       "stage": "compose proposal",
       "attempt": 1,
-      "trace_id": "tr-af49d442e47e0fbbabbcdc7bf19dd206",
+      "trace_id": "tr-3693a9041b44d51ab942d0635d7b2a7c",
       "spans": [
         "compose proposal"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-af49d442e47e0fbbabbcdc7bf19dd206&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-3693a9041b44d51ab942d0635d7b2a7c&compareRunsMode=TRACES"
     },
     {
       "stage": "persist and idempotency",
       "attempt": 1,
-      "trace_id": "tr-0aeaecf97c02a8d4ef49f4809df2ef49",
+      "trace_id": "tr-dda627f33ab739a60584886375a74548",
       "spans": [
         "persist and idempotency"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-0aeaecf97c02a8d4ef49f4809df2ef49&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-dda627f33ab739a60584886375a74548&compareRunsMode=TRACES"
     },
     {
       "stage": "verify proposal SQL",
       "attempt": 1,
-      "trace_id": "tr-57cfff03931e67b2a40108f436f4625a",
+      "trace_id": "tr-8a7ed274f5c105d0d4da020021759e35",
       "spans": [
         "verify proposal SQL"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-57cfff03931e67b2a40108f436f4625a&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-8a7ed274f5c105d0d4da020021759e35&compareRunsMode=TRACES"
     },
     {
       "stage": "API reconciliation",
       "attempt": 1,
-      "trace_id": "tr-dac19302c31e8cc47b99d19cf14dc36e",
+      "trace_id": "tr-dc1a2bf3c9c55c0a1f76a081680083fa",
       "spans": [
         "API reconciliation",
         "api.http",
@@ -226,32 +226,32 @@
         "postgres.query",
         "postgres.query"
       ],
-      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-dac19302c31e8cc47b99d19cf14dc36e&compareRunsMode=TRACES"
+      "url": "http://127.0.0.1:5000/#/experiments/4/traces?selectedEvaluationId=tr-dc1a2bf3c9c55c0a1f76a081680083fa&compareRunsMode=TRACES"
     }
   ],
   "storage_evidence": [
     {
       "bucket": "pucpr-poc",
-      "key": "mlflow/4/models/m-0fa1b34b9a6440a7b31b1ebbf29f339b/artifacts/MLmodel",
+      "key": "mlflow/4/models/m-036811b115484c20b5a05920c3112063/artifacts/MLmodel",
       "bytes": 1336,
-      "sha256": "ee6f41f40aefae03f29253a9d921b94c534057830f962f1ce21ee3a5a9ad27eb",
-      "model_version": "11",
+      "sha256": "8e397d82a6dc8e33e1cf5ba2b8cecf4e2cbe86ea2a66a4509a442d7402271c2a",
+      "model_version": "13",
       "status": "PASS"
     },
     {
       "bucket": "pucpr-poc",
-      "key": "mlflow/4/models/m-0fa1b34b9a6440a7b31b1ebbf29f339b/artifacts/model.pkl",
+      "key": "mlflow/4/models/m-036811b115484c20b5a05920c3112063/artifacts/model.pkl",
       "bytes": 8671,
       "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
-      "model_version": "11",
+      "model_version": "13",
       "status": "PASS"
     },
     {
       "bucket": "pucpr-poc",
-      "key": "mlflow/4/models/m-0fa1b34b9a6440a7b31b1ebbf29f339b/artifacts/requirements.txt",
+      "key": "mlflow/4/models/m-036811b115484c20b5a05920c3112063/artifacts/requirements.txt",
       "bytes": 80,
       "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
-      "model_version": "11",
+      "model_version": "13",
       "status": "PASS"
     }
   ],
@@ -259,9 +259,9 @@
     "database": "planejamento_db",
     "schema": "planning",
     "status": "PASS",
-    "execution_id": "8d373b5a-f73d-4daa-b5cb-cde6ac238087",
-    "run_id": "6d3153d23589442b8475e969f82a1d98",
-    "model_version": "11",
+    "execution_id": "81d0a4af-b0d4-4a3f-b99e-671159d59fed",
+    "run_id": "4aac59f96a4b448f918be9e01810dba8",
+    "model_version": "13",
     "proposal_status": "DRAFT",
     "stored_rows": 90,
     "proposed_students": 8694,

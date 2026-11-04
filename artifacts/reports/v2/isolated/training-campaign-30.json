@@ -1,0 +1,1371 @@
+{
+  "timestamp_utc": "2026-11-04T16:31:46.203955+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:10c4f4fb436ca99d968cc4b9306784faa18003d2ceff60b6293e4fdb67f8cb71",
+  "environment": "poc",
+  "test_id": "training-campaign-30",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign": {
+      "campaign_id": "3950bdc3-fb0c-4590-b169-60362016370e",
+      "idempotency_key": "16013c03-90fc-45bf-9731-c73ec8a93d6e",
+      "request_hash": "f08658459491bae2f17c4e90dc9ed80377086a023b351a9d545c3d2c02c0b1a3",
+      "request": {
+        "alpha": 1.0,
+        "algorithm": "ridge",
+        "cycle_code": "2026-1",
+        "model_keys": [
+          "hi.demo.scale30.16013c03.000",
+          "hi.demo.scale30.16013c03.001",
+          "hi.demo.scale30.16013c03.002",
+          "hi.demo.scale30.16013c03.003",
+          "hi.demo.scale30.16013c03.004",
+          "hi.demo.scale30.16013c03.005",
+          "hi.demo.scale30.16013c03.006",
+          "hi.demo.scale30.16013c03.007",
+          "hi.demo.scale30.16013c03.008",
+          "hi.demo.scale30.16013c03.009",
+          "hi.demo.scale30.16013c03.010",
+          "hi.demo.scale30.16013c03.011",
+          "hi.demo.scale30.16013c03.012",
+          "hi.demo.scale30.16013c03.013",
+          "hi.demo.scale30.16013c03.014",
+          "hi.demo.scale30.16013c03.015",
+          "hi.demo.scale30.16013c03.016",
+          "hi.demo.scale30.16013c03.017",
+          "hi.demo.scale30.16013c03.018",
+          "hi.demo.scale30.16013c03.019",
+          "hi.demo.scale30.16013c03.020",
+          "hi.demo.scale30.16013c03.021",
+          "hi.demo.scale30.16013c03.022",
+          "hi.demo.scale30.16013c03.023",
+          "hi.demo.scale30.16013c03.024",
+          "hi.demo.scale30.16013c03.025",
+          "hi.demo.scale30.16013c03.026",
+          "hi.demo.scale30.16013c03.027",
+          "hi.demo.scale30.16013c03.028",
+          "hi.demo.scale30.16013c03.029"
+        ],
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "max_attempts": 3,
+        "requested_by": "isolated-scale-test",
+        "schema_version": "poc-training-campaign-v2",
+        "confirm_training": true,
+        "max_parallel_jobs": 2
+      },
+      "correlation_id": "16013c03-90fc-45bf-9731-c73ec8a93d6e",
+      "requested_by": "isolated-scale-test",
+      "status": "COMPLETED",
+      "max_parallel_jobs": 2,
+      "requested_count": 30,
+      "created_at_utc": "2026-11-04T16:19:33.923367+00:00",
+      "started_at_utc": "2026-11-04T16:19:35.546798+00:00",
+      "ended_at_utc": "2026-11-04T16:26:52.516127+00:00",
+      "counts": {
+        "COMPLETED": 30
+      }
+    },
+    "actual_trained": 30,
+    "observation_seconds": 0.7126507200009655,
+    "cpu_seconds": 29.396842297,
+    "peak_worker_rss_kib": 274880.0,
+    "concurrency_limit": 2,
+    "proofs": [
+      {
+        "model_key": "hi.demo.scale30.16013c03.000",
+        "version": "1",
+        "run_id": "0cb047e880754b5599e0139d67f55d2f",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.797750988000189,
+          "cpu_seconds": 1.7759058220000001,
+          "peak_rss_kib": 263852.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-7d97f5a42af34ff3bba050d8397866d9",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-7d97f5a42af34ff3bba050d8397866d9/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "f616122ed5d5ac08422979fa97ce362c75219ec31d2a7e75a5a08918b74c93ed",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-7d97f5a42af34ff3bba050d8397866d9/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-7d97f5a42af34ff3bba050d8397866d9/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.001",
+        "version": "1",
+        "run_id": "32037d7043bc4adb85de936016a7fa09",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.7094550509937108,
+          "cpu_seconds": 0.21277484499999977,
+          "peak_rss_kib": 272404.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-c910f4a4bb7f49ec9f30986eb441ffb4",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-c910f4a4bb7f49ec9f30986eb441ffb4/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "5aa0f495b46cf026a77a7ba71ee240d24b4ef22655a8b2f845d624a7090d4d4b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-c910f4a4bb7f49ec9f30986eb441ffb4/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-c910f4a4bb7f49ec9f30986eb441ffb4/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.002",
+        "version": "1",
+        "run_id": "bb275232f95344689a56c0ac1a93a64b",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.4330710390058812,
+          "cpu_seconds": 0.161276462,
+          "peak_rss_kib": 272472.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-e96f1bcd069349d8bc03a5c16d08f862",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-e96f1bcd069349d8bc03a5c16d08f862/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "2200ea5d2383552b3312e76406ac858e82afa13f5c996c0d71a2288637a29272",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-e96f1bcd069349d8bc03a5c16d08f862/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-e96f1bcd069349d8bc03a5c16d08f862/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.003",
+        "version": "1",
+        "run_id": "fd7c108aa233458e99ac27714a9f5fb4",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 1.0584409029979724,
+          "cpu_seconds": 1.438760388,
+          "peak_rss_kib": 256268.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-d2447124ac7c48848e1fbb48bde0eda3",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-d2447124ac7c48848e1fbb48bde0eda3/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "8c5fb7fdc860be0e2dfb3e6fee7f581e4dc21b4278737be87d9b617ba7bba848",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-d2447124ac7c48848e1fbb48bde0eda3/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-d2447124ac7c48848e1fbb48bde0eda3/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.004",
+        "version": "1",
+        "run_id": "2254e17335ca48989e815eda922f5904",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.7429664890078129,
+          "cpu_seconds": 1.814443879,
+          "peak_rss_kib": 257892.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-52d4176330764cfdb545d80d60f9d549",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-52d4176330764cfdb545d80d60f9d549/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "83c5958b2856fadb4b8aa65765b8e082dd7fc62d37ebd65745f3bc3f452f413d",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-52d4176330764cfdb545d80d60f9d549/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-52d4176330764cfdb545d80d60f9d549/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.005",
+        "version": "1",
+        "run_id": "e496b7b2351a4bd58cb5cf83315bc7d2",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.33250159499584697,
+          "cpu_seconds": 0.16632279799999994,
+          "peak_rss_kib": 274880.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-d0ef6675bd7845be8e9d3096e0af72a3",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-d0ef6675bd7845be8e9d3096e0af72a3/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "d4e944b5d286acf04203beef6d6bbb4428c7d3f806191a93664599e84fb7a1b6",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-d0ef6675bd7845be8e9d3096e0af72a3/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-d0ef6675bd7845be8e9d3096e0af72a3/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.006",
+        "version": "1",
+        "run_id": "2c9aa2d52fa14b23a9ba4634e55b2564",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.3413949809910264,
+          "cpu_seconds": 0.16579491499999977,
+          "peak_rss_kib": 272592.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-ef79a74e39034b58afced225d1c9ffba",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-ef79a74e39034b58afced225d1c9ffba/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "9e5536044c5ab515b41ace9eb05e40b91a7d7455fd61b7131b59740164b4a9cc",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-ef79a74e39034b58afced225d1c9ffba/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-ef79a74e39034b58afced225d1c9ffba/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.007",
+        "version": "1",
+        "run_id": "6279726d30bf4cc8ac05c9405f20f829",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.9572433169960277,
+          "cpu_seconds": 1.388874575,
+          "peak_rss_kib": 259700.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-499ae53dd5b146bfb09966d252cf65b3",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-499ae53dd5b146bfb09966d252cf65b3/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "c93910f5b3a81803f4610b09d0a44d9a5a9188da6bbf826639f0df32338a732d",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-499ae53dd5b146bfb09966d252cf65b3/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-499ae53dd5b146bfb09966d252cf65b3/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.008",
+        "version": "1",
+        "run_id": "ba63eacfe4c8450b91e4e88bbb04d198",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.3315316310035996,
+          "cpu_seconds": 0.1665050800000003,
+          "peak_rss_kib": 272428.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-8d043da921f041a9aa712ca7f01c476c",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-8d043da921f041a9aa712ca7f01c476c/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "5c0468ea5c53c3cabebc2a5b4b06e5d1cf02aab0dbabf304c81cf442e1c1f631",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-8d043da921f041a9aa712ca7f01c476c/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-8d043da921f041a9aa712ca7f01c476c/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.009",
+        "version": "1",
+        "run_id": "2c70e25747774ee89fe6e829996ecdaa",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.8131969780079089,
+          "cpu_seconds": 1.8113324560000001,
+          "peak_rss_kib": 262704.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-6430fd055a8045cdb15a86a31ab1736a",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-6430fd055a8045cdb15a86a31ab1736a/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "44034b4686377effc190117a2f27b96d42798a0b3611a93d852e22cb461d4486",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-6430fd055a8045cdb15a86a31ab1736a/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-6430fd055a8045cdb15a86a31ab1736a/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.010",
+        "version": "1",
+        "run_id": "6c519f7dbac44de2a9ef51304587b2b0",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.8413285279966658,
+          "cpu_seconds": 1.2871537320000002,
+          "peak_rss_kib": 258372.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-48c4eaa1c65d4043bfcd07b07f879019",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-48c4eaa1c65d4043bfcd07b07f879019/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "4e0ace42359f6e19ac537416781914f2b03fbaf8dabb9aab5c2accb2d6e1ca2a",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-48c4eaa1c65d4043bfcd07b07f879019/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-48c4eaa1c65d4043bfcd07b07f879019/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.011",
+        "version": "1",
+        "run_id": "4908b293c73c4e8ea8529d777127a86c",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.5287874829955399,
+          "cpu_seconds": 0.1711169990000001,
+          "peak_rss_kib": 272212.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-9b057d4dc113490391059d2c0d4e6801",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-9b057d4dc113490391059d2c0d4e6801/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "d40a38bd1abf33a040ae5bc8646662cb235fd4215fbfe7341d587f2ea595c2ec",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-9b057d4dc113490391059d2c0d4e6801/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-9b057d4dc113490391059d2c0d4e6801/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.012",
+        "version": "1",
+        "run_id": "19468d29434642f5a3b7bc978a3a9c69",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.7890172820043517,
+          "cpu_seconds": 1.80949399,
+          "peak_rss_kib": 260716.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-8d869a6d3c8b4223b2e295bcbc1e1eb8",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-8d869a6d3c8b4223b2e295bcbc1e1eb8/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "4f87f0aa3637f2465c9cb41196b3aa97b525aa8edbcbc65ee148516eaf978d00",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-8d869a6d3c8b4223b2e295bcbc1e1eb8/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-8d869a6d3c8b4223b2e295bcbc1e1eb8/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.013",
+        "version": "1",
+        "run_id": "836778943fb640a3a71295045b586b6a",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.8698131069977535,
+          "cpu_seconds": 1.169272641,
+          "peak_rss_kib": 258028.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-36c7044c36ab4082b65410a5c806333f",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-36c7044c36ab4082b65410a5c806333f/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "51920132bdbc72fed80be1e9088d017551ad6dddce6e21b1d63c3ff8fabd3e11",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-36c7044c36ab4082b65410a5c806333f/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-36c7044c36ab4082b65410a5c806333f/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.014",
+        "version": "1",
+        "run_id": "1b1aa7c3fca74316804427183bb30ffd",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.8670710470032645,
+          "cpu_seconds": 1.7175167390000001,
+          "peak_rss_kib": 260072.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-912a750003eb44999693c085bc21dd13",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-912a750003eb44999693c085bc21dd13/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "9ccbbbf154d1c0d4f71d3fc46b64627f8949cca06f018abf9da3229ed066890e",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-912a750003eb44999693c085bc21dd13/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-912a750003eb44999693c085bc21dd13/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.015",
+        "version": "1",
+        "run_id": "ba4c237db40b4c1f8f9706206eba8e24",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.8638613630027976,
+          "cpu_seconds": 1.398121891,
+          "peak_rss_kib": 257840.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-8ba30034e1a64541aa4f852fdd137216",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-8ba30034e1a64541aa4f852fdd137216/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "cd7faa45fd3b5673de643a19b9dd31a5765eb50dce93d9ad09fd989227fa3d36",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-8ba30034e1a64541aa4f852fdd137216/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-8ba30034e1a64541aa4f852fdd137216/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.016",
+        "version": "1",
+        "run_id": "2983e5b6cc064f18ad0735b0bfc4ea77",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 1.0562988259916892,
+          "cpu_seconds": 1.5679710660000001,
+          "peak_rss_kib": 257260.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-33348f0b84164178a6187d0d44149f4f",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-33348f0b84164178a6187d0d44149f4f/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "e3f73f91504ff0bc26a1a234bfa440d1d0a5cd328d1c288c84e11962677e293a",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-33348f0b84164178a6187d0d44149f4f/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-33348f0b84164178a6187d0d44149f4f/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.017",
+        "version": "1",
+        "run_id": "e19987f144bc4965b389c19e082171c9",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.845353625001735,
+          "cpu_seconds": 1.605193081,
+          "peak_rss_kib": 259408.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-6f213dffa4394293903746286dd606b1",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-6f213dffa4394293903746286dd606b1/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "ccaf231ebe1310b93007350f4fbc55461e0a65b531c431416dd30934d8bcf0c4",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-6f213dffa4394293903746286dd606b1/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-6f213dffa4394293903746286dd606b1/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.018",
+        "version": "1",
+        "run_id": "48611751c99b417dbf63928e101291ff",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "duration_seconds": 0.7586578490008833,
+          "cpu_seconds": 1.837609838,
+          "peak_rss_kib": 258188.0,
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-1ab082123b3d4768b9fdc1f29946ed7d",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-1ab082123b3d4768b9fdc1f29946ed7d/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "9422db8a82d274fe94925553946e0caa6387ba149d10092cbe10597187235fc4",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-1ab082123b3d4768b9fdc1f29946ed7d/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-1ab082123b3d4768b9fdc1f29946ed7d/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.019",
+        "version": "1",
+        "run_id": "65cfb6f0d8914d8fae8e69cc68a8c59f",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "duration_seconds": 0.7999367860029452,
+          "cpu_seconds": 1.7909529210000001,
+          "peak_rss_kib": 256924.0,
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-1d707fa6a077403aa75ac5277f4c3b83",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-1d707fa6a077403aa75ac5277f4c3b83/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "6b7170b520aa0be8343bfae2d25d775edb9d9f430550f1610dd6a9e6c2a7bb7f",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-1d707fa6a077403aa75ac5277f4c3b83/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-1d707fa6a077403aa75ac5277f4c3b83/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.020",
+        "version": "1",
+        "run_id": "48a2fdc7957c419e93754f33b0151fbe",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.5181055389984977,
+          "cpu_seconds": 0.17819203800000016,
+          "peak_rss_kib": 272596.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-76485a71bb244f349cb8e155a91568a3",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-76485a71bb244f349cb8e155a91568a3/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "d21491736c1dbc624573657cd2913296503e9d991aa118b91a1d45b375ca5839",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-76485a71bb244f349cb8e155a91568a3/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-76485a71bb244f349cb8e155a91568a3/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.021",
+        "version": "1",
+        "run_id": "0784699d404646cb88481662aeea8720",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.6559667510009604,
+          "cpu_seconds": 0.20564252599999966,
+          "peak_rss_kib": 271352.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-0ea5ebb812ca477b83da49c0c35ab1e6",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-0ea5ebb812ca477b83da49c0c35ab1e6/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "d540e5afbf969c1dbf6185eed4352e6b51aa235c7e360f93cc46e789b9451042",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-0ea5ebb812ca477b83da49c0c35ab1e6/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-0ea5ebb812ca477b83da49c0c35ab1e6/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.022",
+        "version": "1",
+        "run_id": "d3756f8c5b784be4a9f1bccb7fd4cee1",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.4366493440029444,
+          "cpu_seconds": 0.16029859800000024,
+          "peak_rss_kib": 271736.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-fbf95dc3c5654fbdb343fa266cf9524a",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-fbf95dc3c5654fbdb343fa266cf9524a/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "aac6cd9f4ad7125d14a7fa66f3466179e21732f324daac5d93034a25359fb26e",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-fbf95dc3c5654fbdb343fa266cf9524a/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-fbf95dc3c5654fbdb343fa266cf9524a/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.023",
+        "version": "1",
+        "run_id": "4dc2bb32804243d2acfa010658edabac",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.6599035529943649,
+          "cpu_seconds": 0.209173265,
+          "peak_rss_kib": 271896.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-215fda2476934b8b841d01ba341712c3",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-215fda2476934b8b841d01ba341712c3/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "68afa3c05ae7d15929b7fdeb2b822995fbbd713f3aa49b125dcbbc4bbcbc8d24",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-215fda2476934b8b841d01ba341712c3/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-215fda2476934b8b841d01ba341712c3/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.024",
+        "version": "1",
+        "run_id": "eaa46f211fc24f9c9b4e520f6317bfd5",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.9791915499954484,
+          "cpu_seconds": 1.4209921199999997,
+          "peak_rss_kib": 259984.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-bb937b4d74fc4cd384d428ac208aad59",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-bb937b4d74fc4cd384d428ac208aad59/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "ead124437597498027df4a03ed42d1264a0a532aff16f712ec4dc2a2c43d9499",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-bb937b4d74fc4cd384d428ac208aad59/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-bb937b4d74fc4cd384d428ac208aad59/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.025",
+        "version": "1",
+        "run_id": "07a51a4050e54fa9bc470c88693509b1",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.5418266640044749,
+          "cpu_seconds": 0.17307204399999998,
+          "peak_rss_kib": 272204.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-aa9c8fd6a137426bafd59c95a208808f",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-aa9c8fd6a137426bafd59c95a208808f/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "f8978495f8d228cef8fa0e5857f5758721789bace6d5dbd5583911bceec1285e",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-aa9c8fd6a137426bafd59c95a208808f/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-aa9c8fd6a137426bafd59c95a208808f/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.026",
+        "version": "1",
+        "run_id": "844ec2d99ed84699b6f6ca76b8ebbce4",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.9933399650035426,
+          "cpu_seconds": 1.400355797,
+          "peak_rss_kib": 258868.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-9989fc262812482b873eb3c68d040731",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-9989fc262812482b873eb3c68d040731/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "f50494b4971b7535174301af599bece0ee4071d600ac03af7586b14b2f7ca564",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-9989fc262812482b873eb3c68d040731/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-9989fc262812482b873eb3c68d040731/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.027",
+        "version": "1",
+        "run_id": "44c269ea0018406b9bb2edd259f458a2",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.7099869670055341,
+          "cpu_seconds": 0.2118922940000001,
+          "peak_rss_kib": 272204.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-ec71c3f7147d49e7955699bf21cbfd9c",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-ec71c3f7147d49e7955699bf21cbfd9c/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "5d8001b930e5b31b1a36b0d55c032109bda8f16aad44af067c784632925bd305",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-ec71c3f7147d49e7955699bf21cbfd9c/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-ec71c3f7147d49e7955699bf21cbfd9c/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.028",
+        "version": "1",
+        "run_id": "2b846f80b4604231891dd258036528c9",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.7822193460015114,
+          "cpu_seconds": 1.8068640940000003,
+          "peak_rss_kib": 257624.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-2b9cbbf1ac974801b70e068ceb859cde",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-2b9cbbf1ac974801b70e068ceb859cde/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "f3233eb8666913ac3d29c119c82ff88dcfab9ccaa40a43875ae62fea1670c038",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-2b9cbbf1ac974801b70e068ceb859cde/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-2b9cbbf1ac974801b70e068ceb859cde/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      },
+      {
+        "model_key": "hi.demo.scale30.16013c03.029",
+        "version": "1",
+        "run_id": "c8da6807974b4fee8268c94c44c79f92",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "metrics": {
+          "mae": 3.758630658273197,
+          "rmse": 4.9142272796917865,
+          "baseline_mae": 7.466666666666665,
+          "baseline_rmse": 8.821497143283464,
+          "duration_seconds": 0.5255636579968268,
+          "cpu_seconds": 0.17396540299999996,
+          "peak_rss_kib": 272204.0
+        },
+        "attempt": 1,
+        "artifact_uri": "models:/m-79fce3b6c7fa4e528ac7214ee2699acb",
+        "storage_evidence": [
+          {
+            "key": "mlflow/1/models/m-79fce3b6c7fa4e528ac7214ee2699acb/artifacts/MLmodel",
+            "bytes": 1336,
+            "bucket": "pucpr-poc",
+            "sha256": "3169726cca6274045f31ec4fa915f1d16c0b6ce53b5744aee8dc181df6be6a97",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-79fce3b6c7fa4e528ac7214ee2699acb/artifacts/model.pkl",
+            "bytes": 8671,
+            "bucket": "pucpr-poc",
+            "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+            "status": "PASS",
+            "model_version": "1"
+          },
+          {
+            "key": "mlflow/1/models/m-79fce3b6c7fa4e528ac7214ee2699acb/artifacts/requirements.txt",
+            "bytes": 80,
+            "bucket": "pucpr-poc",
+            "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+            "status": "PASS",
+            "model_version": "1"
+          }
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Separate synthetic experimental identities trained on the same pooled DEMO snapshot; not institutional model quality",
+    "Two worker processes, no automatic serving or promotion"
+  ]
+}

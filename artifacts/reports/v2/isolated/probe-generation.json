@@ -1,0 +1,80 @@
+{
+  "timestamp_utc": "2026-11-04T16:15:44.071095+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:7233bbcbbea4d0aa52d5785a9f891f0de23370fc9586df450d9e6a6214cbc4e8",
+  "environment": "poc",
+  "test_id": "probe-generation",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "request": {
+      "cycle_code": "2026-1",
+      "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+      "model_selectors": [
+        {
+          "model_name": "hi.demo.probe.da910fa5",
+          "model_version": "1"
+        }
+      ],
+      "requested_by": "v2-probe",
+      "confirm_demo": true
+    },
+    "submission": {
+      "generation_job_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
+      "job_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
+      "correlation_id": "da910fa5-0f94-43de-b904-18c8cbfe5613",
+      "status": "PENDING",
+      "attempt": 0,
+      "error_code": null,
+      "status_url": "/v1/proposals/generations/49cc1805-8d4f-49fb-adac-83c964d0e366",
+      "proposal_id": null,
+      "proposal_url": null,
+      "started_at_utc": null,
+      "ended_at_utc": null
+    },
+    "status": {
+      "generation_job_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
+      "job_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
+      "correlation_id": "da910fa5-0f94-43de-b904-18c8cbfe5613",
+      "status": "COMPLETED",
+      "attempt": 1,
+      "error_code": null,
+      "status_url": "/v1/proposals/generations/49cc1805-8d4f-49fb-adac-83c964d0e366",
+      "proposal_id": "49cc1805-8d4f-49fb-adac-83c964d0e366",
+      "proposal_url": "/v1/proposals/49cc1805-8d4f-49fb-adac-83c964d0e366/application-view",
+      "started_at_utc": "2026-11-04T16:15:42.046867+00:00",
+      "ended_at_utc": "2026-11-04T16:15:42.719471+00:00",
+      "events": [
+        {
+          "event_type": "CREATED",
+          "details": {},
+          "created_at_utc": "2026-11-04T16:15:42.036096+00:00"
+        },
+        {
+          "event_type": "RUNNING",
+          "details": {
+            "attempt": 1
+          },
+          "created_at_utc": "2026-11-04T16:15:42.046867+00:00"
+        },
+        {
+          "event_type": "CHECKPOINT",
+          "details": {
+            "fields": [
+              "composition"
+            ]
+          },
+          "created_at_utc": "2026-11-04T16:15:42.643477+00:00"
+        },
+        {
+          "event_type": "COMPLETED",
+          "details": {
+            "seconds": 0.6685661220108159
+          },
+          "created_at_utc": "2026-11-04T16:15:42.719471+00:00"
+        }
+      ]
+    }
+  },
+  "limitations": []
+}

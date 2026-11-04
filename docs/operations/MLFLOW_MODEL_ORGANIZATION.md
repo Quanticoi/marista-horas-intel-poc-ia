@@ -1,22 +1,32 @@
-# Organização de modelos
+# Organização e capacidade de modelos
 
-Um Workbench atende várias identidades. Experimentos agrupam domínio/família;
-run é um treino, Registry agrupa versões por chave estável. A jornada usa
-planilha-turmas-demo; o catálogo acadêmico mantém C1-CR1-P1 e demais30 séries.
-Filtre tags model_key, snapshot_id, source_type, code_version e run_id.
+Um MLflow por ambiente; experimento por domínio/campanha; run por tentativa;
+Registry por identidade estável. Nomes legados planilha-turmas-demo e C1-CR1-P1
+não são renomeados. Novos ensaios usam hi.demo.*; tags incluem solução, ambiente,
+domínio, ciclo, snapshot, campanha, model_key, código, configuração e hashes.
 
-Registro não aprova. Aprovação SQL em model_deployments exige operador e motivo;
-publicação por API dedicada continua separada. Não são criados500 containers.
-Pool/router com lazy load e cache é alternativa futura sujeita a benchmark e
-alinhamento C3, não alteração automática da arquitetura institucional.
+Notebook05 agora submete campanhas persistentes pela API. PostgreSQL armazena
+training_campaigns, operation_jobs e operation_events; a view training_campaign_items
+expõe run/versão/métricas. RabbitMQ/Celery transporta tarefas; dispatcher10s,
+claim de envio60s, heartbeat10s e advisory locks controlam duplicidade/recuperação.
+Paralelismo máximo2; retries1–4, backoff10–60s; cancelamento cooperativo. Estado
+FAILED é sinalização persistente, não uma mensagem perdida.
 
-`python -m src.workbench.benchmark` no Jupyter executa30 treinos reais, verifica
-bundles e registra versões. Depois cria500 identidades de ensaio no catálogo
-de lineage e manifesto, sem registrar/treinar500 modelos. Relatório distingue
-tempo, CPU do processo, pico RSS, erros, versões e inventário. Não representa
-500 modelos simultaneamente carregados nem500 APIs publicadas.
+V2 executou campanhas de30 e500 treinamentos reais com fit, métricas, Registry e
+três arquivos comparados no storage por item. Os modelos são identidades sintéticas
+distintas treinadas sobre o mesmo snapshot agregado. Não representam500 cursos
+reais nem prova de qualidade institucional. Relatórios de campanha distinguem
+contagem, CPU, RSS de processo, timestamps e observação após retomada.
 
-Notebook05 atualmente inspeciona o catálogo. Scheduler persistente com itens
-PENDING/RUNNING/COMPLETED/FAILED/SKIPPED, lease, retry e checkpoint permanece
-NOT_IMPLEMENTED. A submissão individual04 é real e opt-in. Evolução deve usar
-Celery existente e limitar concorrência; não criar outro orquestrador.
+T5 usa seis versões da campanha500, sessenta chamadas, concorrência2 e reinício
+prévio do serviço. Reporta p50/p95/p99 e estatísticas do cache. Não equivale a500
+modelos simultâneos. Cache LRU comporta até4 versões por processo, só após conferir
+SHA antes de desserializar. Registro não carrega modelo nem provisiona API.
+
+Serving compartilhado é a opção medida desta POC. Serviço dedicado continua no
+fluxo legado quando explicitamente publicado. Decisão de produção exige SLO,
+isolamento, tamanho de binário, concorrência e pressão de memória medidos.
+
+Governança V2: solicitação/revisão em model_approval_requests, credencial de
+operador separada e alias champion concordante; registro não aprova. Serving
+legado mantém model_deployments/bundle2.0. [ADR010](../adr/010-durable-operations-v2.md).

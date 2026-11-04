@@ -1,6 +1,6 @@
 'use strict';
 let token='',tab='general',paused=false,data=[];
-const routes={general:'runtime/resources',logs:'logs',jobs:'jobs',models:'models',services:'health/services',infra:'runtime/resources'};
+const routes={general:'runtime/resources',logs:'logs',jobs:'jobs',operations:'operations',campaigns:'campaigns',models:'models',services:'health/services',infra:'runtime/resources'};
 const el=id=>document.getElementById(id);
 async function refresh(){
  if(!token||paused)return;

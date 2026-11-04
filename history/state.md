@@ -1,5 +1,28 @@
 # Atualização — 04/11/2026: correções v1.1 validadas
 
+V2 checkpoint: API/worker de geração, campanhas, revisão, lineage e catálogo
+implementados e testados na stack isolada. 500 treinos reais e campanha30 PASS;
+72 testes gerais e6 testes finais de operações/traces PASS. Todos00–09 e opt-in
+02/04/05/07 executados; repetição04 mesma chave não duplicou versão. Negativos de
+checksum/artefato ausente/mapping, rollback SQL, governança/revogação/rollback e
+reparo de manifest PASS. Pause/resume/cancel, MLflow indisponível+retry e SQL503
+PASS. Serving60chamadas/6versões/concorrência2 p95~0.52s p99~0.70s. Evidências
+isoladas em artifacts/reports/v2/isolated. Falha real de tempestade de mensagens
+foi corrigida com claim de envio persistente (migration007); perda do observador
+HTTP não perdeu jobs. Restam resets/rebootstrap isolados, deploy principal com
+preservação, CI e relatório final. Nenhum reset principal e nenhum backup novo.
+
+V2 EM IMPLEMENTAÇÃO conforme dev/spec_correcoes.v2.md. Inventário antes em
+artifacts/reports/v2/inventory-before.json, HEAD9306f14. Usuário dispensou backup
+de banco na fase atual de montagem; prosseguir sem esse gate. Preservar dados
+principais e executar qualquer reset somente na stack isolada. Migration006,
+jobs persistentes/campanhas/API de geração/governança estão em desenvolvimento,
+ainda não validados. Links MLflow corrigidos e jornada consolidada em um único
+01_jornada_completa_planilha_turmas.ipynb; cópias exatas em notebook-backups.
+Dez notebooks do catálogo V1.1 executados do workspace em kernels novos PASS;
+escritas opt-in ainda pendentes de implementação/aceite V2. Última jornada v13,
+execution81d0a4af-b0d4-4a3f-b99e-671159d59fed, 90linhas SQL/API.
+
 Resultado atual: artifacts/reports/correcoes-v1.1-acceptance.md e JSON associado.
 Docker principal atualizado: 59 testes, 19 verificações HTTP e notebooks em
 kernels novos PASS. Execução 8d373b5a-f73d-4daa-b5cb-cde6ac238087, modelo v11,

@@ -35,7 +35,7 @@ def verify_model_storage(trace):
             if digest != hashlib.sha256((downloaded / filename).read_bytes()).hexdigest():
                 raise ValueError(f"Storage and proxy bytes differ: {filename}")
             evidence.append(dict(bucket=bucket(), key=key, bytes=len(stored), sha256=digest,
-                                 model_version=str(version.version), status="PASS"))
+                                 object_version_id=response.get("VersionId"),model_version=str(version.version), status="PASS"))
     return evidence
 
 

@@ -1,0 +1,1845 @@
+{
+  "timestamp_utc": "2026-11-04T16:30:03.184799+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:10c4f4fb436ca99d968cc4b9306784faa18003d2ceff60b6293e4fdb67f8cb71",
+  "environment": "poc",
+  "test_id": "05_treinamento_campanha",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign": {
+      "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+      "idempotency_key": "campaign-abdb8f09",
+      "request_hash": "1ba0d80d54a287162a61f2f58405419f8e38bfb5d84222fa36bbf58ea8d83981",
+      "request": {
+        "alpha": 1.0,
+        "algorithm": "ridge",
+        "cycle_code": "2026-1",
+        "model_keys": [
+          "hi.demo.campaign.83fa031898.000",
+          "hi.demo.campaign.83fa031898.001",
+          "hi.demo.campaign.83fa031898.002",
+          "hi.demo.campaign.83fa031898.003",
+          "hi.demo.campaign.83fa031898.004",
+          "hi.demo.campaign.83fa031898.005",
+          "hi.demo.campaign.83fa031898.006",
+          "hi.demo.campaign.83fa031898.007",
+          "hi.demo.campaign.83fa031898.008",
+          "hi.demo.campaign.83fa031898.009",
+          "hi.demo.campaign.83fa031898.010",
+          "hi.demo.campaign.83fa031898.011",
+          "hi.demo.campaign.83fa031898.012",
+          "hi.demo.campaign.83fa031898.013",
+          "hi.demo.campaign.83fa031898.014",
+          "hi.demo.campaign.83fa031898.015",
+          "hi.demo.campaign.83fa031898.016",
+          "hi.demo.campaign.83fa031898.017",
+          "hi.demo.campaign.83fa031898.018",
+          "hi.demo.campaign.83fa031898.019",
+          "hi.demo.campaign.83fa031898.020",
+          "hi.demo.campaign.83fa031898.021",
+          "hi.demo.campaign.83fa031898.022",
+          "hi.demo.campaign.83fa031898.023",
+          "hi.demo.campaign.83fa031898.024",
+          "hi.demo.campaign.83fa031898.025",
+          "hi.demo.campaign.83fa031898.026",
+          "hi.demo.campaign.83fa031898.027",
+          "hi.demo.campaign.83fa031898.028",
+          "hi.demo.campaign.83fa031898.029"
+        ],
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "max_attempts": 3,
+        "requested_by": "scientist-demo",
+        "schema_version": "poc-training-campaign-v2",
+        "confirm_training": true,
+        "max_parallel_jobs": 2
+      },
+      "correlation_id": "b5d89833-a6db-46bc-8210-ec6b2b5e6973",
+      "requested_by": "scientist-demo",
+      "status": "COMPLETED",
+      "max_parallel_jobs": 2,
+      "requested_count": 30,
+      "created_at_utc": "2026-11-04T16:29:30.721087+00:00",
+      "started_at_utc": "2026-11-04T16:29:30.926135+00:00",
+      "ended_at_utc": "2026-11-04T16:30:02.301126+00:00",
+      "counts": {
+        "COMPLETED": 30
+      }
+    },
+    "items": [
+      {
+        "job_id": "9c92e813-62c9-49ce-8910-ff65a427bcb8",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.000",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:45.350135+00:00",
+        "started_at_utc": "2026-11-04T16:29:44.626306+00:00",
+        "ended_at_utc": "2026-11-04T16:29:45.530199+00:00",
+        "mlflow_run_id": "4bd8a5c80db14bfaa760796fbf2894d0",
+        "registered_model_name": "hi.demo.campaign.83fa031898.000",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "4bd8a5c80db14bfaa760796fbf2894d0",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.18487659200000017,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 276524.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4245673179975711
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.000/1",
+          "model_name": "hi.demo.campaign.83fa031898.000",
+          "artifact_uri": "models:/m-ecb439dbef7f4b38826df294b4e57675",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-ecb439dbef7f4b38826df294b4e57675/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "c4b0838119dfa4d9490c4589f8ba7edba142b9a2332a58d79c659e84af816adb",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-ecb439dbef7f4b38826df294b4e57675/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-ecb439dbef7f4b38826df294b4e57675/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "9c92e813-62c9-49ce-8910-ff65a427bcb8"
+        }
+      },
+      {
+        "job_id": "b9c623e4-ea68-4f4b-a020-f6912b159feb",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.001",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:49.333506+00:00",
+        "started_at_utc": "2026-11-04T16:29:48.432634+00:00",
+        "ended_at_utc": "2026-11-04T16:29:49.503710+00:00",
+        "mlflow_run_id": "086155f186324c0c95ad100979a1d1cc",
+        "registered_model_name": "hi.demo.campaign.83fa031898.001",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "086155f186324c0c95ad100979a1d1cc",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.20140884099999923,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 277292.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5666815080039669
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.001/1",
+          "model_name": "hi.demo.campaign.83fa031898.001",
+          "artifact_uri": "models:/m-231dbe5be87d4687b45560cbde63d277",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-231dbe5be87d4687b45560cbde63d277/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "692c871624ef6d65d91f5f8abd6c9b93270f9c1cc31f5249671e0909b66364e9",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-231dbe5be87d4687b45560cbde63d277/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-231dbe5be87d4687b45560cbde63d277/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "b9c623e4-ea68-4f4b-a020-f6912b159feb"
+        }
+      },
+      {
+        "job_id": "666fcab0-53c8-4145-9615-52a0f0b36dc4",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.002",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:39.266366+00:00",
+        "started_at_utc": "2026-11-04T16:29:38.373207+00:00",
+        "ended_at_utc": "2026-11-04T16:29:39.442847+00:00",
+        "mlflow_run_id": "27d3f2f2162e4bdb885f2fe1cc48847f",
+        "registered_model_name": "hi.demo.campaign.83fa031898.002",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "27d3f2f2162e4bdb885f2fe1cc48847f",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17639486099999946,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 275180.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5367976099951193
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.002/1",
+          "model_name": "hi.demo.campaign.83fa031898.002",
+          "artifact_uri": "models:/m-5aef1be11dfd4bd0a79bb87423fe8867",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-5aef1be11dfd4bd0a79bb87423fe8867/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "4193e37fb4533cfb13c3cd83c60490ac1bc406a453ab18f97103cbe5c14699ce",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-5aef1be11dfd4bd0a79bb87423fe8867/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-5aef1be11dfd4bd0a79bb87423fe8867/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "666fcab0-53c8-4145-9615-52a0f0b36dc4"
+        }
+      },
+      {
+        "job_id": "5ef777e7-8c31-4a43-9a55-aeca6c8961a3",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.003",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:37.611356+00:00",
+        "started_at_utc": "2026-11-04T16:29:36.868740+00:00",
+        "ended_at_utc": "2026-11-04T16:29:37.801851+00:00",
+        "mlflow_run_id": "f8be6b9d9ee74b46a9546ad0505ce65b",
+        "registered_model_name": "hi.demo.campaign.83fa031898.003",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "f8be6b9d9ee74b46a9546ad0505ce65b",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1803696549999998,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 276664.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4575830899993889
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.003/1",
+          "model_name": "hi.demo.campaign.83fa031898.003",
+          "artifact_uri": "models:/m-c740d7ac42f2475baae5841d803f6e59",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-c740d7ac42f2475baae5841d803f6e59/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "e0deacaa90ea1632ad719690b78cecc675dd8fcfea478d25dfd512a1c2ad03f9",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-c740d7ac42f2475baae5841d803f6e59/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-c740d7ac42f2475baae5841d803f6e59/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "5ef777e7-8c31-4a43-9a55-aeca6c8961a3"
+        }
+      },
+      {
+        "job_id": "0dd42a55-163d-43bf-bad7-a1acab1a40ef",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.004",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:31.744546+00:00",
+        "started_at_utc": "2026-11-04T16:29:30.926135+00:00",
+        "ended_at_utc": "2026-11-04T16:29:31.915157+00:00",
+        "mlflow_run_id": "e1b6eb5439ed4b679636d6d7ce514cab",
+        "registered_model_name": "hi.demo.campaign.83fa031898.004",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "e1b6eb5439ed4b679636d6d7ce514cab",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.16812674799999971,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274412.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4850904759950936
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.004/1",
+          "model_name": "hi.demo.campaign.83fa031898.004",
+          "artifact_uri": "models:/m-ba053aef2c0c4667b519e504f89c35d8",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-ba053aef2c0c4667b519e504f89c35d8/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "ca4e87392ca61f4101684d5e6020ab8f4262b4af1b83af080daf29a41d16a5ea",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-ba053aef2c0c4667b519e504f89c35d8/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-ba053aef2c0c4667b519e504f89c35d8/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "0dd42a55-163d-43bf-bad7-a1acab1a40ef"
+        }
+      },
+      {
+        "job_id": "d8306e26-c448-4dc4-930a-f78ee692d658",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.005",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:55.649489+00:00",
+        "started_at_utc": "2026-11-04T16:29:54.765537+00:00",
+        "ended_at_utc": "2026-11-04T16:29:55.932819+00:00",
+        "mlflow_run_id": "5dfdec868dfb4aefa5f95552a7cfa8d8",
+        "registered_model_name": "hi.demo.campaign.83fa031898.005",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "5dfdec868dfb4aefa5f95552a7cfa8d8",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17454649799999977,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274020.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.524192059005145
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.005/1",
+          "model_name": "hi.demo.campaign.83fa031898.005",
+          "artifact_uri": "models:/m-2aae147b181745299e7c0072d2dfc4e6",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-2aae147b181745299e7c0072d2dfc4e6/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "ad4df816a813027558e2e55b9e452fb66ed40a4b70388d0f2cbbdfa4ef34ce6a",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-2aae147b181745299e7c0072d2dfc4e6/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-2aae147b181745299e7c0072d2dfc4e6/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "d8306e26-c448-4dc4-930a-f78ee692d658"
+        }
+      },
+      {
+        "job_id": "8796b6d2-5ac2-4a42-b0a0-08e65f02cc77",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.006",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:43.880323+00:00",
+        "started_at_utc": "2026-11-04T16:29:43.130971+00:00",
+        "ended_at_utc": "2026-11-04T16:29:44.072347+00:00",
+        "mlflow_run_id": "c22790ce77954a71811524d8891b5c04",
+        "registered_model_name": "hi.demo.campaign.83fa031898.006",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "c22790ce77954a71811524d8891b5c04",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17867217699999927,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 277048.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.45206323800084647
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.006/1",
+          "model_name": "hi.demo.campaign.83fa031898.006",
+          "artifact_uri": "models:/m-4fe652f5a96b453dae430fb848eeb043",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-4fe652f5a96b453dae430fb848eeb043/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "c251b8e161ffcf3a3c6016a5e14febbe2a0226f51ce06d821a42401995923d28",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-4fe652f5a96b453dae430fb848eeb043/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-4fe652f5a96b453dae430fb848eeb043/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "8796b6d2-5ac2-4a42-b0a0-08e65f02cc77"
+        }
+      },
+      {
+        "job_id": "11f17f30-1c93-4a25-8123-8b0f6883ae6e",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.007",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:32.206866+00:00",
+        "started_at_utc": "2026-11-04T16:29:31.424573+00:00",
+        "ended_at_utc": "2026-11-04T16:29:32.382243+00:00",
+        "mlflow_run_id": "4fa610b55e16474ab1770983a50cd660",
+        "registered_model_name": "hi.demo.campaign.83fa031898.007",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "4fa610b55e16474ab1770983a50cd660",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1724000529999996,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 275320.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.44825879800191615
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.007/1",
+          "model_name": "hi.demo.campaign.83fa031898.007",
+          "artifact_uri": "models:/m-9b6a80bd15a348bd945448d6127c10e6",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-9b6a80bd15a348bd945448d6127c10e6/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "df7803680591295609e832d616557ef436fdb0ac60f2c01b674aefebfda60502",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-9b6a80bd15a348bd945448d6127c10e6/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-9b6a80bd15a348bd945448d6127c10e6/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "11f17f30-1c93-4a25-8123-8b0f6883ae6e"
+        }
+      },
+      {
+        "job_id": "83b671c5-240f-4669-b590-e444dc1ae798",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.008",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:41.976585+00:00",
+        "started_at_utc": "2026-11-04T16:29:41.221137+00:00",
+        "ended_at_utc": "2026-11-04T16:29:42.179126+00:00",
+        "mlflow_run_id": "1b0d3a931bd84447add5cadb0614566d",
+        "registered_model_name": "hi.demo.campaign.83fa031898.008",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "1b0d3a931bd84447add5cadb0614566d",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17256340100000056,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 276856.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4289025570033118
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.008/1",
+          "model_name": "hi.demo.campaign.83fa031898.008",
+          "artifact_uri": "models:/m-b14abba507c34cb79167e03cfda9b7ab",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-b14abba507c34cb79167e03cfda9b7ab/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "fd7fbecce4066311ee79f4f4c10deeb1e5bab9e2277f597db21bf2f26da163f0",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-b14abba507c34cb79167e03cfda9b7ab/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-b14abba507c34cb79167e03cfda9b7ab/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "83b671c5-240f-4669-b590-e444dc1ae798"
+        }
+      },
+      {
+        "job_id": "872e2351-73cb-45c2-b6e1-0d8e6806bb37",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.009",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:43.396461+00:00",
+        "started_at_utc": "2026-11-04T16:29:42.703334+00:00",
+        "ended_at_utc": "2026-11-04T16:29:43.583167+00:00",
+        "mlflow_run_id": "1bf968b6ce5049f2b3009514d5f3e14e",
+        "registered_model_name": "hi.demo.campaign.83fa031898.009",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "1bf968b6ce5049f2b3009514d5f3e14e",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.16956585999999874,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 275948.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.40146887399896514
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.009/1",
+          "model_name": "hi.demo.campaign.83fa031898.009",
+          "artifact_uri": "models:/m-168baa88dc5b4b3a980a66606653e03c",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-168baa88dc5b4b3a980a66606653e03c/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "81cec1abf8edad350ef95fc623f9dcefc5985187e026229df83358fe12a19d06",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-168baa88dc5b4b3a980a66606653e03c/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-168baa88dc5b4b3a980a66606653e03c/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "872e2351-73cb-45c2-b6e1-0d8e6806bb37"
+        }
+      },
+      {
+        "job_id": "cd7a7237-e33c-43a2-958d-a6a4ccb63bac",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.010",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:55.650500+00:00",
+        "started_at_utc": "2026-11-04T16:29:54.763428+00:00",
+        "ended_at_utc": "2026-11-04T16:29:55.929826+00:00",
+        "mlflow_run_id": "67b193b467784807aa95838c081414ee",
+        "registered_model_name": "hi.demo.campaign.83fa031898.010",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "67b193b467784807aa95838c081414ee",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17698639100000024,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 273924.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5117803140019532
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.010/1",
+          "model_name": "hi.demo.campaign.83fa031898.010",
+          "artifact_uri": "models:/m-686583fa698a49fc9591d43857b849fd",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-686583fa698a49fc9591d43857b849fd/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "682c343d84a8f62dfd3faa18e44faf7991fbcec47a1f1c9403f6a12e0e2ad16e",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-686583fa698a49fc9591d43857b849fd/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-686583fa698a49fc9591d43857b849fd/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "cd7a7237-e33c-43a2-958d-a6a4ccb63bac"
+        }
+      },
+      {
+        "job_id": "42511e02-763b-4365-b0d1-2dbad29fab01",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.011",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:35.831360+00:00",
+        "started_at_utc": "2026-11-04T16:29:35.029537+00:00",
+        "ended_at_utc": "2026-11-04T16:29:35.989858+00:00",
+        "mlflow_run_id": "ad9d019357544a25bb900ed4f18eae0d",
+        "registered_model_name": "hi.demo.campaign.83fa031898.011",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "ad9d019357544a25bb900ed4f18eae0d",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1633892330000002,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 276280.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5176691399974516
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.011/1",
+          "model_name": "hi.demo.campaign.83fa031898.011",
+          "artifact_uri": "models:/m-47e194e914de4b6588275700bc16b269",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-47e194e914de4b6588275700bc16b269/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "bcbdbd93c6cdd70c7d627d0e42c78856c26ebd200931296fb23081095474053a",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-47e194e914de4b6588275700bc16b269/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-47e194e914de4b6588275700bc16b269/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "42511e02-763b-4365-b0d1-2dbad29fab01"
+        }
+      },
+      {
+        "job_id": "25823ccb-3408-4221-b1b8-a71332d92e62",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.012",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:33.544065+00:00",
+        "started_at_utc": "2026-11-04T16:29:32.855590+00:00",
+        "ended_at_utc": "2026-11-04T16:29:33.702396+00:00",
+        "mlflow_run_id": "863ffda73275425b8d2f7d0635162a6d",
+        "registered_model_name": "hi.demo.campaign.83fa031898.012",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "863ffda73275425b8d2f7d0635162a6d",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1660867330000002,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274604.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.3980700060055824
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.012/1",
+          "model_name": "hi.demo.campaign.83fa031898.012",
+          "artifact_uri": "models:/m-9a062365f5104671854a34f651ba5ba9",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-9a062365f5104671854a34f651ba5ba9/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "ccdc220d4e503691025f0ded86428b8ef69e31d5e2ded46c844c6ec9fb5862f9",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-9a062365f5104671854a34f651ba5ba9/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-9a062365f5104671854a34f651ba5ba9/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "25823ccb-3408-4221-b1b8-a71332d92e62"
+        }
+      },
+      {
+        "job_id": "ee0f1e87-1ca9-49f9-b13e-510e5215ae58",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.013",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:30:02.064337+00:00",
+        "started_at_utc": "2026-11-04T16:30:01.339383+00:00",
+        "ended_at_utc": "2026-11-04T16:30:02.294595+00:00",
+        "mlflow_run_id": "2381a63849d34fb180a3594d8f58cf38",
+        "registered_model_name": "hi.demo.campaign.83fa031898.013",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "2381a63849d34fb180a3594d8f58cf38",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1719385020000006,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 275268.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.48042647998954635
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.013/1",
+          "model_name": "hi.demo.campaign.83fa031898.013",
+          "artifact_uri": "models:/m-4535ccc73bf9468c99598763c6f1bdd2",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-4535ccc73bf9468c99598763c6f1bdd2/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "11427c6e2b2d3d44111934c6c8213b5e0fc61354b83c1416e67503120aafec26",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-4535ccc73bf9468c99598763c6f1bdd2/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-4535ccc73bf9468c99598763c6f1bdd2/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "ee0f1e87-1ca9-49f9-b13e-510e5215ae58"
+        }
+      },
+      {
+        "job_id": "3634b769-8121-4f8f-aa5b-a62182b4fcf2",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.014",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:35.271934+00:00",
+        "started_at_utc": "2026-11-04T16:29:34.592441+00:00",
+        "ended_at_utc": "2026-11-04T16:29:35.437434+00:00",
+        "mlflow_run_id": "6cdeca39e66f4bbf99863d285f49cdab",
+        "registered_model_name": "hi.demo.campaign.83fa031898.014",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "6cdeca39e66f4bbf99863d285f49cdab",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1678699090000002,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274988.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.3962355480034603
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.014/1",
+          "model_name": "hi.demo.campaign.83fa031898.014",
+          "artifact_uri": "models:/m-3a1aab22f25749a8ab0b1ed1ebd684f7",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-3a1aab22f25749a8ab0b1ed1ebd684f7/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "46d31aaca886d7ba2e9260a943bae10e3b400978738593dcfde06a15a4530238",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-3a1aab22f25749a8ab0b1ed1ebd684f7/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-3a1aab22f25749a8ab0b1ed1ebd684f7/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "3634b769-8121-4f8f-aa5b-a62182b4fcf2"
+        }
+      },
+      {
+        "job_id": "83b45e66-ffd2-4be0-987a-c1626339d5e0",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.015",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:41.495097+00:00",
+        "started_at_utc": "2026-11-04T16:29:40.675438+00:00",
+        "ended_at_utc": "2026-11-04T16:29:41.660959+00:00",
+        "mlflow_run_id": "2ba65a7cf5834683969b7e1020f2c9a6",
+        "registered_model_name": "hi.demo.campaign.83fa031898.015",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "2ba65a7cf5834683969b7e1020f2c9a6",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17125731899999952,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 275948.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.44452176000049803
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.015/1",
+          "model_name": "hi.demo.campaign.83fa031898.015",
+          "artifact_uri": "models:/m-b5ccf82a3bda45d7b1dd0037f061e295",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-b5ccf82a3bda45d7b1dd0037f061e295/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "98cebcf484fccfcd42b1d88b43e5295ec2583a895c76d95591f7033b250c0070",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-b5ccf82a3bda45d7b1dd0037f061e295/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-b5ccf82a3bda45d7b1dd0037f061e295/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "83b45e66-ffd2-4be0-987a-c1626339d5e0"
+        }
+      },
+      {
+        "job_id": "c149b380-150d-49fb-a26b-64c880bd467f",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.016",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:49.892273+00:00",
+        "started_at_utc": "2026-11-04T16:29:49.015438+00:00",
+        "ended_at_utc": "2026-11-04T16:29:50.127329+00:00",
+        "mlflow_run_id": "3f07e4c1b1004f64b6d5fbe1bda34459",
+        "registered_model_name": "hi.demo.campaign.83fa031898.016",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "3f07e4c1b1004f64b6d5fbe1bda34459",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1830162289999997,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 278776.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4613840700039873
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.016/1",
+          "model_name": "hi.demo.campaign.83fa031898.016",
+          "artifact_uri": "models:/m-56eb7d4ebcd84fa690bfecabb7b40d54",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-56eb7d4ebcd84fa690bfecabb7b40d54/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "e46c695220d6132209432e77ba5e92b9d73bc0a7a8a6ce4f2123b576fe71b59a",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-56eb7d4ebcd84fa690bfecabb7b40d54/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-56eb7d4ebcd84fa690bfecabb7b40d54/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "c149b380-150d-49fb-a26b-64c880bd467f"
+        }
+      },
+      {
+        "job_id": "c72b99a3-b38c-4898-b269-896c6befec4e",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.017",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:53.232956+00:00",
+        "started_at_utc": "2026-11-04T16:29:51.507754+00:00",
+        "ended_at_utc": "2026-11-04T16:29:53.657950+00:00",
+        "mlflow_run_id": "f90c7275e2694929a918968c9c608f16",
+        "registered_model_name": "hi.demo.campaign.83fa031898.017",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "f90c7275e2694929a918968c9c608f16",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 1.8157041460000003,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 258568.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.9642234159982763
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.017/1",
+          "model_name": "hi.demo.campaign.83fa031898.017",
+          "artifact_uri": "models:/m-510ed845c6a54bc4bc55f1e39aac76e6",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-510ed845c6a54bc4bc55f1e39aac76e6/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "dacde7586860edef445f786f18de18a5ad5527a9cfeef8abbf2bc8d73906a36c",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-510ed845c6a54bc4bc55f1e39aac76e6/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-510ed845c6a54bc4bc55f1e39aac76e6/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "c72b99a3-b38c-4898-b269-896c6befec4e"
+        }
+      },
+      {
+        "job_id": "f133ed45-856a-4d6b-b4af-a3eece0c2273",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.018",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:30:02.059334+00:00",
+        "started_at_utc": "2026-11-04T16:30:01.341823+00:00",
+        "ended_at_utc": "2026-11-04T16:30:02.297737+00:00",
+        "mlflow_run_id": "db698545765f4be9ac08605414ae6a56",
+        "registered_model_name": "hi.demo.campaign.83fa031898.018",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "db698545765f4be9ac08605414ae6a56",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1750762830000001,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 275364.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4756650400086073
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.018/1",
+          "model_name": "hi.demo.campaign.83fa031898.018",
+          "artifact_uri": "models:/m-6cecb802ff2c4932aac6426b9023cd18",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-6cecb802ff2c4932aac6426b9023cd18/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "b61edf48301242fe7cf057d65e17425b2f7d1e24940b6ad191d3afc0dc4e723d",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-6cecb802ff2c4932aac6426b9023cd18/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-6cecb802ff2c4932aac6426b9023cd18/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "f133ed45-856a-4d6b-b4af-a3eece0c2273"
+        }
+      },
+      {
+        "job_id": "b2552de0-de68-464f-bb6f-bf153d6a5afb",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.019",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:47.724432+00:00",
+        "started_at_utc": "2026-11-04T16:29:46.958469+00:00",
+        "ended_at_utc": "2026-11-04T16:29:47.894507+00:00",
+        "mlflow_run_id": "d82734a6018a419baff3944b1b43f285",
+        "registered_model_name": "hi.demo.campaign.83fa031898.019",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "d82734a6018a419baff3944b1b43f285",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17555963200000058,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 278200.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4538234400097281
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.019/1",
+          "model_name": "hi.demo.campaign.83fa031898.019",
+          "artifact_uri": "models:/m-0b4e97283ba24c5fa0230a2078ee6d18",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-0b4e97283ba24c5fa0230a2078ee6d18/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "494d00e6b33d91167e4a2af2397fae647a994ccb3670e9d43931e650ac2555e5",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-0b4e97283ba24c5fa0230a2078ee6d18/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-0b4e97283ba24c5fa0230a2078ee6d18/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "b2552de0-de68-464f-bb6f-bf153d6a5afb"
+        }
+      },
+      {
+        "job_id": "e0f31904-8874-423a-9c12-c7f208bc3b76",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.020",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:59.985365+00:00",
+        "started_at_utc": "2026-11-04T16:29:59.236087+00:00",
+        "ended_at_utc": "2026-11-04T16:30:00.312825+00:00",
+        "mlflow_run_id": "e3581546afce447bb939bb62bccb6f28",
+        "registered_model_name": "hi.demo.campaign.83fa031898.020",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "e3581546afce447bb939bb62bccb6f28",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17378684999999994,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274884.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5027486979961395
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.020/1",
+          "model_name": "hi.demo.campaign.83fa031898.020",
+          "artifact_uri": "models:/m-ec35de3b041e4983b0133854d42d8bb5",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-ec35de3b041e4983b0133854d42d8bb5/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "c373408e0826cd12829a42e40edffd93e3f98c7b1da6769be705e848aca46d82",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-ec35de3b041e4983b0133854d42d8bb5/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-ec35de3b041e4983b0133854d42d8bb5/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "e0f31904-8874-423a-9c12-c7f208bc3b76"
+        }
+      },
+      {
+        "job_id": "e072898e-f81b-4e69-a214-a0685ba5d9ac",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.021",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:59.981081+00:00",
+        "started_at_utc": "2026-11-04T16:29:59.233864+00:00",
+        "ended_at_utc": "2026-11-04T16:30:00.307886+00:00",
+        "mlflow_run_id": "8a7ea22255e743158f570a3989b87092",
+        "registered_model_name": "hi.demo.campaign.83fa031898.021",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "8a7ea22255e743158f570a3989b87092",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1710734650000001,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 275172.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4973367170023266
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.021/1",
+          "model_name": "hi.demo.campaign.83fa031898.021",
+          "artifact_uri": "models:/m-184ac2ea490146968469d7c6aedd50cd",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-184ac2ea490146968469d7c6aedd50cd/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "2a023fe3518b7e593347ea1a394d8b6cd69fd695c62cb1cea7f49876adc35065",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-184ac2ea490146968469d7c6aedd50cd/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-184ac2ea490146968469d7c6aedd50cd/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "e072898e-f81b-4e69-a214-a0685ba5d9ac"
+        }
+      },
+      {
+        "job_id": "a3b095bd-2e14-4601-8be8-70bd82f2aab8",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.022",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:47.250937+00:00",
+        "started_at_utc": "2026-11-04T16:29:46.488725+00:00",
+        "ended_at_utc": "2026-11-04T16:29:47.437582+00:00",
+        "mlflow_run_id": "2f4f324171fa40c8b151a1d299d3d22c",
+        "registered_model_name": "hi.demo.campaign.83fa031898.022",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "2f4f324171fa40c8b151a1d299d3d22c",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17543736399999865,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 276908.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.43783043400617316
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.022/1",
+          "model_name": "hi.demo.campaign.83fa031898.022",
+          "artifact_uri": "models:/m-ae96baa51ddf4674af6476b27c512c52",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-ae96baa51ddf4674af6476b27c512c52/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "828c24120cfe303c2bde1682c07d779e7d8f95320e8b18d825e51e03f21cf5e8",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-ae96baa51ddf4674af6476b27c512c52/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-ae96baa51ddf4674af6476b27c512c52/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "a3b095bd-2e14-4601-8be8-70bd82f2aab8"
+        }
+      },
+      {
+        "job_id": "5ba901f5-25e9-4c12-bc19-e9a4d30366fa",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.023",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:37.103040+00:00",
+        "started_at_utc": "2026-11-04T16:29:36.407722+00:00",
+        "ended_at_utc": "2026-11-04T16:29:37.269704+00:00",
+        "mlflow_run_id": "c705c960dfb64a298af4e0de0f3ec48f",
+        "registered_model_name": "hi.demo.campaign.83fa031898.023",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "c705c960dfb64a298af4e0de0f3ec48f",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1670697179999996,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274988.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.41802787099732086
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.023/1",
+          "model_name": "hi.demo.campaign.83fa031898.023",
+          "artifact_uri": "models:/m-3bfe15c6167547b9900342dc7bc24c37",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-3bfe15c6167547b9900342dc7bc24c37/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "276ef987de75cd8128cfdf6fb2be42907b056a54405320541e65d2b81631a904",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-3bfe15c6167547b9900342dc7bc24c37/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-3bfe15c6167547b9900342dc7bc24c37/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "5ba901f5-25e9-4c12-bc19-e9a4d30366fa"
+        }
+      },
+      {
+        "job_id": "2d8735b7-2324-4a73-a897-f025c1006b1d",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.024",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:33.978977+00:00",
+        "started_at_utc": "2026-11-04T16:29:33.300632+00:00",
+        "ended_at_utc": "2026-11-04T16:29:34.139481+00:00",
+        "mlflow_run_id": "9d5669cf48664b898ce05351eea5cc0e",
+        "registered_model_name": "hi.demo.campaign.83fa031898.024",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "9d5669cf48664b898ce05351eea5cc0e",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.18396914200000047,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 275512.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.39954138301254716
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.024/1",
+          "model_name": "hi.demo.campaign.83fa031898.024",
+          "artifact_uri": "models:/m-8bd5f697b94748bcb225703ec655ccd6",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-8bd5f697b94748bcb225703ec655ccd6/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "ad944e90fb7588d478e34239759123a2cc58a4ad5346fe1f6d34875172dffb48",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-8bd5f697b94748bcb225703ec655ccd6/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-8bd5f697b94748bcb225703ec655ccd6/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "2d8735b7-2324-4a73-a897-f025c1006b1d"
+        }
+      },
+      {
+        "job_id": "c18d5301-0450-4d92-b011-b18345dc6f3a",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.025",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:53.236734+00:00",
+        "started_at_utc": "2026-11-04T16:29:51.536086+00:00",
+        "ended_at_utc": "2026-11-04T16:29:53.660804+00:00",
+        "mlflow_run_id": "d72d777f13354e55971de5d9d2a7603d",
+        "registered_model_name": "hi.demo.campaign.83fa031898.025",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "d72d777f13354e55971de5d9d2a7603d",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 1.68006257,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 258432.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.9270507659966825
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.025/1",
+          "model_name": "hi.demo.campaign.83fa031898.025",
+          "artifact_uri": "models:/m-6f938f6cde094062a5225f329031fd59",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-6f938f6cde094062a5225f329031fd59/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "b02bb924e04b1fbd3632821535de16f9859242424372f6babaeebd90041c5f49",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-6f938f6cde094062a5225f329031fd59/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-6f938f6cde094062a5225f329031fd59/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "c18d5301-0450-4d92-b011-b18345dc6f3a"
+        }
+      },
+      {
+        "job_id": "a29dcc9e-4e32-4093-8f46-15ed835519c8",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.026",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:45.805700+00:00",
+        "started_at_utc": "2026-11-04T16:29:45.086423+00:00",
+        "ended_at_utc": "2026-11-04T16:29:45.971430+00:00",
+        "mlflow_run_id": "cfb5764bc65940a4a04ef18731b9a699",
+        "registered_model_name": "hi.demo.campaign.83fa031898.026",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "cfb5764bc65940a4a04ef18731b9a699",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17251658400000025,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 278200.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4275703430030262
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.026/1",
+          "model_name": "hi.demo.campaign.83fa031898.026",
+          "artifact_uri": "models:/m-bdd7fadf16aa4f2793e5ae4d2636ce2f",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-bdd7fadf16aa4f2793e5ae4d2636ce2f/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "ba8f19a18dcce36db02d07faa3ce11a6c2dd5d029ddb210e097005214596e3d1",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-bdd7fadf16aa4f2793e5ae4d2636ce2f/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-bdd7fadf16aa4f2793e5ae4d2636ce2f/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "a29dcc9e-4e32-4093-8f46-15ed835519c8"
+        }
+      },
+      {
+        "job_id": "de9dd574-c17e-4cff-917c-aa7833f01520",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.027",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:58.058017+00:00",
+        "started_at_utc": "2026-11-04T16:29:57.219009+00:00",
+        "ended_at_utc": "2026-11-04T16:29:58.278181+00:00",
+        "mlflow_run_id": "484cef5da1c3404d9afc518d4e1860ba",
+        "registered_model_name": "hi.demo.campaign.83fa031898.027",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "484cef5da1c3404d9afc518d4e1860ba",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.1683632709999996,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274788.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.593786525001633
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.027/1",
+          "model_name": "hi.demo.campaign.83fa031898.027",
+          "artifact_uri": "models:/m-e6fb4634167a41d197db2366154f8691",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-e6fb4634167a41d197db2366154f8691/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "73299ff7b91fe17fb3f7e78e0860fa7fdaf15a0951916d67bd62d505aac15438",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-e6fb4634167a41d197db2366154f8691/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-e6fb4634167a41d197db2366154f8691/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "de9dd574-c17e-4cff-917c-aa7833f01520"
+        }
+      },
+      {
+        "job_id": "d96dcff6-922d-4240-8754-2b257057aaf7",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.028",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:58.053376+00:00",
+        "started_at_utc": "2026-11-04T16:29:57.216827+00:00",
+        "ended_at_utc": "2026-11-04T16:29:58.274813+00:00",
+        "mlflow_run_id": "54d879b3ae74492f886620da64587a24",
+        "registered_model_name": "hi.demo.campaign.83fa031898.028",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "54d879b3ae74492f886620da64587a24",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.16669962299999996,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 274692.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.5897554729890544
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.028/1",
+          "model_name": "hi.demo.campaign.83fa031898.028",
+          "artifact_uri": "models:/m-d5f261ba2cc648f59814caeaab2ff880",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-d5f261ba2cc648f59814caeaab2ff880/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "43bcfca8a25f0ad76f610a9a1481995f1af06fa8f0e6f5c6f4e06609a43cdbf3",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-d5f261ba2cc648f59814caeaab2ff880/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-d5f261ba2cc648f59814caeaab2ff880/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "d96dcff6-922d-4240-8754-2b257057aaf7"
+        }
+      },
+      {
+        "job_id": "7a63945d-4a73-4f04-b3d3-230ebd294169",
+        "campaign_id": "4856c5b5-fe23-4569-87dc-39186a655ed1",
+        "model_key": "hi.demo.campaign.83fa031898.029",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:39.719331+00:00",
+        "started_at_utc": "2026-11-04T16:29:38.911682+00:00",
+        "ended_at_utc": "2026-11-04T16:29:39.973184+00:00",
+        "mlflow_run_id": "178237f11c7d44f0b3296a94c98d4204",
+        "registered_model_name": "hi.demo.campaign.83fa031898.029",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "178237f11c7d44f0b3296a94c98d4204",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.17612545300000004,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 276664.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.4616992880037287
+          },
+          "model_uri": "models:/hi.demo.campaign.83fa031898.029/1",
+          "model_name": "hi.demo.campaign.83fa031898.029",
+          "artifact_uri": "models:/m-29c4b75393074f1498cee7a1bd429cfc",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-29c4b75393074f1498cee7a1bd429cfc/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "8e5232b45542f90349d0f126bd992a0a0492279e01ea72c36b7b8f8def3bead5",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-29c4b75393074f1498cee7a1bd429cfc/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-29c4b75393074f1498cee7a1bd429cfc/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "7a63945d-4a73-4f04-b3d3-230ebd294169"
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Dados DEMO e contrato provisório; regras não avaliadas não são homologação"
+  ]
+}

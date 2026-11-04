@@ -5,7 +5,13 @@ import secrets
 root=Path(__file__).resolve().parents[2]
 target=root/".env"
 if target.exists():
-    print("Existing .env preserved")
+    existing=target.read_text(encoding="utf-8")
+    if not any(line.startswith("OPERATOR_TOKEN=") and line.split("=",1)[1] for line in existing.splitlines()):
+        with target.open("a",encoding="utf-8") as stream:
+            stream.write("\nOPERATOR_TOKEN="+secrets.token_hex(32)+"\n")
+        print("Added separate operator credential; existing secrets preserved")
+    else:
+        print("Existing .env preserved")
 else:
     lines=[]
     for line in (root/".env.example").read_text(encoding="utf-8").splitlines():

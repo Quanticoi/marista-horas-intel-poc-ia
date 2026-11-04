@@ -17,10 +17,10 @@ jobs:
       - name: Generate disposable CI credentials
         shell: bash
         run: |
-          for key in POSTGRES_PASSWORD MIGRATION_PASSWORD APP_PASSWORD READONLY_PASSWORD MLFLOW_PASSWORD AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY RABBITMQ_PASSWORD API_TOKEN DASHBOARD_TOKEN JUPYTER_TOKEN INFERENCE_TOKEN MONITOR_TOKEN INGESTION_TOKEN; do
+          for key in POSTGRES_PASSWORD MIGRATION_PASSWORD APP_PASSWORD READONLY_PASSWORD MLFLOW_PASSWORD AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY RABBITMQ_PASSWORD API_TOKEN OPERATOR_TOKEN DASHBOARD_TOKEN JUPYTER_TOKEN INFERENCE_TOKEN MONITOR_TOKEN INGESTION_TOKEN; do
             printf '%s=%s\n' "$key" "$(openssl rand -hex 32)" >> .env
           done
-          mkdir -p workspace/notebooks data/compose-logs artifacts/reports
+          mkdir -p workspace/notebooks data/compose-logs artifacts/reports/v2
           chmod 777 workspace workspace/notebooks artifacts/reports data/compose-logs
           # Checkout includes historical reports owned by the runner; both container
           # UIDs must be able to replace those generated evidence files.
@@ -28,7 +28,7 @@ jobs:
       - name: Build and provision dependencies
         run: |
           docker compose config --quiet
-          docker compose build mlflow jupyter
+          docker compose build --build-arg CODE_VERSION="$GITHUB_SHA" mlflow jupyter
           docker compose run --rm --no-deps --entrypoint chown volume-tools 10001:10001 /restore/rustfs
           docker compose up -d --wait --wait-timeout 180 postgres rustfs rabbitmq
           docker compose run --rm --no-deps tools bootstrap
@@ -52,6 +52,8 @@ jobs:
         run: |
           proposal_id=$(python -c "import json; print(json.load(open('artifacts/reports/journey-latest.json'))['execution_id'])")
           docker compose exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_notebook 02_teste_inferencia_planilha_turmas.ipynb --proposal-id "$proposal_id"
+      - name: V2 notebooks including opt-in paths in disposable CI
+        run: docker compose exec -T -e POC_ISOLATED_TESTS=1 jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.v2_notebook_suite
       - name: Sanitized runtime diagnostics before cleanup
         if: always()
         run: python deployment/scripts/ci_diagnostics.py

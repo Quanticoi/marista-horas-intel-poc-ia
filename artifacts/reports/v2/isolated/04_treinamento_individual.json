@@ -1,0 +1,105 @@
+{
+  "timestamp_utc": "2026-11-04T16:29:15.423433+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:ef17ecf88f7a68a4f4395c61fc64512cc2d64c2357f6e652070a6b6ae2c491d1",
+  "environment": "poc",
+  "test_id": "04_treinamento_individual",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign": {
+      "campaign_id": "00b98583-e68e-4174-aebc-d7cf2dd03960",
+      "idempotency_key": "notebooks-abdb8f09",
+      "request_hash": "3f110e87ec324e955a892c62d33f5efd07f7a1bccfc9f57f611b045041d2c5e2",
+      "request": {
+        "alpha": 1.0,
+        "algorithm": "ridge",
+        "cycle_code": "2026-1",
+        "model_keys": [
+          "hi.demo.notebook.abdb8f09"
+        ],
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "max_attempts": 3,
+        "requested_by": "scientist-demo",
+        "schema_version": "poc-training-campaign-v2",
+        "confirm_training": true,
+        "max_parallel_jobs": 2
+      },
+      "correlation_id": "053f60f5-3198-4212-9720-b92ee91ec3b4",
+      "requested_by": "scientist-demo",
+      "status": "COMPLETED",
+      "max_parallel_jobs": 2,
+      "requested_count": 1,
+      "created_at_utc": "2026-11-04T16:29:09.226678+00:00",
+      "started_at_utc": "2026-11-04T16:29:09.343239+00:00",
+      "ended_at_utc": "2026-11-04T16:29:10.507134+00:00",
+      "counts": {
+        "COMPLETED": 1
+      }
+    },
+    "items": [
+      {
+        "job_id": "4e63488e-a440-4fed-babe-052716fac7cc",
+        "campaign_id": "00b98583-e68e-4174-aebc-d7cf2dd03960",
+        "model_key": "hi.demo.notebook.abdb8f09",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "heartbeat_at_utc": "2026-11-04T16:29:10.238311+00:00",
+        "started_at_utc": "2026-11-04T16:29:09.343239+00:00",
+        "ended_at_utc": "2026-11-04T16:29:10.503187+00:00",
+        "mlflow_run_id": "eb44663c5112462ea5b95fd92c204151",
+        "registered_model_name": "hi.demo.notebook.abdb8f09",
+        "model_version": "1",
+        "error_code": null,
+        "result": {
+          "run_id": "eb44663c5112462ea5b95fd92c204151",
+          "metrics": {
+            "mae": 3.758630658273197,
+            "rmse": 4.9142272796917865,
+            "cpu_seconds": 0.21726249399999986,
+            "baseline_mae": 7.466666666666665,
+            "peak_rss_kib": 276812.0,
+            "baseline_rmse": 8.821497143283464,
+            "duration_seconds": 0.526552208000794
+          },
+          "model_uri": "models:/hi.demo.notebook.abdb8f09/1",
+          "model_name": "hi.demo.notebook.abdb8f09",
+          "artifact_uri": "models:/m-3c632036203740d982f1b29aa117263d",
+          "experiment_id": "1",
+          "model_version": "1",
+          "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "storage_evidence": [
+            {
+              "key": "mlflow/1/models/m-3c632036203740d982f1b29aa117263d/artifacts/MLmodel",
+              "bytes": 1336,
+              "bucket": "pucpr-poc",
+              "sha256": "c1456acc4e87b4087686717f5612d0a412cdf9fca4078a9229aed6d272fbc184",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-3c632036203740d982f1b29aa117263d/artifacts/model.pkl",
+              "bytes": 8671,
+              "bucket": "pucpr-poc",
+              "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "status": "PASS",
+              "model_version": "1"
+            },
+            {
+              "key": "mlflow/1/models/m-3c632036203740d982f1b29aa117263d/artifacts/requirements.txt",
+              "bytes": 80,
+              "bucket": "pucpr-poc",
+              "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+              "status": "PASS",
+              "model_version": "1"
+            }
+          ],
+          "training_execution_id": "4e63488e-a440-4fed-babe-052716fac7cc"
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Dados DEMO e contrato provisório; regras não avaliadas não são homologação"
+  ]
+}

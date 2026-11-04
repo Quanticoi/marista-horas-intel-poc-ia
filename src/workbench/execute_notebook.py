@@ -11,6 +11,7 @@ def main():
     parser.add_argument("notebook")
     parser.add_argument("--proposal-id")
     parser.add_argument("--reset-plan-id")
+    parser.add_argument("--workspace",action="store_true",help="Execute the editable notebook used in Jupyter")
     args=parser.parse_args()
     if Path(args.notebook).name!=args.notebook:
         raise ValueError("Select a source notebook by filename")
@@ -20,7 +21,7 @@ def main():
     if args.reset_plan_id:
         from uuid import UUID
         os.environ["RESET_PLAN_ID"]=str(UUID(args.reset_plan_id))
-    source=Path("/app/notebooks")/args.notebook
+    source=Path("/workspace/notebooks" if args.workspace else "/app/notebooks")/args.notebook
     notebook=nbformat.read(source,as_version=4)
     output=Path("/reports")/(source.stem+".executed.ipynb")
     try:

@@ -23,6 +23,8 @@ def auth(authorization: str = Header(default="")):
         raise HTTPException(401, "Invalid token")
 
 
+from src.api.operations import router as operations_router
+app.include_router(operations_router(auth))
 from src.api.proposals import router as proposal_router
 app.include_router(proposal_router(auth))
 from src.api.lineage import router as lineage_router
@@ -44,15 +46,18 @@ async def correlation(request: Request, call_next):
 @app.exception_handler(HTTPException)
 @app.exception_handler(RequestValidationError)
 @app.exception_handler(ValueError)
+@app.exception_handler(LookupError)
 async def invalid(request, error):
-    return JSONResponse(status_code=getattr(error,"status_code",422), content=dict(
+    from src.operations.jobs import Conflict
+    code=409 if isinstance(error,Conflict) else 404 if isinstance(error,LookupError) else getattr(error,"status_code",422)
+    return JSONResponse(status_code=code, headers={"X-Correlation-ID":getattr(request.state,"correlation_id","")}, content=dict(
         code="REQUEST_ERROR",message=str(getattr(error,"detail","Invalid request")),correlation_id=getattr(request.state,"correlation_id","")))
 
 
 @app.exception_handler(Exception)
 async def unexpected(request, error):
     event("api", "request failed", level="ERROR", error=type(error).__name__,correlation_id=getattr(request.state,"correlation_id",""))
-    return JSONResponse(status_code=503, content=dict(code="DEPENDENCY_ERROR",message="Service unavailable",correlation_id=getattr(request.state,"correlation_id","")))
+    return JSONResponse(status_code=503,headers={"X-Correlation-ID":getattr(request.state,"correlation_id","")}, content=dict(code="DEPENDENCY_ERROR",message="Service unavailable",correlation_id=getattr(request.state,"correlation_id","")))
 
 
 @app.get("/health")

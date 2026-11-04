@@ -1,0 +1,133 @@
+{
+  "timestamp_utc": "2026-11-04T16:57:58.793135+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:0133b02d6c27fba2db326cf52ccdeada7ec5f05c63034629b818fcfaa783637c",
+  "environment": "poc",
+  "test_id": "lineage-negative-tests",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "corrupted_artifact": {
+      "status": "PASS",
+      "http_status": 409,
+      "model": "hi.demo.negative.ef1adc99",
+      "version": "1"
+    },
+    "missing_artifact": {
+      "status": "PASS",
+      "http_status": 503
+    },
+    "corrupted_mapping": {
+      "status": "PASS",
+      "integrity": "MISMATCH",
+      "entity_id": "1cc505ce-503c-40f7-83a5-287b5d379a14"
+    },
+    "transaction_rollback": {
+      "status": "PASS",
+      "proposal_id": "1e81482f-54f6-4b38-afaf-a8de29e6d12f",
+      "persisted_headers": 0
+    },
+    "governance": {
+      "status": "PASS",
+      "approved": {
+        "approval_id": "00897f87-b858-43f1-bfb3-61b0cd0304c9",
+        "model_name": "hi.demo.negative.ef1adc99",
+        "model_version": "1",
+        "action": "APPROVE",
+        "reason": "Explicit isolated governance acceptance",
+        "requested_by": "isolated-test",
+        "reviewed_by": "poc-reviewer",
+        "correlation_id": "59eb6585-ef11-4afc-82d1-debb069686b5",
+        "status": "APPROVED",
+        "prior_version": null,
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "run_id": "53699021aa5d48ff9450441cb93cab6f",
+        "created_at_utc": "2026-11-04T16:57:38.789720+00:00",
+        "reviewed_at_utc": "2026-11-04T16:57:38.808606+00:00"
+      },
+      "rollback": {
+        "approval_id": "154dc2b6-ff01-40f9-b2b1-c6acc174650e",
+        "model_name": "hi.demo.negative.ef1adc99",
+        "model_version": "1",
+        "action": "ROLLBACK",
+        "reason": "Explicit isolated governance acceptance",
+        "requested_by": "isolated-test",
+        "reviewed_by": "poc-reviewer",
+        "correlation_id": "f1f39136-094e-436a-a467-9d016b53e565",
+        "status": "APPROVED",
+        "prior_version": "2",
+        "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+        "run_id": "53699021aa5d48ff9450441cb93cab6f",
+        "created_at_utc": "2026-11-04T16:57:41.877447+00:00",
+        "reviewed_at_utc": "2026-11-04T16:57:41.901924+00:00"
+      },
+      "revoked": {
+        "approval_id": "8aad90df-305e-41f1-a4bc-1a5ba1dfeedd",
+        "model_name": "hi.demo.negative.ef1adc99",
+        "model_version": "1",
+        "action": "REVOKE",
+        "reason": "Explicit isolated governance acceptance",
+        "requested_by": "isolated-test",
+        "reviewed_by": "poc-reviewer",
+        "correlation_id": "6f4b37b8-5fc0-4e11-b17f-9c533fb9a22a",
+        "status": "REVOKED",
+        "prior_version": "1",
+        "artifact_sha256": null,
+        "run_id": null,
+        "created_at_utc": "2026-11-04T16:57:44.466322+00:00",
+        "reviewed_at_utc": "2026-11-04T16:57:44.485384+00:00"
+      },
+      "post_revoke_http": 403,
+      "approved_generation": {
+        "generation_job_id": "ddaef18a-ef25-466b-a0a6-af7d25326785",
+        "job_id": "ddaef18a-ef25-466b-a0a6-af7d25326785",
+        "correlation_id": "f7e66d61-1d87-47cf-b540-adffac3fdb3b",
+        "status": "COMPLETED",
+        "attempt": 1,
+        "error_code": null,
+        "status_url": "/v1/proposals/generations/ddaef18a-ef25-466b-a0a6-af7d25326785",
+        "proposal_id": "ddaef18a-ef25-466b-a0a6-af7d25326785",
+        "proposal_url": "/v1/proposals/ddaef18a-ef25-466b-a0a6-af7d25326785/application-view",
+        "started_at_utc": "2026-11-04T16:57:42.411421+00:00",
+        "ended_at_utc": "2026-11-04T16:57:42.990245+00:00",
+        "events": [
+          {
+            "event_type": "CREATED",
+            "details": {},
+            "created_at_utc": "2026-11-04T16:57:42.400003+00:00"
+          },
+          {
+            "event_type": "RUNNING",
+            "details": {
+              "attempt": 1
+            },
+            "created_at_utc": "2026-11-04T16:57:42.411421+00:00"
+          },
+          {
+            "event_type": "CHECKPOINT",
+            "details": {
+              "fields": [
+                "composition"
+              ]
+            },
+            "created_at_utc": "2026-11-04T16:57:42.925962+00:00"
+          },
+          {
+            "event_type": "COMPLETED",
+            "details": {
+              "seconds": 0.5751678379892837
+            },
+            "created_at_utc": "2026-11-04T16:57:42.990245+00:00"
+          }
+        ]
+      }
+    },
+    "manifest_repair": {
+      "status": "PASS",
+      "proposal_id": "ddaef18a-ef25-466b-a0a6-af7d25326785",
+      "headers": 1,
+      "artifact_key": "lineage/poc/planilha-turmas/proposals/ddaef18a-ef25-466b-a0a6-af7d25326785/revisions/1/manifest.json"
+    }
+  },
+  "limitations": []
+}

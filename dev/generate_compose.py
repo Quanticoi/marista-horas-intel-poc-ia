@@ -52,8 +52,8 @@ definitions = [
  ('mlflow', 5000, 'MLFLOW_PASSWORD AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY', 'postgres rustfs'),
  ('ingestion', 8020, 'APP_PASSWORD AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY INGESTION_TOKEN', 'postgres rustfs mlflow'),
  ('inference', 8001, 'READONLY_PASSWORD AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY INFERENCE_TOKEN', 'postgres rustfs mlflow'),
- ('api', 8000, 'APP_PASSWORD RABBITMQ_PASSWORD API_TOKEN INFERENCE_TOKEN', 'inference rabbitmq'),
- ('worker', None, 'APP_PASSWORD RABBITMQ_PASSWORD INFERENCE_TOKEN', 'inference rabbitmq'),
+ ('api', 8000, 'APP_PASSWORD RABBITMQ_PASSWORD API_TOKEN INFERENCE_TOKEN OPERATOR_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY', 'inference rabbitmq'),
+ ('worker', None, 'APP_PASSWORD RABBITMQ_PASSWORD INFERENCE_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY', 'inference rabbitmq'),
  ('monitoramento', 8010, 'READONLY_PASSWORD MONITOR_TOKEN', 'postgres'),
  ('dashboard', 8088, 'READONLY_PASSWORD DASHBOARD_TOKEN', 'api monitoramento'),
  ('jupyter', 8888, 'AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY API_TOKEN JUPYTER_TOKEN INGESTION_TOKEN', 'api mlflow ingestion'),
@@ -70,7 +70,7 @@ for name, port, keys, dependencies in definitions:
         command = ['/usr/local/bin/_entrypoint.sh', 'python', '-m', 'src.common.launch', 'jupyter']
         item['volumes'] = ['./workspace:/workspace']
     elif name == 'worker':
-        command = ['celery', '-A', 'src.workers.tasks:app', 'worker', '--loglevel=INFO', '--concurrency=2']
+        command = ['celery', '-A', 'src.workers.tasks:app', 'worker', '--beat', '--schedule=/tmp/celerybeat-schedule', '--loglevel=INFO', '--concurrency=2']
     else:
         module = {'monitoramento':'monitoring', 'dashboard':'dashboard', 'api':'api', 'inference':'inference', 'ingestion':'ingestion'}[name]
         command = ['python', '-m', 'uvicorn', f'src.{module}.main:app', '--host', '0.0.0.0', '--port', str(port)]
@@ -93,15 +93,23 @@ journey = dict(
     SOURCE_DATABASE_URL='postgresql+psycopg://planning_readonly:${READONLY_PASSWORD:?Configure .env}@postgres:5432/planejamento_db',
     APPLICATION_DATABASE_URL='postgresql+psycopg://planning_app:${APP_PASSWORD:?Configure .env}@postgres:5432/planejamento_db',
     MLFLOW_UI_BASE_URL='http://127.0.0.1:5000',
+    MLFLOW_SUPPRESS_PRINTING_URL_TO_STDOUT='true',
+    MLFLOW_PRINT_MODEL_URLS_ON_CREATION='false',
+    MLFLOW_NOTEBOOK_TRACE_RENDERER_BASE_URL='http://127.0.0.1:5000',
     MLFLOW_EXPERIMENT_NAME='${MLFLOW_EXPERIMENT_NAME:-planilha-turmas-proxy-v1}', MODEL_NAME='planilha-turmas-demo',
     JOURNEY_MODE='DEMO', JOURNEY_TIMEOUT='15', JOURNEY_RETRIES='2',
     MLFLOW_HTTP_REQUEST_TIMEOUT='15', MLFLOW_HTTP_REQUEST_MAX_RETRIES='2')
 for name in ('tools', 'jupyter'):
     services[name]['environment'].update(journey)
 services['jupyter']['environment'].update(secret('INFERENCE_TOKEN'))
+for name in ('api','worker'):
+    services[name]['environment'].update({key:value for key,value in journey.items() if key not in ('SOURCE_DATABASE_URL','APPLICATION_DATABASE_URL')})
+services['api']['environment']['OPERATOR_ID']='poc-reviewer'
+services['jupyter']['environment'].update(secret('OPERATOR_TOKEN'))
+services['tools']['environment'].update(secret('OPERATOR_TOKEN'))
 services['jupyter']['environment']['PROPOSAL_ID'] = '${PROPOSAL_ID:-}'
 services['jupyter']['volumes'] += ['./artifacts/reports:/reports']
-for name in ('jupyter', 'api', 'inference'):
+for name in ('jupyter', 'api', 'inference','worker'):
     services[name]['environment']['MLFLOW_EXPERIMENT_NAME'] = journey['MLFLOW_EXPERIMENT_NAME']
     services[name]['environment']['MLFLOW_ENABLE_ASYNC_TRACE_LOGGING'] = 'false'
     services[name]['environment']['EVENT_DIRECTORY'] = '/logs'

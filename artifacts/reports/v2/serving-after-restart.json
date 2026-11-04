@@ -1,0 +1,464 @@
+{
+  "timestamp_utc": "2026-11-04T16:57:45.634954+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:0133b02d6c27fba2db326cf52ccdeada7ec5f05c63034629b818fcfaa783637c",
+  "environment": "poc",
+  "test_id": "serving-after-restart",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign_id": "52eaaa10-4fa7-4410-861f-71ef572fcb89",
+    "sample_size": 6,
+    "requests": 60,
+    "concurrency": 2,
+    "p50_seconds": 0.2788951580005232,
+    "p95_seconds": 0.5198285050435516,
+    "p99_seconds": 0.7005905537605577,
+    "before": {
+      "cache": {
+        "hits": 0,
+        "misses": 0,
+        "maxsize": 4,
+        "currsize": 0
+      },
+      "peak_rss_kib": 233324,
+      "policy": "At most four verified explicit versions per process; registration does not load a model"
+    },
+    "after": {
+      "cache": {
+        "hits": 0,
+        "misses": 64,
+        "maxsize": 4,
+        "currsize": 4
+      },
+      "peak_rss_kib": 301548,
+      "policy": "At most four verified explicit versions per process; registration does not load a model"
+    },
+    "observations": [
+      {
+        "seconds": 0.7000881249987287,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "6623ecd7-329b-4d01-b4d2-55c27ef2392c",
+        "rows": 5
+      },
+      {
+        "seconds": 0.7013135610031895,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "2735b62c-d16b-47f4-81d4-8403675333ac",
+        "rows": 5
+      },
+      {
+        "seconds": 0.26383651699870825,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "d5afd8a6-2277-46ce-9050-f1bd1980fc18",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2618463319959119,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "cb114a9b-7c6d-48b1-b581-f6aad7daa420",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2774123870040057,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "b41fd5a4-0f79-4016-a41a-193615fc289c",
+        "rows": 5
+      },
+      {
+        "seconds": 0.27768464900145773,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "8753432b-cd30-45e1-a563-883e8da8638a",
+        "rows": 5
+      },
+      {
+        "seconds": 0.27186500901007093,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "c9274ead-bf46-4b65-b4f6-a3bcee5ce597",
+        "rows": 5
+      },
+      {
+        "seconds": 0.27166515099816024,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "678b1dc8-7d01-489f-ae3d-35c2ef106ab1",
+        "rows": 5
+      },
+      {
+        "seconds": 0.29912430699914694,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "9fc4ff3b-9c88-457b-b49b-34b0252573bd",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2988542469975073,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "74b203e6-75be-42eb-a0d3-2dda36289a88",
+        "rows": 5
+      },
+      {
+        "seconds": 0.5215450990071986,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "2972b8f3-4350-4742-89ba-7efab671f155",
+        "rows": 5
+      },
+      {
+        "seconds": 0.5197381579928333,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "657a7e0a-d09d-405a-91e5-2084a8d21784",
+        "rows": 5
+      },
+      {
+        "seconds": 0.343992893001996,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "3a3ef794-f85e-4a72-9aa1-96020782819c",
+        "rows": 5
+      },
+      {
+        "seconds": 0.42364974500378594,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "d57a5c58-42fd-44fe-a6d1-cd09e796a88b",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3429215960059082,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "e048ca0c-e950-4492-b480-73e9427b2513",
+        "rows": 5
+      },
+      {
+        "seconds": 0.28395352899678983,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "c58d395a-81a4-46ae-977a-95cc747799ac",
+        "rows": 5
+      },
+      {
+        "seconds": 0.4031190130044706,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "8be1618d-cf33-4a56-a542-742961da60ba",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3966844879905693,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "df7917a7-5e0d-4254-af5b-27adef33d3ba",
+        "rows": 5
+      },
+      {
+        "seconds": 0.24306099700334016,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "71dcfaee-c6b1-4cd5-a0e2-252a02e94f41",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2542560130095808,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "e8df73a0-7be4-4bb3-a9ee-b8d2b906d2ee",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2909687689971179,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "4f856c71-4f9f-473c-adcf-578530a8e1c1",
+        "rows": 5
+      },
+      {
+        "seconds": 0.28253175799909513,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "c1bc36c3-1b25-4688-aac2-80195fedf424",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2621154769876739,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "c29fbb2c-9f5e-4774-9923-d7017ec0668f",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2894554189988412,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "c037131b-da86-4f9c-964f-d4d0eeca4647",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2761045289953472,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "72223a8d-5cb0-4d1c-a88a-d1ce1eab373f",
+        "rows": 5
+      },
+      {
+        "seconds": 0.35792539299291093,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "75110bcf-d17a-4462-9add-3e9045b1aa6f",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3400048540061107,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "9016f6ca-80e5-4420-a586-691290bf0188",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3305886120069772,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "e2356ee0-f381-4583-aa84-066eae5fbcdb",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2330391030118335,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "2a9a7d27-aa3a-4c8d-84f5-5e2a22b80927",
+        "rows": 5
+      },
+      {
+        "seconds": 0.25710264600638766,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "e0d0e8ed-99ff-426b-9334-d41511cb76c2",
+        "rows": 5
+      },
+      {
+        "seconds": 0.26463623699964955,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "287f5a59-1cda-40ff-b53f-bbdbe1d0cf99",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2775557889981428,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "33dd98a3-00a4-4343-8aab-e2dff163ad11",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3681092609913321,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "ea864425-9a42-4fad-9b8c-742085e3ffe0",
+        "rows": 5
+      },
+      {
+        "seconds": 0.5114650369941955,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "56c3ecf9-f4b2-4508-b9e9-ce843269b6be",
+        "rows": 5
+      },
+      {
+        "seconds": 0.4962281810003333,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "3b2464ff-2956-483e-bd4d-4c6b1f07e76f",
+        "rows": 5
+      },
+      {
+        "seconds": 0.40134909299376886,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "294b0d4b-eb1b-45ee-8454-cd7147cf69dc",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3519731600099476,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "faf8d2a6-ab01-44b2-aba5-015fc24ee518",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2912867290142458,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "582b98d5-b00b-4521-8120-ddf7dd12c710",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3032357000047341,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "a06a9e2f-b77c-407f-b17f-37d9024d3480",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3847276799933752,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "9f1058e0-2727-4fdb-818c-20ec8c2bdf53",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3549903549865121,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "338b3044-0b4e-4a0d-8143-b1cc5652c1cb",
+        "rows": 5
+      },
+      {
+        "seconds": 0.24002000800101086,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "065a012f-1bcd-4021-8e33-f2cdc83d8673",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2540271159959957,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "39475e34-4649-4945-af34-6c6f2bfca2a5",
+        "rows": 5
+      },
+      {
+        "seconds": 0.25479453199659474,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "f4ba5cfe-dd54-478b-8168-a612c5eb58b9",
+        "rows": 5
+      },
+      {
+        "seconds": 0.25400462599645834,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "82b74098-9cff-4b57-b028-c6f3d088c153",
+        "rows": 5
+      },
+      {
+        "seconds": 0.26186979899648577,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "51c8615f-4e11-4896-b470-25573434dde7",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2497493340051733,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "fc895c30-1afc-42f7-a741-4ed2c0f553de",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2670011050067842,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "45b11afa-3a0f-4614-9b1d-23dbf1d413d7",
+        "rows": 5
+      },
+      {
+        "seconds": 0.24709807999897748,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "3f099813-fa28-4698-83f7-9ff3862136d7",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2438345849950565,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "d0fdbf23-68e5-4319-a939-9835e47b3740",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2522025479993317,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "627e6754-9708-4912-a8e0-c2ec64a9cd8b",
+        "rows": 5
+      },
+      {
+        "seconds": 0.27576356200734153,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "5e166ec6-3550-4821-977b-a6e0138ba8c8",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2801056669995887,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "a9900c42-9944-498e-8525-6394f26fad43",
+        "rows": 5
+      },
+      {
+        "seconds": 0.27210110500163864,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "edec3161-aba2-4721-a82b-9c4e870d44ec",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3828269859950524,
+        "model_name": "hi.demo.scale500.f72c3e08.000",
+        "version": "1",
+        "inference_id": "fe4bebe0-9e50-4071-b72f-5ed340e8ed7c",
+        "rows": 5
+      },
+      {
+        "seconds": 0.3577110479964176,
+        "model_name": "hi.demo.scale500.f72c3e08.017",
+        "version": "1",
+        "inference_id": "fa183d43-3c85-48dc-a779-9ad4ddaa2042",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2572449279978173,
+        "model_name": "hi.demo.scale500.f72c3e08.099",
+        "version": "1",
+        "inference_id": "ce9578a4-4949-4b09-ad62-03af9d6f4fc0",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2731998399976874,
+        "model_name": "hi.demo.scale500.f72c3e08.249",
+        "version": "1",
+        "inference_id": "d83fa00a-14c5-40d3-b009-6d6b16a47afe",
+        "rows": 5
+      },
+      {
+        "seconds": 0.25902621999557596,
+        "model_name": "hi.demo.scale500.f72c3e08.399",
+        "version": "1",
+        "inference_id": "9cdff7ee-6afe-4778-8f0d-03448dd4ab64",
+        "rows": 5
+      },
+      {
+        "seconds": 0.2194681029941421,
+        "model_name": "hi.demo.scale500.f72c3e08.499",
+        "version": "1",
+        "inference_id": "04c19697-619e-4a42-b8b2-8a99261ea64f",
+        "rows": 5
+      }
+    ]
+  },
+  "limitations": [
+    "Six explicit versions sampled from 500 real training results; not 500 concurrent loaded models",
+    "Cold and warm requests mixed; six-version round robin exceeds four-entry cache"
+  ]
+}

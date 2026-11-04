@@ -1,0 +1,44 @@
+{
+  "timestamp_utc": "2026-11-04T17:10:23.013031+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:ecfa01f3ecd2a2f9148e7cb223f4cf72cdb6547717a541d8604c5b5c95158825",
+  "environment": "poc",
+  "test_id": "retry-training-failed",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "campaign_id": "5065952a-d58d-418d-ba63-ea39ec0d8e72",
+    "state": {
+      "campaign_id": "5065952a-d58d-418d-ba63-ea39ec0d8e72",
+      "idempotency_key": "b8177681-ccc2-45ea-9b10-f81292b685de",
+      "request_hash": "ab65c0e5a943d66c71dca19397c99de02a5e74a5af3939c8dc1dd4d81ca6f7f2",
+      "request": {
+        "alpha": 1.0,
+        "algorithm": "ridge",
+        "cycle_code": "2026-1",
+        "model_keys": [
+          "hi.demo.controls.de64e858.0"
+        ],
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "max_attempts": 1,
+        "requested_by": "isolated-controls",
+        "schema_version": "poc-training-campaign-v2",
+        "confirm_training": true,
+        "max_parallel_jobs": 2
+      },
+      "correlation_id": "91e14c36-e65f-47c8-9ea6-a0ad2e10eef7",
+      "requested_by": "isolated-controls",
+      "status": "FAILED",
+      "max_parallel_jobs": 2,
+      "requested_count": 1,
+      "created_at_utc": "2026-11-04T17:10:08.774396+00:00",
+      "started_at_utc": "2026-11-04T17:10:08.790928+00:00",
+      "ended_at_utc": "2026-11-04T17:10:22.836713+00:00",
+      "counts": {
+        "FAILED": 1
+      }
+    },
+    "reason": "Host deliberately stopped isolated MLflow"
+  },
+  "limitations": []
+}
