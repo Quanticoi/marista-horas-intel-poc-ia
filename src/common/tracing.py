@@ -64,7 +64,8 @@ def operation_span(name, **attributes):
 
 @lru_cache(maxsize=1)
 def service_experiment():
-    experiment = mlflow.MlflowClient().get_experiment_by_name(os.environ["MLFLOW_EXPERIMENT_NAME"])
+    name=os.getenv('MLFLOW_OPERATIONS_EXPERIMENT_NAME',os.environ['MLFLOW_EXPERIMENT_NAME'])
+    experiment = mlflow.MlflowClient().get_experiment_by_name(name)
     if experiment is None:
         raise RuntimeError("Configure o experimento da jornada antes de chamar a API")
     return experiment.experiment_id

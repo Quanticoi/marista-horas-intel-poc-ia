@@ -168,6 +168,10 @@ def process(job_id):
                 campaign=job["campaign_id"]
                 if job["status"] in ("COMPLETED","CANCELLED","FAILED"):
                     return
+                if job['kind']=='training':
+                    con.execute(text("UPDATE planning.operation_jobs SET status='FAILED',error_code='LEGACY_TRAINING_DISABLED',ended_at_utc=now() WHERE job_id=:id"),{'id':job_id})
+                    emit(con,'LEGACY_TRAINING_DISABLED',job_id,campaign)
+                    return
                 if not con.execute(text("SELECT available_at_utc<=now() FROM planning.operation_jobs WHERE job_id=:id"),{"id":job_id}).scalar_one():
                     return
                 if campaign:
@@ -192,17 +196,22 @@ def process(job_id):
             started=time.monotonic()
             try:
                 if job["kind"]=="generation":
-                    from src.operations.generation import execute
+                    if job['request'].get('schema_version')=='poc-planilha-turmas-v2':
+                        from src.operations.academic_generation import execute
+                    else:
+                        from src.operations.generation import execute
                 else:
-                    from src.operations.training import execute
+                    raise ValueError('Unsupported operational job kind')
                 import mlflow
                 from src.common.settings import required
                 from src.common.tracing import safe_span
                 client=mlflow.MlflowClient()
-                experiment=client.get_experiment_by_name(required("MLFLOW_EXPERIMENT_NAME"))
+                import os
+                experiment_name=os.getenv('MLFLOW_OPERATIONS_EXPERIMENT_NAME','HI/POC/Operations/V4') if job['request'].get('schema_version')=='poc-planilha-turmas-v2' else required('MLFLOW_EXPERIMENT_NAME')
+                experiment=client.get_experiment_by_name(experiment_name)
                 if experiment is None:
-                    mlflow.set_experiment(required("MLFLOW_EXPERIMENT_NAME"))
-                    experiment=client.get_experiment_by_name(required("MLFLOW_EXPERIMENT_NAME"))
+                    mlflow.set_experiment(experiment_name)
+                    experiment=client.get_experiment_by_name(experiment_name)
                 with safe_span("worker."+job["kind"],{"job_id":str(job_id),"correlation_id":job["correlation_id"]},experiment.experiment_id) as span:
                     mlflow.update_current_trace(tags={"job_id":str(job_id),"correlation_id":job["correlation_id"],
                         "training_campaign_id":str(campaign) if campaign else "none"})

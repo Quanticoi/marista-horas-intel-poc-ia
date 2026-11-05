@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "job": {
+    "generation_job_id": "ac8b4d93-aaa5-4d94-85de-557aa955c8ca",
+    "job_id": "ac8b4d93-aaa5-4d94-85de-557aa955c8ca",
+    "correlation_id": "dffe7eed-fc9f-4d30-b7a5-15f993f6f197",
+    "status": "COMPLETED",
+    "attempt": 1,
+    "error_code": null,
+    "status_url": "/v1/proposals/generations/ac8b4d93-aaa5-4d94-85de-557aa955c8ca",
+    "proposal_id": "ac8b4d93-aaa5-4d94-85de-557aa955c8ca",
+    "proposal_url": "/v2/proposals/ac8b4d93-aaa5-4d94-85de-557aa955c8ca/application-view",
+    "trace_id": "tr-e3504d7e0c40cda9e076b59a2de125cc",
+    "started_at_utc": "2026-11-05T05:55:52.620359+00:00",
+    "ended_at_utc": "2026-11-05T05:55:54.591768+00:00",
+    "events": [
+      {
+        "event_type": "CREATED",
+        "details": {},
+        "created_at_utc": "2026-11-05T05:55:52.583052+00:00"
+      },
+      {
+        "event_type": "RUNNING",
+        "details": {
+          "attempt": 1
+        },
+        "created_at_utc": "2026-11-05T05:55:52.620359+00:00"
+      },
+      {
+        "event_type": "CHECKPOINT",
+        "details": {
+          "fields": [
+            "trace_id"
+          ]
+        },
+        "created_at_utc": "2026-11-05T05:55:53.187317+00:00"
+      },
+      {
+        "event_type": "CHECKPOINT",
+        "details": {
+          "fields": [
+            "academic_composition"
+          ]
+        },
+        "created_at_utc": "2026-11-05T05:55:54.221788+00:00"
+      },
+      {
+        "event_type": "COMPLETED",
+        "details": {
+          "seconds": 1.9656866080040345
+        },
+        "created_at_utc": "2026-11-05T05:55:54.591768+00:00"
+      }
+    ]
+  },
+  "models": [
+    {
+      "model_name": "hi.demo.v4.c2248.components",
+      "model_version": "2"
+    },
+    {
+      "model_name": "hi.demo.v4.c2348.components",
+      "model_version": "2"
+    },
+    {
+      "model_name": "hi.demo.v4.c2287.components",
+      "model_version": "2"
+    }
+  ],
+  "offers": 70,
+  "source_rows": 107,
+  "audit": {
+    "proposal_id": "ac8b4d93-aaa5-4d94-85de-557aa955c8ca",
+    "status": "VERIFIED",
+    "proposal_sha256": "be9c3016d17ab06ce730bc674656e4b7c060d0fc1463cd6c44e7cade8fae28fc",
+    "offers": 70,
+    "source_rows": 107,
+    "models": [
+      {
+        "model_name": "hi.demo.v4.c2348.components",
+        "model_version": "2",
+        "run_id": "fc89fbf54f804ad88ffc09cb73a52298",
+        "status": "VERIFIED",
+        "artifact_sha256": "df8d37f01859ac4fe1318d92772339249700e05ae0783ce1eaa7895046d7dc4b"
+      },
+      {
+        "model_name": "hi.demo.v4.c2248.components",
+        "model_version": "2",
+        "run_id": "c7fdde7a3ab547a3a52e417d491b7005",
+        "status": "VERIFIED",
+        "artifact_sha256": "53d075044bf30874c87a50c856461a312271f391f61517335791063af0d0fc59"
+      },
+      {
+        "model_name": "hi.demo.v4.c2287.components",
+        "model_version": "2",
+        "run_id": "12d0c41d37b545abb98e54c19f3cf3ec",
+        "status": "VERIFIED",
+        "artifact_sha256": "4ce75f85c435b53342b04db8815f1c73da53b87e835ef80a187582149c96cd9d"
+      }
+    ],
+    "inferences": [
+      {
+        "inference_id": "d15fbbca-aaff-4af3-b32c-48ecaa7cd21b",
+        "status": "VERIFIED"
+      },
+      {
+        "inference_id": "1a75a192-8b6a-48ca-8e39-6a528c4f28cc",
+        "status": "VERIFIED"
+      },
+      {
+        "inference_id": "75a4ee5f-2453-4c02-8d8d-1feebc0ecf32",
+        "status": "VERIFIED"
+      }
+    ],
+    "limitations": [
+      "Technical integrity only; no academic approval or real forecast quality asserted."
+    ]
+  },
+  "idempotency": "PASS",
+  "S01": "PASS",
+  "S02": "PASS",
+  "S03": "PENDING_DATA_AND_APPROVAL"
+}

@@ -31,6 +31,12 @@ def alias_version(client,name):
     except MlflowException as error:
         if error.error_code=="RESOURCE_DOES_NOT_EXIST":
             return None
+        if error.error_code=='INVALID_PARAMETER_VALUE':
+            # MLflow 3.11 reports a missing alias with this code. Confirm via
+            # the registered model, rather than swallowing arbitrary errors.
+            aliases=client.get_registered_model(name).aliases
+            if 'champion' not in aliases:
+                return None
         raise
 
 
@@ -88,9 +94,13 @@ def review(approval_id,actor,approve):
                     raise Conflict("Rollback requires a previously approved version")
                 registered=client.get_model_version(name,version)
                 run=client.get_run(registered.run_id)
-                if run.info.status!="FINISHED" or run.data.tags.get("mode")!="DEMO":
+                if run.data.tags.get('lineage_schema_version')=='HI-LINEAGE/1.2':
+                    from src.serving.academic import validate
+                    trace=validate(name,str(version))
+                elif run.info.status!="FINISHED" or run.data.tags.get("mode")!="DEMO":
                     raise ValueError("Only finished traceable DEMO versions are eligible")
-                trace=trace_for(client,registered)
+                else:
+                    trace=trace_for(client,registered)
                 evidence=verify_model_storage(trace)
                 digest=next(e["sha256"] for e in evidence if e["key"].endswith("/model.pkl"))
                 if digest!=registered.tags.get("artifact_sha256"):

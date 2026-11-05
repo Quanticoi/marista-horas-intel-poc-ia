@@ -81,11 +81,7 @@ def router(auth):
 
     @routes.post("/v1/training/campaigns",status_code=202,dependencies=[Depends(auth)])
     def campaign(body:Campaign,request:Request,idempotency_key:str=Header(min_length=1,max_length=160)):
-        validate_snapshot(body.snapshot_id,body.cycle_code)
-        from src.persistence.catalog import context_for
-        for name in body.model_keys:
-            context_for(name)
-        return jobs.create_campaign(body,idempotency_key,request.state.correlation_id)
+        raise HTTPException(410,'Training moved to Jupyter Workbench. Historical campaigns remain readable.')
 
     @routes.get("/v1/training/campaigns",dependencies=[Depends(auth)])
     def campaigns(limit:int=Query(50,ge=1,le=500),offset:int=Query(0,ge=0)):

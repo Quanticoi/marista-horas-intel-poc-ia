@@ -1,5 +1,6 @@
 import hmac
 import httpx
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, Depends, Header, HTTPException
 from src.common.settings import required
 from src.common.http_limits import BodyLimitMiddleware
@@ -9,10 +10,17 @@ from src.persistence.db import rows
 from src.inference.contracts import InferenceRequest, InferenceResponse
 from src.inference.routing import route as infer
 
-app = FastAPI(title="Modelos de Inferência — serviço interno", docs_url=None, redoc_url=None)
+@asynccontextmanager
+async def lifespan(app):
+    from src.inference.academic import preload
+    preload()
+    yield
+
+
+app = FastAPI(title="Modelos de Inferência — serviço interno", docs_url=None, redoc_url=None,lifespan=lifespan)
 app.add_middleware(BodyLimitMiddleware)
 from src.common.tracing import install_http_tracing
-install_http_tracing(app, "inference", "/internal/draft/predict")
+install_http_tracing(app, "inference", "/internal/")
 
 
 def auth(authorization: str = Header(default="")):
@@ -22,6 +30,8 @@ def auth(authorization: str = Header(default="")):
 
 from src.inference.journey import router as draft_router
 app.include_router(draft_router(auth))
+from src.inference.academic import router as academic_router
+app.include_router(academic_router(auth))
 
 
 @app.get("/health")

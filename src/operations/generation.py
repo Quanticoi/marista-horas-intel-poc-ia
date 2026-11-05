@@ -10,8 +10,8 @@ from src.persistence.lineage import publish_manifest
 from src.persistence.db import rows
 from src.operations.training import trace_for
 
-def assert_approved(name,version):
-    found=rows("SELECT * FROM planning.model_approval_requests WHERE model_name=:name AND model_version=:version AND status='APPROVED'",dict(name=name,version=version))
+def assert_approved(name,version,role='app'):
+    found=rows("SELECT * FROM planning.model_approval_requests WHERE model_name=:name AND model_version=:version AND status='APPROVED'",dict(name=name,version=version),role=role)
     if not found or str(mlflow.MlflowClient().get_model_version_by_alias(name,"champion").version)!=version:
         raise PermissionError("No matching authorized approval and Registry alias")
 
