@@ -47,9 +47,9 @@ def main():
         if 'build' in item:
             assert (ROOT/item['build']['dockerfile']).is_file()
     print('PASS Compose services, dependency graph, healthchecks, loopback, secrets references and mounts')
-    original=(ROOT/'dev/spec-historica-v1.md').read_text(encoding='utf-8')
-    canonical=re.search(r'```sql\n(-- Database planejamento_db.*?)```',original,re.S).group(1)
-    assert (ROOT/'sql/ddl/001_planning.sql').read_text(encoding='utf-8')==canonical
+    import hashlib
+    canonical=(ROOT/'sql/ddl/001_planning.sql').read_text(encoding='utf-8')
+    assert hashlib.sha256(canonical.encode()).hexdigest() == '31ce4c46df83890c5fc17be53a37a55eef4859ad49ad4fbffe85a3d70e73fed6', 'Original DDL changed'
     assert len(re.findall('CREATE TABLE IF NOT EXISTS',canonical))==16
     contract=(ROOT/'spec.md').read_text(encoding='utf-8')
     assert (ROOT/'sql/ddl/002_immutability.sql').read_text(encoding='utf-8').strip() in contract

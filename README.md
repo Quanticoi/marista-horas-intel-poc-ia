@@ -336,4 +336,4 @@ docker compose logs --tail 100 api worker inference mlflow
 | Plano de reset expirado | Gere novo preview; não altere plano para forçar execução |
 
 [Catálogo](notebooks/README.md) · [Jupyter](docs/operations/JUPYTER.md)
-· [ADRs](docs/adr/README.md) · [Histórico](history/state.md).
+· [ADRs](docs/adr/README.md). Histórico de trabalho local em `history/` (não versionado).

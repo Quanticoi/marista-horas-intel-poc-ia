@@ -14,4 +14,6 @@ artifacts/exports/*
 dist/
 build/
 workspace/
+dev/
+history/
 data/compose-logs/
