@@ -1,39 +1,28 @@
-# Organização e capacidade de modelos
+# Organização de modelos e capacidade
 
-V3: novos escopos DEMO usam `hi.pt.demanda.DEMO-C1.DEMO-CR1.P1`, derivado do
-catálogo SQL. Treino é filtrado por período antes do split; default da campanha
-no notebook05 é três escopos. Experimento fixo por domínio/ciclo e nomes de run
-incluem algoritmo/UTC/tentativa. Consulte o [dicionário](../contracts/HI_TAGGING_STANDARD.md).
-Os 500 ensaios V2 tinham um SHA distinto de model.pkl: constituem teste de
-orquestração, não 500 comportamentos acadêmicos nem aceite do código V3.
+| Nível | Organização V4 |
+|---|---|
+| Servidor MLflow | Um por ambiente da POC |
+| Experimento | Um por nova campanha; ciclo + UTC + UUID |
+| Runs | CAMPAIGN → BATCH → MODEL, com tags de campanha/lote/escopo |
+| Modelo registrado | Identidade estável `hi.demo.v4.c{curso}.components` |
+| Versão | Novo ajuste do modelo; ligada à run, dataset, código e hashes |
+| Aprovação/deploy | Decisões explícitas, separadas do treino |
 
-Um MLflow por ambiente; experimento por domínio/campanha; run por tentativa;
-Registry por identidade estável. Nomes legados planilha-turmas-demo e C1-CR1-P1
-não são renomeados. Novos ensaios usam hi.demo.*; tags incluem solução, ambiente,
-domínio, ciclo, snapshot, campanha, model_key, código, configuração e hashes.
+Essa organização permite comparar ensaios sem sobrescrever resultados. Para retomar,
+informe a chave existente em RESUME. Para outra configuração, inicie NEW. O contexto
+SQL fica em `workbench_campaigns/workbench_models`; treinamento não é enviado ao Celery.
 
-Notebook05 agora submete campanhas persistentes pela API. PostgreSQL armazena
-training_campaigns, operation_jobs e operation_events; a view training_campaign_items
-expõe run/versão/métricas. RabbitMQ/Celery transporta tarefas; dispatcher10s,
-claim de envio60s, heartbeat10s e advisory locks controlam duplicidade/recuperação.
-Paralelismo máximo2; retries1–4, backoff10–60s; cancelamento cooperativo. Estado
-FAILED é sinalização persistente, não uma mensagem perdida.
+## Crescer para centenas de modelos
 
-V2 executou campanhas de30 e500 treinamentos reais com fit, métricas, Registry e
-três arquivos comparados no storage por item. Os modelos são identidades sintéticas
-distintas treinadas sobre o mesmo snapshot agregado. Não representam500 cursos
-reais nem prova de qualidade institucional. Relatórios de campanha distinguem
-contagem, CPU, RSS de processo, timestamps e observação após retomada.
+O executor possui lotes e checkpoints, com concorrência limitada a 1–2 no Jupyter.
+A capacidade de manter 500 identidades no Registry não equivale a executar 500 fits
+ou manter 500 modelos em memória simultaneamente. O serving atual tem cache de
+quatro versões por processo, PRELOAD seletivo e LAZY.
 
-T5 usa seis versões da campanha500, sessenta chamadas, concorrência2 e reinício
-prévio do serviço. Reporta p50/p95/p99 e estatísticas do cache. Não equivale a500
-modelos simultâneos. Cache LRU comporta até4 versões por processo, só após conferir
-SHA antes de desserializar. Registro não carrega modelo nem provisiona API.
+Antes de ampliar, medir duração/CPU/RSS por campanha, tamanho de artefato, latência,
+memória de inferência e frequência de uso por identidade. A V4 executada comprova
+três cursos. Os testes de 500 treinamentos V2 são históricos e não validam a V4.
+Não há promessa de paralelismo ou dimensionamento institucional nesse número.
 
-Serving compartilhado é a opção medida desta POC. Serviço dedicado continua no
-fluxo legado quando explicitamente publicado. Decisão de produção exige SLO,
-isolamento, tamanho de binário, concorrência e pressão de memória medidos.
-
-Governança V2: solicitação/revisão em model_approval_requests, credencial de
-operador separada e alias champion concordante; registro não aprova. Serving
-legado mantém model_deployments/bundle2.0. [ADR010](../adr/010-durable-operations-v2.md).
+[Tags e identidade](../contracts/HI_TAGGING_STANDARD.md) · [Governança](REVIEW_INTEGRITY.md).

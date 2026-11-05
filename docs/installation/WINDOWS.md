@@ -1,15 +1,21 @@
-# Windows
+# Instalação no Windows
 
-Docker Desktop com engine Linux/WSL2, Docker Compose, Git e Python 3.11+ para os utilitários de validação.
+Use Docker Desktop com engine Linux/WSL2, Git e Python 3.11/3.12 para scripts
+administrativos. Reserve inicialmente 8 GiB para Docker. Não instale os serviços
+Python/MLflow diretamente no Windows.
 
-Na raiz do PowerShell:
+Clone o repositório, entre na raiz e coloque as três planilhas em `data/reference/`.
+Em PowerShell:
 
-1. docker --context desktop-linux info
-2. $env:DOCKER_CONTEXT = "desktop-linux"
-3. Set-ExecutionPolicy -Scope Process Bypass
-4. ./deployment/scripts/compose.ps1 init
+```powershell
+docker --context desktop-linux info
+$env:DOCKER_CONTEXT = 'desktop-linux'
+.\deployment\scripts\compose.ps1 init
+```
 
-Na instalação existente, a atualização C3 exige build, migrate, start e validate.
-[Operação](../commands/DOCKER_COMPOSE.md) e [notebook/publicação C3](../operations/C3_TRAINING.md).
-Aplicação/testes funcionais executam nos containers. Python 3.11+ local é necessário
-para geradores estáticos e o verificador read-only de acessos HTTP (biblioteca padrão).
+Se a política local bloquear scripts, habilite a execução conforme a política da
+máquina. `init` prepara o `.env` se ausente; não troque credenciais de volumes existentes.
+Atualizações usam `compose.ps1 rebuild`; uso diário, `compose.ps1 start`.
+
+Abra [Jupyter](http://localhost:8888/lab/tree/notebooks/00_ambiente.ipynb).
+[Acessos](../operations/ACESSOS.md) · [Runbook V4](../operations/POC_V4_MANUAL_RUNBOOK.md).

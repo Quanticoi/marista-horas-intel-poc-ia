@@ -1,180 +1,187 @@
-# Marista — Horários Inteligentes
+# Marista · Horários Inteligentes
 
-POC de previsão de demanda e geração de **propostas de Planilha Turmas**. A jornada
-principal é **00 → 01 → 02 → 03 → 04/05 → 06 → 07 → 08 → 09 → 10** no Jupyter.
-O treinamento executa no Workbench; os serviços operacionais permanecem disponíveis
-sem notebook aberto. [Roteiro V4](docs/operations/POC_V4_MANUAL_RUNBOOK.md).
+**Da estrutura acadêmica à proposta de Planilha Turmas, com rastreabilidade ponta a ponta.**
 
-**Dados demonstrativos:** 107 linhas de planejamento de2024.2 fornecem a estrutura
-de70 ofertas. Um histórico sintético reproduzível alimenta três modelos por curso
-(2248,2348,2287). Planejamento, matrícula sintética e previsão têm origens distintas.
-Não há integração PRIME, matrícula oficial, capacidade homologada ou aprovação acadêmica.
+Esta POC integra Jupyter, MLflow, PostgreSQL e RustFS para treinar modelos de demanda,
+publicar versões aprovadas e gerar propostas consultáveis pela API. Todos os serviços
+executam em containers Docker Compose.
 
-## Arquitetura C3
+[Começar](#começar) · [Arquitetura](#arquitetura) · [Acessos](#acessos) · [Jupyter](#jornada-no-jupyter) · [Documentação](docs/README.md)
 
-```mermaid
-flowchart TB
-    START["Docker Compose — START"] --> API["API Serviços Inteligentes"]
-    START --> INF["Serviço de Inferência"]
-    START --> MLF["MLflow Tracking / Registry"]
-    START --> MON["Monitoramento"]
-    START --> JUP["Jupyter / Workbench"]
-    START --> WRK["Worker / RabbitMQ"]
-    START --> DB[("PostgreSQL")]
-    START --> OBJ[("RustFS / S3")]
-    DB -->|"SQL: histórico versionado"| JUP
-    JUP -->|"Fit, avaliação e registro"| MLF
-    JUP -->|"Aprovação, deploy e geração explícitos"| API
-    MLF -->|"Metadados e Registry"| DB
-    MLF -->|"Proxy de artefatos"| OBJ
-    API -->|"Job persistido de geração"| WRK
-    WRK -->|"Versão aprovada e disponibilizada"| INF
-    INF -->|"Recarrega e verifica modelo pelo proxy"| MLF
-    INF -->|"Previsões e identidade real"| WRK
-    WRK -->|"Transação: proposta e ofertas"| DB
-    API -->|"Consulta PostgreSQL"| DB
-    API -->|"Contrato HTTP paginado"| APP["Notebook09: simulador da aplicação"]
-    MON -.->|"Disponibilidade / execuções"| INF
-    MON -.-> MLF
-    classDef platform fill:#E6EDF5,stroke:#8093A9,color:#172B45
-    classDef training fill:#FCE8D6,stroke:#CB9958,color:#653B19
-    classDef operational fill:#DBF0E2,stroke:#62A57B,color:#214B32
-    class START platform
-    class JUP training
-    class API,INF,MLF,MON,WRK operational
-```
+> **V4 demonstrativa.** A estrutura vem de 107 registros de planejamento fornecidos;
+> o histórico de matrículas é sintético e reproduzível. Os resultados comprovam a
+> integração técnica, sem representar qualidade preditiva ou aprovação acadêmica institucional.
 
-| Componente | Responsabilidade |
-|---|---|
-| Jupyter | Importação SQL, exploração, fit/predict de avaliação, campanhas locais e métricas |
-| MLflow3.11.1 | Tracking, Registry, assinatura, versões explícitas e proxy de artefatos |
-| PostgreSQL15 | Bancos lógicos de MLflow/aplicação, checkpoints e propostas |
-| RustFS | Binários MLflow, manifests e artefatos em volume persistente |
-| API | Autenticação, revisão técnica, deploy, jobs e consulta da aplicação |
-| Worker / RabbitMQ | Jobs recuperáveis, inferência e persistência; sem treinamento |
-| Inferência | PRELOAD seletivo, LAZY e cache de até4 versões V4 por processo |
-| Monitoramento / dashboard | Saúde e eventos correlacionados por execução |
-| Ingestion | Adaptador legado; a jornada V4 importa referências no Workbench |
+## O que a POC entrega
 
-Registro não implica aprovação ou carregamento. A sequência técnica é
-`TRAINED → VALIDATED → APPROVED → DEPLOYED → LOADED`. Cada inferência confere
-aprovação SQL e alias `champion`, inclusive com cache aquecido. Revogação bloqueia
-novas chamadas. PRELOAD carrega no startup; LAZY quando solicitado. Os serviços
-iniciam sem treinar e sem exigir que já existam modelos. A correspondência C3 é
-funcional; não comprova capacidade, HA ou custos em GCP.
+| Entrada | Processamento | Resultado |
+|---|---|---|
+| 3 planilhas de referência, 70 ofertas e 107 atividades | Importação com proveniência, validação e quarentena | Dados persistidos e auditáveis no PostgreSQL |
+| Histórico sintético por coorte e disciplina | Treinamento local no Workbench, avaliação temporal e baseline | 3 modelos por curso, com versões e artefatos no MLflow/RustFS |
+| Versões explicitamente aprovadas | Inferência operacional, composição e gravação transacional | Proposta de Planilha Turmas, tabela HTTP e auditoria de integridade |
 
-## Subir e reconstruir
+Uma oferta contém suas atividades. Por exemplo, P164 preserva **41 estudantes
+planejados na teoria e 21 + 20 nas práticas**: isso não representa 82 estudantes.
+Capacidade oficial e unificação permanecem pendências explícitas quando faltam dados ou anuência.
 
-Pré-requisitos: Git, Python3.11/3.12 para scripts administrativos e Docker Desktop
-com containers Linux. Reserve inicialmente8GiB para Docker; Jupyter tem limite
-de3GiB e concorrência de treino1..2. Isto é configuração da POC, não dimensionamento
-para500 modelos simultâneos. Serviços não executam no host.
+## Começar
 
-Na raiz do repositório, PowerShell:
+Pré-requisitos: Docker Desktop com containers Linux, Git e Python 3.11/3.12 para
+os scripts administrativos. Referência inicial: 8 GiB disponíveis para Docker;
+o Jupyter tem limite de 3 GiB e concorrência de 1 a 2 treinamentos simultâneos.
+
+Na raiz do repositório, em PowerShell:
 
 ```powershell
-# Primeira instalação: imagens, bancos, migrations e serviços.
+# Primeira instalação
 .\deployment\scripts\compose.ps1 init
-# Uso diário:
-.\deployment\scripts\compose.ps1 start
-# Atualizar código preservando volumes, dados e notebooks:
+
+# Instalação existente: atualizar imagens e migrations, preservando dados
 .\deployment\scripts\compose.ps1 rebuild
+
+# Uso diário
+.\deployment\scripts\compose.ps1 start
 .\deployment\scripts\compose.ps1 status
 ```
 
-Linux: `sh deployment/scripts/journey.sh rebuild` ou `docker compose up -d --wait`.
-O inicializador gera o `.env` local; [.env.example](.env.example) documenta as variáveis
-sem segredos. Preserve o `.env` de uma instalação com dados. Reset é uma operação
-separada e confirmada pelo controlador externo.
+Coloque as três planilhas em [`data/reference/`](data/reference/README.md).
+O Jupyter as recebe em `/reference`, somente para leitura; nenhuma macro é executada.
+Abra [00 — Ambiente](http://localhost:8888/lab/tree/notebooks/00_ambiente.ipynb)
+e siga a jornada abaixo. A preparação do ambiente não treina nem aprova modelos.
 
-Coloque as três planilhas originais em `data/reference/`. O Compose monta essa pasta
-como `/reference:ro` no Jupyter; macros não são executadas. `dev/` e `history/`
-permanecem locais e ignorados pelo Git. O histórico de trabalho continua atualizado.
+O inicializador cria o `.env` local quando necessário. Os nomes das configurações
+estão em [`.env.example`](.env.example); preserve as credenciais de instalações
+com dados. [Instalação Windows](docs/installation/WINDOWS.md) · [Linux](docs/installation/LINUX.md).
+
+## Arquitetura
+
+```mermaid
+flowchart TB
+    START["Docker Compose · inicialização"] --> JUP["Jupyter / Workbench"]
+    START --> API["API da aplicação"]
+    START --> INF["Inferência"]
+    START --> MLF["MLflow Tracking e Registry"]
+    START --> WRK["Worker / RabbitMQ"]
+    START --> MON["Monitoramento / Dashboard"]
+    START --> DB[("PostgreSQL")]
+    START --> OBJ[("RustFS / S3")]
+    DB -->|"SQL: histórico e referências"| JUP
+    JUP -->|"Fit, avaliação e registro"| MLF
+    MLF -->|"Metadados"| DB
+    MLF -->|"Proxy de artefatos"| OBJ
+    JUP -->|"Revisão, deploy e geração explícitos"| API
+    API -->|"Job persistido"| WRK
+    WRK -->|"Predição HTTP"| INF
+    INF -->|"Versão aprovada e binário verificado"| MLF
+    INF -->|"Previsões e identidade"| WRK
+    WRK -->|"Proposta em transação"| DB
+    API -->|"Consulta"| DB
+    API -->|"HTTP paginado"| APP["Notebook 09 · aplicação simulada"]
+    MON -.->|"Saúde e eventos"| API
+    MON -.-> INF
+    classDef scientific fill:#fff1dc,stroke:#be8b3c,color:#4d3716
+    classDef service fill:#e4effa,stroke:#7291b5,color:#183450
+    classDef storage fill:#e2f3e8,stroke:#6e9f81,color:#1e422d
+    class JUP scientific
+    class API,INF,MLF,WRK,MON service
+    class DB,OBJ storage
+```
+
+O **Workbench treina**; o **worker gera propostas usando inferência**. A API consulta
+dados persistidos. O serviço de inferência usa PRELOAD seletivo ou LAZY, com cache
+limitado a quatro versões por processo. O adaptador `ingestion` continua disponível
+para compatibilidade; a importação V4 ocorre no Workbench.
+
+**Registrar → validar → aprovar → disponibilizar → carregar** são estados distintos.
+Cada chamada confere aprovação SQL e alias do Registry, inclusive com cache aquecido.
+O [mapa C3](docs/operations/C3_TRAINING.md) detalha responsabilidades e limites.
 
 ## Acessos
 
-| Interface | Navegador | Autenticação |
+As credenciais ficam no `.env` local. Os links abaixo são para o navegador da máquina.
+
+| Interface | Endereço | Credencial |
 |---|---|---|
-| JupyterLab | [localhost:8888](http://localhost:8888/lab/tree/notebooks/00_ambiente.ipynb) | JUPYTER_TOKEN |
-| MLflow | [localhost:5000](http://localhost:5000) | POC restrita ao loopback |
-| RustFS console | [localhost:9001](http://localhost:9001) | AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY |
-| RustFS S3 | localhost:9000 | Credenciais S3; endpoint de API |
-| API / OpenAPI | [localhost:8000/docs](http://localhost:8000/docs) | API_TOKEN; revisões/deploy exigem OPERATOR_TOKEN |
-| Dashboard | [localhost:8088](http://localhost:8088) | DASHBOARD_TOKEN |
-| RabbitMQ | [localhost:15672](http://localhost:15672) | Usuário poc; RABBITMQ_PASSWORD |
+| JupyterLab | [localhost:8888](http://localhost:8888/lab/tree/notebooks/00_ambiente.ipynb) | `JUPYTER_TOKEN` |
+| MLflow | [localhost:5000](http://localhost:5000) | Acesso local por loopback |
+| **RustFS — console** | [localhost:9001](http://localhost:9001) | `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` |
+| API / OpenAPI | [localhost:8000/docs](http://localhost:8000/docs) | `API_TOKEN`; decisões técnicas usam `OPERATOR_TOKEN` |
+| Dashboard de logs | [localhost:8088](http://localhost:8088) | `DASHBOARD_TOKEN` |
+| RabbitMQ | [localhost:15672](http://localhost:15672) | Usuário `poc`; `RABBITMQ_PASSWORD` |
 
-As credenciais estão no `.env`, nunca nos notebooks. Entre containers:
-`http://mlflow:5000`, `http://api:8000`, `http://inference:8001`, `http://rustfs:9000`.
-Esses DNS são internos; links do navegador usam MLFLOW_UI_BASE_URL=localhost:5000.
+Entre containers, use DNS internos: `mlflow:5000`, `api:8000`, `inference:8001`
+e `rustfs:9000`. Endereços internos não são links de navegador.
+[Todos os acessos e verificações](docs/operations/ACESSOS.md).
 
-## Executar pelo Jupyter
+## Jornada no Jupyter
 
-Abra `notebooks/00_ambiente.ipynb` na pasta editável. Em cada notebook, use
-**Kernel → Restart Kernel and Run All**. `Shift+Enter` renderiza Markdown; duplo clique
-edita; `Ctrl+S` salva. Reinícios preservam edições. Atualizações arquivam cópias
-anteriores em `workspace/notebook-backups/`.
+Abra as cópias editáveis em `notebooks/` no Jupyter. Em cada arquivo, use
+**Kernel → Restart Kernel and Run All**. `Shift+Enter` renderiza Markdown e
+`Ctrl+S` salva. Reinícios preservam edições; atualizações arquivam a cópia anterior
+em `workspace/notebook-backups/` antes de distribuir a nova versão.
 
-| Notebook | Resultado |
+| Etapa | Notebook | O que conferir |
+|---|---|---|
+| Preparar | **00** ambiente · **01** fontes · **02** qualidade · **03** exploração | SQL, artefato diagnóstico, origens, quarentena e snapshot sintético |
+| Treinar | **04** individual · **05** campanhas | Fit real, seleção de métricas, novo experimento e links para o MLflow |
+| Avaliar | **06** avaliação | Baseline e métricas por alvo e janela temporal |
+| Decidir | **07** governança | Versões candidatas; aprovação técnica explícita |
+| Gerar | **08** publicação e inferência | Deploy, job operacional e proposta persistida |
+| Consumir | **09** aplicação · **10** auditoria | Tabela via HTTP, filtros e confronto SQL/Registry/RustFS |
+| Reiniciar ensaios | **11** reset | Plano de limpeza seletiva; execução pelo controlador externo |
+
+Para a proposta dos três cursos, execute **05**. No **07**, revise as versões e
+habilite `APPROVE_DEMO`. No **08**, habilite `DEPLOY_DEMO` e `GENERATE` quando quiser
+publicar e gerar. O contexto leva a proposta ao **09** automaticamente.
+[Catálogo completo](notebooks/README.md) · [Roteiro detalhado](docs/operations/POC_V4_MANUAL_RUNBOOK.md).
+
+### Campanhas e experimentos
+
+O padrão é **NEW**: cada execução da célula de treinamento cria uma campanha e
+um experimento próprio, com data UTC e UUID. As runs de lote e modelo ficam dentro
+desse experimento. Modelos mantêm nomes estáveis no Registry e recebem novas versões.
+
+Para continuar um ensaio interrompido, escolha **RESUME** e informe sua
+`RESUME_REQUEST_KEY`. A retomada reutiliza o checkpoint; não cria outro experimento.
+Uma chave inexistente é rejeitada. [Entenda repetição e Traces](docs/operations/EXPERIMENTS_AND_TRACING.md).
+
+### Reset preservando a origem
+
+`rebuild` preserva os dados. Para limpar os ensaios, o modo **reset-experiments**
+remove MLflow, versões de objetos no RustFS e resultados derivados no banco,
+mantendo referências e histórico sintético SQL com os mesmos IDs e hashes.
+Arquivos locais e backups existentes são preservados.
+
+O notebook **11 não apaga ao executar Run All**: apresenta os comandos de preview
+e execução do controlador no PowerShell. [Escopo e procedimento de reset](docs/operations/RESET_POC.md).
+
+## Onde os dados ficam
+
+| Dado | Destino |
 |---|---|
-| 00 ambiente | SQL, servidor/SDK MLflow e gravação/leitura real de artefato |
-| 01 fontes | Importação idempotente,107 origens, hashes e dicionário |
-| 02 qualidade |70 ofertas, quarentena, P164/P110A e chaves acadêmicas |
-| 03 exploração | Snapshot sintético seed42 por coorte/ciclo/disciplina |
-| 04 individual / 05 lotes | Fit no Jupyter, métricas selecionáveis, runs e versões |
-| 06 avaliação | Baseline, métricas por target e populações comparáveis |
-| 07 governança | Revisão explícita com operador; padrão somente inspeção |
-| 08 publicação | Deploy e geração pela API, mediante controles explícitos |
-| 09 simulador | Tabela exclusivamente HTTP, filtros e detalhe das atividades |
-| 10 auditoria | Confronto SQL/HTTP/Registry/RustFS antes de declarar VERIFIED |
-| 11 reset | Inspeção e orientação; não executa exclusão |
+| Referências e histórico sintético | `planejamento_db.planning`: tabelas `academic_*` e `model_training_observations` |
+| Campanhas e checkpoints | `planning.workbench_campaigns`, `workbench_models` |
+| Aprovações e deployments | `planning.model_approval_requests`, `academic_deployments` |
+| **Proposta final da IA** | **`planning.ai_proposals_v2`, `ai_proposal_offers_v2`** |
+| Experimentos, runs, Traces e Registry | `mlflow_db`, administrado pelo MLflow |
+| Binários e manifests | RustFS, bucket `pucpr-poc`; binários gravados pelo proxy MLflow |
 
-Em07, revise as candidatas, ajuste `APPROVE_DEMO=True` e execute a célula de decisão.
-Em08, ajuste `DEPLOY_DEMO=True` e `GENERATE=True` após aprovação. A geração completa
-usa os três cursos do05. O contexto salvo leva proposal_id automaticamente ao09;
-há override explícito. Nunca se escolhe uma versão por latest.
+O Jupyter lê SQL por `SOURCE_DATABASE_URL`. O worker grava a proposta em transação
+no banco de negócio. A API entrega `GET /v2/proposals/{id}/application-view`
+com filtros, paginação e hash. [Contrato HTTP](docs/contracts/academic_application_v2.md)
+· [Consultas SQL](docs/operations/POSTGRES.md).
 
-**Repetição:** mesma chave e payload recuperam campanha/job sem duplicação.
-Payload diferente com a mesma chave é recusado. Uma chave nova representa outra
-execução intencional; a proposta anterior permanece imutável. Aprovação técnica
-do modelo não é aprovação acadêmica da proposta.
+## Validação e próximos passos
 
-## Dados e modelo
+A [rodada V4](artifacts/reports/v4/acceptance-v4.md) registra 12 notebooks em kernels
+novos, 11 serviços saudáveis, 136 testes aprovados e a verificação específica do
+Workbench. Inclui persistência após rebuild e inferência após restart com Jupyter parado.
+Os [ajustes posteriores](artifacts/reports/v4-adjustments/README.md) têm evidências próprias.
 
-O Jupyter abre SOURCE_DATABASE_URL e consulta planning.model_training_observations
-do snapshot escolhido. O histórico é separado do conjunto futuro; a avaliação usa
-o último ciclo histórico. Transformações são ajustadas somente no treino.
-Features: semestre, período e defasagens das categorias. O estimador de regulares
-não recebe adicionais de disciplinas como features. Ridge é comparado com baseline;
-histórico insuficiente usa DummyRegressor com motivo. Métricas sintéticas não
-medem qualidade institucional.
+Permanecem separados da validação automática: inspeção visual pelo usuário,
+CI remota, capacidade institucional, integração PRIME e aprovação acadêmica.
+Não foi realizado ensaio V4 de 500 modelos simultâneos.
 
-P164 preserva41 planejados na teoria e21+20 nas práticas; não são82 alunos.
-Atividades são filhas da oferta. Capacidade oficial ausente permanece nula e
-grupos propostos ficam pendentes. Unificações não são efetivadas. O arquivo V3
-contém31 entidades/175 campos, divergindo das30 citadas na especificação.
-
-| Dado | Persistência |
-|---|---|
-| Experimentos, runs, métricas, traces e Registry | PostgreSQL mlflow_db, schema gerenciado pelo MLflow |
-| Referências e simulação | planejamento_db.planning.academic_* e model_training_observations |
-| Campanhas científicas | planning.workbench_campaigns e workbench_models |
-| Aprovação e serving | planning.model_approval_requests e academic_deployments |
-| Proposta de negócio | planning.ai_proposals_v2 e ai_proposal_offers_v2 |
-| Modelos e manifests | RustFS bucket pucpr-poc; binários somente no prefixo MLflow |
-
-APPLICATION_DATABASE_URL aponta ao banco de negócio. O worker insere proposta e
-ofertas em transação; a API só publica após conclusão e manifesto.
-`GET /v2/proposals/{id}/application-view` consulta PostgreSQL com filtros,
-paginação e hash. [Contrato V2](docs/contracts/academic_application_v2.md).
-
-## Evidências e limites
-
-[artifacts/reports/v4](artifacts/reports/v4) contém treino com worker parado,
-checksums, idempotência, revogação com cache aquecido, restart sem Jupyter e
-execução dos12 notebooks em kernels novos. Inspeção visual manual permanece
-MANUAL_NOT_CHECKED; CI remota requer execução identificada, não é presumida.
-
-Diagnóstico: `docker compose logs --tail 100 api inference worker mlflow`.
-O MLflow inicializa seu próprio schema; migrations da aplicação são aditivas.
-Não há SQLite nem fallback silencioso de tracking. Os notebooks anteriores ficam
-em `notebooks/legacy/`; o endpoint de treinamento operacional legado retorna410.
+Para diagnóstico: `docker compose logs --tail 100 api inference worker mlflow`.
+Consulte [solução de problemas](docs/troubleshooting/README.md) e o
+[índice da documentação](docs/README.md). `dev/` e `history/` são locais e ignorados pelo Git.

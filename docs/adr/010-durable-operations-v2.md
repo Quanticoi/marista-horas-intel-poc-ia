@@ -1,3 +1,5 @@
+> **Registro de decisão anterior.** A jornada V4 é regida pela [ADR 012](012-workbench-academic-v4.md). Topologias, comandos ou responsabilidades deste registro podem ter sido substituídos; use a [documentação operacional atual](../README.md).
+
 # ADR010 — Jornadas operacionais V2
 
 04/11/2026. Decisão técnica da POC; não homologa regras acadêmicas.

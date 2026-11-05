@@ -8,6 +8,7 @@ import mlflow
 from src.persistence.db import rows
 from src.serving.audit import proposal
 from src.common.lineage import sha256
+from src.workbench.operations_sdk import write_report_file
 
 
 def main():
@@ -30,16 +31,16 @@ def main():
             assert evaluation['observation_grain'] in ('cohort-cycle','offer-cycle')
     for name,document in [('training-final-evidence.json',result),('mlflow-campaign-summary.json',result),
         ('application-view-final.json',view),('final-lineage.json',audit),('serving-catalog-final.json',catalog.json())]:
-        (root/name).write_text(json.dumps(document,ensure_ascii=False,indent=2))
+        write_report_file(root/name,json.dumps(document,ensure_ascii=False,indent=2))
     from src.workbench.metrics_v4 import catalog as metrics
-    (root/'metric-catalog.json').write_text(json.dumps(metrics(),ensure_ascii=False,indent=2))
+    write_report_file(root/'metric-catalog.json',json.dumps(metrics(),ensure_ascii=False,indent=2))
     document=dict(status='PASS',timestamp_utc=datetime.now(timezone.utc).isoformat(),context=context,
         source='REFERENCE_STRUCTURE_AND_SYNTHETIC_HISTORY',seed=42,trace_id=job['trace_id'],spans=names,
         offers=view['total_rows'],source_rows=sum(len(o['activities']) for o in view['offers']),
         payload_sha256=view['payload_sha256'],proposal_sha256=view['proposal_sha256'],
         source_code_sha256=sha256({str(p.relative_to('/app')):sha256(p.read_bytes()) for p in sorted(Path('/app/src').rglob('*.py'))}),
         manual='MANUAL_NOT_CHECKED',remote_ci='NOT_EXECUTED',limitations=['No academic approval, official capacity or PRIME integration.'])
-    (root/'final-proof.json').write_text(json.dumps(document,ensure_ascii=False,indent=2))
+    write_report_file(root/'final-proof.json',json.dumps(document,ensure_ascii=False,indent=2))
     print(json.dumps(dict(status='PASS',proposal_id=pid,offers=document['offers'],source_rows=document['source_rows'],trace_id=job['trace_id'])))
 
 

@@ -1,3 +1,5 @@
+> **HISTÓRICO — não executar como roteiro V4.** Consulte [a documentação atual](../../README.md). Treinamento operacional legado foi desativado.
+
 # Sessão de aceite manual V3
 
 Dados **DEMO**, contrato **provisório**. Nenhum resultado homologa regras V4.4.
@@ -25,7 +27,7 @@ Execute 00 primeiro: SQL, tracking e gravação/leitura de artefato diagnóstico
 ## M01 — startup sem modelos (somente isolado)
 
 Pré-condição: projeto descartável `marista-correcoes-isolated`, ownership conferido
-pelo [controlador de reset](RESET_POC.md). Execute o ensaio de reset descrito em M10
+pelo [controlador de reset](../../operations/RESET_POC.md). Execute o ensaio de reset descrito em M10
 com rebootstrap empty. Esperado: inferência healthy com cache vazio, Registry vazio,
 sem treino automático. Não confundir readiness com modelo registrado/carregado.
 Observação manual: **NOT_CHECKED**. Evidência automática: relatório do ensaio.
@@ -146,7 +148,7 @@ Observação: **NOT_CHECKED**.
 ## M10 — reset
 
 09 é sempre preview/read-only. No terminal, use o controlador externo conforme
-[RESET_POC](RESET_POC.md), projeto **marista-correcoes-isolated**, modos reset-data
+[RESET_POC](../../operations/RESET_POC.md), projeto **marista-correcoes-isolated**, modos reset-data
 com empty e factory-reset com demo-ready. A confirmação deve ser a exigida pelo
 plano atual. Conferir ownership, volumes, hashes de arquivos protegidos e ausência
 de dados anteriores. Nunca reaproveitar plano expirado nem resetar marista.

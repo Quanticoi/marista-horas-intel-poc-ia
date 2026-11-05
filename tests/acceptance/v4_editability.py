@@ -24,7 +24,9 @@ def main():
         finally:
             removed=client.delete(path)
             assert removed.status_code in (204,404)
-    Path('/reports/v4/jupyter-editability.json').write_text(json.dumps(dict(status='PASS',
+    output=Path(os.getenv('V4_EVIDENCE_DIR','/reports/v4'))
+    output.mkdir(parents=True,exist_ok=True)
+    (output/'jupyter-editability.json').write_text(json.dumps(dict(status='PASS',
         notebooks=sorted(expected),writable=True,temporary_write_read_delete='PASS',user_notebooks_modified=False),indent=2))
     print('PASS: 12 editable notebooks; temporary write/read/delete through Jupyter API')
 

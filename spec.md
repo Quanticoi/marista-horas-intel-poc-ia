@@ -1,11 +1,12 @@
-> Decisão vigente (30/10/2026): jornada completa exclusivamente em Docker Compose, sem Rancher/Kubernetes. Veja docs/operations/JOURNEY.md e history/state.md. Exigências históricas de pods abaixo não se aplicam ao runtime desta POC.
+> Estado vigente (05/11/2026): jornada V4 em Docker Compose, treinamento no Workbench, experimento por campanha e reset seletivo preservando a origem SQL. Consulte o [índice V4](docs/README.md) e a [ADR 012](docs/adr/012-workbench-academic-v4.md). O texto abaixo preserva a baseline histórica e seus contratos; não é roteiro de operação atual.
 
 # SPEC — PUCPR Horários Inteligentes | baseline e evolução
 
-Correções vigentes: [spec-correcoes v1.1](dev/spec-correcoes.md), implementadas
-incrementalmente com evidências em artifacts/reports. Operação atual está no
-[README](README.md). As seções de Kubernetes abaixo são baseline histórico,
-preservado para rastreio; não são instruções de instalação da POC Compose.
+As instruções de correção V4 foram fornecidas localmente em `dev/`, pasta não
+publicada. A implementação e as decisões atuais estão documentadas no
+[README](README.md), no [runbook V4](docs/operations/POC_V4_MANUAL_RUNBOOK.md)
+e nas evidências de `artifacts/reports`. Seções históricas abaixo permanecem
+para rastreio do contrato original, sem reativar topologias substituídas.
 
 **Versão:** 1.0 (baseline de implementação)  
 **Estado:** proposta técnica da PoC; não equivale a implantação concluída nem à homologação do C3  

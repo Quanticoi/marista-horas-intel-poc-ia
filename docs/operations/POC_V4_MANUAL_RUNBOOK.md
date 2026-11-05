@@ -1,86 +1,100 @@
-# Roteiro V4 — execução local
+# Roteiro V4 — do SQL à proposta
 
-Jornada implementada: importação SQL → simulação → treinamento no Workbench →
-revisão técnica → deploy → inferência → proposta persistida → tabela HTTP → auditoria.
-O relatório em artifacts/reports/v4/application-notebook-proof.json registra kernels
-novos. MANUAL_NOT_CHECKED significa que não foi presumida inspeção visual pelo usuário.
+Execute na ordem abaixo, usando as versões distribuídas em `workspace/notebooks`.
+As planilhas fornecem estrutura de planejamento; o histórico é sintético, seed 42.
+Os [limites funcionais](../architecture/FUNCTIONAL_COVERAGE.md) permanecem explícitos.
 
-## Preparação
+## 1. Preparar
 
-Docker Desktop Linux, Python3.11/3.12 administrativo e8GiB iniciais para Docker.
-Jupyter: limite3GiB, concorrência1..2. Não é ensaio de500 modelos residentes.
-Coloque as três planilhas em data/reference; /reference é somente leitura no container.
-As107 linhas são planejamento, não matrícula realizada. Os quatro PDFs foram
-conferidos em [V4_SOURCE_REVIEW](../architecture/V4_SOURCE_REVIEW.md); o diagnóstico
-Markdown complementar ainda não foi fornecido. Isso não bloqueia o cenário demonstrativo.
-
-PowerShell, na raiz:
+Na raiz do repositório, com Docker Desktop ativo:
 
 ```powershell
-.\deployment\scripts\compose.ps1 init
-# Instalação existente:
-.\deployment\scripts\compose.ps1 rebuild
 .\deployment\scripts\compose.ps1 start
+# Se houve alteração de código/imagens:
+.\deployment\scripts\compose.ps1 rebuild
 ```
 
-Linux: `sh deployment/scripts/journey.sh rebuild`. Serviços usam DNS Compose;
-o navegador usa localhost. Credenciais somente no .env. Rebuild não limpa volumes,
-não treina, não aprova e não substitui edições sem preservar a cópia anterior.
+Instalação nova usa `init`. Os serviços devem ficar healthy; rebuild não treina nem
+apaga dados. Coloque as três planilhas em `data/reference/`, montada como `/reference:ro`.
+Credenciais são fornecidas pelo `.env`; não as escreva nas células.
 
-## Jupyter
+Abra [Jupyter](http://localhost:8888/lab/tree/notebooks/00_ambiente.ipynb).
+Cada notebook deve funcionar com **Restart Kernel and Run All**.
 
-Abra http://localhost:8888/lab/tree/notebooks/00_ambiente.ipynb.
-Execute00–03: dependências, importação idempotente, qualidade e snapshot seed42.
-04 treina uma identidade;05 treina os três cursos. Os checkboxes de métricas afetam
-a execução da próxima célula. Mesma chave/configuração recupera a campanha;
-para mudar algoritmo/métricas/snapshot, use outra chave intencionalmente.
+## 2. Conferir e preparar a origem — 00 a 03
 
-06 mostra MAE/RMSE e demais métricas habilitadas, com baseline e agregação por
-target/split/horizonte. Regular é avaliado por coorte/ciclo; adicionais por oferta/ciclo.
-Métricas de dados sintéticos não atestam qualidade institucional.
+- **00:** testa SQL de origem/destino, SDK/servidor MLflow e round-trip de artefato.
+  Uma falha bloqueia o treino; não há fallback para tracking local.
+- **01:** importa referências de forma idempotente. Confira 107 registros e o
+  dicionário real de 31 entidades/175 campos, divergente das 30 citadas na spec.
+- **02:** confira 70 ofertas, 13 registros em quarentena, P164/P110A e cursos/turnos.
+- **03:** cria ou recupera snapshot determinístico: 227 observações históricas e
+  58 futuras. A fonte fica em PostgreSQL, com hashes e proveniência.
 
-07: confira nome, versão, run, SHA e motivo; defina APPROVE_DEMO=True.
-08: defina DEPLOY_DEMO=True e GENERATE=True após a decisão. PRELOAD é seletivo,
-LAZY não ocupa memória antes da primeira chamada. A proposta completa usa os três
-cursos do05. Contexto salvo em workspace/reports/v4-context.json leva os IDs ao09.
-09 pagina, confere schema/hash e mostra filtros HTTP; abra2248/P164 e2287/período2.
-10 confronta PostgreSQL/Registry/RustFS.11 apenas orienta o controlador excepcional.
+## 3. Treinar — 04 ou 05
 
-## Conferência externa
+**04** treina uma identidade; **05** treina os três cursos 2248, 2348 e 2287.
+Para gerar a proposta completa, use **05**. Escolha métricas nos checkboxes antes
+de executar a célula de treinamento; a seleção altera o cálculo e o tracking.
 
-- MLflow: http://localhost:5000, experimento HI/POC/PlanilhaTurmas/academic-components/2024-2.
-  Runs pai/lote/modelo, métricas, CSVs de erros e Registry por nome/versão.
-- RustFS: http://localhost:9001, bucket pucpr-poc. Binário no prefixo MLflow;
-  índices em lineage/poc/planilha-turmas/v4/models e manifests de propostas/inferências.
-- PostgreSQL: planejamento_db.planning, workbench_models, academic_deployments,
-  ai_proposals_v2 e ai_proposal_offers_v2. Metadados MLflow ficam em mlflow_db.
-- API: http://localhost:8000/docs, GET /v2/proposals/{id}/application-view e
-  GET /v2/audit/proposals/{id}, autenticados. Nenhum novo treino para consulta.
-- Dashboard: http://localhost:8088, eventos por correlation_id/job_id/run_id.
+O padrão `CAMPAIGN_MODE='NEW'` cria uma campanha e um experimento **a cada execução
+da célula de treino**, mesmo sem reiniciar o kernel. O notebook mostra a chave antes
+do fit e links clicáveis ao concluir. Regulares são avaliados por coorte/ciclo;
+adicionais por oferta/ciclo. O último ciclo histórico é holdout; não há treino com alvo futuro.
 
-ConsultaSQL sem credenciais embutidas:
+Para retomar a mesma campanha, use `CAMPAIGN_MODE='RESUME'` e preencha
+`RESUME_REQUEST_KEY` com a chave exibida anteriormente. Mantenha snapshot, escopos e
+métricas iguais. Chave inexistente ou configuração divergente é rejeitada.
+Resultados concluídos são reutilizados; essa é uma retomada explícita, não outro ensaio.
 
-```sql
-SELECT proposal_id,cycle_code,revision,status,payload_sha256,manifest_uri
-FROM planning.ai_proposals_v2 ORDER BY generated_at DESC;
-SELECT proposal_id,count(*) AS ofertas FROM planning.ai_proposal_offers_v2 GROUP BY proposal_id;
-SELECT model_key,state,run_id,result->>'model_version' AS version FROM planning.workbench_models;
-```
+## 4. Avaliar, aprovar e disponibilizar — 06 a 08
 
-## Testes e limites
+**06** mostra baseline, métricas por alvo e agregação de observações comparáveis.
+Métricas sintéticas não comprovam qualidade institucional.
+
+**07** começa em inspeção. Confira modelos/versões, métricas e motivo; habilite
+`APPROVE_DEMO=True` para a decisão técnica. O operador é autenticado separadamente.
+
+**08** começa em leitura. Habilite `DEPLOY_DEMO=True` para disponibilizar as versões
+aprovadas e `GENERATE=True` para gerar a proposta. O primeiro modelo usa PRELOAD,
+os demais LAZY. A chave de geração padrão deriva da campanha: reexecutar recupera
+o mesmo job; nova campanha gera outra proposta. Não altera revisões anteriores.
+
+## 5. Consultar e auditar — 09 e 10
+
+O contexto de **08** leva `proposal_id` ao **09**. A tabela usa somente HTTP;
+confere paginação/schema/hash e permite filtros acadêmicos. Confira P164: uma
+oferta, três atividades e planejados 41/21/20, sem somá-los como 82 estudantes.
+Confira 2287/período 2: regular comum à coorte e adicionais por disciplina.
+
+**10** confronta proposta, snapshot, fontes, inferências, Registry, runs e RustFS.
+`VERIFIED` significa integridade técnica. S03 permanece pendente de capacidade e
+anuência; grupos não são inventados.
+
+## 6. Limpar ensaios — 11
+
+Run All do **11 apenas apresenta o procedimento**. O reset efetivo é executado pelo
+controlador no PowerShell porque precisa parar/reiniciar os serviços, inclusive
+Jupyter. Use [reset-experiments](RESET_POC.md) para apagar MLflow/RustFS/resultados e
+preservar as cinco tabelas da origem. Depois, **04/05** podem ler a mesma carga SQL.
+
+## Testes reproduzíveis
 
 ```powershell
-docker compose run --rm --no-deps -v "${PWD}:/app:ro" -v "${PWD}/data/reference:/reference:ro" --entrypoint python tools -m pytest tests/unit tests/integration -q -o cache_dir=/tmp/pytest --junitxml=/reports/v4/full-suite-junit.xml
-docker compose run --rm --no-deps -v "${PWD}:/app:ro" --entrypoint /usr/local/bin/_entrypoint.sh jupyter python -m pytest tests/integration/test_workbench_v4.py -q -o cache_dir=/tmp/pytest
+docker compose run --rm --no-deps -v "${PWD}:/app:ro" -v "${PWD}/data/reference:/reference:ro" --entrypoint python tools -m pytest tests/unit tests/integration -q -o cache_dir=/tmp/pytest
+docker compose run --rm --no-deps -v "${PWD}:/app:ro" --entrypoint /usr/local/bin/_entrypoint.sh jupyter python -m pytest tests/integration/test_workbench_v4.py -q -o cache_dir=/tmp/pytest-workbench
 ```
 
-Ensaio de todos os notebooks com aprovação técnica DEMO explícita:
-`docker compose run --rm --no-deps --entrypoint /usr/local/bin/_entrypoint.sh jupyter python -m src.workbench.v4_notebook_suite --approve-demo`.
-Esse comando treina/aprova/publica as versões DEMO selecionadas; não é bootstrap.
-Linux usa os mesmos comandos, com $PWD. Bash não foi executado nesta estação Windows.
+A execução automatizada dos 12 notebooks com escritas DEMO explícitas é:
 
-Provas: worker parado durante treino; checksums RustFS/proxy; mesma chave sem duplicação;
-revogação com cache quente; Jupyter parado durante restart; PRELOAD/LAZY recuperados.
-Não alegar nova prova de reset destrutivo V4, homologação acadêmica ou CI remota sem
-evidência específica. Quarentena, falta de capacidade e unificação pendente são resultados
-do contrato, não campos a preencher artificialmente. Nenhuma revisão humana é sobrescrita.
+```powershell
+docker compose run --rm --no-deps --entrypoint /usr/local/bin/_entrypoint.sh jupyter python -m src.workbench.v4_notebook_suite --approve-demo
+```
+
+Esse comando cria novos experimentos, treina, aprova e gera proposta; não é um
+comando apenas de leitura. Para provar o reset somente no projeto descartável:
+`python tests/acceptance/v4_adjustments.py --reset-isolated`.
+
+[Aceite V4](../../artifacts/reports/v4/acceptance-v4.md) e
+[ajustes posteriores](../../artifacts/reports/v4-adjustments/README.md) registram
+resultados separados. Inspeção visual, CI remota e execução Linux não são presumidas.

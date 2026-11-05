@@ -15,3 +15,14 @@ API/worker executam somente inferência e composição. O contrato V2 preserva o
 atividades, mantém quarentena e não inventa capacidade/anuência. Notebook09 consome
 HTTP paginado autenticado; não acessa SQL ou SDKs de storage/tracking para sua tabela.
 Não há nova stack de serviços, binários duplicados ou schema MLflow recriado pela aplicação.
+
+## Adendo — campanha nova e reset seletivo (05/11/2026)
+
+Por solicitação do usuário, NEW cria um experimento próprio para cada campanha,
+com data UTC e UUID. RESUME conserva o checkpoint e o experimento da campanha
+existente; não é modo implícito. Novas versões não sobrescrevem versões anteriores.
+
+O modo reset-experiments limpa MLflow, objetos derivados no RustFS e resultados
+operacionais, preservando cinco tabelas de origem acadêmica/sintética SQL. Contagens
+e hashes são comparados antes/depois. A execução permanece no controlador externo,
+com plano e confirmação; o notebook orienta e não apaga durante Run All.

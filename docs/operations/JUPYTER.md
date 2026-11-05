@@ -1,54 +1,33 @@
-# Jupyter: edição e execução
+# Jupyter: execução e edição
 
-Abra a [Jornada Completa — Planilha Turmas](http://127.0.0.1:8888/lab/tree/notebooks/01_jornada_completa_planilha_turmas.ipynb).
-Use o token JUPYTER_TOKEN do .env local para entrar.
+Abra [JupyterLab](http://localhost:8888/lab/tree/notebooks/00_ambiente.ipynb) e use
+`JUPYTER_TOKEN` do `.env` no campo de login. Não coloque o token em notebooks ou prints.
 
-O projeto distribui o [catálogo00–09](../../notebooks/README.md). A cópia editável está em
-`workspace/notebooks/` no Windows, montada como `/workspace/notebooks/` no container.
-As fontes versionadas estão em `notebooks/` na raiz do repositório. A inicialização
-preserva edições existentes nos reinícios da mesma versão. Quando a fonte muda,
-a cópia editada anterior é arquivada em `workspace/notebook-backups/`, com hash
-no nome, antes de atualizar o arquivo principal. Há um único notebook por etapa.
+## Arquivo editável e persistência
 
-Os links para navegador usam `MLFLOW_UI_BASE_URL` (localhost:5000). Links internos
-impressos automaticamente pelo SDK são desativados; a visualização de traces
-também usa a URL externa. O tracking continua no DNS interno `mlflow:5000`.
+As cópias de trabalho estão em `workspace/notebooks/`, montadas como
+`/workspace/notebooks`. As fontes distribuídas ficam em `/app/notebooks`.
+Edite pela pasta `notebooks/` exibida no Jupyter, não por um antigo caminho `templates/`.
 
-## Editar e voltar à visualização
+Reiniciar Jupyter preserva a cópia editável. Quando o conteúdo distribuído muda,
+a versão anterior é arquivada em `workspace/notebook-backups/` antes da atualização.
+Arquivos pessoais desconhecidos não são removidos. Notebooks legados registrados
+saem do catálogo ativo, sem criar duplicatas `.update-*`.
 
-- Dê duplo clique numa célula de texto para editar seu Markdown.
-- Pressione **Shift + Enter** para renderizar o texto e selecionar a próxima célula.
-- Use **Ctrl + Enter** para renderizar mantendo a seleção na mesma célula.
-- Pressione **Ctrl + S** para salvar as alterações no workspace.
-- Em uma célula de código, Shift + Enter executa Python. Para visualizar texto,
-  o tipo da célula deve ser Markdown, selecionável na barra de ferramentas.
+## Controles úteis
 
-Para executar toda a jornada, use **Restart Kernel and Run All**. Para versionar
-edições, revise e copie o arquivo do workspace para `notebooks/` no repositório.
-O executor automatizado usa a fonte empacotada na imagem, atualizada por rebuild.
+| Ação | Como fazer |
+|---|---|
+| Executar do início | Kernel → Restart Kernel and Run All |
+| Renderizar Markdown após editar | Shift+Enter |
+| Editar texto formatado | Duplo clique na célula |
+| Salvar | Ctrl+S |
+| Ver saídas históricas | Arquivos `*.executed.ipynb` em `artifacts/reports` |
 
-A etapa de registro pode ser repetida: se a versão já foi registrada nesta
-execução, ela é recuperada e seus vínculos são conferidos, sem criar outra versão.
-O objeto treinado é descartado da memória para que a etapa seguinte use o modelo
-persistido. Para iniciar outro treinamento, execute a jornada desde o início.
+04/05 usam NEW por padrão: repetir a célula de treino cria outro experimento.
+Para retomada use RESUME com chave existente. 07/08 exigem habilitar os controles
+de escrita; 11 apenas orienta o reset externo. [Catálogo completo](../../notebooks/README.md).
 
-O dicionário `trace` contém IDs da execução e do modelo. O Tracing registra cada
-tentativa de etapa e propaga contexto para API/inferência. O resumo final mostra
-os trace_id e links; eventos também ficam no dashboard.
-[Repetição, experimentos, persistência e 500 modelos](EXPERIMENTS_AND_TRACING.md).
-
-As imagens incluem o executável Git, usado pela integração GitPython do MLflow.
-A imagem não contém o diretório `.git`: a jornada registra a identidade do código
-na tag `code_version`, calculada por SHA256 dos arquivos, sem depender de um clone
-Git dentro do container. O aviso `Bad git executable` indica uma imagem antiga
-sem Git e é corrigido pelo build atualizado, sem silenciar os avisos do MLflow.
-
-Abas antigas apontando para `templates/` devem ser fechadas: esse caminho não faz
-parte da configuração atual. Abra o link editável acima.
-
-Os notebooks anteriores foram retirados em 03/11/2026. Cópias locais foram guardadas
-em `.runtime/notebooks-archive-20261103-101931/`, fora da área servida pelo Jupyter;
-as versões distribuídas também permanecem no histórico Git. Evidências de execuções
-anteriores continuam em `artifacts/reports/`.
-
-[Etapas da jornada](JOURNEY.md).
+As imagens incluem Git. `Bad git executable` indica imagem antiga; faça rebuild.
+A identidade científica usa hash de código, sem exigir `.git` dentro do container.
+Links de navegador devem usar localhost, e não o DNS interno `mlflow`.

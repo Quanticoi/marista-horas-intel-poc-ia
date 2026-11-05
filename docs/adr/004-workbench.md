@@ -1,3 +1,5 @@
+> **Registro de decisão anterior.** A jornada V4 é regida pela [ADR 012](012-workbench-academic-v4.md). Topologias, comandos ou responsabilidades deste registro podem ter sido substituídos; use a [documentação operacional atual](../README.md).
+
 # ADR-004 — Treino local supervisionado
 
 **Histórico de implantação:** namespaces/Jobs locais foram substituídos pela

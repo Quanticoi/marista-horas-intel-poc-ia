@@ -137,7 +137,7 @@ def log_summary(client,run_id,results,requested,selected):
     return document
 
 
-def execute(snapshot_id,request_key,items=None,batch_size=2,max_workers=1,metric_profile='forecast_extended',selected_metrics=None):
+def execute(snapshot_id,request_key,items=None,batch_size=2,max_workers=1,metric_profile='forecast_extended',selected_metrics=None,resume_only=False):
     require_workbench()
     UUID(str(snapshot_id))
     if not request_key or len(request_key)>160 or not 1<=batch_size<=20 or not 1<=max_workers<=2:
@@ -174,6 +174,8 @@ def execute(snapshot_id,request_key,items=None,batch_size=2,max_workers=1,metric
     with engine().begin() as con:
         con.execute(text('SELECT pg_advisory_xact_lock(hashtext(:key))'),{'key':'workbench:'+request_key})
         prior=con.execute(text('SELECT * FROM planning.workbench_campaigns WHERE request_key=:key'),{'key':request_key}).mappings().first()
+        if resume_only and not prior:
+            raise ValueError('RESUME requires an existing campaign request key')
         if prior and prior['request_hash']!=digest(request):
             raise ValueError('Idempotency key reused with different campaign configuration')
         if prior:
@@ -195,9 +197,18 @@ def execute(snapshot_id,request_key,items=None,batch_size=2,max_workers=1,metric
             row=rows('SELECT * FROM planning.workbench_campaigns WHERE campaign_id=:c',{'c':campaign})[0]
             if row['status']=='COMPLETED':
                 return row['result']
-            name='HI/POC/PlanilhaTurmas/academic-components/'+manifest['target']
-            exp=client.get_experiment_by_name(name)
-            eid=exp.experiment_id if exp else client.create_experiment(name)
+            # Each campaign owns an experiment. Retrying the SAME campaign keeps
+            # its original experiment, including campaigns created before this policy.
+            if row['run_id']:
+                eid=client.get_run(row['run_id']).info.experiment_id
+                name=client.get_experiment(eid).name
+            else:
+                stamp=row['created_at'].astimezone(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+                name=f"HI/POC/PlanilhaTurmas/{manifest['target']}/{stamp}__{campaign}"
+                exp=client.get_experiment_by_name(name)
+                eid=exp.experiment_id if exp else client.create_experiment(name,tags={
+                    'campaign_id':campaign,'snapshot_id':str(snapshot_id),'source_type':'SYNTHETIC',
+                    'experiment_policy':'ONE_PER_CAMPAIGN'})
             if not client.get_experiment(eid).artifact_location.startswith('mlflow-artifacts:'):
                 raise ValueError('Proxy artifact experiment required')
             # Prove tracking metadata AND artifact roundtrip before any fit.
@@ -210,7 +221,7 @@ def execute(snapshot_id,request_key,items=None,batch_size=2,max_workers=1,metric
                     restored=client.download_artifacts(diagnostic.info.run_id,'diagnostics/workbench-probe.txt',str(output))
                     if Path(restored).read_text()!=campaign:
                         raise ValueError('MLflow artifact roundtrip failed before training')
-            parent=row['run_id'] or client.create_run(eid,tags={'mlflow.runName':'POC 2024.2 • Demanda acadêmica • Lote piloto',
+            parent=row['run_id'] or client.create_run(eid,tags={'mlflow.runName':f"POC {manifest['target']} • Campanha {campaign[:8]}",
                 'run_type':'CAMPAIGN','campaign_id':campaign,'snapshot_id':str(snapshot_id),'data_class':'SYNTHETIC_HISTORY'}).info.run_id
             with engine().begin() as con:
                 con.execute(text("UPDATE planning.workbench_campaigns SET status='RUNNING',run_id=:run WHERE campaign_id=:id"),{'run':parent,'id':campaign})
@@ -232,7 +243,7 @@ def execute(snapshot_id,request_key,items=None,batch_size=2,max_workers=1,metric
                 client.set_terminated(batch,'FINISHED' if len(batch_results)==len(members) else 'FAILED')
                 log_summary(client,parent,results,offset+len(members),selected)
             summary=log_summary(client,parent,results,len(normalized),selected)
-            summary.update(campaign_id=campaign,run_id=parent,experiment_id=eid,failures=failed,
+            summary.update(campaign_id=campaign,request_key=request_key,run_id=parent,experiment_id=eid,experiment_name=name,failures=failed,
                            status='COMPLETED' if not failed else 'PARTIAL',executor='JUPYTER_WORKBENCH',
                            metric_catalog=catalog(),snapshot_id=str(snapshot_id))
             client.set_terminated(parent,'FINISHED' if not failed else 'FAILED')

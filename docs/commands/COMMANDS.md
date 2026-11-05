@@ -1,31 +1,20 @@
-# Comandos atuais
+# Comandos frequentes V4
 
-Execute na raiz. No Windows configure DOCKER_CONTEXT=desktop-linux.
+Na raiz do repositório:
 
-| Operação | Comando |
+| Objetivo | Comando |
 |---|---|
-| Build | docker compose build mlflow jupyter |
-| Subir | docker compose up -d --wait --wait-timeout 300 |
-| Status | docker compose ps -a |
-| Logs | docker compose logs -f --tail 100 api |
-| Parar | docker compose stop |
-| Seed | docker compose run --rm tools seed |
-| Treinar | docker compose run --rm tools train |
-| Retreinar | docker compose run --rm tools retrain SNAPSHOT |
-| Aprovar | docker compose run --rm tools promote CHAVE VERSAO OPERADOR "MOTIVO" |
-| Migrar schemas | .\deployment\scripts\compose.ps1 migrate |
-| Publicar API por modelo | .\deployment\scripts\compose.ps1 publish -ModelKey CHAVE |
-| Reconciliar | docker compose run --rm tools reconcile CHAVE OPERADOR "MOTIVO" |
-| Prever | docker compose run --rm tools predict CICLO SNAPSHOT CHAVE |
-| Avaliar | docker compose run --rm tools evaluate CICLO |
-| Monitor | docker compose run --rm tools monitor |
-| Recuperar jobs | docker compose run --rm tools recover |
-| E2E | docker compose run --rm tools e2e |
-| Backup | docker compose run --rm tools backup |
-| Restore isolado | docker compose run --rm tools restore backups/IDENTIFICADOR restore_verificacao |
+| Subir | `.\deployment\scripts\compose.ps1 start` |
+| Atualizar preservando dados | `.\deployment\scripts\compose.ps1 rebuild` |
+| Ver serviços | `docker compose ps` |
+| Diagnosticar | `docker compose logs --tail 100 api worker inference mlflow` |
+| Conferir acessos | `python deployment/scripts/check_access.py` |
+| Conferir fontes/configuração | `python deployment/scripts/validate_static.py` |
+| Treinar | Notebook 04 ou 05, modo NEW ou RESUME explícito |
+| Aprovar / disponibilizar | Notebooks 07 / 08 |
+| Consumir / auditar | Notebooks 09 / 10 |
+| Planejar limpeza dos ensaios | `python deployment/scripts/reset_poc.py preview --environment poc --project marista --mode reset-experiments` |
+| Testar limpeza isolada | `python tests/acceptance/v4_adjustments.py --reset-isolated` |
 
-Validação diária: deployment/scripts/compose.ps1 validate.
-E2E exige 30 champions compatíveis e APIs publicadas. Treinar não promove modelos.
-Depois da publicação, comandos Docker de ciclo de vida precisam de
-`-f compose.yaml -f .runtime/models.compose.json`; compose.ps1 inclui ambos automaticamente.
-[Notebook, entrada de dados e publicação C3](../operations/C3_TRAINING.md).
+O preview não apaga; siga [o procedimento de execução](../operations/RESET_POC.md).
+[Todos os comandos Compose](DOCKER_COMPOSE.md) · [Testes de jornada](../operations/POC_V4_MANUAL_RUNBOOK.md).

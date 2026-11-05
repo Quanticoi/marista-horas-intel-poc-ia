@@ -1,44 +1,32 @@
-# Acessos locais e credenciais
+# Acessos locais
 
-Arquivo real: **.env na raiz do repositório**. .env.example contém somente nomes
-e instruções. Nenhum valor de senha é publicado neste documento.
+Os valores reais estão no `.env` da raiz. `.env.example` documenta os nomes.
+As portas são publicadas em loopback; dentro dos containers, use DNS Compose.
 
-| Serviço | URL | Como entrar |
+| Serviço | Navegador / host | Autenticação |
 |---|---|---|
-| RustFS | http://127.0.0.1:9001 | Access Key/usuário = AWS_ACCESS_KEY_ID; Secret Key/senha = AWS_SECRET_ACCESS_KEY |
-| JupyterLab | http://127.0.0.1:8888/lab | Campo token = JUPYTER_TOKEN |
-| MLflow | http://127.0.0.1:5000 | Sem login nesta POC local; selecione o experimento |
-| Dashboard | http://127.0.0.1:8088 | Campo token = DASHBOARD_TOKEN |
-| API Swagger | http://127.0.0.1:8000/docs | Rotas protegidas exigem header Authorization: Bearer seguido de API_TOKEN |
-| Entrada de dados | http://127.0.0.1:8020/docs | Authorization: Bearer seguido de INGESTION_TOKEN |
-| RabbitMQ | http://127.0.0.1:15672 | Usuário literal poc; senha = RABBITMQ_PASSWORD |
-| Monitoramento | http://127.0.0.1:8010/v1/status | Header Authorization: Bearer seguido de MONITOR_TOKEN; não é tela de login |
-| Inferência interna | http://127.0.0.1:8001/ready | Readiness sem login; /internal/predict exige INFERENCE_TOKEN e contrato próprio |
-| PostgreSQL | Não publica porta no host | docker compose exec postgres psql -U postgres -d planejamento_db |
+| Jupyter | http://localhost:8888/lab/tree/notebooks/00_ambiente.ipynb | `JUPYTER_TOKEN` |
+| MLflow | http://localhost:5000 | Sem login HTTP na POC local |
+| RustFS console | http://localhost:9001 | `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` |
+| RustFS S3 | http://localhost:9000 | Cliente S3 com assinatura; não é a console |
+| API OpenAPI | http://localhost:8000/docs | Bearer `API_TOKEN`; revisão/deploy usam `OPERATOR_TOKEN` |
+| Inferência | http://localhost:8001/ready | Readiness público; `/internal/academic/predict` exige `INFERENCE_TOKEN` |
+| Dashboard | http://localhost:8088 | `DASHBOARD_TOKEN` |
+| RabbitMQ | http://localhost:15672 | Usuário `poc`; `RABBITMQ_PASSWORD` |
+| Monitoramento | http://localhost:8010/v1/status | Bearer `MONITOR_TOKEN` |
+| Ingestion legado | http://localhost:8020/docs | Bearer `INGESTION_TOKEN` |
+| PostgreSQL | Apenas rede interna | Console via `docker compose exec postgres psql -U postgres -d planejamento_db` |
 
-O worker não tem página web. Use docker compose logs worker.
-Cada modelo publicado tem uma porta dinâmica local, exibida por `compose.ps1 publish`;
-seu `/internal/predict` exige INFERENCE_TOKEN. [Guia C3](C3_TRAINING.md).
-No Swagger, se a rota mostrar o parâmetro authorization, informe o valor completo
-Bearer TOKEN; uma tela /docs acessível não significa que a API de negócio é pública.
+Uma página `/docs` acessível não torna as rotas de negócio públicas. No Swagger,
+informe o header Authorization conforme o parâmetro da rota. Não exponha credenciais
+em links, células, screenshots ou relatórios. O worker não tem interface web.
 
-## Verificar sem mostrar senhas
-
-Na raiz do projeto:
+Verificação autenticada e negativa sem imprimir credenciais:
 
 ```powershell
 python deployment/scripts/check_access.py
 ```
 
-O script usa somente biblioteca padrão e acessa localhost. Lê .env, faz consultas
-read-only e não imprime credenciais, headers ou respostas com dados. Salva apenas
-status em artifacts/reports/access-check.json. Também testa rejeição sem credenciais.
-Ele faz parte da validação local e da CI. Requer Python 3.11+ no host.
-
-Em 26/10/2026 os checks incluem APIs autenticadas, negativas de autenticação,
-consulta MLflow, readiness da inferência, console RustFS HTTP e listagem S3 assinada.
-Inferência recebe payload inválido para testar token sem executar modelo.
-É validação HTTP, não automação de cliques no navegador.
-
-RustFS distingue acesso de navegador à console e clientes S3; o teste da console
-envia User-Agent de navegador e o teste S3 usa assinatura SigV4.
+O script grava apenas status em `artifacts/reports/access-check.json`. A consulta
+de inferência usa payload inválido para conferir autenticação sem criar previsão.
+[RustFS](RUSTFS.md) · [MLflow](MLFLOW.md).

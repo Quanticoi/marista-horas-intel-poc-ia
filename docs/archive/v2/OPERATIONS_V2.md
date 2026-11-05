@@ -1,3 +1,5 @@
+> **HISTÓRICO — não executar como roteiro V4.** Consulte [a documentação atual](../../README.md). Treinamento operacional legado foi desativado.
+
 # Operações V2 pelo Jupyter
 
 Abra [Jupyter](http://localhost:8888). Execute em kernel novo. Cada notebook contém
@@ -80,5 +82,5 @@ automáticas são limitadas1–4 e backoff10–60s. FAILED exige diagnóstico e 
 Consulte dashboard8088 por correlation_id/job_id/campaign_id e a aba Traces.
 Não altere tabelas operacionais manualmente para continuar uma demonstração.
 
-Reset09 só prepara/audita: [controlador externo](RESET_POC.md). O rebootstrap
+Reset09 só prepara/audita: [controlador externo](../../operations/RESET_POC.md). O rebootstrap
 sempre recria schema e serviços; empty é padrão, demo-ready também sem treinar.

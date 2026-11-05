@@ -1,21 +1,18 @@
-# Fluxo de branches
+# Repositório e branches
 
-Repositório: https://github.com/Quanticoi/marista-horas-intel-poc-ia (público).
+Destino: [Quanticoi/marista-horas-intel-poc-ia](https://github.com/Quanticoi/marista-horas-intel-poc-ia).
 
-- `development`: implementação e evolução da POC; destino do primeiro envio de código.
-- `staging`: reservada para validar uma entrega quando o trabalho em development
-  estiver finalizado. Inicialmente aponta apenas para o commit-base vazio.
-- `main`: reservada para uma eventual versão homologada. Inicialmente contém
-  apenas a mesma base vazia; pode permanecer sem uso.
+- `development`: implementação e evolução da POC.
+- `staging`: validação de uma entrega selecionada.
+- `main`: eventual versão homologada.
 
-Não há promoção automática entre branches. Quando solicitada, a promoção será
-feita por PR de `development` para `staging`; depois, se necessário e autorizado,
-de `staging` para `main`. A criação das branches não implica homologação.
+Não há promoção automática entre branches. Um commit local não comprova publicação
+no GitHub; o relatório da entrega informa separadamente commit e push.
 
-O primeiro envio inclui código, notebooks sem saídas, documentação, manifests,
-testes e evidências DEMO revisadas. `.env`, workspace, backups, volumes, caches
-e logs locais não são publicados. Nunca use `git add -f .env`.
+`.env`, `dev/`, `history/`, `workspace/`, caches, backups e arquivos de referência
+locais são ignorados. Os fontes dos notebooks não carregam saídas; evidências
+executadas ficam identificadas em `artifacts/reports`. Não versionar credenciais.
 
-O workflow `.github/workflows/compose.yml` valida o projeto em containers efêmeros
-no runner do GitHub, com credenciais temporárias. Não faz deploy na máquina local.
-O relatório de execução local não substitui o resultado desse workflow.
+O workflow Compose executa em containers do runner. O pacote de referências é
+externo ao Git; sem ele, a etapa E2E V4 deve indicar SOURCE_MISSING/NOT_EXECUTED.
+Evidência local não substitui resultado de CI remota.

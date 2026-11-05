@@ -1,3 +1,5 @@
+> **Registro de decisão anterior.** A jornada V4 é regida pela [ADR 012](012-workbench-academic-v4.md). Topologias, comandos ou responsabilidades deste registro podem ter sido substituídos; use a [documentação operacional atual](../README.md).
+
 # ADR009 — Identidade e contrato de proposta
 
 Data04/11/2026. Estado: decisão técnica POC, contrato funcional pendente de homologação.

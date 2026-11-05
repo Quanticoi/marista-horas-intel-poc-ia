@@ -1,8 +1,10 @@
+> **HISTÓRICO — não executar como roteiro V4.** Consulte [a documentação atual](../../README.md). Treinamento operacional legado foi desativado.
+
 # Conferência SQL V3
 
 O banco de negócio é **planejamento_db**, schema **planning**. mlflow_db é administrado
 exclusivamente pelo SDK/servidor MLflow; não execute DDL nem UPDATE nesse banco.
-As consultas estão em [manual_validation_v3.sql](../../sql/queries/manual_validation_v3.sql).
+As consultas estão em [manual_validation_v3.sql](../../../sql/queries/manual_validation_v3.sql).
 Não é necessário publicar PostgreSQL no host: o Jupyter já possui acesso read-only.
 
 No notebook, copie os IDs do resultado atual e execute uma consulta por vez:

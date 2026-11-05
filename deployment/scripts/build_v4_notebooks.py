@@ -95,11 +95,12 @@ cyber.groupby('cycle_code')[['regular','dependency','elective']].mean().plot(mar
     for number,multiple in ((4,False),(5,True)):
         name='04_treinamento_modelos' if number==4 else '05_campanhas_lotes'
         notebook(name,f'{number:02} | '+('Treinamento individual' if not multiple else 'Treinamento em lotes no Workbench'),[
-            ('**Objetivo:** treinar no processo do Jupyter. **Entradas:** snapshot, escopo, algoritmo, tamanho de lote e concorrência. Mesma chave/configuração recupera a campanha; nova chave cria versões. **Esperado:** prévia das séries, antes do fit.',SETUP+f'''
+            ('**Objetivo:** treinar no processo do Jupyter. **Entradas:** snapshot, escopo, algoritmo, lote e concorrência. `CAMPAIGN_MODE="NEW"` cria campanha e experimento novos a cada execução da célula de treino. Para retomar, escolha `RESUME` e informe a chave anterior. **Esperado:** prévia antes do fit.',SETUP+f'''
 from src.workbench.academic_ui import snapshot_id,metric_controls,model_table
 from src.workbench.academic_data import load,prepare
 SNAPSHOT_ID=snapshot_id()
-REQUEST_KEY=os.getenv('V4_REQUEST_KEY','v4-notebook-{'pilot' if multiple else 'single'}-seed42-'+os.getenv('V4_CAMPAIGN_REVISION','003'))
+CAMPAIGN_MODE=os.getenv('V4_CAMPAIGN_MODE','NEW')
+RESUME_REQUEST_KEY=os.getenv('V4_RESUME_REQUEST_KEY')  # Só usado no modo RESUME.
 ITEMS={repr([dict(course_code='2248',algorithm='ridge'),dict(course_code='2348',algorithm='dummy'),dict(course_code='2287',algorithm='ridge')] if multiple else [dict(course_code='2248',algorithm='ridge')])}
 BATCH_SIZE=2
 MAX_WORKERS=1
@@ -112,14 +113,25 @@ METRIC_PROFILE='forecast_extended'
 metric_boxes=metric_controls(METRIC_PROFILE)
 '''),('**Executar:** fit, predict, métricas, persistência proxy e Registry. **Resultado:** tabelas e links; nenhuma promoção automática.','''
 from src.workbench.academic_campaign import execute
+from uuid import uuid4
+from IPython.display import Markdown
 selected=[name for name,box in metric_boxes.items() if box.value]
 if not selected:
     raise ValueError('Selecione pelo menos uma métrica.')
 if RUN_TRAINING:
-    result=execute(SNAPSHOT_ID,REQUEST_KEY,items=ITEMS,batch_size=BATCH_SIZE,max_workers=MAX_WORKERS,metric_profile=METRIC_PROFILE,selected_metrics=selected)
+    if CAMPAIGN_MODE not in ('NEW','RESUME'):
+        raise ValueError('CAMPAIGN_MODE deve ser NEW ou RESUME.')
+    if CAMPAIGN_MODE=='RESUME' and not RESUME_REQUEST_KEY:
+        raise ValueError('Informe RESUME_REQUEST_KEY da campanha anterior; não será criada outra silenciosamente.')
+    REQUEST_KEY='v4-notebook-'+str(uuid4()) if CAMPAIGN_MODE=='NEW' else RESUME_REQUEST_KEY
+    save_context(campaign_request_key=REQUEST_KEY,campaign_id=None,proposal_id=None)
+    display({'modo':CAMPAIGN_MODE,'request_key':REQUEST_KEY,'retomada':'Guarde esta chave para RESUME em caso de interrupção.'})
+    result=execute(SNAPSHOT_ID,REQUEST_KEY,items=ITEMS,batch_size=BATCH_SIZE,max_workers=MAX_WORKERS,metric_profile=METRIC_PROFILE,selected_metrics=selected,resume_only=CAMPAIGN_MODE=='RESUME')
     if result['status']!='COMPLETED':
         raise RuntimeError('Campanha parcial; consulte workbench_models e eventos por campaign_id.')
-    save_context(campaign_id=result['campaign_id'],snapshot_id=SNAPSHOT_ID)
+    save_context(campaign_id=result['campaign_id'],snapshot_id=SNAPSHOT_ID,proposal_id=None)
+    ui=os.environ['MLFLOW_UI_BASE_URL'].rstrip('/')
+    display(Markdown(f"[Abrir experimento {result['experiment_id']}]({ui}/#/experiments/{result['experiment_id']}) · [Abrir campanha]({ui}/#/experiments/{result['experiment_id']}/runs/{result['run_id']})"))
     display(pd.DataFrame([{k:result[k] for k in ('campaign_id','requested','completed','failed','quality_eligible')}]))
     display(model_table(result['models']))
     display(pd.DataFrame(result['aggregation']))
@@ -170,7 +182,7 @@ from src.workbench.academic_ui import campaign_result
 result=campaign_result()
 DEPLOY_DEMO=os.getenv('V4_DEPLOY_DEMO','false').lower()=='true'
 GENERATE=os.getenv('V4_GENERATE','false').lower()=='true'
-GENERATION_KEY=os.getenv('V4_GENERATION_KEY','v4-notebook-proposal-final-003')
+GENERATION_KEY=os.getenv('V4_GENERATION_KEY','v4-proposal-'+result['campaign_id'])
 selectors=[{k:m[k] for k in ('model_name','model_version')} for m in result['models']]
 if DEPLOY_DEMO:
     for index,selector in enumerate(selectors):
@@ -226,13 +238,17 @@ display(pd.DataFrame(proof['models']))
 display(pd.DataFrame(proof['inferences']))
 assert proof['status']=='VERIFIED'
 ''')])
-    notebook('11_reset_poc','11 | Inspeção de reset excepcional',[
-        ('**Objetivo:** consultar inventário e orientar o controlador externo. **Entrada:** ambiente POC atual. **Esperado:** nenhuma exclusão pelo notebook; rebuild comum preserva dados.',SETUP+'''
+    notebook('11_reset_poc','11 | Limpar experimentos e preservar a origem',[
+        ('**Objetivo:** preparar o reset seletivo. **Run All desta página NÃO executa exclusão.** O controlador no PowerShell para os serviços, limpa MLflow/RustFS/resultados derivados e preserva referências e histórico sintético SQL. Execute os comandos abaixo no terminal após conferir o plano; o próprio Jupyter será reiniciado.',SETUP+'''
 display(pd.DataFrame(call('GET','/v2/proposals')))
 display(pd.DataFrame(call('GET','/v1/serving/models')))
 display({'destructive_execution':'NOT_EXECUTED','rebuild':'deployment/scripts/compose.ps1 rebuild',
-         'preview':'python deployment/scripts/reset_poc.py preview --environment poc --project marista --mode reset-data',
-         'escopo':'Reset destrutivo exige plano e confirmação explícita no controlador externo; nunca executar durante esta jornada.'})
+         'preview':'python deployment/scripts/reset_poc.py preview --environment poc --project marista --mode reset-experiments',
+         'execute':'python deployment/scripts/reset_poc.py execute --environment poc --project marista --plan-id UUID_DO_PLANO --execute',
+         'confirmacao':'LIMPAR EXPERIMENTOS DA POC MARISTA',
+         'preserva':'referências acadêmicas e carga sintética no PostgreSQL; arquivos locais e backups existentes',
+         'remove':'experimentos/runs/Registry/traces, artefatos/versionamento RustFS, campanhas, inferências, aprovações, propostas e filas',
+         'apos_reset':'MLflow sem runs/modelos; origem SQL com mesmos IDs e hashes; execute04/05 para nova campanha.'})
 ''')])
 
 

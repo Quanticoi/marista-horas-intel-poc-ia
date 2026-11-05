@@ -1,48 +1,79 @@
-# Reset total da POC — operação destrutiva
+# Reset da POC
 
-Não faz parte do quickstart, rebuild ou aceite comum. Notebook09 apenas apresenta
-o comando de preview e lê o plano; factory-reset pode encerrar o próprio Jupyter.
-Controlador Python no host, wrappers PowerShell/Bash, relatórios fora dos volumes
-em `artifacts/reports/reset`. Nunca execute contra recursos compartilhados.
+**Rebuild preserva dados. Reset apaga dados.** O notebook 11 mostra o procedimento;
+executar suas células não realiza a limpeza. O controlador roda no host para
+parar os serviços, inclusive Jupyter, e conferir o escopo Docker real.
 
-| Modo | Remove | Preserva |
-|---|---|---|
-| preview | Nada | Todos os dados; escreve somente plano |
-| reset-data | Bancos exclusivos, objetos POC incluindo versões, vhost RabbitMQ | Volumes/imagens/configuração/workspace/backups externos |
-| factory-reset | Containers e três volumes exclusivos validados | Fontes/.env/workspace/backups externos/imagens |
+## Modo padrão: reset-experiments
 
-Preview consulta labels reais, consumidores dos volumes, endpoints, assinatura
-Compose, tabelas/contagens/hashes e objetos/versionamento. Planos duram15min e
-expiram em mudança de inventário/escopo/arquivos protegidos. Environment deve ser
-poc e projeto/diretório estar na allowlist explícita. Nenhum force/yes/variávelCI
-dispensa confirmação. Scope desconhecido ou volume compartilhado é rejeitado.
+| Preserva | Remove |
+|---|---|
+| Arquivos/linhas/dicionário de referência SQL | Experimentos, runs, métricas, Traces e Model Registry |
+| Snapshots e observações sintéticas SQL, mesmos IDs e hashes | Artefatos RustFS, inclusive versões antigas e delete markers |
+| Estrutura do banco e migrations aplicadas | Campanhas, modelos catalogados, aprovações, deployments, inferências e propostas |
+| `.env`, fontes, notebooks editados, evidências locais e backups existentes | Filas operacionais e contexto ativo de campanha/proposta no workspace |
+
+As tabelas preservadas em `planejamento_db.planning` são:
+`academic_source_files`, `academic_reference_rows`, `academic_data_dictionary`,
+`academic_simulation_snapshots` e `model_training_observations`. As views canônicas
+continuam funcionando sobre elas. Os demais dados de negócio são limpos para não
+deixar referências penduradas a modelos apagados. Backups sob `backups/` no RustFS
+são preservados; se não existirem, o bucket fica sem objetos após este modo.
+
+Não há exportação/reimportação da origem. O controlador compara contagens e hashes
+de todas as cinco tabelas antes/depois. `mlflow_db` é recriado e inicializado por
+`mlflow db upgrade`; nenhuma migration própria reproduz tabelas do MLflow.
+
+## Executar em PowerShell
+
+Finalize treinos/jobs em andamento. Na raiz do projeto:
 
 ```powershell
-python deployment/scripts/reset_poc.py preview --environment poc --project marista --mode factory-reset
+$plan = python deployment/scripts/reset_poc.py preview --environment poc --project marista --mode reset-experiments | ConvertFrom-Json
+$plan.plan_id
+$plan.effects
 ```
 
-Inspecione `<plan_id>.plan.json`. O comando abaixo é um modelo com placeholder,
-não uma etapa de instalação. O programa solicita a frase digitada
-`APAGAR TODOS OS DADOS DA POC MARISTA`:
+O preview apenas inventaria e grava um plano. Confira o escopo e então execute:
 
 ```powershell
-python deployment/scripts/reset_poc.py execute --environment poc --project marista --plan-id <UUID-DO-PLANO> --execute --reinitialize empty
-python deployment/scripts/reset_poc.py status --environment poc --project marista --plan-id <UUID-DO-PLANO>
+python deployment/scripts/reset_poc.py execute --environment poc --project marista --plan-id $plan.plan_id --execute
 ```
 
-`empty`: schemas/serviços prontos sem dados sintéticos. `demo-ready`: catálogos e
-snapshot seed, sem runs/modelos/propostas. Bootstrap cria objeto checks/compatibility
-e pode criar Default vazio no MLflow; não são resíduos de treinamento.
-O rebootstrap é obrigatório: quando omitido, `reinitialize` usa `empty`.
-Não há treinamento ou promoção no rebootstrap.
+Digite a frase solicitada: **LIMPAR EXPERIMENTOS DA POC MARISTA**.
+Não use `demo-ready` com esse modo: a origem deve ser preservada, não semeada novamente.
 
-Backup é decisão explícita antes do reset: use o procedimento existente de backup,
-copie o resultado para armazenamento externo aos volumes da POC e valide a cópia.
-O controlador recusa factory-reset se encontrar `backups/` no bucket, para impedir
-perda silenciosa de backups anteriores. Não apaga arquivos gerados do workspace.
+Consulte o resultado:
 
-Falha parcial gera RESET_PARTIAL com passos concluídos. Não reutilize plano antigo;
-diagnostique dependências e gere novo preview após recuperar serviços necessários.
-O controlador falha fechado quando não consegue comprovar ownership ou inventário.
-Escopo dinâmico com overlays não reconhecidos é recusado; revisão explícita da
-allowlist é necessária antes de resetar esse cenário.
+```powershell
+python deployment/scripts/reset_poc.py status --environment poc --project marista --plan-id $plan.plan_id
+```
+
+Esperado: `RESET_PASS`, `source_preservation=COUNTS_AND_HASHES_IDENTICAL`, nenhuma
+run/modelo/trace ou proposta anterior. O MLflow pode apresentar `Default` vazio.
+O Jupyter volta disponível; abra 04/05 para iniciar novos experimentos a partir da
+origem existente. Células e relatórios salvos continuam sendo evidências históricas;
+seus IDs antigos deixam de existir nos serviços após a limpeza.
+
+## Outros modos, explicitamente destrutivos
+
+| Modo | Efeito |
+|---|---|
+| `reset-data` | Apaga também a origem SQL e objetos de dados; mantém volumes |
+| `factory-reset` | Remove os containers e três volumes exclusivos validados |
+
+Esses modos exigem a frase **APAGAR TODOS OS DADOS DA POC MARISTA**. O rebootstrap
+`empty` deixa schemas/serviços prontos; `demo-ready` cria apenas a seed legada,
+não importa as referências V4. Não há treinamento automático.
+
+## Validação de escopo e falhas
+
+O controlador confere labels, diretório, consumidores dos volumes, nomes de bancos,
+bucket e inventário. Planos expiram em 15 minutos; alteração de dados/arquivos
+protegidos exige novo preview. Projeto compartilhado ou overlay desconhecido é
+rejeitado. `factory-reset` recusa backups internos ao volume até exportação externa.
+
+`RESET_PARTIAL` registra passos concluídos; não significa rollback distribuído.
+Diagnostique os serviços antes de gerar outro plano. Relatórios ficam em
+`artifacts/reports/reset/`, fora dos volumes. O teste automatizado de limpeza seletiva
+usa exclusivamente `marista-correcoes-isolated`; não limpa o ambiente principal.

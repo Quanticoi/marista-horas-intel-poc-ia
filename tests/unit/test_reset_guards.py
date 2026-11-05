@@ -42,3 +42,10 @@ def test_tampered_and_stale(reset,monkeypatch):
     plan["inventory"]={"tampered":True}
     with pytest.raises(ValueError,match="Modified"):
         reset.validate_plan(plan,reset.PHRASE,True,"poc","marista")
+
+
+def test_selective_reset_has_own_confirmation(reset):
+    with pytest.raises(ValueError,match='confirmation'):
+        reset.validate_plan({'mode':'reset-experiments'},reset.PHRASE,True,'poc','marista')
+    with pytest.raises(ValueError,match='do not reseed'):
+        reset.execute_plan({'mode':'reset-experiments'},'poc','marista',reset.EXPERIMENT_PHRASE,True,'demo-ready')

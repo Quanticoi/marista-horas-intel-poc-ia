@@ -4,6 +4,7 @@ import httpx
 from sqlalchemy import create_engine,text,inspect
 from src.common.settings import database_url,required
 from src.data.storage import s3,bucket
+from src.persistence.reset_policy import SOURCE_TABLES
 
 
 def inventory():
@@ -38,7 +39,8 @@ def inventory():
     response.raise_for_status()
     queues=sorted([{"name":q["name"],"vhost":q["vhost"],"messages":q.get("messages",0)}
                    for q in response.json() if q.get("durable")],key=lambda q:(q["vhost"],q["name"]))
-    return dict(databases=databases,database_names=database_names,buckets=buckets,queues=queues,
+    source={name:databases['planejamento_db'][name] for name in sorted(SOURCE_TABLES) if name in databases['planejamento_db']}
+    return dict(databases=databases,database_names=database_names,buckets=buckets,queues=queues,academic_source=source,
                 bucket=bucket(),versioning=client.get_bucket_versioning(Bucket=bucket()).get("Status","Disabled"),
                 objects=sorted(objects,key=lambda x:(x["key"],x["version"])))
 

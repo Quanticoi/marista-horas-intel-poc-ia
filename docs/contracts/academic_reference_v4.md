@@ -1,8 +1,8 @@
 # Referências acadêmicas V4 — contrato de importação
 
 Migração 010, aditiva, no banco `planejamento_db`, schema `planning`.
-Esta etapa é o staging acadêmico com chaves canônicas; ainda não é o conjunto
-completo de dimensões/fatos de simulação nem o contrato de propostas v2.
+Esta etapa descreve a importação. A implementação completa é relacionada na
+[estrutura canônica](canonical_schema_v4.md), incluindo simulação e propostas v2.
 
 | Objeto | Conteúdo / grão |
 |---|---|
@@ -42,5 +42,6 @@ iguais e transformação igual não duplica; payload diferente com a mesma ident
 é rejeitado. Arquivo alterado recebe novo hash e conserva a versão anterior.
 Aplicações devem escolher explicitamente a versão de fonte antes de simular.
 
-PDFs funcional/arquitetura e diagnóstico ainda ausentes: nenhuma homologação funcional
-nem conformidade C3/V4.4 integral foi atribuída a esta importação.
+Os quatro PDFs fornecidos foram conferidos conforme [revisão das fontes](../architecture/V4_SOURCE_REVIEW.md).
+O diagnóstico Markdown complementar segue ausente. A importação não representa
+homologação funcional ou conformidade integral com V4.4.

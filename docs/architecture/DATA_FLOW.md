@@ -1,71 +1,39 @@
-# Fluxo dos dados
+# Fluxo de dados V4
 
-## Jornada principal: proposta de Planilha Turmas
+1. **Referências:** três planilhas são lidas sem executar macros. A importação
+   persiste 107 registros de origem, suas células/abas/linhas e SHA256. São 70
+   ofertas; 13 registros em quarentena afetam 12 ofertas e permanecem rastreáveis.
+2. **Simulação:** a estrutura acadêmica condiciona um histórico sintético seed 42,
+   de 2022-1 a 2024-1, com entrada futura para 2024-2. O snapshot padrão contém
+   285 observações: 227 históricas e 58 futuras. Planejamento não é usado como alvo real.
+3. **SQL:** o Workbench consulta `planning.model_training_observations` por snapshot
+   e prepara o escopo por curso. Regulares pertencem à coorte/ciclo; dependência e
+   eletiva pertencem à oferta/ciclo. SQL e payload do snapshot são confrontados.
+4. **Preparação:** o último ciclo histórico é avaliação; anteriores formam treino.
+   Features incluem semestre, período e defasagens. Transformações são ajustadas
+   somente no treino; alvos futuros não entram nas features.
+5. **Treino:** três estimadores por modelo preveem regular, dependência e eletiva.
+   Ridge é comparado com baseline; histórico insuficiente usa DummyRegressor com
+   motivo. Avaliação regular usa uma observação por coorte/ciclo, evitando duplicação.
+6. **Tracking:** cada nova campanha possui experimento próprio; runs representam
+   campanha, lote e modelo. Métricas, perfil, dataset, código, assinatura e hashes
+   acompanham versões estáveis por curso no Registry. Retomada explícita conserva a campanha.
+7. **Governança:** revisão técnica e deploy explícitos habilitam versões. A inferência
+   verifica aprovação SQL, alias, assinatura e checksum antes de usar os bytes persistidos.
+8. **Geração:** a API cria job idempotente; o worker pede as três previsões por HTTP,
+   compõe as categorias e grava cabeçalho/ofertas em transação. A publicação exige
+   manifesto e job concluído. Nova chave cria outra proposta, preservando a anterior.
+9. **Consumo:** a API consulta PostgreSQL; o notebook 09 pagina e verifica o contrato.
+   O notebook 10 confronta proposta, inferências, modelos, runs, fontes e artefatos.
 
-1. `tools seed` produz dados sintéticos com semente 42 e persiste catálogo,
-   histórico e snapshot selado no schema `planning`. O padrão contém 350
-   observações de 30 séries semestrais; Parquet e manifesto ficam no RustFS.
-2. O notebook abre SQL como `planning_readonly`. A consulta
-   `sql/queries/journey_history.sql` recebe snapshot, ciclo e curso, aplica corte
-   temporal e relaciona cada período às suas três disciplinas. No escopo completo,
-   retorna 1.050 linhas. Nulos, duplicidades e chaves necessárias são verificados.
-3. Os semestres anteriores ao último histórico formam o treino (960 linhas).
-   O último semestre avalia o modelo (90 linhas). A entrada da proposta contém
-   chaves acadêmicas e semestre futuro, sem a variável-alvo (90 linhas).
-4. One-hot das chaves e padronização temporal são ajustados somente no treino.
-   O Ridge prevê total de estudantes. MAE/RMSE são calculados no conjunto reservado.
-5. O MLflow recebe referências SQL/CSV, hashes, parâmetros, métricas e o pipeline
-   ajustado. O proxy grava os artefatos no RustFS; o Registry associa uma versão
-   à run. O modelo é recarregado pela versão explícita no notebook e na inferência.
-6. Regra provisória: estudantes propostos = max(0, teto(previsão)); turmas =
-   teto(estudantes/capacidade), com capacidade 40. Cada disciplina recebe a demanda
-   integral de seu período. Zero demanda gera zero turmas nesse contrato DRAFT.
-7. A transação grava `proposal_generations`, `proposal_lines` e auditoria. O UUID
-   da execução é a chave idempotente; payload diferente com o mesmo UUID é rejeitado.
-   Novo Run All cria uma geração nova e preserva as anteriores.
-8. A API lê essas tabelas. O notebook reconcilia chaves, previsões, quantidades,
-   run e versão, e salva evidências no workspace, nos relatórios e no MLflow.
+## Valores e decisões
 
-O hash da extração identifica as linhas consultadas; o hash/versão da SQL e o
-hash de código documentam como foram obtidas e processadas. O `execution_id`
-acompanha a run, a versão, a proposta e os eventos como `correlation_id`.
+Cada categoria separa previsão bruta e inteiro proposto (`max(0, ceil(previsão))`).
+O total assume categorias disjuntas **somente na demonstração**. Ofertas em quarentena
+mantêm demanda indisponível. Atividades são filhas da oferta, não população adicional.
 
-A regra de composição é demonstrativa e exige validação funcional. O campo de
-ajuste humano fica separado dos valores calculados. As métricas deste dataset
-sintético não representam qualidade em dados institucionais.
+Capacidade institucional permanece nula; modulação é `REFERENCE_ONLY`, com grupos
+propostos vazios. Unificações aguardam dados/anuência. Não há regra fixa de capacidade
+40 na V4, publicação PRIME ou revisão humana sobrescrita.
 
-O fluxo abaixo mantém um contrato de previsão por série e publicação operacional
-próprio. Suas regras de distribuição não substituem a composição DRAFT acima.
-## Fluxo complementar: séries acadêmicas e modelos publicados
-
-1. Gerador determinístico produz 3 campi × 5 cursos × 2 períodos. São 12 semestres
-   por série, com uma lacuna e uma série nova de 3 pontos: 350 linhas na configuração padrão.
-2. Raw, Bronze, Silver e Gold são Parquet por snapshot. Nesta baseline sintética,
-   os registros já chegam tipados/canônicos; camadas preservam as mesmas colunas,
-   passando por validação de chaves, referências, ordenação, contagens e corte temporal.
-   Não há imputação de períodos ausentes. O serviço ingestion recebe JSON no mesmo contrato
-   agregado e valida antes de persistir; conectores institucionais ainda não estão implementados.
-3. UUID do snapshot deriva do conteúdo, configuração (incluindo ciclo/data de corte) e versão do schema. Manifesto
-   contém hashes de cada camada. O banco registra Gold; o manifesto referencia as demais.
-   Uploads existentes são comparados antes de reutilização; versionamento do bucket é habilitado.
-4. Treino valida hash do manifesto registrado no banco, hash do Gold, proveniência e contagem de linhas. Backtest expansivo usa apenas histórico
-   anterior a cada alvo; compara sazonal, Ridge e RandomForest quando há amostra.
-   Pouco histórico usa baseline explícito. O binário guarda o estimador ajustado e a lógica
-   de previsão; bundle.json guarda proveniência e SHA256 de cada arquivo. O treinamento
-   baixa o binário do RustFS e compara previsões antes de registrar a versão.
-5. MLflow recebe tags snapshot/model_key/code_version/config_hash, métricas e versão
-   candidata. Promoção exige operador e razão, grava DB/auditoria e ajusta champion.
-6. Publicação cria um servidor/API por modelo aprovado. Ele carrega o binário verificado
-   na inicialização, confere versão/URI/alias e proveniência em cada chamada e não chama fit.
-   Cache limitado a duas entradas por processo, chave URI+versão+checksum. Nova aprovação
-   exige republicação; divergência de alias ou aprovação revogada bloqueia a execução.
-   Versões antigas apenas JSON continuam no histórico, mas não são publicáveis neste contrato.
-7. Cada disciplina do período recebe a projeção integral do grupo, com divisão
-   sintética 85% regulares, 10% dependência e restante eletivas. Turmas = teto(total/40),
-   mínimo 1 para cumprir DDL. **Não são matrículas reais nem solver de ensalamento.**
-8. Avaliação pós-ciclo usa actuals do semestre alvo em snapshot posterior selado.
-   Na ausência deles retorna PENDING_ACTUALS. Não fabrica resultado de qualidade.
-
-Unicidade (job,model) e (prediction,discipline) protege retries. Locks PostgreSQL
-serializam jobs e promoções por modelo. Commit antes de publish tem recuperação
-explícita `docker compose run --rm tools recover`, não outbox: não se promete entrega automática após falha.
+[Schema canônico](../contracts/canonical_schema_v4.md) · [Contrato HTTP](../contracts/academic_application_v2.md).

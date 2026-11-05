@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "snapshot_id": "9158d4db-c80b-5638-8aa0-9467c60f6107",
+  "dataset_sha256": "721b8d6ded6550a3b0f66cdfba9749c1f1bf93d9cd1aa62f70ad3355b15dd6fa",
+  "campaigns": [
+    {
+      "campaign_id": "0090839e-e801-42a6-b1d8-53d186a50d72",
+      "request_key": "campaign-policy-06f50b4b-587e-4d20-b565-7bf8f44237db",
+      "experiment_id": "4",
+      "experiment_name": "HI/POC/PlanilhaTurmas/2024-2/20261105T072011Z__0090839e-e801-42a6-b1d8-53d186a50d72",
+      "run_id": "8045eedd04fb43d6b78b20a7d55806a9"
+    },
+    {
+      "campaign_id": "ec71f43d-14bc-4ec6-bec0-af3b48309ae1",
+      "request_key": "campaign-policy-fbc0a6d7-c166-4f47-89f8-81fa47cdd1e2",
+      "experiment_id": "5",
+      "experiment_name": "HI/POC/PlanilhaTurmas/2024-2/20261105T072014Z__ec71f43d-14bc-4ec6-bec0-af3b48309ae1",
+      "run_id": "aa094f2b3ffe48f9b56cd8f5b63299e3"
+    }
+  ],
+  "distinct_experiments": true,
+  "explicit_resume_unchanged": true,
+  "missing_resume_rejected": true
+}

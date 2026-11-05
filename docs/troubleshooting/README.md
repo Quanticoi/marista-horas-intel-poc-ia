@@ -1,18 +1,22 @@
-# Troubleshooting Compose
+# Diagnóstico V4
 
-| Sintoma | Ação |
+| Sintoma | Conferência e ação |
 |---|---|
-| Daemon inacessível | Abrir Docker Desktop; docker --context desktop-linux info |
-| Conflito Rancher | Executar um runtime por vez; desativar integração WSL com distros Rancher |
-| Unhealthy | docker compose ps -a e docker compose logs --tail 100 SERVICO |
-| Senhas falham | Preservar .env correspondente aos volumes |
-| MLflow vazio | Selecionar experimento; Default está vazio |
-| Registry integer=VARCHAR | Rebuild com launcher psycopg2 |
-| SciPy _lazywhere | Rebuild com scipy1.15.2 fixado |
-| Artefatos indisponíveis | Conferir RustFS, bucket e credenciais |
-| Batch pendente | Corrigir broker/worker antes de tools recover |
-| Alias divergiu | tools reconcile com operador/motivo |
-| Dashboard logs antigos | Histórico importado; atuais via docker compose logs |
+| Docker indisponível | Abra Docker Desktop e confira `docker --context desktop-linux info` |
+| Serviço unhealthy | `docker compose ps -a` e `docker compose logs --tail 100 SERVICO` |
+| Notebook somente leitura | Abra a cópia em `workspace/notebooks`; [guia Jupyter](../operations/JUPYTER.md) |
+| Texto aparece como Markdown | Shift+Enter renderiza a célula |
+| Host `mlflow` não resolve no navegador | Abra localhost:5000; DNS `mlflow` é interno ao Compose |
+| Não vejo o experimento | Use o link de 04/05 e remova filtros da UI; NEW cria novo, RESUME recupera existente |
+| Notebook 11 não limpou MLflow | Run All apenas orienta; execute preview + execute no controlador externo |
+| RESUME rejeitado | Confira chave existente e mesma configuração; escolha NEW para outro ensaio |
+| Proposta ausente no 09 | Conclua aprovação e geração em 07/08; nova campanha limpa o contexto da proposta anterior |
+| Modelo não elegível | Confira aprovação, alias, deploy, snapshot e validade; não force SQL |
+| Artefato divergente | Confira SHA256 e RustFS; não ignore o erro nem carregue arquivo arbitrário |
+| Git executable ausente | Rebuild com imagens atuais, que incluem Git |
+| Senha falha após recriação | Use `.env` correspondente aos volumes existentes |
+| Fonte indisponível | Confira três planilhas em `data/reference`; não há fallback silencioso |
 
-Não usar reset/unregister/prune como reparo genérico. Warnings não significam falha
-quando testes e validação retornam PASS.
+[Acessos](../operations/ACESSOS.md), [governança](../operations/REVIEW_INTEGRITY.md)
+e [reset seletivo](../operations/RESET_POC.md) detalham procedimentos. Reset não é
+reparo genérico para falhas de configuração; apaga resultados deliberadamente.

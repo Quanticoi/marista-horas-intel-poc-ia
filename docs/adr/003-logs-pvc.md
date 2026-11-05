@@ -1,3 +1,5 @@
+> **Registro de decisão anterior.** A jornada V4 é regida pela [ADR 012](012-workbench-academic-v4.md). Topologias, comandos ou responsabilidades deste registro podem ter sido substituídos; use a [documentação operacional atual](../README.md).
+
 # ADR-003 — Co-localizar backend e collector
 
 **Histórico: substituído no desenvolvimento pela [ADR 007](007-compose-development.md).**

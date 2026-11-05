@@ -11,7 +11,7 @@ e as páginas funcionais relevantes do documento V4.4 (92 páginas): 15, 18, 20,
 
 | Fonte / páginas | Regra confirmada | Consequência na implementação |
 |---|---|---|
-| Componentes, Containers e Sequência V3, p.1 | Workbench treina; MLflow registra; inferência carrega modelo aprovado; worker orquestra e persiste | Treino V4 deve executar localmente no container Jupyter; substituição do fluxo legado ainda pendente |
+| Componentes, Containers e Sequência V3, p.1 | Workbench treina; MLflow registra; inferência carrega modelo aprovado; worker orquestra e persiste | Treino executa no Jupyter; worker operacional recusa treinamento; geração usa inferência HTTP |
 | V4.4 p.18, RF020–026 | Coorte por ingresso, regulares separados dos adicionais | Simulação declara ingresso hipotético e mantém fatos separados; nenhuma ligação PRIME é inventada |
 | V4.4 p.15 e 75, RGN023 | Validar matriz antes das etapas seguintes | Não simular aprovação acadêmica nem liberar automaticamente ofertas especiais |
 | V4.4 p.20, RF040–048 | Unificação precede modulação; capacidade vem da matriz | `reference_seats` não vira capacidade homologada; grupos atuais são referência, não modulação efetivada |
@@ -21,7 +21,7 @@ e as páginas funcionais relevantes do documento V4.4 (92 páginas): 15, 18, 20,
 O diagnóstico Markdown citado na SPEC não foi localizado. Este documento é uma
 conferência nova do código/fontes, **não** uma substituição daquele arquivo.
 
-## Simulação implementada (parcial da fase B)
+## Simulação e implementação resultante
 
 O manifesto usa a estrutura importada, exclui 12 ofertas com 13 linhas em quarentena
 e conserva todas as 70 ofertas na referência. Produz 285 observações: 227 históricas
@@ -38,9 +38,9 @@ assume zero no cenário, marcado como hipótese, não como quantidade factual co
 
 Seed42 e cenário baseline geram o mesmo hash lógico; growth, decline, high_dependency
 e elective_pressure são opções explícitas. Histórico não depende do target futuro.
-Alterar valores planejados não altera os rótulos sintéticos. Ainda faltam estratégia
-de cold start executada pelo modelo, dimensões canônicas completas, executor/MLflow,
-serving V4, contrato v2 e simulador HTTP final.
+Alterar valores planejados não altera os rótulos sintéticos. Cold start, dimensões canônicas, executor/MLflow, serving V4, contrato HTTP v2 e
+simulador da aplicação foram implementados e exercitados. As regras acadêmicas
+pendentes continuam documentadas em [cobertura funcional](FUNCTIONAL_COVERAGE.md).
 
 Migrações 011/012: snapshots e observações persistem no PostgreSQL; views separam
 regulares por coorte, adicionais por disciplina e total por oferta. Triggers bloqueiam

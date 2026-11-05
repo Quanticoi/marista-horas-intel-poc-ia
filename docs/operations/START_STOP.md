@@ -8,7 +8,9 @@
 .\deployment\scripts\compose.ps1 stop
 ```
 
-Aguarde treinos/jobs concluírem antes de parar. Reinício preserva volumes;
-down -v exclui volumes nomeados. Acesso direto pelas portas, sem port-forward.
-O script inclui APIs publicadas em `.runtime/models.compose.json`. Com Docker direto,
-adicione `-f compose.yaml -f .runtime/models.compose.json` quando esse arquivo existir.
+Aguarde treinos/jobs concluírem antes de parar. Reinício preserva volumes e arquivos
+editados. `rebuild` atualiza imagens/migrations; não limpa os ensaios. Use o
+[reset seletivo](RESET_POC.md) somente quando quiser apagar resultados preservando a origem.
+
+Instalações legadas com `.runtime/models.compose.json` são incluídas pelo wrapper;
+a V4 usa o serviço compartilhado de inferência e não depende desse overlay.

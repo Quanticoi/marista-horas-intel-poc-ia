@@ -17,7 +17,7 @@ for name, service in document["services"].items():
     for mount in service.get("volumes", []):
         if mount.startswith("./"):
             host, target, *options = mount.split(":")
-            path = directory / host.removeprefix("./")
+            path = (ROOT if target=='/reference' else directory) / host.removeprefix("./")
             path.mkdir(parents=True, exist_ok=True)
             mounts.append({"type": "bind", "source": str(path), "target": target,
                            "read_only": "ro" in options})
@@ -26,7 +26,7 @@ for name, service in document["services"].items():
     if mounts:
         service["volumes"] = mounts
     if name not in ("postgres","rustfs","rabbitmq","volume-tools"):
-        for folder in ("src","sql","notebooks","tests"):
+        for folder in ("src","sql","notebooks","tests","deployment"):
             service.setdefault("volumes",[]).append({"type":"bind","source":str(ROOT/folder),"target":"/app/"+folder,"read_only":True})
 (directory / "compose.json").write_text(json.dumps(document, indent=2), encoding="utf-8")
 print("Isolated project configured: marista-correcoes-isolated (no host ports)")

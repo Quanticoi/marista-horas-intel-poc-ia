@@ -1,38 +1,32 @@
-# Catálogo do Workbench
+# Catálogo V4 do Workbench
 
-Fontes versionadas nesta pasta. Cópias editáveis em `workspace/notebooks`, publicadas
-no início do Jupyter. Reiniciar a mesma versão preserva edições. Uma atualização
-da fonte arquiva a cópia editada em `workspace/notebook-backups/` antes de atualizar
-o arquivo principal; não cria duplicatas na lista do Jupyter.
+Fontes versionadas nesta pasta; cópias editáveis em `workspace/notebooks`.
+Reinício preserva edições. Mudança da fonte arquiva a cópia anterior em
+`workspace/notebook-backups/`, mantendo uma entrada por notebook no catálogo ativo.
 
-| Notebook | Propósito | Escritas/risco |
+| Notebook | Função | Escrita |
 |---|---|---|
-| 00_validacao_ambiente | Dependências SQL/MLflow/artefatos | Run diagnóstica identificada |
-| 01_jornada_completa_planilha_turmas | Jornada completa em kernel novo | Treina, registra e cria nova proposta DRAFT |
-| 02_teste_inferencia_planilha_turmas | READ_EXISTING ou GENERATE_AND_VALIDATE via API/worker | Geração persistida opt-in; validação SQL somente leitura |
-| 03_exploracao_preparacao_dados | SQL e separação temporal | Leitura |
-| 04_treinamento_individual | Chave e snapshot explícitos | Treino opt-in, nunca promoção |
-| 05_treinamento_campanha | Criar/acompanhar/pausar/retomar/cancelar/reprocessar campanhas | Jobs reais opt-in; estado/checkpoint PostgreSQL |
-| 06_avaliacao_comparativa | Métricas de runs | Leitura |
-| 07_registry_governanca | Solicitação/revisão/aprovação/revogação/rollback | Leitura padrão; decisão exige credencial separada e confirmação |
-| 08_auditoria_lineage | Navegação por identidade | Leitura, identificador obrigatório |
-| 09_reset_total_ambiente_poc | Inspeção de plano e comando externo | Run All não executa exclusão |
+| [00 ambiente](00_ambiente.ipynb) | SQL/MLflow e round-trip de artefato | Diagnóstico identificado |
+| [01 fontes](01_fontes_academicas.ipynb) | Importação com proveniência | Referências SQL idempotentes |
+| [02 qualidade](02_qualidade_dados.ipynb) | Grão, quarentena, códigos | Leitura |
+| [03 exploração](03_exploracao_demanda.ipynb) | Histórico sintético por coorte | Snapshot determinístico SQL |
+| [04 individual](04_treinamento_modelos.ipynb) | Um modelo por curso selecionado | Novo experimento/versão com NEW |
+| [05 lotes](05_campanhas_lotes.ipynb) | Três cursos, checkpoints e métricas | Novo experimento/versões com NEW |
+| [06 avaliação](06_avaliacao_modelos.ipynb) | Baseline e agregação | Leitura |
+| [07 governança](07_governanca_registry.ipynb) | Revisão explícita | Apenas com APPROVE_DEMO |
+| [08 publicação](08_publicacao_inferencia.ipynb) | Deploy e proposta operacional | Controles DEPLOY_DEMO / GENERATE |
+| [09 aplicação](09_simulador_aplicacao.ipynb) | Tabela, filtros e atividades por HTTP | Leitura |
+| [10 auditoria](10_auditoria_lineage.ipynb) | Confronto de versões e artefatos | Leitura |
+| [11 reset](11_reset_poc.ipynb) | Orientação para reset seletivo | Run All não exclui; controlador externo executa |
 
-Ordem sugerida: 00 → 01 → 02 → 08. Use 03–07 conforme a atividade científica.
-No 02, READ_EXISTING continua automaticamente a jornada 01 concluída: usa
-`/workspace/reports/journey-current.json` e valida ciclo, run, snapshot e versão
-na API antes de consultar. Instalações anteriores usam `/reports/journey-latest.json`
-quando o novo contexto ainda não existe. Não pesquisa a proposta mais recente no banco.
-Um `PROPOSAL_ID` explícito tem prioridade. No 08 informe o ID da entidade.
-No 09, gere primeiro o plano no terminal.
-No 02, a célula **1.1** permite preencher `selection` diretamente: para leitura,
-use `{"mode": "READ_EXISTING", "proposal_id": "UUID da tabela"}`. Esse UUID é
-o `execution_id` apresentado pela jornada 01. Para nova inferência, preencha o
-exemplo `GENERATE_AND_VALIDATE` na mesma célula com snapshot, modelo, versão e
-confirmação de escrita. Leitura não executa nova inferência. Sem contexto válido
-ou seleção manual, o notebook pede uma seleção; não inicia geração silenciosa.
-Relatórios executados ficam em `artifacts/reports`, sem preencher outputs nos fontes.
+Execute em kernel novo. Para proposta completa: 00→01→02→03→05→06→07→08→09→10.
+04 é alternativa individual. 04/05 criam experimento a cada execução da célula de
+treino em NEW; para recuperar ensaio existente, configure RESUME e sua chave.
 
-V2: configuração tipada `Parameters`; veja [exemplos e controles](../docs/operations/OPERATIONS_V2.md).
-Relatórios detalhados em artifacts/reports/v2. Testes opt-in usam stack descartável;
-Run All do09 nunca executa remoções.
+08 salva o contexto para 09/10; override explícito de proposta é possível. Nova
+campanha limpa a referência à proposta anterior. O reset seletivo limpa esse
+contexto e preserva a origem SQL, permitindo retomar a partir de 04/05.
+
+`legacy/` contém fontes antigas fora da distribuição ativa. Relatórios executados
+ficam em `artifacts/reports`, sem preencher outputs destes fontes.
+[Runbook](../docs/operations/POC_V4_MANUAL_RUNBOOK.md).

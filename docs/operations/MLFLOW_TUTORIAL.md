@@ -1,54 +1,25 @@
-# Consultar a jornada no MLflow
+# Conferir uma campanha no MLflow
 
-Abra [MLflow](http://127.0.0.1:5000). O servidor local reúne Tracking e Model Registry;
-seus metadados ficam no PostgreSQL e os artefatos no RustFS.
+1. Conclua 04 ou 05 e use **Abrir experimento**, no resultado da célula de treino.
+2. Na lista de runs, confira a run CAMPAIGN e expanda as filhas BATCH/MODEL.
+3. Na run MODEL, veja parâmetros de algoritmo, seed, features, número de exemplos
+   e métricas como `regular.mae`, `regular.rmse`, `dependency.mae` e as do baseline.
+4. Confira os artefatos `metric_catalog.json`, `metric_profile.json`,
+   `model_errors.json` e `training_result.json`. A campanha consolida CSVs e métricas.
+5. No Registry, abra `hi.demo.v4.c2248.components`, `hi.demo.v4.c2348.components`
+   ou `hi.demo.v4.c2287.components`, na versão exibida pelo notebook.
+6. Relacione run, snapshot, perfil, assinatura e SHA256. Registro não significa aprovação.
 
-## Encontrar a execução
+**Não apareceu na lista?** Abra o link direto, confira se a UI é localhost:5000 e
+remova filtros de nome/status. Em campanhas anteriores à mudança, a chave fixa
+podia recuperar execução existente no experimento academic-components/2024-2.
+Com NEW, uma campanha nova agora produz outro experimento. O resultado 04/05 mostra
+a identidade usada; erro de treino deve ser tratado antes de esperar uma run concluída.
 
-1. Abra o experimento `planilha-turmas-proxy-v1`.
-2. Identifique a run pelo `run_id` ou pela tag `execution_id` exibidos no notebook.
-3. Para ir diretamente à execução, use o link fornecido na etapa de tracking ou
-   no resumo final da Jornada Completa.
+O experimento `HI/POC/Diagnostics/V4` pertence ao notebook 00. As operações de
+geração/inferência usam `HI/POC/Operations/V4`; veja a aba Traces e o ID retornado
+pelo job. Um Trace não é um treinamento adicional.
 
-O experimento `journey-diagnostics-proxy` contém as verificações de disponibilidade:
-são runs de diagnóstico com gravação e leitura de um pequeno artefato, não treinos.
-
-## O que conferir
-
-| Informação | Registro |
-|---|---|
-| Modelo | Parâmetros `algorithm`, `alpha`, `seed`, `features` e `target` |
-| Avaliação | Métricas `mae`, `rmse` e `training_seconds` |
-| Inferência | Métricas `inference_rows` e `inference_seconds` |
-| Dados e SQL | Tags `snapshot_id`, `dataset_sha256`, `query_sha256` e `query_version` |
-| Código | Tag `code_version`, hash do código utilizado |
-| Correlação | Tags `execution_id`, `correlation_id`, ciclo e escopo |
-| Referências | SQL e CSV da extração em `reference` |
-| Avaliação detalhada | Artefato `evaluation.json` |
-| Evidência final | Resumo JSON em `evidence` |
-
-As métricas são calculadas com dados sintéticos e demonstram funcionamento da
-integração. Não constituem validação de qualidade para dados institucionais.
-
-## Modelo registrado
-
-No Model Registry, localize `planilha-turmas-demo` e a versão indicada pelo notebook.
-A versão está vinculada à run e inclui o pipeline ajustado, assinatura de entrada/
-saída e exemplo. A referência usada para inferência é
-`models:/planilha-turmas-demo/VERSAO`, com versão explícita.
-
-O notebook remove o objeto treinado da memória, recarrega essa referência e compara
-suas previsões com as do serviço de inferência. Registro e carregamento não
-significam aprovação ou promoção para uso operacional.
-
-## Ligar o modelo à Planilha Turmas
-
-A geração persistida na aplicação guarda `execution_id`, `run_id`, experimento,
-nome/versão do modelo, snapshot e regra aplicada. Consulte a geração pela API e
-use o mesmo `execution_id` no dashboard para reunir os eventos da jornada.
-
-Cada Run All cria uma nova run e proposta. Repetir somente a persistência com o
-mesmo identificador e conteúdo é idempotente. Runs e modelos de demonstrações
-anteriores podem permanecer no servidor; use sempre os IDs da execução desejada.
-
-[Executar a jornada](JOURNEY.md) · [API e interfaces](../../README.md#interfaces-e-acesso).
+Para conferir o resultado de negócio, use 09/10 ou `GET /v2/audit/proposals/{id}`.
+Essa auditoria confronta a versão com os bytes no RustFS e a proposta SQL.
+[Repetição e seleção](EXPERIMENTS_AND_TRACING.md) · [Acessos](ACESSOS.md).

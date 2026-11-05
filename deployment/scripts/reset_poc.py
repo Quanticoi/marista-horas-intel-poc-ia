@@ -12,6 +12,7 @@ import uuid
 ROOT=Path(__file__).resolve().parents[2]
 REPORTS=ROOT/"artifacts/reports/reset"
 PHRASE="APAGAR TODOS OS DADOS DA POC MARISTA"
+EXPERIMENT_PHRASE="LIMPAR EXPERIMENTOS DA POC MARISTA"
 SCOPES={"marista":ROOT/"compose.yaml",
         "marista-correcoes-isolated":ROOT/".runtime/correcoes-isolated/compose.json"}
 
@@ -90,12 +91,22 @@ def data_inventory(project):
 
 
 def preview(environment,project,mode):
+    if mode not in ('factory-reset','reset-data','reset-experiments'):
+        raise ValueError('Unsupported reset mode')
     scope=validate_scope(environment,project)
     inventory=data_inventory(project)
     if inventory["database_names"]!=["mlflow_db","planejamento_db","postgres"] or inventory["buckets"]!=["pucpr-poc"]:
         raise ValueError("Unexpected database or bucket: shared-resource scope rejected")
     plan=dict(plan_id=str(uuid.uuid4()),created_at_utc=datetime.now(timezone.utc).isoformat(),environment=environment,
               mode=mode,scope=scope,inventory=inventory,preserved=preserved(),status="PREVIEW")
+    if mode=='reset-experiments':
+        if len(inventory['academic_source'])!=5:
+            raise ValueError('Academic source schema incomplete; migrate before preview')
+        plan['effects']=dict(preserve_sql=inventory['academic_source'],
+            clear_sql=sorted(set(inventory['databases']['planejamento_db'])-set(inventory['academic_source'])),
+            clear_mlflow='ALL experiments, runs, traces and Registry; recreate through mlflow db upgrade',
+            clear_storage='ALL versions/delete markers except backups/',
+            clear_workspace_context=True,confirmation=EXPERIMENT_PHRASE)
     plan["plan_hash"]=digest(plan)
     REPORTS.mkdir(parents=True,exist_ok=True)
     (REPORTS/(plan["plan_id"]+".plan.json")).write_text(json.dumps(plan,indent=2),encoding="utf-8")
@@ -103,7 +114,8 @@ def preview(environment,project,mode):
 
 
 def validate_plan(plan,phrase,execute,environment,project):
-    if not execute or phrase!=PHRASE:
+    expected=EXPERIMENT_PHRASE if plan.get('mode')=='reset-experiments' else PHRASE
+    if not execute or phrase!=expected:
         raise ValueError("Explicit --execute and exact typed confirmation are required")
     if environment!="poc" or project not in SCOPES or plan["environment"]!=environment or plan["scope"]["project"]!=project:
         raise ValueError("Scope mismatch")
@@ -135,6 +147,8 @@ def execute_plan(plan,environment,project,phrase,execute,reinitialize):
     reinitialize=reinitialize or "empty"
     if reinitialize not in ("empty","demo-ready"):
         raise ValueError("A supported rebootstrap mode is required")
+    if plan.get('mode')=='reset-experiments' and reinitialize!='empty':
+        raise ValueError('reset-experiments preserves source; do not reseed it with demo-ready')
     validate_plan(plan,phrase,execute,environment,project)
     if plan["mode"]=="factory-reset" and any(o["key"].startswith("backups/") for o in plan["inventory"]["objects"]):
         raise ValueError("Backups inside volume: export and verify externally before reset")
@@ -162,17 +176,33 @@ def execute_plan(plan,environment,project,phrase,execute,reinitialize):
                     raise ValueError("Writes occurred during quiescence; preview again")
                 compose(project,"run","--rm","--no-deps","-T","--entrypoint","python",
                         "-v",str(ROOT/"src")+":/app/src:ro","-e","POC_RESET_PLAN_ID="+plan["plan_id"],
+                        "-e","POC_RESET_MODE="+plan['mode'],
                         "tools","-m","src.persistence.reset_data")
                 result["steps"].append("scoped data removed, volumes preserved")
             if reinitialize:
                 compose(project,"run","--rm","--no-deps","--entrypoint","chown","volume-tools","10001:10001","/restore/rustfs")
                 compose(project,"up","-d","--wait","--wait-timeout","180","postgres","rustfs","rabbitmq")
-                for command in ("bootstrap","migrate","buckets","migrate-mlflow"):
+                commands=("bootstrap","migrate","migrate-mlflow") if plan['mode']=='reset-experiments' else ("bootstrap","migrate","buckets","migrate-mlflow")
+                for command in commands:
                     compose(project,"run","--rm","--no-deps","tools",command)
                 if reinitialize=="demo-ready":
                     compose(project,"run","--rm","--no-deps","tools","seed")
                 compose(project,"up","-d","--wait","--wait-timeout","300")
                 after=data_inventory(project)
+                if plan['mode']=='reset-experiments':
+                    if after['academic_source']!=plan['inventory']['academic_source']:
+                        raise ValueError('Preserved academic source count/hash changed')
+                    if any(v['count'] for t,v in after['databases']['planejamento_db'].items() if t not in after['academic_source']):
+                        raise ValueError('Derived application data remains after selective reset')
+                    if any(not o['key'].startswith('backups/') for o in after['objects']):
+                        raise ValueError('Experiment Object Store residue')
+                    workspace=ROOT/('workspace' if project=='marista' else '.runtime/correcoes-isolated/workspace')
+                    context=(workspace/'reports/v4-context.json').resolve()
+                    if not context.is_relative_to(ROOT.resolve()):
+                        raise ValueError('Unexpected workspace context path')
+                    context.parent.mkdir(parents=True,exist_ok=True)
+                    context.write_text('{}\n',encoding='utf-8')
+                    result['source_preservation']='COUNTS_AND_HASHES_IDENTICAL'
                 for table in ("proposal_generations","proposal_lines","training_executions","prediction_jobs","model_deployments",
                               "operation_jobs","operation_events","training_campaigns","model_approval_requests","model_version_catalog"):
                     if after["databases"]["planejamento_db"][table]["count"]:
@@ -201,7 +231,7 @@ def main():
     parser.add_argument("action",choices=["preview","execute","status"])
     parser.add_argument("--environment",required=True)
     parser.add_argument("--project",required=True)
-    parser.add_argument("--mode",choices=["factory-reset","reset-data"],default="factory-reset")
+    parser.add_argument("--mode",choices=["factory-reset","reset-data","reset-experiments"],default="reset-experiments")
     parser.add_argument("--plan-id")
     parser.add_argument("--execute",action="store_true")
     parser.add_argument("--confirmation")
