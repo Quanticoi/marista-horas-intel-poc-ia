@@ -12,7 +12,8 @@ class Registry:
     def get_model_version_by_alias(self,name,alias):
         if self.version is None:
             from mlflow.exceptions import MlflowException
-            raise MlflowException('missing',error_code='RESOURCE_DOES_NOT_EXIST')
+            from mlflow.protos.databricks_pb2 import RESOURCE_DOES_NOT_EXIST
+            raise MlflowException('missing',error_code=RESOURCE_DOES_NOT_EXIST)
         return SimpleNamespace(version=self.version)
     def set_registered_model_alias(self,name,alias,version):
         self.calls.append(('set',name,str(version)))
@@ -44,6 +45,16 @@ def test_review_sync_revocation_is_idempotent():
     synchronize_alias(registry,'hi.demo.test','REVOKE','2','2')
     assert registry.calls==[('delete','hi.demo.test')]
     assert alias_version(registry,'hi.demo.test') is None
+
+
+def test_review_sync_does_not_suppress_other_mlflow_errors():
+    from mlflow.exceptions import MlflowException
+    from mlflow.protos.databricks_pb2 import PERMISSION_DENIED
+    class ForbiddenRegistry:
+        def get_model_version_by_alias(self,name,alias):
+            raise MlflowException('forbidden',error_code=PERMISSION_DENIED)
+    with pytest.raises(MlflowException,match='forbidden'):
+        alias_version(ForbiddenRegistry(),'hi.demo.test')
 
 
 def test_lineage_record_is_not_runtime_verified():
