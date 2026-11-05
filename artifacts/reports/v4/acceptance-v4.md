@@ -1,14 +1,14 @@
-# Aceite V4 — checkpoint inicial
+# Aceite V4 - importacao das planilhas
 
-**POC V4 NÃO CONCLUÍDA.** Fontes obrigatórias ausentes; nenhuma importação, simulação, treino, publicação ou geração V4 foi executada.
+V4 NAO CONCLUIDA. Tres planilhas importadas; PDFs e diagnostico ainda ausentes. 17 testes PASS em academic-import-junit.xml. Sem treino, simulacao ou E2E V4.
 
 | Critério | Estado | Evidência / limitação |
 |---|---|---|
-| V4-01 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
-| V4-02 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
-| V4-03 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
-| V4-04 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
-| V4-05 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
+| V4-01 | AUTO_PASS | import-report.json, source-mapping.csv, academic-import-junit.xml: origens conservadas, cursos distintos, P164 e P110A; duplicatas em quarentena. |
+| V4-02 | AUTO_PASS | import-report.json, source-mapping.csv, academic-import-junit.xml: origens conservadas, cursos distintos, P164 e P110A; duplicatas em quarentena. |
+| V4-03 | AUTO_PASS | import-report.json, source-mapping.csv, academic-import-junit.xml: origens conservadas, cursos distintos, P164 e P110A; duplicatas em quarentena. |
+| V4-04 | AUTO_PASS | import-report.json, source-mapping.csv, academic-import-junit.xml: origens conservadas, cursos distintos, P164 e P110A; duplicatas em quarentena. |
+| V4-05 | NOT_EXECUTED | Arquivo real: 31 entidades/175 campos; divergencia da SPEC registrada. Metadados de prontidao preservados; conformidade integral pendente. |
 | V4-06 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
 | V4-07 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
 | V4-08 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |

@@ -1,27 +1,59 @@
 {
   "schema_version": "v4-source-inventory/1",
-  "timestamp_utc": "2026-11-05T04:37:16.687499+00:00",
+  "timestamp_utc": "2026-11-05T04:46:25.791158+00:00",
   "status": "SOURCE_MISSING_OR_AMBIGUOUS",
   "searched_roots": [
-    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\reference",
-    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\data\\reference",
-    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev\\reference"
+    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev",
+    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\data\\reference"
   ],
   "sources": [
     {
       "name": "Planilha de Turmas 2024.2_Engenharia de Computação.xlsm",
-      "status": "SOURCE_MISSING",
-      "matches": []
+      "status": "FOUND",
+      "matches": [
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\data\\reference\\Planilha de Turmas 2024.2_Engenharia de Computação.xlsm",
+          "sha256": "8c472d8ecf2468197a3cb980bf6d1e18f1297d43b651e2f661f3da396df78a67",
+          "bytes": 727194
+        },
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev\\Planilha de Turmas 2024.2_Engenharia de Computação.xlsm",
+          "sha256": "8c472d8ecf2468197a3cb980bf6d1e18f1297d43b651e2f661f3da396df78a67",
+          "bytes": 727194
+        }
+      ]
     },
     {
       "name": "Planilha de Turmas 2024.2_CiberSegurança.xlsm",
-      "status": "SOURCE_MISSING",
-      "matches": []
+      "status": "FOUND",
+      "matches": [
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\data\\reference\\Planilha de Turmas 2024.2_CiberSegurança.xlsm",
+          "sha256": "cd5fb5f08956c55cf33ce2e28b877a45059f56c059f4c877130b0169101b494c",
+          "bytes": 718276
+        },
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev\\Planilha de Turmas 2024.2_CiberSegurança.xlsm",
+          "sha256": "cd5fb5f08956c55cf33ce2e28b877a45059f56c059f4c877130b0169101b494c",
+          "bytes": 718276
+        }
+      ]
     },
     {
       "name": "DADOS-EXTERNOS-OTIMIZACAO-HORARIOS-V3.xlsx",
-      "status": "SOURCE_MISSING",
-      "matches": []
+      "status": "FOUND",
+      "matches": [
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\data\\reference\\DADOS-EXTERNOS-OTIMIZACAO-HORARIOS-V3.xlsx",
+          "sha256": "96f100462e90da37f1bd90ebc65a41ad16697fc05076cd756e38ba105f7dedc0",
+          "bytes": 99453
+        },
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev\\DADOS-EXTERNOS-OTIMIZACAO-HORARIOS-V3.xlsx",
+          "sha256": "96f100462e90da37f1bd90ebc65a41ad16697fc05076cd756e38ba105f7dedc0",
+          "bytes": 99453
+        }
+      ]
     },
     {
       "name": "REQ_InteligenciaeOtimizacaodeHorariosAcademicos_V4.4 (1).pdf",

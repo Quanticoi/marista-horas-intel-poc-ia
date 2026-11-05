@@ -1,8 +1,9 @@
 # Marista — Horários Inteligentes
 
 **V4 em implementação:** [checkpoint e roteiro](docs/operations/POC_V4_MANUAL_RUNBOOK.md).
-As fontes acadêmicas obrigatórias ainda não estão disponíveis no repositório;
-importação e jornada V4 permanecem pendentes. O fluxo descrito abaixo é o V3 existente.
+As três planilhas fornecidas em `dev` já foram importadas no PostgreSQL, com 107
+linhas preservadas e 17 testes aprovados. A jornada V4 completa ainda está em
+implementação; PDFs e diagnóstico permanecem ausentes. O fluxo abaixo é o V3 existente.
 
 Esta POC demonstra a arquitetura de IA para uma **proposta de Planilha Turmas**:
 SQL → treino real → MLflow/Registry → RustFS → inferência de versão explícita →

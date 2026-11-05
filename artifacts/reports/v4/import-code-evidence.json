@@ -1,0 +1,17 @@
+{
+  "base_commit": "e8cf433e9a20a0ca83516133499ff159b2aff76c",
+  "working_tree_changes_tested": true,
+  "source_type": "REFERENCE_PLANNING",
+  "test_result": "17 PASS",
+  "code_sha256": {
+    "src/academic/importer.py": "a1fdeb3e7ddca17f961dfe44cfa404e8bc986fec4798d24877b9241119abb4ce",
+    "src/academic/ooxml.py": "537ec34bb1ee4dc227c1be2394db89393a143fd9fb5ac4f1a0701d9f38d00d36",
+    "sql/ddl/010_academic_reference.sql": "3733e90df1daaf0bae0ad30fd7c49c5eb74b200f41e97c903769cff41f42287b",
+    "tests/integration/test_academic_reference_v4.py": "d3cbced8cebb6bf43c101af05a2c44050ceae6098ae1a85451fefb6971dc8b1e"
+  },
+  "limitations": [
+    "Not a complete V4 implementation",
+    "No validated enrollment ground truth",
+    "No functional PDF review"
+  ]
+}

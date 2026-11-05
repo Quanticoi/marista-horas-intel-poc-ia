@@ -2,9 +2,31 @@
 
 Estado: implementação parcial. O fluxo V3 continua disponível; a jornada V4 não foi substituída por notebooks vazios.
 
-## Bloqueio da importação
+## Atualização: planilhas localizadas e importadas
 
-Os oito arquivos da seção 0.1 da SPEC não foram encontrados em `reference/`, `data/reference/` ou `dev/reference/`. A busca adicional nos arquivos do repositório não encontrou XLSM/XLSX/PDF nem o diagnóstico.
+As três planilhas estão em `dev/`, com cópias somente leitura em `data/reference/`.
+Migração 010 aplicada e importação transacional no PostgreSQL realizada: 107 linhas,
+70 chaves de oferta, 175 campos de contrato. **São 31 entidades no arquivo fornecido**,
+divergindo das 30 citadas na SPEC. Treze linhas em quarentena, sem descarte.
+Detalhes: [contrato de importação](../contracts/academic_reference_v4.md).
+
+Reprodução em PowerShell, preservando o banco:
+
+```powershell
+docker compose run --rm --no-deps -v "${PWD}:/app:ro" tools migrate
+docker compose run --rm --no-deps -v "${PWD}:/app:ro" -v "${PWD}/data/reference:/reference:ro" --entrypoint python tools -m src.academic.importer --source /reference --output /reports/v4 --persist
+docker compose run --rm --no-deps -v "${PWD}:/app:ro" -v "${PWD}/data/reference:/reference:ro" --entrypoint python tools -m pytest tests/integration/test_academic_reference_v4.py tests/unit/test_v4_foundations.py -q -o cache_dir=/tmp/pytest-academic --junitxml=/reports/v4/academic-import-junit.xml
+```
+
+Linux: mesmos comandos com `$PWD`. São 17 testes PASS, incluindo reimportação
+idempotente e rejeição de payload divergente sem sobrescrever a origem.
+Serviços existentes não foram recriados. Falta a normalização completa das dimensões
+e fatos, simulação, executor Workbench, contrato v2 e jornada final. PDFs/diagnóstico
+continuam SOURCE_MISSING; conferência funcional dessas fontes não executada.
+
+## Bloqueio inicial — histórico
+
+Na inspeção inicial, os oito arquivos da seção 0.1 da SPEC não estavam disponíveis nos diretórios pesquisados. Após a indicação do usuário, as três planilhas foram localizadas em `dev` e processadas conforme a atualização acima.
 A ausência impede verificar 107 linhas, P164, P110A e o dicionário de 30 entidades/175 campos. Não usar os números citados na SPEC para fabricar uma importação.
 
 Disponibilize o pacote em `reference/` ou informe o diretório real. O inventário é somente leitura e não executa macros:

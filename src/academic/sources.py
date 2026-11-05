@@ -38,7 +38,7 @@ def main():
     parser.add_argument("--root", action="append", type=Path)
     parser.add_argument("--output", type=Path, default=Path("artifacts/reports/v4/source_inventory.json"))
     args = parser.parse_args()
-    result = inventory(args.root or [Path("reference"), Path("data/reference"), Path("dev/reference")])
+    result = inventory(args.root or [Path("reference"), Path("data/reference"), Path("dev")])
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     for row in result["sources"]:

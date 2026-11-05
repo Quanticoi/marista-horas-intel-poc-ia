@@ -1,4 +1,12 @@
-﻿# 05/11/2026 — V4 iniciada; fontes acadêmicas ausentes
+﻿# 05/11/2026 — V4: três planilhas importadas; fontes documentais ainda ausentes
+
+Usuário indicou dev: três planilhas presentes, copiadas para data/reference somente leitura e SHA256 conferidos. Leitura XML OOXML sem macros/links/fórmulas executadas. Migração010 aditiva aplicada em container tools; importação em transação concluída no PostgreSQL: 3 fontes, 107 linhas (82+25), 70 chaves de oferta, 175 campos. Arquivo real contém 31 entidades, não 30 da SPEC; diferença registrada, sem descarte. P164/2248 preservado como uma oferta com teoria41 e práticas21+20; 2248/manhã separado de2348/noite e2287/noite. Treze linhas em quarentena (11 marcadores não numéricos; 2 PCS107A repetidas), todas preservadas com células/fórmulas/linha/arquivo. Sem ocupação real ou PRIME inventados.
+
+17 testes PASS em Docker tools com PostgreSQL real: contagens, P164, P110A, cursos, eletiva como elegibilidade, reimportação sem duplicação e rejeição de payload divergente com rollback. Evidências artifacts/reports/v4/import-report.json, source-mapping.csv, academic-import-junit.xml. Runbook e contrato academic_reference_v4.md atualizados. Fontes XLSM originais não alteradas. Sem reset/rebuild dos serviços principais.
+
+FaseA ainda parcial: staging com chaves canônicas e proveniência implementado; normalização completa de dimensões/fatos pendente. FasesB-F ainda não executadas. PDFs funcional/arquitetura e diagnóstico seguem SOURCE_MISSING; localização solicitada ao usuário. Continuar V4 sem declarar concluída nem atribuir PASS ao E2E. Preparar checkpoint local conforme SPEC, sem push.
+
+# 05/11/2026 — V4 iniciada; fontes acadêmicas ausentes
 
 SPEC V4 lida. Fontes obrigatórias não encontradas no repositório (incluindo busca de arquivos ignorados em data/dev/docs/reference). Pergunta enviada ao usuário sobre localização do pacote reference, ainda sem resposta. Gate A bloqueado: não inventar 107 registros nem simular estrutura acadêmica por números citados. Fluxo existente preservado; nenhum serviço ou banco alterado.
 

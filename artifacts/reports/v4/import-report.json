@@ -1,0 +1,64 @@
+{
+  "transformation_version": "academic-planning/1.0",
+  "status": "PASS",
+  "checks": {
+    "source_rows": true,
+    "engineering_rows": true,
+    "cybersecurity_rows": true,
+    "course_codes": true,
+    "engineering_disciplines": true,
+    "cybersecurity_disciplines": true,
+    "p164_one_offer": true,
+    "p164_activities": true,
+    "contract_fields": true,
+    "contract_entities_present": true
+  },
+  "files": [
+    {
+      "filename": "Planilha de Turmas 2024.2_Engenharia de Computação.xlsm",
+      "sha256": "8c472d8ecf2468197a3cb980bf6d1e18f1297d43b651e2f661f3da396df78a67",
+      "bytes": 727194
+    },
+    {
+      "filename": "Planilha de Turmas 2024.2_CiberSegurança.xlsm",
+      "sha256": "cd5fb5f08956c55cf33ce2e28b877a45059f56c059f4c877130b0169101b494c",
+      "bytes": 718276
+    },
+    {
+      "filename": "DADOS-EXTERNOS-OTIMIZACAO-HORARIOS-V3.xlsx",
+      "sha256": "96f100462e90da37f1bd90ebc65a41ad16697fc05076cd756e38ba105f7dedc0",
+      "bytes": 99453
+    }
+  ],
+  "offer_count": 70,
+  "contract_entity_count": 31,
+  "specification_differences": [
+    {
+      "field": "entity_count",
+      "expected": 30,
+      "observed": 31
+    }
+  ],
+  "quarantined_rows": [
+    "bc8c7701-d9a1-5a31-ab2c-99b14528a7b5",
+    "c9c50214-32a9-57ae-abb1-bb53e1abc84e",
+    "987089e5-92fe-582b-ac55-9522082f2ac9",
+    "f42fc5a4-5330-52d2-ad3a-d6874f2da2f2",
+    "d9102481-4adc-5a1c-8544-0f213800209c",
+    "593d5890-4beb-5e39-9c55-f32874f75bb3",
+    "aa7ad16d-5a7a-5b0d-8f11-7b71e553044b",
+    "64889bee-edef-5716-99eb-ab306960d228",
+    "02177d01-66eb-570f-86b8-be452906f8a2",
+    "f1e2fb1d-f465-58cd-b40f-8663bbe9bdac",
+    "d650eb75-c4a8-5a79-88e3-a603006830e2",
+    "3d6bf59c-0199-5098-9873-dbc5fabe4563",
+    "09776a11-8341-57ab-b1a7-3efd5181bea6"
+  ],
+  "limitations": [
+    "Planning values are not actual enrollment.",
+    "No PRIME identifiers or cohort ingress inferred.",
+    "Duplicate activities retained and quarantined; no automatic deduplication.",
+    "PDF functional/architecture validation pending source availability."
+  ],
+  "persistence": "COMMITTED"
+}
