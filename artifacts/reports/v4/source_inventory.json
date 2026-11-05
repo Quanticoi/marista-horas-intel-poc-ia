@@ -1,0 +1,56 @@
+{
+  "schema_version": "v4-source-inventory/1",
+  "timestamp_utc": "2026-11-05T04:37:16.687499+00:00",
+  "status": "SOURCE_MISSING_OR_AMBIGUOUS",
+  "searched_roots": [
+    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\reference",
+    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\data\\reference",
+    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev\\reference"
+  ],
+  "sources": [
+    {
+      "name": "Planilha de Turmas 2024.2_Engenharia de Computação.xlsm",
+      "status": "SOURCE_MISSING",
+      "matches": []
+    },
+    {
+      "name": "Planilha de Turmas 2024.2_CiberSegurança.xlsm",
+      "status": "SOURCE_MISSING",
+      "matches": []
+    },
+    {
+      "name": "DADOS-EXTERNOS-OTIMIZACAO-HORARIOS-V3.xlsx",
+      "status": "SOURCE_MISSING",
+      "matches": []
+    },
+    {
+      "name": "REQ_InteligenciaeOtimizacaodeHorariosAcademicos_V4.4 (1).pdf",
+      "status": "SOURCE_MISSING",
+      "matches": []
+    },
+    {
+      "name": "PUCPR - Otimização de Horários Inteligentes - Arquitetura de Componentes-V3(2).pdf",
+      "status": "SOURCE_MISSING",
+      "matches": []
+    },
+    {
+      "name": "PUCPR - Otimização de Horários Inteligentes - Arquitetura de Containers-V3(1).pdf",
+      "status": "SOURCE_MISSING",
+      "matches": []
+    },
+    {
+      "name": "PUCPR - Otimização de Horários Inteligentes - Diagrama de Sequencia-V3(1).pdf",
+      "status": "SOURCE_MISSING",
+      "matches": []
+    },
+    {
+      "name": "diagnostico_dados_simulacao_realista_horas_inteligentes.md",
+      "status": "SOURCE_MISSING",
+      "matches": []
+    }
+  ],
+  "limitations": [
+    "FOUND validates presence and hash only, not academic content or import.",
+    "No macros executed. No simulated enrollment created."
+  ]
+}
