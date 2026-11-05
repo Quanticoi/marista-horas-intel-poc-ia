@@ -1,6 +1,6 @@
 # Aceite V4 - importacao das planilhas
 
-V4 NAO CONCLUIDA. Tres planilhas importadas; PDFs e diagnostico ainda ausentes. 17 testes PASS em academic-import-junit.xml. Sem treino, simulacao ou E2E V4.
+V4 NAO CONCLUIDA. Tres planilhas importadas; quatro PDFs recebidos/conferidos, diagnostico ainda ausente. 29 testes PASS em simulation-junit.xml. Simulacao persistida; sem treino ou E2E V4.
 
 | Critério | Estado | Evidência / limitação |
 |---|---|---|
@@ -9,7 +9,7 @@ V4 NAO CONCLUIDA. Tres planilhas importadas; PDFs e diagnostico ainda ausentes. 
 | V4-03 | AUTO_PASS | import-report.json, source-mapping.csv, academic-import-junit.xml: origens conservadas, cursos distintos, P164 e P110A; duplicatas em quarentena. |
 | V4-04 | AUTO_PASS | import-report.json, source-mapping.csv, academic-import-junit.xml: origens conservadas, cursos distintos, P164 e P110A; duplicatas em quarentena. |
 | V4-05 | NOT_EXECUTED | Arquivo real: 31 entidades/175 campos; divergencia da SPEC registrada. Metadados de prontidao preservados; conformidade integral pendente. |
-| V4-06 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
+| V4-06 | AUTO_PASS | scenario-manifest.json e simulation-junit.xml: seed, coortes, categorias, calendario, determinismo e persistencia SQL. |
 | V4-07 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
 | V4-08 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |
 | V4-09 | NOT_EXECUTED | Dependente das fontes acadêmicas; source_inventory.json registra SOURCE_MISSING. |

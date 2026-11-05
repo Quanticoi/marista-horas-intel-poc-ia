@@ -1,10 +1,11 @@
 {
   "schema_version": "v4-source-inventory/1",
-  "timestamp_utc": "2026-11-05T04:46:25.791158+00:00",
+  "timestamp_utc": "2026-11-05T05:06:21.521799+00:00",
   "status": "SOURCE_MISSING_OR_AMBIGUOUS",
   "searched_roots": [
-    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev",
-    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\data\\reference"
+    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\reference",
+    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\data\\reference",
+    "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev"
   ],
   "sources": [
     {
@@ -57,23 +58,47 @@
     },
     {
       "name": "REQ_InteligenciaeOtimizacaodeHorariosAcademicos_V4.4 (1).pdf",
-      "status": "SOURCE_MISSING",
-      "matches": []
+      "status": "FOUND",
+      "matches": [
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev\\REQ_InteligenciaeOtimizacaodeHorariosAcademicos_V4.4.pdf",
+          "sha256": "9517308f55cafcae7c42586a6ce8635bd564b1ec25c46fa20c5c5823bb8daa4d",
+          "bytes": 1255911
+        }
+      ]
     },
     {
       "name": "PUCPR - Otimização de Horários Inteligentes - Arquitetura de Componentes-V3(2).pdf",
-      "status": "SOURCE_MISSING",
-      "matches": []
+      "status": "FOUND",
+      "matches": [
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev\\PUCPR - Otimização de Horários Inteligentes - Arquitetura de Componentes-V3.pdf",
+          "sha256": "0e665caf4be13438bb6892d8ae9b72ee27c37b7116a43c2698ae255894dbd42e",
+          "bytes": 1310645
+        }
+      ]
     },
     {
       "name": "PUCPR - Otimização de Horários Inteligentes - Arquitetura de Containers-V3(1).pdf",
-      "status": "SOURCE_MISSING",
-      "matches": []
+      "status": "FOUND",
+      "matches": [
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev\\PUCPR - Otimização de Horários Inteligentes - Arquitetura de Containers-V3.pdf",
+          "sha256": "52f1b274ceb3818325edec79c49381755fb4629e2b8f6cffa53038985a889af7",
+          "bytes": 103247
+        }
+      ]
     },
     {
       "name": "PUCPR - Otimização de Horários Inteligentes - Diagrama de Sequencia-V3(1).pdf",
-      "status": "SOURCE_MISSING",
-      "matches": []
+      "status": "FOUND",
+      "matches": [
+        {
+          "path": "C:\\Users\\User\\Documents\\dev\\Marista\\mar-horarios-inteligentes-ia\\dev\\PUCPR - Otimização de Horários Inteligentes -  Diagrama de Sequencia-V3.pdf",
+          "sha256": "909f2cad88790b87cc1515c9497e9f12e30ce1a111971c009e40bd62ccf8daca",
+          "bytes": 155505
+        }
+      ]
     },
     {
       "name": "diagnostico_dados_simulacao_realista_horas_inteligentes.md",

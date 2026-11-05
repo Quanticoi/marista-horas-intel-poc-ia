@@ -2,6 +2,20 @@
 
 Estado: implementação parcial. O fluxo V3 continua disponível; a jornada V4 não foi substituída por notebooks vazios.
 
+Os quatro PDFs foram recebidos e conferidos em seguida; apenas o diagnóstico Markdown
+continua ausente. Veja [conferência das fontes e simulação](../architecture/V4_SOURCE_REVIEW.md).
+As referências a PDFs ausentes abaixo descrevem o checkpoint anterior.
+
+Para materializar o cenário baseline após `tools migrate`:
+
+```powershell
+docker compose run --rm --no-deps -v "${PWD}:/app:ro" -v "${PWD}/data/reference:/reference:ro" --entrypoint python tools -m src.simulation.store
+```
+
+Saída: `scenario-manifest.json` e snapshot SQL imutável. Ainda não executa treino
+nem gera proposta operacional. Fontes e histórico locais em `dev/` e `history/`
+são ignorados pelo Git; nenhuma dependência de build deve exigir essas pastas.
+
 ## Atualização: planilhas localizadas e importadas
 
 As três planilhas estão em `dev/`, com cópias somente leitura em `data/reference/`.

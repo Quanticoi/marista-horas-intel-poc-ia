@@ -1,0 +1,19 @@
+{
+  "base_commit": "eb037d7",
+  "working_tree_changes_tested": true,
+  "status": "29_TESTS_PASS",
+  "source_type": "SYNTHETIC_HISTORY",
+  "seed": 42,
+  "code_sha256": {
+    "src/simulation/academic.py": "f2da45d2cbd6863c24e890319e422ed28899039ef0a8c55bfbf50722c2c7419d",
+    "src/simulation/store.py": "6d45af043f0528778063a6e2ca1396469a565d21d3e16b883304f52c62ac0e2d",
+    "sql/ddl/011_academic_simulation.sql": "ca7be0cd3defef3a36027e8722e9946038e1b0c7ab4ecfcc4d5be0709c1f2212",
+    "sql/ddl/012_academic_immutability.sql": "595e24ffcc3b91ef44b779cf7a7bcb54e15d6f0ddc00765219819dfea383655f",
+    "tests/integration/test_academic_simulation_v4.py": "ecaa4ca8b5d4793e134955f8c6831e551c73c076d87656c5b879b017dcb6d624"
+  },
+  "limitations": [
+    "V4 not complete",
+    "No training or API v2 end-to-end proof",
+    "No official enrollment or academic approval"
+  ]
+}

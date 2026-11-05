@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -18,10 +19,12 @@ REQUIRED = (
 
 
 def inventory(roots):
+    def normalized(name):
+        return re.sub(r'\s+', ' ', re.sub(r'\(\d+\)(?=\.pdf$)', '', name).replace(' .pdf','.pdf')).strip().casefold()
     rows = []
     for name in REQUIRED:
         matches = sorted({p.resolve() for root in roots if root.is_dir()
-                          for p in root.rglob(name) if p.is_file()})
+                          for p in root.rglob('*') if p.is_file() and normalized(p.name) == normalized(name)})
         hashes = {p: hashlib.sha256(p.read_bytes()).hexdigest() for p in matches}
         status = "SOURCE_MISSING" if not matches else "AMBIGUOUS" if len(set(hashes.values())) > 1 else "FOUND"
         rows.append(dict(name=name, status=status, matches=[
