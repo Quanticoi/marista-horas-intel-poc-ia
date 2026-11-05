@@ -1,0 +1,1504 @@
+{
+  "failed": 0,
+  "models": [
+    {
+      "run_id": "8f70f100788c4731ae6cde89ae8fab1b",
+      "metrics": {
+        "regular.r2": 0.49509908115890033,
+        "elective.r2": 0.2927781183418062,
+        "regular.mae": 6.931468100182433,
+        "elective.mae": 0.7184600312069842,
+        "regular.bias": 1.4037104251220462,
+        "regular.rmse": 8.364229406641108,
+        "regular.wape": 17.88765961337402,
+        "dependency.r2": 0.06825114644699326,
+        "elective.bias": -0.2134372867514943,
+        "elective.rmse": 1.0512060645234729,
+        "elective.wape": 95.7946708275979,
+        "regular.medae": 8.656245238880537,
+        "regular.smape": 18.779500636252948,
+        "dependency.mae": 1.351388644872977,
+        "elective.medae": 0.4138253970660607,
+        "elective.smape": 168.17903918205647,
+        "dependency.bias": -0.24893651362822203,
+        "dependency.rmse": 1.7692071119302657,
+        "dependency.wape": 34.87454567414134,
+        "dependency.medae": 1.1597054502692217,
+        "dependency.smape": 36.54660920101826,
+        "baseline.regular.r2": -0.0034359945872801667,
+        "baseline.elective.r2": -0.010816000000000159,
+        "baseline.regular.mae": 9.415,
+        "baseline.elective.mae": 1.08,
+        "baseline.regular.bias": 0.6899999999999977,
+        "baseline.regular.rmse": 11.791463013553493,
+        "baseline.regular.wape": 24.296774193548384,
+        "baseline.dependency.r2": -0.1652167441860466,
+        "baseline.elective.bias": 0.13,
+        "baseline.elective.rmse": 1.2567418191498205,
+        "baseline.elective.wape": 144.0,
+        "baseline.regular.medae": 9.560000000000002,
+        "baseline.regular.smape": 24.57218139670948,
+        "baseline.dependency.mae": 1.7325,
+        "baseline.elective.medae": 0.88,
+        "baseline.elective.smape": 162.8417947485528,
+        "baseline.dependency.bias": 0.7450000000000001,
+        "baseline.dependency.rmse": 1.9784842683225967,
+        "baseline.dependency.wape": 44.70967741935484,
+        "baseline.dependency.medae": 1.62,
+        "baseline.dependency.smape": 44.20880825900996,
+        "regular.absolute_error_p90": 11.833827112670207,
+        "elective.absolute_error_p90": 1.334324921183741,
+        "dependency.absolute_error_p90": 2.402038671271966,
+        "baseline.regular.absolute_error_p90": 15.0,
+        "baseline.elective.absolute_error_p90": 1.62,
+        "baseline.dependency.absolute_error_p90": 3.0
+      },
+      "targets": [
+        "regular",
+        "dependency",
+        "elective"
+      ],
+      "manifest": {
+        "uri": "s3://pucpr-poc/lineage/poc/planilha-turmas/v4/models/hi.demo.v4.c2248.components/versions/v0001/manifest.json",
+        "sha256": "cd7c25f997b2372c9d71f94d584b0ba9c1133ec9041d3a73086104217478d8f7"
+      },
+      "algorithm": "ridge",
+      "model_key": "hi.demo.v4.c2248.components",
+      "model_uri": "models:/hi.demo.v4.c2248.components/1",
+      "model_name": "hi.demo.v4.c2248.components",
+      "trained_at": "2026-11-05T05:26:00.475206+00:00",
+      "course_code": "2248",
+      "evaluations": [
+        {
+          "actual": [
+            25.0,
+            38.0,
+            25.0,
+            38.0,
+            38.0,
+            25.0,
+            38.0,
+            25.0,
+            49.0,
+            49.0,
+            38.0,
+            38.0,
+            55.0,
+            65.0,
+            49.0,
+            25.0
+          ],
+          "horizon": "one-term",
+          "metrics": {
+            "r2": {
+              "value": 0.49509908115890033,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "mae": {
+              "value": 6.931468100182433,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "bias": {
+              "value": 1.4037104251220462,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "rmse": {
+              "value": 8.364229406641108,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "wape": {
+              "value": 17.88765961337402,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "medae": {
+              "value": 8.656245238880537,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "smape": {
+              "value": 18.779500636252948,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "absolute_error_p90": {
+              "value": 11.833827112670207,
+              "reason": null,
+              "status": "EVALUATED"
+            }
+          },
+          "split_id": "2024-1..2024-1",
+          "predicted": [
+            37.01138267469134,
+            38.147369703299596,
+            36.65627155064907,
+            38.32492526532073,
+            38.0936559886449,
+            36.416795064944715,
+            38.0936559886449,
+            35.937842093536005,
+            40.61419170866543,
+            40.073317813573496,
+            42.53084388958429,
+            42.29136740387993,
+            50.23815091670194,
+            52.018436832706904,
+            39.83384132786914,
+            36.17731857924036
+          ],
+          "task_type": "regression",
+          "data_class": "SYNTHETIC",
+          "target_name": "regular"
+        },
+        {
+          "actual": [
+            2.0,
+            3.0,
+            5.0,
+            3.0,
+            3.0,
+            3.0,
+            6.0,
+            1.0,
+            4.0,
+            8.0,
+            2.0,
+            3.0,
+            4.0,
+            7.0,
+            3.0,
+            5.0
+          ],
+          "horizon": "one-term",
+          "metrics": {
+            "r2": {
+              "value": 0.06825114644699326,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "mae": {
+              "value": 1.351388644872977,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "bias": {
+              "value": -0.24893651362822203,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "rmse": {
+              "value": 1.7692071119302657,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "wape": {
+              "value": 34.87454567414134,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "medae": {
+              "value": 1.1597054502692217,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "smape": {
+              "value": 36.54660920101826,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "absolute_error_p90": {
+              "value": 2.402038671271966,
+              "reason": null,
+              "status": "EVALUATED"
+            }
+          },
+          "split_id": "2024-1..2024-1",
+          "predicted": [
+            2.5438017847682253,
+            2.433179390212419,
+            3.95101763373005,
+            1.7295714657315067,
+            5.503407923952398,
+            3.4713152535814285,
+            5.503407923952398,
+            2.511910493284186,
+            5.3272056867624675,
+            3.1844906218356908,
+            3.764151843375738,
+            3.2844494632271166,
+            4.41337460100648,
+            4.699330581408466,
+            2.7047882416870697,
+            2.991612873432807
+          ],
+          "task_type": "regression",
+          "data_class": "SYNTHETIC",
+          "target_name": "dependency"
+        },
+        {
+          "actual": [
+            0.0,
+            3.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            4.0,
+            0.0
+          ],
+          "horizon": "one-term",
+          "metrics": {
+            "r2": {
+              "value": 0.2927781183418062,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "mae": {
+              "value": 0.7184600312069842,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "bias": {
+              "value": -0.2134372867514943,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "rmse": {
+              "value": 1.0512060645234729,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "wape": {
+              "value": 95.7946708275979,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "medae": {
+              "value": 0.4138253970660607,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "smape": {
+              "value": 168.17903918205647,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "absolute_error_p90": {
+              "value": 1.334324921183741,
+              "reason": null,
+              "status": "EVALUATED"
+            }
+          },
+          "split_id": "2024-1..2024-1",
+          "predicted": [
+            1.19967654288393,
+            1.5953111028867133,
+            0.10812245630008321,
+            2.1410881461786366,
+            -0.25161659816302984,
+            0.21292074188706966,
+            -0.25161659816302984,
+            0.4225173130610426,
+            -0.1241328453070778,
+            0.7360390547458051,
+            0.31131090493697666,
+            0.4161091905239631,
+            0.4115416036081583,
+            0.49917602879000317,
+            0.8408373403327914,
+            0.3177190274740561
+          ],
+          "task_type": "regression",
+          "data_class": "SYNTHETIC",
+          "target_name": "elective"
+        }
+      ],
+      "future_rows": 16,
+      "snapshot_id": "9158d4db-c80b-5638-8aa0-9467c60f6107",
+      "artifact_uri": "models:/m-0d38d2efd87d4b2fb72986481ec3cd53",
+      "executor_pid": 428,
+      "executor_host": "23f5a2e1185b",
+      "experiment_id": "6",
+      "model_version": "1",
+      "dataset_sha256": "721b8d6ded6550a3b0f66cdfba9749c1f1bf93d9cd1aa62f70ad3355b15dd6fa",
+      "metric_profile": "forecast_extended",
+      "signature_hash": "f89ffba608092b62c62c5e990c4b8c292b0584c25c27012f723475a9b4dbc95c",
+      "artifact_sha256": "8c60d904dfbc3eed6e6c8c1235ca9ea3820d5abd7a07cc5977b8fb9b403d53d8",
+      "fallback_reason": null,
+      "storage_evidence": [
+        {
+          "key": "mlflow/6/models/m-0d38d2efd87d4b2fb72986481ec3cd53/artifacts/MLmodel",
+          "bytes": 1351,
+          "bucket": "pucpr-poc",
+          "sha256": "36fea5d5f65b431d3a4c0af21659abffbc7737dbebdd87072f52655cb541bb70",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "2acd1a1c-d98f-467e-89a7-51635afb1ba7"
+        },
+        {
+          "key": "mlflow/6/models/m-0d38d2efd87d4b2fb72986481ec3cd53/artifacts/model.pkl",
+          "bytes": 1280,
+          "bucket": "pucpr-poc",
+          "sha256": "8c60d904dfbc3eed6e6c8c1235ca9ea3820d5abd7a07cc5977b8fb9b403d53d8",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "7ce93e72-4ce3-4a4e-a015-7f6a5312e613"
+        },
+        {
+          "key": "mlflow/6/models/m-0d38d2efd87d4b2fb72986481ec3cd53/artifacts/requirements.txt",
+          "bytes": 80,
+          "bucket": "pucpr-poc",
+          "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "5332082d-edd9-4449-bdbc-2d893d0695d9"
+        }
+      ],
+      "validation_status": "VALIDATED",
+      "metric_profile_version": "1.0"
+    },
+    {
+      "run_id": "87c215bad7804a3c81f2b3286107ab28",
+      "metrics": {
+        "regular.r2": -0.27711716372459216,
+        "elective.r2": -0.0014911242603548036,
+        "regular.mae": 11.222672064777328,
+        "elective.mae": 0.71417004048583,
+        "regular.bias": -6.772469635627529,
+        "regular.rmse": 14.538872388856644,
+        "regular.wape": 29.906138742043368,
+        "dependency.r2": -0.1646829001089165,
+        "elective.bias": 0.034008097165991874,
+        "elective.rmse": 0.8813511328471261,
+        "elective.wape": 150.76923076923077,
+        "regular.medae": 7.753846153846155,
+        "regular.smape": 30.1914961054377,
+        "dependency.mae": 1.9376518218623482,
+        "elective.medae": 0.5076923076923077,
+        "elective.smape": 174.25022725641077,
+        "dependency.bias": -0.9206477732793525,
+        "dependency.rmse": 2.4483477544818593,
+        "dependency.wape": 47.19921104536489,
+        "dependency.medae": 1.1846153846153844,
+        "dependency.smape": 50.70143747221206,
+        "baseline.regular.r2": -0.27711716372459216,
+        "baseline.elective.r2": -0.0014911242603548036,
+        "baseline.regular.mae": 11.222672064777328,
+        "baseline.elective.mae": 0.71417004048583,
+        "baseline.regular.bias": -6.772469635627529,
+        "baseline.regular.rmse": 14.538872388856644,
+        "baseline.regular.wape": 29.906138742043368,
+        "baseline.dependency.r2": -0.1646829001089165,
+        "baseline.elective.bias": 0.034008097165991874,
+        "baseline.elective.rmse": 0.8813511328471261,
+        "baseline.elective.wape": 150.76923076923077,
+        "baseline.regular.medae": 7.753846153846155,
+        "baseline.regular.smape": 30.1914961054377,
+        "baseline.dependency.mae": 1.9376518218623482,
+        "baseline.elective.medae": 0.5076923076923077,
+        "baseline.elective.smape": 174.25022725641077,
+        "baseline.dependency.bias": -0.9206477732793525,
+        "baseline.dependency.rmse": 2.4483477544818593,
+        "baseline.dependency.wape": 47.19921104536489,
+        "baseline.dependency.medae": 1.1846153846153844,
+        "baseline.dependency.smape": 50.70143747221206,
+        "regular.absolute_error_p90": 21.046153846153835,
+        "elective.absolute_error_p90": 1.4923076923076923,
+        "dependency.absolute_error_p90": 4.015384615384615,
+        "baseline.regular.absolute_error_p90": 21.046153846153835,
+        "baseline.elective.absolute_error_p90": 1.4923076923076923,
+        "baseline.dependency.absolute_error_p90": 4.015384615384615
+      },
+      "targets": [
+        "regular",
+        "dependency",
+        "elective"
+      ],
+      "manifest": {
+        "uri": "s3://pucpr-poc/lineage/poc/planilha-turmas/v4/models/hi.demo.v4.c2348.components/versions/v0001/manifest.json",
+        "sha256": "1f35cf9a6b0cff71bd7b719002eacf637a5c576bab5cd1650e80b2f35d9bda51"
+      },
+      "algorithm": "dummy",
+      "model_key": "hi.demo.v4.c2348.components",
+      "model_uri": "models:/hi.demo.v4.c2348.components/1",
+      "model_name": "hi.demo.v4.c2348.components",
+      "trained_at": "2026-11-05T05:26:01.362737+00:00",
+      "course_code": "2348",
+      "evaluations": [
+        {
+          "actual": [
+            36.0,
+            29.0,
+            36.0,
+            23.0,
+            23.0,
+            29.0,
+            23.0,
+            65.0,
+            49.0,
+            23.0,
+            36.0,
+            36.0,
+            63.0,
+            49.0,
+            36.0,
+            49.0,
+            49.0,
+            23.0,
+            36.0
+          ],
+          "horizon": "one-term",
+          "metrics": {
+            "r2": {
+              "value": -0.27711716372459216,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "mae": {
+              "value": 11.222672064777328,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "bias": {
+              "value": -6.772469635627529,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "rmse": {
+              "value": 14.538872388856644,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "wape": {
+              "value": 29.906138742043368,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "medae": {
+              "value": 7.753846153846155,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "smape": {
+              "value": 30.1914961054377,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "absolute_error_p90": {
+              "value": 21.046153846153835,
+              "reason": null,
+              "status": "EVALUATED"
+            }
+          },
+          "split_id": "2024-1..2024-1",
+          "predicted": [
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155,
+            30.753846153846155
+          ],
+          "task_type": "regression",
+          "data_class": "SYNTHETIC",
+          "target_name": "regular"
+        },
+        {
+          "actual": [
+            3.0,
+            1.0,
+            3.0,
+            5.0,
+            2.0,
+            1.0,
+            2.0,
+            7.0,
+            2.0,
+            4.0,
+            4.0,
+            3.0,
+            5.0,
+            7.0,
+            8.0,
+            8.0,
+            7.0,
+            2.0,
+            4.0
+          ],
+          "horizon": "one-term",
+          "metrics": {
+            "r2": {
+              "value": -0.1646829001089165,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "mae": {
+              "value": 1.9376518218623482,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "bias": {
+              "value": -0.9206477732793525,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "rmse": {
+              "value": 2.4483477544818593,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "wape": {
+              "value": 47.19921104536489,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "medae": {
+              "value": 1.1846153846153844,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "smape": {
+              "value": 50.70143747221206,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "absolute_error_p90": {
+              "value": 4.015384615384615,
+              "reason": null,
+              "status": "EVALUATED"
+            }
+          },
+          "split_id": "2024-1..2024-1",
+          "predicted": [
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844,
+            3.1846153846153844
+          ],
+          "task_type": "regression",
+          "data_class": "SYNTHETIC",
+          "target_name": "dependency"
+        },
+        {
+          "actual": [
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            3.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "horizon": "one-term",
+          "metrics": {
+            "r2": {
+              "value": -0.0014911242603548036,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "mae": {
+              "value": 0.71417004048583,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "bias": {
+              "value": 0.034008097165991874,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "rmse": {
+              "value": 0.8813511328471261,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "wape": {
+              "value": 150.76923076923077,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "medae": {
+              "value": 0.5076923076923077,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "smape": {
+              "value": 174.25022725641077,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "absolute_error_p90": {
+              "value": 1.4923076923076923,
+              "reason": null,
+              "status": "EVALUATED"
+            }
+          },
+          "split_id": "2024-1..2024-1",
+          "predicted": [
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077,
+            0.5076923076923077
+          ],
+          "task_type": "regression",
+          "data_class": "SYNTHETIC",
+          "target_name": "elective"
+        }
+      ],
+      "future_rows": 19,
+      "snapshot_id": "9158d4db-c80b-5638-8aa0-9467c60f6107",
+      "artifact_uri": "models:/m-6e346a3d60254595b801c01142400e62",
+      "executor_pid": 428,
+      "executor_host": "23f5a2e1185b",
+      "experiment_id": "6",
+      "model_version": "1",
+      "dataset_sha256": "721b8d6ded6550a3b0f66cdfba9749c1f1bf93d9cd1aa62f70ad3355b15dd6fa",
+      "metric_profile": "forecast_extended",
+      "signature_hash": "f89ffba608092b62c62c5e990c4b8c292b0584c25c27012f723475a9b4dbc95c",
+      "artifact_sha256": "edda78d2dfbe939e958d384773f47bfcd4d3e5545e488b061d9e7456b6b0ee5e",
+      "fallback_reason": null,
+      "storage_evidence": [
+        {
+          "key": "mlflow/6/models/m-6e346a3d60254595b801c01142400e62/artifacts/MLmodel",
+          "bytes": 1351,
+          "bucket": "pucpr-poc",
+          "sha256": "a3c7ea41f4fa51de7f381e923c163a2b93b59c0b7b29e9ade84b91fd2fc41146",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "63853b78-80ff-42a4-80f3-2ce13071aa4d"
+        },
+        {
+          "key": "mlflow/6/models/m-6e346a3d60254595b801c01142400e62/artifacts/model.pkl",
+          "bytes": 1026,
+          "bucket": "pucpr-poc",
+          "sha256": "edda78d2dfbe939e958d384773f47bfcd4d3e5545e488b061d9e7456b6b0ee5e",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "532d1d3d-12e2-44ab-a1f5-68626eb030a7"
+        },
+        {
+          "key": "mlflow/6/models/m-6e346a3d60254595b801c01142400e62/artifacts/requirements.txt",
+          "bytes": 80,
+          "bucket": "pucpr-poc",
+          "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "46476475-1dbe-4d4a-9839-5be24ad1de89"
+        }
+      ],
+      "validation_status": "VALIDATED",
+      "metric_profile_version": "1.0"
+    },
+    {
+      "run_id": "d623100c3246445aa389cb825cc367ff",
+      "metrics": {
+        "regular.r2": 0.45846646594186746,
+        "elective.r2": 0.1830826379291961,
+        "regular.mae": 6.662857539107724,
+        "elective.mae": 0.663154230691638,
+        "regular.bias": 1.42967542771095,
+        "regular.rmse": 7.98342775830876,
+        "regular.wape": 15.847541199532332,
+        "dependency.r2": -0.553728604994892,
+        "elective.bias": -0.4240801861110493,
+        "elective.rmse": 1.020213756870764,
+        "elective.wape": 80.27656476793513,
+        "regular.medae": 4.250500396711551,
+        "regular.smape": 17.274857551559727,
+        "dependency.mae": 1.9433158493839302,
+        "elective.medae": 0.32010855703056773,
+        "elective.smape": 150.87852811158783,
+        "dependency.bias": 1.3350494679526295,
+        "dependency.rmse": 2.4078715692235497,
+        "dependency.wape": 47.54921759130893,
+        "dependency.medae": 1.6218837482826132,
+        "dependency.smape": 44.31950394407382,
+        "baseline.regular.r2": -0.08655071413872628,
+        "baseline.elective.r2": -0.015582196659787995,
+        "baseline.regular.mae": 10.88888888888889,
+        "baseline.elective.mae": 0.9154589371980677,
+        "baseline.regular.bias": -3.19162640901771,
+        "baseline.regular.rmse": 11.308414608135134,
+        "baseline.regular.wape": 25.899115247615764,
+        "baseline.dependency.r2": -0.05884523496816629,
+        "baseline.elective.bias": -0.14090177133655396,
+        "baseline.elective.rmse": 1.1375215991623473,
+        "baseline.elective.wape": 110.8187134502924,
+        "baseline.regular.medae": 10.851851851851855,
+        "baseline.regular.smape": 26.845164749887516,
+        "baseline.dependency.mae": 1.6473429951690826,
+        "baseline.elective.medae": 0.6851851851851852,
+        "baseline.elective.smape": 148.18716540737768,
+        "baseline.dependency.bias": 0.4685990338164249,
+        "baseline.dependency.rmse": 1.9877510036730779,
+        "baseline.dependency.wape": 40.30732860520096,
+        "baseline.dependency.medae": 1.4444444444444446,
+        "baseline.dependency.smape": 40.71699991278294,
+        "regular.absolute_error_p90": 13.087641227972673,
+        "elective.absolute_error_p90": 1.7189129235721303,
+        "dependency.absolute_error_p90": 3.301165003356008,
+        "baseline.regular.absolute_error_p90": 15.148148148148145,
+        "baseline.elective.absolute_error_p90": 1.3148148148148149,
+        "baseline.dependency.absolute_error_p90": 2.5555555555555554
+      },
+      "targets": [
+        "regular",
+        "dependency",
+        "elective"
+      ],
+      "manifest": {
+        "uri": "s3://pucpr-poc/lineage/poc/planilha-turmas/v4/models/hi.demo.v4.c2287.components/versions/v0001/manifest.json",
+        "sha256": "3f5561060af3fc0d124da0f07f57c663f772cdb9015641dee0e4c9434e80a194"
+      },
+      "algorithm": "ridge",
+      "model_key": "hi.demo.v4.c2287.components",
+      "model_uri": "models:/hi.demo.v4.c2287.components/1",
+      "model_name": "hi.demo.v4.c2287.components",
+      "trained_at": "2026-11-05T05:26:02.816821+00:00",
+      "course_code": "2287",
+      "evaluations": [
+        {
+          "actual": [
+            33.0,
+            33.0,
+            28.0,
+            49.0,
+            28.0,
+            28.0,
+            33.0,
+            49.0,
+            54.0,
+            49.0,
+            28.0,
+            49.0,
+            49.0,
+            54.0,
+            49.0,
+            54.0,
+            54.0,
+            49.0,
+            33.0,
+            28.0,
+            28.0,
+            54.0,
+            54.0
+          ],
+          "horizon": "one-term",
+          "metrics": {
+            "r2": {
+              "value": 0.45846646594186746,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "mae": {
+              "value": 6.662857539107724,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "bias": {
+              "value": 1.42967542771095,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "rmse": {
+              "value": 7.98342775830876,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "wape": {
+              "value": 15.847541199532332,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "medae": {
+              "value": 4.250500396711551,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "smape": {
+              "value": 17.274857551559727,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "absolute_error_p90": {
+              "value": 13.087641227972673,
+              "reason": null,
+              "status": "EVALUATED"
+            }
+          },
+          "split_id": "2024-1..2024-1",
+          "predicted": [
+            30.623436876353217,
+            38.1563678600967,
+            40.156819398261305,
+            47.335115796931134,
+            42.22531235317545,
+            40.67394263698984,
+            37.639244621368164,
+            45.78374608074552,
+            50.67796898106602,
+            41.96841298194979,
+            41.19106587571838,
+            40.836431290644725,
+            37.63595664442552,
+            50.67796898106602,
+            46.8179925582026,
+            50.67796898106602,
+            50.67796898106602,
+            44.74949960328845,
+            37.12212138263963,
+            40.67394263698984,
+            42.22531235317545,
+            50.67796898106602,
+            50.67796898106602
+          ],
+          "task_type": "regression",
+          "data_class": "SYNTHETIC",
+          "target_name": "regular"
+        },
+        {
+          "actual": [
+            5.0,
+            3.0,
+            2.0,
+            5.0,
+            2.0,
+            3.0,
+            6.0,
+            4.0,
+            2.0,
+            5.0,
+            2.0,
+            9.0,
+            4.0,
+            4.0,
+            6.0,
+            6.0,
+            8.0,
+            4.0,
+            4.0,
+            2.0,
+            2.0,
+            4.0,
+            2.0
+          ],
+          "horizon": "one-term",
+          "metrics": {
+            "r2": {
+              "value": -0.553728604994892,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "mae": {
+              "value": 1.9433158493839302,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "bias": {
+              "value": 1.3350494679526295,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "rmse": {
+              "value": 2.4078715692235497,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "wape": {
+              "value": 47.54921759130893,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "medae": {
+              "value": 1.6218837482826132,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "smape": {
+              "value": 44.31950394407382,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "absolute_error_p90": {
+              "value": 3.301165003356008,
+              "reason": null,
+              "status": "EVALUATED"
+            }
+          },
+          "split_id": "2024-1..2024-1",
+          "predicted": [
+            3.947725849754488,
+            4.636659611308537,
+            3.877006322868579,
+            5.90415995533753,
+            4.911179761233179,
+            4.135549682459729,
+            4.378116251717387,
+            5.128529876564079,
+            7.301165003356008,
+            5.27250854124073,
+            4.394093042050879,
+            5.732312912965781,
+            5.157943846326231,
+            7.301165003356008,
+            5.645616595746379,
+            7.301165003356008,
+            7.301165003356008,
+            4.611443157381779,
+            4.119572892126237,
+            4.135549682459729,
+            4.911179761233179,
+            7.301165003356008,
+            7.301165003356008
+          ],
+          "task_type": "regression",
+          "data_class": "SYNTHETIC",
+          "target_name": "dependency"
+        },
+        {
+          "actual": [
+            2.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            2.0,
+            4.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            1.0,
+            0.0,
+            3.0
+          ],
+          "horizon": "one-term",
+          "metrics": {
+            "r2": {
+              "value": 0.1830826379291961,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "mae": {
+              "value": 0.663154230691638,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "bias": {
+              "value": -0.4240801861110493,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "rmse": {
+              "value": 1.020213756870764,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "wape": {
+              "value": 80.27656476793513,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "medae": {
+              "value": 0.32010855703056773,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "smape": {
+              "value": 150.87852811158783,
+              "reason": null,
+              "status": "EVALUATED"
+            },
+            "absolute_error_p90": {
+              "value": 1.7189129235721303,
+              "reason": null,
+              "status": "EVALUATED"
+            }
+          },
+          "split_id": "2024-1..2024-1",
+          "predicted": [
+            1.0921983048856996,
+            0.6798914429694323,
+            -0.17952090260866083,
+            0.5808031641215199,
+            0.46091898375095564,
+            -0.019410931018756683,
+            0.5197814713795281,
+            0.10047324935180757,
+            0.26144097058743127,
+            0.7489344243390953,
+            0.14069904057114746,
+            1.3133299692175955,
+            1.237285627736479,
+            0.26144097058743127,
+            0.42069319253161575,
+            0.26144097058743127,
+            0.26144097058743127,
+            -0.21974669382800072,
+            0.35967149978962404,
+            -0.019410931018756683,
+            0.46091898375095564,
+            0.26144097058743127,
+            0.26144097058743127
+          ],
+          "task_type": "regression",
+          "data_class": "SYNTHETIC",
+          "target_name": "elective"
+        }
+      ],
+      "future_rows": 23,
+      "snapshot_id": "9158d4db-c80b-5638-8aa0-9467c60f6107",
+      "artifact_uri": "models:/m-ad0536efd9474cc2bd54c0af4766f2fc",
+      "executor_pid": 428,
+      "executor_host": "23f5a2e1185b",
+      "experiment_id": "6",
+      "model_version": "1",
+      "dataset_sha256": "721b8d6ded6550a3b0f66cdfba9749c1f1bf93d9cd1aa62f70ad3355b15dd6fa",
+      "metric_profile": "forecast_extended",
+      "signature_hash": "f89ffba608092b62c62c5e990c4b8c292b0584c25c27012f723475a9b4dbc95c",
+      "artifact_sha256": "f4f74e814ea874ee6bd933429d9b9b31cce9f5c29b368eda1a177b56fd1777a5",
+      "fallback_reason": null,
+      "storage_evidence": [
+        {
+          "key": "mlflow/6/models/m-ad0536efd9474cc2bd54c0af4766f2fc/artifacts/MLmodel",
+          "bytes": 1351,
+          "bucket": "pucpr-poc",
+          "sha256": "d0ce24ca587139a9777171e0dc425a0a6f6017d99570c74c92c224f54c751dd0",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "9f45e3d4-72c6-4578-9584-849de973ac7f"
+        },
+        {
+          "key": "mlflow/6/models/m-ad0536efd9474cc2bd54c0af4766f2fc/artifacts/model.pkl",
+          "bytes": 1280,
+          "bucket": "pucpr-poc",
+          "sha256": "f4f74e814ea874ee6bd933429d9b9b31cce9f5c29b368eda1a177b56fd1777a5",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "68393be1-e592-49ea-8946-97f2999ea243"
+        },
+        {
+          "key": "mlflow/6/models/m-ad0536efd9474cc2bd54c0af4766f2fc/artifacts/requirements.txt",
+          "bytes": 80,
+          "bucket": "pucpr-poc",
+          "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+          "status": "PASS",
+          "model_version": "1",
+          "object_version_id": "c4f0008e-9601-4b6e-922b-9df9104c88f7"
+        }
+      ],
+      "validation_status": "VALIDATED",
+      "metric_profile_version": "1.0"
+    }
+  ],
+  "run_id": "a481453c8fbc41439df0a3e838d28c61",
+  "status": "COMPLETED",
+  "executor": "JUPYTER_WORKBENCH",
+  "failures": [],
+  "completed": 3,
+  "requested": 3,
+  "aggregation": [
+    {
+      "count": 58,
+      "models": 3,
+      "metrics": {
+        "r2": {
+          "value": 0.20455619014473436,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "mae": {
+          "value": 8.230689348847687,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "bias": {
+          "value": -1.2643969213382495,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "rmse": {
+          "value": 10.668573301895753,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "wape": {
+          "value": 20.75565140144199,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "medae": {
+          "value": 6.138870432102028,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "smape": {
+          "value": 21.921244135676506,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "absolute_error_p90": {
+          "value": 15.431564801068983,
+          "reason": null,
+          "status": "EVALUATED"
+        }
+      },
+      "comparison": {
+        "horizon": "one-term",
+        "split_id": "2024-1..2024-1",
+        "task_type": "regression",
+        "data_class": "SYNTHETIC",
+        "target_name": "regular"
+      },
+      "aggregation": "POOLED_OBSERVATIONS"
+    },
+    {
+      "count": 58,
+      "models": 3,
+      "metrics": {
+        "r2": {
+          "value": -0.24962964875352234,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "mae": {
+          "value": 1.7781701287790108,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "bias": {
+          "value": 0.15915251469915914,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "rmse": {
+          "value": 2.2641344355429163,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "wape": {
+          "value": 44.07430233725753,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "medae": {
+          "value": 1.2857967688122507,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "smape": {
+          "value": 44.265890515552066,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "absolute_error_p90": {
+          "value": 3.8153846153846156,
+          "reason": null,
+          "status": "EVALUATED"
+        }
+      },
+      "comparison": {
+        "horizon": "one-term",
+        "split_id": "2024-1..2024-1",
+        "task_type": "regression",
+        "data_class": "SYNTHETIC",
+        "target_name": "dependency"
+      },
+      "aggregation": "POOLED_OBSERVATIONS"
+    },
+    {
+      "count": 58,
+      "models": 3,
+      "metrics": {
+        "r2": {
+          "value": 0.19932456912290009,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "mae": {
+          "value": 0.6951230788698308,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "bias": {
+          "value": -0.2159083969383482,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "rmse": {
+          "value": 0.9859232862791557,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "wape": {
+          "value": 100.79284643612547,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "medae": {
+          "value": 0.5076923076923077,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "smape": {
+          "value": 163.3073291612281,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "absolute_error_p90": {
+          "value": 1.5367139346784982,
+          "reason": null,
+          "status": "EVALUATED"
+        }
+      },
+      "comparison": {
+        "horizon": "one-term",
+        "split_id": "2024-1..2024-1",
+        "task_type": "regression",
+        "data_class": "SYNTHETIC",
+        "target_name": "elective"
+      },
+      "aggregation": "POOLED_OBSERVATIONS"
+    }
+  ],
+  "campaign_id": "b14731f0-da6f-45d3-a3e8-60974546f74f",
+  "snapshot_id": "9158d4db-c80b-5638-8aa0-9467c60f6107",
+  "experiment_id": "6",
+  "not_evaluated": 0,
+  "metric_catalog": {
+    "format": "JSON-compatible YAML",
+    "metrics": [
+      {
+        "name": "MAE",
+        "units": "students",
+        "version": "1.0",
+        "fallback": "NOT_EVALUATED_WITH_REASON",
+        "function": "src.workbench.metrics_v4.evaluate",
+        "direction": "lower",
+        "metric_id": "mae",
+        "task_type": "regression",
+        "dependencies": [],
+        "interpretation": "mean absolute error",
+        "required_inputs": [
+          "actual",
+          "predicted"
+        ],
+        "aggregation_method": "POOLED_OBSERVATIONS",
+        "enabled_by_default": true
+      },
+      {
+        "name": "RMSE",
+        "units": "students",
+        "version": "1.0",
+        "fallback": "NOT_EVALUATED_WITH_REASON",
+        "function": "src.workbench.metrics_v4.evaluate",
+        "direction": "lower",
+        "metric_id": "rmse",
+        "task_type": "regression",
+        "dependencies": [],
+        "interpretation": "root mean squared error",
+        "required_inputs": [
+          "actual",
+          "predicted"
+        ],
+        "aggregation_method": "POOLED_OBSERVATIONS",
+        "enabled_by_default": true
+      },
+      {
+        "name": "MedAE",
+        "units": "students",
+        "version": "1.0",
+        "fallback": "NOT_EVALUATED_WITH_REASON",
+        "function": "src.workbench.metrics_v4.evaluate",
+        "direction": "lower",
+        "metric_id": "medae",
+        "task_type": "regression",
+        "dependencies": [],
+        "interpretation": "median absolute error",
+        "required_inputs": [
+          "actual",
+          "predicted"
+        ],
+        "aggregation_method": "POOLED_OBSERVATIONS",
+        "enabled_by_default": false
+      },
+      {
+        "name": "WAPE",
+        "units": "percent",
+        "version": "1.0",
+        "fallback": "NOT_EVALUATED_WITH_REASON",
+        "function": "src.workbench.metrics_v4.evaluate",
+        "direction": "lower",
+        "metric_id": "wape",
+        "task_type": "regression",
+        "dependencies": [],
+        "interpretation": "absolute error / absolute actual; positive denominator required",
+        "required_inputs": [
+          "actual",
+          "predicted"
+        ],
+        "aggregation_method": "POOLED_OBSERVATIONS",
+        "enabled_by_default": false
+      },
+      {
+        "name": "sMAPE",
+        "units": "percent",
+        "version": "1.0",
+        "fallback": "NOT_EVALUATED_WITH_REASON",
+        "function": "src.workbench.metrics_v4.evaluate",
+        "direction": "lower",
+        "metric_id": "smape",
+        "task_type": "regression",
+        "dependencies": [],
+        "interpretation": "symmetric percentage error; zero/zero contributes zero",
+        "required_inputs": [
+          "actual",
+          "predicted"
+        ],
+        "aggregation_method": "POOLED_OBSERVATIONS",
+        "enabled_by_default": false
+      },
+      {
+        "name": "R²",
+        "units": "dimensionless",
+        "version": "1.0",
+        "fallback": "NOT_EVALUATED_WITH_REASON",
+        "function": "src.workbench.metrics_v4.evaluate",
+        "direction": "higher",
+        "metric_id": "r2",
+        "task_type": "regression",
+        "dependencies": [],
+        "interpretation": "requires at least two observations and nonconstant actual",
+        "required_inputs": [
+          "actual",
+          "predicted"
+        ],
+        "aggregation_method": "POOLED_OBSERVATIONS",
+        "enabled_by_default": false
+      },
+      {
+        "name": "Bias",
+        "units": "students",
+        "version": "1.0",
+        "fallback": "NOT_EVALUATED_WITH_REASON",
+        "function": "src.workbench.metrics_v4.evaluate",
+        "direction": "zero",
+        "metric_id": "bias",
+        "task_type": "regression",
+        "dependencies": [],
+        "interpretation": "signed prediction minus actual",
+        "required_inputs": [
+          "actual",
+          "predicted"
+        ],
+        "aggregation_method": "POOLED_OBSERVATIONS",
+        "enabled_by_default": true
+      },
+      {
+        "name": "Absolute error P90",
+        "units": "students",
+        "version": "1.0",
+        "fallback": "NOT_EVALUATED_WITH_REASON",
+        "function": "src.workbench.metrics_v4.evaluate",
+        "direction": "lower",
+        "metric_id": "absolute_error_p90",
+        "task_type": "regression",
+        "dependencies": [],
+        "interpretation": "90th percentile of pooled absolute errors",
+        "required_inputs": [
+          "actual",
+          "predicted"
+        ],
+        "aggregation_method": "POOLED_OBSERVATIONS",
+        "enabled_by_default": false
+      }
+    ],
+    "version": "1.0",
+    "resource_policy": "Measure in Workbench executor; unavailable measurements are NOT_EVALUATED, never zero.",
+    "automatic_resource_metrics": [
+      "train_seconds",
+      "cpu_seconds",
+      "peak_ram_bytes",
+      "artifact_bytes",
+      "example_count",
+      "success",
+      "failure"
+    ]
+  },
+  "quality_eligible": 3
+}

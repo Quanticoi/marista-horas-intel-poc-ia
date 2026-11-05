@@ -18,4 +18,5 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER tests ./tests
 ARG CODE_VERSION=uncommitted
 ENV CODE_VERSION=${CODE_VERSION}
 ENV PYTHONPATH=/app PYTHONUNBUFFERED=1
+ENV WORKBENCH_EXECUTOR=1
 CMD ["python", "-m", "src.common.launch", "jupyter"]
