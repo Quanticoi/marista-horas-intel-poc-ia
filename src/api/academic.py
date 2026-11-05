@@ -1,5 +1,6 @@
 """V4 reads and explicit operational commands; scientific execution stays in Workbench."""
 from uuid import UUID
+import json
 from typing import Literal
 import httpx
 from fastapi import APIRouter,Depends,Header,HTTPException,Query,Request
@@ -36,6 +37,30 @@ def application_view(proposal_id, filters=None, limit=100, offset=0):
 
 class Deploy(Selector):
     policy:Literal['LAZY','PRELOAD']
+
+
+def list_proposals(limit=50,campaign_id=None):
+    params={'limit':limit}
+    condition=''
+    if campaign_id is not None:
+        campaign=rows('SELECT request,result,status FROM planning.workbench_campaigns WHERE campaign_id=:id',{'id':str(campaign_id)})
+        if not campaign:
+            raise LookupError('Campaign not found')
+        result=campaign[0]
+        models=result['result'].get('models',[])
+        if result['status']!='COMPLETED' or not models:
+            return []
+        params.update(snapshot=result['request']['snapshot_id'],selectors=json.dumps([
+            {k:m[k] for k in ('model_name','model_version')} for m in models]))
+        # Exact set of explicit versions, regardless of selector order. Never
+        # substitute an older proposal merely because it uses the same snapshot.
+        condition=""" AND p.snapshot_id=:snapshot
+          AND j.request->'model_selectors' @> CAST(:selectors AS jsonb)
+          AND j.request->'model_selectors' <@ CAST(:selectors AS jsonb)"""
+    return rows('''SELECT p.proposal_id,p.cycle_code,p.revision,p.status,p.generated_at,p.snapshot_id
+      FROM planning.ai_proposals_v2 p JOIN planning.operation_jobs j ON j.job_id=p.proposal_id
+      WHERE p.manifest_uri IS NOT NULL AND j.status='COMPLETED' '''+condition+
+      ' ORDER BY p.generated_at DESC,p.proposal_id LIMIT :limit',params)
 
 
 def router(auth):
@@ -112,10 +137,8 @@ def router(auth):
         return result(job)
 
     @routes.get('/v2/proposals',dependencies=[Depends(auth)])
-    def proposals(limit:int=Query(50,ge=1,le=500)):
-        return rows('''SELECT p.proposal_id,p.cycle_code,p.revision,p.status,p.generated_at,p.snapshot_id
-          FROM planning.ai_proposals_v2 p JOIN planning.operation_jobs j ON j.job_id=p.proposal_id
-          WHERE p.manifest_uri IS NOT NULL AND j.status='COMPLETED' ORDER BY p.generated_at DESC,p.proposal_id LIMIT :limit''',{'limit':limit})
+    def proposals(limit:int=Query(50,ge=1,le=500),campaign_id:UUID|None=None):
+        return list_proposals(limit,campaign_id)
 
     @routes.get('/v2/proposals/{proposal_id}/application-view',response_model=ApplicationView,dependencies=[Depends(auth)])
     def view(proposal_id:UUID,limit:int=Query(100,ge=1,le=500),offset:int=Query(0,ge=0),

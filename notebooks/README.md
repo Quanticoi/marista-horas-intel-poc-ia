@@ -27,6 +27,11 @@ treino em NEW; para recuperar ensaio existente, configure RESUME e sua chave.
 campanha limpa a referência à proposta anterior. O reset seletivo limpa esse
 contexto e preserva a origem SQL, permitindo retomar a partir de 04/05.
 
+09/10 recuperam automaticamente a proposta única da campanha pela API. Se ela
+ainda não foi gerada, exibem a pendência e os links para 07/08. Propostas anteriores
+podem ser escolhidas explicitamente em um seletor, sem copiar UUID manualmente.
+Sem seleção, as consultas ficam `NOT_EXECUTED`, não VERIFIED.
+
 `legacy/` contém fontes antigas fora da distribuição ativa. Relatórios executados
 ficam em `artifacts/reports`, sem preencher outputs destes fontes.
 [Runbook](../docs/operations/POC_V4_MANUAL_RUNBOOK.md).

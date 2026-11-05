@@ -210,33 +210,49 @@ else:
 ''')])
     notebook('09_simulador_aplicacao','09 | Simulador da aplicação — somente HTTP',[
         ('**Objetivo:** consumir a proposta persistida sem SQL, treino ou SDK de storage. **Entradas:** contexto salvo em08; override explícito opcional. **Esperado:** paginação completa, hashes e schema válidos.',SETUP+'''
-from src.workbench.application_client import select_proposal,fetch,table,explorer
+from src.workbench.application_client import proposal_selection,proposal_picker,fetch,table,explorer
 PROPOSAL_ID=None  # Opcional: UUID escolhido na lista abaixo; contexto08 é automático.
-display(pd.DataFrame(call('GET','/v2/proposals')))
-proposal_id=select_proposal(PROPOSAL_ID)
-payload=fetch(proposal_id,page_size=13)
-display({'proposal_id':proposal_id,'ofertas':len(payload['offers']),'origens':sum(len(o['activities']) for o in payload['offers']),
-         'schema':payload['schema_version'],'hash_proposta':payload['proposal_sha256'],'origem':'API HTTP → PostgreSQL'})
-display(table(payload['offers']))
+selection=proposal_selection(PROPOSAL_ID)
+proposal_id=selection['proposal_id']
+payload=None
+display({'status':selection['status'],'proposal_id':proposal_id})
+if proposal_id:
+    payload=fetch(proposal_id,page_size=13)
+    display({'proposal_id':proposal_id,'ofertas':len(payload['offers']),'origens':sum(len(o['activities']) for o in payload['offers']),
+             'schema':payload['schema_version'],'hash_proposta':payload['proposal_sha256'],'origem':'API HTTP → PostgreSQL'})
+    display(table(payload['offers']))
+else:
+    proposal_picker(selection)
 '''),('**Executar:** filtrar ciclo/escola/curso/matriz/coorte/período/turno/disciplina/tipo/status e abrir uma oferta. **Resultado:** cada filtro faz nova consulta HTTP; detalhe contém atividades, demanda e lineage.','''
-controls=explorer(proposal_id,payload)
+if payload is not None:
+    controls=explorer(proposal_id,payload)
+else:
+    display('NOT_EXECUTED: consulta aguardando geração ou seleção explícita de proposta.')
 '''),('**Evidência:** conferir P164 exclusivamente pela API. **Resultado:** uma oferta, três atividades; 41 planejados não são 82 estudantes.','''
-circuitos=fetch(proposal_id,{'course_code':'2248','discipline_code':'P164'})
-assert len(circuitos['offers'])==1
-offer=circuitos['offers'][0]
-assert sorted(a['reference_planned_students'] for a in offer['activities'])==[20,21,41]
-display(table(circuitos['offers']))
-display(pd.DataFrame(offer['activities']))
+if proposal_id:
+    circuitos=fetch(proposal_id,{'course_code':'2248','discipline_code':'P164'})
+    assert len(circuitos['offers'])==1
+    offer=circuitos['offers'][0]
+    assert sorted(a['reference_planned_students'] for a in offer['activities'])==[20,21,41]
+    display(table(circuitos['offers']))
+    display(pd.DataFrame(offer['activities']))
+else:
+    display('NOT_EXECUTED: sem proposta selecionada; nenhuma consulta de resultado foi simulada.')
 ''')])
     notebook('10_auditoria_lineage','10 | Auditoria reversa da proposta',[
         ('**Objetivo:** conferir proposta → inferência → versão → run → binário e snapshot. **Entrada:** contexto08 ou UUID explícito. **Esperado:** VERIFIED somente após confronto real de SQL/Registry/RustFS.',SETUP+'''
-from src.workbench.application_client import select_proposal
-proposal_id=select_proposal()
-proof=call('GET',f'/v2/audit/proposals/{proposal_id}')
-display({k:v for k,v in proof.items() if k not in ('models','inferences')})
-display(pd.DataFrame(proof['models']))
-display(pd.DataFrame(proof['inferences']))
-assert proof['status']=='VERIFIED'
+from src.workbench.application_client import proposal_selection,proposal_picker
+selection=proposal_selection()
+proposal_id=selection['proposal_id']
+if proposal_id:
+    proof=call('GET',f'/v2/audit/proposals/{proposal_id}')
+    display({k:v for k,v in proof.items() if k not in ('models','inferences')})
+    display(pd.DataFrame(proof['models']))
+    display(pd.DataFrame(proof['inferences']))
+    assert proof['status']=='VERIFIED'
+else:
+    display({'audit_status':'NOT_EXECUTED','reason':selection['status']})
+    proposal_picker(selection)
 ''')])
     notebook('11_reset_poc','11 | Limpar experimentos e preservar a origem',[
         ('**Objetivo:** preparar o reset seletivo. **Run All desta página NÃO executa exclusão.** O controlador no PowerShell para os serviços, limpa MLflow/RustFS/resultados derivados e preserva referências e histórico sintético SQL. Execute os comandos abaixo no terminal após conferir o plano; o próprio Jupyter será reiniciado.',SETUP+'''

@@ -43,13 +43,66 @@ def call(method,path,body=None,key=None,operator=False):
 
 
 def select_proposal(explicit=None):
-    candidate=explicit or os.getenv('PROPOSAL_ID') or context().get('proposal_id')
+    selection=proposal_selection(explicit)
+    if selection['proposal_id']:
+        return selection['proposal_id']
+    raise ValueError(selection['message'])
+
+
+def proposal_selection(explicit=None):
+    """Resolve the active campaign via HTTP; missing generation is a UI state."""
+    saved=context()
+    candidate=explicit or os.getenv('PROPOSAL_ID') or saved.get('proposal_id')
     if candidate:
-        return candidate
-    choices=call('GET','/v2/proposals')
-    if len(choices)==1:
-        return choices[0]['proposal_id']
-    raise ValueError('Execute a geração no notebook08 ou selecione proposal_id da lista da API; não escolhemos uma versão arbitrária.')
+        return dict(status='SELECTED',proposal_id=candidate,choices=[],message='Proposta selecionada pelo contexto ou identificador explícito.')
+    choices=call('GET','/v2/proposals?limit=500')
+    matching=choices
+    if saved.get('campaign_id'):
+        from urllib.parse import urlencode
+        matching=call('GET','/v2/proposals?'+urlencode(dict(limit=500,campaign_id=saved['campaign_id'])))
+    if len(matching)==1:
+        selected=str(matching[0]['proposal_id'])
+        save_context(proposal_id=selected)
+        return dict(status='SELECTED',proposal_id=selected,choices=choices,message='Proposta recuperada automaticamente pela API.')
+    if saved.get('campaign_id') and not matching:
+        message=('A campanha atual ainda não possui proposta concluída. Treinar não gera a Planilha Turmas. '
+                 'No 07, revise e habilite APPROVE_DEMO=True. No 08, habilite DEPLOY_DEMO=True e GENERATE=True '
+                 'e execute até COMPLETED. Depois reexecute o 09. Você também pode consultar explicitamente uma proposta anterior abaixo.')
+        status='AWAITING_GENERATION'
+    elif not matching:
+        message='Nenhuma proposta concluída está disponível. Conclua a revisão no 07 e a geração no 08 antes de consultar o 09.'
+        status='EMPTY'
+    else:
+        message='Há mais de uma proposta disponível. Escolha abaixo qual deseja consultar.'
+        status='CHOICE_REQUIRED'
+    return dict(status=status,proposal_id=None,choices=choices if not matching else matching,message=message)
+
+
+def proposal_picker(selection):
+    """Explicit historical selection; no training, approval or generation side effects."""
+    import ipywidgets as widgets
+    from IPython.display import display,Markdown,clear_output
+    display(Markdown('**'+selection['message']+'**\n\n'
+        '[Abrir 07 — governança](07_governanca_registry.ipynb) · '
+        '[Abrir 08 — geração](08_publicacao_inferencia.ipynb)'))
+    if not selection['choices']:
+        return None
+    choices=widgets.Dropdown(description='Proposta',options=[('Selecione uma proposta',None)]+[
+        (f"{r['cycle_code']} | {r['generated_at']} | {r['proposal_id']}",str(r['proposal_id'])) for r in selection['choices']],
+        layout=widgets.Layout(width='95%'))
+    button=widgets.Button(description='Selecionar para consulta',disabled=True)
+    output=widgets.Output()
+    choices.observe(lambda change:setattr(button,'disabled',change['new'] is None),names='value')
+    def selected(_):
+        with output:
+            clear_output(wait=True)
+            # Check the selected document before persisting its identity.
+            document=fetch(choices.value)
+            save_context(proposal_id=document['proposal_id'])
+            display(Markdown('Proposta selecionada. **Reexecute as células do notebook** para carregar a tabela e a auditoria.'))
+    button.on_click(selected)
+    display(widgets.VBox([choices,button,output]))
+    return choices
 
 
 def fetch(proposal_id,filters=None,page_size=30):

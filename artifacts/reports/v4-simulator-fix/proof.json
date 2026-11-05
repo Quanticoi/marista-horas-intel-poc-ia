@@ -1,0 +1,17 @@
+{
+  "pending": {
+    "execution": "PASS",
+    "result": "AWAITING_GENERATION",
+    "notebook": "pending/09_simulador_aplicacao.executed.ipynb"
+  },
+  "selected": {
+    "execution": "PASS",
+    "result": "70_OFFERS_107_SOURCES",
+    "notebook": "selected/09_simulador_aplicacao.executed.ipynb"
+  },
+  "timestamp_utc": "2026-11-05T08:08:06.445241+00:00",
+  "business_writes": false,
+  "training_executed": false,
+  "manual_visual": "MANUAL_NOT_CHECKED",
+  "context_note": "User started a different campaign during verification; test did not restore or overwrite that context."
+}

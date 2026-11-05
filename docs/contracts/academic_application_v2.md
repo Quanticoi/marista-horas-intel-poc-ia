@@ -14,6 +14,10 @@ recebe limit1..500, offset≥0 e filtros cycle_code, school, course_code, curric
 cohort_id, period, shift, discipline_code, offer_type e status. Ordenação por offer_id
 é determinística. total_rows conta ofertas filtradas, não atividades.
 
+A listagem aceita `campaign_id` opcional (UUID): retorna apenas propostas do mesmo
+snapshot e conjunto exato de versões da campanha. Não seleciona por data mais recente.
+Campanha sem geração retorna lista vazia; campanha inexistente retorna404.
+
 Cada oferta contém academic, demand, activities, unification, modulation, lineage,
 warnings e status. Cada categoria distingue raw_prediction, valor final, data_class
 e inference_id. O total usa ceil não negativo por categoria, sob hipótese DEMO de
