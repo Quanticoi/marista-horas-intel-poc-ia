@@ -1,0 +1,72 @@
+{
+  "timestamp_utc": "2026-11-05T06:29:21.281762+00:00",
+  "results": [
+    {
+      "notebook": "00_ambiente.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "01_fontes_academicas.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "02_qualidade_dados.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "03_exploracao_demanda.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "04_treinamento_modelos.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "05_campanhas_lotes.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "06_avaliacao_modelos.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "07_governanca_registry.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "08_publicacao_inferencia.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "09_simulador_aplicacao.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "10_auditoria_lineage.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "11_reset_poc.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "context": {
+    "snapshot_id": "9158d4db-c80b-5638-8aa0-9467c60f6107",
+    "campaign_id": "cce085b3-fc01-4395-baaa-147e63046609",
+    "proposal_id": "41f15eac-1dc7-44e0-b360-db0e50da8406"
+  },
+  "operational_writes": true,
+  "manual": "MANUAL_NOT_CHECKED"
+}

@@ -1,0 +1,160 @@
+{
+  "version": "1.0",
+  "format": "JSON-compatible YAML",
+  "metrics": [
+    {
+      "metric_id": "mae",
+      "name": "MAE",
+      "version": "1.0",
+      "function": "src.workbench.metrics_v4.evaluate",
+      "task_type": "regression",
+      "units": "students",
+      "direction": "lower",
+      "interpretation": "mean absolute error",
+      "required_inputs": [
+        "actual",
+        "predicted"
+      ],
+      "dependencies": [],
+      "aggregation_method": "POOLED_OBSERVATIONS",
+      "enabled_by_default": true,
+      "fallback": "NOT_EVALUATED_WITH_REASON"
+    },
+    {
+      "metric_id": "rmse",
+      "name": "RMSE",
+      "version": "1.0",
+      "function": "src.workbench.metrics_v4.evaluate",
+      "task_type": "regression",
+      "units": "students",
+      "direction": "lower",
+      "interpretation": "root mean squared error",
+      "required_inputs": [
+        "actual",
+        "predicted"
+      ],
+      "dependencies": [],
+      "aggregation_method": "POOLED_OBSERVATIONS",
+      "enabled_by_default": true,
+      "fallback": "NOT_EVALUATED_WITH_REASON"
+    },
+    {
+      "metric_id": "medae",
+      "name": "MedAE",
+      "version": "1.0",
+      "function": "src.workbench.metrics_v4.evaluate",
+      "task_type": "regression",
+      "units": "students",
+      "direction": "lower",
+      "interpretation": "median absolute error",
+      "required_inputs": [
+        "actual",
+        "predicted"
+      ],
+      "dependencies": [],
+      "aggregation_method": "POOLED_OBSERVATIONS",
+      "enabled_by_default": false,
+      "fallback": "NOT_EVALUATED_WITH_REASON"
+    },
+    {
+      "metric_id": "wape",
+      "name": "WAPE",
+      "version": "1.0",
+      "function": "src.workbench.metrics_v4.evaluate",
+      "task_type": "regression",
+      "units": "percent",
+      "direction": "lower",
+      "interpretation": "absolute error / absolute actual; positive denominator required",
+      "required_inputs": [
+        "actual",
+        "predicted"
+      ],
+      "dependencies": [],
+      "aggregation_method": "POOLED_OBSERVATIONS",
+      "enabled_by_default": false,
+      "fallback": "NOT_EVALUATED_WITH_REASON"
+    },
+    {
+      "metric_id": "smape",
+      "name": "sMAPE",
+      "version": "1.0",
+      "function": "src.workbench.metrics_v4.evaluate",
+      "task_type": "regression",
+      "units": "percent",
+      "direction": "lower",
+      "interpretation": "symmetric percentage error; zero/zero contributes zero",
+      "required_inputs": [
+        "actual",
+        "predicted"
+      ],
+      "dependencies": [],
+      "aggregation_method": "POOLED_OBSERVATIONS",
+      "enabled_by_default": false,
+      "fallback": "NOT_EVALUATED_WITH_REASON"
+    },
+    {
+      "metric_id": "r2",
+      "name": "R²",
+      "version": "1.0",
+      "function": "src.workbench.metrics_v4.evaluate",
+      "task_type": "regression",
+      "units": "dimensionless",
+      "direction": "higher",
+      "interpretation": "requires at least two observations and nonconstant actual",
+      "required_inputs": [
+        "actual",
+        "predicted"
+      ],
+      "dependencies": [],
+      "aggregation_method": "POOLED_OBSERVATIONS",
+      "enabled_by_default": false,
+      "fallback": "NOT_EVALUATED_WITH_REASON"
+    },
+    {
+      "metric_id": "bias",
+      "name": "Bias",
+      "version": "1.0",
+      "function": "src.workbench.metrics_v4.evaluate",
+      "task_type": "regression",
+      "units": "students",
+      "direction": "zero",
+      "interpretation": "signed prediction minus actual",
+      "required_inputs": [
+        "actual",
+        "predicted"
+      ],
+      "dependencies": [],
+      "aggregation_method": "POOLED_OBSERVATIONS",
+      "enabled_by_default": true,
+      "fallback": "NOT_EVALUATED_WITH_REASON"
+    },
+    {
+      "metric_id": "absolute_error_p90",
+      "name": "Absolute error P90",
+      "version": "1.0",
+      "function": "src.workbench.metrics_v4.evaluate",
+      "task_type": "regression",
+      "units": "students",
+      "direction": "lower",
+      "interpretation": "90th percentile of pooled absolute errors",
+      "required_inputs": [
+        "actual",
+        "predicted"
+      ],
+      "dependencies": [],
+      "aggregation_method": "POOLED_OBSERVATIONS",
+      "enabled_by_default": false,
+      "fallback": "NOT_EVALUATED_WITH_REASON"
+    }
+  ],
+  "automatic_resource_metrics": [
+    "train_seconds",
+    "cpu_seconds",
+    "peak_ram_bytes",
+    "artifact_bytes",
+    "example_count",
+    "success",
+    "failure"
+  ],
+  "resource_policy": "Measure in Workbench executor; unavailable measurements are NOT_EVALUATED, never zero."
+}

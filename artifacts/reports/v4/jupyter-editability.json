@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "notebooks": [
+    "00_ambiente.ipynb",
+    "01_fontes_academicas.ipynb",
+    "02_qualidade_dados.ipynb",
+    "03_exploracao_demanda.ipynb",
+    "04_treinamento_modelos.ipynb",
+    "05_campanhas_lotes.ipynb",
+    "06_avaliacao_modelos.ipynb",
+    "07_governanca_registry.ipynb",
+    "08_publicacao_inferencia.ipynb",
+    "09_simulador_aplicacao.ipynb",
+    "10_auditoria_lineage.ipynb",
+    "11_reset_poc.ipynb"
+  ],
+  "writable": true,
+  "temporary_write_read_delete": "PASS",
+  "user_notebooks_modified": false
+}

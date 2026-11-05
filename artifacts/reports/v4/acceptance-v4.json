@@ -1,0 +1,398 @@
+{
+  "status": "READY_FOR_LOCAL_REVIEW",
+  "timestamp_utc": "2026-11-05T06:58:02.592145+00:00",
+  "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+  "source_code_sha256": "ffa2327b25f646765e273a8412489ad2333268b3cf233d50f23ee377c50a92dc",
+  "context": {
+    "snapshot_id": "9158d4db-c80b-5638-8aa0-9467c60f6107",
+    "campaign_id": "cce085b3-fc01-4395-baaa-147e63046609",
+    "proposal_id": "41f15eac-1dc7-44e0-b360-db0e50da8406"
+  },
+  "source": "REFERENCE_STRUCTURE_AND_SYNTHETIC_HISTORY",
+  "seed": 42,
+  "configuration": {
+    "cycle": "2024-2",
+    "courses": [
+      2248,
+      2348,
+      2287
+    ],
+    "runtime": "Docker Compose",
+    "mlflow": "3.11.1"
+  },
+  "proposal_sha256": "a98ce02339dff3fa7c42bbc2684d6024e0874530ce168f3e95c8107fe48eb9f9",
+  "payload_sha256": "030a2a8f7c90798f960f978ee10788333df55c520c7ea24de1b9d23ae1cc10c2",
+  "suites": {
+    "full-suite-junit.xml": {
+      "tests": 137,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1
+    },
+    "workbench-final-junit.xml": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "clean-checkout-junit.xml": {
+      "tests": 137,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1
+    }
+  },
+  "notebooks": [
+    {
+      "notebook": "00_ambiente.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "01_fontes_academicas.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "02_qualidade_dados.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "03_exploracao_demanda.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "04_treinamento_modelos.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "05_campanhas_lotes.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "06_avaliacao_modelos.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "07_governanca_registry.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "08_publicacao_inferencia.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "09_simulador_aplicacao.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "10_auditoria_lineage.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "notebook": "11_reset_poc.ipynb",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "matrix": [
+    {
+      "id": "V4-01",
+      "criterion": "107 linhas com proveniência",
+      "status": "AUTO_PASS",
+      "evidence": "academic-import-junit.xml",
+      "limitations": "",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-02",
+      "criterion": "Cursos e turnos distintos",
+      "status": "AUTO_PASS",
+      "evidence": "academic-import-junit.xml",
+      "limitations": "",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-03",
+      "criterion": "P164: uma oferta, três atividades",
+      "status": "AUTO_PASS",
+      "evidence": "application-view-final.json",
+      "limitations": "",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-04",
+      "criterion": "P110A e duplicidades preservadas",
+      "status": "AUTO_PASS",
+      "evidence": "import-report.json",
+      "limitations": "13 linhas em quarentena; não descartadas.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-05",
+      "criterion": "Contrato de entidades classificado",
+      "status": "AUTO_PASS",
+      "evidence": "source-mapping.csv",
+      "limitations": "Arquivo fornecido contém 31 entidades e 175 campos; diferença de 30 entidades da especificação documentada.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-06",
+      "criterion": "Simulação determinística",
+      "status": "AUTO_PASS",
+      "evidence": "scenario-manifest.json",
+      "limitations": "Histórico sintético, seed 42.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-07",
+      "criterion": "Planejamento, matrícula e previsão separados",
+      "status": "AUTO_PASS",
+      "evidence": "application-view-final.json",
+      "limitations": "",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-08",
+      "criterion": "Regulares por coorte e adicionais por disciplina",
+      "status": "AUTO_PASS",
+      "evidence": "components-junit.xml",
+      "limitations": "Demonstração sintética; não matrícula oficial.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-09",
+      "criterion": "Pendências de modulação/unificação auditáveis",
+      "status": "AUTO_PASS",
+      "evidence": "application-view-final.json",
+      "limitations": "S03 PENDING_DATA/PENDING_APPROVAL; regras institucionais não homologadas.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-10",
+      "criterion": "Cold start sem feedback inventado",
+      "status": "AUTO_PASS",
+      "evidence": "scenario-manifest.json",
+      "limitations": "Feedback acadêmico ainda ausente.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-11",
+      "criterion": "Fit exclusivo no Workbench",
+      "status": "AUTO_PASS",
+      "evidence": "worker-during-training.json",
+      "limitations": "Bloqueio de treinamento operacional também coberto por serving-junit.xml.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-12",
+      "criterion": "Lotes, checkpoint, repetição e indicadores",
+      "status": "NOT_EXECUTED",
+      "evidence": "application-notebook-proof.json",
+      "limitations": "Repetição idempotente executada; interrupção forçada durante fit/retry após falha não executada nesta V4. UX visual não conferida.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-13",
+      "criterion": "Métricas selecionáveis e aplicabilidade",
+      "status": "AUTO_PASS",
+      "evidence": "full-suite-junit.xml",
+      "limitations": "",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-14",
+      "criterion": "Métricas por modelo/lote/campanha",
+      "status": "AUTO_PASS",
+      "evidence": "mlflow-campaign-summary.json",
+      "limitations": "Métricas sintéticas não comprovam qualidade institucional.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-15",
+      "criterion": "Identidade e hashes entre serviços",
+      "status": "AUTO_PASS",
+      "evidence": "final-lineage.json",
+      "limitations": "",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-16",
+      "criterion": "Governança e catálogo de serving",
+      "status": "AUTO_PASS",
+      "evidence": "serving-catalog-final.json",
+      "limitations": "Aprovação técnica DEMO, não homologação acadêmica.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-17",
+      "criterion": "Inferência sem Jupyter",
+      "status": "AUTO_PASS",
+      "evidence": "jupyter-during-restart-final.json",
+      "limitations": "",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-18",
+      "criterion": "Restart e revogação de cache",
+      "status": "AUTO_PASS",
+      "evidence": "restart-inference-final.json",
+      "limitations": "Revogação/reaprovação controladas: serving-junit.xml.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-19",
+      "criterion": "Contrato HTTP v2, filtros e schema",
+      "status": "AUTO_PASS",
+      "evidence": "full-suite-junit.xml",
+      "limitations": "",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-20",
+      "criterion": "Notebook 09 exclusivamente HTTP",
+      "status": "AUTO_PASS",
+      "evidence": "notebooks/09_simulador_aplicacao.executed.ipynb",
+      "limitations": "Execução automática; interação visual do usuário não conferida.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-21",
+      "criterion": "S01/S02 e S03 pendente",
+      "status": "AUTO_PASS",
+      "evidence": "application-view-final.json",
+      "limitations": "",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-22",
+      "criterion": "Auditoria completa do resultado",
+      "status": "AUTO_PASS",
+      "evidence": "final-lineage.json",
+      "limitations": "VERIFIED técnico, não aprovação de negócio.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-23",
+      "criterion": "Preservação no rebuild e migrations aditivas",
+      "status": "AUTO_PASS",
+      "evidence": "final-proof.json",
+      "limitations": "Mesma proposta, versões e trace após rebuild; nenhum reset principal. Não é comparação byte a byte de todo o banco legado.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-24",
+      "criterion": "CI limpa e testes completos",
+      "status": "NOT_EXECUTED",
+      "evidence": "clean-checkout-junit.xml",
+      "limitations": "Export Git 7335a5f sem dev/history passou localmente usando serviços existentes e referências externas. CI remota e instalação vazia não executadas.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    },
+    {
+      "id": "V4-25",
+      "criterion": "Evidências e limites explícitos",
+      "status": "AUTO_PASS",
+      "evidence": "acceptance-v4.json",
+      "limitations": "Todos os checks visuais: MANUAL_NOT_CHECKED.",
+      "manual": "MANUAL_NOT_CHECKED",
+      "tested_code_commit": "7335a5fe0a555bf6e9c57cff2e9732f9e9a576bd",
+      "source": "REFERENCE/SYNTHETIC",
+      "reproduce": "docs/operations/POC_V4_MANUAL_RUNBOOK.md"
+    }
+  ],
+  "pending": [
+    "Visual review by user",
+    "Remote CI with reference package",
+    "Forced mid-fit failure/retry drill",
+    "Complementary diagnostic Markdown not supplied"
+  ],
+  "not_claimed": [
+    "Academic approval",
+    "Official capacity or PRIME integration",
+    "500-model V4 scale test",
+    "V4 destructive reset",
+    "Linux execution",
+    "Fresh empty-stack acceptance"
+  ]
+}

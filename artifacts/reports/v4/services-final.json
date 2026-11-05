@@ -1,0 +1,68 @@
+﻿[
+    {
+        "Service":  "api",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "dashboard",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "inference",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "ingestion",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "jupyter",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "marista-jupyter:compose"
+    },
+    {
+        "Service":  "mlflow",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "monitoramento",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "marista-app:compose"
+    },
+    {
+        "Service":  "postgres",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "postgres:15.10-bookworm"
+    },
+    {
+        "Service":  "rabbitmq",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "rabbitmq:4.0.5-management"
+    },
+    {
+        "Service":  "rustfs",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "rustfs/rustfs:1.0.0"
+    },
+    {
+        "Service":  "worker",
+        "State":  "running",
+        "Health":  "healthy",
+        "Image":  "marista-app:compose"
+    }
+]

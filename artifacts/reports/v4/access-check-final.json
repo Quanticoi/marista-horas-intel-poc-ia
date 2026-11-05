@@ -1,0 +1,101 @@
+{
+  "checked_at": "2026-11-05T06:54:10.429682+00:00",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "MLflow experiments",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "API authenticated",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "API rejects anonymous",
+      "status": "PASS",
+      "http_status": 401
+    },
+    {
+      "check": "Dashboard authenticated",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "Dashboard rejects anonymous",
+      "status": "PASS",
+      "http_status": 401
+    },
+    {
+      "check": "Monitoramento authenticated",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "Monitoramento rejects anonymous",
+      "status": "PASS",
+      "http_status": 401
+    },
+    {
+      "check": "Jupyter authenticated",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "Jupyter rejects anonymous",
+      "status": "PASS",
+      "http_status": 403
+    },
+    {
+      "check": "Intake authenticated",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "Intake rejects anonymous",
+      "status": "PASS",
+      "http_status": 401
+    },
+    {
+      "check": "RabbitMQ authenticated",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "RabbitMQ rejects anonymous",
+      "status": "PASS",
+      "http_status": 401
+    },
+    {
+      "check": "RustFS console HTTP",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "RustFS S3 authenticated",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "RustFS bucket rejects anonymous",
+      "status": "PASS",
+      "http_status": 403
+    },
+    {
+      "check": "Inference readiness",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "check": "Inference token accepted (invalid payload)",
+      "status": "PASS",
+      "http_status": 422
+    },
+    {
+      "check": "Inference rejects anonymous",
+      "status": "PASS",
+      "http_status": 401
+    }
+  ]
+}

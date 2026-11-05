@@ -1,0 +1,47 @@
+{
+  "proposal_id": "41f15eac-1dc7-44e0-b360-db0e50da8406",
+  "status": "VERIFIED",
+  "proposal_sha256": "a98ce02339dff3fa7c42bbc2684d6024e0874530ce168f3e95c8107fe48eb9f9",
+  "offers": 70,
+  "source_rows": 107,
+  "models": [
+    {
+      "model_name": "hi.demo.v4.c2348.components",
+      "model_version": "5",
+      "run_id": "e1dde06abe71493d880cc23a40f1f59c",
+      "status": "VERIFIED",
+      "artifact_sha256": "df8d37f01859ac4fe1318d92772339249700e05ae0783ce1eaa7895046d7dc4b"
+    },
+    {
+      "model_name": "hi.demo.v4.c2248.components",
+      "model_version": "8",
+      "run_id": "9112032e221e47c08e0a6bf64a37a6ff",
+      "status": "VERIFIED",
+      "artifact_sha256": "53d075044bf30874c87a50c856461a312271f391f61517335791063af0d0fc59"
+    },
+    {
+      "model_name": "hi.demo.v4.c2287.components",
+      "model_version": "5",
+      "run_id": "fdd59e3665ce4797bc47da7c7eacc67b",
+      "status": "VERIFIED",
+      "artifact_sha256": "4ce75f85c435b53342b04db8815f1c73da53b87e835ef80a187582149c96cd9d"
+    }
+  ],
+  "inferences": [
+    {
+      "inference_id": "1da25055-95ae-4690-acd5-5a1402f1342f",
+      "status": "VERIFIED"
+    },
+    {
+      "inference_id": "e4939cb0-d0da-4ba4-acfc-0e2c93a602b4",
+      "status": "VERIFIED"
+    },
+    {
+      "inference_id": "cdda5fe4-7d4c-43c4-aa44-ab7c5591125f",
+      "status": "VERIFIED"
+    }
+  ],
+  "limitations": [
+    "Technical integrity only; no academic approval or real forecast quality asserted."
+  ]
+}
