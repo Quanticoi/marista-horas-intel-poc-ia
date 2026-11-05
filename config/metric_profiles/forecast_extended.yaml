@@ -1,0 +1,16 @@
+{
+  "profile_id": "forecast_extended",
+  "version": "1.0",
+  "selected": [
+    "mae",
+    "rmse",
+    "medae",
+    "wape",
+    "smape",
+    "r2",
+    "bias",
+    "absolute_error_p90"
+  ],
+  "status": "IMPLEMENTED",
+  "reason": null
+}

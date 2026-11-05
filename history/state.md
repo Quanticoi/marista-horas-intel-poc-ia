@@ -1,4 +1,10 @@
-﻿# 05/11/2026 — continuidade automática 01 → 02 aplicada
+﻿# 05/11/2026 — V4 iniciada; fontes acadêmicas ausentes
+
+SPEC V4 lida. Fontes obrigatórias não encontradas no repositório (incluindo busca de arquivos ignorados em data/dev/docs/reference). Pergunta enviada ao usuário sobre localização do pacote reference, ainda sem resposta. Gate A bloqueado: não inventar 107 registros nem simular estrutura acadêmica por números citados. Fluxo existente preservado; nenhum serviço ou banco alterado.
+
+Implementado inventário de fontes somente leitura com SHA256, SOURCE_MISSING/AMBIGUOUS e exit code 2. Catálogo independente de métricas 1.0: oito métricas, seleção validada, NOT_EVALUATED com motivo e consolidação por observações comparáveis. 12 testes PASS em container isolado sem rede, artifacts/reports/v4/foundations-junit.xml. Validação estática e lint PASS. Integração acadêmica/Workbench/MLflow e simulador09 V4 ainda pendentes; matriz de 25 critérios NOT_EXECUTED, manual MANUAL_NOT_CHECKED. Não declarar V4 concluída. Runbook documenta comandos e gates. SPEC autoriza checkpoints pequenos por fase; preparar commits locais, sem push nesta etapa.
+
+# 05/11/2026 — continuidade automática 01 → 02 aplicada
 
 Pedido: remover a cópia manual de ID entre a jornada e a conferência de inferência. Notebook01 agora salva atomicamente /workspace/reports/journey-current.json depois das evidências concluídas; notebook02 usa esse contexto, com prioridade para ID manual. Compatibilidade com /reports/journey-latest.json existente. Confere ciclo, execution_id, run_id, snapshot, nome e versão na API; não procura a última proposta/modelo no banco, não gera proposta automaticamente. Contexto ausente, inválido ou divergente pede seleção explícita.
 

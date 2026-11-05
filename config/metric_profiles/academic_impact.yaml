@@ -1,0 +1,7 @@
+{
+  "profile_id": "academic_impact",
+  "version": "1.0",
+  "selected": [],
+  "status": "NOT_EVALUATED",
+  "reason": "Requires validated academic ground truth and modulation rules"
+}
