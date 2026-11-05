@@ -23,9 +23,12 @@ def inspect_graph(cfg,kind,external_id,version="",limit=100,offset=0):
                 run=client.get_run(node["external_id"])
                 check["url"]=f"{cfg.ui}/#/experiments/{run.info.experiment_id}/runs/{run.info.run_id}"
             elif node["entity_type"]=="proposal":
-                proposal=call(cfg,"GET",f"/v1/proposals/{node['external_id']}/application-view?limit=1")
-                if any(u["provenance_status"]!="VERIFIED" for u in proposal["lineage"]["model_usages"]):
-                    check["status"]="LEGACY_PARTIAL"
+                call(cfg,"GET",f"/v1/proposals/{node['external_id']}/application-view?limit=1")
+                # The append-only proposal flag is RECORDED, never live proof.
+                # Consult the cross-system verifier instead of trusting a stored label.
+                verified=call(cfg,"GET",f"/v1/audit/proposal/{node['external_id']}")
+                check["status"]=verified["status"]
+                check["evidence"]={"proposal_id":node["external_id"],"live_audit_status":verified["status"]}
                 check["url"]=f"http://localhost:8000/v1/proposals/{node['external_id']}/application-view"
             elif node["entity_type"]=="snapshot":
                 from src.workbench.sdk import intake

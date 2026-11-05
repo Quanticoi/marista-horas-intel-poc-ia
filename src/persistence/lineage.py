@@ -24,6 +24,11 @@ def edge(con, parent, child, relation):
         dict(parent=parent,child=child,relation=relation))
 
 
+def provenance_label(usage):
+    """An immutable SQL record is an assertion, not a live integrity verification."""
+    return "RECORDED" if usage.get("artifact_sha256") and usage.get("inference_id") else "LEGACY_PARTIAL"
+
+
 def attach(con, execution_id, snapshot, trace, lines, rule, capacity):
     usages = trace.get("model_usages") or [dict(model_key=trace["model_name"],
         registered_model_name=trace["model_name"],model_version=trace["model_version"],
@@ -33,7 +38,7 @@ def attach(con, execution_id, snapshot, trace, lines, rule, capacity):
     proposal = entity(con,"proposal",execution_id,{"proposal_revision":1})
     for usage in usages:
         data = dict(usage,proposal_id=execution_id,ruleset_hash=sha256({"version":rule,"capacity":capacity}),
-            provenance_status="VERIFIED" if usage.get("artifact_sha256") and usage.get("inference_id") else "LEGACY_PARTIAL")
+            provenance_status=provenance_label(usage))
         keys = ("proposal_id","inference_id","model_key","registered_model_name","model_version","run_id",
                 "snapshot_id","artifact_uri","artifact_sha256","ruleset_hash","line_keys","provenance_status")
         data = {k:data.get(k) for k in keys}

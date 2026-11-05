@@ -6,6 +6,7 @@ from pathlib import Path
 from functools import lru_cache
 from collections import OrderedDict
 from threading import RLock
+from datetime import datetime, timezone
 import pandas as pd
 import mlflow
 import mlflow.sklearn
@@ -18,6 +19,18 @@ from src.common.tagging import MODEL_PATTERN,assert_shared,signature_hash
 
 cached_versions=OrderedDict()
 cache_lock=RLock()
+
+
+def _cache_snapshot_locked():
+    """Reconcile the human inventory with the actual LRU (also after cache_clear)."""
+    info=load_checked.cache_info()
+    if info.currsize!=len(cached_versions):
+        # A direct cache_clear, including test/maintenance calls, invalidates the
+        # presentation index. Do not falsely report an evicted model as resident.
+        load_checked.cache_clear()
+        cached_versions.clear()
+        info=load_checked.cache_info()
+    return info
 
 
 class DraftRequest(BaseModel):
@@ -58,13 +71,20 @@ def load_version(name, version, run_id, execution_id):
         if name.startswith("hi.") and not checksum:
             raise ValueError("Artifact checksum required")
         with cache_lock:
-            if not load_checked.cache_info().currsize:
-                cached_versions.clear()
-            model = load_checked(name,version,checksum,registered.tags.get('model_signature_hash'))
-            cached_versions[(name,version)]=True
-            cached_versions.move_to_end((name,version))
+            _cache_snapshot_locked()
+            signature=registered.tags.get('model_signature_hash')
+            key=(name,version,checksum,signature)
+            was_loaded=key in cached_versions
+            model=load_checked(name,version,checksum,signature)
+            now=datetime.now(timezone.utc).isoformat()
+            previous=cached_versions.pop(key,None)
+            cached_versions[key]=dict(
+                model_key=name,model_version=version,artifact_sha256=checksum,
+                loaded_at_utc=previous['loaded_at_utc'] if previous else now,
+                last_used_at_utc=now,cache_hit=was_loaded)
             while len(cached_versions)>4:
                 cached_versions.popitem(last=False)
+            _cache_snapshot_locked()
     return model, registered
 
 
@@ -75,8 +95,9 @@ def router(auth):
     def cache_status():
         import resource
         with cache_lock:
-            return dict(cache=load_checked.cache_info()._asdict(),peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
-                        versions=[dict(model_key=n,model_version=v) for n,v in cached_versions] if load_checked.cache_info().currsize else [],
+            info=_cache_snapshot_locked()
+            return dict(cache=info._asdict(),peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+                        versions=list(cached_versions.values()),
                         policy="At most four verified explicit versions per process; registration does not load a model")
 
     @routes.post("/internal/draft/predict", dependencies=[Depends(auth)])
