@@ -8,7 +8,8 @@ from src.workbench.academic_data import load,prepare,FEATURES
 
 
 def main():
-    evidence=json.loads(Path('/reports/v4/training-cohort-evidence.json').read_text())
+    current=Path('/reports/v4/training-final-evidence.json')
+    evidence=json.loads((current if current.exists() else Path('/reports/v4/training-cohort-evidence.json')).read_text())
     client=httpx.Client(base_url=os.environ['INFERENCE_URI'],timeout=120,
         headers={'Authorization':'Bearer '+os.environ['INFERENCE_TOKEN']})
     before=client.get('/internal/academic/runtime');before.raise_for_status()
@@ -26,7 +27,7 @@ def main():
         results.append(result)
     after=client.get('/internal/academic/runtime');after.raise_for_status()
     assert len(after.json()['versions'])==3
-    Path('/reports/v4/restart-inference.json').write_text(json.dumps(dict(status='PASS',before=before.json(),after=after.json(),predictions=results),indent=2))
+    Path('/reports/v4/restart-inference-final.json' if current.exists() else '/reports/v4/restart-inference.json').write_text(json.dumps(dict(status='PASS',before=before.json(),after=after.json(),predictions=results),indent=2))
     print('PASS: 1 PRELOAD and 2 LAZY models recovered with persisted checksums')
 
 

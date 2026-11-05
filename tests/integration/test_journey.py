@@ -180,6 +180,7 @@ def test_repeated_stage_records_distinct_attempts_and_safe_failure():
     from src.common import tracing
     from src.workbench.journey_steps import step
     cfg = Settings.load()
+    cfg.experiment = 'HI/POC/Diagnostics/Regression'
     original = tracing._experiment_id
     statuses = []
     execution = str(uuid.uuid4())

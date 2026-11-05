@@ -47,10 +47,7 @@ def main():
         from src.data.pipeline import seed
         print(json.dumps({"snapshot_id":seed()}))
     elif args.action in ("train","retrain"):
-        from src.training.pipeline import train
-        from src.persistence.db import rows
-        snapshot=a[0] if a else rows("SELECT id FROM planning.dataset_snapshots WHERE sealed_at IS NOT NULL ORDER BY created_at DESC LIMIT 1")[0]["id"]
-        print(json.dumps(train(snapshot, model_key=a[1] if len(a)>1 else None)))
+        raise SystemExit('Legacy tools training disabled. Use notebooks04/05 in the Jupyter Workbench container.')
     elif args.action=="evaluate":
         from src.monitoring.quality import evaluate
         if len(a)!=1: parser.error("evaluate <cycle_id>")

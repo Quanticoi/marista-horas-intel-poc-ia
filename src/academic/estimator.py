@@ -14,7 +14,7 @@ class AcademicComponents(RegressorMixin, BaseEstimator):
         self.algorithm = algorithm
         self.alpha = alpha
 
-    def fit(self, X, y):
+    def fit(self, X, y, cohort_ids=None):
         self.models_ = []
         for target in ('regular', 'dependency', 'elective'):
             columns = REGULAR_FEATURES if target == 'regular' else list(X.columns)
@@ -22,7 +22,11 @@ class AcademicComponents(RegressorMixin, BaseEstimator):
             data['_target'] = y[target].to_numpy()
             # Regular examples are cohort-level, not duplicated for every discipline.
             if target == 'regular':
-                data = data.drop_duplicates()
+                if cohort_ids is not None:
+                    data['_cohort']=np.asarray(cohort_ids)
+                    data=data.drop_duplicates('_cohort')
+                else:
+                    data = data.drop_duplicates()
             regressor = DummyRegressor(strategy='mean') if self.algorithm == 'dummy' else Ridge(alpha=self.alpha)
             model = make_pipeline(StandardScaler(), regressor)
             model.fit(data[columns], data['_target'])

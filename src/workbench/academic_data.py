@@ -24,9 +24,11 @@ def load(snapshot_id):
 
 
 def prepare(frame,course):
-    required={'offer_id','semester_index','period','course_code','curriculum_code','shift','cycle_code','split',*TARGETS}
+    required={'offer_id','cohort_id','regular_source','semester_index','period','course_code','curriculum_code','shift','cycle_code','split',*TARGETS}
     if required-set(frame.columns):
         raise ValueError('Academic input missing required identity/features')
+    if frame[['cohort_id','regular_source','curriculum_code']].isna().any().any():
+        raise ValueError('Academic cohort/regular source or curriculum missing')
     selected=frame[frame.course_code==str(course)].sort_values(['offer_id','semester_index']).copy()
     if selected.empty:
         raise ValueError('Unknown academic course scope')
@@ -34,7 +36,7 @@ def prepare(frame,course):
         # FUTURE labels are never features; only preceding HISTORY labels may be used.
         historical=selected[target].where(selected.split=='HISTORY')
         selected['lag_'+target]=historical.groupby(selected.offer_id).shift().fillna(0.)
-    scope=['course_code','curriculum_code','shift','period','cycle_code']
+    scope=['cohort_id','cycle_code']
     # Every offer in a cohort receives the same regular history feature, including
     # disciplines first appearing in a matrix. Future labels never participate.
     selected['lag_regular']=selected.groupby(scope)['lag_regular'].transform('max')

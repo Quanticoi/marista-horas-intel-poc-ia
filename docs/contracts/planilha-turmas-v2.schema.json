@@ -1,0 +1,555 @@
+{
+  "$defs": {
+    "Academic": {
+      "additionalProperties": false,
+      "properties": {
+        "establishment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Establishment"
+        },
+        "school": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "School"
+        },
+        "course_code": {
+          "title": "Course Code",
+          "type": "string"
+        },
+        "course_name": {
+          "title": "Course Name",
+          "type": "string"
+        },
+        "curriculum_code": {
+          "title": "Curriculum Code",
+          "type": "string"
+        },
+        "curriculum_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Curriculum Version"
+        },
+        "class_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Class Label"
+        },
+        "period": {
+          "minimum": 1,
+          "title": "Period",
+          "type": "integer"
+        },
+        "shift": {
+          "title": "Shift",
+          "type": "string"
+        },
+        "discipline_code": {
+          "title": "Discipline Code",
+          "type": "string"
+        },
+        "discipline_name": {
+          "title": "Discipline Name",
+          "type": "string"
+        },
+        "offer_type": {
+          "title": "Offer Type",
+          "type": "string"
+        },
+        "cohort_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Cohort Id"
+        },
+        "cohort_ingress": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Cohort Ingress"
+        },
+        "prime_ids": {
+          "title": "Prime Ids",
+          "type": "null"
+        },
+        "mapping_status": {
+          "enum": [
+            "UNMAPPED",
+            "SYNTHETIC_ONLY"
+          ],
+          "title": "Mapping Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "establishment",
+        "school",
+        "course_code",
+        "course_name",
+        "curriculum_code",
+        "curriculum_version",
+        "class_label",
+        "period",
+        "shift",
+        "discipline_code",
+        "discipline_name",
+        "offer_type",
+        "cohort_id",
+        "cohort_ingress",
+        "prime_ids",
+        "mapping_status"
+      ],
+      "title": "Academic",
+      "type": "object"
+    },
+    "Activity": {
+      "additionalProperties": false,
+      "properties": {
+        "source_row_id": {
+          "format": "uuid",
+          "title": "Source Row Id",
+          "type": "string"
+        },
+        "source_file_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Source File Sha256",
+          "type": "string"
+        },
+        "source_sheet": {
+          "title": "Source Sheet",
+          "type": "string"
+        },
+        "source_row_number": {
+          "title": "Source Row Number",
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "THEORY",
+            "PRACTICE",
+            "OTHER"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "division": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Division"
+        },
+        "reference_planned_students": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reference Planned Students"
+        },
+        "reference_seats": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reference Seats"
+        },
+        "capacity": {
+          "title": "Capacity",
+          "type": "null"
+        },
+        "capacity_status": {
+          "const": "OFFICIAL_RULE_NOT_AVAILABLE",
+          "title": "Capacity Status",
+          "type": "string"
+        },
+        "proposed_groups": {
+          "items": {
+            "type": "object"
+          },
+          "title": "Proposed Groups",
+          "type": "array"
+        },
+        "proposal_status": {
+          "const": "PENDING_OFFICIAL_CAPACITY",
+          "title": "Proposal Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_row_id",
+        "source_file_sha256",
+        "source_sheet",
+        "source_row_number",
+        "kind",
+        "division",
+        "reference_planned_students",
+        "reference_seats",
+        "capacity",
+        "capacity_status",
+        "proposed_groups",
+        "proposal_status"
+      ],
+      "title": "Activity",
+      "type": "object"
+    },
+    "Component": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "raw_prediction": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw Prediction"
+        },
+        "data_class": {
+          "enum": [
+            "AI_ESTIMATE",
+            "NOT_AVAILABLE"
+          ],
+          "title": "Data Class",
+          "type": "string"
+        },
+        "source_ref": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Ref"
+        }
+      },
+      "required": [
+        "value",
+        "raw_prediction",
+        "data_class",
+        "source_ref"
+      ],
+      "title": "Component",
+      "type": "object"
+    },
+    "Demand": {
+      "additionalProperties": false,
+      "properties": {
+        "regular": {
+          "$ref": "#/$defs/Component"
+        },
+        "dependency": {
+          "$ref": "#/$defs/Component"
+        },
+        "elective": {
+          "$ref": "#/$defs/Component"
+        },
+        "estimated_total": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Estimated Total"
+        },
+        "uncertainty": {
+          "title": "Uncertainty",
+          "type": "null"
+        },
+        "reference_planned_students": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reference Planned Students"
+        },
+        "composition_rule": {
+          "const": "CEIL_NONNEGATIVE_DISJOINT_DEMO_CATEGORIES",
+          "title": "Composition Rule",
+          "type": "string"
+        },
+        "categories_disjoint": {
+          "const": "DEMO_ASSUMPTION",
+          "title": "Categories Disjoint",
+          "type": "string"
+        }
+      },
+      "required": [
+        "regular",
+        "dependency",
+        "elective",
+        "estimated_total",
+        "uncertainty",
+        "reference_planned_students",
+        "composition_rule",
+        "categories_disjoint"
+      ],
+      "title": "Demand",
+      "type": "object"
+    },
+    "Offer": {
+      "additionalProperties": false,
+      "properties": {
+        "offer_id": {
+          "format": "uuid",
+          "title": "Offer Id",
+          "type": "string"
+        },
+        "academic": {
+          "$ref": "#/$defs/Academic"
+        },
+        "activities": {
+          "items": {
+            "$ref": "#/$defs/Activity"
+          },
+          "title": "Activities",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "QUARANTINED",
+            "REFERENCE_ONLY",
+            "DRAFT_PENDING_COORDINATOR"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "elective_eligibility": {
+          "enum": [
+            "ELIGIBLE",
+            "INELIGIBLE",
+            "UNKNOWN"
+          ],
+          "title": "Elective Eligibility",
+          "type": "string"
+        },
+        "unification": {
+          "title": "Unification",
+          "type": "object"
+        },
+        "modulation": {
+          "title": "Modulation",
+          "type": "object"
+        },
+        "demand": {
+          "$ref": "#/$defs/Demand"
+        },
+        "lineage": {
+          "title": "Lineage",
+          "type": "object"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "offer_id",
+        "academic",
+        "activities",
+        "status",
+        "elective_eligibility",
+        "unification",
+        "modulation",
+        "demand",
+        "lineage",
+        "warnings"
+      ],
+      "title": "Offer",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "poc-planilha-turmas-v2",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "contract_status": {
+      "const": "PROVISORIO_PENDENTE_HOMOLOGACAO",
+      "title": "Contract Status",
+      "type": "string"
+    },
+    "proposal_id": {
+      "format": "uuid",
+      "title": "Proposal Id",
+      "type": "string"
+    },
+    "correlation_id": {
+      "title": "Correlation Id",
+      "type": "string"
+    },
+    "execution_id": {
+      "format": "uuid",
+      "title": "Execution Id",
+      "type": "string"
+    },
+    "snapshot_id": {
+      "format": "uuid",
+      "title": "Snapshot Id",
+      "type": "string"
+    },
+    "dataset_sha256": {
+      "title": "Dataset Sha256",
+      "type": "string"
+    },
+    "cycle_code": {
+      "title": "Cycle Code",
+      "type": "string"
+    },
+    "proposal_revision": {
+      "title": "Proposal Revision",
+      "type": "integer"
+    },
+    "phase": {
+      "const": "REGULAR_MATRIX_DRAFT",
+      "title": "Phase",
+      "type": "string"
+    },
+    "source_type": {
+      "const": "SEMI_SYNTHETIC_POC",
+      "title": "Source Type",
+      "type": "string"
+    },
+    "status": {
+      "const": "DRAFT_PENDING_COORDINATOR",
+      "title": "Status",
+      "type": "string"
+    },
+    "generated_at": {
+      "title": "Generated At",
+      "type": "string"
+    },
+    "offers": {
+      "items": {
+        "$ref": "#/$defs/Offer"
+      },
+      "title": "Offers",
+      "type": "array"
+    },
+    "total_rows": {
+      "title": "Total Rows",
+      "type": "integer"
+    },
+    "limit": {
+      "title": "Limit",
+      "type": "integer"
+    },
+    "offset": {
+      "title": "Offset",
+      "type": "integer"
+    },
+    "filters": {
+      "title": "Filters",
+      "type": "object"
+    },
+    "payload_sha256": {
+      "title": "Payload Sha256",
+      "type": "string"
+    },
+    "proposal_sha256": {
+      "title": "Proposal Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "contract_status",
+    "proposal_id",
+    "correlation_id",
+    "execution_id",
+    "snapshot_id",
+    "dataset_sha256",
+    "cycle_code",
+    "proposal_revision",
+    "phase",
+    "source_type",
+    "status",
+    "generated_at",
+    "offers",
+    "total_rows",
+    "limit",
+    "offset",
+    "filters",
+    "payload_sha256",
+    "proposal_sha256"
+  ],
+  "title": "ApplicationView",
+  "type": "object"
+}

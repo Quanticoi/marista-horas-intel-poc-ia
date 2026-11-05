@@ -27,15 +27,16 @@ function Check-Services {
     D @('exec','-T','rustfs','curl','-fsS','http://127.0.0.1:9000/health')
 }
 function Test-Application {
-    D @('run','--rm','--no-deps','--entrypoint','python','tools','-m','pytest','tests/unit','tests/integration','-q','-o','cache_dir=/tmp/pytest-cache','--junitxml=/reports/compose-junit.xml')
+    D @('run','--rm','--no-deps','-v',"${root}/data/reference:/reference:ro",'--entrypoint','python','tools','-m','pytest','tests/unit','tests/integration','-q','-o','cache_dir=/tmp/pytest-cache','--junitxml=/reports/v4/full-suite-junit.xml')
+    D @('exec','-T','jupyter','/usr/local/bin/_entrypoint.sh','python','-m','pytest','tests/integration/test_workbench_v4.py','-q','-o','cache_dir=/tmp/pytest-workbench','--junitxml=/reports/v4/workbench-final-junit.xml')
     & python deployment/scripts/check_access.py
     if($LASTEXITCODE) { throw 'Validação de acessos falhou; consulte artifacts/reports/access-check.json.' }
 }
 function Test-Journey {
-    D @('exec','-T','jupyter','/usr/local/bin/_entrypoint.sh','python','-m','src.workbench.execute_journey')
-    $proposalId=(Get-Content -Raw 'artifacts/reports/journey-latest.json' | ConvertFrom-Json).execution_id
-    D @('exec','-T','jupyter','/usr/local/bin/_entrypoint.sh','python','-m','src.workbench.execute_notebook','02_teste_inferencia_planilha_turmas.ipynb','--proposal-id',$proposalId)
-    D @('run','--rm','--no-deps','--entrypoint','python','tools','-m','pytest','tests/integration/test_journey.py','-q','-o','cache_dir=/tmp/pytest-cache','--junitxml=/reports/journey-junit.xml')
+    foreach($name in @('00_ambiente','01_fontes_academicas','02_qualidade_dados','03_exploracao_demanda','04_treinamento_modelos','05_campanhas_lotes','06_avaliacao_modelos')) {
+        D @('exec','-T','jupyter','/usr/local/bin/_entrypoint.sh','python','-m','src.workbench.execute_notebook',"$name.ipynb")
+    }
+    Write-Host 'Treinamento Workbench concluído. Abra 07 para revisão explícita, 08 para deploy/geração e 09/10 para consulta/auditoria.'
 }
 function Rebuild {
     D @('build','mlflow','jupyter')
@@ -60,20 +61,19 @@ switch($Action) {
         D @('up','-d','--wait','--wait-timeout','180','postgres','rustfs','rabbitmq')
         foreach($step in @('bootstrap','migrate','buckets','seed')) { D @('run','--rm','--no-deps','tools',$step) }
         Check-Services
-        Test-Journey
         Test-Application
     }
     build { D @('build','mlflow','jupyter') }
-    rebuild { Rebuild; Test-Journey }
+    rebuild { Rebuild }
     journey { Test-Journey }
     acceptance {
-        Test-Journey
+        Test-Application
         D @('restart','mlflow')
         D @('up','-d','--wait','--wait-timeout','240','mlflow')
-        D @('run','--rm','--no-deps','--entrypoint','python','tools','-m','pytest','tests/integration/test_journey.py','-q','-o','cache_dir=/tmp/pytest-cache','--junitxml=/reports/journey-after-restart.xml')
+        Test-Application
         Rebuild
         # Check the SAME report/run/proposal after rebuilding, before creating another run.
-        D @('run','--rm','--no-deps','--entrypoint','python','tools','-m','pytest','tests/integration/test_journey.py','-q','-o','cache_dir=/tmp/pytest-cache','--junitxml=/reports/journey-after-rebuild.xml')
+        Test-Application
     }
     migrate {
         D @('run','--rm','--no-deps','tools','migrate')

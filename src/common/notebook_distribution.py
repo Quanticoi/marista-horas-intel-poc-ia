@@ -11,6 +11,23 @@ def distribute(source, workspace):
     record=workspace/".distribution.json"
     prior=json.loads(record.read_text()) if record.exists() else {}
     result={}
+    active={p.name for p in source.glob('*.ipynb')}
+    # Archive only previously distributed files; never move a user's own notebook.
+    for name in prior.keys()-active:
+        if Path(name).name!=name:
+            raise ValueError('Invalid notebook distribution record')
+        old=workspace/name
+        if old.exists():
+            digest=hashlib.sha256(old.read_bytes()).hexdigest()
+            backup=workspace.parent/'notebook-backups'
+            backup.mkdir(parents=True,exist_ok=True)
+            target=backup/(old.stem+'.'+digest+'.ipynb')
+            if target.exists():
+                if target.read_bytes()!=old.read_bytes():
+                    raise ValueError('Notebook backup checksum collision')
+                old.unlink()
+            else:
+                old.replace(target)
     for path in sorted(source.glob("*.ipynb")):
         digest=hashlib.sha256(path.read_bytes()).hexdigest()
         target=workspace/path.name

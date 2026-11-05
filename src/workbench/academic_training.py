@@ -8,7 +8,6 @@ from datetime import datetime,timezone
 import mlflow
 import mlflow.sklearn
 from mlflow.models import infer_signature
-from sklearn.dummy import DummyRegressor
 import numpy as np
 import psutil
 import resource
@@ -28,7 +27,7 @@ def fit_model(frame,manifest,item,campaign_id,batch_id,parent_run,eid,run_id,att
         raise RuntimeError('Training V4 requires the Jupyter Workbench container')
     client=mlflow.MlflowClient()
     train,ev,future=prepare(frame,item['course_code'])
-    selected=profile(item['metric_profile'])['selected']
+    selected=item.get('selected_metrics',profile(item['metric_profile'])['selected'])
     if not selected:
         raise ValueError('Select a forecast metric profile for this regression')
     algorithm=item['algorithm']
@@ -36,7 +35,7 @@ def fit_model(frame,manifest,item,campaign_id,batch_id,parent_run,eid,run_id,att
     if len(train)<8 or train.semester_index.nunique()<2:
         algorithm='dummy';fallback='INSUFFICIENT_TEMPORAL_HISTORY'
     model=AcademicComponents(algorithm=algorithm)
-    baseline=DummyRegressor(strategy='mean')
+    baseline=AcademicComponents(algorithm='dummy')
     tags=dict(run_type='MODEL',campaign_id=campaign_id,batch_id=batch_id,parent_run_id=parent_run,
         **{'mlflow.parentRunId':parent_run},solution_id='horas-inteligentes',environment='poc',
         domain='planilha-turmas',lineage_schema_version='HI-LINEAGE/1.2',cycle_code=manifest['target'],
@@ -48,7 +47,7 @@ def fit_model(frame,manifest,item,campaign_id,batch_id,parent_run,eid,run_id,att
         data_completeness=manifest['data_completeness'],history_window=json.dumps(manifest['history_window']),
         feedback_cycles_count='0',fallback_reason=fallback or 'NONE',executor='JUPYTER_WORKBENCH',
         worker_training='false',algorithm=algorithm,validation_status='TRAINED',attempt=str(attempt),
-        estimator_version='academic-components/2.0',metric_profile_sha256=digest(profile(item['metric_profile'])),
+        estimator_version='academic-components/2.0',metric_profile_sha256=digest(dict(profile(item['metric_profile']),selected=selected)),
         code_version=digest({str(p.relative_to(Path('/app'))):p.read_text() for p in sorted(Path('/app/src').rglob('*.py'))}))
     wall=time.monotonic();cpu=time.process_time();process=psutil.Process()
     resources=dict(executor_pid=os.getpid(),executor_host=os.getenv('HOSTNAME','unknown'))
@@ -57,14 +56,18 @@ def fit_model(frame,manifest,item,campaign_id,batch_id,parent_run,eid,run_id,att
         mlflow.log_params(dict(seed=manifest['seed'],algorithm=algorithm,requested_algorithm=item['algorithm'],
                               train_rows=len(train),evaluation_rows=len(ev),features=json.dumps(FEATURES),
                               targets=json.dumps(TARGETS),alpha=1.,max_train_cycle=str(train.cycle_code.max())))
-        model.fit(train[FEATURES],train[TARGETS])
-        baseline.fit(train[FEATURES],train[TARGETS])
+        cohort_cycles=train.cohort_id.astype(str)+'/'+train.cycle_code.astype(str)
+        model.fit(train[FEATURES],train[TARGETS],cohort_ids=cohort_cycles)
+        baseline.fit(train[FEATURES],train[TARGETS],cohort_ids=cohort_cycles)
         evaluations=[];metrics={}
         if len(ev):
             predictions=model.predict(ev[FEATURES]);base=baseline.predict(ev[FEATURES])
             for i,target in enumerate(TARGETS):
-                values=evaluate(ev[target],predictions[:,i],selected)
-                baseline_values=evaluate(ev[target],base[:,i],selected)
+                mask=~ev.cohort_id.duplicated() if target=='regular' else np.ones(len(ev),dtype=bool)
+                actual=ev.loc[mask,target]
+                predicted=predictions[mask,i]
+                values=evaluate(actual,predicted,selected)
+                baseline_values=evaluate(actual,base[mask,i],selected)
                 for name,value in values.items():
                     if value['status']=='EVALUATED':
                         metrics[target+'.'+name]=value['value']
@@ -73,9 +76,11 @@ def fit_model(frame,manifest,item,campaign_id,batch_id,parent_run,eid,run_id,att
                         metrics['baseline.'+target+'.'+name]=value['value']
                 evaluations.append(dict(task_type='regression',target_name=target,horizon='one-term',
                     split_id=str(ev.cycle_code.min())+'..'+str(ev.cycle_code.max()),data_class='SYNTHETIC',
-                    actual=ev[target].astype(float).tolist(),predicted=predictions[:,i].tolist(),metrics=values))
+                    observation_grain='cohort-cycle' if target=='regular' else 'offer-cycle',
+                    actual=actual.astype(float).tolist(),predicted=predicted.tolist(),metrics=values))
         mlflow.log_metrics(metrics)
         mlflow.log_dict(catalog(),'metric_catalog.json')
+        mlflow.log_dict(dict(profile(item['metric_profile']),selected=selected),'metric_profile.json')
         mlflow.log_dict(dict(evaluations=evaluations,status='EVALUATED' if len(ev) else 'NOT_EVALUATED',
                             reason=None if len(ev) else 'NO_TEMPORAL_HOLDOUT'),'model_errors.json')
         sample=train[FEATURES].head(3)

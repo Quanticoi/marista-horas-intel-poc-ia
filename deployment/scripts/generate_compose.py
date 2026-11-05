@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 shared = dict(DB_HOST="postgres", RABBITMQ_HOST="rabbitmq", RUNTIME="compose",
+    MLFLOW_OPERATIONS_EXPERIMENT_NAME='HI/POC/Operations/V4',
     MLFLOW_TRACKING_URI="http://mlflow:5000", MLFLOW_S3_ENDPOINT_URL="http://rustfs:9000",
     S3_BUCKET="pucpr-poc", API_URI="http://api:8000", INFERENCE_URI="http://inference:8001",
     MONITOR_URI="http://monitoramento:8010", DASHBOARD_URI="http://dashboard:8088",
@@ -68,7 +69,7 @@ for name, port, keys, dependencies in definitions:
         item['environment']['MLFLOW_WORKERS'] = '1'
     elif name == 'jupyter':
         command = ['/usr/local/bin/_entrypoint.sh', 'python', '-m', 'src.common.launch', 'jupyter']
-        item['volumes'] = ['./workspace:/workspace']
+        item['volumes'] = ['./workspace:/workspace','./data/reference:/reference:ro']
     elif name == 'worker':
         command = ['celery', '-A', 'src.workers.tasks:app', 'worker', '--beat', '--schedule=/tmp/celerybeat-schedule', '--loglevel=INFO', '--concurrency=2']
     else:

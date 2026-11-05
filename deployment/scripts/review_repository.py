@@ -8,7 +8,7 @@ from pathlib import Path
 
 root=Path(__file__).resolve().parents[2]
 paths=[]
-for folder in ('src','tests','deployment','dev','config','sql','notebooks','docs'):
+for folder in ('src','tests','deployment','config','sql','notebooks','docs'):
     paths.extend(p for p in (root/folder).rglob('*') if p.is_file()
                  and '__pycache__' not in p.parts and p.suffix in ('.py','.ps1','.sh','.md','.sql','.json','.yml','.yaml','.ipynb'))
 groups=defaultdict(list)
@@ -26,6 +26,6 @@ document=dict(timestamp_utc=datetime.now(timezone.utc).isoformat(),
     files=inventory,exact_duplicates=duplicates,
     limitations=['Exact nonempty file duplicates only; semantic review is documented separately',
                  'Runtime volumes, user notebooks, generated evidence and history are outside deletion scope'])
-output=root/'artifacts/reports/v2/repository-source-inventory.json'
+output=root/'artifacts/reports/v4/repository-source-inventory.json'
 output.write_text(json.dumps(document,indent=2),encoding='utf-8')
 print(f'Inspected {len(paths)} maintained files; {len(duplicates)} exact duplicate groups')

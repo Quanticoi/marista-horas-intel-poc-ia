@@ -23,7 +23,9 @@ def main():
         os.environ["RESET_PLAN_ID"]=str(UUID(args.reset_plan_id))
     source=Path("/workspace/notebooks" if args.workspace else "/app/notebooks")/args.notebook
     notebook=nbformat.read(source,as_version=4)
-    output=Path("/reports")/(source.stem+".executed.ipynb")
+    destination=Path(os.getenv('NOTEBOOK_REPORT_DIR','/reports/v4/notebooks'))
+    destination.mkdir(parents=True,exist_ok=True)
+    output=destination/(source.stem+".executed.ipynb")
     try:
         NotebookClient(notebook,timeout=240,kernel_name="pucpr",resources={"metadata":{"path":"/workspace"}}).execute()
     finally:

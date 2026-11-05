@@ -113,19 +113,41 @@ def log_summary(client,run_id,results,requested,selected):
             if value['status']=='EVALUATED':
                 client.log_metric(run_id,f'group{index}.{group["comparison"]["target_name"]}.{metric}',value['value'])
     with tempfile.TemporaryDirectory() as directory:
+        import pandas as pd
         path=Path(directory)/'campaign_summary.json'
         path.write_text(json.dumps(document,ensure_ascii=False,indent=2))
         client.log_artifact(run_id,str(path))
+        artifacts={
+            'metric_catalog.json':catalog(),
+            'quality_gates.json':dict(criteria=['FINISHED run','temporal holdout present','snapshot and artifact checksums'],
+                                      approval='EXPLICIT_HUMAN_TECHNICAL_REVIEW',real_quality='NOT_EVALUATED'),
+            'data_contract.json':dict(data_class='SYNTHETIC_HISTORY',regular_grain='cohort-cycle',additional_grain='offer-cycle',
+                                      future_labels_used=False,official_capacity=None),
+            'lineage_manifest.json':dict(status='RECORDED',models=[{k:r[k] for k in ('model_name','model_version','run_id','artifact_uri','artifact_sha256','snapshot_id')} for r in results])}
+        for name,body in artifacts.items():
+            path=Path(directory)/name;path.write_text(json.dumps(body,ensure_ascii=False,indent=2))
+            client.log_artifact(run_id,str(path))
+        metrics_rows=[dict(model_name=r['model_name'],model_version=r['model_version'],course_code=r['course_code'],metric=k,value=v)
+                     for r in results for k,v in r['metrics'].items()]
+        errors=[dict(model_name=r['model_name'],target=e['target_name'],actual=y,predicted=p,error=p-y)
+                for r in results for e in r['evaluations'] for y,p in zip(e['actual'],e['predicted'])]
+        for name,records in [('model_metrics.csv',metrics_rows),('model_errors.csv',errors)]:
+            path=Path(directory)/name;pd.DataFrame(records).to_csv(path,index=False)
+            client.log_artifact(run_id,str(path))
     return document
 
 
-def execute(snapshot_id,request_key,items=None,batch_size=2,max_workers=1,metric_profile='forecast_extended'):
+def execute(snapshot_id,request_key,items=None,batch_size=2,max_workers=1,metric_profile='forecast_extended',selected_metrics=None):
     require_workbench()
     UUID(str(snapshot_id))
     if not request_key or len(request_key)>160 or not 1<=batch_size<=20 or not 1<=max_workers<=2:
         raise ValueError('Invalid campaign key, batch size or concurrency (1..2)')
     items=items or [dict(course_code='2248',algorithm='ridge'),dict(course_code='2348',algorithm='dummy'),dict(course_code='2287',algorithm='ridge')]
     selected=profile(metric_profile)['selected']
+    if selected_metrics is not None:
+        from src.workbench.metrics_v4 import evaluate
+        evaluate([1.,2.],[1.,2.],selected_metrics)
+        selected=list(selected_metrics)
     if not selected:
         raise ValueError('Select forecast metrics')
     normalized=[]
@@ -134,6 +156,8 @@ def execute(snapshot_id,request_key,items=None,batch_size=2,max_workers=1,metric
         if not course.isdigit() or algorithm not in ('ridge','dummy'):
             raise ValueError('Invalid course/algorithm')
         normalized.append(dict(course_code=course,algorithm=algorithm,model_key=f'hi.demo.v4.c{course}.components',metric_profile=metric_profile))
+        if selected_metrics is not None:
+            normalized[-1]['selected_metrics']=selected
     if len({i['model_key'] for i in normalized})!=len(normalized):
         raise ValueError('One explicit algorithm per model identity/campaign; use a new campaign to compare versions')
     frame,manifest=load(snapshot_id)

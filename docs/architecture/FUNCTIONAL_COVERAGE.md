@@ -1,5 +1,22 @@
 # Responsabilidades e cobertura V3/V4.4
 
+## Atualização V4 — prevalece sobre o quadro histórico abaixo
+
+RF020–026: estrutura de coorte/regular/adicionais implementada com fontes e hipóteses
+sintéticas explícitas. Não há histórico oficial fornecido. RGN023: proposta inicial
+DRAFT_PENDING_COORDINATOR, sem docentes/horários/salas; gate acadêmico institucional
+não implementado. RF040–047: capacidade oficial ausente, modulação REFERENCE_ONLY;
+não aplicar teto40 nem converter vagas desejadas em regra. RF117–125: candidatos de
+unificação pendentes, sem efetivação ou anuência inferida. RF204–206: original imutável;
+feedback_cycles_count=0, sem ingestão de revisão intermediária para treino.
+
+Workbench faz fit local; worker somente inferência/persistência; API V2 entrega70 ofertas
+e107 atividades de origem. Foram testados cenários P164 e CiberSegurança. S03 permanece
+PENDING_DATA/PENDING_APPROVAL. Essas provas não homologam as regras V4.4 completas.
+Ver [fontes examinadas](V4_SOURCE_REVIEW.md) e [decisão V4](../adr/012-workbench-academic-v4.md).
+
+## Quadro histórico V3
+
 Fontes e URLs consultadas em [diagnóstico](../../artifacts/reports/correcoes-fase-a-2026-11-04.md).
 Não se afirma homologação das237 regras. O payload é provisório.
 

@@ -24,8 +24,12 @@ verify() {
   dc run --rm --no-deps --entrypoint python tools -m pytest tests/integration/test_journey.py -q -o cache_dir=/tmp/pytest-cache --junitxml=/reports/journey-junit.xml
 }
 case "$action" in
-  rebuild) rebuild; dc exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_journey; verify ;;
-  journey) dc exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_journey; verify ;;
-  acceptance) dc exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_journey; verify; dc restart mlflow; dc up -d --wait --wait-timeout 240 mlflow; verify; rebuild; verify ;;
+  rebuild) rebuild ;;
+  journey)
+    for book in 00_ambiente 01_fontes_academicas 02_qualidade_dados 03_exploracao_demanda 04_treinamento_modelos 05_campanhas_lotes 06_avaliacao_modelos; do
+      dc exec -T jupyter /usr/local/bin/_entrypoint.sh python -m src.workbench.execute_notebook "$book.ipynb"
+    done
+    echo 'Abra07 para revisão explícita,08 para deploy/geração e09/10 para consulta/auditoria.' ;;
+  acceptance) dc run --rm --no-deps --entrypoint python tools -m pytest tests/unit tests/integration -q -o cache_dir=/tmp/pytest --junitxml=/reports/v4/acceptance-junit.xml ;;
   *) echo 'Usage: journey.sh rebuild|journey|acceptance' >&2; exit 2 ;;
 esac

@@ -27,7 +27,7 @@ def main():
         os.environ["JUPYTER_TOKEN"]=required("JUPYTER_TOKEN")
         os.execvp("jupyter",["jupyter","lab","--ip=0.0.0.0","--port=8888","--no-browser",
             "--ServerApp.root_dir=/workspace",
-            "--ServerApp.default_url=/lab/tree/notebooks/01_jornada_completa_planilha_turmas.ipynb"])
+            "--ServerApp.default_url=/lab/tree/notebooks/00_ambiente.ipynb"])
     else:
         raise ValueError("Unknown service")
 

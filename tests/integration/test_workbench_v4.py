@@ -35,6 +35,7 @@ def test_three_real_models_and_artifact_identity(evidence):
         assert next(f['sha256'] for f in storage if f['key'].endswith('/model.pkl'))==model['artifact_sha256']
 
 
+@pytest.mark.skipif(not Path('/opt/conda').is_dir(),reason='Execute the Workbench integration suite in the Jupyter container')
 def test_repeat_campaign_has_no_new_run_or_version(evidence):
     repeated=execute(evidence['snapshot_id'],'v4-workbench-pilot-001')
     assert repeated==evidence

@@ -17,3 +17,5 @@ workspace/
 dev/
 history/
 data/compose-logs/
+data/reference/*
+!data/reference/README.md

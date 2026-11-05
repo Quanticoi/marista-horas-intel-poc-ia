@@ -14,8 +14,7 @@ Execute a partir da raiz do repositório. A rotina normal usa `compose.ps1`
 | `check_evidence_secrets.py` | Conferir ausência dos segredos locais nas evidências |
 | `review_repository.py` | Inventário de fontes/hashes e cópias idênticas |
 | `ci_diagnostics.py` | Diagnóstico sanitizado para o CI |
-| `build_journey_notebook.py` | Gerar o notebook principal a partir da implementação |
-| `build_notebook_catalog.py`, `catalog_v2.py` | Gerador e conteúdo dos nove notebooks auxiliares |
+| `build_v4_notebooks.py` | Gerar os12 notebooks V4; fontes anteriores em notebooks/legacy |
 | `reset_poc.py`, `reset_poc.ps1`, `reset_poc.sh` | Controlador externo de reset e wrappers; exigem escopo, plano e confirmação |
 | `publish_models.py` | Publicação C3 opcional, somente para modelos explicitamente aprovados |
 

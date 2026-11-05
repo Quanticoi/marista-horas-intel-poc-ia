@@ -6,6 +6,7 @@ from src.workbench.academic_data import prepare,FEATURES
 def frame():
     return pd.DataFrame([dict(offer_id='one',semester_index=i,period=2,course_code='2248',
                              curriculum_code='DEMO',shift='DEMO',cycle_code=str(i),
+                             cohort_id='cohort-'+str(i),regular_source='SYNTHETIC_INTAKE_RETENTION',
                              regular=10+i,dependency=i,elective=0,split='FUTURE' if i==4 else 'HISTORY') for i in range(5)])
 
 
@@ -30,3 +31,9 @@ def test_single_cycle_does_not_evaluate_training_rows():
 def test_unknown_scope_rejected():
     with pytest.raises(ValueError,match='scope'):
         prepare(frame(),'9999')
+
+
+def test_cohort_without_source_rejected():
+    source=frame();source.loc[0,'regular_source']=None
+    with pytest.raises(ValueError,match='source'):
+        prepare(source,'2248')

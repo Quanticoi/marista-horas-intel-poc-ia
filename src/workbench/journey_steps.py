@@ -45,7 +45,7 @@ def step(name, execution_id, statuses):
         event("journey", "stage completed", stage=name, correlation_id=execution_id, duration_seconds=duration, **trace_info)
 
 
-def dependencies(cfg, execution_id):
+def dependencies(cfg, execution_id, diagnostic_experiment='journey-diagnostics-proxy'):
     os.environ["MLFLOW_HTTP_REQUEST_TIMEOUT"] = str(cfg.timeout)
     os.environ["MLFLOW_HTTP_REQUEST_MAX_RETRIES"] = str(cfg.retries)
     mlflow.set_tracking_uri(cfg.tracking)
@@ -67,7 +67,7 @@ def dependencies(cfg, execution_id):
         if server.text.strip('"\n ') != mlflow.__version__:
             raise ValueError("MLflow server and SDK version mismatch")
         client = mlflow.MlflowClient()
-        name = "journey-diagnostics-proxy"
+        name = diagnostic_experiment
         experiment = client.get_experiment_by_name(name)
         eid = experiment.experiment_id if experiment else client.create_experiment(name)
         with mlflow.start_run(experiment_id=eid, tags={"purpose":"dependency-diagnostic", "execution_id":execution_id}) as run:
