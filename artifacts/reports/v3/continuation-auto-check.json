@@ -1,0 +1,3664 @@
+{
+  "timestamp_utc": "2026-11-05T03:14:19.295507+00:00",
+  "git_commit": "uncommitted",
+  "code_version": "sha256:5a056e0a851860143102c273a1abcd17809457c8ebb4fe14df97e635577c3c30",
+  "environment": "poc",
+  "project": "marista",
+  "test_id": "continuation-auto-check",
+  "status": "PASS",
+  "source_type": "DEMO",
+  "evidence": {
+    "continuation": {
+      "selection_source": "/reports/journey-latest.json",
+      "proposal_id": "1ff2ee34-c872-47ae-a166-ae12d8f24ac5",
+      "run_id": "6ac7e51b7b52456cb9b2230152691bed",
+      "model_name": "planilha-turmas-demo",
+      "model_version": "17",
+      "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794"
+    },
+    "proposal_id": "1ff2ee34-c872-47ae-a166-ae12d8f24ac5",
+    "http_pages": [
+      {
+        "schema_version": "poc-planilha-turmas-v1",
+        "contract_status": "PROVISÓRIO / PENDENTE DE HOMOLOGAÇÃO",
+        "proposal_id": "1ff2ee34-c872-47ae-a166-ae12d8f24ac5",
+        "execution_id": "1ff2ee34-c872-47ae-a166-ae12d8f24ac5",
+        "proposal_revision": 1,
+        "academic_cycle": {
+          "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
+          "cycle_code": "2026-1"
+        },
+        "status": "DRAFT",
+        "source_type": "DEMO",
+        "generated_at_utc": "2026-11-05T02:47:40.348895Z",
+        "lineage": {
+          "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+          "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
+          "dataset_sha256": "5fc39eeeead59aa48813182e6a93d2308a4a9243655501f17d09a981c6c66a56",
+          "training_campaign_id": null,
+          "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
+          "model_usages": [
+            {
+              "usage_id": "c4420ce1-ac23-4538-874d-aeb7c2f67c2b",
+              "proposal_id": "1ff2ee34-c872-47ae-a166-ae12d8f24ac5",
+              "inference_id": "ada1ffcb-9146-4be8-9437-deb9f455aa20",
+              "model_key": "planilha-turmas-demo",
+              "registered_model_name": "planilha-turmas-demo",
+              "model_version": "17",
+              "run_id": "6ac7e51b7b52456cb9b2230152691bed",
+              "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+              "artifact_uri": "models:/m-29e446a82b6b42c482d0b0d89ddb8727",
+              "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
+              "line_keys": [
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/39c82c86-d06e-5f26-9712-a92b4018084e/172d26b5-b285-5ec4-8971-f3f1cac5befb",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/39c82c86-d06e-5f26-9712-a92b4018084e/3c7c40f4-7b48-5e65-ad02-fdf7381ae7a3",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/39c82c86-d06e-5f26-9712-a92b4018084e/5bb84918-2141-55b8-aab6-01257acfa73d",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/519ead55-4294-52e1-b326-550e4be54cd0/53abed31-c5c0-504e-a7a9-f89f13a31fb3",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/519ead55-4294-52e1-b326-550e4be54cd0/8098c200-9822-56dc-a701-71f67f356b82",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/519ead55-4294-52e1-b326-550e4be54cd0/92d8e1a1-d0b5-550f-9bb8-2d5da8257e9e",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/92cbdefd-c378-5e89-b349-680d8e40f22a/688fbec4-cf65-5751-b833-a25d67593022",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/92cbdefd-c378-5e89-b349-680d8e40f22a/c2a826ce-7bb4-53ee-bc6e-b033835ed346",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/92cbdefd-c378-5e89-b349-680d8e40f22a/ffa92517-0737-5806-8b1b-62eab2e7d5ae",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/de0c4144-8a18-5c60-8573-743cb74009ce/1ce60ee2-d495-56bb-8a48-d1c11f65c144",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/de0c4144-8a18-5c60-8573-743cb74009ce/375ca167-b150-5463-a110-04a463a02a34",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/de0c4144-8a18-5c60-8573-743cb74009ce/5e794fa5-ebc2-5818-af19-adab742ae54c",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/5ba5a515-9267-53eb-bf2a-37300a1f7959/0fe74283-21dd-5d9f-bfd6-57800f86db24",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/5ba5a515-9267-53eb-bf2a-37300a1f7959/42a016c4-dcca-5181-8388-eea404f250fc",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/5ba5a515-9267-53eb-bf2a-37300a1f7959/f7d5a0d8-6797-5771-b9ba-ebc3b069371f",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/700b2ae9-d638-57bb-8fab-194eb40d1da4/50f4415e-d42d-5fc7-9cf7-894730168974",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/700b2ae9-d638-57bb-8fab-194eb40d1da4/6392c068-b292-5d42-a4e7-6373ff28f104",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/700b2ae9-d638-57bb-8fab-194eb40d1da4/adc49922-68e9-54dc-b3c9-71ea40981cac",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/40757ba2-4564-5afd-b849-7358fae40278/1c5b657a-6949-547e-9038-edb557319489",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/40757ba2-4564-5afd-b849-7358fae40278/b152b386-2a9b-565f-873c-2796879df6ef",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/40757ba2-4564-5afd-b849-7358fae40278/ce6b1457-0a42-5e7d-80d3-11ebb7d66021",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/091796e5-f9ab-5bd9-bdc8-2e0541a909b7/2ce5fac5-a220-596c-89ca-e50248b9f787",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/091796e5-f9ab-5bd9-bdc8-2e0541a909b7/8218d686-3a60-5d8a-8928-ed5bfa78388b",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/091796e5-f9ab-5bd9-bdc8-2e0541a909b7/8a937ed3-cc02-5ef0-be9c-707e1632b896",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/86a57368-09d6-56dc-b40e-a32cbad43a80/194cfc65-8048-52a1-8a23-f710f4f98677",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/86a57368-09d6-56dc-b40e-a32cbad43a80/efa5e2fe-6bc2-55e2-8ee1-e06d79652cd9",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/86a57368-09d6-56dc-b40e-a32cbad43a80/fa398322-6ed9-5b54-b96b-877146072734",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/57de3178-30c7-5132-bd3c-82b864298e3b/38e68563-91aa-538f-9259-90de0a981937",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/57de3178-30c7-5132-bd3c-82b864298e3b/9543e657-70e9-510f-b098-f06caaeee290",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/57de3178-30c7-5132-bd3c-82b864298e3b/b622211b-d68f-5cdb-b9a5-ba2cc664f0ca",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/6fcf36cd-b0ad-5c15-951d-b8480e526ed9/609e8719-9547-51b8-91e5-d62dde07bdcb",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/6fcf36cd-b0ad-5c15-951d-b8480e526ed9/e7d54daf-4b4b-5873-863b-6a3e2460055d",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/6fcf36cd-b0ad-5c15-951d-b8480e526ed9/f2f3ef5f-d02e-50cc-b688-46c073531142",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/ca85135b-5d7f-5b48-9607-d21bef7b19e7/1dbb0c7a-a06e-5391-94f7-e66a9772710a",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/ca85135b-5d7f-5b48-9607-d21bef7b19e7/29b63fe1-0176-5c74-b0ec-19c6f49e29ab",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/ca85135b-5d7f-5b48-9607-d21bef7b19e7/c34b53c9-f111-5b6f-99bc-7b4c690a2844",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/d857c32c-2ede-57b0-8f4b-c518c6f58b0c/06aec98c-45f6-5f1a-8d46-43b4c9a9dbfd",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/d857c32c-2ede-57b0-8f4b-c518c6f58b0c/c10139ce-26f2-5b96-a663-cf6f81997f55",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/d857c32c-2ede-57b0-8f4b-c518c6f58b0c/e3a0f6d8-03d7-5a24-8340-403f5c079bf8",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5/32bca1e7-a25c-57fd-ada6-5a95c5eb72b3",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5/9066134a-d15f-5a88-a108-e00b7751ee57",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5/aab33457-c511-5b79-aa15-9c901359316d",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/41c3929c-1c6a-58f7-922d-12aadd80b90d/9ec8f663-5e7c-5142-88f5-5538222b7c23",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/41c3929c-1c6a-58f7-922d-12aadd80b90d/b9769fda-6719-5dc8-bcbd-75406869647d",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/41c3929c-1c6a-58f7-922d-12aadd80b90d/fe7e16ea-0734-5c44-a205-287383be22b2",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/5dbb1a48-f1c2-5ede-81d4-d9ce7822f847/42a3b207-149e-5ccb-a930-5b4be8a1fd29",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/5dbb1a48-f1c2-5ede-81d4-d9ce7822f847/8a60dc2b-0ca1-5c23-a106-795e0b48e8a4",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/5dbb1a48-f1c2-5ede-81d4-d9ce7822f847/fb312f47-d066-5068-aa10-452814d78674",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/c4119e4d-2581-55b4-8247-851618d67d24/9ab5625e-c91f-5516-8e1d-92207f874181",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/c4119e4d-2581-55b4-8247-851618d67d24/afa34afc-d83e-5fa2-b388-a7c94ec76b2b",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/c4119e4d-2581-55b4-8247-851618d67d24/f7f306ea-dcfc-5409-a114-ac44c061a43c",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/e187f9a1-bc73-5576-942f-c8d22494a4fe/14aab45f-b3b5-5759-b67d-3c333c62d6f3",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/e187f9a1-bc73-5576-942f-c8d22494a4fe/27c09d18-9aa6-58d5-bf1c-0ae229213d31",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/e187f9a1-bc73-5576-942f-c8d22494a4fe/2d170116-80ed-558e-95bd-eaad5bacdd98",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/eef3d892-bcd4-56ca-9bd1-79da013febc4/56b61553-580a-58c2-921a-cb2d40ea7454",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/eef3d892-bcd4-56ca-9bd1-79da013febc4/98509f74-bf63-58aa-b8c5-dc94b2083b63",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/eef3d892-bcd4-56ca-9bd1-79da013febc4/e2e94aa6-6723-5eb2-a719-a065612e6e6e",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/1242140c-7db4-52dd-97c1-8d59049bc649/0980db59-0bdc-5793-8790-c96bb0c0cef3",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/1242140c-7db4-52dd-97c1-8d59049bc649/6a3168a5-cdc1-527f-a96d-b0b00e20f974",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/1242140c-7db4-52dd-97c1-8d59049bc649/d05f92a9-5ed0-511f-b726-84f5d688d7e1",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/156d48f4-518d-56a5-979d-583889c73b00/4cbba3f2-9b60-5b39-acaa-eb27f147f39b",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/156d48f4-518d-56a5-979d-583889c73b00/db8ede48-5759-58c6-bceb-d9f1d46390f7",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/156d48f4-518d-56a5-979d-583889c73b00/e13447e0-ff3a-5b55-a0c8-eb5438c711b3",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/8d2c27c1-8e41-512f-a583-8e71a8c16cf2/338a2861-f169-56d6-9ad1-3e9ade1d0ad2",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/8d2c27c1-8e41-512f-a583-8e71a8c16cf2/8ee403ce-1f1f-5f05-9a69-d334b6a0f336",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/8d2c27c1-8e41-512f-a583-8e71a8c16cf2/ea87f810-29bf-5f39-994d-6f9d5b4e39a3",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44/b930edda-3bd4-5f87-8f4c-523332d16f25",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44/ba7dabb6-7270-5373-804d-5c08b98ddb9b",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44/d8ce034d-0b00-5d38-9d85-13144d561816",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/003a4014-8321-5d09-b9bc-0f04d766cc80/287be3ca-ba3e-529a-9cc5-793e7100c256",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/003a4014-8321-5d09-b9bc-0f04d766cc80/2fc900fc-f0d2-5a86-a7b4-47f459b106fd",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/003a4014-8321-5d09-b9bc-0f04d766cc80/dda0054f-9d3f-54be-b8ea-e0dbd0205b19",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/b30529c9-d516-5198-9cee-d437f659e7ff/3916ddaf-eda4-515d-93d7-3332a64fb863",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/b30529c9-d516-5198-9cee-d437f659e7ff/7cd10b51-fc85-5df7-8405-a4465913d5bb",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/b30529c9-d516-5198-9cee-d437f659e7ff/fdeda6c6-639b-5a1a-9cc5-c12363df3a41",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/468f544b-e1ab-58e0-a4f7-9afc1e52d0d4/39b814dd-1b1c-50fa-9360-9468823408ec",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/468f544b-e1ab-58e0-a4f7-9afc1e52d0d4/6a697fb0-3d06-5ce3-b2df-361f05903296",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/468f544b-e1ab-58e0-a4f7-9afc1e52d0d4/94c4439a-f120-5717-99ca-e75253a91c6d",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/a10d68c5-35a1-55d2-a73c-249467d5f8a6/31060a5d-d28c-5a39-8058-3c90bfeb10dc",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/a10d68c5-35a1-55d2-a73c-249467d5f8a6/4d443fbc-f291-52a7-b44a-f0542f0c0f25",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/a10d68c5-35a1-55d2-a73c-249467d5f8a6/faab36ea-9905-5403-a038-ea649a2bd8a5",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/11e42499-2538-5286-a8b9-3fda55802247/7be88ed9-6727-5199-8c91-d8d65ce784fb",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/11e42499-2538-5286-a8b9-3fda55802247/d30d0d0a-6af3-5ba7-b60d-e25d687c1e69",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/11e42499-2538-5286-a8b9-3fda55802247/e7f05bc1-407f-5670-84d7-aae409217d6f",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/1494b22f-3999-5714-ba12-3e8a1c65117c/5ebf59a4-4457-529e-98cb-04d804233a7c",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/1494b22f-3999-5714-ba12-3e8a1c65117c/7064e2c5-ce43-55f0-b151-5d1dd109de0f",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/1494b22f-3999-5714-ba12-3e8a1c65117c/88a31222-4af5-5120-9605-d6ebb48844b8",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/2dec980d-d374-52f3-a770-b0a4c5e58075/034d1ca1-826e-51e8-9488-3725eed651c8",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/2dec980d-d374-52f3-a770-b0a4c5e58075/c206847e-bf0d-5fe7-aded-61eb3ccdd02d",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/2dec980d-d374-52f3-a770-b0a4c5e58075/f49a5c98-91da-5ff7-b5e6-d4019060dc48"
+              ],
+              "provenance_status": "VERIFIED",
+              "created_at_utc": "2026-11-05 02:47:40.348895+00:00"
+            }
+          ]
+        },
+        "offers": [
+          {
+            "offer_id": "c268226e-6532-5927-9ed5-f2f6ae27177b",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
+            "period_id": "39c82c86-d06e-5f26-9712-a92b4018084e",
+            "discipline_id": "172d26b5-b285-5ec4-8971-f3f1cac5befb",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 102.0899549884389,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 103,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "c451556d-14d9-5d86-be9d-568423b8d7b7",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
+            "period_id": "39c82c86-d06e-5f26-9712-a92b4018084e",
+            "discipline_id": "3c7c40f4-7b48-5e65-ad02-fdf7381ae7a3",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 102.0899549884389,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 103,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "c900b3e8-e237-5531-895b-bfe6fa7851a4",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
+            "period_id": "39c82c86-d06e-5f26-9712-a92b4018084e",
+            "discipline_id": "5bb84918-2141-55b8-aab6-01257acfa73d",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 102.0899549884389,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 103,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "455ffcd7-bf42-5f21-9329-361cf19999fe",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
+            "period_id": "519ead55-4294-52e1-b326-550e4be54cd0",
+            "discipline_id": "53abed31-c5c0-504e-a7a9-f89f13a31fb3",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 103.24551054399446,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 104,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "74e6da20-22c3-55a3-88ae-097ce479d227",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
+            "period_id": "519ead55-4294-52e1-b326-550e4be54cd0",
+            "discipline_id": "8098c200-9822-56dc-a701-71f67f356b82",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 103.24551054399447,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 104,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "bcc3b844-4069-5eee-a2a8-2e2545087c8f",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "0169f756-26d1-5ad6-acd4-4e6b0e319939",
+            "period_id": "519ead55-4294-52e1-b326-550e4be54cd0",
+            "discipline_id": "92d8e1a1-d0b5-550f-9bb8-2d5da8257e9e",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 103.24551054399447,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 104,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "40834ccd-3eb4-5bca-a24e-081a405c4814",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
+            "period_id": "92cbdefd-c378-5e89-b349-680d8e40f22a",
+            "discipline_id": "688fbec4-cf65-5751-b833-a25d67593022",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 93.98545048393441,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 94,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6685b726-7103-5468-b1e1-1d751ecb0320",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
+            "period_id": "92cbdefd-c378-5e89-b349-680d8e40f22a",
+            "discipline_id": "c2a826ce-7bb4-53ee-bc6e-b033835ed346",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 93.98545048393441,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 94,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "dc34bead-69e4-541d-b56b-f89c8d9edbce",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
+            "period_id": "92cbdefd-c378-5e89-b349-680d8e40f22a",
+            "discipline_id": "ffa92517-0737-5806-8b1b-62eab2e7d5ae",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 93.98545048393441,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 94,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "0c78088c-f581-5755-aec4-d42a638df98f",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
+            "period_id": "de0c4144-8a18-5c60-8573-743cb74009ce",
+            "discipline_id": "1ce60ee2-d495-56bb-8a48-d1c11f65c144",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 95.67433937282331,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 96,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "471eb281-5edc-5544-8ac1-46e74dfbc953",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
+            "period_id": "de0c4144-8a18-5c60-8573-743cb74009ce",
+            "discipline_id": "375ca167-b150-5463-a110-04a463a02a34",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 95.67433937282331,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 96,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "773fcb1c-79cf-5e4f-a07e-a843dfa3e1e0",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "09786e25-3a0e-5ebe-805c-207a72d98b74",
+            "period_id": "de0c4144-8a18-5c60-8573-743cb74009ce",
+            "discipline_id": "5e794fa5-ebc2-5818-af19-adab742ae54c",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 95.67433937282331,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 96,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6fdb6cbd-31ef-5622-9dd2-40d776c5cfd3",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
+            "period_id": "5ba5a515-9267-53eb-bf2a-37300a1f7959",
+            "discipline_id": "0fe74283-21dd-5d9f-bfd6-57800f86db24",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 102.9812462797302,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 103,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "8f5d7b18-3027-5e05-a90a-385a1d722c7e",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
+            "period_id": "5ba5a515-9267-53eb-bf2a-37300a1f7959",
+            "discipline_id": "42a016c4-dcca-5181-8388-eea404f250fc",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 102.9812462797302,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 103,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "fcadc8ea-145b-50dc-bf97-f436e60151f3",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
+            "period_id": "5ba5a515-9267-53eb-bf2a-37300a1f7959",
+            "discipline_id": "f7d5a0d8-6797-5771-b9ba-ebc3b069371f",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 102.9812462797302,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 103,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "dcd25949-279f-5148-9096-b302ef950d38",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
+            "period_id": "700b2ae9-d638-57bb-8fab-194eb40d1da4",
+            "discipline_id": "50f4415e-d42d-5fc7-9cf7-894730168974",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 102.71457961306353,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 103,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "bf8ab886-ff1d-5ee1-8361-2c0e10abe814",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
+            "period_id": "700b2ae9-d638-57bb-8fab-194eb40d1da4",
+            "discipline_id": "6392c068-b292-5d42-a4e7-6373ff28f104",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 102.71457961306353,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 103,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "a8272136-e8c3-5924-946b-18ef68769054",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "1941ee37-2dcd-5589-bcc7-7f64156201a1",
+            "period_id": "700b2ae9-d638-57bb-8fab-194eb40d1da4",
+            "discipline_id": "adc49922-68e9-54dc-b3c9-71ea40981cac",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 102.71457961306353,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 103,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "52cf1573-8e43-5bb6-a2e7-82c0fc424951",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
+            "period_id": "2dec980d-d374-52f3-a770-b0a4c5e58075",
+            "discipline_id": "034d1ca1-826e-51e8-9488-3725eed651c8",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 113.69616801656409,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 114,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "e62953f3-f620-5416-9b14-840fb98d0a26",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
+            "period_id": "2dec980d-d374-52f3-a770-b0a4c5e58075",
+            "discipline_id": "c206847e-bf0d-5fe7-aded-61eb3ccdd02d",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 113.69616801656409,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 114,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "b75c4443-ab05-5980-9772-fd4432fa0250",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
+            "period_id": "2dec980d-d374-52f3-a770-b0a4c5e58075",
+            "discipline_id": "f49a5c98-91da-5ff7-b5e6-d4019060dc48",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 113.69616801656409,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 114,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6513195a-8671-5331-94e6-070115972858",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
+            "period_id": "40757ba2-4564-5afd-b849-7358fae40278",
+            "discipline_id": "1c5b657a-6949-547e-9038-edb557319489",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 113.43526141442933,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 114,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6d9ee8de-422e-5b0c-b718-c0084802b04a",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
+            "period_id": "40757ba2-4564-5afd-b849-7358fae40278",
+            "discipline_id": "b152b386-2a9b-565f-873c-2796879df6ef",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 113.4352614144293,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 114,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6aa4dd29-b31a-5767-b0e5-93cea18cdd93",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "208586ed-41d4-56f8-9a3c-d971d5bbd016",
+            "period_id": "40757ba2-4564-5afd-b849-7358fae40278",
+            "discipline_id": "ce6b1457-0a42-5e7d-80d3-11ebb7d66021",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 113.4352614144293,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 114,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "57b2d0b1-50d6-56f6-b176-25eb6ec3e11f",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
+            "period_id": "091796e5-f9ab-5bd9-bdc8-2e0541a909b7",
+            "discipline_id": "2ce5fac5-a220-596c-89ca-e50248b9f787",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 95.32839342687737,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 96,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "7a95fc31-51f3-5dc9-836d-45c880fa9e83",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
+            "period_id": "091796e5-f9ab-5bd9-bdc8-2e0541a909b7",
+            "discipline_id": "8218d686-3a60-5d8a-8928-ed5bfa78388b",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 95.32839342687737,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 96,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "c948e803-9d3f-54fb-ad79-d0cc9d0bcf35",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
+            "period_id": "091796e5-f9ab-5bd9-bdc8-2e0541a909b7",
+            "discipline_id": "8a937ed3-cc02-5ef0-be9c-707e1632b896",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 95.32839342687737,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 96,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6b13ca92-9773-5784-a0dd-8418ccb96af6",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
+            "period_id": "86a57368-09d6-56dc-b40e-a32cbad43a80",
+            "discipline_id": "194cfc65-8048-52a1-8a23-f710f4f98677",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 95.7728378713218,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 96,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "144dac92-ff62-5268-87f8-b28938a5d8d0",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
+            "period_id": "86a57368-09d6-56dc-b40e-a32cbad43a80",
+            "discipline_id": "efa5e2fe-6bc2-55e2-8ee1-e06d79652cd9",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 95.77283787132181,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 96,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "a8f4c7f3-e7ff-5f51-8953-8135da759ae8",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4",
+            "period_id": "86a57368-09d6-56dc-b40e-a32cbad43a80",
+            "discipline_id": "fa398322-6ed9-5b54-b96b-877146072734",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 95.77283787132181,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 96,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "96600725-2158-5655-8ebd-6103d690220a",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
+            "period_id": "57de3178-30c7-5132-bd3c-82b864298e3b",
+            "discipline_id": "38e68563-91aa-538f-9259-90de0a981937",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 103.13379883228276,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 104,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "ecb5fa5e-b562-5445-8950-a0158e743cc1",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
+            "period_id": "57de3178-30c7-5132-bd3c-82b864298e3b",
+            "discipline_id": "9543e657-70e9-510f-b098-f06caaeee290",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 103.13379883228276,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 104,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "2fa5e846-14da-516b-b645-79c927b85ccd",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
+            "period_id": "57de3178-30c7-5132-bd3c-82b864298e3b",
+            "discipline_id": "b622211b-d68f-5cdb-b9a5-ba2cc664f0ca",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 103.13379883228278,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 104,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "adeb0295-2325-5ca4-8f93-c02d9184ac9e",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
+            "period_id": "6fcf36cd-b0ad-5c15-951d-b8480e526ed9",
+            "discipline_id": "609e8719-9547-51b8-91e5-d62dde07bdcb",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 98.7782432767272,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 99,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "b017c514-c348-58f0-9870-569ac999a093",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
+            "period_id": "6fcf36cd-b0ad-5c15-951d-b8480e526ed9",
+            "discipline_id": "e7d54daf-4b4b-5873-863b-6a3e2460055d",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 98.77824327672721,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 99,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "3926d204-771c-58e6-a6c3-3db7c555bd35",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "457fa5ba-5f8f-53f4-bef1-e72d74558eef",
+            "period_id": "6fcf36cd-b0ad-5c15-951d-b8480e526ed9",
+            "discipline_id": "f2f3ef5f-d02e-50cc-b688-46c073531142",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 98.77824327672721,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 99,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "bbfe9c75-0e99-5494-889f-569be22d1293",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
+            "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
+            "discipline_id": "1dbb0c7a-a06e-5391-94f7-e66a9772710a",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 80.82629132477526,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 81,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "35371ccf-edef-571b-9237-26ee37451a85",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
+            "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
+            "discipline_id": "29b63fe1-0176-5c74-b0ec-19c6f49e29ab",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 80.82629132477526,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 81,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "4cad7555-193f-591e-b7d4-2f853bc55b28",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
+            "period_id": "ca85135b-5d7f-5b48-9607-d21bef7b19e7",
+            "discipline_id": "c34b53c9-f111-5b6f-99bc-7b4c690a2844",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 80.82629132477526,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 81,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "cf11a39b-91fd-598a-acbb-bc2d789bd0b0",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
+            "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
+            "discipline_id": "06aec98c-45f6-5f1a-8d46-43b4c9a9dbfd",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 81.62629132477525,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 82,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "4b1e72fc-019f-5fad-a994-7d93fc902f7a",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
+            "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
+            "discipline_id": "c10139ce-26f2-5b96-a663-cf6f81997f55",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 81.62629132477524,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 82,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "4be82078-0259-51eb-8426-2c8f26b43db7",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "49386655-1d9f-5160-a775-8605d1fd0d5b",
+            "period_id": "d857c32c-2ede-57b0-8f4b-c518c6f58b0c",
+            "discipline_id": "e3a0f6d8-03d7-5a24-8340-403f5c079bf8",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 81.62629132477525,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 82,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "e0b8f5a9-b34d-5bda-91f0-c2491d94ded7",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
+            "period_id": "096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5",
+            "discipline_id": "32bca1e7-a25c-57fd-ada6-5a95c5eb72b3",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 106.398063096547,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 107,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "5474bfff-1533-54c1-bfc6-9ba85fb9540a",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
+            "period_id": "096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5",
+            "discipline_id": "9066134a-d15f-5a88-a108-e00b7751ee57",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 106.398063096547,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 107,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "9012a8f6-8feb-5893-91fd-b2c7b596af77",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
+            "period_id": "096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5",
+            "discipline_id": "aab33457-c511-5b79-aa15-9c901359316d",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 106.398063096547,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 107,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "9f9a8e2c-628f-5ace-825c-f100fbe25738",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
+            "period_id": "41c3929c-1c6a-58f7-922d-12aadd80b90d",
+            "discipline_id": "9ec8f663-5e7c-5142-88f5-5538222b7c23",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 105.15361865210255,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 106,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "588f7569-5269-56a1-862b-dfdeef55fbc4",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
+            "period_id": "41c3929c-1c6a-58f7-922d-12aadd80b90d",
+            "discipline_id": "b9769fda-6719-5dc8-bcbd-75406869647d",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 105.15361865210255,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 106,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "61c5ecae-3309-5605-9f42-a303834b0b98",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "51c93fe9-88d4-57c3-9df9-18ce089b44c0",
+            "period_id": "41c3929c-1c6a-58f7-922d-12aadd80b90d",
+            "discipline_id": "fe7e16ea-0734-5c44-a205-287383be22b2",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 105.15361865210257,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 106,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "94aa131c-6f33-5426-b405-a7802a08cf38",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
+            "period_id": "5dbb1a48-f1c2-5ede-81d4-d9ce7822f847",
+            "discipline_id": "42a3b207-149e-5ccb-a930-5b4be8a1fd29",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 87.3698348683188,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 88,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "18224566-1d3c-5e36-b73b-02a24283ebf8",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
+            "period_id": "5dbb1a48-f1c2-5ede-81d4-d9ce7822f847",
+            "discipline_id": "8a60dc2b-0ca1-5c23-a106-795e0b48e8a4",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 87.3698348683188,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 88,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          }
+        ],
+        "validation": [
+          {
+            "rule_id": "POC-DRAFT",
+            "status": "PASS",
+            "reason": "Proposta demonstrativa sem aprovação automática",
+            "evidence": "proposal_generations.status"
+          },
+          {
+            "rule_id": "RF008-partial",
+            "status": "PASS",
+            "reason": "Sem docente/horário/sala na representação inicial; matriz institucional não homologada",
+            "evidence": "offers.teacher_suggestion"
+          },
+          {
+            "rule_id": "RGN001/US027",
+            "status": "NOT_EVALUATED",
+            "reason": "Decisão humana e prevalência de edições não exercitadas pelo DEMO",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RGN002/RF010",
+            "status": "NOT_EVALUATED",
+            "reason": "Integração institucional entre todos os cursos não demonstrada",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RGN003/RF021–025/US029–030",
+            "status": "NOT_EVALUATED",
+            "reason": "Alvo agregado; composição regular/dependência/eletiva da previsão desconhecida",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RGN023/US028",
+            "status": "NOT_EVALUATED",
+            "reason": "Gate de validação da matriz depende da aplicação",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF009/RF020/US026",
+            "status": "NOT_EVALUATED",
+            "reason": "Turno, coorte de ingresso e matriz homologada indisponíveis",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF040–047/US033–034",
+            "status": "NOT_EVALUATED",
+            "reason": "Capacidade DEMO não é regra institucional; unificação não validada",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF117–125",
+            "status": "NOT_EVALUATED",
+            "reason": "Sem elegibilidade PRIME/Escola/turno ou aprovação GQA",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF155–159/US005–006",
+            "status": "NOT_EVALUATED",
+            "reason": "SQL sintético e temporal; nenhuma integração institucional validada",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF195–199/US016",
+            "status": "NOT_EVALUATED",
+            "reason": "Auditoria técnica parcial; perfis institucionais/exportação não demonstrados",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF204–206/US017",
+            "status": "NOT_EVALUATED",
+            "reason": "Original preservado; revisão humana e feedback validado ainda indisponíveis",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "US022",
+            "status": "NOT_EVALUATED",
+            "reason": "Responsabilidade funcional não demonstrada por este ensaio",
+            "evidence": "DEMO scope"
+          }
+        ],
+        "total_rows": 90,
+        "limit": 50,
+        "offset": 0,
+        "payload_sha256": "bbc1ef169c65c50559dea56ca13474f7c489ee804b15220c80899b786c91e785"
+      },
+      {
+        "schema_version": "poc-planilha-turmas-v1",
+        "contract_status": "PROVISÓRIO / PENDENTE DE HOMOLOGAÇÃO",
+        "proposal_id": "1ff2ee34-c872-47ae-a166-ae12d8f24ac5",
+        "execution_id": "1ff2ee34-c872-47ae-a166-ae12d8f24ac5",
+        "proposal_revision": 1,
+        "academic_cycle": {
+          "academic_cycle_id": "0fa6938d-2743-56ae-a057-dffd2274d90a",
+          "cycle_code": "2026-1"
+        },
+        "status": "DRAFT",
+        "source_type": "DEMO",
+        "generated_at_utc": "2026-11-05T02:47:40.348895Z",
+        "lineage": {
+          "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+          "snapshot_sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
+          "dataset_sha256": "5fc39eeeead59aa48813182e6a93d2308a4a9243655501f17d09a981c6c66a56",
+          "training_campaign_id": null,
+          "ruleset_version": "POC-whole-cohort-ceil-capacity-v1",
+          "model_usages": [
+            {
+              "usage_id": "c4420ce1-ac23-4538-874d-aeb7c2f67c2b",
+              "proposal_id": "1ff2ee34-c872-47ae-a166-ae12d8f24ac5",
+              "inference_id": "ada1ffcb-9146-4be8-9437-deb9f455aa20",
+              "model_key": "planilha-turmas-demo",
+              "registered_model_name": "planilha-turmas-demo",
+              "model_version": "17",
+              "run_id": "6ac7e51b7b52456cb9b2230152691bed",
+              "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+              "artifact_uri": "models:/m-29e446a82b6b42c482d0b0d89ddb8727",
+              "artifact_sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+              "ruleset_hash": "128eb5d2188245d1650f60b0c847efa75508dbe8912ca6c2333a975c662abe3a",
+              "line_keys": [
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/39c82c86-d06e-5f26-9712-a92b4018084e/172d26b5-b285-5ec4-8971-f3f1cac5befb",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/39c82c86-d06e-5f26-9712-a92b4018084e/3c7c40f4-7b48-5e65-ad02-fdf7381ae7a3",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/39c82c86-d06e-5f26-9712-a92b4018084e/5bb84918-2141-55b8-aab6-01257acfa73d",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/519ead55-4294-52e1-b326-550e4be54cd0/53abed31-c5c0-504e-a7a9-f89f13a31fb3",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/519ead55-4294-52e1-b326-550e4be54cd0/8098c200-9822-56dc-a701-71f67f356b82",
+                "0169f756-26d1-5ad6-acd4-4e6b0e319939/519ead55-4294-52e1-b326-550e4be54cd0/92d8e1a1-d0b5-550f-9bb8-2d5da8257e9e",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/92cbdefd-c378-5e89-b349-680d8e40f22a/688fbec4-cf65-5751-b833-a25d67593022",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/92cbdefd-c378-5e89-b349-680d8e40f22a/c2a826ce-7bb4-53ee-bc6e-b033835ed346",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/92cbdefd-c378-5e89-b349-680d8e40f22a/ffa92517-0737-5806-8b1b-62eab2e7d5ae",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/de0c4144-8a18-5c60-8573-743cb74009ce/1ce60ee2-d495-56bb-8a48-d1c11f65c144",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/de0c4144-8a18-5c60-8573-743cb74009ce/375ca167-b150-5463-a110-04a463a02a34",
+                "09786e25-3a0e-5ebe-805c-207a72d98b74/de0c4144-8a18-5c60-8573-743cb74009ce/5e794fa5-ebc2-5818-af19-adab742ae54c",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/5ba5a515-9267-53eb-bf2a-37300a1f7959/0fe74283-21dd-5d9f-bfd6-57800f86db24",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/5ba5a515-9267-53eb-bf2a-37300a1f7959/42a016c4-dcca-5181-8388-eea404f250fc",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/5ba5a515-9267-53eb-bf2a-37300a1f7959/f7d5a0d8-6797-5771-b9ba-ebc3b069371f",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/700b2ae9-d638-57bb-8fab-194eb40d1da4/50f4415e-d42d-5fc7-9cf7-894730168974",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/700b2ae9-d638-57bb-8fab-194eb40d1da4/6392c068-b292-5d42-a4e7-6373ff28f104",
+                "1941ee37-2dcd-5589-bcc7-7f64156201a1/700b2ae9-d638-57bb-8fab-194eb40d1da4/adc49922-68e9-54dc-b3c9-71ea40981cac",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/40757ba2-4564-5afd-b849-7358fae40278/1c5b657a-6949-547e-9038-edb557319489",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/40757ba2-4564-5afd-b849-7358fae40278/b152b386-2a9b-565f-873c-2796879df6ef",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/40757ba2-4564-5afd-b849-7358fae40278/ce6b1457-0a42-5e7d-80d3-11ebb7d66021",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/091796e5-f9ab-5bd9-bdc8-2e0541a909b7/2ce5fac5-a220-596c-89ca-e50248b9f787",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/091796e5-f9ab-5bd9-bdc8-2e0541a909b7/8218d686-3a60-5d8a-8928-ed5bfa78388b",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/091796e5-f9ab-5bd9-bdc8-2e0541a909b7/8a937ed3-cc02-5ef0-be9c-707e1632b896",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/86a57368-09d6-56dc-b40e-a32cbad43a80/194cfc65-8048-52a1-8a23-f710f4f98677",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/86a57368-09d6-56dc-b40e-a32cbad43a80/efa5e2fe-6bc2-55e2-8ee1-e06d79652cd9",
+                "2e2dc7c1-d4d8-5bba-8bd6-145a645cd4a4/86a57368-09d6-56dc-b40e-a32cbad43a80/fa398322-6ed9-5b54-b96b-877146072734",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/57de3178-30c7-5132-bd3c-82b864298e3b/38e68563-91aa-538f-9259-90de0a981937",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/57de3178-30c7-5132-bd3c-82b864298e3b/9543e657-70e9-510f-b098-f06caaeee290",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/57de3178-30c7-5132-bd3c-82b864298e3b/b622211b-d68f-5cdb-b9a5-ba2cc664f0ca",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/6fcf36cd-b0ad-5c15-951d-b8480e526ed9/609e8719-9547-51b8-91e5-d62dde07bdcb",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/6fcf36cd-b0ad-5c15-951d-b8480e526ed9/e7d54daf-4b4b-5873-863b-6a3e2460055d",
+                "457fa5ba-5f8f-53f4-bef1-e72d74558eef/6fcf36cd-b0ad-5c15-951d-b8480e526ed9/f2f3ef5f-d02e-50cc-b688-46c073531142",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/ca85135b-5d7f-5b48-9607-d21bef7b19e7/1dbb0c7a-a06e-5391-94f7-e66a9772710a",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/ca85135b-5d7f-5b48-9607-d21bef7b19e7/29b63fe1-0176-5c74-b0ec-19c6f49e29ab",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/ca85135b-5d7f-5b48-9607-d21bef7b19e7/c34b53c9-f111-5b6f-99bc-7b4c690a2844",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/d857c32c-2ede-57b0-8f4b-c518c6f58b0c/06aec98c-45f6-5f1a-8d46-43b4c9a9dbfd",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/d857c32c-2ede-57b0-8f4b-c518c6f58b0c/c10139ce-26f2-5b96-a663-cf6f81997f55",
+                "49386655-1d9f-5160-a775-8605d1fd0d5b/d857c32c-2ede-57b0-8f4b-c518c6f58b0c/e3a0f6d8-03d7-5a24-8340-403f5c079bf8",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5/32bca1e7-a25c-57fd-ada6-5a95c5eb72b3",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5/9066134a-d15f-5a88-a108-e00b7751ee57",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/096bfdf3-9db6-50a2-983c-bd2a3ef0d4d5/aab33457-c511-5b79-aa15-9c901359316d",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/41c3929c-1c6a-58f7-922d-12aadd80b90d/9ec8f663-5e7c-5142-88f5-5538222b7c23",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/41c3929c-1c6a-58f7-922d-12aadd80b90d/b9769fda-6719-5dc8-bcbd-75406869647d",
+                "51c93fe9-88d4-57c3-9df9-18ce089b44c0/41c3929c-1c6a-58f7-922d-12aadd80b90d/fe7e16ea-0734-5c44-a205-287383be22b2",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/5dbb1a48-f1c2-5ede-81d4-d9ce7822f847/42a3b207-149e-5ccb-a930-5b4be8a1fd29",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/5dbb1a48-f1c2-5ede-81d4-d9ce7822f847/8a60dc2b-0ca1-5c23-a106-795e0b48e8a4",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/5dbb1a48-f1c2-5ede-81d4-d9ce7822f847/fb312f47-d066-5068-aa10-452814d78674",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/c4119e4d-2581-55b4-8247-851618d67d24/9ab5625e-c91f-5516-8e1d-92207f874181",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/c4119e4d-2581-55b4-8247-851618d67d24/afa34afc-d83e-5fa2-b388-a7c94ec76b2b",
+                "6208faec-f9b8-5784-82ab-bbbb46bd8d28/c4119e4d-2581-55b4-8247-851618d67d24/f7f306ea-dcfc-5409-a114-ac44c061a43c",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/e187f9a1-bc73-5576-942f-c8d22494a4fe/14aab45f-b3b5-5759-b67d-3c333c62d6f3",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/e187f9a1-bc73-5576-942f-c8d22494a4fe/27c09d18-9aa6-58d5-bf1c-0ae229213d31",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/e187f9a1-bc73-5576-942f-c8d22494a4fe/2d170116-80ed-558e-95bd-eaad5bacdd98",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/eef3d892-bcd4-56ca-9bd1-79da013febc4/56b61553-580a-58c2-921a-cb2d40ea7454",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/eef3d892-bcd4-56ca-9bd1-79da013febc4/98509f74-bf63-58aa-b8c5-dc94b2083b63",
+                "629be608-f83e-5cc3-8c04-b1f98cb5f9f5/eef3d892-bcd4-56ca-9bd1-79da013febc4/e2e94aa6-6723-5eb2-a719-a065612e6e6e",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/1242140c-7db4-52dd-97c1-8d59049bc649/0980db59-0bdc-5793-8790-c96bb0c0cef3",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/1242140c-7db4-52dd-97c1-8d59049bc649/6a3168a5-cdc1-527f-a96d-b0b00e20f974",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/1242140c-7db4-52dd-97c1-8d59049bc649/d05f92a9-5ed0-511f-b726-84f5d688d7e1",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/156d48f4-518d-56a5-979d-583889c73b00/4cbba3f2-9b60-5b39-acaa-eb27f147f39b",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/156d48f4-518d-56a5-979d-583889c73b00/db8ede48-5759-58c6-bceb-d9f1d46390f7",
+                "710ed550-edf1-5b07-baff-f2484c029fd7/156d48f4-518d-56a5-979d-583889c73b00/e13447e0-ff3a-5b55-a0c8-eb5438c711b3",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/8d2c27c1-8e41-512f-a583-8e71a8c16cf2/338a2861-f169-56d6-9ad1-3e9ade1d0ad2",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/8d2c27c1-8e41-512f-a583-8e71a8c16cf2/8ee403ce-1f1f-5f05-9a69-d334b6a0f336",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/8d2c27c1-8e41-512f-a583-8e71a8c16cf2/ea87f810-29bf-5f39-994d-6f9d5b4e39a3",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44/b930edda-3bd4-5f87-8f4c-523332d16f25",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44/ba7dabb6-7270-5373-804d-5c08b98ddb9b",
+                "72a8a410-61fe-5eb3-a95c-c15bcdad8459/e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44/d8ce034d-0b00-5d38-9d85-13144d561816",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/003a4014-8321-5d09-b9bc-0f04d766cc80/287be3ca-ba3e-529a-9cc5-793e7100c256",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/003a4014-8321-5d09-b9bc-0f04d766cc80/2fc900fc-f0d2-5a86-a7b4-47f459b106fd",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/003a4014-8321-5d09-b9bc-0f04d766cc80/dda0054f-9d3f-54be-b8ea-e0dbd0205b19",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/b30529c9-d516-5198-9cee-d437f659e7ff/3916ddaf-eda4-515d-93d7-3332a64fb863",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/b30529c9-d516-5198-9cee-d437f659e7ff/7cd10b51-fc85-5df7-8405-a4465913d5bb",
+                "a5739734-976b-561d-b4c3-acbb5ed5cf83/b30529c9-d516-5198-9cee-d437f659e7ff/fdeda6c6-639b-5a1a-9cc5-c12363df3a41",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/468f544b-e1ab-58e0-a4f7-9afc1e52d0d4/39b814dd-1b1c-50fa-9360-9468823408ec",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/468f544b-e1ab-58e0-a4f7-9afc1e52d0d4/6a697fb0-3d06-5ce3-b2df-361f05903296",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/468f544b-e1ab-58e0-a4f7-9afc1e52d0d4/94c4439a-f120-5717-99ca-e75253a91c6d",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/a10d68c5-35a1-55d2-a73c-249467d5f8a6/31060a5d-d28c-5a39-8058-3c90bfeb10dc",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/a10d68c5-35a1-55d2-a73c-249467d5f8a6/4d443fbc-f291-52a7-b44a-f0542f0c0f25",
+                "f67ad90f-7d78-5fee-984f-8c0ad47f813d/a10d68c5-35a1-55d2-a73c-249467d5f8a6/faab36ea-9905-5403-a038-ea649a2bd8a5",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/11e42499-2538-5286-a8b9-3fda55802247/7be88ed9-6727-5199-8c91-d8d65ce784fb",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/11e42499-2538-5286-a8b9-3fda55802247/d30d0d0a-6af3-5ba7-b60d-e25d687c1e69",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/11e42499-2538-5286-a8b9-3fda55802247/e7f05bc1-407f-5670-84d7-aae409217d6f",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/1494b22f-3999-5714-ba12-3e8a1c65117c/5ebf59a4-4457-529e-98cb-04d804233a7c",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/1494b22f-3999-5714-ba12-3e8a1c65117c/7064e2c5-ce43-55f0-b151-5d1dd109de0f",
+                "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5/1494b22f-3999-5714-ba12-3e8a1c65117c/88a31222-4af5-5120-9605-d6ebb48844b8",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/2dec980d-d374-52f3-a770-b0a4c5e58075/034d1ca1-826e-51e8-9488-3725eed651c8",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/2dec980d-d374-52f3-a770-b0a4c5e58075/c206847e-bf0d-5fe7-aded-61eb3ccdd02d",
+                "208586ed-41d4-56f8-9a3c-d971d5bbd016/2dec980d-d374-52f3-a770-b0a4c5e58075/f49a5c98-91da-5ff7-b5e6-d4019060dc48"
+              ],
+              "provenance_status": "VERIFIED",
+              "created_at_utc": "2026-11-05 02:47:40.348895+00:00"
+            }
+          ]
+        },
+        "offers": [
+          {
+            "offer_id": "8e706e89-2209-5155-bb6c-d30b16bb4178",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
+            "period_id": "5dbb1a48-f1c2-5ede-81d4-d9ce7822f847",
+            "discipline_id": "fb312f47-d066-5068-aa10-452814d78674",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 87.3698348683188,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 88,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "bab477f1-1e58-5366-a020-3cbb71630271",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
+            "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
+            "discipline_id": "9ab5625e-c91f-5516-8e1d-92207f874181",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 83.28094597942989,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 84,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "078b9fe4-265b-558b-9740-ac8a7196de94",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
+            "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
+            "discipline_id": "afa34afc-d83e-5fa2-b388-a7c94ec76b2b",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 83.28094597942989,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 84,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "7111e5e6-0f62-5668-9fd9-8f832a1c67d1",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "6208faec-f9b8-5784-82ab-bbbb46bd8d28",
+            "period_id": "c4119e4d-2581-55b4-8247-851618d67d24",
+            "discipline_id": "f7f306ea-dcfc-5409-a114-ac44c061a43c",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 83.2809459794299,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 84,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "22f7c625-50d8-5b17-9991-708f14865f27",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
+            "period_id": "e187f9a1-bc73-5576-942f-c8d22494a4fe",
+            "discipline_id": "14aab45f-b3b5-5759-b67d-3c333c62d6f3",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 90.3626276611116,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 91,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "e42c868c-ae06-57da-a89c-edf34cbad6fe",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
+            "period_id": "e187f9a1-bc73-5576-942f-c8d22494a4fe",
+            "discipline_id": "27c09d18-9aa6-58d5-bf1c-0ae229213d31",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 90.36262766111159,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 91,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "4a152c81-9710-5e1a-b70e-1a50b7e5e599",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
+            "period_id": "e187f9a1-bc73-5576-942f-c8d22494a4fe",
+            "discipline_id": "2d170116-80ed-558e-95bd-eaad5bacdd98",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 90.3626276611116,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 91,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "0d7d999d-2c2b-5953-9226-a31a13d2038f",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
+            "period_id": "eef3d892-bcd4-56ca-9bd1-79da013febc4",
+            "discipline_id": "56b61553-580a-58c2-921a-cb2d40ea7454",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 89.20707210555604,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 90,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "09f90f67-43b1-58b1-8481-79bc398281ef",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
+            "period_id": "eef3d892-bcd4-56ca-9bd1-79da013febc4",
+            "discipline_id": "98509f74-bf63-58aa-b8c5-dc94b2083b63",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 89.20707210555604,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 90,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "b9cf0d65-06fb-5dea-85a9-a0fff8c83ce4",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "629be608-f83e-5cc3-8c04-b1f98cb5f9f5",
+            "period_id": "eef3d892-bcd4-56ca-9bd1-79da013febc4",
+            "discipline_id": "e2e94aa6-6723-5eb2-a719-a065612e6e6e",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 89.20707210555604,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 90,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "07ae7c69-3b41-5745-bfb5-c8fdc7866b3a",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
+            "period_id": "1242140c-7db4-52dd-97c1-8d59049bc649",
+            "discipline_id": "0980db59-0bdc-5793-8790-c96bb0c0cef3",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 89.14460964309356,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 90,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "63673a25-aaf2-5b51-bd62-e8c949c31a82",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
+            "period_id": "1242140c-7db4-52dd-97c1-8d59049bc649",
+            "discipline_id": "6a3168a5-cdc1-527f-a96d-b0b00e20f974",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 89.14460964309356,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 90,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "47c0d111-546e-56d3-baf4-c9e176893435",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
+            "period_id": "1242140c-7db4-52dd-97c1-8d59049bc649",
+            "discipline_id": "d05f92a9-5ed0-511f-b726-84f5d688d7e1",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 89.14460964309356,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 90,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "f0c6b4c6-bdce-5586-8630-31c245dd3e4c",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
+            "period_id": "156d48f4-518d-56a5-979d-583889c73b00",
+            "discipline_id": "4cbba3f2-9b60-5b39-acaa-eb27f147f39b",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 94.38905408753804,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 95,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "ff9c16fa-0e9a-5e70-9a21-db8d5a0748c8",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
+            "period_id": "156d48f4-518d-56a5-979d-583889c73b00",
+            "discipline_id": "db8ede48-5759-58c6-bceb-d9f1d46390f7",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 94.38905408753803,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 95,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "218d222e-444e-52d3-bd6f-fa58f041ddad",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "710ed550-edf1-5b07-baff-f2484c029fd7",
+            "period_id": "156d48f4-518d-56a5-979d-583889c73b00",
+            "discipline_id": "e13447e0-ff3a-5b55-a0c8-eb5438c711b3",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 94.38905408753803,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 95,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "2cc1774d-5f96-5622-ae66-c63f4d73ac73",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
+            "period_id": "8d2c27c1-8e41-512f-a583-8e71a8c16cf2",
+            "discipline_id": "338a2861-f169-56d6-9ad1-3e9ade1d0ad2",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 101.15301805150199,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 102,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "57d9ff06-be5e-5fcb-b322-22e2c8ae2522",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
+            "period_id": "8d2c27c1-8e41-512f-a583-8e71a8c16cf2",
+            "discipline_id": "8ee403ce-1f1f-5f05-9a69-d334b6a0f336",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 101.15301805150199,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 102,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6a01ce77-c3db-51fa-a668-bbe0546f394a",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
+            "period_id": "8d2c27c1-8e41-512f-a583-8e71a8c16cf2",
+            "discipline_id": "ea87f810-29bf-5f39-994d-6f9d5b4e39a3",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 101.15301805150199,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 102,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6bf3ec4a-87f6-58c5-842d-59ae213e9583",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
+            "period_id": "e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44",
+            "discipline_id": "b930edda-3bd4-5f87-8f4c-523332d16f25",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 96.9752402737242,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 97,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "0e8ad4c0-881a-572f-89c5-fa29c9594442",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
+            "period_id": "e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44",
+            "discipline_id": "ba7dabb6-7270-5373-804d-5c08b98ddb9b",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 96.9752402737242,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 97,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "1c70b3c7-7329-5bfe-b191-4e2853fd7de2",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "72a8a410-61fe-5eb3-a95c-c15bcdad8459",
+            "period_id": "e84a7fb1-ef10-51bb-a0c8-e9d2f5305a44",
+            "discipline_id": "d8ce034d-0b00-5d38-9d85-13144d561816",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 96.9752402737242,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 97,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "95f6dca5-a905-5969-9dad-ba3b302bd689",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
+            "period_id": "003a4014-8321-5d09-b9bc-0f04d766cc80",
+            "discipline_id": "287be3ca-ba3e-529a-9cc5-793e7100c256",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 88.03770273618666,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 89,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "78b66ec1-56c0-5fed-b807-c0dbf813ae8c",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
+            "period_id": "003a4014-8321-5d09-b9bc-0f04d766cc80",
+            "discipline_id": "2fc900fc-f0d2-5a86-a7b4-47f459b106fd",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 88.03770273618666,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 89,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "e85e0b5c-ab81-54f3-9eec-f91fda059c04",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
+            "period_id": "003a4014-8321-5d09-b9bc-0f04d766cc80",
+            "discipline_id": "dda0054f-9d3f-54be-b8ea-e0dbd0205b19",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 88.03770273618666,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 89,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "598260c8-2c9e-5ef8-b223-ae7eec90536f",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
+            "period_id": "b30529c9-d516-5198-9cee-d437f659e7ff",
+            "discipline_id": "3916ddaf-eda4-515d-93d7-3332a64fb863",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 89.45992495840889,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 90,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "50d1e7f6-83c7-589f-95b1-3cae328c2739",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
+            "period_id": "b30529c9-d516-5198-9cee-d437f659e7ff",
+            "discipline_id": "7cd10b51-fc85-5df7-8405-a4465913d5bb",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 89.45992495840889,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 90,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "9643c361-f570-5638-bfe7-983c08eb5b68",
+            "campus_id": "44bf155f-0e52-5044-bf25-e2cf4ca73019",
+            "course_id": "a5739734-976b-561d-b4c3-acbb5ed5cf83",
+            "period_id": "b30529c9-d516-5198-9cee-d437f659e7ff",
+            "discipline_id": "fdeda6c6-639b-5a1a-9cc5-c12363df3a41",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 89.45992495840889,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 90,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "3c0cb5fe-1a7b-54b5-afec-eb058af07adb",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
+            "period_id": "468f544b-e1ab-58e0-a4f7-9afc1e52d0d4",
+            "discipline_id": "39b814dd-1b1c-50fa-9360-9468823408ec",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 91.91492801840263,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 92,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "15081c37-c0c1-52e0-86da-72c572d0dade",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
+            "period_id": "468f544b-e1ab-58e0-a4f7-9afc1e52d0d4",
+            "discipline_id": "6a697fb0-3d06-5ce3-b2df-361f05903296",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 91.91492801840263,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 92,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6c062e24-aca3-58f2-a0fe-3a3736a01c68",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
+            "period_id": "468f544b-e1ab-58e0-a4f7-9afc1e52d0d4",
+            "discipline_id": "94c4439a-f120-5717-99ca-e75253a91c6d",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 91.91492801840263,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 92,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "6e55cd70-8541-59d5-aa18-ab46f9159d46",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
+            "period_id": "a10d68c5-35a1-55d2-a73c-249467d5f8a6",
+            "discipline_id": "31060a5d-d28c-5a39-8058-3c90bfeb10dc",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 93.83315867525683,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 94,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "e1b5fa30-4d64-57ab-906b-9c12f9136bf3",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
+            "period_id": "a10d68c5-35a1-55d2-a73c-249467d5f8a6",
+            "discipline_id": "4d443fbc-f291-52a7-b44a-f0542f0c0f25",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 93.83315867525683,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 94,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "f9d45284-b845-5079-83e1-2149e344ec12",
+            "campus_id": "7db3550a-82e7-573e-a7c7-1876dea74c09",
+            "course_id": "f67ad90f-7d78-5fee-984f-8c0ad47f813d",
+            "period_id": "a10d68c5-35a1-55d2-a73c-249467d5f8a6",
+            "discipline_id": "faab36ea-9905-5403-a038-ea649a2bd8a5",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 93.83315867525683,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 94,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "1ddfc58f-be47-5020-9751-101852c649b0",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
+            "period_id": "11e42499-2538-5286-a8b9-3fda55802247",
+            "discipline_id": "7be88ed9-6727-5199-8c91-d8d65ce784fb",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 96.58605108453501,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 97,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "1294cbaa-7382-5b1c-b01b-4b8cc7e3b880",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
+            "period_id": "11e42499-2538-5286-a8b9-3fda55802247",
+            "discipline_id": "d30d0d0a-6af3-5ba7-b60d-e25d687c1e69",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 96.58605108453501,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 97,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "0567967c-647d-56b0-b4e1-7a7dfa3087d2",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
+            "period_id": "11e42499-2538-5286-a8b9-3fda55802247",
+            "discipline_id": "e7f05bc1-407f-5670-84d7-aae409217d6f",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 96.58605108453501,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 97,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "47ccb11e-0745-5fab-8ba8-f61e0594e7a5",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
+            "period_id": "1494b22f-3999-5714-ba12-3e8a1c65117c",
+            "discipline_id": "5ebf59a4-4457-529e-98cb-04d804233a7c",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 96.49716219564613,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 97,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "b4676bbf-743d-5e8c-8c66-49be28ae642b",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
+            "period_id": "1494b22f-3999-5714-ba12-3e8a1c65117c",
+            "discipline_id": "7064e2c5-ce43-55f0-b151-5d1dd109de0f",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 96.49716219564613,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 97,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          },
+          {
+            "offer_id": "799aaacf-be3d-5381-94dd-d814f5d6dfde",
+            "campus_id": "e4e8c58b-0aa4-5537-990c-38e4d8a240b9",
+            "course_id": "fb031c8a-21cb-5aa1-bbcc-14b149dbcfb5",
+            "period_id": "1494b22f-3999-5714-ba12-3e8a1c65117c",
+            "discipline_id": "88a31222-4af5-5120-9605-d6ebb48844b8",
+            "cohort": null,
+            "shift": null,
+            "offer_type": null,
+            "status": "SUGERIDA",
+            "forecast_raw": 96.49716219564613,
+            "students": {
+              "regular": null,
+              "dependency": null,
+              "elective": null,
+              "total": 97,
+              "origins": null
+            },
+            "modulation": {
+              "rule_version": "POC-whole-cohort-ceil-capacity-v1",
+              "capacity": 40,
+              "proposed_groups": 3,
+              "groups": null,
+              "provisional": true
+            },
+            "teacher_suggestion": null,
+            "human_adjustment": null,
+            "source_model_keys": [
+              "planilha-turmas-demo"
+            ],
+            "warnings": [
+              "Composição de estudantes/coorte/turno desconhecida",
+              "Modulação provisória DEMO"
+            ]
+          }
+        ],
+        "validation": [
+          {
+            "rule_id": "POC-DRAFT",
+            "status": "PASS",
+            "reason": "Proposta demonstrativa sem aprovação automática",
+            "evidence": "proposal_generations.status"
+          },
+          {
+            "rule_id": "RF008-partial",
+            "status": "PASS",
+            "reason": "Sem docente/horário/sala na representação inicial; matriz institucional não homologada",
+            "evidence": "offers.teacher_suggestion"
+          },
+          {
+            "rule_id": "RGN001/US027",
+            "status": "NOT_EVALUATED",
+            "reason": "Decisão humana e prevalência de edições não exercitadas pelo DEMO",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RGN002/RF010",
+            "status": "NOT_EVALUATED",
+            "reason": "Integração institucional entre todos os cursos não demonstrada",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RGN003/RF021–025/US029–030",
+            "status": "NOT_EVALUATED",
+            "reason": "Alvo agregado; composição regular/dependência/eletiva da previsão desconhecida",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RGN023/US028",
+            "status": "NOT_EVALUATED",
+            "reason": "Gate de validação da matriz depende da aplicação",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF009/RF020/US026",
+            "status": "NOT_EVALUATED",
+            "reason": "Turno, coorte de ingresso e matriz homologada indisponíveis",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF040–047/US033–034",
+            "status": "NOT_EVALUATED",
+            "reason": "Capacidade DEMO não é regra institucional; unificação não validada",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF117–125",
+            "status": "NOT_EVALUATED",
+            "reason": "Sem elegibilidade PRIME/Escola/turno ou aprovação GQA",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF155–159/US005–006",
+            "status": "NOT_EVALUATED",
+            "reason": "SQL sintético e temporal; nenhuma integração institucional validada",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF195–199/US016",
+            "status": "NOT_EVALUATED",
+            "reason": "Auditoria técnica parcial; perfis institucionais/exportação não demonstrados",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "RF204–206/US017",
+            "status": "NOT_EVALUATED",
+            "reason": "Original preservado; revisão humana e feedback validado ainda indisponíveis",
+            "evidence": "DEMO scope"
+          },
+          {
+            "rule_id": "US022",
+            "status": "NOT_EVALUATED",
+            "reason": "Responsabilidade funcional não demonstrada por este ensaio",
+            "evidence": "DEMO scope"
+          }
+        ],
+        "total_rows": 90,
+        "limit": 50,
+        "offset": 50,
+        "payload_sha256": "ab164394f6388493ae67e5b5ebdaf3bb59ef56c8be152763c955b42f6d4f5b86"
+      }
+    ],
+    "reconciliation": {
+      "sql": {
+        "database": "planejamento_db",
+        "schema": "planning",
+        "status": "PASS",
+        "execution_id": "1ff2ee34-c872-47ae-a166-ae12d8f24ac5",
+        "run_id": "6ac7e51b7b52456cb9b2230152691bed",
+        "model_version": "17",
+        "proposal_status": "DRAFT",
+        "stored_rows": 90,
+        "proposed_students": 8694,
+        "proposed_groups": 270,
+        "query": "sql/queries/verify_proposal.sql"
+      },
+      "storage": [
+        {
+          "bucket": "pucpr-poc",
+          "key": "mlflow/4/models/m-29e446a82b6b42c482d0b0d89ddb8727/artifacts/MLmodel",
+          "bytes": 1336,
+          "sha256": "67170effc3266f094fa3f605b7416941736951200aeb5a3746b7cef05f7a3fe4",
+          "object_version_id": "9da37cea-0e93-462a-a99e-d20b0fd4289d",
+          "model_version": "17",
+          "status": "PASS"
+        },
+        {
+          "bucket": "pucpr-poc",
+          "key": "mlflow/4/models/m-29e446a82b6b42c482d0b0d89ddb8727/artifacts/model.pkl",
+          "bytes": 8671,
+          "sha256": "4268666504b258b661b9c6cc009bdf8c21d06fde4317fb389a585e633be3ad0b",
+          "object_version_id": "35e102ba-90d6-45d1-867f-3d1e0fbb42c0",
+          "model_version": "17",
+          "status": "PASS"
+        },
+        {
+          "bucket": "pucpr-poc",
+          "key": "mlflow/4/models/m-29e446a82b6b42c482d0b0d89ddb8727/artifacts/requirements.txt",
+          "bytes": 80,
+          "sha256": "3f22b46a5a2293ca36743e1757d14e9968aa14f9d57a286e210c5e53c04406c2",
+          "object_version_id": "d6f2030c-86b6-4a3f-a355-e8a63c238738",
+          "model_version": "17",
+          "status": "PASS"
+        }
+      ],
+      "snapshot": {
+        "snapshot_id": "fb931e1e-43d0-5ff8-938c-0d2ba4a68794",
+        "sha256": "7b4120a14004aeb7cc006c0e210f004a0a6dffd9510bf304f27641b76dbd377e",
+        "status": "PASS"
+      },
+      "negative_checks": [
+        "401",
+        "404",
+        "unsupported-schema",
+        "altered-payload-hash"
+      ]
+    }
+  },
+  "limitations": [
+    "Dados DEMO e contrato provisório; regras não avaliadas não são homologação",
+    "Execução sem erro do notebook não implica execução de operações opt-in desativadas"
+  ]
+}

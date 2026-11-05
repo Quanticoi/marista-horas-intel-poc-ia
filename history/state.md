@@ -1,3 +1,11 @@
+﻿# 05/11/2026 — continuidade automática 01 → 02 aplicada
+
+Pedido: remover a cópia manual de ID entre a jornada e a conferência de inferência. Notebook01 agora salva atomicamente /workspace/reports/journey-current.json depois das evidências concluídas; notebook02 usa esse contexto, com prioridade para ID manual. Compatibilidade com /reports/journey-latest.json existente. Confere ciclo, execution_id, run_id, snapshot, nome e versão na API; não procura a última proposta/modelo no banco, não gera proposta automaticamente. Contexto ausente, inválido ou divergente pede seleção explícita.
+
+Imagem Jupyter reconstruída e container saudável; fontes distribuídas ao workspace com preservação das cópias anteriores fora da lista ativa. Sete testes PASS (artifacts/reports/v3/continuation-junit.xml). Notebook02 editável executado inteiro em kernel novo sem PROPOSAL_ID: PASS, API/SQL/storage reconciliados; artifacts/reports/v3/continuation-auto-check.executed.ipynb e relatório JSON/Markdown. Escrita de contexto novo da jornada01 coberta em teste; não executado novo treinamento nesta correção. Dados e evidências anteriores preservados. Usuário autorizou commit e publicação desta correção na development. Incluir código, notebooks, documentação e evidências continuation; relatórios de outros testes locais ficam preservados fora deste commit.
+
+Publicação anterior confirmada: efc87b5 enviado à development do GitHub Quanticoi/marista-horas-intel-poc-ia em 04/11.
+
 # V3 — código finalizado para teste local pelo usuário
 
 Pedido posterior: commit autorizado pelo usuário na branch development. Incluir implementação, documentação e evidências V3; push e PR não solicitados nesta etapa. Validação estática, lint e verificação de segredos passaram antes do commit.

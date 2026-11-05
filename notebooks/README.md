@@ -19,8 +19,18 @@ o arquivo principal; não cria duplicatas na lista do Jupyter.
 | 09_reset_total_ambiente_poc | Inspeção de plano e comando externo | Run All não executa exclusão |
 
 Ordem sugerida: 00 → 01 → 02 → 08. Use 03–07 conforme a atividade científica.
-No 02/08 informe `PROPOSAL_ID` ou edite o parâmetro explícito; não se escolhe a
-proposta mais recente automaticamente. No 09, gere primeiro o plano no terminal.
+No 02, READ_EXISTING continua automaticamente a jornada 01 concluída: usa
+`/workspace/reports/journey-current.json` e valida ciclo, run, snapshot e versão
+na API antes de consultar. Instalações anteriores usam `/reports/journey-latest.json`
+quando o novo contexto ainda não existe. Não pesquisa a proposta mais recente no banco.
+Um `PROPOSAL_ID` explícito tem prioridade. No 08 informe o ID da entidade.
+No 09, gere primeiro o plano no terminal.
+No 02, a célula **1.1** permite preencher `selection` diretamente: para leitura,
+use `{"mode": "READ_EXISTING", "proposal_id": "UUID da tabela"}`. Esse UUID é
+o `execution_id` apresentado pela jornada 01. Para nova inferência, preencha o
+exemplo `GENERATE_AND_VALIDATE` na mesma célula com snapshot, modelo, versão e
+confirmação de escrita. Leitura não executa nova inferência. Sem contexto válido
+ou seleção manual, o notebook pede uma seleção; não inicia geração silenciosa.
 Relatórios executados ficam em `artifacts/reports`, sem preencher outputs nos fontes.
 
 V2: configuração tipada `Parameters`; veja [exemplos e controles](../docs/operations/OPERATIONS_V2.md).

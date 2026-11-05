@@ -164,6 +164,8 @@ reports.mkdir(parents=True, exist_ok=True)
 report = reports / f"journey-{execution_id}.json"
 report.write_text(json.dumps(summary, indent=2), encoding="utf-8")
 mlflow.MlflowClient().log_artifact(trace["run_id"], str(report), "evidence")
+from src.workbench.continuation import save_context
+save_context(summary, cfg.cycle)
 display(pd.DataFrame(statuses))
 display(summary)
 display(Markdown(f"[Run MLflow]({trace['run_url']}) · [API](http://127.0.0.1:8000/docs) · [Dashboard](http://127.0.0.1:8088) · [RustFS](http://127.0.0.1:9001)"))

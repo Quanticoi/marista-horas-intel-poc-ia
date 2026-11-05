@@ -31,8 +31,35 @@ evidence.update(services=services,versions={"mlflow":mlflow.__version__,"sklearn
 ''')])
     emit("02_teste_inferencia_planilha_turmas","Gerar pela API ou conferir uma proposta",[
         ("1. Preflight e seleção. READ_EXISTING não escreve; GENERATE_AND_VALIDATE envia POST ao worker. Escolha explicitamente snapshot e modelo/versão; confirme a escrita e defina request_key.",'''from src.workbench.contract_review import preflight,candidates,fetch_payload,reconcile
-display(pd.DataFrame(preflight(cfg)));display(pd.DataFrame(candidates(cfg)))
+display(pd.DataFrame(preflight(cfg)))
+available_proposals=pd.DataFrame(candidates(cfg)).rename(columns={"execution_id":"proposal_id"})
+display(available_proposals)
+if available_proposals.empty:
+    display(Markdown("Não há propostas neste ciclo. Execute a jornada 01 ou configure GENERATE_AND_VALIDATE abaixo com um modelo registrado e snapshot explícitos."))
+'''),("1.1 Continuidade automática. Deixe selection vazio para conferir a proposta da jornada 01 concluída. O contexto é validado na API e exibido abaixo; não se pesquisa a proposta mais recente no banco. Para escolher outra proposta, preencha proposal_id com o UUID da tabela. READ_EXISTING consulta e reconcilia, sem nova inferência. Para gerar outra proposta, preencha o segundo exemplo com os IDs do treino 04/05. Configuração salva permite Restart Kernel and Run All.",'''# Vazio: continua a jornada 01; parâmetros explícitos do ambiente têm prioridade.
+selection = {
+    # "mode": "READ_EXISTING",
+    # "proposal_id": "COLE_O_UUID_DA_TABELA",
+}
+# Alternativa: substitua selection acima por este dicionário preenchido.
+# selection = {
+#     "mode": "GENERATE_AND_VALIDATE",
+#     "snapshot_id": "COLE_O_SNAPSHOT_ID_DO_TREINO",
+#     "model_name": "COLE_O_NOME_REGISTRADO",
+#     "model_version": "1",  # versão escolhida explicitamente
+#     "execute_write": True,
+#     "confirmation": "EXECUTE_DEMO",
+#     "request_key": "meu-teste-inferencia-001",
+# }
+# Mesma chave + mesmo conteúdo: recupera o job. Nova chave: nova proposta.
+params=Parameters.model_validate({**Parameters.load().model_dump(), **selection})
 proposal_id=str(params.proposal_id) if params.proposal_id else ""
+display(params.model_dump(mode="json"))
+if params.mode=="READ_EXISTING" and not proposal_id:
+    from src.workbench.continuation import resolve_proposal
+    proposal_id,continuation=resolve_proposal(cfg)
+    display(continuation)
+    evidence["continuation"]=continuation
 '''),("2. Submeter geração somente no modo opt-in. Nenhuma persistência é feita pelo notebook. Esperado: job, correlation_id e status_url.",'''if params.mode=="GENERATE_AND_VALIDATE":
     params.authorize()
     if not params.snapshot_id or not params.model_version:
